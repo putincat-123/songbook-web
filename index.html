@@ -566,13 +566,16 @@
           '<div class="seq">' + escapeHtml(song.seq) + '</div>' +
           '<div>' +
             '<div class="song-name">' + highlight(song.name, keyword) + '</div>' +
-            '<div class="artist">' + highlight(song.artist || "未知歌手", keyword) + '</div>' +
+            '<div class="artist-row">' +
+              '<div class="artist">' + highlight(song.artist || "未知歌手", keyword) + '</div>' +
+              '<button type="button" class="copy-btn" data-copy="' +
+                escapeAttr("点歌 " + song.name) +
+              '">复制</button>' +
+            '</div>' +
+            
             '<div class="song-tags">' +
               parseStyles(song.style).map((style) => '<span class="song-tag">' + escapeHtml(style) + '</span>').join('') +
             '</div>' +
-            '<button type="button" class="copy-btn" data-copy="' +
-              escapeAttr("点歌 " + song.name) +
-            '">复制点歌</button>' +
           '</div>' +
         '</article>'
       )).join("");
