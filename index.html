@@ -490,7 +490,7 @@
     };
 
     const params = new URLSearchParams(window.location.search);
-    const streamer = (params.get("streamer") || "").toLowerCase();
+    const streamer = (params.get("streamer") || "miyu").toLowerCase();
     const JSON_PATH = "./data/" + streamer + "/songs.json";
 
     const PAGE_SIZE = 100;
