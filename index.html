@@ -898,6 +898,10 @@
           '<div class="random-label">🎲 随机抽歌</div>' +
           '<div class="random-artist">目前条件下没有可随机的歌曲</div>';
         return;
+        randomResult.querySelectorAll(".copy-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    copyText(btn.dataset.copy || "");
+  });
       }
 
       const song = pool[Math.floor(Math.random() * pool.length)];
@@ -905,10 +909,18 @@
       randomResult.style.display = "block";
       randomResult.innerHTML =
         '<div class="random-label">🎲 随机抽中</div>' +
+      
         '<div class="random-song">' + escapeHtml(song.name) + '</div>' +
-        '<div class="random-artist">' +
-          escapeHtml(song.artist || "未知歌手") +
-          (song.style ? " · " + escapeHtml(song.style) : "") +
+      
+        '<div class="artist-row">' +
+          '<div class="random-artist">' +
+            escapeHtml(song.artist || "未知歌手") +
+            (song.style ? " · " + escapeHtml(song.style) : "") +
+          '</div>' +
+      
+          '<button type="button" class="copy-btn" data-copy="' +
+            escapeAttr("点歌 " + song.name) +
+          '">复制</button>' +
         '</div>';
     }
 
