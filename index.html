@@ -168,7 +168,7 @@
       return String(value == null ? "" : value)
         .toLowerCase()
         .normalize("NFKC")
-        .replace(/[\\s\\u3000]+/g, "")
+        .replace(/[\s\u3000]+/g, "")
         .trim();
     }
 
@@ -185,7 +185,7 @@
       const safe = escapeHtml(text || "");
       const raw = String(keyword || "").trim();
       if (!raw) return safe;
-      const escapedKeyword = raw.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&");
+      const escapedKeyword = raw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       return safe.replace(new RegExp("(" + escapedKeyword + ")", "gi"), "<mark>$1</mark>");
     }
 
