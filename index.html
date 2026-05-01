@@ -490,9 +490,8 @@
     };
 
     const params = new URLSearchParams(window.location.search);
-    const streamer = (params.get("streamer") || "miyu").toLowerCase();
-    const JSON_PATH = "./data/" + streamer + "/songs.json";
-
+    const streamer = (params.get("streamer") || "").toLowerCase();
+    const JSON_PATH = streamer ? "./data/" + streamer + "/songs.json" : "";
     const PAGE_SIZE = 100;
     const MAX_SEARCH = 300;
 
@@ -672,15 +671,21 @@
         liveLink.style.display = "none";
       }
     }
-      if (!streamer) {
-    document.getElementById("title").textContent = "主播歌单";
-    document.getElementById("desc").textContent = "请使用专属链接进入歌单";
-    document.getElementById("list").innerHTML =
-      '<div class="empty">请通过主播专属链接进入歌单</div>';
-    document.getElementById("jsonHint").innerHTML = "";
-    return;
-  }
     async function loadSongs() {
+      if (!streamer) {
+        document.title = "主播歌单";
+        $("title").textContent = "主播歌单";
+        $("desc").textContent = "请使用主播专属链接进入歌单";
+    
+        $("liveLink").style.display = "none";
+        $("jsonHint").innerHTML = "";
+    
+        list.innerHTML =
+          '<div class="empty">请通过主播专属链接进入歌单</div>';
+    
+        return;
+      }
+    
       applyStreamerUi();
 
       let raw = [];
