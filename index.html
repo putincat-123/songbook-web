@@ -47,6 +47,23 @@
     }
     .primary { background:var(--brand); color:#fff; }
     .primary:hover { background:var(--brand2); }
+    .live-link {
+      display:inline-flex;
+      margin-top:14px;
+      border-radius:999px;
+      background:var(--brand);
+      color:#fff;
+      padding:9px 14px;
+      font-size:13px;
+      font-weight:900;
+      text-decoration:none;
+      align-items:center;
+      gap:6px;
+    }
+    
+    .live-link:hover {
+      background:var(--brand2);
+    }
     .ghost { background:#fff; color:var(--text); border:1px solid var(--line); }
     .hint { margin:8px 2px 0; color:var(--muted); font-size:12px; line-height:1.5; }
     .filter-title {
@@ -172,6 +189,7 @@
       <p class="eyebrow" id="eyebrow">SONGBOOK</p>
       <h1 id="title">歌单查询</h1>
       <p class="desc" id="desc">输入歌名或歌手即可查询。适合直播间点歌前快速确认曲库。</p>
+      <a id="liveLink" class="live-link" href="#" target="_blank" rel="noopener">进入直播间</a>
       <div class="stats">
         <div class="stat"><div class="value" id="totalCount">--</div><div class="label">收录歌曲</div></div>
         <div class="stat"><div class="value" id="resultCount">--</div><div class="label">当前结果</div></div>
@@ -212,9 +230,18 @@
 
   <script>
     const STREAMER_CONFIG = {
-      miyu: { title: "谜屿歌单查询", eyebrow: "MIYU SONGBOOK", desc: "当前歌单：谜屿 · 输入歌名或歌手即可查询" },
-      xingxing: { title: "星星歌单查询", eyebrow: "XINGXING SONGBOOK", desc: "当前歌单：星星 · 输入歌名或歌手即可查询" },
-      other: { title: "主播歌单查询", eyebrow: "SONGBOOK", desc: "当前歌单：other · 输入歌名或歌手即可查询" }
+      miyu: {
+        title: "谜屿歌单查询",
+        eyebrow: "MIYU SONGBOOK",
+        desc: "当前歌单：谜屿 · 输入歌名或歌手即可查询",
+        liveUrl: "https://fm.missevan.com/live/868878322"
+      },
+      xingxing: {
+        title: "星谣歌单查询",
+        eyebrow: "XINGXING SONGBOOK",
+        desc: "当前歌单：星谣 · 输入歌名或歌手即可查询",
+        liveUrl: "https://fm.missevan.com/live/869031646"
+      }
     };
 
     const params = new URLSearchParams(window.location.search);
