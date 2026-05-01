@@ -105,6 +105,19 @@
     }
     .song-name { font-size:16px; font-weight:900; line-height:1.35; word-break:break-word; }
     .artist { margin-top:4px; color:var(--muted); font-size:13px; word-break:break-word; }
+
+    .artist-row {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      margin-top:4px;
+    }
+    .artist-row .artist {
+      margin-top:0;
+      min-width:0;
+      flex:1;
+    }
     .song-tags {
       margin-top:6px;
       display:flex;
@@ -119,12 +132,12 @@
       padding:3px 8px;
     }
     .copy-btn {
-      margin-top:8px;
+      flex-shrink:0;
       border:1px solid #bae6fd;
       background:#f0f9ff;
       color:#0284c7;
       border-radius:999px;
-      padding:6px 10px;
+      padding:4px 9px;
       font-size:12px;
       font-weight:800;
     }
@@ -200,6 +213,7 @@
   <script>
     const STREAMER_CONFIG = {
       miyu: { title: "谜屿歌单查询", eyebrow: "MIYU SONGBOOK", desc: "当前歌单：谜屿 · 输入歌名或歌手即可查询" },
+      xingxing: { title: "星星歌单查询", eyebrow: "XINGXING SONGBOOK", desc: "当前歌单：星星 · 输入歌名或歌手即可查询" },
       other: { title: "主播歌单查询", eyebrow: "SONGBOOK", desc: "当前歌单：other · 输入歌名或歌手即可查询" }
     };
 
@@ -607,7 +621,6 @@
         '<div class="random-artist">' +
           escapeHtml(song.artist || "未知歌手") +
           (song.style ? " · " + escapeHtml(song.style) : "") +
-          (song.remarks ? " · " + escapeHtml(song.remarks) : "") +
         '</div>';
     }
 
