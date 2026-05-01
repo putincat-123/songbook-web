@@ -6,47 +6,64 @@
   <title>歌单查询</title>
   <style>
     :root {
-      --card:#ffffff; --text:#1f2937; --muted:#6b7280; --line:#e5e7eb;
-      --brand:#2563eb; --brand2:#1d4ed8; --soft:#eff6ff;
-      --shadow:0 8px 24px rgba(15,23,42,.08); --radius:18px;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --brand:#2563eb;
+      --brand2:#1d4ed8;
+      --soft:#eff6ff;
+      --shadow:0 8px 24px rgba(15,23,42,.08);
+      --radius:18px;
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
       background:linear-gradient(180deg,#eff6ff 0%,#f8fafc 34%,#fff 100%);
       color:var(--text);
     }
-    .app { max-width:900px; margin:0 auto; padding:18px 16px 40px; }
+
+    .app {
+      max-width:900px;
+      margin:0 auto;
+      padding:18px 16px 40px;
+    }
+
     .hero {
-      background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:28px;
-      box-shadow:var(--shadow); padding:22px; margin-bottom:14px; backdrop-filter:blur(10px);
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-bottom:14px;
+      backdrop-filter:blur(10px);
     }
-    .eyebrow { margin:0 0 8px; color:var(--brand); font-size:12px; letter-spacing:.14em; font-weight:900; }
-    h1 { margin:0; font-size:30px; line-height:1.2; letter-spacing:-.04em; }
-    .desc { margin:10px 0 0; color:var(--muted); font-size:14px; line-height:1.7; }
-    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
-    .stat { background:var(--soft); border-radius:16px; padding:12px; text-align:center; }
-    .stat .value { font-size:22px; font-weight:900; color:var(--brand); }
-    .stat .label { margin-top:2px; font-size:12px; color:var(--muted); font-weight:700; }
-    .toolbar {
-      position:sticky; top:0; z-index:10; margin:0 -16px 14px; padding:12px 16px;
-      background:rgba(246,248,251,.94); backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(229,231,235,.8);
+
+    .eyebrow {
+      margin:0 0 8px;
+      color:var(--brand);
+      font-size:12px;
+      letter-spacing:.14em;
+      font-weight:900;
     }
-    .search-box { display:flex; gap:8px; align-items:center; }
-    input {
-      width:100%; min-width:0; border:1px solid var(--line); background:#fff; color:var(--text);
-      border-radius:16px; padding:13px 14px; font-size:15px; outline:none;
-      box-shadow:0 2px 10px rgba(15,23,42,.04);
+
+    h1 {
+      margin:0;
+      font-size:30px;
+      line-height:1.2;
+      letter-spacing:-.04em;
     }
-    input:focus { border-color:#93c5fd; box-shadow:0 0 0 4px rgba(147,197,253,.28); }
-    button {
-      border:none; border-radius:16px; padding:13px 14px; font-size:14px; font-weight:900;
-      cursor:pointer; white-space:nowrap;
+
+    .desc {
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
     }
-    .primary { background:var(--brand); color:#fff; }
-    .primary:hover { background:var(--brand2); }
+
     .live-link {
       display:inline-flex;
       margin-top:14px;
@@ -60,18 +77,108 @@
       align-items:center;
       gap:6px;
     }
-    
-    .live-link:hover {
-      background:var(--brand2);
+
+    .live-link:hover { background:var(--brand2); }
+
+    .stats {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:16px;
     }
-    .ghost { background:#fff; color:var(--text); border:1px solid var(--line); }
-    .hint { margin:8px 2px 0; color:var(--muted); font-size:12px; line-height:1.5; }
+
+    .stat {
+      background:var(--soft);
+      border-radius:16px;
+      padding:12px;
+      text-align:center;
+    }
+
+    .stat .value {
+      font-size:22px;
+      font-weight:900;
+      color:var(--brand);
+    }
+
+    .stat .label {
+      margin-top:2px;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .toolbar {
+      position:sticky;
+      top:0;
+      z-index:10;
+      margin:0 -16px 14px;
+      padding:12px 16px;
+      background:rgba(246,248,251,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(229,231,235,.8);
+    }
+
+    .search-box {
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    input {
+      width:100%;
+      min-width:0;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      border-radius:16px;
+      padding:13px 14px;
+      font-size:15px;
+      outline:none;
+      box-shadow:0 2px 10px rgba(15,23,42,.04);
+    }
+
+    input:focus {
+      border-color:#93c5fd;
+      box-shadow:0 0 0 4px rgba(147,197,253,.28);
+    }
+
+    button {
+      border:none;
+      border-radius:16px;
+      padding:13px 14px;
+      font-size:14px;
+      font-weight:900;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+
+    .primary {
+      background:var(--brand);
+      color:#fff;
+    }
+
+    .primary:hover { background:var(--brand2); }
+
+    .ghost {
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
+    .hint {
+      margin:8px 2px 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.5;
+    }
+
     .filter-title {
       margin:10px 2px 0;
       font-size:12px;
       font-weight:900;
       color:var(--muted);
     }
+
     .filters {
       display:flex;
       gap:8px;
@@ -79,6 +186,7 @@
       padding:8px 2px 0;
       -webkit-overflow-scrolling:touch;
     }
+
     .filter-btn {
       background:#fff;
       color:var(--text);
@@ -88,40 +196,110 @@
       font-size:13px;
       flex:0 0 auto;
     }
+
     .filter-btn.active {
       background:var(--brand);
       color:#fff;
       border-color:var(--brand);
     }
+
     .random-result {
-      margin-top:10px; background:#fff; border:1px solid #bfdbfe; border-radius:18px;
-      padding:14px 16px; box-shadow:0 4px 14px rgba(15,23,42,.05);
+      margin-top:10px;
+      background:#fff;
+      border:1px solid #bfdbfe;
+      border-radius:18px;
+      padding:14px 16px;
+      box-shadow:0 4px 14px rgba(15,23,42,.05);
     }
-    .random-label { font-size:12px; font-weight:900; color:var(--brand); margin-bottom:6px; }
-    .random-song { font-size:20px; font-weight:900; line-height:1.4; }
-    .random-artist { margin-top:4px; font-size:14px; color:var(--muted); }
+
+    .random-label {
+      font-size:12px;
+      font-weight:900;
+      color:var(--brand);
+      margin-bottom:6px;
+    }
+
+    .random-song {
+      font-size:20px;
+      font-weight:900;
+      line-height:1.4;
+    }
+
+    .random-artist {
+      margin-top:4px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
     .result-head {
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      margin:10px 2px; color:var(--muted); font-size:13px; font-weight:800;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin:10px 2px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
     }
-    .pagination { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
+
+    .pagination {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:10px 0 14px;
+    }
+
     .page-btn {
-      background:#fff; color:var(--text); border:1px solid var(--line);
-      padding:8px 12px; border-radius:999px; font-size:13px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
     }
-    .page-btn.active { background:var(--brand); color:#fff; border-color:var(--brand); }
-    .list { display:grid; gap:10px; }
+
+    .page-btn.active {
+      background:var(--brand);
+      color:#fff;
+      border-color:var(--brand);
+    }
+
+    .list {
+      display:grid;
+      gap:10px;
+    }
+
     .song-card {
-      display:grid; grid-template-columns:54px 1fr; gap:12px; align-items:center;
-      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-      box-shadow:0 4px 14px rgba(15,23,42,.05); padding:12px;
+      display:grid;
+      grid-template-columns:54px 1fr;
+      gap:12px;
+      align-items:center;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 4px 14px rgba(15,23,42,.05);
+      padding:12px;
     }
+
     .seq {
-      width:48px; height:48px; display:flex; align-items:center; justify-content:center;
-      border-radius:16px; background:#f1f5f9; color:#64748b; font-size:13px; font-weight:900;
+      width:48px;
+      height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:16px;
+      background:#f1f5f9;
+      color:#64748b;
+      font-size:13px;
+      font-weight:900;
     }
-    .song-name { font-size:16px; font-weight:900; line-height:1.35; word-break:break-word; }
-    .artist { margin-top:4px; color:var(--muted); font-size:13px; word-break:break-word; }
+
+    .song-name {
+      font-size:16px;
+      font-weight:900;
+      line-height:1.35;
+      word-break:break-word;
+    }
 
     .artist-row {
       display:flex;
@@ -130,17 +308,23 @@
       gap:8px;
       margin-top:4px;
     }
-    .artist-row .artist {
+
+    .artist {
       margin-top:0;
+      color:var(--muted);
+      font-size:13px;
+      word-break:break-word;
       min-width:0;
       flex:1;
     }
+
     .song-tags {
       margin-top:6px;
       display:flex;
       gap:6px;
       flex-wrap:wrap;
     }
+
     .song-tag {
       font-size:12px;
       color:#0284c7;
@@ -148,6 +332,7 @@
       border-radius:999px;
       padding:3px 8px;
     }
+
     .copy-btn {
       flex-shrink:0;
       border:1px solid #bae6fd;
@@ -158,28 +343,78 @@
       font-size:12px;
       font-weight:800;
     }
-    .copy-btn:hover {
-      background:#e0f2fe;
+
+    .copy-btn:hover { background:#e0f2fe; }
+
+    mark {
+      background:#fef3c7;
+      color:inherit;
+      padding:0 2px;
+      border-radius:4px;
     }
-    mark { background:#fef3c7; color:inherit; padding:0 2px; border-radius:4px; }
-    .empty,.loading,.error {
-      background:#fff; border:1px dashed var(--line); border-radius:20px; padding:28px 16px;
-      text-align:center; color:var(--muted); line-height:1.7;
+
+    .empty,
+    .loading,
+    .error {
+      background:#fff;
+      border:1px dashed var(--line);
+      border-radius:20px;
+      padding:28px 16px;
+      text-align:center;
+      color:var(--muted);
+      line-height:1.7;
     }
-    .error { color:#b91c1c; background:#fef2f2; border-color:#fecaca; }
-    .footer { margin-top:24px; text-align:center; color:var(--muted); font-size:12px; }
+
+    .error {
+      color:#b91c1c;
+      background:#fef2f2;
+      border-color:#fecaca;
+    }
+
+    .footer {
+      margin-top:24px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+    }
+
     @media (max-width:560px) {
-      .app { padding:14px 12px 32px; }
-      .hero { padding:18px; border-radius:24px; }
+      .app {
+        padding:14px 12px 32px;
+      }
+
+      .hero {
+        padding:18px;
+        border-radius:24px;
+      }
+
       h1 { font-size:26px; }
+
       .stats { grid-template-columns:repeat(3,1fr); }
+
       .stat { padding:10px 6px; }
+
       .stat .value { font-size:18px; }
-      .toolbar { margin:0 -12px 14px; padding:10px 12px; }
-      .search-box { display:grid; grid-template-columns:1fr auto auto; gap:8px; }
+
+      .toolbar {
+        margin:0 -12px 14px;
+        padding:10px 12px;
+      }
+
+      .search-box {
+        display:grid;
+        grid-template-columns:1fr auto auto;
+        gap:8px;
+      }
+
       button { padding:13px 12px; }
+
       .song-card { grid-template-columns:48px 1fr; }
-      .seq { width:44px; height:44px; }
+
+      .seq {
+        width:44px;
+        height:44px;
+      }
     }
   </style>
 </head>
@@ -190,10 +425,20 @@
       <h1 id="title">歌单查询</h1>
       <p class="desc" id="desc">输入歌名或歌手即可查询。适合直播间点歌前快速确认曲库。</p>
       <a id="liveLink" class="live-link" href="#" target="_blank" rel="noopener">进入直播间</a>
+
       <div class="stats">
-        <div class="stat"><div class="value" id="totalCount">--</div><div class="label">收录歌曲</div></div>
-        <div class="stat"><div class="value" id="resultCount">--</div><div class="label">当前结果</div></div>
-        <div class="stat"><div class="value" id="artistCount">--</div><div class="label">歌手数</div></div>
+        <div class="stat">
+          <div class="value" id="totalCount">--</div>
+          <div class="label">收录歌曲</div>
+        </div>
+        <div class="stat">
+          <div class="value" id="resultCount">--</div>
+          <div class="label">当前结果</div>
+        </div>
+        <div class="stat">
+          <div class="value" id="artistCount">--</div>
+          <div class="label">歌手数</div>
+        </div>
       </div>
     </section>
 
@@ -245,7 +490,7 @@
     };
 
     const params = new URLSearchParams(window.location.search);
-    const streamer = params.get("streamer") || "miyu";
+    const streamer = (params.get("streamer") || "miyu").toLowerCase();
     const JSON_PATH = "./" + streamer + ".json";
 
     const PAGE_SIZE = 100;
@@ -268,12 +513,16 @@
     let selectedStyle = params.get("style") || "全部";
 
     const S2T_CHAR_MAP = {
-      "爱":"愛","碍":"礙","暗":"暗","罢":"罷","摆":"擺","办":"辦","帮":"幫","宝":"寶","报":"報","备":"備","贝":"貝","笔":"筆","毕":"畢","边":"邊","变":"變","别":"別","宾":"賓","冰":"冰","并":"並","补":"補","才":"才","参":"參","残":"殘","藏":"藏","层":"層","缠":"纏","产":"產","长":"長","场":"場","尝":"嘗","车":"車","尘":"塵","陈":"陳","称":"稱","成":"成","迟":"遲","齿":"齒","冲":"衝","丑":"醜","出":"出","处":"處","传":"傳","创":"創","从":"從","错":"錯","达":"達","带":"帶","单":"單","当":"當","挡":"擋","党":"黨","灯":"燈","邓":"鄧","点":"點","电":"電","淀":"澱","东":"東","动":"動","冻":"凍","独":"獨","断":"斷","对":"對","队":"隊","儿":"兒","发":"發","范":"範","飞":"飛","风":"風","凤":"鳳","复":"復","盖":"蓋","干":"乾","赶":"趕","个":"個","给":"給","宫":"宮","够":"夠","关":"關","观":"觀","广":"廣","归":"歸","过":"過","还":"還","汉":"漢","号":"號","合":"合","后":"後","护":"護","华":"華","画":"畫","怀":"懷","坏":"壞","欢":"歡","黄":"黃","会":"會","汇":"匯","几":"幾","记":"記","际":"際","继":"繼","家":"家","价":"價","见":"見","将":"將","讲":"講","杰":"傑","尽":"盡","进":"進","经":"經","旧":"舊","觉":"覺","开":"開","来":"來","蓝":"藍","乐":"樂","泪":"淚","类":"類","离":"離","里":"裡","礼":"禮","丽":"麗","连":"連","恋":"戀","两":"兩","亮":"亮","灵":"靈","刘":"劉","龙":"龍","楼":"樓","录":"錄","乱":"亂","伦":"倫","吗":"嗎","买":"買","卖":"賣","满":"滿","么":"麼","门":"門","梦":"夢","弥":"彌","面":"麵","庙":"廟","灭":"滅","鸣":"鳴","谋":"謀","难":"難","脑":"腦","内":"內","你":"你","宁":"寧","诺":"諾","盘":"盤","鹏":"鵬","凭":"憑","气":"氣","千":"千","迁":"遷","牵":"牽","浅":"淺","强":"強","桥":"橋","亲":"親","轻":"輕","清":"清","庆":"慶","穷":"窮","秋":"秋","权":"權","让":"讓","热":"熱","认":"認","荣":"榮","软":"軟","润":"潤","若":"若","伤":"傷","声":"聲","圣":"聖","胜":"勝","时":"時","实":"實","识":"識","势":"勢","适":"適","释":"釋","书":"書","术":"術","树":"樹","帅":"帥","双":"雙","谁":"誰","说":"說","丝":"絲","苏":"蘇","随":"隨","孙":"孫","台":"台","态":"態","谈":"談","汤":"湯","体":"體","条":"條","听":"聽","头":"頭","图":"圖","团":"團","万":"萬","网":"網","为":"為","伟":"偉","温":"溫","问":"問","我":"我","无":"無","雾":"霧","习":"習","戏":"戲","细":"細","虾":"蝦","吓":"嚇","闲":"閒","现":"現","乡":"鄉","响":"響","想":"想","向":"向","萧":"蕭","晓":"曉","写":"寫","谢":"謝","心":"心","兴":"興","须":"須","许":"許","学":"學","雪":"雪","寻":"尋","压":"壓","亚":"亞","严":"嚴","颜":"顏","阳":"陽","样":"樣","摇":"搖","遥":"遙","药":"藥","爷":"爺","叶":"葉","页":"頁","业":"業","医":"醫","亿":"億","忆":"憶","义":"義","艺":"藝","阴":"陰","应":"應","拥":"擁","优":"優","忧":"憂","游":"遊","鱼":"魚","语":"語","郁":"鬱","园":"園","圆":"圓","远":"遠","愿":"願","约":"約","跃":"躍","云":"雲","杂":"雜","赞":"讚","脏":"髒","张":"張","赵":"趙","这":"這","着":"著","真":"真","阵":"陣","郑":"鄭","只":"只","钟":"鍾","种":"種","众":"眾","周":"周","猪":"豬","转":"轉","庄":"莊","装":"裝","准":"準","总":"總","纵":"縱","组":"組","钻":"鑽"
+      "爱":"愛","碍":"礙","罢":"罷","摆":"擺","办":"辦","帮":"幫","宝":"寶","报":"報","备":"備","贝":"貝","笔":"筆","毕":"畢","边":"邊","变":"變","别":"別","宾":"賓","并":"並","补":"補","参":"參","残":"殘","层":"層","缠":"纏","产":"產","长":"長","场":"場","尝":"嘗","车":"車","尘":"塵","陈":"陳","称":"稱","迟":"遲","齿":"齒","冲":"衝","丑":"醜","处":"處","传":"傳","创":"創","从":"從","错":"錯","达":"達","带":"帶","单":"單","当":"當","挡":"擋","党":"黨","灯":"燈","邓":"鄧","点":"點","电":"電","淀":"澱","东":"東","动":"動","冻":"凍","独":"獨","断":"斷","对":"對","队":"隊","儿":"兒","发":"發","范":"範","飞":"飛","风":"風","凤":"鳳","复":"復","盖":"蓋","赶":"趕","个":"個","给":"給","宫":"宮","够":"夠","关":"關","观":"觀","广":"廣","归":"歸","过":"過","还":"還","汉":"漢","后":"後","护":"護","华":"華","画":"畫","怀":"懷","坏":"壞","欢":"歡","黄":"黃","会":"會","汇":"匯","几":"幾","记":"記","际":"際","继":"繼","价":"價","见":"見","将":"將","讲":"講","杰":"傑","尽":"盡","进":"進","经":"經","旧":"舊","觉":"覺","开":"開","来":"來","蓝":"藍","乐":"樂","泪":"淚","类":"類","离":"離","里":"裡","礼":"禮","丽":"麗","连":"連","恋":"戀","两":"兩","灵":"靈","刘":"劉","龙":"龍","楼":"樓","录":"錄","乱":"亂","伦":"倫","吗":"嗎","买":"買","卖":"賣","满":"滿","么":"麼","门":"門","梦":"夢","弥":"彌","面":"麵","庙":"廟","灭":"滅","鸣":"鳴","谋":"謀","难":"難","脑":"腦","内":"內","宁":"寧","诺":"諾","盘":"盤","鹏":"鵬","凭":"憑","气":"氣","迁":"遷","牵":"牽","浅":"淺","强":"強","桥":"橋","亲":"親","轻":"輕","庆":"慶","穷":"窮","权":"權","让":"讓","热":"熱","认":"認","荣":"榮","软":"軟","润":"潤","伤":"傷","声":"聲","圣":"聖","胜":"勝","时":"時","实":"實","识":"識","势":"勢","适":"適","释":"釋","书":"書","术":"術","树":"樹","帅":"帥","双":"雙","谁":"誰","说":"說","丝":"絲","苏":"蘇","随":"隨","孙":"孫","态":"態","谈":"談","汤":"湯","体":"體","条":"條","听":"聽","头":"頭","图":"圖","团":"團","万":"萬","网":"網","为":"為","伟":"偉","温":"溫","问":"問","无":"無","雾":"霧","习":"習","戏":"戲","细":"細","虾":"蝦","吓":"嚇","闲":"閒","现":"現","乡":"鄉","响":"響","萧":"蕭","晓":"曉","写":"寫","谢":"謝","兴":"興","须":"須","许":"許","学":"學","寻":"尋","压":"壓","亚":"亞","严":"嚴","颜":"顏","阳":"陽","样":"樣","摇":"搖","遥":"遙","药":"藥","爷":"爺","叶":"葉","页":"頁","业":"業","医":"醫","亿":"億","忆":"憶","义":"義","艺":"藝","阴":"陰","应":"應","拥":"擁","优":"優","忧":"憂","游":"遊","鱼":"魚","语":"語","郁":"鬱","园":"園","圆":"圓","远":"遠","愿":"願","约":"約","跃":"躍","云":"雲","杂":"雜","赞":"讚","脏":"髒","张":"張","赵":"趙","这":"這","着":"著","阵":"陣","郑":"鄭","钟":"鍾","种":"種","众":"眾","猪":"豬","转":"轉","庄":"莊","装":"裝","准":"準","总":"總","纵":"縱","组":"組","钻":"鑽"
     };
 
     const T2S_CHAR_MAP = Object.fromEntries(
       Object.entries(S2T_CHAR_MAP).map(([s, t]) => [t, s])
     );
+
+    const hasOpenCC = window.OpenCC && typeof OpenCC.Converter === "function";
+    const openccToTraditional = hasOpenCC ? OpenCC.Converter({ from: "cn", to: "tw" }) : null;
+    const openccToSimplified = hasOpenCC ? OpenCC.Converter({ from: "tw", to: "cn" }) : null;
 
     function normalizeText(value) {
       return String(value == null ? "" : value)
@@ -286,10 +535,6 @@
     function convertByMap(text, map) {
       return Array.from(text).map((char) => map[char] || char).join("");
     }
-
-    const hasOpenCC = window.OpenCC && typeof OpenCC.Converter === "function";
-    const openccToTraditional = hasOpenCC ? OpenCC.Converter({ from: "cn", to: "tw" }) : null;
-    const openccToSimplified = hasOpenCC ? OpenCC.Converter({ from: "tw", to: "cn" }) : null;
 
     function toTraditionalText(value) {
       const text = normalizeText(value);
@@ -343,7 +588,6 @@
         await navigator.clipboard.writeText(text);
         alert("已复制：" + text);
       } catch (error) {
-        console.error("copy failed:", error);
         const textarea = document.createElement("textarea");
         textarea.value = text;
         document.body.appendChild(textarea);
@@ -379,6 +623,7 @@
       const id = String(item.id || ("song_" + index + "_" + seq));
       const style = item.style ? String(item.style).trim() : "";
       const remarks = item.remarks ? String(item.remarks).trim() : "";
+      const version = item.version || null;
 
       return {
         id,
@@ -387,8 +632,8 @@
         artist,
         style,
         remarks,
-        version: item.version || null,
-        searchKey: buildSearchKey(name + " " + artist + " " + style + " " + remarks + " " + (item.version || ""))
+        version,
+        searchKey: buildSearchKey(name + " " + artist + " " + style + " " + remarks + " " + (version || ""))
       };
     }
 
@@ -396,46 +641,17 @@
       if (!style) return [];
 
       return String(style)
-        .split(",") // 只拆逗號，不拆 /
+        .split(",")
         .map((s) => s.trim())
         .filter(Boolean);
     }
 
     function applyStreamerUi() {
-  const config = STREAMER_CONFIG[streamer] || {
-    title: "歌单查询",
-    eyebrow: "SONGBOOK",
-    desc: "当前歌单：" + streamer + " · 输入歌名或歌手即可查询",
-    liveUrl: ""
-  };
-
-  document.title = config.title;
-  $("title").textContent = config.title;
-  $("eyebrow").textContent = config.eyebrow;
-  $("desc").textContent = config.desc;
-  $("jsonHint").innerHTML = "正在读取：<b>" + escapeHtml(JSON_PATH) + "</b>";
-
-  const liveLink = $("liveLink");
-
-  if (config.liveUrl) {
-    liveLink.href = config.liveUrl;
-    liveLink.style.display = "inline-flex";
-  } else {
-    liveLink.href = "#";
-    liveLink.style.display = "none";
-  }
-}
-
-  const liveLink = $("liveLink");
-
-  if (config.liveUrl) {
-    liveLink.href = config.liveUrl;
-    liveLink.style.display = "inline-flex";
-  } else {
-    liveLink.href = "#";
-    liveLink.style.display = "none";
-  }
-}
+      const config = STREAMER_CONFIG[streamer] || {
+        title: "歌单查询",
+        eyebrow: "SONGBOOK",
+        desc: "当前歌单：" + streamer + " · 输入歌名或歌手即可查询",
+        liveUrl: ""
       };
 
       document.title = config.title;
@@ -443,6 +659,18 @@
       $("eyebrow").textContent = config.eyebrow;
       $("desc").textContent = config.desc;
       $("jsonHint").innerHTML = "正在读取：<b>" + escapeHtml(JSON_PATH) + "</b>";
+
+      const liveLink = $("liveLink");
+
+      if (config.liveUrl) {
+        liveLink.href = config.liveUrl;
+        liveLink.target = "_blank";
+        liveLink.rel = "noopener";
+        liveLink.style.display = "inline-flex";
+      } else {
+        liveLink.href = "#";
+        liveLink.style.display = "none";
+      }
     }
 
     async function loadSongs() {
@@ -496,7 +724,7 @@
         "全部",
         ...Array.from(
           new Set(
-            songs.flatMap((s) => parseStyles(s.style))
+            songs.flatMap((song) => parseStyles(song.style))
           )
         ).sort((a, b) => a.localeCompare(b, "zh-Hans-CN"))
       ];
@@ -527,10 +755,14 @@
       const container = $("styleFilters");
       const styles = getStyleOptions();
 
+      if (!styles.includes(selectedStyle)) {
+        selectedStyle = "全部";
+      }
+
       container.innerHTML = styles.map((style) =>
         '<button type="button" class="filter-btn ' +
         (style === selectedStyle ? "active" : "") +
-        '" data-style="' + escapeHtml(style) + '">' +
+        '" data-style="' + escapeAttr(style) + '">' +
         escapeHtml(style) +
         '</button>'
       ).join("");
@@ -633,7 +865,7 @@
       renderPagination(allResults.length, keyword);
 
       list.innerHTML = pageResults.map((song) => (
-        '<article class="song-card" id="song-' + escapeHtml(song.id) + '">' +
+        '<article class="song-card" id="song-' + escapeAttr(song.id) + '">' +
           '<div class="seq">' + escapeHtml(song.seq) + '</div>' +
           '<div>' +
             '<div class="song-name">' + highlight(song.name, keyword) + '</div>' +
@@ -643,9 +875,8 @@
                 escapeAttr("点歌 " + song.name) +
               '">复制</button>' +
             '</div>' +
-            
             '<div class="song-tags">' +
-              parseStyles(song.style).map((style) => '<span class="song-tag">' + escapeHtml(style) + '</span>').join('') +
+              parseStyles(song.style).map((style) => '<span class="song-tag">' + escapeHtml(style) + '</span>').join("") +
             '</div>' +
           '</div>' +
         '</article>'
