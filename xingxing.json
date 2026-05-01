@@ -14859,21 +14859,12 @@
     "remarks": ""
   },
   {
-    "id": "pool_71778973-086c-4877-9a99-0d27fff09b54",
+    "id": "pool_0cb13749-d05e-4db4-81d5-276d56c7f28e",
     "seq": 1652,
-    "name": "同步測試歌",
-    "songName": "同步測試歌",
-    "artist": "系統測試",
+    "name": "只在DB的歌",
+    "songName": "只在DB的歌",
+    "artist": "測試",
     "style": "流行",
-    "remarks": "高反馈"
-  },
-  {
-    "id": "pool_75b94c38-d54b-4aed-b095-85e6a9bd3ad5",
-    "seq": 1653,
-    "name": "只新增一首",
-    "songName": "只新增一首",
-    "artist": "测试",
-    "style": "流行",
-    "remarks": "高反馈"
+    "remarks": ""
   }
 ]
