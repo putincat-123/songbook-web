@@ -115,6 +115,44 @@
   font-size: 14px;
   color: #6b7280;
 }
+    .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.page-btn {
+  background: #fff;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.page-btn.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+@media (max-width: 560px) {
+  .search-box {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 8px;
+  }
+
+  input {
+    min-width: 0;
+  }
+
+  .toolbar {
+    margin: 0 -12px 14px;
+    padding: 10px 12px;
+  }
+}
   </style>
 </head>
 <body>
@@ -145,6 +183,7 @@
       <span id="keywordText"></span>
     </div>
 
+    <div id="pagination" class="pagination"></div>
     <section id="list" class="list">
       <div class="loading">正在载入歌单...</div>
     </section>
@@ -162,8 +201,9 @@
     const streamer = params.get("streamer") || "miyu";
     const JSON_PATH = `./${streamer}.json`;
 
-    const MAX_INITIAL = 80;
+    const PAGE_SIZE = 100;
     const MAX_SEARCH = 300;
+    let currentPage = 1;
 
     const $ = (id) => document.getElementById(id);
     const searchInput = $("searchInput");
@@ -254,12 +294,61 @@
     }
 
     function getFilteredSongs() {
-      const keyword = searchInput.value.trim();
-      const key = normalizeText(keyword);
-      if (!key) return songs.slice(0, MAX_INITIAL);
-      return songs.filter((song) => song.searchKey.includes(key)).slice(0, MAX_SEARCH);
-    }
+  const keyword = searchInput.value.trim();
+  const key = normalizeText(keyword);
 
+  if (!key) {
+    return songs;
+  }
+
+  return songs
+    .filter((song) => song.searchKey.includes(key))
+    .slice(0, MAX_SEARCH);
+}
+function getPagedResults(results) {
+  const keyword = searchInput.value.trim();
+
+  if (keyword) {
+    return results;
+  }
+
+  const start = (currentPage - 1) * PAGE_SIZE;
+  return results.slice(start, start + PAGE_SIZE);
+}
+
+function renderPagination(total) {
+  const pagination = $("pagination");
+  const keyword = searchInput.value.trim();
+
+  if (keyword || randomSong || total <= PAGE_SIZE) {
+    pagination.innerHTML = "";
+    return;
+  }
+
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+
+  pagination.innerHTML = Array.from({ length: totalPages }, (_, i) => {
+    const page = i + 1;
+    return `
+      <button
+        type="button"
+        class="page-btn ${page === currentPage ? "active" : ""}"
+        data-page="${page}"
+      >
+        ${page}
+      </button>
+    `;
+  }).join("");
+
+  pagination.querySelectorAll(".page-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentPage = Number(btn.dataset.page);
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+}
+    
     function render() {
       const keyword = searchInput.value.trim();
 
@@ -267,16 +356,18 @@ if (randomSong && !keyword) {
   currentResults = [randomSong];
   resultText.textContent = "随机抽中 1 首歌曲";
 } else {
-  currentResults = getFilteredSongs();
+  const allResults = getFilteredSongs();
+currentResults = getPagedResults(allResults);
   resultText.textContent = keyword
     ? `找到 ${currentResults.length} 首相关歌曲`
-    : `预览前 ${Math.min(MAX_INITIAL, songs.length)} 首歌曲`;
+    : `第 ${currentPage} 页 / 共 ${Math.ceil(allResults.length / PAGE_SIZE)} 页`;
 }
 
-resultCount.textContent = currentResults.length;
+resultCount.textContent = allResults.length;
 keywordText.textContent = keyword ? `关键词：${keyword}` : "";
 
       if (!songs.length) {
+        renderPagination(allResults.length);
         list.innerHTML = `<div class="empty">目前没有歌曲资料。</div>`;
         resultText.textContent = "暂无资料";
         return;
@@ -316,6 +407,9 @@ keywordText.textContent = keyword ? `关键词：${keyword}` : "";
     searchInput.addEventListener("input", () => {
   randomSong = null;
   lastRandomId = null;
+  currentPage = 1;
+  $("randomResult").style.display = "none";
+  $("randomResult").innerHTML = "";
   render();
 });
 
@@ -323,6 +417,14 @@ $("clearBtn").addEventListener("click", () => {
   searchInput.value = "";
   randomSong = null;
   lastRandomId = null;
+  currentPage = 1;
+
+  $("randomResult").style.display = "none";
+  $("randomResult").innerHTML = "";
+
+  render();
+  searchInput.focus();
+});
 
   $("randomResult").style.display = "none";
   $("randomResult").innerHTML = "";
