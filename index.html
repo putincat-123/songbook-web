@@ -406,6 +406,14 @@
         title: "歌单查询",
         eyebrow: "SONGBOOK",
         desc: "当前歌单：" + streamer + " · 输入歌名或歌手即可查询"
+        const liveLink = document.getElementById("liveLink");
+
+          if (config.liveUrl) {
+            liveLink.href = config.liveUrl;
+            liveLink.style.display = "inline-flex";
+          } else {
+            liveLink.style.display = "none";
+          }
       };
 
       document.title = config.title;
