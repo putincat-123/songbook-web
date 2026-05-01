@@ -178,9 +178,6 @@
       <div class="filter-title">曲风筛选</div>
       <div id="styleFilters" class="filters"></div>
 
-      <div class="filter-title">标签筛选</div>
-      <div id="remarkFilters" class="filters"></div>
-
       <div id="randomResult" class="random-result" style="display:none;"></div>
     </section>
 
@@ -228,7 +225,6 @@
     let songs = [];
     let currentPage = 1;
     let selectedStyle = params.get("style") || "全部";
-    let selectedRemark = params.get("remark") || "全部";
 
     const S2T_CHAR_MAP = {
       "爱":"愛","碍":"礙","暗":"暗","罢":"罷","摆":"擺","办":"辦","帮":"幫","宝":"寶","报":"報","备":"備","贝":"貝","笔":"筆","毕":"畢","边":"邊","变":"變","别":"別","宾":"賓","冰":"冰","并":"並","补":"補","才":"才","参":"參","残":"殘","藏":"藏","层":"層","缠":"纏","产":"產","长":"長","场":"場","尝":"嘗","车":"車","尘":"塵","陈":"陳","称":"稱","成":"成","迟":"遲","齿":"齒","冲":"衝","丑":"醜","出":"出","处":"處","传":"傳","创":"創","从":"從","错":"錯","达":"達","带":"帶","单":"單","当":"當","挡":"擋","党":"黨","灯":"燈","邓":"鄧","点":"點","电":"電","淀":"澱","东":"東","动":"動","冻":"凍","独":"獨","断":"斷","对":"對","队":"隊","儿":"兒","发":"發","范":"範","飞":"飛","风":"風","凤":"鳳","复":"復","盖":"蓋","干":"乾","赶":"趕","个":"個","给":"給","宫":"宮","够":"夠","关":"關","观":"觀","广":"廣","归":"歸","过":"過","还":"還","汉":"漢","号":"號","合":"合","后":"後","护":"護","华":"華","画":"畫","怀":"懷","坏":"壞","欢":"歡","黄":"黃","会":"會","汇":"匯","几":"幾","记":"記","际":"際","继":"繼","家":"家","价":"價","见":"見","将":"將","讲":"講","杰":"傑","尽":"盡","进":"進","经":"經","旧":"舊","觉":"覺","开":"開","来":"來","蓝":"藍","乐":"樂","泪":"淚","类":"類","离":"離","里":"裡","礼":"禮","丽":"麗","连":"連","恋":"戀","两":"兩","亮":"亮","灵":"靈","刘":"劉","龙":"龍","楼":"樓","录":"錄","乱":"亂","伦":"倫","吗":"嗎","买":"買","卖":"賣","满":"滿","么":"麼","门":"門","梦":"夢","弥":"彌","面":"麵","庙":"廟","灭":"滅","鸣":"鳴","谋":"謀","难":"難","脑":"腦","内":"內","你":"你","宁":"寧","诺":"諾","盘":"盤","鹏":"鵬","凭":"憑","气":"氣","千":"千","迁":"遷","牵":"牽","浅":"淺","强":"強","桥":"橋","亲":"親","轻":"輕","清":"清","庆":"慶","穷":"窮","秋":"秋","权":"權","让":"讓","热":"熱","认":"認","荣":"榮","软":"軟","润":"潤","若":"若","伤":"傷","声":"聲","圣":"聖","胜":"勝","时":"時","实":"實","识":"識","势":"勢","适":"適","释":"釋","书":"書","术":"術","树":"樹","帅":"帥","双":"雙","谁":"誰","说":"說","丝":"絲","苏":"蘇","随":"隨","孙":"孫","台":"台","态":"態","谈":"談","汤":"湯","体":"體","条":"條","听":"聽","头":"頭","图":"圖","团":"團","万":"萬","网":"網","为":"為","伟":"偉","温":"溫","问":"問","我":"我","无":"無","雾":"霧","习":"習","戏":"戲","细":"細","虾":"蝦","吓":"嚇","闲":"閒","现":"現","乡":"鄉","响":"響","想":"想","向":"向","萧":"蕭","晓":"曉","写":"寫","谢":"謝","心":"心","兴":"興","须":"須","许":"許","学":"學","雪":"雪","寻":"尋","压":"壓","亚":"亞","严":"嚴","颜":"顏","阳":"陽","样":"樣","摇":"搖","遥":"遙","药":"藥","爷":"爺","叶":"葉","页":"頁","业":"業","医":"醫","亿":"億","忆":"憶","义":"義","艺":"藝","阴":"陰","应":"應","拥":"擁","优":"優","忧":"憂","游":"遊","鱼":"魚","语":"語","郁":"鬱","园":"園","圆":"圓","远":"遠","愿":"願","约":"約","跃":"躍","云":"雲","杂":"雜","赞":"讚","脏":"髒","张":"張","赵":"趙","这":"這","着":"著","真":"真","阵":"陣","郑":"鄭","只":"只","钟":"鍾","种":"種","众":"眾","周":"周","猪":"豬","转":"轉","庄":"莊","装":"裝","准":"準","总":"總","纵":"縱","组":"組","钻":"鑽"
@@ -483,50 +479,6 @@
       });
     }
 
-    function getRemarkOptions() {
-      const remarkSet = new Set();
-
-      songs.forEach((song) => {
-        const raw = song.remarks || "";
-        raw
-          .split(/[、,，/｜|;；\s]+/)
-          .map((item) => item.trim())
-          .filter(Boolean)
-          .forEach((item) => remarkSet.add(item));
-      });
-
-      return ["全部", ...Array.from(remarkSet)];
-    }
-
-    function renderRemarkFilters() {
-      const container = $("remarkFilters");
-      const remarks = getRemarkOptions();
-
-      container.innerHTML = remarks.map((remark) =>
-        '<button type="button" class="filter-btn ' +
-        (remark === selectedRemark ? "active" : "") +
-        '" data-remark="' + escapeHtml(remark) + '">' +
-        escapeHtml(remark) +
-        '</button>'
-      ).join("");
-
-      container.querySelectorAll(".filter-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          selectedRemark = btn.dataset.remark || "全部";
-          currentPage = 1;
-          randomResult.style.display = "none";
-          randomResult.innerHTML = "";
-          syncUrl();
-          render();
-        });
-      });
-    }
-
-    function songMatchesRemark(song, selected) {
-      if (selected === "全部") return true;
-      return String(song.remarks || "").includes(selected);
-    }
-
     function getAllResults() {
       const keyword = searchInput.value.trim();
       const keys = getSearchVariants(keyword);
@@ -537,10 +489,6 @@
         results = results.filter((song) =>
           parseStyles(song.style).includes(selectedStyle)
         );
-      }
-
-      if (selectedRemark !== "全部") {
-        results = results.filter((song) => songMatchesRemark(song, selectedRemark));
       }
 
       if (keys.length) {
@@ -578,7 +526,6 @@
 
     function render() {
       renderStyleFilters();
-      renderRemarkFilters();
 
       const keyword = searchInput.value.trim();
       const allResults = getAllResults();
@@ -626,7 +573,6 @@
             '<div class="artist">' + highlight(song.artist || "未知歌手", keyword) + '</div>' +
             '<div class="song-tags">' +
               parseStyles(song.style).map((style) => '<span class="song-tag">' + escapeHtml(style) + '</span>').join('') +
-              (song.remarks ? '<span class="song-tag">' + escapeHtml(song.remarks) + '</span>' : '') +
             '</div>' +
             '<button type="button" class="copy-btn" data-copy="' +
               escapeAttr("点歌 " + song.name) +
