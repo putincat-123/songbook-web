@@ -268,7 +268,7 @@
         <button class="ghost" id="clearBtn">清空</button>
         <button class="primary" id="randomBtn">随机</button>
       </div>
-      <div class="hint">支持线下静态使用；请把本页面与 <b>songbook.json</b> 放在同一个资料夹。</div>
+      <div class="hint">支持线下静态使用；请把本页面与对应的 JSON（如 miyu.json）放在同一个资料夹。</div>
     </section>
 
     <div class="result-head">
@@ -436,24 +436,26 @@ const JSON_PATH = `./${streamer}.json`;
       `).join('');
     }
 
-    function drawRandomSong() {
-      if (!songs.length) return;
+function drawRandomSong() {
+  if (!songs.length) return;
 
-      const pool = searchInput.value.trim() ? currentResults : songs;
-      if (!pool.length) return;
+  const pool = searchInput.value.trim() ? currentResults : songs;
+  if (!pool.length) return;
 
-      const song = pool[Math.floor(Math.random() * pool.length)];
+  const song = pool[Math.floor(Math.random() * pool.length)];
 
-      // 不覆蓋搜尋關鍵字，避免卡住隨機
-      const cardId = `song-${song.id}`;
+  // 清空搜尋（解決你剛才的問題）
+  searchInput.value = '';
 
-      render();
+  render();
 
-      setTimeout(() => {
-        const card = document.getElementById(cardId);
-        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 50);
-    }`);
+  setTimeout(() => {
+    const card = document.getElementById(`song-${song.id}`);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, 50);
+}
         if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 50);
     }
