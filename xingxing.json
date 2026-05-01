@@ -14857,14 +14857,5 @@
     "artist": "",
     "style": "原创",
     "remarks": ""
-  },
-  {
-    "id": "pool_0cb13749-d05e-4db4-81d5-276d56c7f28e",
-    "seq": 1652,
-    "name": "只在DB的歌",
-    "songName": "只在DB的歌",
-    "artist": "測試",
-    "style": "流行",
-    "remarks": ""
   }
 ]
