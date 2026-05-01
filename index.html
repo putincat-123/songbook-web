@@ -149,7 +149,7 @@
     let songs = [];
     let currentResults = [];
     let lastRandomId = null;
-
+    let randomSong = null;
     function normalizeText(value) {
       return String(value ?? "").toLowerCase().normalize("NFKC").replace(/[\s\u3000]+/g, "").trim();
     }
@@ -234,9 +234,19 @@
 
     function render() {
       const keyword = searchInput.value.trim();
-      currentResults = getFilteredSongs();
-      resultCount.textContent = currentResults.length;
-      keywordText.textContent = keyword ? `关键词：${keyword}` : "";
+
+if (randomSong && !keyword) {
+  currentResults = [randomSong];
+  resultText.textContent = "随机抽中 1 首歌曲";
+} else {
+  currentResults = getFilteredSongs();
+  resultText.textContent = keyword
+    ? `找到 ${currentResults.length} 首相关歌曲`
+    : `预览前 ${Math.min(MAX_INITIAL, songs.length)} 首歌曲`;
+}
+
+resultCount.textContent = currentResults.length;
+keywordText.textContent = keyword ? `关键词：${keyword}` : "";
 
       if (!songs.length) {
         list.innerHTML = `<div class="empty">目前没有歌曲资料。</div>`;
@@ -250,8 +260,6 @@
         return;
       }
 
-      resultText.textContent = keyword ? `找到 ${currentResults.length} 首相关歌曲` : `预览前 ${Math.min(MAX_INITIAL, songs.length)} 首歌曲`;
-
       list.innerHTML = currentResults.map((song) => `
         <article class="song-card ${song.id === lastRandomId ? "highlight-card" : ""}" id="song-${escapeHtml(song.id)}">
           <div class="seq">${escapeHtml(song.seq)}</div>
@@ -264,28 +272,35 @@
     }
 
     function drawRandomSong() {
-      if (!songs.length) return;
-      const song = songs[Math.floor(Math.random() * songs.length)];
-      lastRandomId = song.id;
-      searchInput.value = "";
-      render();
-      setTimeout(() => {
-        const card = document.getElementById(`song-${song.id}`);
-        if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 50);
-    }
+  if (!songs.length) return;
+
+  const song = songs[Math.floor(Math.random() * songs.length)];
+
+  randomSong = song;
+  lastRandomId = song.id;
+  searchInput.value = "";
+
+  render();
+
+  setTimeout(() => {
+    const card = document.getElementById(`song-${song.id}`);
+    if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, 50);
+}
 
     searchInput.addEventListener("input", () => {
-      lastRandomId = null;
-      render();
-    });
+  randomSong = null;
+  lastRandomId = null;
+  render();
+});
 
-    $("clearBtn").addEventListener("click", () => {
-      searchInput.value = "";
-      lastRandomId = null;
-      render();
-      searchInput.focus();
-    });
+$("clearBtn").addEventListener("click", () => {
+  searchInput.value = "";
+  randomSong = null;
+  lastRandomId = null;
+  render();
+  searchInput.focus();
+});
 
     $("randomBtn").addEventListener("click", drawRandomSong);
     loadSongs();
