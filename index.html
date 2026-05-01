@@ -244,8 +244,8 @@
   <main class="app">
     <section class="hero">
       <p class="eyebrow">MIYU SONGBOOK</p>
-      <h1>谜屿歌单查询</h1>
-      <p class="desc">输入歌名或歌手即可查询。适合直播间点歌前快速确认曲库。</p>
+      <h1 id="title">歌单查询</h1>
+      <p class="desc" id="desc">输入歌名或歌手即可查询。适合直播间点歌前快速确认曲库。</p>
       <div class="stats">
         <div class="stat">
           <div class="value" id="totalCount">--</div>
@@ -284,7 +284,10 @@
   </main>
 
   <script>
-    const JSON_PATH = './songbook.json';
+    // 支援多主播：?streamer=miyu
+const params = new URLSearchParams(location.search);
+const streamer = params.get('streamer') || 'miyu';
+const JSON_PATH = `./${streamer}.json`;
     const MAX_INITIAL = 80;
     const MAX_SEARCH = 200;
 
@@ -353,6 +356,15 @@
     }
 
     async function loadSongs() {
+      // 設定標題（UI 升級）
+      const titleMap = {
+        miyu: '谜屿歌单查询',
+        other: '主播歌单查询'
+      };
+
+      document.getElementById('title').textContent = titleMap[streamer] || '歌单查询';
+
+      document.getElementById('desc').textContent = `当前歌单：${streamer} · 输入歌名或歌手即可查询`;
       try {
         const res = await fetch(JSON_PATH, { cache: 'no-store' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -426,14 +438,22 @@
 
     function drawRandomSong() {
       if (!songs.length) return;
+
       const pool = searchInput.value.trim() ? currentResults : songs;
       if (!pool.length) return;
 
       const song = pool[Math.floor(Math.random() * pool.length)];
-      searchInput.value = song.name;
+
+      // 不覆蓋搜尋關鍵字，避免卡住隨機
+      const cardId = `song-${song.id}`;
+
       render();
+
       setTimeout(() => {
-        const card = document.getElementById(`song-${song.id}`);
+        const card = document.getElementById(cardId);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 50);
+    }`);
         if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 50);
     }
