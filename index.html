@@ -88,6 +88,33 @@
       .song-card { grid-template-columns: 48px 1fr; }
       .seq { width: 44px; height: 44px; }
     }
+    .random-result {
+  margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid #bfdbfe;
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.random-label {
+  font-size: 12px;
+  font-weight: 900;
+  color: #2563eb;
+  margin-bottom: 6px;
+}
+
+.random-song {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.random-artist {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #6b7280;
+}
   </style>
 </head>
 <body>
@@ -110,6 +137,7 @@
         <button class="primary" id="randomBtn" type="button">随机</button>
       </div>
       <div class="hint" id="jsonHint">正在读取歌单 JSON...</div>
+      <div id="randomResult" class="random-result" style="display:none;"></div>
     </section>
 
     <div class="result-head">
@@ -275,17 +303,14 @@ keywordText.textContent = keyword ? `关键词：${keyword}` : "";
   if (!songs.length) return;
 
   const song = songs[Math.floor(Math.random() * songs.length)];
+  const box = $("randomResult");
 
-  randomSong = song;
-  lastRandomId = song.id;
-  searchInput.value = "";
-
-  render();
-
-  setTimeout(() => {
-    const card = document.getElementById(`song-${song.id}`);
-    if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, 50);
+  box.style.display = "block";
+  box.innerHTML = `
+    <div class="random-label">🎲 随机抽中</div>
+    <div class="random-song">${escapeHtml(song.name)}</div>
+    <div class="random-artist">${escapeHtml(song.artist || "未知歌手")}</div>
+  `;
 }
 
     searchInput.addEventListener("input", () => {
@@ -298,6 +323,10 @@ $("clearBtn").addEventListener("click", () => {
   searchInput.value = "";
   randomSong = null;
   lastRandomId = null;
+
+  $("randomResult").style.display = "none";
+  $("randomResult").innerHTML = "";
+
   render();
   searchInput.focus();
 });
