@@ -402,18 +402,40 @@
     }
 
     function applyStreamerUi() {
-      const config = STREAMER_CONFIG[streamer] || {
-        title: "歌单查询",
-        eyebrow: "SONGBOOK",
-        desc: "当前歌单：" + streamer + " · 输入歌名或歌手即可查询"
-        const liveLink = document.getElementById("liveLink");
+  const config = STREAMER_CONFIG[streamer] || {
+    title: "歌单查询",
+    eyebrow: "SONGBOOK",
+    desc: "当前歌单：" + streamer + " · 输入歌名或歌手即可查询",
+    liveUrl: ""
+  };
 
-          if (config.liveUrl) {
-            liveLink.href = config.liveUrl;
-            liveLink.style.display = "inline-flex";
-          } else {
-            liveLink.style.display = "none";
-          }
+  document.title = config.title;
+  $("title").textContent = config.title;
+  $("eyebrow").textContent = config.eyebrow;
+  $("desc").textContent = config.desc;
+  $("jsonHint").innerHTML = "正在读取：<b>" + escapeHtml(JSON_PATH) + "</b>";
+
+  const liveLink = $("liveLink");
+
+  if (config.liveUrl) {
+    liveLink.href = config.liveUrl;
+    liveLink.style.display = "inline-flex";
+  } else {
+    liveLink.href = "#";
+    liveLink.style.display = "none";
+  }
+}
+
+  const liveLink = $("liveLink");
+
+  if (config.liveUrl) {
+    liveLink.href = config.liveUrl;
+    liveLink.style.display = "inline-flex";
+  } else {
+    liveLink.href = "#";
+    liveLink.style.display = "none";
+  }
+}
       };
 
       document.title = config.title;
