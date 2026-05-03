@@ -439,10 +439,6 @@
         unparsed.push(rawLine);
         continue;
       }
-            // 如果歌名被意外截斷（例如缺數字），可以補救
-      if (/^[^\d]/.test(song) && /\d+/.test(rawSongField)) {
-        song = rawSongField; // fallback
-      }
 
       items.push({
         id: uid('preview'),
