@@ -711,10 +711,10 @@
       if(!artist) continue;
       countMap.set(artist, (countMap.get(artist) || 0) + 1);
     }
-    const popular = Array.from(countMap.entries()).filter(([,count]) => count > 10).sort((a,b)=>b[1]-a[1]);
+    const popular = Array.from(countMap.entries()).filter(([,count]) => count >= 5).sort((a,b)=>b[1]-a[1]);
     const el = $('popularArtistButtons');
     if(!popular.length) {
-      el.innerHTML = '<div class="small">目前沒有歌曲超過 10 首的歌手</div>';
+      el.innerHTML = '<div class="small">目前沒有歌曲超過 5 首的歌手</div>';
       return;
     }
     el.innerHTML = popular.map(([artist, count]) => `<button class="ghost" data-action="pick-popular-artist" data-artist="${esc(artist)}" style="margin:0 6px 6px 0;">${esc(artist)} (${count})</button>`).join('');
