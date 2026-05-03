@@ -1013,6 +1013,12 @@
 
     renderExistingSessionHint();
     refreshSessionsView();
+
+    $('filterStart').value = '';
+    $('filterEnd').value = '';
+    $('filterPeriod').value = 'all';
+    $('filterBgm').value = 'exclude';
+    
     refreshDashboard();
     poolSummaryRender();
     renderPopularArtistButtons();
