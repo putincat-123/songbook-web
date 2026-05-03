@@ -21,6 +21,7 @@
 
     body {
       margin:0;
+      overflow-x: hidden;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
       background:linear-gradient(180deg,#eff6ff 0%,#f8fafc 34%,#fff 100%);
       color:var(--text);
@@ -166,10 +167,7 @@
     }
 
     .hint {
-      margin:8px 2px 0;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.5;
+      display: none;
     }
 
     .filter-title {
@@ -430,7 +428,7 @@
       .stat .value { font-size:18px; }
 
       .toolbar {
-        margin:0 -12px 14px;
+        margin:0 0 14px;
         padding:10px 12px;
       }
 
