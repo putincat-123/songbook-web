@@ -51,7 +51,52 @@
   .session-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
   .session-items{margin-top:10px}
   .info{background:#f0f9ff;color:#075985;border:1px solid #bae6fd;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700}
+.mobile-preview {
+  display: none;
+}
 
+@media (max-width: 720px) {
+  #previewWrap {
+    display: none;
+  }
+
+  .mobile-preview {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .preview-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, .05);
+  }
+
+  .preview-title {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: var(--text);
+    word-break: break-word;
+  }
+
+  .preview-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  .preview-status {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--brand);
+  }
+}
+  
 </style>
 </head>
 <body>
@@ -89,6 +134,7 @@
       <h3>2. 解析結果預覽（可編輯）</h3>
       <div class="summary" id="parseSummary"></div>
       <div id="previewWrap" class="scroll" style="margin-top:10px"></div>
+      <div id="mobilePreview" class="mobile-preview"></div>
       <div class="btn-row">
         <button class="success" id="saveSessionBtn">確認存檔</button>
         <button class="ghost" id="resetPreviewBtn">清空預覽</button>
@@ -236,6 +282,33 @@
   const uid = (p='id') => `${p}_${Date.now()}_${Math.random().toString(36).slice(2,8)}`;
   const esc = (s='') => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
+  function renderMobilePreview(items) {
+  const container = $('mobilePreview');
+  if (!container) return;
+
+  if (!items || !items.length) {
+    container.innerHTML = '';
+    return;
+  }
+
+  container.innerHTML = items.map(item => {
+    const rawLine = item.rawLine || '';
+    const status =
+      rawLine.includes('✅') ? '✅ 已完成' :
+      rawLine.includes('🎤') ? '🎤 演唱中' :
+      rawLine.includes('⏳') ? '⏳ 等待中' :
+      '—';
+
+    return `
+      <div class="preview-card">
+        <div class="preview-title">${esc(item.serialNo || '')}. ${esc(item.songName || '')}</div>
+        <div class="preview-meta">點歌人：${esc(item.actualRequester || '-')}</div>
+        <div class="preview-meta">代點人：${esc(item.proxySubmitter || '-')}</div>
+        <div class="preview-status">狀態：${esc(status)}</div>
+      </div>
+    `;
+  }).join('');
+}
   function readJSON(key, fallback) {
     try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)); }
     catch { return fallback; }
@@ -465,6 +538,7 @@
     if(!currentParsedItems.length) {
       sum.innerHTML = '<span class="chip">目前沒有解析結果</span>';
       wrap.innerHTML = '<div class="empty">貼上歌單後按「確定並解析」，這裡會出現可編輯表格。</div>';
+      renderMobilePreview([]);
       return;
     }
     sum.innerHTML = `<span class="chip">有效歌曲 ${currentParsedItems.length} 筆</span><span class="chip">可直接修改歌名 / 備註 / 點歌人 / BGM</span>`;
@@ -483,6 +557,7 @@
     });
     html += '</tbody></table></div>';
     wrap.innerHTML = html;
+    renderMobilePreview(currentParsedItems);
   }
 
   function renderUnparsed(lines) {
