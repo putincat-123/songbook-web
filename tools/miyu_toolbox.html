@@ -210,10 +210,9 @@
       <h3>曲庫資料（song pool）</h3>
       <div class="btn-row">
         <button class="primary" id="exportPoolBtn">匯出曲庫 JSON</button>
-        <label class="ghost" style="display:inline-flex;align-items:center;gap:8px;cursor:pointer;padding:11px 14px;border-radius:12px;">
-          匯入曲庫 JSON
-          <input type="file" id="importPoolFile" accept=".json,application/json" style="display:none">
-        </label>
+        <button class="secondary" id="reloadPoolBtn">
+          🔄 重新載入線上曲庫
+        </button>
       </div>
       <div class="hint" style="margin-top:10px">之後如果曲庫要更新，只需要匯入新的曲庫 JSON，不會影響既有點歌紀錄。</div>
     </div>
@@ -1071,60 +1070,7 @@
       e.target.value = '';
     });
 
-    $('importPoolFile').addEventListener('change', async e => {
-  const file = e.target.files && e.target.files[0];
-  if(!file) return;
-
-  try {
-    const parsed = JSON.parse(await file.text());
-
-    let rawPool = [];
-
-    if (Array.isArray(parsed)) {
-      rawPool = parsed;
-    } else if (parsed && Array.isArray(parsed.songs)) {
-      rawPool = parsed.songs;
-    } else if (parsed && Array.isArray(parsed.data)) {
-      rawPool = parsed.data;
-    } else {
-      throw new Error('bad');
-    }
-
-    const normalizedPool = rawPool
-      .map((item, index) => {
-        const songName = String(item.songName ?? item.name ?? '').trim();
-        const artist = item.artist == null ? '' : String(item.artist).trim();
-
-        if (!songName) return null;
-
-        return {
-          id: item.id ?? `pool_${Date.now()}_${index}`,
-          seq: Number.isFinite(Number(item.seq)) ? Number(item.seq) : index + 1,
-          songName,
-          artist,
-          version: item.version ?? null,
-        };
-      })
-      .filter(Boolean)
-      .sort((a, b) => (a.seq ?? 0) - (b.seq ?? 0));
-
-    if (!normalizedPool.length) {
-      throw new Error('empty');
-    }
-
-    writePool(normalizedPool);
-    resetRandomBag();
-    alert(`曲庫匯入完成，共 ${normalizedPool.length} 首`);
-    poolSummaryRender();
-    renderPopularArtistButtons();
-    renderDataSummary();
-  } catch {
-    alert('曲庫 JSON 格式不正確，請確認檔案是曲庫 JSON');
-  }
-
-  e.target.value = '';
-});
-
+    
     $('resetToBundledBtn').addEventListener('click', () => {
       if(!confirm('確定還原成這次打包時內建的點歌紀錄與曲庫？')) return;
       writeSessions(BUNDLED_SESSIONS);
