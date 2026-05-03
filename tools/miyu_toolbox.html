@@ -1028,22 +1028,6 @@
       $('addLastDrawToSessionBtn').dataset.artist = r.artist || '';
     });
 
-    $('addLastDrawToSessionBtn').addEventListener('click', () => {
-      const songName = $('addLastDrawToSessionBtn').dataset.songName;
-      if(!songName){
-        alert('請先在盲盒區抽到一首歌');
-        return;
-      }
-      addSongToCurrentSession({
-        songName,
-        artist: $('addLastDrawToSessionBtn').dataset.artist || '',
-        note: $('addLastDrawToSessionBtn').dataset.artist || '',
-        actualRequester: '盲盒',
-        proxySubmitter: '盲盒',
-        isBgm: false
-      });
-    });
-
     $('poolSearchBtn').addEventListener('click', () => {
       const keyword = $('poolSearchInput').value.trim().toLowerCase();
       const pool = readPool();
