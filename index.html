@@ -378,6 +378,12 @@
       font-size:12px;
     }
 
+    .section-divider {
+      margin: 14px 0 6px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+    }
+    
     .toast {
       position: fixed;
       left: 50%;
@@ -476,12 +482,12 @@
         <button class="primary" id="randomBtn" type="button">随机</button>
       </div>
 
-      <div class="hint" id="jsonHint">正在读取歌单 JSON...</div>
+      <div id="randomResult" class="random-result" style="display:none;"></div>
 
+      <div class="section-divider"></div>
+      
       <div class="filter-title">曲风筛选</div>
       <div id="styleFilters" class="filters"></div>
-
-      <div id="randomResult" class="random-result" style="display:none;"></div>
     </section>
 
     <div class="result-head">
