@@ -204,12 +204,12 @@
     }
 
     .random-result {
-      margin-top:10px;
-      background:#fff;
+      margin-top:12px;
+      background:linear-gradient(135deg,#eff6ff 0%,#ffffff 70%);
       border:1px solid #bfdbfe;
-      border-radius:18px;
+      border-radius:20px;
       padding:14px 16px;
-      box-shadow:0 4px 14px rgba(15,23,42,.05);
+      box-shadow:0 6px 18px rgba(37,99,235,.10);
     }
 
     .random-label {
@@ -220,7 +220,7 @@
     }
 
     .random-song {
-      font-size:20px;
+      font-size:21px;
       font-weight:900;
       line-height:1.4;
     }
@@ -378,6 +378,33 @@
       font-size:12px;
     }
 
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(24px + env(safe-area-inset-bottom));
+      transform: translateX(-50%) translateY(16px);
+      z-index: 9999;
+      max-width: calc(100vw - 32px);
+      background: rgba(15, 23, 42, .92);
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 800;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .24s ease;
+      box-shadow: 0 10px 28px rgba(15,23,42,.24);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
     @media (max-width:560px) {
       .app {
         padding:14px 12px 32px;
@@ -471,6 +498,8 @@
     <div class="footer">Made for songbook · 数据来自 JSON</div>
   </main>
 
+  <div id="toast" class="toast"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js"></script>
 
   <script>
@@ -511,14 +540,6 @@
     let currentPage = 1;
     let selectedStyle = params.get("style") || "全部";
 
-    const S2T_CHAR_MAP = {
-      "爱":"愛","碍":"礙","罢":"罷","摆":"擺","办":"辦","帮":"幫","宝":"寶","报":"報","备":"備","贝":"貝","笔":"筆","毕":"畢","边":"邊","变":"變","别":"別","宾":"賓","并":"並","补":"補","参":"參","残":"殘","层":"層","缠":"纏","产":"產","长":"長","场":"場","尝":"嘗","车":"車","尘":"塵","陈":"陳","称":"稱","迟":"遲","齿":"齒","冲":"衝","丑":"醜","处":"處","传":"傳","创":"創","从":"從","错":"錯","达":"達","带":"帶","单":"單","当":"當","挡":"擋","党":"黨","灯":"燈","邓":"鄧","点":"點","电":"電","淀":"澱","东":"東","动":"動","冻":"凍","独":"獨","断":"斷","对":"對","队":"隊","儿":"兒","发":"發","范":"範","飞":"飛","风":"風","凤":"鳳","复":"復","盖":"蓋","赶":"趕","个":"個","给":"給","宫":"宮","够":"夠","关":"關","观":"觀","广":"廣","归":"歸","过":"過","还":"還","汉":"漢","后":"後","护":"護","华":"華","画":"畫","怀":"懷","坏":"壞","欢":"歡","黄":"黃","会":"會","汇":"匯","几":"幾","记":"記","际":"際","继":"繼","价":"價","见":"見","将":"將","讲":"講","杰":"傑","尽":"盡","进":"進","经":"經","旧":"舊","觉":"覺","开":"開","来":"來","蓝":"藍","乐":"樂","泪":"淚","类":"類","离":"離","里":"裡","礼":"禮","丽":"麗","连":"連","恋":"戀","两":"兩","灵":"靈","刘":"劉","龙":"龍","楼":"樓","录":"錄","乱":"亂","伦":"倫","吗":"嗎","买":"買","卖":"賣","满":"滿","么":"麼","门":"門","梦":"夢","弥":"彌","面":"麵","庙":"廟","灭":"滅","鸣":"鳴","谋":"謀","难":"難","脑":"腦","内":"內","宁":"寧","诺":"諾","盘":"盤","鹏":"鵬","凭":"憑","气":"氣","迁":"遷","牵":"牽","浅":"淺","强":"強","桥":"橋","亲":"親","轻":"輕","庆":"慶","穷":"窮","权":"權","让":"讓","热":"熱","认":"認","荣":"榮","软":"軟","润":"潤","伤":"傷","声":"聲","圣":"聖","胜":"勝","时":"時","实":"實","识":"識","势":"勢","适":"適","释":"釋","书":"書","术":"術","树":"樹","帅":"帥","双":"雙","谁":"誰","说":"說","丝":"絲","苏":"蘇","随":"隨","孙":"孫","态":"態","谈":"談","汤":"湯","体":"體","条":"條","听":"聽","头":"頭","图":"圖","团":"團","万":"萬","网":"網","为":"為","伟":"偉","温":"溫","问":"問","无":"無","雾":"霧","习":"習","戏":"戲","细":"細","虾":"蝦","吓":"嚇","闲":"閒","现":"現","乡":"鄉","响":"響","萧":"蕭","晓":"曉","写":"寫","谢":"謝","兴":"興","须":"須","许":"許","学":"學","寻":"尋","压":"壓","亚":"亞","严":"嚴","颜":"顏","阳":"陽","样":"樣","摇":"搖","遥":"遙","药":"藥","爷":"爺","叶":"葉","页":"頁","业":"業","医":"醫","亿":"億","忆":"憶","义":"義","艺":"藝","阴":"陰","应":"應","拥":"擁","优":"優","忧":"憂","游":"遊","鱼":"魚","语":"語","郁":"鬱","园":"園","圆":"圓","远":"遠","愿":"願","约":"約","跃":"躍","云":"雲","杂":"雜","赞":"讚","脏":"髒","张":"張","赵":"趙","这":"這","着":"著","阵":"陣","郑":"鄭","钟":"鍾","种":"種","众":"眾","猪":"豬","转":"轉","庄":"莊","装":"裝","准":"準","总":"總","纵":"縱","组":"組","钻":"鑽"
-    };
-
-    const T2S_CHAR_MAP = Object.fromEntries(
-      Object.entries(S2T_CHAR_MAP).map(([s, t]) => [t, s])
-    );
-
     const hasOpenCC = window.OpenCC && typeof OpenCC.Converter === "function";
     const openccToTraditional = hasOpenCC ? OpenCC.Converter({ from: "cn", to: "tw" }) : null;
     const openccToSimplified = hasOpenCC ? OpenCC.Converter({ from: "tw", to: "cn" }) : null;
@@ -531,27 +552,27 @@
         .trim();
     }
 
-    function convertByMap(text, map) {
-      return Array.from(text).map((char) => map[char] || char).join("");
-    }
-
     function toTraditionalText(value) {
       const text = normalizeText(value);
       if (!text) return "";
+      if (!openccToTraditional) return text;
+
       try {
-        return normalizeText(openccToTraditional ? openccToTraditional(text) : convertByMap(text, S2T_CHAR_MAP));
+        return normalizeText(openccToTraditional(text));
       } catch (error) {
-        return normalizeText(convertByMap(text, S2T_CHAR_MAP));
+        return text;
       }
     }
 
     function toSimplifiedText(value) {
       const text = normalizeText(value);
       if (!text) return "";
+      if (!openccToSimplified) return text;
+
       try {
-        return normalizeText(openccToSimplified ? openccToSimplified(text) : convertByMap(text, T2S_CHAR_MAP));
+        return normalizeText(openccToSimplified(text));
       } catch (error) {
-        return normalizeText(convertByMap(text, T2S_CHAR_MAP));
+        return text;
       }
     }
 
@@ -582,10 +603,21 @@
       return escapeHtml(value).replaceAll("\n", " ");
     }
 
+    function showToast(message) {
+      const toast = $("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 1600);
+    }
+
     async function copyText(text) {
       try {
         await navigator.clipboard.writeText(text);
-        alert("已复制：" + text);
+        showToast("✅ 已复制：" + text);
       } catch (error) {
         const textarea = document.createElement("textarea");
         textarea.value = text;
@@ -593,7 +625,7 @@
         textarea.select();
         document.execCommand("copy");
         document.body.removeChild(textarea);
-        alert("已复制：" + text);
+        showToast("✅ 已复制：" + text);
       }
     }
 
@@ -671,21 +703,24 @@
         liveLink.style.display = "none";
       }
     }
+
     async function loadSongs() {
       if (!streamer) {
         document.title = "主播歌单";
         $("title").textContent = "主播歌单";
         $("desc").textContent = "请使用主播专属链接进入歌单";
-    
         $("liveLink").style.display = "none";
         $("jsonHint").innerHTML = "";
-    
-        list.innerHTML =
-          '<div class="empty">请通过主播专属链接进入歌单</div>';
-    
+        totalCount.textContent = "--";
+        resultCount.textContent = "--";
+        artistCount.textContent = "--";
+        resultText.textContent = "请选择主播";
+        keywordText.textContent = "";
+        pagination.innerHTML = "";
+        list.innerHTML = '<div class="empty">请通过主播专属链接进入歌单</div>';
         return;
       }
-    
+
       applyStreamerUi();
 
       let raw = [];
@@ -907,7 +942,7 @@
       if (!pool.length) {
         randomResult.style.display = "block";
         randomResult.innerHTML =
-          '<div class="random-label">🎲 随机抽歌</div>' +
+          '<div class="random-label">🎲 随机推荐</div>' +
           '<div class="random-artist">目前条件下没有可随机的歌曲</div>';
         return;
       }
@@ -916,24 +951,25 @@
 
       randomResult.style.display = "block";
       randomResult.innerHTML =
-  '<div class="artist-row">' +
-    '<div>' +
-      '<div class="random-label">🎲 随机抽中</div>' +
-      '<div class="random-song">' + escapeHtml(song.name) + '</div>' +
-      '<div class="random-artist">' +
-        escapeHtml(song.artist || "未知歌手") +
-        (song.style ? " · " + escapeHtml(song.style) : "") +
-      '</div>' +
-    '</div>' +
-    '<button type="button" class="copy-btn" data-copy="' +
-      escapeAttr("点歌 " + song.name) +
-    '">复制</button>' +
-  '</div>';
+        '<div class="artist-row">' +
+          '<div>' +
+            '<div class="random-label">🎲 随机推荐</div>' +
+            '<div class="random-song">' + escapeHtml(song.name) + '</div>' +
+            '<div class="random-artist">' +
+              escapeHtml(song.artist || "未知歌手") +
+              (song.style ? " · " + escapeHtml(song.style) : "") +
+            '</div>' +
+          '</div>' +
+          '<button type="button" class="copy-btn" data-copy="' +
+            escapeAttr("点歌 " + song.name) +
+          '">复制</button>' +
+        '</div>';
+
       randomResult.querySelectorAll(".copy-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    copyText(btn.dataset.copy || "");
-  });
-});
+        btn.addEventListener("click", () => {
+          copyText(btn.dataset.copy || "");
+        });
+      });
     }
 
     searchInput.addEventListener("input", () => {
