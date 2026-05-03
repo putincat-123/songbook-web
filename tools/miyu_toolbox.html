@@ -994,8 +994,6 @@
       if(!r) return;
       $('numberSong').textContent = r.songName;
       $('numberArtist').textContent = `${r.artist || '未知歌手'}｜${weekdayLabel(weekdayNumber())}｜${nowMonthKey()}｜輸入 ${n}`;
-      $('addLastDrawToSessionBtn').dataset.songName = r.songName;
-      $('addLastDrawToSessionBtn').dataset.artist = r.artist || '';
     });
 
     $('popularArtistButtons').addEventListener('click', e => {
@@ -1020,8 +1018,6 @@
       const r = list[Math.floor(Math.random() * list.length)];
       $('artistSong').textContent = r.songName;
       $('artistArtist').textContent = r.artist || '未知歌手';
-      $('addLastDrawToSessionBtn').dataset.songName = r.songName;
-      $('addLastDrawToSessionBtn').dataset.artist = r.artist || '';
     });
 
     $('poolSearchBtn').addEventListener('click', () => {
