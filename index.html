@@ -476,19 +476,21 @@
     </section>
 
     <section class="toolbar">
-      <div class="search-box">
-        <input id="searchInput" type="search" placeholder="搜歌名 / 歌手，例如：晴天、薛之谦、爱你" autocomplete="off" />
-        <button class="ghost" id="clearBtn" type="button">清空</button>
-        <button class="primary" id="randomBtn" type="button">随机</button>
-      </div>
+  <div class="search-box">
+    <input id="searchInput" type="search" placeholder="搜歌名 / 歌手，例如：晴天、薛之谦、爱你" autocomplete="off" />
+    <button class="ghost" id="clearBtn" type="button">清空</button>
+    <button class="primary" id="randomBtn" type="button">随机</button>
+  </div>
 
-      <div id="randomResult" class="random-result" style="display:none;"></div>
+  <div class="hint" id="jsonHint">正在读取歌单 JSON...</div>
 
-      <div class="section-divider"></div>
-      
-      <div class="filter-title">曲风筛选</div>
-      <div id="styleFilters" class="filters"></div>
-    </section>
+  <div id="randomResult" class="random-result" style="display:none;"></div>
+
+  <div class="section-divider"></div>
+
+  <div class="filter-title">曲风筛选</div>
+  <div id="styleFilters" class="filters"></div>
+</section>
 
     <div class="result-head">
       <span id="resultText">载入中...</span>
