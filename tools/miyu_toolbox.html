@@ -777,49 +777,6 @@
     return sessions.findIndex(s => s.date === date && s.period === period);
   }
 
-  function addSongToCurrentSession(songObj){
-    const date = $('sessionDate').value;
-    const period = $('sessionPeriod').value;
-    if(!date || !period){
-      alert('請先在歌單匯入頁設定日期與場次');
-      return;
-    }
-    const sessions = readSessions();
-    let idx = findSessionIndex(date, period);
-    if(idx < 0){
-      const createNew = confirm(`目前 ${date}｜${periodLabel(period)} 還沒有歌單，是否建立新歌單並加入這首歌？`);
-      if(!createNew) return;
-      sessions.push({
-        id: uid('session'),
-        date, period,
-        hostName: $('hostName').value.trim(),
-        createdAt: new Date().toISOString(),
-        rawText: '',
-        items: []
-      });
-      idx = sessions.length - 1;
-    }
-    const target = sessions[idx];
-    const nextSerial = (target.items.reduce((m, i) => Math.max(m, i.serialNo || 0), 0) || 0) + 1;
-    target.items.push({
-      serialNo: nextSerial,
-      songName: songObj.songName,
-      note: songObj.note || songObj.artist || '',
-      isBgm: !!songObj.isBgm,
-      actualRequester: songObj.actualRequester || '盲盒',
-      proxySubmitter: songObj.proxySubmitter || '盲盒',
-      rawSongField: songObj.songName,
-      rawLine: '[盲盒加入]',
-      pageNo: null,
-      totalPages: null
-    });
-    writeSessions(sessions);
-    refreshSessionsView();
-    refreshDashboard();
-    renderDataSummary();
-    alert(`已加入 ${date}｜${periodLabel(period)}：${songObj.songName}`);
-  }
-
   function copySessionSummary(sessionId){
     const session = readSessions().find(s => s.id === sessionId);
     if(!session) return;
