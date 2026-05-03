@@ -976,8 +976,6 @@
       $('randomSong').textContent = r.songName;
       $('randomArtist').textContent = r.artist || '未知歌手';
       $('drawMultiResult').innerHTML = '';
-      $('addLastDrawToSessionBtn').dataset.songName = r.songName;
-      $('addLastDrawToSessionBtn').dataset.artist = r.artist || '';
     });
 
     $('draw3Btn').addEventListener('click', () => {
