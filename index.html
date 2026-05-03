@@ -985,7 +985,13 @@
       syncUrl();
       render();
     });
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        searchInput.blur();
+      }
+    });
 
+    
     $("clearBtn").addEventListener("click", () => {
       searchInput.value = "";
       selectedStyle = "全部";
