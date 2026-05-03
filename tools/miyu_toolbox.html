@@ -298,9 +298,6 @@
 
     const loaded = await loadGithubSongPool();
 
-    if(!loaded && !localStorage.getItem(KEYS.pool)) {
-      writeJSON(KEYS.pool, BUNDLED_POOL);
-    }
   }
 
   const readSessions = () => readJSON(KEYS.sessions, []);
