@@ -283,12 +283,54 @@
   const esc = (s='') => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
   function renderMobilePreview(items) {
-  const container = $('mobilePreview');
-  if (!container) return;
-
-  if (!items || !items.length) {
-    container.innerHTML = '';
-    return;
+    const container = $('mobilePreview');
+    if (!container) return;
+  
+    if (!items || !items.length) {
+      container.innerHTML = '';
+      return;
+    }
+  
+    container.innerHTML = items.map((item, index) => {
+      const rawLine = item.rawLine || '';
+      const status =
+        rawLine.includes('✅') ? '✅ 已完成' :
+        rawLine.includes('🎤') ? '🎤 演唱中' :
+        rawLine.includes('⏳') ? '⏳ 等待中' :
+        '—';
+  
+      return `
+        <div class="preview-card">
+          <div class="preview-title">${esc(item.serialNo || '')}. ${esc(item.songName || '')}</div>
+  
+          <label>歌名</label>
+          <input data-mobile-edit="${index}" data-field="songName" value="${esc(item.songName || '')}">
+  
+          <label style="margin-top:8px">點歌人</label>
+          <input data-mobile-edit="${index}" data-field="actualRequester" value="${esc(item.actualRequester || '')}">
+  
+          <label style="margin-top:8px">代點人</label>
+          <input data-mobile-edit="${index}" data-field="proxySubmitter" value="${esc(item.proxySubmitter || '')}">
+  
+          <div class="preview-status" style="margin-top:8px">狀態：${esc(status)}</div>
+        </div>
+      `;
+    }).join('');
+  
+    container.querySelectorAll('[data-mobile-edit]').forEach(input => {
+      input.addEventListener('input', e => {
+        const index = Number(e.target.dataset.mobileEdit);
+        const field = e.target.dataset.field;
+  
+        if (!currentParsedItems[index]) return;
+  
+        currentParsedItems[index][field] = e.target.value;
+  
+        if (field === 'songName') {
+          currentParsedItems[index].rawSongField = e.target.value;
+        }
+      });
+    });
   }
 
   container.innerHTML = items.map(item => {
