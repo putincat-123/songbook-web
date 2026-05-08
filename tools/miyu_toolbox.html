@@ -295,7 +295,7 @@
   const API_BASE_URL = "https://streamer-songbook.vercel.app";
     
   let currentParsedItems = [];
-
+  
   const $ = id => document.getElementById(id);
   const todayISO = () => { const d=new Date(); const tz=d.getTimezoneOffset()*60000; return new Date(d-tz).toISOString().slice(0,10); };
   const nowMonthKey = () => { const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`; };
@@ -305,6 +305,10 @@
   const uid = (p='id') => `${p}_${Date.now()}_${Math.random().toString(36).slice(2,8)}`;
   const esc = (s='') => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
+  let hotRecommendOnlyMissing = true;
+  const HOT_API_BASE =
+  "https://streamer-songbook.vercel.app/api/recommendations/qq-hot";
+  
   function renderMobilePreview(items) {
   const container = $('mobilePreview');
   if (!container) return;
@@ -966,6 +970,92 @@
     $('dataSummary').innerHTML = `<span class="chip">點歌場次 ${sessions.length}</span><span class="chip">點歌紀錄 ${items.length}</span><span class="chip">曲庫 ${pool.length} 首</span>`;
   }
 
+  async function loadHotRecommendations() {
+  const resultWrap = document.getElementById("hotRecommendResult");
+  const summaryWrap = document.getElementById("hotRecommendSummary");
+
+  resultWrap.innerHTML = `
+    <div class="empty">
+      載入熱門推薦中...
+    </div>
+  `;
+
+  try {
+    const url =
+      `${HOT_API_BASE}?streamerSlug=miyu` +
+      `&onlyMissing=${hotRecommendOnlyMissing}`;
+
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      throw new Error(`API ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    const recommendations = data.recommendations || [];
+    const summary = data.summary || {};
+
+    summaryWrap.innerHTML = `
+      <div class="chip">總歌曲 ${summary.total || 0}</div>
+      <div class="chip">已收錄 ${summary.collected || 0}</div>
+      <div class="chip">未收錄 ${summary.missing || 0}</div>
+      <div class="chip">目前顯示 ${summary.returned || 0}</div>
+    `;
+
+    if (!recommendations.length) {
+      resultWrap.innerHTML = `
+        <div class="empty">
+          沒有推薦歌曲
+        </div>
+      `;
+      return;
+    }
+
+    resultWrap.innerHTML = recommendations
+      .slice(0, 30)
+      .map((song) => {
+        return `
+          <div class="preview-card">
+            <div class="preview-title">
+              ${song.name}
+            </div>
+
+            <div class="preview-meta">
+              ${song.artist}
+            </div>
+
+            <div class="preview-meta">
+              出現榜數：${song.appearCount}
+              ｜ Score：${song.score}
+            </div>
+
+            <div class="preview-meta">
+              ${song.charts.join("｜")}
+            </div>
+
+            <div class="preview-status">
+              ${
+                song.isCollected
+                  ? "✅ 已收錄"
+                  : "🔥 未收錄"
+              }
+            </div>
+          </div>
+        `;
+      })
+      .join("");
+  } catch (error) {
+    console.error(error);
+
+    resultWrap.innerHTML = `
+      <div class="empty">
+        載入失敗
+      </div>
+    `;
+  }
+}
+  
   async function init() {
     await ensureBundledDefaults();
 
