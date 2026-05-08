@@ -1055,7 +1055,24 @@
     `;
   }
 }
-  
+  async function loadHotRecommendations() {
+  ...
+}
+
+document
+  .getElementById("loadHotRecommendBtn")
+  ?.addEventListener("click", loadHotRecommendations);
+
+document
+  .getElementById("toggleHotMissingBtn")
+  ?.addEventListener("click", () => {
+    hotRecommendOnlyMissing = !hotRecommendOnlyMissing;
+
+    document.getElementById("toggleHotMissingBtn").textContent =
+      hotRecommendOnlyMissing ? "只看未收錄" : "顯示全部";
+
+    loadHotRecommendations();
+  });
   async function init() {
     await ensureBundledDefaults();
 
