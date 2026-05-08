@@ -1332,6 +1332,34 @@ try {
   console.error('工具箱初始化失敗', err);
   alert('工具箱初始化失敗，請打開 Console 查看錯誤');
 });
+  document.addEventListener('DOMContentLoaded', () => {
+
+  const loadBtn = document.getElementById('loadHotRecommendBtn');
+
+  if (loadBtn) {
+    loadBtn.addEventListener('click', () => {
+      alert('熱門推薦按鈕正常');
+
+      loadHotRecommendations();
+    });
+  }
+
+  const toggleBtn = document.getElementById('toggleHotMissingBtn');
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      hotRecommendOnlyMissing = !hotRecommendOnlyMissing;
+
+      toggleBtn.textContent =
+        hotRecommendOnlyMissing
+          ? '只看未收錄'
+          : '顯示全部';
+
+      loadHotRecommendations();
+    });
+  }
+
+});
 })();
 </script>
 </body>
