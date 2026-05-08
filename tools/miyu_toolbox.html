@@ -108,6 +108,7 @@
     <button class="tab-btn active" data-tab="importPanel">歌單匯入</button>
     <button class="tab-btn" data-tab="dashboardPanel">Dashboard</button>
     <button class="tab-btn" data-tab="blindPanel">盲盒點歌</button>
+    <button class="tab-btn" data-tab="hotRecommendPanel">熱門推薦</button>
     <button class="tab-btn" data-tab="dataPanel">資料工具</button>
   </div>
 
@@ -236,6 +237,23 @@
       </div>
     </div>
   </section>
+
+<section id="hotRecommendPanel" class="panel">
+  <div class="card">
+    <h3>熱門融合推薦</h3>
+    <div class="hint">
+      依據 QQ 音樂四個榜單 Top20 進行融合，優先顯示目前曲庫尚未收錄的熱門歌曲。
+    </div>
+    <div class="btn-row">
+      <button class="primary" id="loadHotRecommendBtn">載入熱門推薦</button>
+      <button class="ghost" id="toggleHotMissingBtn">只看未收錄</button>
+    </div>
+    <div id="hotRecommendSummary" class="summary" style="margin-top:10px"></div>
+    <div id="hotRecommendResult" style="margin-top:10px">
+      <div class="empty">尚未載入熱門推薦</div>
+    </div>
+  </div>
+</section>
 
   <section id="dataPanel" class="panel">
     <div class="card"><h3>資料概況</h3><div class="summary" id="dataSummary"></div></div>
