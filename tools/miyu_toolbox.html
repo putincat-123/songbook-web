@@ -342,6 +342,7 @@
     ];
 
     for (const path of paths) {
+      console.log("start sync to Supabase", payload);
       try {
         const res = await fetch(path);
         if (!res.ok) continue;
