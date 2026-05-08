@@ -270,7 +270,9 @@
     pool: 'miyu_song_pool_v8',
     draw: 'miyu_song_draw_v8'
   };
-
+  
+  const API_BASE_URL = "https://streamer-songbook.vercel.app";
+    
   let currentParsedItems = [];
 
   const $ = id => document.getElementById(id);
@@ -915,7 +917,7 @@
       renderPreview();
     });
 
-    $('saveSessionBtn').addEventListener('click', () => {
+    $('saveSessionBtn').addEventListener('click', async () => {
       if(!currentParsedItems.length) { alert('目前沒有可存的解析結果'); return; }
       const date = $('sessionDate').value;
       const period = $('sessionPeriod').value;
@@ -951,7 +953,35 @@
         sessions.push(payload);
       }
       writeSessions(sessions);
-      alert('已存檔');
+
+try {
+  const syncRes = await fetch(`${API_BASE_URL}/api/request-sessions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      streamerSlug: getStreamerSlug(),
+      date: payload.date,
+      period: payload.period,
+      hostName: payload.hostName,
+      rawText: payload.rawText,
+      items: payload.items
+    })
+  });
+
+  const syncResult = await syncRes.json();
+
+  if (!syncRes.ok || !syncResult.ok) {
+    console.error("sync request session failed:", syncResult);
+    alert("本地已存檔，但同步 Supabase 失敗，請打開 Console 查看錯誤");
+  } else {
+    alert(`已存檔並同步 Supabase，共 ${syncResult.inserted} 首`);
+  }
+} catch (error) {
+  console.error("sync request session error:", error);
+  alert("本地已存檔，但同步 Supabase 失敗，請確認 API 是否啟動");
+}
       currentParsedItems = [];
       $('rawText').value = '';
       renderPreview();
