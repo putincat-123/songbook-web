@@ -783,9 +783,11 @@
     return { items, unparsed };
   }
 
-  function renderAiRecommendMock(mood){
+  async function mockAiRecommendApi(mood){
 
-  const mockSongs = [
+  await new Promise(resolve => setTimeout(resolve, 800));
+
+  return [
     {
       name:'水星記',
       artist:'郭頂',
@@ -813,6 +815,10 @@
     }
   ];
 
+}
+
+  function renderAiRecommendResult(mood, mockSongs){
+  
   $('aiRecommendResult').innerHTML = `
     <div class="small" style="margin-bottom:10px">
       AI 理解：
@@ -1480,18 +1486,40 @@ async function renderDataSummary() {
 
     $('clearImportBtn').addEventListener('click', () => $('rawText').value = '');
     
-    $('aiRecommendBtn').addEventListener('click', () => {
-    
-      const mood = $('aiMoodInput').value.trim();
-    
-      if(!mood){
-        alert('請先輸入想唱的感覺');
-        return;
-      }
-    
-      renderAiRecommendMock(mood);
-    
-    });
+    $('aiRecommendBtn').addEventListener('click', async () => {
+
+    const mood = $('aiMoodInput').value.trim();
+  
+    if(!mood){
+      alert('請先輸入想唱的感覺');
+      return;
+    }
+  
+    $('aiRecommendResult').innerHTML = `
+      <div class="empty">
+        AI 正在思考中...
+      </div>
+    `;
+  
+    try{
+  
+      const result = await mockAiRecommendApi(mood);
+  
+      renderAiRecommendResult(mood, result);
+  
+    }catch(err){
+  
+      console.error(err);
+  
+      $('aiRecommendResult').innerHTML = `
+        <div class="empty">
+          AI 推薦失敗
+        </div>
+      `;
+  
+    }
+  
+  });
     
     $('resetPreviewBtn').addEventListener('click', () => { currentParsedItems = []; renderPreview(); renderUnparsed([]); });
 
