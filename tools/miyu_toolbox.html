@@ -1334,14 +1334,14 @@ try {
   document.addEventListener('DOMContentLoaded', () => {
 
   const loadBtn = document.getElementById('loadHotRecommendBtn');
-
+  
   if (loadBtn) {
     loadBtn.addEventListener('click', () => {
-
+      console.log('click load hot recommendations');
+  
       loadHotRecommendations();
     });
   }
-
   const toggleBtn = document.getElementById('toggleHotMissingBtn');
 
   if (toggleBtn) {
