@@ -1449,7 +1449,35 @@ async function renderDataSummary() {
  * App Init / Event Binding
  * ====================================== */
   
-  async function init() {
+  function bindMainTabs(){
+  document.querySelectorAll('.tab-btn[data-tab]').forEach(btn => {
+    if(btn.dataset.bound === 'true') return;
+    btn.dataset.bound = 'true';
+
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.tab;
+      if(!targetId) return;
+
+      document.querySelectorAll('.tab-btn[data-tab]').forEach(b => {
+        b.classList.remove('active');
+      });
+
+      document.querySelectorAll('.panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      btn.classList.add('active');
+
+      const targetPanel = document.getElementById(targetId);
+      if(targetPanel){
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+}
+  
+  async function init(){
+  bindMainTabs();
     await ensureBundledDefaults();
 
     try {
