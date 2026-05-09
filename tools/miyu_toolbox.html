@@ -280,7 +280,35 @@
 
 }
 }
-  
+.hot-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, .05);
+}
+
+.hot-title {
+  font-weight: 900;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.hot-artist,
+.hot-meta,
+.hot-charts {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.hot-status {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--brand);
+}  
 </style>
 </head>
 <body>
@@ -1201,32 +1229,13 @@
       .slice(0, 30)
       .map((song) => {
         return `
-          <div class="preview-card">
-            <div class="preview-title">
-              ${song.name}
-            </div>
-
-            <div class="preview-meta">
-              ${song.artist}
-            </div>
-
-            <div class="preview-meta">
-              出現榜數：${song.appearCount}
-              ｜ Score：${song.score}
-            </div>
-
-            <div class="preview-meta">
-              ${song.charts.join("｜")}
-            </div>
-
-            <div class="preview-status">
-              ${
-                song.isCollected
-                  ? "✅ 已收錄"
-                  : "🔥 未收錄"
-              }
-            </div>
-          </div>
+        <div class="hot-card">
+          <div class="hot-title">${song.name}</div>
+          <div class="hot-artist">${song.artist}</div>
+          <div class="hot-meta">出現榜數：${song.appearCount} ｜ Score：${song.score}</div>
+          <div class="hot-charts">${song.charts.join("｜")}</div>
+          <div class="hot-status">${song.isCollected ? "✅ 已收錄" : "🔥 未收錄"}</div>
+        </div>
         `;
       })
       .join("");
