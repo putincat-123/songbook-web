@@ -161,6 +161,107 @@
     color: var(--brand);
   }
 }
+
+/* Strong mobile compact mode */
+@media (max-width: 720px) {
+  body {
+    font-size: 14px;
+  }
+
+  .app {
+    padding: 12px 10px 88px;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .tabs {
+    margin-left: -2px;
+    margin-right: -2px;
+    gap: 6px;
+  }
+
+  .tab-btn {
+    font-size: 14px;
+    padding: 8px 11px;
+  }
+
+  .card {
+    padding: 14px 14px 16px;
+    margin-bottom: 12px;
+  }
+
+  .card h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  label {
+    font-size: 15px;
+    margin-bottom: 7px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 48px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  input[type="date"] {
+    height: 48px;
+    line-height: 48px;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  textarea {
+    height: auto;
+    min-height: 130px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .col-12,
+  .col-8,
+  .col-6,
+  .col-4,
+  .col-3 {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  .btn-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-row button,
+  .btn-row label {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+}
   
 </style>
 </head>
