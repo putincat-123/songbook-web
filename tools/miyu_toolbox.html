@@ -328,6 +328,37 @@
     </div>
 
     <div class="card">
+      <h3>AI 情緒推薦</h3>
+    
+      <div class="grid">
+        <div class="col-8">
+          <label>今天想唱什麼感覺？</label>
+          <textarea
+            id="aiMoodInput"
+            placeholder="例如：今天想唱療癒一點，適合晚場聊天"
+          ></textarea>
+        </div>
+    
+        <div class="col-4">
+          <label>&nbsp;</label>
+          <button
+            class="primary"
+            id="aiRecommendBtn"
+            style="width:100%"
+          >
+            ✨ AI 推薦歌曲
+          </button>
+        </div>
+      </div>
+    
+      <div id="aiRecommendResult" style="margin-top:12px">
+        <div class="empty">
+          尚未產生推薦
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
       <h3>一鍵抽歌</h3>
       <div class="draw-box">
         <div class="draw-song" id="randomSong">尚未抽歌</div>
