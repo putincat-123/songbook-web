@@ -463,6 +463,16 @@
   const HOT_API_BASE =
   "https://streamer-songbook.vercel.app/api/recommendations/qq-hot";
   
+  function formatNowTime() {
+    const now = new Date();
+  
+    return now.toLocaleTimeString('zh-TW', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  }
+  
   function renderMobilePreview(items) {
   const container = $('mobilePreview');
   if (!container) return;
@@ -1187,6 +1197,7 @@
       <span class="chip">✅ API 正常</span>
       <span class="chip">熱門推薦 ${count} 首</span>
       <span class="chip">${getStreamerSlug()}</span>
+      <span class="chip">檢查時間 ${formatNowTime()}</span>
     `;
 
   } catch (err) {
@@ -1226,6 +1237,7 @@
       <span class="chip">共 ${recommendations.length} 首</span>
       <span class="chip">未收錄 ${missingCount} 首</span>
       <span class="chip">已收錄 ${collectedCount} 首</span>
+      <span class="chip">檢查時間 ${formatNowTime()}</span>
     `;
 
   } catch (err) {
@@ -1369,6 +1381,7 @@
     summary.innerHTML = `
       <span class="chip">✅ 曲庫同步完成</span>
       <span class="chip">${readPool().length} 首</span>
+      <span class="chip">同步時間 ${formatNowTime()}</span>
     `;
   } else {
     summary.innerHTML = `
