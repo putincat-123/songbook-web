@@ -552,15 +552,19 @@
   }
 
   function normalizePoolSong(s, index) {
-    return {
-      id: s.id || `song_${index + 1}`,
-      seq: s.seq ?? index + 1,
-      songName: s.songName || s.name || s.display_name || '',
-      artist: s.artist || s.display_artist || '',
-      style: s.style || s.raw_style || '',
-      remarks: s.remarks || s.note || ''
-    };
-  }
+  return {
+    id: s.id || `song_${index + 1}`,
+    seq: s.seq ?? index + 1,
+    songName: s.songName || s.name || s.display_name || '',
+    artist: s.artist || s.display_artist || '',
+    style: s.style || s.raw_style || '',
+    remarks: s.remarks || s.note || '',
+    aiMoodTags: Array.isArray(s.aiMoodTags) ? s.aiMoodTags : [],
+    aiSceneTags: Array.isArray(s.aiSceneTags) ? s.aiSceneTags : [],
+    aiEnergy: s.aiEnergy || null,
+    aiTagReason: s.aiTagReason || ''
+  };
+}
 
   /* ========================================
  * GitHub Song Pool
@@ -833,7 +837,7 @@ async function mockAiRecommendApi(mood){
 
   const moodTags = detectMoodTags(mood);
 
-  const source = Array.isArray(githubSongPool) ? githubSongPool : [];
+  const source = readPool();
 
   const matched = source.filter(song => {
     const aiMoodTags = Array.isArray(song.aiMoodTags) ? song.aiMoodTags : [];
