@@ -1488,39 +1488,49 @@ async function renderDataSummary() {
     $('clearImportBtn').addEventListener('click', () => $('rawText').value = '');
     
     $('aiRecommendBtn').addEventListener('click', async () => {
-
-    const mood = $('aiMoodInput').value.trim();
-  
-    if(!mood){
-      alert('請先輸入想唱的感覺');
-      return;
-    }
-  
-    $('aiRecommendResult').innerHTML = `
-      <div class="empty">
-        AI 正在思考中...
-      </div>
-    `;
-  
-    try{
-  
-      const result = await mockAiRecommendApi(mood);
-  
-      renderAiRecommendResult(mood, result);
-  
-    }catch(err){
-  
-      console.error(err);
-  
+    
+      const btn = $('aiRecommendBtn');
+    
+      const mood = $('aiMoodInput').value.trim();
+    
+      if(!mood){
+        alert('請先輸入情緒描述');
+        return;
+      }
+    
+      btn.disabled = true;
+      btn.textContent = 'AI 思考中...';
+    
       $('aiRecommendResult').innerHTML = `
         <div class="empty">
-          AI 推薦失敗
+          AI 正在思考中...
         </div>
       `;
-  
-    }
-  
-  });
+    
+      try{
+    
+        const result = await mockAiRecommendApi(mood);
+    
+        renderAiRecommendResult(mood, result);
+    
+      }catch(err){
+    
+        console.error(err);
+    
+        $('aiRecommendResult').innerHTML = `
+          <div class="empty">
+            AI 推薦失敗
+          </div>
+        `;
+    
+      }finally{
+    
+        btn.disabled = false;
+        btn.textContent = '✨ AI 推薦歌曲';
+    
+      }
+    
+    });
     
     $('resetPreviewBtn').addEventListener('click', () => { currentParsedItems = []; renderPreview(); renderUnparsed([]); });
 
