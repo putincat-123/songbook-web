@@ -1121,6 +1121,43 @@
   }
 }
 
+
+  async function checkApiStatus() {
+  const summary = $('syncSummary');
+
+  summary.innerHTML = `
+    <span class="chip">API 檢查中...</span>
+  `;
+
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/api/recommendations/qq-hot?streamerSlug=${getStreamerSlug()}&onlyMissing=false`
+    );
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
+    }
+
+    const json = await res.json();
+
+    const count = json.recommendations?.length || 0;
+
+    summary.innerHTML = `
+      <span class="chip">✅ API 正常</span>
+      <span class="chip">熱門推薦 ${count} 首</span>
+      <span class="chip">${getStreamerSlug()}</span>
+    `;
+
+  } catch (err) {
+    console.error(err);
+
+    summary.innerHTML = `
+      <span class="chip">❌ API 失敗</span>
+      <span class="chip">${err.message}</span>
+    `;
+  }
+}
+  
   async function loadHotRecommendations() {
     console.log('start loadHotRecommendations');
   
@@ -1223,6 +1260,9 @@
     $('clearImportBtn').addEventListener('click', () => $('rawText').value = '');
     $('resetPreviewBtn').addEventListener('click', () => { currentParsedItems = []; renderPreview(); renderUnparsed([]); });
 
+    $('reloadPoolBtn').addEventListener('click', loadPoolFromGitHub);
+    $('checkApiBtn').addEventListener('click', checkApiStatus);
+    
     $('previewWrap').addEventListener('input', e => {
       const t = e.target; const idx = Number(t.dataset.index); const field = t.dataset.field;
       if(Number.isNaN(idx) || !field || !currentParsedItems[idx]) return;
