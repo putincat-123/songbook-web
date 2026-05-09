@@ -389,7 +389,10 @@ table
     </div>
 
     <div class="kpi-grid" id="kpiGrid"></div>
-    <div class="card"><h3>熱門歌曲</h3><div id="topSongs"></div><div id="songDetail" style="margin-top:10px"></div></div>
+    <div class="card">
+      <h3>熱門歌曲</h3>
+      <div id="topSongs"></div>
+    </div>
     
   </section>
 
@@ -990,44 +993,11 @@ table
     el.innerHTML = html;
   }
 
-  function renderSongDetail(songName) {
-    const { items } = getFilteredItems();
-    const filtered = items.filter(i => i.songName === songName);
-    const detailEl = $('songDetail');
-    if(!filtered.length) {
-      detailEl.innerHTML = '<div class="empty">找不到這首歌的點歌紀錄</div>';
-      return;
-    }
-    const byRequester = countBy(filtered, i => i.actualRequester);
-    let html = `<div class="card" style="padding:10px;margin:0;border-style:dashed;"><h3 style="font-size:16px;margin-bottom:8px;">${esc(songName)}｜點過的人</h3>`;
-    html += '<div class="scroll"><table><thead><tr><th>點歌人</th><th class="right">次數</th></tr></thead><tbody>';
-    byRequester.forEach(([name, count]) => html += `<tr><td>${esc(name)}</td><td class="right">${count}</td></tr>`);
-    html += '</tbody></table></div></div>';
-    detailEl.innerHTML = html;
-  }
-
-  function renderRequesterDetail(requesterName) {
-    const { items } = getFilteredItems();
-    const filtered = items.filter(i => i.actualRequester === requesterName);
-    const detailEl = $('requesterDetail');
-    if(!filtered.length) {
-      detailEl.innerHTML = '<div class="empty">找不到這位點歌人的紀錄</div>';
-      return;
-    }
-    const bySong = countBy(filtered, i => i.songName);
-    let html = `<div class="card" style="padding:10px;margin:0;border-style:dashed;"><h3 style="font-size:16px;margin-bottom:8px;">${esc(requesterName)}｜常點歌曲</h3>`;
-    html += '<div class="scroll"><table><thead><tr><th>歌名</th><th class="right">次數</th></tr></thead><tbody>';
-    bySong.forEach(([name, count]) => html += `<tr><td>${esc(name)}</td><td class="right">${count}</td></tr>`);
-    html += '</tbody></table></div></div>';
-    detailEl.innerHTML = html;
-  }
-
   async function refreshDashboard() {
   const topN = Number($('topN').value || 10);
 
   $('kpiGrid').innerHTML = '<div class="empty">統計資料載入中...</div>';
   $('topSongs').innerHTML = '';
-  $('songDetail').innerHTML = '';
 
   try {
     await loadDashboardFromSupabase();
