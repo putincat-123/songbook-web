@@ -429,6 +429,10 @@
 </div>
 <script>
 (() => {
+
+  /* ========================================
+ * Global State / Constants
+ * ====================================== */
   
   let dashboardSessions = [];
   
@@ -442,6 +446,10 @@
   const API_BASE_URL = "https://streamer-songbook.vercel.app";
     
   let currentParsedItems = [];
+
+  /* ========================================
+ * Utilities
+ * ====================================== */
   
   const $ = id => document.getElementById(id);
   const todayISO = () => { const d=new Date(); const tz=d.getTimezoneOffset()*60000; return new Date(d-tz).toISOString().slice(0,10); };
@@ -504,6 +512,10 @@
     };
   }
 
+  /* ========================================
+ * GitHub Song Pool
+ * ====================================== */
+  
   async function loadGithubSongPool() {
     const streamer = getStreamerSlug();
 
@@ -547,12 +559,20 @@
 
   }
 
+  /* ========================================
+ * Storage Helpers
+ * ====================================== */
+  
   const readSessions = () => readJSON(KEYS.sessions, []);
   const writeSessions = v => writeJSON(KEYS.sessions, v);
   const readPool = () => readJSON(KEYS.pool, []);
   const readDraw = () => readJSON(KEYS.draw, {});
   const writeDraw = v => writeJSON(KEYS.draw, v);
 
+  /* ========================================
+ * Import Parser
+ * ====================================== */
+  
   function stripEmoji(text) {
     return (text || '')
       .replace(/[\u2600-\u27BF\uFE0F\u200D]/g, '')
@@ -921,6 +941,10 @@
     el.innerHTML = html;
   }
 
+  /* ========================================
+ * Dashboard
+ * ====================================== */
+  
   async function refreshDashboard() {
   const topN = Number($('topN').value || 10);
 
@@ -951,6 +975,10 @@
   }
 }
 
+  /* ========================================
+ * Blind Box / Song Pool Tools
+ * ====================================== */
+  
   function poolSummaryRender() {
     const pool = readPool();
     const el = $('poolSummary');
@@ -1121,7 +1149,10 @@
   }
 }
 
-
+  /* ========================================
+ * Data Panel / Sync Status
+ * ====================================== */
+  
   async function checkApiStatus() {
   const summary = $('syncSummary');
 
@@ -1197,6 +1228,10 @@
   }
 }
   
+  /* ========================================
+ * Hot Recommendations
+ * ====================================== */
+  
   async function loadHotRecommendations() {
     console.log('start loadHotRecommendations');
   
@@ -1266,6 +1301,10 @@
   }
 }
 
+  /* ========================================
+ * App Init / Event Binding
+ * ====================================== */
+  
   async function init() {
     await ensureBundledDefaults();
 
