@@ -1260,7 +1260,7 @@
     $('clearImportBtn').addEventListener('click', () => $('rawText').value = '');
     $('resetPreviewBtn').addEventListener('click', () => { currentParsedItems = []; renderPreview(); renderUnparsed([]); });
 
-    $('reloadPoolBtn').addEventListener('click', loadPoolFromGitHub);
+    $('reloadPoolBtn').addEventListener('click', loadGithubSongPool);
     $('checkApiBtn').addEventListener('click', checkApiStatus);
     
     $('previewWrap').addEventListener('input', e => {
