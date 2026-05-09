@@ -1260,7 +1260,28 @@
     $('clearImportBtn').addEventListener('click', () => $('rawText').value = '');
     $('resetPreviewBtn').addEventListener('click', () => { currentParsedItems = []; renderPreview(); renderUnparsed([]); });
 
-    $('reloadPoolBtn').addEventListener('click', loadGithubSongPool);
+    $('reloadPoolBtn').addEventListener('click', async () => {
+  const summary = $('syncSummary');
+
+  summary.innerHTML = `
+    <span class="chip">曲庫同步中...</span>
+  `;
+
+  const ok = await loadGithubSongPool();
+
+  if (ok) {
+    poolSummaryRender();
+
+    summary.innerHTML = `
+      <span class="chip">✅ 曲庫同步完成</span>
+      <span class="chip">${readPool().length} 首</span>
+    `;
+  } else {
+    summary.innerHTML = `
+      <span class="chip">❌ 曲庫同步失敗</span>
+    `;
+  }
+});
     $('checkApiBtn').addEventListener('click', checkApiStatus);
     
     $('previewWrap').addEventListener('input', e => {
