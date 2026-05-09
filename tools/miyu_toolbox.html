@@ -1405,10 +1405,10 @@ try {
       el.innerHTML = `<div class="scroll"><table><thead><tr><th>編號</th><th>歌名</th><th>歌手</th></tr></thead><tbody>${list.slice(0,50).map(i => `<tr><td>${i.seq ?? ''}</td><td>${esc(i.songName)}</td><td>${esc(i.artist || '')}</td></tr>`).join('')}</tbody></table></div>`;
     });
 
-    $('exportSessionsBtn').addEventListener('click', () => exportJson(`miyu_sessions_${todayISO()}.json`, readSessions()));
-    $('exportPoolBtn').addEventListener('click', () => exportJson(`miyu_song_pool_${todayISO()}.json`, readPool()));
+  //   $('exportSessionsBtn').addEventListener('click', () => exportJson(`miyu_sessions_${todayISO()}.json`, readSessions()));
+  //   $('exportPoolBtn').addEventListener('click', () => exportJson(`miyu_song_pool_${todayISO()}.json`, readPool()));
 
-    $('importSessionsFile').addEventListener('change', async e => {
+  //   $('importSessionsFile').addEventListener('change', async e => {
       const file = e.target.files && e.target.files[0];
       if(!file) return;
       try {
