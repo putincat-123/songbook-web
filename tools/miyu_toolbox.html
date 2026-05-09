@@ -1076,10 +1076,47 @@
     URL.revokeObjectURL(a.href);
   }
 
-  function renderDataSummary() {
-    const sessions = readSessions(); const pool = readPool(); const items = sessions.flatMap(s => s.items);
-    $('dataSummary').innerHTML = `<span class="chip">點歌場次 ${sessions.length}</span><span class="chip">點歌紀錄 ${items.length}</span><span class="chip">曲庫 ${pool.length} 首</span>`;
+  async function renderDataSummary() {
+  const el = $('dataSummary');
+
+  el.innerHTML = `
+    <span class="chip">資料同步中...</span>
+  `;
+
+  try {
+    const url = new URL(`${API_BASE_URL}/api/request-sessions`);
+    url.searchParams.set('streamerSlug', getStreamerSlug());
+
+    const res = await fetch(url.toString());
+    if (!res.ok) throw new Error(`request-sessions API ${res.status}`);
+
+    const json = await res.json();
+    const sessions = json.data || json.sessions || [];
+    const items = sessions.flatMap(s => s.items || []);
+
+    const pool = readPool();
+
+    el.innerHTML = `
+      <span class="chip">點歌場次 ${sessions.length}</span>
+      <span class="chip">點歌紀錄 ${items.length}</span>
+      <span class="chip">曲庫 ${pool.length} 首</span>
+      <span class="chip">來源 Supabase</span>
+    `;
+  } catch (error) {
+    console.error('renderDataSummary failed:', error);
+
+    const sessions = readSessions();
+    const pool = readPool();
+    const items = sessions.flatMap(s => s.items || []);
+
+    el.innerHTML = `
+      <span class="chip">點歌場次 ${sessions.length}</span>
+      <span class="chip">點歌紀錄 ${items.length}</span>
+      <span class="chip">曲庫 ${pool.length} 首</span>
+      <span class="chip">來源 本地備援</span>
+    `;
   }
+}
 
   async function loadHotRecommendations() {
     console.log('start loadHotRecommendations');
