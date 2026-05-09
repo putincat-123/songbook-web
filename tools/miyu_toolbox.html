@@ -56,6 +56,71 @@
 }
 
 @media (max-width: 720px) {
+  .app {
+    padding: 12px 10px 32px;
+  }
+
+  .card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .grid {
+    gap: 8px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  input[type="date"] {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .btn-row button,
+  .btn-row label {
+    width: 100%;
+  }
+
+  .summary {
+    gap: 6px;
+  }
+
+  .chip {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .tabs {
+    padding-bottom: 8px;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 8px 6px;
+  }
+  
   #previewWrap {
     display: none;
   }
@@ -102,7 +167,7 @@
 <body>
 <div class="app">
   <div class="title">miyu工具箱</div>
-  <div class="subtitle">點歌管理｜盲盒點歌｜數據統計。主程式、點歌紀錄、曲庫三者分離；之後若曲庫要更新，只需要匯入新的曲庫 JSON，不會動到點歌紀錄。</div>
+  <div class="subtitle">已連動資料庫！</div>
 
   <div class="tabs">
     <button class="tab-btn active" data-tab="importPanel">歌單匯入</button>
@@ -240,9 +305,9 @@
 
 <section id="hotRecommendPanel" class="panel">
   <div class="card">
-    <h3>熱門融合推薦</h3>
+    <h3>熱歌綜合推薦</h3>
     <div class="hint">
-      依據 QQ 音樂四個榜單 Top20 進行融合，優先顯示目前曲庫尚未收錄的熱門歌曲。
+      依據 QQ 音樂四個榜單 Top20 進行綜合推薦。
     </div>
     <div class="btn-row">
       <button class="primary" id="loadHotRecommendBtn">載入熱門推薦</button>
