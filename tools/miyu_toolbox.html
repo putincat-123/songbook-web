@@ -246,7 +246,6 @@
     </div>
     <div class="btn-row">
       <button class="primary" id="loadHotRecommendBtn">載入熱門推薦</button>
-      <button class="ghost" id="toggleHotMissingBtn">只看未收錄</button>
     </div>
     <div id="hotRecommendSummary" class="summary" style="margin-top:10px"></div>
     <div id="hotRecommendResult" style="margin-top:10px">
@@ -305,7 +304,6 @@
   const uid = (p='id') => `${p}_${Date.now()}_${Math.random().toString(36).slice(2,8)}`;
   const esc = (s='') => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
-  let hotRecommendOnlyMissing = true;
   const HOT_API_BASE =
   "https://streamer-songbook.vercel.app/api/recommendations/qq-hot";
   
@@ -985,7 +983,7 @@
   try {
     const url =
       `${HOT_API_BASE}?streamerSlug=miyu` +
-      `&onlyMissing=${hotRecommendOnlyMissing}`;
+      `&onlyMissing=true`;
 
     const res = await fetch(url);
 
@@ -1340,20 +1338,6 @@ try {
       console.log('typeof loadHotRecommendations', typeof loadHotRecommendations);
       console.log(loadHotRecommendations.toString().slice(0, 200));
     
-      loadHotRecommendations();
-    });
-  }
-  const toggleBtn = document.getElementById('toggleHotMissingBtn');
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      hotRecommendOnlyMissing = !hotRecommendOnlyMissing;
-
-      toggleBtn.textContent =
-        hotRecommendOnlyMissing
-          ? '只看未收錄'
-          : '顯示全部';
-
       loadHotRecommendations();
     });
   }
