@@ -783,6 +783,63 @@
     return { items, unparsed };
   }
 
+  function renderAiRecommendMock(mood){
+
+  const mockSongs = [
+    {
+      name:'水星記',
+      artist:'郭頂',
+      reason:'情緒溫柔、節奏舒緩，適合晚場陪伴氛圍'
+    },
+    {
+      name:'春雪',
+      artist:'張敬軒',
+      reason:'情緒細膩，適合偏 emo 但不過度沉重'
+    },
+    {
+      name:'稻香',
+      artist:'周杰倫',
+      reason:'熟悉度高，適合聊天與互動'
+    },
+    {
+      name:'如歌',
+      artist:'陳奕迅',
+      reason:'陪伴感強，適合收尾情緒'
+    },
+    {
+      name:'唯一',
+      artist:'告五人',
+      reason:'氣氛輕柔，適合晚場直播'
+    }
+  ];
+
+  $('aiRecommendResult').innerHTML = `
+    <div class="small" style="margin-bottom:10px">
+      AI 理解：
+      「${escapeHtml(mood)}」
+    </div>
+
+    ${mockSongs.map(song => `
+      <div class="hot-card">
+
+        <div class="hot-title">
+          ${escapeHtml(song.name)}
+        </div>
+
+        <div class="hot-artist">
+          ${escapeHtml(song.artist)}
+        </div>
+
+        <div class="hot-meta" style="margin-top:6px">
+          ${escapeHtml(song.reason)}
+        </div>
+
+      </div>
+    `).join('')}
+  `;
+
+}
+  
   function renderPreview() {
     const wrap = $('previewWrap');
     const sum = $('parseSummary');
@@ -1413,6 +1470,20 @@
     });
 
     $('clearImportBtn').addEventListener('click', () => $('rawText').value = '');
+    
+    $('aiRecommendBtn').addEventListener('click', () => {
+    
+      const mood = $('aiMoodInput').value.trim();
+    
+      if(!mood){
+        alert('請先輸入想唱的感覺');
+        return;
+      }
+    
+      renderAiRecommendMock(mood);
+    
+    });
+    
     $('resetPreviewBtn').addEventListener('click', () => { currentParsedItems = []; renderPreview(); renderUnparsed([]); });
 
     $('reloadPoolBtn').addEventListener('click', async () => {
