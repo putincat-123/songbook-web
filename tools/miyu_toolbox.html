@@ -564,7 +564,7 @@
  * ====================================== */
   
   const readSessions = () => readJSON(KEYS.sessions, []);
-const writeSessions = v => writeJSON(KEYS.sessions, v);
+  const writeSessions = v => writeJSON(KEYS.sessions, v);
 
 function getSessions() {
   return dashboardSessions && dashboardSessions.length
@@ -572,11 +572,9 @@ function getSessions() {
     : readSessions();
 }
 
-const readPool = () => readJSON(KEYS.pool, []);
-const readDraw = () => readJSON(KEYS.draw, {});
-const writeDraw = v => writeJSON(KEYS.draw, v);
-  
-  const writeSessions = v => writeJSON(KEYS.sessions, v);
+  const readPool = () => readJSON(KEYS.pool, []);
+  const readDraw = () => readJSON(KEYS.draw, {});
+  const writeDraw = v => writeJSON(KEYS.draw, v);
   const readPool = () => readJSON(KEYS.pool, []);
   const readDraw = () => readJSON(KEYS.draw, {});
   const writeDraw = v => writeJSON(KEYS.draw, v);
