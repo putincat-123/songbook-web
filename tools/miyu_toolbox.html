@@ -1392,11 +1392,6 @@ try {
       if(!btn) return;
       renderSongDetail(btn.dataset.song);
     });
-    $('topRequesters').addEventListener('click', e => {
-      const btn = e.target.closest('button[data-action="show-requester-detail"]');
-      if(!btn) return;
-      renderRequesterDetail(btn.dataset.requester);
-    });
 
     $('drawRandomBtn').addEventListener('click', () => {
       const r = drawRandomOne();
