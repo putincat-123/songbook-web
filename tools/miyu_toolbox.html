@@ -971,8 +971,10 @@
   }
 
   async function loadHotRecommendations() {
-  const resultWrap = document.getElementById("hotRecommendResult");
-  const summaryWrap = document.getElementById("hotRecommendSummary");
+    console.log('start loadHotRecommendations');
+  
+    const resultWrap = document.getElementById("hotRecommendResult");
+    const summaryWrap = document.getElementById("hotRecommendSummary");
 
   resultWrap.innerHTML = `
     <div class="empty">
