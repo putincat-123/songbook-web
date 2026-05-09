@@ -1158,6 +1158,45 @@
   }
 }
   
+  async function checkHotSyncStatus() {
+  const summary = $('syncSummary');
+
+  summary.innerHTML = `
+    <span class="chip">QQ 熱歌檢查中...</span>
+  `;
+
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/api/recommendations/qq-hot?streamerSlug=${getStreamerSlug()}&onlyMissing=false`
+    );
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
+    }
+
+    const json = await res.json();
+    const recommendations = json.recommendations || [];
+
+    const missingCount = recommendations.filter(song => !song.isCollected).length;
+    const collectedCount = recommendations.filter(song => song.isCollected).length;
+
+    summary.innerHTML = `
+      <span class="chip">✅ QQ 熱歌可同步</span>
+      <span class="chip">共 ${recommendations.length} 首</span>
+      <span class="chip">未收錄 ${missingCount} 首</span>
+      <span class="chip">已收錄 ${collectedCount} 首</span>
+    `;
+
+  } catch (err) {
+    console.error(err);
+
+    summary.innerHTML = `
+      <span class="chip">❌ QQ 熱歌檢查失敗</span>
+      <span class="chip">${err.message}</span>
+    `;
+  }
+}
+  
   async function loadHotRecommendations() {
     console.log('start loadHotRecommendations');
   
@@ -1283,7 +1322,7 @@
   }
 });
     $('checkApiBtn').addEventListener('click', checkApiStatus);
-    
+    $('checkHotSyncBtn').addEventListener('click', checkHotSyncStatus);
     $('previewWrap').addEventListener('input', e => {
       const t = e.target; const idx = Number(t.dataset.index); const field = t.dataset.field;
       if(Number.isNaN(idx) || !field || !currentParsedItems[idx]) return;
