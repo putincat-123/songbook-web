@@ -871,6 +871,34 @@ async function mockAiRecommendApi(mood){
       reason: buildAiRecommendReason(song)
     }));
 }
+function renderAiRecommendResult(mood, songs){
+
+  $('aiRecommendResult').innerHTML = `
+    <div class="small" style="margin-bottom:10px">
+      AI 理解：
+      「${escapeHtml(mood)}」
+    </div>
+
+    ${songs.map(song => `
+      <div class="hot-card">
+
+        <div class="hot-title">
+          ${escapeHtml(song.name)}
+        </div>
+
+        <div class="hot-artist">
+          ${escapeHtml(song.artist)}
+        </div>
+
+        <div class="hot-meta" style="margin-top:6px">
+          ${escapeHtml(song.reason)}
+        </div>
+
+      </div>
+    `).join('')}
+  `;
+}
+
   
   function renderPreview() {
     const wrap = $('previewWrap');
