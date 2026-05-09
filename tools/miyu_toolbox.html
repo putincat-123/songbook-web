@@ -1407,21 +1407,6 @@ try {
 
   //   $('exportSessionsBtn').addEventListener('click', () => exportJson(`miyu_sessions_${todayISO()}.json`, readSessions()));
   //   $('exportPoolBtn').addEventListener('click', () => exportJson(`miyu_song_pool_${todayISO()}.json`, readPool()));
-
-  //   $('importSessionsFile').addEventListener('change', async e => {
-  //    const file = e.target.files && e.target.files[0];
-  //    if(!file) return;
-  //    try {
-  //      const parsed = JSON.parse(await file.text());
-  //      if(!Array.isArray(parsed)) throw new Error('bad');
-  //      writeSessions(parsed);
-  //      alert('點歌紀錄匯入完成');
-  //      refreshSessionsView(); refreshDashboard(); renderDataSummary();
-  //    } catch {
-  //      alert('點歌紀錄 JSON 格式不正確');
-  //    }
-  //    e.target.value = '';
-  //   });
     
     renderExistingSessionHint();
     refreshSessionsView();
