@@ -1012,7 +1012,6 @@
       'topSongs',
       countBy(items, i => i.songName).slice(0, topN),
       '歌名,次數',
-      { clickableCounts: true }
     );
 
   } catch (error) {
@@ -1386,12 +1385,6 @@ try {
      $('loadHotRecommendBtn').addEventListener('click', () => {
     loadHotRecommendations();
   });
-    
-    $('topSongs').addEventListener('click', e => {
-      const btn = e.target.closest('button[data-action="show-song-detail"]');
-      if(!btn) return;
-      renderSongDetail(btn.dataset.song);
-    });
 
     $('drawRandomBtn').addEventListener('click', () => {
       const r = drawRandomOne();
