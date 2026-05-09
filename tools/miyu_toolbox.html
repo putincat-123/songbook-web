@@ -1341,6 +1341,7 @@ try {
     loadBtn.addEventListener('click', () => {
       console.log('click load hot recommendations');
       console.log('typeof loadHotRecommendations', typeof loadHotRecommendations);
+      console.log(loadHotRecommendations.toString().slice(0, 200));
     
       loadHotRecommendations();
     });
