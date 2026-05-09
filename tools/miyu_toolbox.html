@@ -401,9 +401,18 @@
 
   <section id="dataPanel" class="panel">
     <div class="card"><h3>資料概況</h3><div class="summary" id="dataSummary"></div></div>
+    <div class="card"><h3>線上同步</h3>
     <div class="card">
-  <h3>線上同步</h3>
-
+      <h3>系統資訊</h3>
+    
+      <div class="summary" id="systemInfo">
+        <span class="chip">Streamer：-</span>
+      </div>
+    
+      <div class="hint" style="margin-top:10px">
+        目前工具箱所使用的資料來源與 API 環境。
+      </div>
+    </div>
   <div class="summary" id="syncSummary">
     <span class="chip">API 狀態：尚未檢查</span>
     <span class="chip">QQ 熱歌：尚未同步</span>
@@ -1169,6 +1178,15 @@
   }
 }
 
+  function renderSystemInfo() {
+  $('systemInfo').innerHTML = `
+    <span class="chip">Streamer：${getStreamerSlug()}</span>
+    <span class="chip">Session Source：Supabase</span>
+    <span class="chip">Song Pool：GitHub JSON</span>
+    <span class="chip">API：${API_BASE_URL}</span>
+  `;
+}
+    
   /* ========================================
  * Data Panel / Sync Status
  * ====================================== */
@@ -1476,6 +1494,7 @@ try {
       refreshSessionsView();
       refreshDashboard();
       renderDataSummary();
+      renderSystemInfo();
     });
 
     $('searchSessionsBtn').addEventListener('click', refreshSessionsView);
