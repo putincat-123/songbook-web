@@ -559,25 +559,22 @@
 
   }
 
-  /* ========================================
+/* ========================================
  * Storage Helpers
  * ====================================== */
-  
-  const readSessions = () => readJSON(KEYS.sessions, []);
-  const writeSessions = v => writeJSON(KEYS.sessions, v);
 
-function getSessions() {
-  return dashboardSessions && dashboardSessions.length
-    ? dashboardSessions
-    : readSessions();
-}
-
-  const readPool = () => readJSON(KEYS.pool, []);
-  const readDraw = () => readJSON(KEYS.draw, {});
-  const writeDraw = v => writeJSON(KEYS.draw, v);
-  const readPool = () => readJSON(KEYS.pool, []);
-  const readDraw = () => readJSON(KEYS.draw, {});
-  const writeDraw = v => writeJSON(KEYS.draw, v);
+    const readSessions = () => readJSON(KEYS.sessions, []);
+    const writeSessions = v => writeJSON(KEYS.sessions, v);
+    
+    function getSessions() {
+      return dashboardSessions && dashboardSessions.length
+        ? dashboardSessions
+        : readSessions();
+    }
+    
+    const readPool = () => readJSON(KEYS.pool, []);
+    const readDraw = () => readJSON(KEYS.draw, {});
+    const writeDraw = v => writeJSON(KEYS.draw, v);
 
   /* ========================================
  * Import Parser
