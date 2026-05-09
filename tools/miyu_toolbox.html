@@ -357,7 +357,7 @@
 
     <div class="kpi-grid" id="kpiGrid"></div>
     <div class="card"><h3>熱門歌曲（點次數可看是哪些人點過）</h3><div id="topSongs"></div><div id="songDetail" style="margin-top:10px"></div></div>
-    <div class="card"><h3>熱門點歌人（點次數可看常點歌曲）</h3><div id="topRequesters"></div><div id="requesterDetail" style="margin-top:10px"></div></div>
+    
   </section>
 
   <section id="blindPanel" class="panel">
@@ -994,9 +994,7 @@
 
   $('kpiGrid').innerHTML = '<div class="empty">統計資料載入中...</div>';
   $('topSongs').innerHTML = '';
-  $('topRequesters').innerHTML = '';
   $('songDetail').innerHTML = '';
-  $('requesterDetail').innerHTML = '';
 
   try {
     await loadDashboardFromSupabase();
@@ -1007,11 +1005,15 @@
       <div class="kpi"><div class="label">場次數</div><div class="value">${filteredSessions.length}</div></div>
       <div class="kpi"><div class="label">歌曲總筆數</div><div class="value">${items.length}</div></div>
       <div class="kpi"><div class="label">不同歌曲數</div><div class="value">${new Set(items.map(i => i.songName).filter(Boolean)).size}</div></div>
-      <div class="kpi"><div class="label">不同點歌人數</div><div class="value">${new Set(items.map(i => i.actualRequester).filter(Boolean)).size}</div></div>
+      <div class="kpi"><div class="label">平均每場歌曲</div><div class="value">${filteredSessions.length ? Math.round(items.length / filteredSessions.length) : 0}</div></div>
     `;
 
-    renderRanking('topSongs', countBy(items, i => i.songName).slice(0, topN), '歌名,次數', { clickableCounts: true });
-    renderRanking('topRequesters', countBy(items, i => i.actualRequester).slice(0, topN), '點歌人,次數', { clickableCounts: true, actionType: 'show-requester-detail' });
+    renderRanking(
+      'topSongs',
+      countBy(items, i => i.songName).slice(0, topN),
+      '歌名,次數',
+      { clickableCounts: true }
+    );
 
   } catch (error) {
     console.error('refreshDashboard error:', error);
