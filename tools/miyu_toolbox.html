@@ -401,31 +401,32 @@
 
   <section id="dataPanel" class="panel">
     <div class="card"><h3>資料概況</h3><div class="summary" id="dataSummary"></div></div>
-
-    <!--
     <div class="card">
-      <h3>點歌紀錄資料（sessions）</h3>
-      <div class="btn-row">
-        <button class="primary" id="exportSessionsBtn">匯出點歌紀錄 JSON</button>
-        <label class="ghost" style="display:inline-flex;align-items:center;gap:8px;cursor:pointer;padding:11px 14px;border-radius:12px;">
-          匯入點歌紀錄 JSON
-          <input type="file" id="importSessionsFile" accept=".json,application/json" style="display:none">
-        </label>
-      </div>
-    </div>
-    -->
+  <h3>線上同步</h3>
 
-    <div class="card">
-      <h3>曲庫資料（song pool）</h3>
-      <div class="btn-row">
-        <button class="primary" id="exportPoolBtn">匯出曲庫 JSON</button>
-        <button class="secondary" id="reloadPoolBtn">
-          🔄 重新載入線上曲庫
-        </button>
-      </div>
-      <div class="hint" style="margin-top:10px">之後如果曲庫要更新，只需要匯入新的曲庫 JSON，不會影響既有點歌紀錄。</div>
-    </div>
+  <div class="summary" id="syncSummary">
+    <span class="chip">API 狀態：尚未檢查</span>
+    <span class="chip">QQ 熱歌：尚未同步</span>
+  </div>
 
+  <div class="btn-row">
+    <button class="secondary" id="reloadPoolBtn">
+      🔄 重新載入線上曲庫
+    </button>
+
+    <button class="ghost" id="checkApiBtn">
+      檢查 API 狀態
+    </button>
+
+    <button class="ghost" id="checkHotSyncBtn">
+      檢查 QQ 熱歌同步
+    </button>
+  </div>
+
+  <div class="hint" style="margin-top:10px">
+    用於確認 GitHub Pages 是否能正常連到 Vercel API，以及線上曲庫是否可重新載入。
+  </div>
+</div>
 <script>
 (() => {
   
