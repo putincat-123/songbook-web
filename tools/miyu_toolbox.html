@@ -1494,7 +1494,13 @@ async function renderDataSummary() {
       const mood = $('aiMoodInput').value.trim();
     
       if(!mood){
-        alert('請先輸入情緒描述');
+
+        $('aiRecommendResult').innerHTML = `
+          <div class="empty">
+            請先輸入今天想唱的情緒或氛圍
+          </div>
+        `;
+      
         return;
       }
     
