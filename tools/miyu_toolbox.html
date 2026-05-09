@@ -783,68 +783,89 @@
     return { items, unparsed };
   }
 
-  async function mockAiRecommendApi(mood){
+  const MOOD_KEYWORDS = {
+  伤感: ['難過', '难过', '失戀', '失恋', 'emo', '哭', '低落', '傷心', '伤心'],
+  治愈: ['療癒', '疗愈', '治愈', '放鬆', '放松', '溫柔', '温柔', '舒服'],
+  抒情: ['安靜', '安静', '夜晚', '深夜', '慢歌'],
+  燃炸: ['熱血', '热血', '燃', '炸', '嗨'],
+  轻快: ['開心', '开心', '快樂', '快乐', '甜', '輕鬆', '轻松'],
+  古风: ['古風', '古风', '武俠', '武侠', '國風', '国风'],
+  民谣: ['民謠', '民谣', '故事感']
+};
 
-    await new Promise(resolve => setTimeout(resolve, 800));
-  
-    const mockSongs = [
-      {
-        name:'水星記',
-        artist:'郭頂',
-        reason:'情緒溫柔、節奏舒緩，適合晚場陪伴氛圍'
-      },
-      {
-        name:'春雪',
-        artist:'張敬軒',
-        reason:'情緒細膩，適合偏 emo 但不過度沉重'
-      },
-      {
-        name:'稻香',
-        artist:'周杰倫',
-        reason:'熟悉度高，適合聊天與互動'
-      },
-      {
-        name:'如歌',
-        artist:'陳奕迅',
-        reason:'陪伴感強，適合收尾情緒'
-      },
-      {
-        name:'唯一',
-        artist:'告五人',
-        reason:'氣氛輕柔，適合晚場直播'
-      }
-    ];
+function detectMoodTags(input){
+  const text = String(input || '').toLowerCase();
+  const tags = [];
 
-    return mockSongs;
+  Object.entries(MOOD_KEYWORDS).forEach(([tag, keywords]) => {
+    if(keywords.some(keyword => text.includes(String(keyword).toLowerCase()))){
+      tags.push(tag);
+    }
+  });
+
+  return tags;
+}
+
+function buildAiRecommendReason(song){
+  const aiMood = Array.isArray(song.aiMoodTags) ? song.aiMoodTags.join('、') : '';
+  const aiScene = Array.isArray(song.aiSceneTags) ? song.aiSceneTags.join('、') : '';
+
+  if(aiMood || aiScene){
+    return [
+      aiMood ? `情緒：${aiMood}` : '',
+      aiScene ? `場景：${aiScene}` : ''
+    ].filter(Boolean).join('｜');
   }
 
-  function renderAiRecommendResult(mood, songs){
-  
-  $('aiRecommendResult').innerHTML = `
-    <div class="small" style="margin-bottom:10px">
-      AI 理解：
-      「${escapeHtml(mood)}」
-    </div>
+  if(song.remarks){
+    return `這首歌帶有「${song.remarks}」的情緒氛圍。`;
+  }
 
-    ${songs.map(song => `
-      <div class="hot-card">
+  if(song.style){
+    return `這首歌屬於「${song.style}」風格。`;
+  }
 
-        <div class="hot-title">
-          ${escapeHtml(song.name)}
-        </div>
+  return '這首歌來自主播曲庫。';
+}
 
-        <div class="hot-artist">
-          ${escapeHtml(song.artist)}
-        </div>
+async function mockAiRecommendApi(mood){
+  await new Promise(resolve => setTimeout(resolve, 800));
 
-        <div class="hot-meta" style="margin-top:6px">
-          ${escapeHtml(song.reason)}
-        </div>
+  const moodTags = detectMoodTags(mood);
 
-      </div>
-    `).join('')}
-  `;
+  const source = Array.isArray(githubSongPool) ? githubSongPool : [];
 
+  const matched = source.filter(song => {
+    const aiMoodTags = Array.isArray(song.aiMoodTags) ? song.aiMoodTags : [];
+    const aiSceneTags = Array.isArray(song.aiSceneTags) ? song.aiSceneTags : [];
+    const remarks = String(song.remarks || '').toLowerCase();
+    const style = String(song.style || '').toLowerCase();
+
+    return moodTags.some(tag => {
+      const keyword = String(tag).toLowerCase();
+
+      const aiMatched =
+        aiMoodTags.some(t => String(t).toLowerCase().includes(keyword)) ||
+        aiSceneTags.some(t => String(t).toLowerCase().includes(keyword));
+
+      const legacyMatched =
+        remarks.includes(keyword) ||
+        style.includes(keyword);
+
+      return aiMatched || legacyMatched;
+    });
+  });
+
+  const candidates = matched.length > 0 ? matched : source;
+
+  return candidates
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5)
+    .map(song => ({
+      name: song.songName || song.name || '未命名歌曲',
+      artist: song.artist || '',
+      reason: buildAiRecommendReason(song)
+    }));
 }
   
   function renderPreview() {
