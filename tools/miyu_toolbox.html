@@ -1200,14 +1200,7 @@ try {
      $('loadHotRecommendBtn').addEventListener('click', () => {
     loadHotRecommendations();
   });
-    $('toggleHotMissingBtn').addEventListener('click', () => {
-      hotRecommendOnlyMissing = !hotRecommendOnlyMissing;
     
-      $('toggleHotMissingBtn').textContent =
-        hotRecommendOnlyMissing ? '只看未收錄' : '顯示全部';
-    
-      loadHotRecommendations();
-    });
     $('topSongs').addEventListener('click', e => {
       const btn = e.target.closest('button[data-action="show-song-detail"]');
       if(!btn) return;
