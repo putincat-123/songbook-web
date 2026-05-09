@@ -818,7 +818,7 @@
     return mockSongs;
   }
 
-  function renderAiRecommendResult(mood, mockSongs){
+  function renderAiRecommendResult(mood, songs){
   
   $('aiRecommendResult').innerHTML = `
     <div class="small" style="margin-bottom:10px">
@@ -826,7 +826,7 @@
       「${escapeHtml(mood)}」
     </div>
 
-    ${mockSongs.map(song => `
+    ${songs.map(song => `
       <div class="hot-card">
 
         <div class="hot-title">
