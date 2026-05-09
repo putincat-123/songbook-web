@@ -55,7 +55,7 @@
   display: none;
 }
 
-@media (max-width: 720px) {
+ {
   .app {
     padding: 12px 10px 32px;
   }
@@ -261,6 +261,24 @@
     font-size: 16px;
     padding: 12px 14px;
   }
+
+    .tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+}
 }
   
 </style>
