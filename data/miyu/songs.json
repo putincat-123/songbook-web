@@ -238,17 +238,17 @@
   {
     "id": "pool_4c6583ba-b4b9-4bac-88d0-3ef8da677a43",
     "poolSongId": "4c6583ba-b4b9-4bac-88d0-3ef8da677a43",
-    "songId": null,
+    "songId": "513f36be-eac5-4a62-a917-c08f506c03b1",
     "seq": 9,
     "name": "还",
     "songName": "还",
-    "artist": "",
-    "style": "",
-    "rawStyle": "",
+    "artist": "张韶涵",
+    "style": "流行",
+    "rawStyle": "流行",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "还",
+    "sharedArtist": "张韶涵",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -257,7 +257,7 @@
   {
     "id": "pool_351729ba-d891-4c5a-8c99-2b33d3f6e33f",
     "poolSongId": "351729ba-d891-4c5a-8c99-2b33d3f6e33f",
-    "songId": null,
+    "songId": "61524e34-8531-4ed0-82ff-de4c68e539a3",
     "seq": 10,
     "name": "还",
     "songName": "还",
@@ -265,9 +265,9 @@
     "style": "",
     "rawStyle": "",
     "rawTags": "",
-    "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "remarks": "伤感",
+    "sharedName": "还",
+    "sharedArtist": "黄亦尘",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -287,10 +287,21 @@
     "remarks": "",
     "sharedName": "欢",
     "sharedArtist": "刘大壮",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "輕快",
+      "愉悅",
+      "溫馨",
+      "浪漫",
+      "治癒"
+    ],
+    "aiSceneTags": [
+      "散步",
+      "午後",
+      "咖啡廳",
+      "旅行"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "旋律輕快，歌詞傳達歡喜與溫馨情感。"
   },
   {
     "id": "pool_33ef396c-f8f6-4cea-8e66-7ea6fae12588",
@@ -306,34 +317,57 @@
     "remarks": "",
     "sharedName": "借",
     "sharedArtist": "毛不易",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "哲思",
+      "孤獨",
+      "沉靜",
+      "治癒",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "靜思",
+      "寫作"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "毛不易的經典詞曲，觸動人心，富有哲思。"
   },
   {
     "id": "pool_c98c9987-06ce-4b28-82e1-0e355ff24e39",
     "poolSongId": "c98c9987-06ce-4b28-82e1-0e355ff24e39",
-    "songId": null,
+    "songId": "5d7a84d6-6b0d-4ed5-9e7c-097e34ccbf52",
     "seq": 13,
     "name": "空",
     "songName": "空",
-    "artist": "",
-    "style": "",
-    "rawStyle": "",
+    "artist": "暗杠",
+    "style": "民谣",
+    "rawStyle": "民谣",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "sharedName": "空",
+    "sharedArtist": "暗杠",
+    "aiMoodTags": [
+      "內省",
+      "哲思",
+      "孤寂",
+      "惆悵",
+      "民謠"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "思考",
+      "咖啡廳",
+      "文藝"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "暗杠民謠，引人深思虛無。"
   },
   {
     "id": "pool_3e819a4d-cc4b-4785-9607-37f8057a1fe1",
     "poolSongId": "3e819a4d-cc4b-4785-9607-37f8057a1fe1",
-    "songId": null,
+    "songId": "7553c088-a283-468f-ac2f-6a3fac12f135",
     "seq": 14,
     "name": "空",
     "songName": "空",
@@ -342,12 +376,24 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "sharedName": "空",
+    "sharedArtist": "徐海俏",
+    "aiMoodTags": [
+      "惆悵",
+      "內省",
+      "孤寂",
+      "哲思",
+      "空靈"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "思考",
+      "雨天",
+      "文藝"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "情感深沉，帶有空靈思緒。"
   },
   {
     "id": "pool_af0dbc5d-5454-4c99-88c3-82072fd4ebda",
@@ -463,10 +509,21 @@
     "remarks": "伤感；电影《何以笙箫默》主题曲",
     "sharedName": "默",
     "sharedArtist": "那英",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "沉重",
+      "孤獨",
+      "抒情",
+      "壓抑"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "雨天",
+      "靜思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "那英深情演繹，情感細膩，沉重而富有張力。"
   },
   {
     "id": "pool_76a36b3b-0375-4d56-bde2-20c4cea8072d",
@@ -563,15 +620,26 @@
     "remarks": "",
     "sharedName": "舍",
     "sharedArtist": "刘瑾睿",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "釋懷",
+      "沉靜",
+      "哲思",
+      "孤獨",
+      "治癒"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "夜晚",
+      "閱讀"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "沉靜的旋律，引導聽者思考放下與割捨。"
   },
   {
     "id": "pool_aa81316e-4306-404b-9e3d-e77911aacb03",
     "poolSongId": "aa81316e-4306-404b-9e3d-e77911aacb03",
-    "songId": null,
+    "songId": "01fedba8-088a-424a-a255-1aa53a0340e5",
     "seq": 24,
     "name": "谁",
     "songName": "谁",
@@ -580,8 +648,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "谁",
+    "sharedArtist": "王晰",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -590,7 +658,7 @@
   {
     "id": "pool_a2a4138f-7c5a-4410-93fe-4dcbb9b1871d",
     "poolSongId": "a2a4138f-7c5a-4410-93fe-4dcbb9b1871d",
-    "songId": null,
+    "songId": "d8c98d86-90f2-4d44-9ff1-86ec33e659a2",
     "seq": 25,
     "name": "谁",
     "songName": "谁",
@@ -599,12 +667,24 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "sharedName": "谁",
+    "sharedArtist": "廖俊涛",
+    "aiMoodTags": [
+      "內省",
+      "迷惘",
+      "孤獨",
+      "哲思",
+      "民謠"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "思考",
+      "咖啡廳",
+      "旅途"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "廖俊濤民謠代表，引人深思。"
   },
   {
     "id": "pool_3ebe97aa-c3c0-4aaa-bd9f-83da0ad9248a",
@@ -651,10 +731,21 @@
     "remarks": "",
     "sharedName": "溯",
     "sharedArtist": "CORSAK胡梦周",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "迷幻",
+      "電子",
+      "夢幻",
+      "舞曲",
+      "能量"
+    ],
+    "aiSceneTags": [
+      "派對",
+      "開車",
+      "夜晚",
+      "運動"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "獨特的電子風格，旋律迷幻又帶有節奏感。"
   },
   {
     "id": "pool_997de59d-e5d4-416a-b7ed-915feac957b0",
@@ -832,10 +923,22 @@
     "remarks": "",
     "sharedName": "雪",
     "sharedArtist": "杜婧荧",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "寧靜",
+      "唯美",
+      "悲傷",
+      "冬日",
+      "輕柔"
+    ],
+    "aiSceneTags": [
+      "雪景",
+      "獨處",
+      "咖啡廳",
+      "閱讀",
+      "睡前"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "旋律輕柔，歌詞描繪雪的寧靜與淡淡的憂傷。"
   },
   {
     "id": "pool_249fd57a-7282-44e9-8def-4698afd661ca",
@@ -1208,10 +1311,21 @@
     "remarks": "",
     "sharedName": "暗香",
     "sharedArtist": "沙宝亮",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "優雅",
+      "懷舊",
+      "淒美",
+      "浪漫",
+      "經典"
+    ],
+    "aiSceneTags": [
+      "電視劇OST",
+      "獨處",
+      "夜晚",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "經典電視劇主題曲，旋律悠揚，充滿懷舊與詩意。"
   },
   {
     "id": "pool_10883df4-600f-4533-a017-43a988dd5525",
@@ -1235,7 +1349,7 @@
   {
     "id": "pool_5f8552f5-299b-4ca9-b70e-8f6b47141bf4",
     "poolSongId": "5f8552f5-299b-4ca9-b70e-8f6b47141bf4",
-    "songId": null,
+    "songId": "cd80f94f-15ed-47ec-8257-f470b2b0f4f5",
     "seq": 52,
     "name": "白鸽",
     "songName": "白鸽",
@@ -1244,8 +1358,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "白鸽",
+    "sharedArtist": "兰林",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -1254,7 +1368,7 @@
   {
     "id": "pool_4a2a3a11-a418-4353-9fec-79474e4d42f1",
     "poolSongId": "4a2a3a11-a418-4353-9fec-79474e4d42f1",
-    "songId": null,
+    "songId": "98006e74-fce7-4c26-adaf-13409d8c11cc",
     "seq": 53,
     "name": "白鸽",
     "songName": "白鸽",
@@ -1263,12 +1377,23 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "sharedName": "白鸽",
+    "sharedArtist": "伍佰",
+    "aiMoodTags": [
+      "希望",
+      "力量",
+      "自由",
+      "搖滾",
+      "勵志"
+    ],
+    "aiSceneTags": [
+      "演唱會",
+      "勵志",
+      "獨處",
+      "公路旅行"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "伍佰經典搖滾歌曲，旋律激昂，歌詞充滿希望與自由。"
   },
   {
     "id": "pool_589346d3-4ffe-4066-968e-65cef4ec8bf8",
@@ -1774,15 +1899,26 @@
     "remarks": "",
     "sharedName": "不在",
     "sharedArtist": "韩安旭",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "思念",
+      "離別",
+      "療傷"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "療傷"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "韓安旭抒情作品，旋律哀傷，表達逝去的情感。"
   },
   {
     "id": "pool_fdd1a02a-2457-4c0c-b081-124feafaa168",
     "poolSongId": "fdd1a02a-2457-4c0c-b081-124feafaa168",
-    "songId": null,
+    "songId": "db408680-8138-43f7-a31e-0a18a2a4f0ee",
     "seq": 76,
     "name": "彩虹",
     "songName": "彩虹",
@@ -1791,8 +1927,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "彩虹",
+    "sharedArtist": "梁静茹",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -1801,21 +1937,33 @@
   {
     "id": "pool_c98d769c-46bc-42da-ac98-a416934b3651",
     "poolSongId": "c98d769c-46bc-42da-ac98-a416934b3651",
-    "songId": null,
+    "songId": "753f967a-2911-47b8-b957-83b5873f6145",
     "seq": 77,
     "name": "彩虹",
     "songName": "彩虹",
-    "artist": "",
+    "artist": "周杰伦",
     "style": "",
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "sharedName": "彩虹",
+    "sharedArtist": "周杰伦",
+    "aiMoodTags": [
+      "思念",
+      "溫柔",
+      "希望",
+      "遺憾",
+      "浪漫"
+    ],
+    "aiSceneTags": [
+      "雨過天晴",
+      "散步",
+      "獨處",
+      "咖啡廳",
+      "青春回憶"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "周杰倫經典情歌，溫柔訴說雨後彩虹般的思念。"
   },
   {
     "id": "pool_152a94fa-f060-4565-be4c-60e6a67398aa",
@@ -1850,10 +1998,21 @@
     "remarks": "",
     "sharedName": "曹操",
     "sharedArtist": "林俊杰",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "力量",
+      "史詩",
+      "霸氣",
+      "激勵",
+      "熱血"
+    ],
+    "aiSceneTags": [
+      "運動",
+      "工作",
+      "歷史劇OST",
+      "駕車"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "林俊傑代表作，旋律磅礴，歌詞充滿歷史感與霸氣。"
   },
   {
     "id": "pool_e9cd4fe2-d537-4ed1-9f3d-c2e18c2732bf",
@@ -2080,10 +2239,21 @@
     "remarks": "伤感",
     "sharedName": "迟迟",
     "sharedArtist": "薛之谦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "懷念",
+      "愁緒",
+      "深情"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "沉思",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "薛之謙招牌情歌，旋律淒美，歌詞充滿後悔與思念。"
   },
   {
     "id": "pool_0a2d9fe4-6ac0-4f20-ac7f-fde9b271e7f8",
@@ -2270,10 +2440,21 @@
     "remarks": "",
     "sharedName": "蠢货",
     "sharedArtist": "小霞",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "悔恨",
+      "宣洩",
+      "情感",
+      "爵士"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "療傷",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "小霞的抒情作品，情感真摯，旋律略帶爵士風情。"
   },
   {
     "id": "pool_d5b88a94-b67c-49b3-b8e3-c0e806cb27d4",
@@ -2546,10 +2727,21 @@
     "remarks": "燃炸",
     "sharedName": "发热",
     "sharedArtist": "亚森",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "熱血",
+      "激情",
+      "力量",
+      "釋放",
+      "搖滾"
+    ],
+    "aiSceneTags": [
+      "運動",
+      "健身",
+      "開車",
+      "演唱會"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "充滿爆發力的搖滾歌曲，點燃激情。"
   },
   {
     "id": "pool_dec5e36f-c22c-4fb1-936e-6246af0cd462",
@@ -2753,10 +2945,21 @@
     "remarks": "燃炸",
     "sharedName": "浮夸",
     "sharedArtist": "陈奕迅",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "瘋狂",
+      "掙扎",
+      "宣洩",
+      "戲劇性",
+      "力量"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "KTV飆歌",
+      "宣洩",
+      "舞台"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "陳奕迅經典作品，情感張力強大，歌詞諷刺浮華。"
   },
   {
     "id": "pool_12a4994a-eeb7-4a29-bdd9-4d61b824e952",
@@ -2933,10 +3136,22 @@
     "remarks": "伤感",
     "sharedName": "孤岛",
     "sharedArtist": "胜屿",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "孤獨",
+      "悲傷",
+      "迷茫",
+      "沉思",
+      "療傷"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "療傷",
+      "咖啡廳",
+      "思考"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "抒情流行歌，歌詞描繪孤獨感與對情感的迷茫。"
   },
   {
     "id": "pool_5cd634bd-1e95-462f-821e-79de66b9238c",
@@ -3223,10 +3438,22 @@
     "remarks": "抒情",
     "sharedName": "合拍",
     "sharedArtist": "许嵩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "甜蜜",
+      "輕快",
+      "浪漫",
+      "俏皮",
+      "活力"
+    ],
+    "aiSceneTags": [
+      "戀愛",
+      "朋友聚會",
+      "逛街",
+      "輕鬆時刻",
+      "約會"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "許嵩輕鬆小品，旋律活潑，歌詞描繪愛情中的默契。"
   },
   {
     "id": "pool_c24eb4f5-5eb5-4aa3-bc62-ca63b81d7dd2",
@@ -3242,10 +3469,21 @@
     "remarks": "伤感",
     "sharedName": "何物",
     "sharedArtist": "Lancelot_兰斯洛",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "迷惘",
+      "惆悵",
+      "古風",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "沉思",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "情感深沉的古風歌曲，帶有淡淡憂傷。"
   },
   {
     "id": "pool_bc06ea50-f9d1-49f0-8607-454fe55e568b",
@@ -3291,10 +3529,21 @@
     "remarks": "伤感",
     "sharedName": "河流",
     "sharedArtist": "厨子和戏子",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "詩意",
+      "哲思",
+      "沉靜",
+      "孤獨",
+      "民謠"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "旅行",
+      "閱讀"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "詩意民謠，用河流比喻人生，情感深沉。"
   },
   {
     "id": "pool_8e0e03be-a3a2-4a03-a261-784340965077",
@@ -3468,10 +3717,21 @@
     "remarks": "伤感, 治愈",
     "sharedName": "花香",
     "sharedArtist": "周传雄",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "懷舊",
+      "浪漫",
+      "悲傷",
+      "思念",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "回憶",
+      "獨處",
+      "雨天",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "周傳雄的經典歌曲，帶有淡淡花香般的思念與憂愁。"
   },
   {
     "id": "pool_54df6863-516b-45ee-a979-04b8def95978",
@@ -3609,10 +3869,21 @@
     "remarks": "伤感",
     "sharedName": "幻听",
     "sharedArtist": "许嵩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "思念",
+      "孤獨",
+      "迷惘",
+      "抒情",
+      "沉靜"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "靜思",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "許嵩的代表作之一，描寫思念之情，略帶憂鬱。"
   },
   {
     "id": "pool_dd51574c-32a3-4ec6-accd-4df428d6e638",
@@ -3897,10 +4168,22 @@
     "remarks": "伤感",
     "sharedName": "间距",
     "sharedArtist": "en",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "疏離",
+      "沉思",
+      "迷茫",
+      "內斂",
+      "輕柔"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "咖啡廳",
+      "夜晚",
+      "思考",
+      "睡前"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "輕柔抒情歌，歌詞探討人際間的距離與情感。"
   },
   {
     "id": "pool_808a6921-dd25-4905-8b85-6107f76fc6fa",
@@ -3916,10 +4199,22 @@
     "remarks": "",
     "sharedName": "剪爱",
     "sharedArtist": "张惠妹",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "痛苦",
+      "釋懷",
+      "力量",
+      "宣洩"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "療傷",
+      "宣洩",
+      "夜晚",
+      "KTV"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "張惠妹經典苦情歌，唱出愛恨交織的痛楚與放手。"
   },
   {
     "id": "pool_5c654a8a-1c02-4841-a966-5950a61ec1cd",
@@ -4372,10 +4667,21 @@
     "remarks": "燃炸, 轻快, 伤感, 抒情",
     "sharedName": "泪桥",
     "sharedArtist": "伍佰",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "滄桑",
+      "力量",
+      "搖滾",
+      "深情"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "雨夜",
+      "公路旅行",
+      "演唱會"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "伍佰經典搖滾情歌，旋律充滿力量與深情。"
   },
   {
     "id": "pool_3f9a63f8-6d09-4d75-ada7-a9a2c9093334",
@@ -4694,10 +5000,21 @@
     "remarks": "伤感",
     "sharedName": "慢慢",
     "sharedArtist": "张学友",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "深情",
+      "溫柔",
+      "抒情",
+      "浪漫",
+      "懷舊"
+    ],
+    "aiSceneTags": [
+      "咖啡廳",
+      "約會",
+      "睡前",
+      "獨處"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "張學友的慢板情歌，溫柔訴說愛情裡的慢慢體會。"
   },
   {
     "id": "pool_5ce8b1d9-11c6-40af-9fe2-261db398c505",
@@ -4824,10 +5141,21 @@
     "remarks": "",
     "sharedName": "米店",
     "sharedArtist": "李志",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "民謠",
+      "詩意",
+      "沉靜",
+      "懷舊",
+      "孤獨"
+    ],
+    "aiSceneTags": [
+      "咖啡廳",
+      "獨處",
+      "靜思",
+      "旅行"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "李志的民謠經典，描繪樸實生活中的詩意與情感。"
   },
   {
     "id": "pool_d718c3ea-d626-4f15-b35a-ca8863a0cbc6",
@@ -4843,10 +5171,21 @@
     "remarks": "伤感",
     "sharedName": "明明",
     "sharedArtist": "刘宇宁",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "抒情",
+      "沉重",
+      "無奈"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "雨天",
+      "療傷"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "劉宇寧深情演繹，歌詞傳達明確的悲傷與遺憾。"
   },
   {
     "id": "pool_894fadd9-c49a-44c5-8534-69803cb7ca64",
@@ -4893,10 +5232,21 @@
     "remarks": "轻快",
     "sharedName": "木马",
     "sharedArtist": "黄慈轩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "懷舊",
+      "溫柔",
+      "夢幻",
+      "治癒",
+      "故事感"
+    ],
+    "aiSceneTags": [
+      "睡前",
+      "獨處",
+      "咖啡廳",
+      "午後"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "溫馨治癒的旋律，帶有童年回憶的夢幻感。"
   },
   {
     "id": "pool_d1260a17-64db-4ea8-811b-7d3b82f659b1",
@@ -4912,10 +5262,21 @@
     "remarks": "燃炸",
     "sharedName": "木偶",
     "sharedArtist": "李昂星",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "無奈",
+      "掙扎",
+      "沉重",
+      "控制"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "療傷",
+      "思考"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "抒情流行歌，歌詞描繪被操控的無奈與悲傷。"
   },
   {
     "id": "pool_737cdef7-dc0f-4229-bfb4-a8737a99ac7b",
@@ -5259,10 +5620,21 @@
     "remarks": "伤感",
     "sharedName": "偏爱",
     "sharedArtist": "张芸京",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "執著",
+      "熱血",
+      "浪漫",
+      "力量",
+      "青春"
+    ],
+    "aiSceneTags": [
+      "電視劇配樂",
+      "遊戲配樂",
+      "KTV",
+      "激勵"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "仙劍奇俠傳三主題曲，唱出偏執的愛與力量。"
   },
   {
     "id": "pool_aff9cd25-7ec7-4d4d-8f86-bff4390ec818",
@@ -5278,10 +5650,21 @@
     "remarks": "",
     "sharedName": "骗子",
     "sharedArtist": "文夫",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "憤怒",
+      "欺騙",
+      "絕望",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "療傷",
+      "夜晚",
+      "雨天"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "情感激烈的流行歌曲，控訴被欺騙的痛苦。"
   },
   {
     "id": "pool_ab9482d9-78a1-4f08-80b5-6c8db5c724dc",
@@ -5316,10 +5699,21 @@
     "remarks": "",
     "sharedName": "萍聚",
     "sharedArtist": "李翊君",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "懷舊",
+      "友誼",
+      "離別",
+      "溫馨",
+      "經典"
+    ],
+    "aiSceneTags": [
+      "畢業",
+      "聚會",
+      "回憶",
+      "KTV"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "經典老歌，唱出朋友相聚與離別的溫馨與不捨。"
   },
   {
     "id": "pool_b14a4090-0bb3-4c95-b7f2-82a288132197",
@@ -5366,10 +5760,21 @@
     "remarks": "伤感",
     "sharedName": "其实",
     "sharedArtist": "薛之谦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "壓抑",
+      "抒情",
+      "深情"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "薛之謙情歌，訴說愛情中的無奈與難言之隱。"
   },
   {
     "id": "pool_899aca1a-cfe6-44bd-9c4e-f39b300e737b",
@@ -5404,10 +5809,22 @@
     "remarks": "",
     "sharedName": "乞丐",
     "sharedArtist": "刘宇宁",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "渴望",
+      "絕望",
+      "乞求",
+      "宣洩"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "療傷",
+      "宣洩",
+      "KTV"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "劉宇寧深情演繹，旋律悲傷，歌詞充滿情感乞求。"
   },
   {
     "id": "pool_c3ece26d-21f7-408e-91d2-fbe67afadb17",
@@ -5665,10 +6082,21 @@
     "remarks": "",
     "sharedName": "青丝",
     "sharedArtist": "时光胶囊",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "懷舊",
+      "思念",
+      "詩意",
+      "搖滾",
+      "青春"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "文藝空間",
+      "青春回憶"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "搖滾樂隊作品，旋律帶有古風，歌詞充滿懷舊思緒。"
   },
   {
     "id": "pool_b9cf02dd-cac9-4ae6-a715-b4c9491a7e74",
@@ -5692,7 +6120,7 @@
   {
     "id": "pool_67975884-30a3-4a2d-8d5a-5da7fa044f59",
     "poolSongId": "67975884-30a3-4a2d-8d5a-5da7fa044f59",
-    "songId": null,
+    "songId": "62ebbc51-7301-4889-b001-c857b6b24d01",
     "seq": 231,
     "name": "情书",
     "songName": "情书",
@@ -5701,8 +6129,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "情书",
+    "sharedArtist": "张学友",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -5711,7 +6139,7 @@
   {
     "id": "pool_ea02ccdd-f47e-47a7-8c50-65fb94dd0b4f",
     "poolSongId": "ea02ccdd-f47e-47a7-8c50-65fb94dd0b4f",
-    "songId": null,
+    "songId": "4f49f66c-c268-47a5-a0be-73edd240f1ec",
     "seq": 232,
     "name": "情书",
     "songName": "情书",
@@ -5720,8 +6148,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "情书",
+    "sharedArtist": "薛之谦",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -5730,17 +6158,17 @@
   {
     "id": "pool_44fc0f96-2296-4022-ae32-ce493d657a60",
     "poolSongId": "44fc0f96-2296-4022-ae32-ce493d657a60",
-    "songId": null,
+    "songId": "07243d84-11ff-434a-b0c1-936e424260d2",
     "seq": 233,
     "name": "晴天",
     "songName": "晴天",
-    "artist": "",
+    "artist": "周杰伦",
     "style": "",
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "晴天",
+    "sharedArtist": "周杰伦",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -5810,10 +6238,21 @@
     "remarks": "",
     "sharedName": "雀跃",
     "sharedArtist": "任然",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "輕快",
+      "愉悅",
+      "甜蜜",
+      "浪漫",
+      "治癒"
+    ],
+    "aiSceneTags": [
+      "散步",
+      "約會",
+      "咖啡廳",
+      "午後"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "任然輕快甜美的歌聲，帶來雀躍的愉悅感。"
   },
   {
     "id": "pool_66c43573-3df4-480e-aa77-1e17c405f44b",
@@ -5998,10 +6437,21 @@
     "remarks": "治愈, 伤感, 抒情",
     "sharedName": "如愿",
     "sharedArtist": "王菲",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "溫暖",
+      "治癒",
+      "莊重",
+      "祝福",
+      "圓滿"
+    ],
+    "aiSceneTags": [
+      "電影配樂",
+      "婚禮",
+      "慶典",
+      "靜思"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "王菲深情獻唱，傳達美好祝願與圓滿之情。"
   },
   {
     "id": "pool_6bb82e95-873e-4497-a4b5-2ba2342ca284",
@@ -6160,10 +6610,21 @@
     "remarks": "燃炸, 伤感",
     "sharedName": "山海",
     "sharedArtist": "华晨宇",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "力量",
+      "爆發",
+      "搖滾",
+      "激昂",
+      "獨特"
+    ],
+    "aiSceneTags": [
+      "演唱會",
+      "釋放情緒",
+      "運動",
+      "開車"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "華晨宇的爆發力演繹，展現山海般的氣勢。"
   },
   {
     "id": "pool_a745b1c3-c1a0-4660-a5fc-6b4fc7d19a20",
@@ -6199,26 +6660,38 @@
   {
     "id": "pool_3c13ebae-d7e6-4ddd-bb85-07f19d8baada",
     "poolSongId": "3c13ebae-d7e6-4ddd-bb85-07f19d8baada",
-    "songId": null,
+    "songId": "2872db7a-b28b-4b43-8dfb-58b7ed9ad519",
     "seq": 252,
     "name": "少年",
     "songName": "少年",
-    "artist": "",
+    "artist": "奇然",
     "style": "",
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "sharedName": "少年",
+    "sharedArtist": "奇然",
+    "aiMoodTags": [
+      "青春",
+      "懷舊",
+      "熱血",
+      "勵志",
+      "成長"
+    ],
+    "aiSceneTags": [
+      "回憶",
+      "畢業季",
+      "旅途",
+      "追夢",
+      "校園"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "青春懷舊，充滿希望與回憶，適合展望未來或緬懷過去。"
   },
   {
     "id": "pool_05a24898-19c0-4eb4-b6c2-93d0ef45ef7a",
     "poolSongId": "05a24898-19c0-4eb4-b6c2-93d0ef45ef7a",
-    "songId": null,
+    "songId": "e4a78dbe-58a0-4cc2-b6a8-b97d8529ec46",
     "seq": 253,
     "name": "少年",
     "songName": "少年",
@@ -6227,8 +6700,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "少年",
+    "sharedArtist": "周华健",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -6267,10 +6740,21 @@
     "remarks": "伤感",
     "sharedName": "绅士",
     "sharedArtist": "薛之谦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "深情",
+      "壓抑",
+      "紳士"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "薛之謙悲傷情歌，描寫愛而不得的壓抑與痛苦。"
   },
   {
     "id": "pool_d37da437-040c-46f2-9212-106e7dc6b098",
@@ -6870,10 +7354,22 @@
     "remarks": "",
     "sharedName": "太阳",
     "sharedArtist": "王天阳",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "希望",
+      "溫暖",
+      "力量",
+      "勵志",
+      "正能量"
+    ],
+    "aiSceneTags": [
+      "運動",
+      "工作",
+      "早晨",
+      "激勵",
+      "戶外"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "歌詞充滿正能量，旋律溫暖，給人帶來希望與力量。"
   },
   {
     "id": "pool_f74dd830-09a3-44b1-8e3f-2ba2888fa93a",
@@ -7265,10 +7761,22 @@
     "remarks": "伤感",
     "sharedName": "通透",
     "sharedArtist": "陈亦云",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "清醒",
+      "釋懷",
+      "沉思",
+      "成熟",
+      "療癒"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "思考",
+      "夜晚",
+      "咖啡廳",
+      "成長"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "歌詞表達通透的心境，旋律通常帶有療癒與釋然。"
   },
   {
     "id": "pool_c8d8e3b5-7b1c-4d30-988c-3907276b327b",
@@ -7361,7 +7869,7 @@
   {
     "id": "pool_9c63161c-82a3-45fc-a310-3cd1fd344516",
     "poolSongId": "9c63161c-82a3-45fc-a310-3cd1fd344516",
-    "songId": null,
+    "songId": "c241e537-f79c-40e1-89f4-ffcbac25682e",
     "seq": 300,
     "name": "晚安",
     "songName": "晚安",
@@ -7369,9 +7877,9 @@
     "style": "",
     "rawStyle": "",
     "rawTags": "",
-    "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "remarks": "治愈",
+    "sharedName": "晚安",
+    "sharedArtist": "鹿先森乐队",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -7380,7 +7888,7 @@
   {
     "id": "pool_2b80d27d-89e7-41f8-a113-54b436a69b2f",
     "poolSongId": "2b80d27d-89e7-41f8-a113-54b436a69b2f",
-    "songId": null,
+    "songId": "ece89e40-c0cb-42a3-b13f-e603b4a6f1a4",
     "seq": 301,
     "name": "晚安",
     "songName": "晚安",
@@ -7389,8 +7897,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "晚安",
+    "sharedArtist": "颜人中",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -7399,7 +7907,7 @@
   {
     "id": "pool_e4a0ed07-93c6-4ab1-bf35-70b8ec35be91",
     "poolSongId": "e4a0ed07-93c6-4ab1-bf35-70b8ec35be91",
-    "songId": null,
+    "songId": "d637412a-4e8c-4074-adb2-79c1cde8c796",
     "seq": 302,
     "name": "晚安",
     "songName": "晚安",
@@ -7408,8 +7916,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "晚安",
+    "sharedArtist": "丢火车乐队",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -7448,10 +7956,21 @@
     "remarks": "抒情",
     "sharedName": "晚星",
     "sharedArtist": "唐汉霄",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "平靜",
+      "溫柔",
+      "治癒",
+      "孤獨",
+      "沉思"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "睡前",
+      "獨處",
+      "靜思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "溫柔的旋律，適合夜晚靜靜聆聽，治癒人心。"
   },
   {
     "id": "pool_77a5fc89-52b9-4bf6-b863-bca6021fcc6e",
@@ -7498,10 +8017,21 @@
     "remarks": "燃炸",
     "sharedName": "王妃",
     "sharedArtist": "萧敬腾",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "搖滾",
+      "激情",
+      "熱血",
+      "力量",
+      "狂野"
+    ],
+    "aiSceneTags": [
+      "KTV",
+      "演唱會",
+      "派對",
+      "開車"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "蕭敬騰的代表搖滾曲，極具爆發力與魅力。"
   },
   {
     "id": "pool_ca6222a4-5635-4fa1-bc7d-502880211c71",
@@ -7568,7 +8098,7 @@
   {
     "id": "pool_a403acc6-9584-4d33-8f72-f33c4506fcb5",
     "poolSongId": "a403acc6-9584-4d33-8f72-f33c4506fcb5",
-    "songId": null,
+    "songId": "7c06ed4e-cfba-480f-80be-77b4ece3c426",
     "seq": 309,
     "name": "唯一",
     "songName": "唯一",
@@ -7577,17 +8107,29 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "sharedName": "唯一",
+    "sharedArtist": "王力宏",
+    "aiMoodTags": [
+      "浪漫",
+      "深情",
+      "告白",
+      "甜蜜",
+      "專一"
+    ],
+    "aiSceneTags": [
+      "約會",
+      "求婚",
+      "婚禮",
+      "戀愛",
+      "KTV"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "經典浪漫情歌，表達唯一摯愛的真摯情感。"
   },
   {
     "id": "pool_180b62cd-e09e-4f5a-9eca-aa450fcb8ae8",
     "poolSongId": "180b62cd-e09e-4f5a-9eca-aa450fcb8ae8",
-    "songId": null,
+    "songId": "15052bd4-0d95-46ad-be28-211cca275fbf",
     "seq": 310,
     "name": "唯一",
     "songName": "唯一",
@@ -7596,8 +8138,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "唯一",
+    "sharedArtist": "告五人",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -7617,10 +8159,21 @@
     "remarks": "",
     "sharedName": "味道",
     "sharedArtist": "辛晓琪",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "思念",
+      "懷舊",
+      "悲傷",
+      "纏綿",
+      "深情"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "懷舊金曲"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "辛曉琪經典情歌，旋律深情，歌詞充滿思念。"
   },
   {
     "id": "pool_2e1539e9-ed41-4651-a8ba-e0b91c368573",
@@ -7667,10 +8220,21 @@
     "remarks": "伤感",
     "sharedName": "吻別",
     "sharedArtist": "张学友",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "離別",
+      "經典",
+      "深情",
+      "懷舊"
+    ],
+    "aiSceneTags": [
+      "KTV",
+      "回憶",
+      "獨處",
+      "雨天"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "張學友不朽經典，道盡離別的悲傷與不捨。"
   },
   {
     "id": "pool_8a409643-85de-4447-8b61-fc23b3740546",
@@ -7900,10 +8464,21 @@
     "remarks": "伤感",
     "sharedName": "无期",
     "sharedArtist": "光头华夏",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "絕望",
+      "沉重",
+      "孤獨",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "滄桑嗓音詮釋無期等待的悲傷與絕望。"
   },
   {
     "id": "pool_9bd489c2-db53-4078-842d-d8ec3faa158b",
@@ -8068,10 +8643,21 @@
     "remarks": "燃炸",
     "sharedName": "鲜花",
     "sharedArtist": "回春丹",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "獨立",
+      "搖滾",
+      "激情",
+      "釋放",
+      "力量"
+    ],
+    "aiSceneTags": [
+      "演唱會",
+      "開車",
+      "運動",
+      "派對"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "回春丹的搖滾能量，充滿自由與力量。"
   },
   {
     "id": "pool_2c445caf-ae60-40be-9553-10893b76c566",
@@ -8321,10 +8907,22 @@
     "remarks": "伤感",
     "sharedName": "小孩",
     "sharedArtist": "薛之谦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "懷念",
+      "純真",
+      "沉思"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "思考",
+      "療傷",
+      "青春回憶"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "薛之謙抒情歌，旋律溫柔，歌詞表達對純真逝去的感慨。"
   },
   {
     "id": "pool_e810247e-03cf-4824-a7c1-033712004455",
@@ -8501,10 +9099,22 @@
     "remarks": "伤感",
     "sharedName": "心事",
     "sharedArtist": "徐秉龙",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "內斂",
+      "沉思",
+      "迷茫",
+      "青澀",
+      "清新"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "學習",
+      "青春"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "徐秉龍清新民謠，旋律輕柔，歌詞訴說青澀心事。"
   },
   {
     "id": "pool_ba3ff1b4-eb93-4455-85f8-3a26a37fb09f",
@@ -8668,10 +9278,21 @@
     "remarks": "抖音热歌",
     "sharedName": "悬溺",
     "sharedArtist": "葛东琪",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "迷幻",
+      "憂鬱",
+      "夢幻",
+      "慵懶",
+      "電子"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "冥想",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "獨特的電子旋律與迷幻感，營造懸溺氛圍。"
   },
   {
     "id": "pool_32bfb06e-c3c9-4edf-945e-79903c358fcb",
@@ -8706,10 +9327,21 @@
     "remarks": "",
     "sharedName": "丫头",
     "sharedArtist": "王童语",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "溫柔",
+      "思念",
+      "懷舊",
+      "樸實",
+      "深情"
+    ],
+    "aiSceneTags": [
+      "睡前",
+      "獨處",
+      "回憶",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "溫暖真摯的歌詞，懷念與思念並存，情感細膩。"
   },
   {
     "id": "pool_0e8f4828-093c-4fbf-90a8-81129356fd02",
@@ -8954,10 +9586,21 @@
     "remarks": "",
     "sharedName": "野子",
     "sharedArtist": "苏运莹",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "勵志",
+      "力量",
+      "自由",
+      "獨特",
+      "激昂"
+    ],
+    "aiSceneTags": [
+      "奮鬥",
+      "運動",
+      "開車",
+      "釋放情緒"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "蘇運瑩獨特唱腔，展現野子般的堅韌與自由。"
   },
   {
     "id": "pool_4ff2c541-92b8-49c2-888a-a12771966977",
@@ -9123,10 +9766,21 @@
     "remarks": "",
     "sharedName": "阴天",
     "sharedArtist": "莫文蔚",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "爵士",
+      "慵懶",
+      "悲傷",
+      "懷舊",
+      "成熟"
+    ],
+    "aiSceneTags": [
+      "咖啡廳",
+      "雨天",
+      "獨處",
+      "夜晚"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "莫文蔚經典，獨特唱腔詮釋愛情裡的糾結與感嘆。"
   },
   {
     "id": "pool_6d57137a-45d1-431c-8cbe-198d2edba655",
@@ -9161,10 +9815,21 @@
     "remarks": "伤感, 抒情",
     "sharedName": "拥有",
     "sharedArtist": "鲁向卉",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "溫柔",
+      "治癒",
+      "感恩",
+      "平靜",
+      "珍惜"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "睡前",
+      "午後"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "輕柔的旋律，訴說擁有與珍惜的溫暖心境。"
   },
   {
     "id": "pool_e4831316-7feb-4c5b-a9f6-c050b326c95d",
@@ -9302,10 +9967,21 @@
     "remarks": "",
     "sharedName": "有幸",
     "sharedArtist": "赵砚卿",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "溫暖",
+      "治癒",
+      "感恩",
+      "幸福",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "睡前",
+      "回憶"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "充滿感恩與幸福感的溫暖歌曲，觸動人心。"
   },
   {
     "id": "pool_0b837896-a52e-4b4f-90f0-6cccfa39b495",
@@ -9432,10 +10108,21 @@
     "remarks": "",
     "sharedName": "雨蝶",
     "sharedArtist": "李翊君",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "浪漫",
+      "悲傷",
+      "經典",
+      "抒情",
+      "懷舊"
+    ],
+    "aiSceneTags": [
+      "KTV",
+      "回憶",
+      "電視劇配樂",
+      "雨天"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "經典電視劇主題曲，情感真摯，略帶悲情。"
   },
   {
     "id": "pool_cac7a768-5818-49db-945c-fcc05687b0d4",
@@ -9542,10 +10229,21 @@
     "remarks": "",
     "sharedName": "云长",
     "sharedArtist": "赵钶",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "豪邁",
+      "熱血",
+      "古風",
+      "力量",
+      "史詩"
+    ],
+    "aiSceneTags": [
+      "電影配樂",
+      "遊戲配樂",
+      "運動",
+      "激勵"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "歌頌歷史人物，旋律磅礴大氣，氣勢非凡。"
   },
   {
     "id": "pool_726f608b-799c-42c5-9ece-4f13e6050df2",
@@ -9561,10 +10259,22 @@
     "remarks": "",
     "sharedName": "再见",
     "sharedArtist": "邓紫棋",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "離別",
+      "釋懷",
+      "力量",
+      "宣洩"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "療傷",
+      "夜晚",
+      "宣洩",
+      "KTV"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "鄧紫棋招牌情歌，旋律富有張力，歌詞表達告別痛苦。"
   },
   {
     "id": "pool_2fb15941-7a00-48f2-b617-7860a2b92681",
@@ -9611,10 +10321,21 @@
     "remarks": "伤感",
     "sharedName": "怎样",
     "sharedArtist": "戴佩妮",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "釋懷",
+      "遺憾",
+      "抒情",
+      "獨立"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "戴佩妮的經典代表作，深刻表達分手後的掙扎與成長。"
   },
   {
     "id": "pool_080a6ab1-24f2-47aa-9d59-bfbe04b63e04",
@@ -9973,10 +10694,21 @@
     "remarks": "伤感",
     "sharedName": "租购",
     "sharedArtist": "薛之谦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "迷惘",
+      "孤獨",
+      "壓抑",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "雨天",
+      "沉思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "薛之謙悲情敘事，表達愛情的無奈與壓抑。"
   },
   {
     "id": "pool_def39caa-8def-4bbc-9dde-cb3ae5b76326",
@@ -10193,10 +10925,21 @@
     "remarks": "",
     "sharedName": "爱不留",
     "sharedArtist": "张信哲",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "抒情",
+      "深情",
+      "分手"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "回憶"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "張信哲的深情演繹，訴說愛無法挽留的悲傷。"
   },
   {
     "id": "pool_315915c4-ffad-404f-9058-0930687636f3",
@@ -10212,10 +10955,21 @@
     "remarks": "",
     "sharedName": "爱存在",
     "sharedArtist": "王靖雯",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "甜美",
+      "浪漫",
+      "戀愛",
+      "幸福",
+      "輕快"
+    ],
+    "aiSceneTags": [
+      "戀愛約會",
+      "咖啡廳",
+      "輕鬆時刻",
+      "告白"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "輕快浪漫的流行情歌，充滿對愛情的甜蜜肯定。"
   },
   {
     "id": "pool_a4b5af4f-7c02-4bf4-8aa1-3acc13e86c99",
@@ -10231,10 +10985,21 @@
     "remarks": "",
     "sharedName": "爱转角",
     "sharedArtist": "罗志祥",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "浪漫",
+      "甜蜜",
+      "青春",
+      "偶像劇",
+      "輕快"
+    ],
+    "aiSceneTags": [
+      "約會",
+      "戀愛",
+      "散步",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "偶像劇主題曲，充滿轉角遇到愛的浪漫。"
   },
   {
     "id": "pool_de894184-9c51-41ad-bc03-75b515aac606",
@@ -10250,10 +11015,21 @@
     "remarks": "",
     "sharedName": "安和桥",
     "sharedArtist": "宋冬野",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "民謠",
+      "懷舊",
+      "思鄉",
+      "沉靜",
+      "滄桑"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "靜思",
+      "旅行"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "宋冬野的民謠代表作，充滿懷舊與人生感悟。"
   },
   {
     "id": "pool_038c39ff-9a8b-45df-9d75-aefd60725fa6",
@@ -10300,10 +11076,21 @@
     "remarks": "",
     "sharedName": "岸边客",
     "sharedArtist": "夏子航",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "孤獨",
+      "滄桑",
+      "沉思",
+      "旅途",
+      "民謠"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "旅行",
+      "咖啡廳",
+      "夜晚"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "夏子航民謠風格，旋律悠遠，歌詞描繪孤獨旅人。"
   },
   {
     "id": "pool_30fe2a3b-0653-4c4e-928a-f8f576e01926",
@@ -10380,10 +11167,21 @@
     "remarks": "动画片《西游记》主题曲",
     "sharedName": "白龙马",
     "sharedArtist": "都行",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "童趣",
+      "活潑",
+      "冒險",
+      "經典",
+      "快樂"
+    ],
+    "aiSceneTags": [
+      "兒童時間",
+      "親子活動",
+      "懷舊卡通",
+      "遊戲"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "經典卡通主題曲，旋律輕快，充滿童年回憶。"
   },
   {
     "id": "pool_a58de513-157d-480c-9f11-cc1c7a64ca51",
@@ -10509,10 +11307,21 @@
     "remarks": "",
     "sharedName": "半山腰",
     "sharedArtist": "冯子晨",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "治癒",
+      "勵志",
+      "沉思",
+      "平靜",
+      "旅途"
+    ],
+    "aiSceneTags": [
+      "旅行",
+      "獨處",
+      "閱讀",
+      "散步"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "輕柔的旋律，帶人進入半山腰的沉思與寧靜。"
   },
   {
     "id": "pool_548f9029-e891-4f22-b172-e7d78266bd27",
@@ -10566,10 +11375,21 @@
     "remarks": "",
     "sharedName": "避难所",
     "sharedArtist": "韩安旭",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "孤獨",
+      "悲傷",
+      "治癒",
+      "溫暖",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "療傷",
+      "靜思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "歌詞尋求避難與慰藉，情感溫柔而略帶憂傷。"
   },
   {
     "id": "pool_43314128-1e23-4f54-a8b5-81959462221c",
@@ -10585,10 +11405,21 @@
     "remarks": "",
     "sharedName": "别错过",
     "sharedArtist": "程jiajia",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "溫暖",
+      "珍惜",
+      "治癒",
+      "浪漫",
+      "輕快"
+    ],
+    "aiSceneTags": [
+      "戀愛",
+      "散步",
+      "咖啡廳",
+      "午後"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "提醒珍惜愛情的輕快歌曲，溫暖而正面。"
   },
   {
     "id": "pool_310bc06c-fe60-42dc-b514-2e4f59e527f3",
@@ -10665,10 +11496,22 @@
     "remarks": "",
     "sharedName": "不将就",
     "sharedArtist": "李荣浩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "執著",
+      "深情",
+      "遺憾",
+      "堅定",
+      "成熟"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "思考",
+      "戀愛"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "李榮浩代表作，旋律動聽，歌詞表達對愛情不將就。"
   },
   {
     "id": "pool_43858565-dfb5-4168-9450-9c2b7314d865",
@@ -10703,10 +11546,21 @@
     "remarks": "",
     "sharedName": "不再见",
     "sharedArtist": "陈学冬",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "離別",
+      "遺憾",
+      "懷念",
+      "青春"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "療傷",
+      "青春回憶"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "電影主題曲，旋律感人，歌詞表達告別與不捨。"
   },
   {
     "id": "pool_98487e13-798b-4aa4-be19-e1cdfa2bfbb4",
@@ -10815,10 +11669,22 @@
     "remarks": "伤感",
     "sharedName": "丑八怪",
     "sharedArtist": "薛之谦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "自嘲",
+      "掙扎",
+      "沉重",
+      "宣洩"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "療傷",
+      "KTV",
+      "思考"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "薛之謙代表情歌，歌詞直擊心靈，唱出自我掙扎。"
   },
   {
     "id": "pool_9d468cba-ad4e-4c27-9d40-94239d722de2",
@@ -10834,10 +11700,21 @@
     "remarks": "治愈",
     "sharedName": "从前慢",
     "sharedArtist": "刘胡轶",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "詩意",
+      "懷舊",
+      "沉靜",
+      "溫馨",
+      "慢生活"
+    ],
+    "aiSceneTags": [
+      "閱讀",
+      "咖啡廳",
+      "獨處",
+      "靜思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "詩詞改編，曲調溫潤，傳達慢生活美學。"
   },
   {
     "id": "pool_340582b4-dc17-4254-a36c-f6fabbd4833a",
@@ -10884,10 +11761,21 @@
     "remarks": "抒情, 伤感",
     "sharedName": "错的人",
     "sharedArtist": "萧亚轩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "分手",
+      "抒情",
+      "醒悟"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "蕭亞軒抒情曲，唱出愛錯人的心痛與領悟。"
   },
   {
     "id": "pool_37af83bf-47d9-49e1-9c50-b54764344f65",
@@ -11045,10 +11933,21 @@
     "remarks": "伤感",
     "sharedName": "丢了你",
     "sharedArtist": "井胧",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "失去",
+      "分手",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "充滿悲傷情緒，表達失去摯愛的痛苦與不捨。"
   },
   {
     "id": "pool_c0506912-2487-4d5d-b140-771f7a077980",
@@ -11195,10 +12094,21 @@
     "remarks": "抒情",
     "sharedName": "渡红尘",
     "sharedArtist": "张碧晨",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "古風",
+      "悲壯",
+      "淒美",
+      "傳奇",
+      "磅礴"
+    ],
+    "aiSceneTags": [
+      "武俠劇OST",
+      "閱讀",
+      "獨處",
+      "懷舊"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "張碧晨演繹的古風歌曲，旋律大氣，情感磅礴。"
   },
   {
     "id": "pool_63527136-d445-4b5f-b431-06499f08ce70",
@@ -11233,10 +12143,21 @@
     "remarks": "抒情",
     "sharedName": "多情种",
     "sharedArtist": "胡杨林",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "纏綿",
+      "古風",
+      "思念",
+      "淒美"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "閱讀",
+      "懷舊電視劇"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "經典古風情歌，旋律婉轉，歌詞訴說多情人的哀愁。"
   },
   {
     "id": "pool_cd9a9b58-125c-481a-9286-d6c83db6778d",
@@ -11252,10 +12173,21 @@
     "remarks": "",
     "sharedName": "多幸运",
     "sharedArtist": "韩安旭",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "甜蜜",
+      "浪漫",
+      "幸福",
+      "溫暖",
+      "感恩"
+    ],
+    "aiSceneTags": [
+      "約會",
+      "戀愛",
+      "表白",
+      "婚禮"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "歌詞表達相遇的幸運與甜蜜，溫馨浪漫。"
   },
   {
     "id": "pool_c8268867-055c-44e5-b08b-92ed86f8f1e2",
@@ -11442,10 +12374,21 @@
     "remarks": "抒情",
     "sharedName": "疯人愿",
     "sharedArtist": "魏晨",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "執著",
+      "瘋狂",
+      "悲傷",
+      "抒情",
+      "絕望"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "沉思"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "情感濃烈的抒情歌，表達瘋狂的執著與願望。"
   },
   {
     "id": "pool_7a241242-10bf-42d8-b134-5ee2c8c7feae",
@@ -11552,10 +12495,21 @@
     "remarks": "伤感",
     "sharedName": "刚刚好",
     "sharedArtist": "薛之谦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "釋懷",
+      "沉重",
+      "無奈"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "療傷",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "薛之謙招牌情歌，旋律悲傷，歌詞表達感情終結。"
   },
   {
     "id": "pool_73199fbb-abbb-4003-8f53-05cb3bd9b3cd",
@@ -11663,10 +12617,22 @@
     "remarks": "",
     "sharedName": "关山酒",
     "sharedArtist": "小魂",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "古風",
+      "悲壯",
+      "豪邁",
+      "俠義",
+      "熱血"
+    ],
+    "aiSceneTags": [
+      "武俠劇OST",
+      "獨處",
+      "歷史",
+      "勵志",
+      "公路旅行"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "經典古風歌曲，旋律大氣，歌詞描繪邊塞豪情。"
   },
   {
     "id": "pool_90e22cba-a0ba-4b08-9253-70dc273186c3",
@@ -11682,10 +12648,21 @@
     "remarks": "抒情",
     "sharedName": "过家家",
     "sharedArtist": "门尼",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "輕快",
+      "俏皮",
+      "甜蜜",
+      "懷舊",
+      "浪漫"
+    ],
+    "aiSceneTags": [
+      "輕鬆時刻",
+      "居家",
+      "咖啡廳",
+      "約會"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "門尼的輕鬆小品，旋律活潑，歌詞帶有戀愛遊戲感。"
   },
   {
     "id": "pool_264a0b68-8651-491a-b391-ffac4b6e16aa",
@@ -11762,10 +12739,21 @@
     "remarks": "轻快",
     "sharedName": "海草舞",
     "sharedArtist": "萧全",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "歡快",
+      "熱鬧",
+      "活力",
+      "輕鬆",
+      "洗腦"
+    ],
+    "aiSceneTags": [
+      "派對",
+      "跳舞",
+      "廣場舞",
+      "運動"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "節奏感強烈的網絡熱歌，帶動歡樂氣氛。"
   },
   {
     "id": "pool_ce0133a1-5cbe-4305-9baf-cfb52ddb97f6",
@@ -11781,10 +12769,21 @@
     "remarks": "轻快",
     "sharedName": "海芋恋",
     "sharedArtist": "萧敬腾",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "浪漫",
+      "快樂",
+      "甜蜜",
+      "活潑",
+      "青春"
+    ],
+    "aiSceneTags": [
+      "約會",
+      "散步",
+      "開車",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "蕭敬騰輕快情歌，洋溢著初戀的甜蜜與浪漫。"
   },
   {
     "id": "pool_10c24db2-68cd-49d6-98b8-abd99ef6f62a",
@@ -11973,10 +12972,21 @@
     "remarks": "轻快",
     "sharedName": "嘿姑娘",
     "sharedArtist": "反光镜乐队",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "熱血",
+      "搖滾",
+      "青春",
+      "活力",
+      "自由"
+    ],
+    "aiSceneTags": [
+      "演唱會",
+      "派對",
+      "開車",
+      "釋放情緒"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "青春搖滾樂團的熱血之作，充滿活力。"
   },
   {
     "id": "pool_8b38d555-8817-419e-8861-0f6b1e0de1ad",
@@ -12053,10 +13063,22 @@
     "remarks": "伤感",
     "sharedName": "红玫瑰",
     "sharedArtist": "陈奕迅",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "誘惑",
+      "矛盾",
+      "沉重",
+      "慾望",
+      "深情"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "思考",
+      "曖昧"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "陳奕迅經典情歌，旋律深沉，歌詞探討人性慾望。"
   },
   {
     "id": "pool_7f8b7f2f-5499-43a9-8a8c-3925ab4464fc",
@@ -12213,10 +13235,21 @@
     "remarks": "",
     "sharedName": "坏女孩",
     "sharedArtist": "徐良",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "俏皮",
+      "青春",
+      "懷舊",
+      "網絡歌曲",
+      "輕鬆"
+    ],
+    "aiSceneTags": [
+      "KTV",
+      "青春回憶",
+      "玩樂",
+      "派對"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "網絡熱歌，描述壞女孩的獨特魅力，輕鬆活潑。"
   },
   {
     "id": "pool_98ce7f3a-f077-43e2-8765-6a2d1fcd9d1d",
@@ -12313,10 +13346,22 @@
     "remarks": "",
     "sharedName": "简单爱",
     "sharedArtist": "周杰伦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "甜蜜",
+      "青春",
+      "浪漫",
+      "快樂",
+      "輕快"
+    ],
+    "aiSceneTags": [
+      "初戀",
+      "校園",
+      "戀愛約會",
+      "輕鬆時刻",
+      "駕車"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "周杰倫經典情歌，旋律輕快，歌詞充滿單純愛戀。"
   },
   {
     "id": "pool_bfaa3e2d-3a2a-4dcd-a63f-6a73baf56b7b",
@@ -12332,10 +13377,21 @@
     "remarks": "",
     "sharedName": "江南雪",
     "sharedArtist": "礼越",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "古風",
+      "唯美",
+      "悲傷",
+      "詩意",
+      "沉靜"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "雨雪天",
+      "閱讀"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "充滿詩意的古風歌曲，描繪江南雪景的靜謐與憂愁。"
   },
   {
     "id": "pool_f411e937-592d-49f3-839f-942920a88b65",
@@ -12480,10 +13536,21 @@
     "remarks": "",
     "sharedName": "九张机",
     "sharedArtist": "叶炫清",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "古風",
+      "思念",
+      "詩意",
+      "唯美",
+      "纏綿"
+    ],
+    "aiSceneTags": [
+      "閱讀",
+      "獨處",
+      "古風漢服",
+      "夜晚"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "葉炫清經典古風曲，旋律優雅，歌詞充滿詩意思念。"
   },
   {
     "id": "pool_c3edea7b-c78f-4464-9143-1e81c4d48d04",
@@ -12561,10 +13628,22 @@
     "remarks": "抒情",
     "sharedName": "可以了",
     "sharedArtist": "陈奕迅",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "釋懷",
+      "遺憾",
+      "沉重",
+      "力量"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "療傷",
+      "夜晚",
+      "咖啡廳",
+      "思考"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "陳奕迅經典情歌，旋律深情，歌詞表達放下情感。"
   },
   {
     "id": "pool_8b074b47-e0f4-4562-854b-12d987acad94",
@@ -12580,10 +13659,22 @@
     "remarks": "伤感",
     "sharedName": "空白格",
     "sharedArtist": "蔡健雅",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "沉靜",
+      "內省",
+      "孤獨"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "療傷",
+      "思考"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "蔡健雅經典抒情歌，旋律緩慢，歌詞充滿遺憾與空白。"
   },
   {
     "id": "pool_07aa1740-327c-46d0-9321-2466fbd6039d",
@@ -12874,10 +13965,22 @@
     "remarks": "",
     "sharedName": "庐州月",
     "sharedArtist": "许嵩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "古風",
+      "懷舊",
+      "詩意",
+      "思念",
+      "寧靜"
+    ],
+    "aiSceneTags": [
+      "閱讀",
+      "獨處",
+      "夜晚",
+      "歷史文化",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "許嵩經典古風作品，旋律優美，歌詞充滿懷舊意境。"
   },
   {
     "id": "pool_eeede35c-d16c-4005-8a72-2f19377b8a8c",
@@ -13155,10 +14258,21 @@
     "remarks": "伤感",
     "sharedName": "末班车",
     "sharedArtist": "萧煌奇",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "離別",
+      "遺憾",
+      "抒情",
+      "感動"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "告別",
+      "沉思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "蕭煌奇的催淚金曲，道盡人生離合的無奈與感傷。"
   },
   {
     "id": "pool_cf07fa90-aa3e-446f-8c4d-1aff1a32423c",
@@ -13379,10 +14493,21 @@
     "remarks": "",
     "sharedName": "女人花",
     "sharedArtist": "梅艳芳",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "優雅",
+      "悲傷",
+      "懷舊",
+      "堅韌",
+      "深情"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "咖啡廳",
+      "懷舊金曲",
+      "夜晚"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "梅艷芳代表作，旋律優美，歌詞訴說女性柔情堅毅。"
   },
   {
     "id": "pool_ab20a674-cf0e-4e97-8290-1563ea3c9b33",
@@ -13436,10 +14561,21 @@
     "remarks": "伤感",
     "sharedName": "七月上",
     "sharedArtist": "Jam",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悠然",
+      "詩意",
+      "思念",
+      "輕柔",
+      "民謠"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "咖啡廳",
+      "旅途",
+      "夏日"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "Jam的民謠代表作，旋律清新，歌詞意境優美。"
   },
   {
     "id": "pool_37a5f057-6b07-40f0-972d-fe254764a4bf",
@@ -13455,10 +14591,21 @@
     "remarks": "",
     "sharedName": "凄美地",
     "sharedArtist": "郭顶",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "淒美",
+      "詩意",
+      "哲學",
+      "迷幻",
+      "沉思"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "藝術空間",
+      "夜晚",
+      "思考"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "郭頂代表作，旋律迷幻，歌詞充滿詩意與深邃情感。"
   },
   {
     "id": "pool_99a8c311-260b-46a3-9a35-c4ae6b9414d1",
@@ -13618,10 +14765,22 @@
     "remarks": "",
     "sharedName": "若把你",
     "sharedArtist": "刘瑾睿",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "古風",
+      "浪漫",
+      "詩意",
+      "甜美",
+      "幻想"
+    ],
+    "aiSceneTags": [
+      "閱讀",
+      "獨處",
+      "戀愛",
+      "幻想",
+      "古風漢服"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "歌詞意境唯美，旋律輕柔，充滿古典浪漫情懷。"
   },
   {
     "id": "pool_3a712dde-fb34-4913-be65-85d604883651",
@@ -13942,10 +15101,22 @@
     "remarks": "",
     "sharedName": "苏州河",
     "sharedArtist": "薛凯琪",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "懷舊",
+      "憂鬱",
+      "浪漫",
+      "詩意",
+      "沉靜"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "雨天",
+      "散步",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "描繪蘇州河畔的思緒，充滿復古情懷與淡淡憂愁。"
   },
   {
     "id": "pool_06e68e33-f992-4506-8a4a-3302a6549321",
@@ -14175,10 +15346,21 @@
     "remarks": "轻快, 浪漫/甜蜜",
     "sharedName": "甜甜的",
     "sharedArtist": "周杰伦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "甜蜜",
+      "浪漫",
+      "快樂",
+      "輕快",
+      "青春"
+    ],
+    "aiSceneTags": [
+      "約會",
+      "戀愛",
+      "散步",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "周杰倫的甜蜜情歌，充滿戀愛中的喜悅。"
   },
   {
     "id": "pool_249838b7-7efc-484c-8217-8b22e92cd8d6",
@@ -14292,10 +15474,21 @@
     "remarks": "治愈",
     "sharedName": "晚安曲",
     "sharedArtist": "毛不易",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "溫柔",
+      "治癒",
+      "平靜",
+      "睡前",
+      "安寧"
+    ],
+    "aiSceneTags": [
+      "睡前",
+      "獨處",
+      "靜思",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "毛不易的溫柔晚安，助人放鬆入眠，撫慰心靈。"
   },
   {
     "id": "pool_14449c89-ef6e-4d1a-9772-32630727421c",
@@ -14538,10 +15731,21 @@
     "remarks": "",
     "sharedName": "我很好",
     "sharedArtist": "刘大壮",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "故作堅強",
+      "遺憾",
+      "療傷",
+      "孤獨"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "療傷"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "劉大壯抒情作品，旋律哀傷，表達失戀後的故作堅強。"
   },
   {
     "id": "pool_684d609f-f2c8-4a5a-88bd-6cb8bc2a822a",
@@ -14730,10 +15934,21 @@
     "remarks": "",
     "sharedName": "我以为",
     "sharedArtist": "品冠",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "抒情",
+      "懷舊",
+      "孤獨"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "品冠的經典情歌，唱出愛情裡的誤解與傷痛。"
   },
   {
     "id": "pool_fb920f03-5eb6-46aa-8329-d032ddaf89f7",
@@ -14999,10 +16214,22 @@
     "remarks": "",
     "sharedName": "想着你",
     "sharedArtist": "郭顶",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "思念",
+      "浪漫",
+      "溫馨",
+      "輕柔",
+      "爵士"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "咖啡廳",
+      "夜晚",
+      "約會",
+      "睡前"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "郭頂抒情作品，旋律溫柔，歌詞表達甜蜜思念。"
   },
   {
     "id": "pool_b152463e-bd3a-4aa8-8326-4c343f4b7201",
@@ -15099,10 +16326,21 @@
     "remarks": "",
     "sharedName": "小白兔",
     "sharedArtist": "韩雨孜",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "可愛",
+      "童真",
+      "活潑",
+      "輕鬆",
+      "溫馨"
+    ],
+    "aiSceneTags": [
+      "親子",
+      "玩樂",
+      "睡前",
+      "午後"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "充滿童趣的歌曲，旋律可愛活潑。"
   },
   {
     "id": "pool_38984d74-00b9-49d5-8a50-8e4cb9ac377f",
@@ -15180,10 +16418,20 @@
     "remarks": "",
     "sharedName": "小毛驴",
     "sharedArtist": "卓依婷",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "快樂",
+      "童真",
+      "活潑",
+      "輕鬆",
+      "懷舊"
+    ],
+    "aiSceneTags": [
+      "童年回憶",
+      "親子",
+      "玩樂"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "經典兒童歌曲，充滿童趣與歡樂。"
   },
   {
     "id": "pool_886f7ca9-2015-4013-a1fd-c4a56798cbda",
@@ -15268,10 +16516,21 @@
     "remarks": "电影《我的少女时代》主题曲",
     "sharedName": "小幸运",
     "sharedArtist": "田馥甄",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "青春",
+      "懷舊",
+      "甜蜜",
+      "浪漫",
+      "治癒"
+    ],
+    "aiSceneTags": [
+      "校園",
+      "回憶",
+      "散步",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "青春愛情電影主題曲，充滿校園回憶與甜蜜。"
   },
   {
     "id": "pool_1fd13703-c62c-462e-bc1d-826059bd2d2e",
@@ -15287,10 +16546,21 @@
     "remarks": "",
     "sharedName": "小燕子",
     "sharedArtist": "王丹凤",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "童趣",
+      "輕快",
+      "活潑",
+      "經典",
+      "快樂"
+    ],
+    "aiSceneTags": [
+      "兒童時間",
+      "親子活動",
+      "懷舊金曲",
+      "幼兒園"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "經典兒歌，旋律活潑，充滿對大自然的喜愛。"
   },
   {
     "id": "pool_340cb82c-29b5-43d0-b2a8-629b08f9d2d9",
@@ -15337,10 +16607,21 @@
     "remarks": "",
     "sharedName": "笑红尘",
     "sharedArtist": "陈淑桦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "瀟灑",
+      "灑脫",
+      "豁達",
+      "古風",
+      "經典"
+    ],
+    "aiSceneTags": [
+      "閱讀",
+      "旅行",
+      "靜思",
+      "武俠劇配樂"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "武俠經典，歌詞瀟灑豁達，笑看紅塵。"
   },
   {
     "id": "pool_b7a71cc7-1d79-4f7c-acc9-0c7e8493c8d7",
@@ -15456,10 +16737,21 @@
     "remarks": "治愈",
     "sharedName": "萱草花",
     "sharedArtist": "小霞",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "感動",
+      "溫馨",
+      "母愛",
+      "治癒",
+      "懷舊"
+    ],
+    "aiSceneTags": [
+      "親子",
+      "回憶",
+      "睡前",
+      "獨處"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "歌頌母愛，溫暖感人，充滿深情。"
   },
   {
     "id": "pool_30b3c59b-b893-45aa-b028-f80c86d74869",
@@ -15525,10 +16817,21 @@
     "remarks": "",
     "sharedName": "檐上猫",
     "sharedArtist": "洪思雨",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "輕快",
+      "慵懶",
+      "治癒",
+      "溫馨",
+      "可愛"
+    ],
+    "aiSceneTags": [
+      "咖啡廳",
+      "午後",
+      "閱讀",
+      "散步"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "輕柔的旋律，描繪貓咪的慵懶與屋簷下的寧靜。"
   },
   {
     "id": "pool_256150c0-0d8b-411e-a121-e8c69c014906",
@@ -15631,10 +16934,22 @@
     "remarks": "",
     "sharedName": "一页诗",
     "sharedArtist": "张远",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "浪漫",
+      "詩意",
+      "甜美",
+      "溫馨",
+      "輕柔"
+    ],
+    "aiSceneTags": [
+      "戀愛",
+      "獨處",
+      "閱讀",
+      "約會",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "浪漫抒情歌，歌詞意境優美，描繪如同詩歌的愛情。"
   },
   {
     "id": "pool_4e11208d-e7c0-41fd-b5e7-02bf94b76b5b",
@@ -15762,10 +17077,21 @@
     "remarks": "浪漫/甜蜜",
     "sharedName": "有点甜",
     "sharedArtist": "汪苏泷",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "甜蜜",
+      "浪漫",
+      "輕快",
+      "青春",
+      "愉悅"
+    ],
+    "aiSceneTags": [
+      "約會",
+      "戀愛",
+      "散步",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "汪蘇瀧的甜蜜對唱情歌，充滿戀愛氣息。"
   },
   {
     "id": "pool_2f4e6d40-21e0-4fea-a595-628a943c5fd2",
@@ -15812,10 +17138,21 @@
     "remarks": "",
     "sharedName": "有我呢",
     "sharedArtist": "郭一凡",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "溫暖",
+      "治癒",
+      "鼓勵",
+      "陪伴",
+      "感動"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "睡前",
+      "陪伴"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "溫暖的歌曲，給予聽眾支持與陪伴的力量。"
   },
   {
     "id": "pool_3673768b-a9c1-47d7-ae27-dcd262eeedd4",
@@ -16160,10 +17497,21 @@
     "remarks": "",
     "sharedName": "猪老三",
     "sharedArtist": "何大河",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "民謠",
+      "故事感",
+      "幽默",
+      "哲思",
+      "樸實"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "旅行",
+      "午後"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "充滿故事感的民謠，歌詞富有生活哲理。"
   },
   {
     "id": "pool_62fbdf2c-7173-45f3-84b3-5733806386cb",
@@ -16208,10 +17556,21 @@
     "remarks": "",
     "sharedName": "追光者",
     "sharedArtist": "岑宁儿",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "治癒",
+      "溫暖",
+      "浪漫",
+      "勵志",
+      "純粹"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "電影配樂",
+      "睡前"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "溫暖治癒的純愛歌曲，給予追逐夢想的力量。"
   },
   {
     "id": "pool_9975381d-0651-4705-95d8-ea22b56da5a9",
@@ -16382,10 +17741,21 @@
     "remarks": "",
     "sharedName": "爱情转移",
     "sharedArtist": "陈奕迅",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "深情",
+      "哲思",
+      "成熟"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "雨天",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "陳奕迅經典情歌，探討愛情轉移的無奈與感悟。"
   },
   {
     "id": "pool_17a9bc09-f7f7-41e4-94b8-4d207510cf5e",
@@ -16512,10 +17882,21 @@
     "remarks": "",
     "sharedName": "安阳安阳",
     "sharedArtist": "李晋",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "思鄉",
+      "懷舊",
+      "平靜",
+      "溫暖",
+      "故事感"
+    ],
+    "aiSceneTags": [
+      "旅行",
+      "獨處",
+      "靜思",
+      "睡前"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "城市民謠，歌頌故鄉，帶有溫暖懷舊氛圍。"
   },
   {
     "id": "pool_569c4eb8-b9d5-460c-90c2-2de3f6a8baa6",
@@ -16599,10 +17980,21 @@
     "remarks": "",
     "sharedName": "巴拉莱卡",
     "sharedArtist": "门尼",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "輕快",
+      "夢幻",
+      "異國情調",
+      "活潑",
+      "愉悅"
+    ],
+    "aiSceneTags": [
+      "旅行",
+      "咖啡廳",
+      "散步",
+      "午後"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "異域風情的輕快旋律，營造輕鬆愉悅氛圍。"
   },
   {
     "id": "pool_40d260bf-4cf3-43c1-b49d-85ef0691b65b",
@@ -16685,10 +18077,21 @@
     "remarks": "",
     "sharedName": "半城烟沙",
     "sharedArtist": "许嵩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "古風",
+      "悲壯",
+      "詩意",
+      "戰爭",
+      "磅礴"
+    ],
+    "aiSceneTags": [
+      "遊戲OST",
+      "閱讀",
+      "獨處",
+      "懷舊"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "許嵩經典古風作品，旋律磅礴，歌詞意境宏大。"
   },
   {
     "id": "pool_34383835-5e98-417c-8acc-0b42069e0b84",
@@ -16723,10 +18126,21 @@
     "remarks": "",
     "sharedName": "背叛情歌",
     "sharedArtist": "动力火车",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "憤怒",
+      "搖滾",
+      "宣洩",
+      "力量"
+    ],
+    "aiSceneTags": [
+      "KTV",
+      "釋放情緒",
+      "獨處",
+      "開車"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "動力火車經典，情感爆發，唱出背叛的痛苦。"
   },
   {
     "id": "pool_9c3f4943-5495-47ae-a435-7f718baf1de4",
@@ -16799,10 +18213,21 @@
     "remarks": "燃炸",
     "sharedName": "拨云见日",
     "sharedArtist": "艾热AIR 王以太",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "勵志",
+      "奮鬥",
+      "陽光",
+      "振奮",
+      "力量"
+    ],
+    "aiSceneTags": [
+      "運動",
+      "健身",
+      "開車",
+      "工作"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "勵志嘻哈歌曲，節奏感強，充滿力量。"
   },
   {
     "id": "pool_ff529a7a-e481-4fd9-a19f-cd1d164cf585",
@@ -16818,10 +18243,22 @@
     "remarks": "",
     "sharedName": "不弃不离",
     "sharedArtist": "羽泉",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "深情",
+      "承諾",
+      "溫馨",
+      "浪漫",
+      "感動"
+    ],
+    "aiSceneTags": [
+      "婚禮",
+      "戀愛",
+      "獨處",
+      "紀念日",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "羽泉經典情歌，旋律溫暖，歌詞表達不離不棄的深情。"
   },
   {
     "id": "pool_46359dc1-9072-4009-8e6d-c3b5739f2dc2",
@@ -16956,10 +18393,21 @@
     "remarks": "",
     "sharedName": "曾经心痛",
     "sharedArtist": "叶蒨文",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "懷舊",
+      "遺憾",
+      "療傷",
+      "經典"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "懷舊金曲",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "葉蒨文經典情歌，旋律深情，歌詞表達心痛。"
   },
   {
     "id": "pool_c9a29ea4-bb58-4040-b20d-6f3bec0c2905",
@@ -17054,10 +18502,21 @@
     "remarks": "伤感；*",
     "sharedName": "初次见面",
     "sharedArtist": "浩南",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "甜蜜",
+      "期待",
+      "緊張",
+      "戀愛",
+      "輕快"
+    ],
+    "aiSceneTags": [
+      "初次約會",
+      "戀愛",
+      "輕鬆時刻",
+      "告白"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "輕快浪漫的流行歌，充滿初次見面的甜蜜與期待。"
   },
   {
     "id": "pool_22b2f600-9e5a-4218-b806-d1b52537f33c",
@@ -17092,10 +18551,21 @@
     "remarks": "电视剧《仙剑奇侠传三》插曲",
     "sharedName": "此生不换",
     "sharedArtist": "青鸟飞鱼",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "浪漫",
+      "史詩",
+      "執著",
+      "唯美",
+      "感人"
+    ],
+    "aiSceneTags": [
+      "電視劇配樂",
+      "遊戲配樂",
+      "夢幻",
+      "幻想"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "仙劍奇俠傳經典，描寫不變的愛戀與承諾。"
   },
   {
     "id": "pool_a506308c-bd80-4827-bd76-6fa46a5b1f43",
@@ -17328,10 +18798,22 @@
     "remarks": "抒情",
     "sharedName": "等等等等",
     "sharedArtist": "刘凤瑶",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "等待",
+      "思念",
+      "寂寞",
+      "期待",
+      "溫和"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "療傷",
+      "沉思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "劉鳳瑤抒情作品，旋律溫和，歌詞表達等待心情。"
   },
   {
     "id": "pool_b79728bb-90df-4094-b1f8-2b60f473c141",
@@ -17487,10 +18969,21 @@
     "remarks": "",
     "sharedName": "东北民谣",
     "sharedArtist": "毛不易",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "懷舊",
+      "思鄉",
+      "溫馨",
+      "平靜",
+      "故事感"
+    ],
+    "aiSceneTags": [
+      "旅行",
+      "獨處",
+      "靜思",
+      "午後"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "樸實的民謠風格，帶有東北特色與懷舊情緒。"
   },
   {
     "id": "pool_68f3ae02-7700-4ad3-92a9-d440629e0a5f",
@@ -17525,10 +19018,21 @@
     "remarks": "燃炸",
     "sharedName": "都市沙漠",
     "sharedArtist": "刘凤瑶",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "孤獨",
+      "迷茫",
+      "反思",
+      "城市",
+      "搖滾"
+    ],
+    "aiSceneTags": [
+      "城市夜景",
+      "獨處",
+      "思考",
+      "公路旅行"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "歌詞描繪都市疏離感，旋律帶有搖滾色彩。"
   },
   {
     "id": "pool_dab95390-ff8f-479d-9030-1f537bc079e3",
@@ -17724,10 +19228,21 @@
     "remarks": "伤感",
     "sharedName": "飞蛾扑火",
     "sharedArtist": "许嵩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "執著",
+      "絕望",
+      "抒情",
+      "迷惘"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "雨天",
+      "沉思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "許嵩經典，描繪飛蛾撲火般的愛情，情感濃烈。"
   },
   {
     "id": "pool_05daa426-9568-42c8-b4de-bead07c0cb71",
@@ -17843,10 +19358,21 @@
     "remarks": "轻快",
     "sharedName": "改变自己",
     "sharedArtist": "王力宏",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "勵志",
+      "積極",
+      "陽光",
+      "振奮",
+      "能量"
+    ],
+    "aiSceneTags": [
+      "運動",
+      "工作",
+      "學習",
+      "開車"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "充滿正能量的勵志歌曲，鼓勵自我改變。"
   },
   {
     "id": "pool_5f9d6e70-b2d0-46d8-aa89-37d29e8cbf81",
@@ -17862,10 +19388,22 @@
     "remarks": "燃炸",
     "sharedName": "感官先生",
     "sharedArtist": "刘凤瑶",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "時髦",
+      "慵懶",
+      "性感",
+      "獨特",
+      "R&B"
+    ],
+    "aiSceneTags": [
+      "咖啡廳",
+      "夜店",
+      "獨處",
+      "駕駛",
+      "輕鬆時刻"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "劉鳳瑤獨特風格，旋律慵懶時髦，富有節奏感。"
   },
   {
     "id": "pool_b70b1e60-b1b2-43e9-b1cf-e34b41530a00",
@@ -17967,10 +19505,21 @@
     "remarks": "轻快；*",
     "sharedName": "勾手起誓",
     "sharedArtist": "冷鸢yousa",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "甜蜜",
+      "浪漫",
+      "少女心",
+      "輕快",
+      "承諾"
+    ],
+    "aiSceneTags": [
+      "約會",
+      "戀愛",
+      "愉悅",
+      "散步"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "甜蜜的戀愛歌曲，充滿少女心與約定。"
   },
   {
     "id": "pool_2996bea1-1812-4e14-b0b9-24bcbb56506f",
@@ -18036,10 +19585,21 @@
     "remarks": "电影《太空旅客》中文主题曲",
     "sharedName": "光年之外",
     "sharedArtist": "邓紫棋",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "勵志",
+      "史詩",
+      "浪漫",
+      "力量",
+      "激昂"
+    ],
+    "aiSceneTags": [
+      "電影配樂",
+      "演唱會",
+      "跑步",
+      "開車"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "鄧紫棋代表作，高亢激昂，充滿史詩般的愛戀。"
   },
   {
     "id": "pool_69be023e-89cd-4f2d-9bca-d150c9ef12a8",
@@ -18336,10 +19896,21 @@
     "remarks": "",
     "sharedName": "很久以后",
     "sharedArtist": "邓紫棋",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "回憶",
+      "釋懷",
+      "抒情",
+      "遺憾"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "雨天",
+      "沉思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "鄧紫棋抒情代表作，唱出失去愛情的痛苦與釋懷。"
   },
   {
     "id": "pool_7b34dc9c-5983-4c82-b0e3-587abae89a74",
@@ -18355,10 +19926,21 @@
     "remarks": "",
     "sharedName": "红尘客栈",
     "sharedArtist": "周杰伦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "中國風",
+      "浪漫",
+      "唯美",
+      "故事感",
+      "懷舊"
+    ],
+    "aiSceneTags": [
+      "閱讀",
+      "旅行",
+      "靜思",
+      "茶館"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "周杰倫經典中國風，充滿江湖與浪漫意境。"
   },
   {
     "id": "pool_e8c8d016-58a2-483b-9053-af835f47ac05",
@@ -18531,10 +20113,21 @@
     "remarks": "",
     "sharedName": "黄色枫叶",
     "sharedArtist": "薛之谦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "離別",
+      "遺憾",
+      "抒情",
+      "秋日"
+    ],
+    "aiSceneTags": [
+      "秋日",
+      "獨處",
+      "療傷",
+      "回憶"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "薛之謙情歌，以黃色楓葉比喻離別愁緒。"
   },
   {
     "id": "pool_26aa17c0-6c4b-4e16-bce8-d29444db249e",
@@ -18580,10 +20173,22 @@
     "remarks": "伤感",
     "sharedName": "火柴天堂",
     "sharedArtist": "熊天平",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "淒美",
+      "童話",
+      "感動",
+      "故事"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "思考",
+      "療傷",
+      "睡前"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "熊天平經典抒情歌，旋律優美，歌詞如童話般淒美。"
   },
   {
     "id": "pool_0f81dbdd-1033-475e-8fcb-cfee1b1cb1ec",
@@ -18691,10 +20296,21 @@
     "remarks": "",
     "sharedName": "寂寞患者",
     "sharedArtist": "光泽",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "孤獨",
+      "悲傷",
+      "壓抑",
+      "抒情",
+      "迷惘"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "沉思"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "寂寞患者的獨白，情感真摯，略帶R&B風格。"
   },
   {
     "id": "pool_a8f85e3f-ae84-4905-8487-ff0a3537dc19",
@@ -18741,10 +20357,22 @@
     "remarks": "",
     "sharedName": "家在东北",
     "sharedArtist": "庞龙",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "自豪",
+      "歡快",
+      "鄉土",
+      "熱情",
+      "慶典"
+    ],
+    "aiSceneTags": [
+      "聚會",
+      "慶典",
+      "旅行",
+      "地域文化",
+      "KTV"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "龐龍代表作，旋律歡快，充滿東北人的熱情與自豪。"
   },
   {
     "id": "pool_04cb9c23-999f-41aa-ab1f-429736cda5d6",
@@ -18997,10 +20625,21 @@
     "remarks": "",
     "sharedName": "可不可以",
     "sharedArtist": "张紫豪",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "思念",
+      "抒情",
+      "分手"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "傷感流行曲，唱出愛情中的卑微與不捨。"
   },
   {
     "id": "pool_b82d1ca3-96e8-4dd6-a0fc-f3a644723ac6",
@@ -19016,10 +20655,21 @@
     "remarks": "",
     "sharedName": "可有可无",
     "sharedArtist": "佛跳牆",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "憤怒",
+      "宣洩",
+      "搖滾",
+      "力量",
+      "獨立"
+    ],
+    "aiSceneTags": [
+      "釋放情緒",
+      "開車",
+      "演唱會",
+      "運動"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "佛跳牆的搖滾風格，宣洩對可有可無的無奈。"
   },
   {
     "id": "pool_01389089-95db-4c02-a737-8573c176ba9b",
@@ -19251,10 +20901,21 @@
     "remarks": "伤感；电视剧《雪城》片尾曲",
     "sharedName": "离不开你",
     "sharedArtist": "刘欢",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "深情",
+      "經典",
+      "感人",
+      "力量",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "婚禮",
+      "表白",
+      "回憶",
+      "演唱會"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "劉歡經典情歌，唱出對愛情的忠貞不渝。"
   },
   {
     "id": "pool_02072361-f569-4ab3-9330-d1da1694e1a9",
@@ -19337,10 +20998,21 @@
     "remarks": "抒情",
     "sharedName": "聊表心意",
     "sharedArtist": "薛之谦 刘惜君",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "抒情",
+      "壓抑",
+      "深情"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "療傷",
+      "雨天"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "薛之謙與劉惜君對唱，情感細膩，帶有淡淡悲傷。"
   },
   {
     "id": "pool_88078599-136d-4b61-8582-a61e491b5d89",
@@ -19494,10 +21166,21 @@
     "remarks": "抒情；广播剧《碎玉投珠》主题曲",
     "sharedName": "玫瑰先生",
     "sharedArtist": "Mario",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "浪漫",
+      "深情",
+      "溫柔",
+      "爵士",
+      "紳士"
+    ],
+    "aiSceneTags": [
+      "約會",
+      "咖啡廳",
+      "夜晚",
+      "戀愛"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "溫柔浪漫的歌曲，描繪紳士的深情。"
   },
   {
     "id": "pool_51662b19-3db9-474e-99ce-d28cc134aa76",
@@ -19513,10 +21196,22 @@
     "remarks": "伤感",
     "sharedName": "美丽谎言",
     "sharedArtist": "都智文",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "矛盾",
+      "情感",
+      "沉重",
+      "思考"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "夜晚",
+      "咖啡廳",
+      "思考",
+      "療傷"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "抒情流行歌，歌詞描繪感情中的矛盾與謊言。"
   },
   {
     "id": "pool_84a513be-e7df-4520-b926-89ce8304f045",
@@ -19563,10 +21258,22 @@
     "remarks": "",
     "sharedName": "梦里水乡",
     "sharedArtist": "江珊",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "寧靜",
+      "懷舊",
+      "詩意",
+      "悠遠",
+      "典雅"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "閱讀",
+      "旅遊",
+      "懷舊金曲",
+      "水鄉"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "經典中國風歌曲，旋律優美，歌詞描繪水鄉詩意。"
   },
   {
     "id": "pool_7e2e3d24-6d01-417a-934a-6316c3de2476",
@@ -19909,10 +21616,21 @@
     "remarks": "",
     "sharedName": "男孩别哭",
     "sharedArtist": "海龟先生",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "治癒",
+      "鼓勵",
+      "獨立",
+      "搖滾",
+      "溫暖"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "釋放情緒",
+      "旅行",
+      "咖啡廳"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "溫暖的獨立搖滾，給予男孩們力量與安慰。"
   },
   {
     "id": "pool_c5e085bd-4a34-4419-88ef-9d70e45fb401",
@@ -20261,10 +21979,22 @@
     "remarks": "伤感",
     "sharedName": "年少心事",
     "sharedArtist": "王一博",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "青春",
+      "活力",
+      "夢想",
+      "熱血",
+      "勵志"
+    ],
+    "aiSceneTags": [
+      "校園",
+      "運動",
+      "勵志",
+      "演唱會",
+      "追夢"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "王一博青春作品，旋律激昂，歌詞充滿少年心事與熱情。"
   },
   {
     "id": "pool_a4c053fe-5688-42ca-b4bd-c6a526904083",
@@ -20623,10 +22353,21 @@
     "remarks": "伤感",
     "sharedName": "人间烟火",
     "sharedArtist": "程响",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "溫馨",
+      "浪漫",
+      "幸福",
+      "平靜",
+      "生活"
+    ],
+    "aiSceneTags": [
+      "散步",
+      "日常",
+      "咖啡廳",
+      "午後"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "歌詞描繪人間煙火日常，曲風溫馨甜蜜。"
   },
   {
     "id": "pool_d8ac722c-0699-4d33-9abe-0255126dfdbe",
@@ -20770,10 +22511,21 @@
     "remarks": "伤感；*",
     "sharedName": "三妻四妾",
     "sharedArtist": "王媛渊",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "諷刺",
+      "幽默",
+      "戲劇性",
+      "古風",
+      "反思"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "思考",
+      "歷史文化",
+      "吐槽"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "歌詞以古諷今，旋律帶有戲曲色彩，獨特有趣。"
   },
   {
     "id": "pool_669ecd80-bab5-4a56-8d5e-f2726b4a81ce",
@@ -21003,10 +22755,21 @@
     "remarks": "电视剧《你是我的荣耀》插曲",
     "sharedName": "生来是鹰",
     "sharedArtist": "陈雪燃",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "激勵",
+      "力量",
+      "勇氣",
+      "夢想",
+      "熱血"
+    ],
+    "aiSceneTags": [
+      "運動",
+      "工作",
+      "勵志",
+      "熱血"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "充滿力量的勵志歌曲，旋律振奮，激發鬥志。"
   },
   {
     "id": "pool_a444d2df-3420-4ee4-bad0-c609de40fcea",
@@ -21022,10 +22785,21 @@
     "remarks": "浪漫/甜蜜, 轻快",
     "sharedName": "失眠飞行",
     "sharedArtist": "沈以诚 薛明媛",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "輕快",
+      "甜蜜",
+      "浪漫",
+      "愉悅",
+      "慵懶"
+    ],
+    "aiSceneTags": [
+      "散步",
+      "約會",
+      "咖啡廳",
+      "旅行"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "輕鬆愉悅的對唱情歌，充滿浪漫甜蜜氣息。"
   },
   {
     "id": "pool_ac7db3e0-d53a-4c98-a243-5da99c62e4b2",
@@ -21381,10 +23155,21 @@
     "remarks": "",
     "sharedName": "碎银几两",
     "sharedArtist": "轩东",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "哲思",
+      "現實",
+      "惆悵",
+      "民謠",
+      "沉靜"
+    ],
+    "aiSceneTags": [
+      "獨處",
+      "靜思",
+      "夜晚",
+      "閱讀"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "歌詞探討人生與金錢的哲理，略帶感傷。"
   },
   {
     "id": "pool_26479f3e-6610-4c91-a20a-e5e760e42b86",
@@ -21507,10 +23292,21 @@
     "remarks": "",
     "sharedName": "天空之城",
     "sharedArtist": "李志",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "哲思",
+      "孤獨",
+      "懷舊",
+      "沉靜",
+      "民謠"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "獨處",
+      "靜思",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "李志的民謠經典，探討理想與現實的距離。"
   },
   {
     "id": "pool_a8a72822-d067-4eb6-8a32-9e497376e637",
@@ -21526,10 +23322,22 @@
     "remarks": "轻快, 浪漫/甜蜜；小龙虾",
     "sharedName": "天气未报",
     "sharedArtist": "余佳运",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "慵懶",
+      "溫暖",
+      "浪漫",
+      "輕鬆",
+      "R&B"
+    ],
+    "aiSceneTags": [
+      "咖啡廳",
+      "居家",
+      "雨天",
+      "約會",
+      "睡前"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "余佳運慵懶R&B，旋律舒服，適合放鬆享受。"
   },
   {
     "id": "pool_1fa384de-c3ca-4ddd-889c-80827caaec86",
@@ -21845,10 +23653,21 @@
     "remarks": "",
     "sharedName": "我不知道",
     "sharedArtist": "梁博",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "搖滾",
+      "力量",
+      "迷惘",
+      "宣洩",
+      "哲思"
+    ],
+    "aiSceneTags": [
+      "開車",
+      "釋放情緒",
+      "獨處",
+      "演唱會"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "梁博的搖滾力量，展現迷茫與內心的掙扎。"
   },
   {
     "id": "pool_abe5bea2-364e-4245-ab92-2c5bac4d3a3f",
@@ -22257,10 +24076,21 @@
     "remarks": "抒情；叮当",
     "sharedName": "想你想你",
     "sharedArtist": "毛不易",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "思念",
+      "溫柔",
+      "孤獨",
+      "治癒",
+      "抒情"
+    ],
+    "aiSceneTags": [
+      "夜晚",
+      "睡前",
+      "獨處",
+      "咖啡廳"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "毛不易溫柔的嗓音詮釋思念，情感真摯。"
   },
   {
     "id": "pool_5eecad31-f26a-458b-ad8e-03724d40a17b",
@@ -22295,10 +24125,22 @@
     "remarks": "",
     "sharedName": "想去海边",
     "sharedArtist": "夏日入侵企画",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "自由",
+      "輕鬆",
+      "嚮往",
+      "活力",
+      "夏日"
+    ],
+    "aiSceneTags": [
+      "旅行",
+      "駕車",
+      "夏日",
+      "戶外",
+      "朋友聚會"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "夏日入侵企劃代表作，旋律輕快，充滿夏日氣息。"
   },
   {
     "id": "pool_17793031-000a-42b7-87f8-df2e1a972658",
@@ -22857,10 +24699,21 @@
     "remarks": "轻快",
     "sharedName": "阳光宅男",
     "sharedArtist": "周杰伦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "陽光",
+      "快樂",
+      "活力",
+      "青春",
+      "輕快"
+    ],
+    "aiSceneTags": [
+      "運動",
+      "派對",
+      "開車",
+      "旅行"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "周杰倫的活力歌曲，充滿陽光青春的氣息。"
   },
   {
     "id": "pool_beb223d9-0d94-494f-abad-081f16725493",
@@ -23097,10 +24950,21 @@
     "remarks": "抒情",
     "sharedName": "一路向北",
     "sharedArtist": "周杰伦",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "悲傷",
+      "離別",
+      "懷舊",
+      "搖滾",
+      "青春"
+    ],
+    "aiSceneTags": [
+      "開車",
+      "電影配樂",
+      "釋放情緒",
+      "旅行"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "周杰倫電影主題曲，速度感強，帶有離別的憂傷。"
   },
   {
     "id": "pool_525aab3c-a898-40b7-b0d9-4362985d9975",
@@ -23430,10 +25294,22 @@
     "remarks": "",
     "sharedName": "云烟成雨",
     "sharedArtist": "房东的猫",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "治癒",
+      "溫柔",
+      "清新",
+      "懷舊",
+      "青春"
+    ],
+    "aiSceneTags": [
+      "咖啡廳",
+      "閱讀",
+      "散步",
+      "午後",
+      "獨處"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "房東的貓清新民謠，溫柔而帶有淡淡的惆悵。"
   },
   {
     "id": "pool_c6fb3c11-4651-4994-9e82-040234b7e322",
@@ -23650,10 +25526,22 @@
     "remarks": "",
     "sharedName": "纸短情长",
     "sharedArtist": "—烟把儿乐队",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "aiMoodTags": [
+      "浪漫",
+      "思念",
+      "懷舊",
+      "溫馨",
+      "甜美"
+    ],
+    "aiSceneTags": [
+      "咖啡廳",
+      "獨處",
+      "戀愛",
+      "朋友聚會",
+      "告白"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "網路爆紅情歌，旋律溫馨，歌詞表達深情思念。"
   },
   {
     "id": "pool_9284a5b1-f955-40a5-88c0-a329d98850eb",
@@ -33439,7 +35327,7 @@
   {
     "id": "pool_b4775c52-fa46-46b5-b9de-7a86cb58572b",
     "poolSongId": "b4775c52-fa46-46b5-b9de-7a86cb58572b",
-    "songId": null,
+    "songId": "78e0cee7-2c6f-45b8-8662-1b38365fcd50",
     "seq": 1489,
     "name": "一开始说陪你到老的人现在他还在吗",
     "songName": "一开始说陪你到老的人现在他还在吗",
@@ -33448,37 +35336,28 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
-  },
-  {
-    "id": "pool_9ac669e0-0ae8-43d2-8592-652511c277e2",
-    "poolSongId": "9ac669e0-0ae8-43d2-8592-652511c277e2",
-    "songId": null,
-    "seq": 1490,
-    "name": "一开始说陪你到老的人现在他还在吗",
-    "songName": "一开始说陪你到老的人现在他还在吗",
-    "artist": "于洋",
-    "style": "",
-    "rawStyle": "",
-    "rawTags": "",
-    "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null
+    "sharedName": "一开始说陪你到老的人现在他还在吗",
+    "sharedArtist": "于洋",
+    "aiMoodTags": [
+      "悲傷",
+      "遺憾",
+      "失望",
+      "懷舊"
+    ],
+    "aiSceneTags": [
+      "失戀",
+      "回憶",
+      "夜晚",
+      "獨自感傷"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "歌曲直問愛情承諾的消逝，情感真摯。"
   },
   {
     "id": "pool_eabacc98-6dde-4e14-afae-36fc8c2f5968",
     "poolSongId": "eabacc98-6dde-4e14-afae-36fc8c2f5968",
     "songId": "3686f680-ce19-4d87-8c88-afaff7aae54f",
-    "seq": 1491,
+    "seq": 1490,
     "name": "二十三号病床",
     "songName": "二十三号病床",
     "artist": "葛东琪",
@@ -33497,7 +35376,7 @@
     "id": "pool_287e6322-0e27-4a76-87c3-310fa5ae4899",
     "poolSongId": "287e6322-0e27-4a76-87c3-310fa5ae4899",
     "songId": "b8cddd58-3a12-47e7-8207-d0243ef6297b",
-    "seq": 1492,
+    "seq": 1491,
     "name": "21克博物馆",
     "songName": "21克博物馆",
     "artist": "门尼",
@@ -33515,17 +35394,17 @@
   {
     "id": "pool_5b636a7b-06ff-41bf-a9b4-131bc5a6c305",
     "poolSongId": "5b636a7b-06ff-41bf-a9b4-131bc5a6c305",
-    "songId": null,
-    "seq": 1493,
-    "name": "Boom比尔",
-    "songName": "Boom比尔",
-    "artist": "",
+    "songId": "b75994dc-2bed-431f-866a-1cd35b351a1f",
+    "seq": 1492,
+    "name": "1022",
+    "songName": "1022",
+    "artist": "Boom比尔",
     "style": "",
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "1022",
+    "sharedArtist": "Boom比尔",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -33534,8 +35413,8 @@
   {
     "id": "pool_ed6a39ff-5987-4ab0-9224-e5d62ba2a447",
     "poolSongId": "ed6a39ff-5987-4ab0-9224-e5d62ba2a447",
-    "songId": null,
-    "seq": 1494,
+    "songId": "cd90f1a2-ff17-49c1-8198-bf8bbeaf04a0",
+    "seq": 1493,
     "name": "1987我不知會遇見你",
     "songName": "1987我不知會遇見你",
     "artist": "李宇春",
@@ -33543,8 +35422,8 @@
     "rawStyle": "",
     "rawTags": "",
     "remarks": "",
-    "sharedName": "",
-    "sharedArtist": "",
+    "sharedName": "1987我不知会遇见你",
+    "sharedArtist": "李宇春",
     "aiMoodTags": [],
     "aiSceneTags": [],
     "aiEnergy": null,
@@ -33554,7 +35433,7 @@
     "id": "pool_92afcba6-4ad7-44a7-8f24-29ca49ca82a3",
     "poolSongId": "92afcba6-4ad7-44a7-8f24-29ca49ca82a3",
     "songId": "355d9894-0dfa-461f-8111-5c1d73d3719a",
-    "seq": 1495,
+    "seq": 1494,
     "name": "Promise",
     "songName": "Promise",
     "artist": "Wonstein",
@@ -33584,7 +35463,7 @@
     "id": "pool_d6984509-c458-43d5-b75d-4032f3488ce3",
     "poolSongId": "d6984509-c458-43d5-b75d-4032f3488ce3",
     "songId": "748db3ac-def0-456c-aa0f-485bc0993ce2",
-    "seq": 1496,
+    "seq": 1495,
     "name": "跃",
     "songName": "跃",
     "artist": "薛之谦",
@@ -33615,7 +35494,7 @@
     "id": "pool_78bf7cb2-3903-4345-91ec-5877514f2959",
     "poolSongId": "78bf7cb2-3903-4345-91ec-5877514f2959",
     "songId": "2cb7bd40-27e5-4361-8d96-0e71ab08b746",
-    "seq": 1497,
+    "seq": 1496,
     "name": "大会堂演奏厅",
     "songName": "大会堂演奏厅",
     "artist": "李克勤",
@@ -33646,7 +35525,7 @@
     "id": "pool_a1283fd2-cf12-4ca5-8e36-43dae07753df",
     "poolSongId": "a1283fd2-cf12-4ca5-8e36-43dae07753df",
     "songId": "e2618400-75e8-4bb5-a937-af88f58fb95a",
-    "seq": 1498,
+    "seq": 1497,
     "name": "Beautiful",
     "songName": "Beautiful",
     "artist": "边伯贤",
