@@ -333,10 +333,12 @@
       <div class="grid">
         <div class="col-8">
           <label>今天想唱什麼感覺？</label>
-          <textarea
+          <input
             id="aiMoodInput"
-            placeholder="例如：今天想唱療癒一點，適合晚場聊天"
-          ></textarea>
+            type="text"
+            class="input"
+            placeholder="例如：晚場、療癒、炸場、下雨天、開嗓..."
+          />
         </div>
     
         <div class="col-4">
@@ -935,28 +937,28 @@ async function mockAiRecommendApi(mood){
     moodTags.forEach(tag => {
       const keyword = normalizeSearchText(tag);
 
+      if (aiSceneTags.some(t => normalizeSearchText(t).includes(keyword))) score += 6;
       if (aiMoodTags.some(t => normalizeSearchText(t).includes(keyword))) score += 5;
-      if (aiSceneTags.some(t => normalizeSearchText(t).includes(keyword))) score += 4;
-      if (moodTags.includes('低能量') && aiEnergy.includes('低')) score += 2;
-      if (moodTags.includes('高能量') && aiEnergy.includes('高')) score += 2;
-      if (streamerTags.includes(keyword)) score += 6;
+      if (streamerTags.includes(keyword)) score += 4;
       if (remarks.includes(keyword)) score += 3;
-      if (style.includes(keyword)) score += 2;
-      if (name.includes(keyword)) score += 2;
-      if (artist.includes(keyword)) score += 1;
-          });
+      if (style.includes(keyword)) score += 1;
+
+      if (moodTags.includes('低能量') && aiEnergy.includes('low')) score += 2;
+      if (moodTags.includes('低能量') && aiEnergy.includes('低')) score += 2;
+      if (moodTags.includes('高能量') && aiEnergy.includes('high')) score += 2;
+      if (moodTags.includes('高能量') && aiEnergy.includes('高')) score += 2;
+    });
 
     // 使用者原始輸入也要查歌名/備註/曲風，避免 detectMoodTags 沒抓到
     if (query) {
-      const normalizedQuery = normalizeSearchText(query);
+  const normalizedQuery = normalizeSearchText(query);
 
-      if (streamerTags.includes(normalizedQuery)) score += 6;
-      if (name.includes(normalizedQuery)) score += 4;
-      if (remarks.includes(normalizedQuery)) score += 3;
-      if (style.includes(normalizedQuery)) score += 2;
-      if (artist.includes(normalizedQuery)) score += 1;
-    }
-
+    if (aiSceneTags.some(t => normalizeSearchText(t).includes(normalizedQuery))) score += 6;
+    if (aiMoodTags.some(t => normalizeSearchText(t).includes(normalizedQuery))) score += 5;
+    if (streamerTags.includes(normalizedQuery)) score += 4;
+    if (remarks.includes(normalizedQuery)) score += 3;
+    if (style.includes(normalizedQuery)) score += 1;
+  }
     return { song, score };
   });
 
