@@ -1308,10 +1308,23 @@ function renderAiRecommendResult(mood, songs){
       $('drawPoolStatus').textContent = '尚未載入曲庫';
       return;
     }
-    const artists = new Set(pool.map(p => p.artist).filter(Boolean));
+    const artists = new Set(
+      pool.map(p => getSongArtist(p)).filter(Boolean)
+    );
     el.innerHTML = `<span class="chip">曲庫 ${pool.length} 首</span><span class="chip">歌手 ${artists.size} 位</span><span class="chip">月份映射 ${nowMonthKey()}</span>`;
     renderDrawPoolStatus();
   }
+
+function getSongArtist(item) {
+  return (
+    item.artist ||
+    item.displayArtist ||
+    item.display_artist ||
+    item.sharedArtist ||
+    ''
+  ).trim();
+}
+
 
   function renderPopularArtistButtons() {
     const pool = readPool();
@@ -1321,10 +1334,10 @@ function renderAiRecommendResult(mood, songs){
       if(!artist) continue;
       countMap.set(artist, (countMap.get(artist) || 0) + 1);
     }
-    const popular = Array.from(countMap.entries()).filter(([,count]) => count >= 5).sort((a,b)=>b[1]-a[1]);
+    const popular = Array.from(countMap.entries()).filter(([,count]) => count >= 8).sort((a,b)=>b[1]-a[1]);
     const el = $('popularArtistButtons');
     if(!popular.length) {
-      el.innerHTML = '<div class="small">目前沒有歌曲超過 5 首的歌手</div>';
+      el.innerHTML = '<div class="small">目前沒有歌曲超過 8 首的歌手</div>';
       return;
     }
     el.innerHTML = popular.map(([artist, count]) => `<button class="ghost" data-action="pick-popular-artist" data-artist="${esc(artist)}" style="margin:0 6px 6px 0;">${esc(artist)} (${count})</button>`).join('');
@@ -1938,19 +1951,24 @@ try {
       const btn = e.target.closest('button[data-action="pick-popular-artist"]');
       if(!btn) return;
       $('artistInput').value = btn.dataset.artist || '';
-      const list = readPool().filter(p => (p.artist || '').includes($('artistInput').value.trim()));
-      $('artistCount').value = String(list.length);
+      const list = readPool().filter(
+          p => getSongArtist(p).includes($('artistInput').value.trim())
+        );
     });
 
     $('artistCountBtn').addEventListener('click', () => {
       const name = $('artistInput').value.trim();
-      const list = name ? readPool().filter(p => (p.artist || '').includes(name)) : [];
+      const list = name
+  ? readPool().filter(p => getSongArtist(p).includes(name))
+  : [];
       $('artistCount').value = String(list.length);
     });
     $('artistDrawBtn').addEventListener('click', () => {
       const name = $('artistInput').value.trim();
       if(!name) { alert('請先輸入歌手'); return; }
-      const list = readPool().filter(p => (p.artist || '').includes(name));
+      const list = readPool().filter(
+        p => getSongArtist(p).includes(name)
+      );
       $('artistCount').value = String(list.length);
       if(!list.length) { alert('找不到符合的歌手歌曲'); return; }
       const r = list[Math.floor(Math.random() * list.length)];
@@ -1961,7 +1979,17 @@ try {
     $('poolSearchBtn').addEventListener('click', () => {
       const keyword = $('poolSearchInput').value.trim().toLowerCase();
       const pool = readPool();
-      const list = keyword ? pool.filter(p => (p.songName || '').toLowerCase().includes(keyword) || (p.artist || '').toLowerCase().includes(keyword)) : [];
+      const list = keyword
+  ? pool.filter(
+      p =>
+        (p.songName || '')
+          .toLowerCase()
+          .includes(keyword) ||
+        getSongArtist(p)
+          .toLowerCase()
+          .includes(keyword)
+    )
+  : [];
       const el = $('poolSearchResult');
       if(!keyword){
         el.innerHTML = '<div class="empty">請先輸入關鍵字</div>';
