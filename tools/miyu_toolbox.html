@@ -567,7 +567,10 @@
     aiMoodTags: Array.isArray(s.aiMoodTags) ? s.aiMoodTags : [],
     aiSceneTags: Array.isArray(s.aiSceneTags) ? s.aiSceneTags : [],
     aiEnergy: s.aiEnergy || null,
-    aiTagReason: s.aiTagReason || ''
+    aiTagReason: s.aiTagReason || '',
+    crowdPlaylistTags: Array.isArray(s.crowdPlaylistTags) ? s.crowdPlaylistTags : [],
+    crowdPlaylistSources: Array.isArray(s.crowdPlaylistSources) ? s.crowdPlaylistSources : [],
+    aiMetadataSource: s.aiMetadataSource || "llm_only",
   };
 }
 
@@ -896,6 +899,74 @@ function buildAiRecommendReason(song){
   return '這首歌來自主播曲庫。';
 }
 
+function detectIntentProfile(text) {
+  const query = normalizeSearchText(text || '');
+
+  const profiles = {
+    quiet: [
+      '睡不著', '失眠', '放鬆', '放空',
+      '安靜', '舒服', '陪伴', '深夜',
+      '療癒', '治癒', '發呆'
+    ],
+
+    happy: [
+      '開心', '快樂', '甜', '輕鬆',
+      '愉快', '元氣', '可愛'
+    ],
+
+    emo: [
+      '難過', 'emo', '孤單',
+      '失戀', '心碎', '想哭'
+    ],
+
+    energetic: [
+      '炸', '炸場', 'high',
+      '熱血', '燃', '嗨',
+      '帶氣氛'
+    ],
+
+    study: [
+      '讀書', '工作', '專心',
+      '寫報告', '學習'
+    ]
+  };
+
+  const matched = [];
+
+  Object.entries(profiles).forEach(([key, words]) => {
+    if (
+      words.some(word =>
+        query.includes(normalizeSearchText(word))
+      )
+    ) {
+      matched.push(key);
+    }
+  });
+
+  return matched;
+}
+
+function detectNegativeRules(text) {
+  const query = normalizeSearchText(text || '');
+
+  return {
+    avoidSad:
+      query.includes('不要太悲') ||
+      query.includes('不要太傷感'),
+
+    avoidLoud:
+      query.includes('不要太吵') ||
+      query.includes('不要太炸'),
+
+    avoidSlow:
+      query.includes('不要太慢') ||
+      query.includes('不要太安靜'),
+
+    avoidLoveSong:
+      query.includes('不要情歌')
+  };
+}
+
 async function mockAiRecommendApi(mood){
   await new Promise(resolve => setTimeout(resolve, 800));
 
@@ -905,6 +976,9 @@ async function mockAiRecommendApi(mood){
   );
   const query = String(mood || '').toLowerCase().trim();
 
+  const intentProfiles = detectIntentProfile(mood);
+  const negativeRules = detectNegativeRules(mood);
+  
   const source =
     window.githubSongPool && window.githubSongPool.length
       ? window.githubSongPool
@@ -920,81 +994,141 @@ async function mockAiRecommendApi(mood){
     const remarks = normalizeSearchText(song.remarks || '');
     const style = normalizeSearchText(song.style || '');
 
-    const streamerTags = normalizeSearchText(
-      [
-        song.rawTags,
-        song.raw_tags,
-        song.tags,
-        song.rawMood,
-        song.raw_mood,
-        song.rawStyle,
-        song.raw_style,
-        song.note
-      ].filter(Boolean).join(' ')
-    );
     let score = 0;
+
+    if (
+      intentProfiles.includes('quiet') &&
+      aiEnergy === 'low'
+    ) {
+      score += 3;
+    }
+
+    if (
+      intentProfiles.includes('happy') &&
+      aiEnergy === 'medium'
+    ) {
+      score += 2;
+    }
+
+    if (
+      intentProfiles.includes('energetic') &&
+      aiEnergy === 'high'
+    ) {
+      score += 4;
+    }
+
+    if (
+      intentProfiles.includes('emo') &&
+      aiMoodTags.some(t =>
+        normalizeSearchText(t).includes('傷') ||
+        normalizeSearchText(t).includes('孤') ||
+        normalizeSearchText(t).includes('emo')
+      )
+    ) {
+      score += 3;
+    }
+
+    if (
+      intentProfiles.includes('study') &&
+      aiEnergy !== 'high'
+    ) {
+      score += 2;
+    }
 
     moodTags.forEach(tag => {
       const keyword = normalizeSearchText(tag);
 
-      if (aiSceneTags.some(t => normalizeSearchText(t).includes(keyword))) score += 6;
-      if (aiMoodTags.some(t => normalizeSearchText(t).includes(keyword))) score += 5;
-      if (streamerTags.includes(keyword)) score += 4;
-      if (remarks.includes(keyword)) score += 3;
-      if (style.includes(keyword)) score += 1;
+      if (
+        aiMoodTags.some(t =>
+          normalizeSearchText(t).includes(keyword)
+        )
+      ) {
+        score += 5;
+      }
 
-      if (moodTags.includes('低能量') && aiEnergy.includes('low')) score += 2;
-      if (moodTags.includes('低能量') && aiEnergy.includes('低')) score += 2;
-      if (moodTags.includes('高能量') && aiEnergy.includes('high')) score += 2;
-      if (moodTags.includes('高能量') && aiEnergy.includes('高')) score += 2;
+      if (
+        aiSceneTags.some(t =>
+          normalizeSearchText(t).includes(keyword)
+        )
+      ) {
+        score += 3;
+      }
+
+      if (
+        remarks.includes(keyword) ||
+        style.includes(keyword)
+      ) {
+        score += 2;
+      }
+
+      if (
+        name.includes(keyword) ||
+        artist.includes(keyword)
+      ) {
+        score += 1;
+      }
     });
 
-    // 使用者原始輸入也要查歌名/備註/曲風，避免 detectMoodTags 沒抓到
-    if (query) {
-  const normalizedQuery = normalizeSearchText(query);
+    if (
+      query.includes('安靜') ||
+      query.includes('睡') ||
+      query.includes('放鬆')
+    ) {
+      if (aiEnergy === 'low') score += 2;
+    }
 
-    if (aiSceneTags.some(t => normalizeSearchText(t).includes(normalizedQuery))) score += 6;
-    if (aiMoodTags.some(t => normalizeSearchText(t).includes(normalizedQuery))) score += 5;
-    if (streamerTags.includes(normalizedQuery)) score += 4;
-    if (remarks.includes(normalizedQuery)) score += 3;
-    if (style.includes(normalizedQuery)) score += 1;
-  }
-    return { song, score };
+    if (
+      query.includes('炸') ||
+      query.includes('high') ||
+      query.includes('熱血')
+    ) {
+      if (aiEnergy === 'high') score += 2;
+    }
+
+    if (
+  negativeRules.avoidSad &&
+  aiMoodTags.some(t =>
+    normalizeSearchText(t).includes('傷')
+  )
+) {
+  score -= 5;
+}
+
+if (
+  negativeRules.avoidLoud &&
+  aiEnergy === 'high'
+) {
+  score -= 5;
+}
+
+if (
+  negativeRules.avoidSlow &&
+  aiEnergy === 'low'
+) {
+  score -= 3;
+}
+
+    return {
+      ...song,
+      score
+    };
   });
 
   const candidates = scored
-    .filter(item => item.score > 0)
-    .sort((a, b) => {
-      if (b.score === a.score) {
-        return Math.random() - 0.5;
-      }
-      return b.score - a.score;
-    })
+    .filter(song => song.score > 0);
+
+  const result =
+    candidates.length > 0
+      ? candidates
+      : scored;
+
+  return result
+    .sort((a, b) => b.score - a.score)
     .slice(0, 8)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 5);
-
-    console.table(
-    candidates.map(item => ({
-      name: item.song.songName || item.song.name,
-      artist: item.song.artist,
-      score: item.score,
-      mood: item.song.aiMoodTags,
-      scene: item.song.aiSceneTags,
-      remarks: item.song.remarks,
-      style: item.song.style
-    }))
-  );
-
-  if (candidates.length === 0) {
-    return [];
-  }
-
-  return candidates.map(item => ({
-    name: item.song.songName || item.song.name || '未命名歌曲',
-    artist: item.song.artist || '',
-    reason: buildAiRecommendReason(item.song)
-  }));
+    .map(song => ({
+      ...song,
+      reason: buildAiRecommendReason(song)
+    }));
 }
 
 
@@ -1029,13 +1163,19 @@ function renderAiRecommendResult(mood, songs){
       <div class="hot-card">
 
         <div class="hot-title">
-          ${escapeHtml(song.name)}
-        </div>
+  ${escapeHtml(
+    song.songName ||
+    song.name ||
+    '未命名歌曲'
+  )}
+    </div>
 
-        <div class="hot-artist">
-          ${escapeHtml(song.artist)}
-        </div>
-
+    <div class="hot-artist">
+      ${escapeHtml(
+        song.artist ||
+        '未知歌手'
+      )}
+    </div>
         <div class="hot-meta" style="margin-top:6px">
           ${escapeHtml(song.reason)}
         </div>
