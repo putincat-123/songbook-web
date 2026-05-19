@@ -805,6 +805,8 @@
   抒情: ['安靜', '安静', '夜晚', '深夜', '慢歌', '雨天', '下雨'],
   燃炸: ['熱血', '热血', '燃', '炸', '嗨'],
   轻快: ['開心', '开心', '快樂', '快乐', '甜', '輕鬆', '轻松'],
+  清新: ['晴天', '陽光', '阳光', '清新', '白天', '夏天', '舒服', '輕快', '轻快'],
+  明亮: ['晴天', '陽光', '阳光', '元氣', '元气', '明亮', '開朗', '开朗'],
   古风: ['古風', '古风', '武俠', '武侠', '國風', '国风'],
   民谣: ['民謠', '民谣', '故事感']
 };
@@ -863,17 +865,153 @@ function expandMoodTags(mood, moodTags) {
   ];
 }
 
+const SEMANTIC_TAG_MAP = {
+  晴天: ['阳光', '清新', '轻快', '元气', '舒服', '明亮'],
+  阳光: ['晴天', '清新', '轻快', '元气', '明亮'],
+  夏天: ['阳光', '清新', '轻快', '元气', '舒服'],
+  白天: ['阳光', '清新', '轻快', '舒服'],
+  兜风: ['开车', '轻快', '清新', '自由'],
+  开车: ['兜风', '轻快', '舒服', '节奏感'],
+
+  深夜: ['晚安', '睡前', '陪伴', '安静', 'emo'],
+  晚安: ['深夜', '睡前', '安静', '陪伴'],
+  睡前: ['晚安', '深夜', '安静', '放松'],
+  emo: ['伤感', '遗憾', '失恋', '深夜'],
+  失恋: ['伤感', '遗憾', 'emo', '难过'],
+
+  广播剧: ['故事感', '剧情', '陪伴', '深情'],
+  故事感: ['广播剧', '剧情', '叙事', '深情'],
+
+  生日: ['庆生', '祝福', '快乐', '甜'],
+  庆生: ['生日', '祝福', '快乐'],
+
+  开嗓: ['轻快', '舒服', '暖场', '清晨'],
+  暖场: ['开嗓', '轻快', '舒服'],
+
+  炸场: ['燃', '热血', '高能量', '互动'],
+  燃: ['炸场', '热血', '高能量'],
+  热血: ['燃', '炸场', '高能量'],
+
+  治愈: ['温柔', '舒服', '陪伴', '放松'],
+  温柔: ['治愈', '舒服', '陪伴', '安静'],
+  甜: ['恋爱', '心动', '快乐', '温馨'],
+  恋爱: ['甜', '心动', '温馨']
+};
+
+const GENERIC_TAGS = [
+  '陪伴',
+  '故事感',
+  '温柔',
+  '安静',
+  '舒服',
+  '放松',
+  '氛围',
+  '情绪共鸣'
+];
+
+function expandSemanticTags(tags){
+
+  const result = [];
+
+  const source = Array.isArray(tags)
+    ? tags
+    : [];
+
+  source.forEach(tag => {
+
+    const key = normalizeSearchText(tag);
+
+    if (!key) return;
+
+    result.push(key);
+
+    Object.entries(SEMANTIC_TAG_MAP).forEach(([baseTag, relatedTags]) => {
+
+      const normalizedBase = normalizeSearchText(baseTag);
+
+      if (
+        key.includes(normalizedBase) ||
+        normalizedBase.includes(key)
+      ) {
+        relatedTags.forEach(relatedTag => {
+          result.push(normalizeSearchText(relatedTag));
+        });
+      }
+
+    });
+
+  });
+
+  return [...new Set(result.filter(Boolean))];
+
+}
+
+
 function detectMoodTags(input){
+
   const text = String(input || '').toLowerCase();
+
   const tags = [];
 
   Object.entries(MOOD_KEYWORDS).forEach(([tag, keywords]) => {
-    if(keywords.some(keyword => text.includes(String(keyword).toLowerCase()))){
+
+    if (
+      keywords.some(keyword =>
+        text.includes(String(keyword).toLowerCase())
+      )
+    ) {
       tags.push(tag);
     }
+
   });
 
-  return tags;
+  // 場景詞強化
+  const sceneKeywordMap = {
+
+    '晴天': ['晴天', '阳光', '清新', '舒服', '轻快', '明亮'],
+
+    '阳光': ['阳光', '清新', '轻快', '明亮'],
+
+    '夏天': ['夏天', '清新', '轻快', '元气'],
+
+    '白天': ['白天', '舒服', '轻松', '清新'],
+
+    '兜风': ['兜风', '开车', '轻快', '清新'],
+
+    '生日': ['生日', '庆生', '快乐'],
+
+    '深夜': ['深夜', '晚安', '陪伴', 'emo'],
+
+    '广播剧': ['广播剧', '故事感', '剧情'],
+
+    '开嗓': ['开嗓', '轻快', '暖场'],
+
+    '晚场': ['晚场', '氛围', '陪伴'],
+
+    '早场': ['早场', '清晨', '舒服'],
+
+    'emo': ['emo', '伤感', '遗憾'],
+
+    '失恋': ['失恋', '遗憾', '伤感'],
+
+    '炸场': ['炸场', '燃', '热血'],
+
+    '治愈': ['治愈', '温柔', '陪伴'],
+
+    '甜': ['甜', '恋爱', '心动']
+
+  };
+
+  Object.entries(sceneKeywordMap).forEach(([key, sceneTags]) => {
+
+    if (text.includes(key.toLowerCase())) {
+      tags.push(...sceneTags);
+    }
+
+  });
+
+  return [...new Set(tags)];
+
 }
 
 
@@ -904,30 +1042,30 @@ function detectIntentProfile(text) {
 
   const profiles = {
     quiet: [
-      '睡不著', '失眠', '放鬆', '放空',
-      '安靜', '舒服', '陪伴', '深夜',
-      '療癒', '治癒', '發呆'
+      '睡不着', '失眠', '放松', '放空',
+      '安静', '舒服', '陪伴', '深夜',
+      '疗愈', '治愈', '发呆'
     ],
 
     happy: [
-      '開心', '快樂', '甜', '輕鬆',
-      '愉快', '元氣', '可愛'
+      '开心', '快乐', '甜', '轻松',
+      '愉快', '元气', '可爱'
     ],
 
     emo: [
-      '難過', 'emo', '孤單',
-      '失戀', '心碎', '想哭'
+      '难过', 'emo', '孤单',
+      '失恋', '心碎', '想哭'
     ],
 
     energetic: [
-      '炸', '炸場', 'high',
-      '熱血', '燃', '嗨',
-      '帶氣氛'
+      '炸', '炸场', 'high',
+      '热血', '燃', '嗨',
+      '带气氛'
     ],
 
     study: [
-      '讀書', '工作', '專心',
-      '寫報告', '學習'
+      '读书', '工作', '专心',
+      '写报告', '学习'
     ]
   };
 
@@ -952,7 +1090,7 @@ function detectNegativeRules(text) {
   return {
     avoidSad:
       query.includes('不要太悲') ||
-      query.includes('不要太傷感'),
+      query.includes('不要太伤感'),
 
     avoidLoud:
       query.includes('不要太吵') ||
@@ -960,7 +1098,7 @@ function detectNegativeRules(text) {
 
     avoidSlow:
       query.includes('不要太慢') ||
-      query.includes('不要太安靜'),
+      query.includes('不要太安静'),
 
     avoidLoveSong:
       query.includes('不要情歌')
@@ -968,159 +1106,87 @@ function detectNegativeRules(text) {
 }
 
 async function mockAiRecommendApi(mood){
-  await new Promise(resolve => setTimeout(resolve, 800));
+  await new Promise(resolve => setTimeout(resolve, 300));
 
-  const moodTags = expandMoodTags(
-    mood,
-    detectMoodTags(mood)
-  );
-  const query = String(mood || '').toLowerCase().trim();
+  const query = normalizeSearchText(mood || '');
 
-  const intentProfiles = detectIntentProfile(mood);
-  const negativeRules = detectNegativeRules(mood);
-  
+  if (!query) return [];
+
   const source =
     window.githubSongPool && window.githubSongPool.length
       ? window.githubSongPool
       : readPool();
 
   const scored = source.map(song => {
-    const aiMoodTags = Array.isArray(song.aiMoodTags) ? song.aiMoodTags : [];
-    const aiSceneTags = Array.isArray(song.aiSceneTags) ? song.aiSceneTags : [];
-    const aiEnergy = normalizeSearchText(song.aiEnergy || '');
+
+    const crowdPlaylistTags = Array.isArray(song.crowdPlaylistTags)
+      ? song.crowdPlaylistTags
+      : [];
+
+    const crowdPlaylistSources = Array.isArray(song.crowdPlaylistSources)
+      ? song.crowdPlaylistSources
+      : [];
+
+    const aiSceneTags = Array.isArray(song.aiSceneTags)
+      ? song.aiSceneTags
+      : [];
+
+    const aiMoodTags = Array.isArray(song.aiMoodTags)
+      ? song.aiMoodTags
+      : [];
 
     const name = normalizeSearchText(song.songName || song.name || '');
     const artist = normalizeSearchText(song.artist || '');
-    const remarks = normalizeSearchText(song.remarks || '');
     const style = normalizeSearchText(song.style || '');
+    const rawStyle = normalizeSearchText(song.rawStyle || '');
+    const rawTags = normalizeSearchText(song.rawTags || '');
+    const remarks = normalizeSearchText(song.remarks || '');
+
+    const crowdTagText = normalizeSearchText(crowdPlaylistTags.join(' '));
+    const crowdSourceText = normalizeSearchText(crowdPlaylistSources.join(' '));
+    const aiSceneText = normalizeSearchText(aiSceneTags.join(' '));
+    const aiMoodText = normalizeSearchText(aiMoodTags.join(' '));
 
     let score = 0;
 
-    if (
-      intentProfiles.includes('quiet') &&
-      aiEnergy === 'low'
-    ) {
-      score += 3;
-    }
+    // 1. 歌名直接命中：最高
+    if (name.includes(query)) score += 20;
 
-    if (
-      intentProfiles.includes('happy') &&
-      aiEnergy === 'medium'
-    ) {
-      score += 2;
-    }
+    // 2. 真實群眾歌單標籤
+    if (crowdTagText.includes(query)) score += 12;
 
-    if (
-      intentProfiles.includes('energetic') &&
-      aiEnergy === 'high'
-    ) {
-      score += 4;
-    }
+    // 3. 真實歌單來源名稱
+    if (crowdSourceText.includes(query)) score += 8;
 
-    if (
-      intentProfiles.includes('emo') &&
-      aiMoodTags.some(t =>
-        normalizeSearchText(t).includes('傷') ||
-        normalizeSearchText(t).includes('孤') ||
-        normalizeSearchText(t).includes('emo')
-      )
-    ) {
-      score += 3;
-    }
+    // 4. AI 場景標籤
+    if (aiSceneText.includes(query)) score += 6;
 
-    if (
-      intentProfiles.includes('study') &&
-      aiEnergy !== 'high'
-    ) {
-      score += 2;
-    }
+    // 5. AI 情緒標籤
+    if (aiMoodText.includes(query)) score += 4;
 
-    moodTags.forEach(tag => {
-      const keyword = normalizeSearchText(tag);
+    // 6. 主播個人標籤 / 曲風
+    if (rawTags.includes(query)) score += 4;
+    if (rawStyle.includes(query)) score += 3;
+    if (style.includes(query)) score += 2;
 
-      if (
-        aiMoodTags.some(t =>
-          normalizeSearchText(t).includes(keyword)
-        )
-      ) {
-        score += 5;
-      }
-
-      if (
-        aiSceneTags.some(t =>
-          normalizeSearchText(t).includes(keyword)
-        )
-      ) {
-        score += 3;
-      }
-
-      if (
-        remarks.includes(keyword) ||
-        style.includes(keyword)
-      ) {
-        score += 2;
-      }
-
-      if (
-        name.includes(keyword) ||
-        artist.includes(keyword)
-      ) {
-        score += 1;
-      }
-    });
-
-    if (
-      query.includes('安靜') ||
-      query.includes('睡') ||
-      query.includes('放鬆')
-    ) {
-      if (aiEnergy === 'low') score += 2;
-    }
-
-    if (
-      query.includes('炸') ||
-      query.includes('high') ||
-      query.includes('熱血')
-    ) {
-      if (aiEnergy === 'high') score += 2;
-    }
-
-    if (
-  negativeRules.avoidSad &&
-  aiMoodTags.some(t =>
-    normalizeSearchText(t).includes('傷')
-  )
-) {
-  score -= 5;
-}
-
-if (
-  negativeRules.avoidLoud &&
-  aiEnergy === 'high'
-) {
-  score -= 5;
-}
-
-if (
-  negativeRules.avoidSlow &&
-  aiEnergy === 'low'
-) {
-  score -= 3;
-}
+    // 7. 備註 / 歌手
+    if (remarks.includes(query)) score += 2;
+    if (artist.includes(query)) score += 1;
 
     return {
       ...song,
       score
     };
+
   });
 
-  const candidates = scored
-    .filter(song => song.score > 0);
+  const candidates = scored.filter(song => song.score > 0);
 
-  const result =
-    candidates.length > 0
-      ? candidates
-      : scored;
+  const result = candidates.length
+    ? candidates
+    : scored.filter(song =>
+        Array.isArray(song.aiMoodTags) && song.aiMoodTags.length > 0
+      );
 
   return result
     .sort((a, b) => b.score - a.score)
@@ -1130,7 +1196,6 @@ if (
       reason: buildAiRecommendReason(song)
     }));
 }
-
 
 
 
