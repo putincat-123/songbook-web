@@ -18606,9 +18606,15 @@
     ],
     "aiEnergy": "low",
     "aiTagReason": "旋律輕柔溫暖，歌詞充滿治癒感，適合睡前放鬆。",
-    "crowdPlaylistTags": [],
-    "crowdPlaylistSources": [],
-    "aiMetadataSource": "llm_only"
+    "crowdPlaylistTags": [
+      "深夜",
+      "陪伴",
+      "晚安"
+    ],
+    "crowdPlaylistSources": [
+      "深夜华语陪伴"
+    ],
+    "aiMetadataSource": "crowd_playlist"
   },
   {
     "id": "pool_a1e87d18-ec96-49ed-a0db-e2616d41795c",
@@ -39092,9 +39098,16 @@
     ],
     "aiEnergy": "high",
     "aiTagReason": "激昂大气的流行摇滚，歌词充满梦想与阳光的力量，适合调动气氛。",
-    "crowdPlaylistTags": [],
-    "crowdPlaylistSources": [],
-    "aiMetadataSource": "llm_only"
+    "crowdPlaylistTags": [
+      "晴天",
+      "阳光",
+      "清新",
+      "轻快"
+    ],
+    "crowdPlaylistSources": [
+      "晴天阳光轻快"
+    ],
+    "aiMetadataSource": "crowd_playlist"
   },
   {
     "id": "pool_9d0a0cf6-8caf-46ec-9f20-6b9a15a8f146",
@@ -45624,9 +45637,16 @@
     ],
     "aiEnergy": "high",
     "aiTagReason": "带有民谣雷鬼元素的流行快歌，展现雨过天晴的开朗与快乐",
-    "crowdPlaylistTags": [],
-    "crowdPlaylistSources": [],
-    "aiMetadataSource": "llm_only"
+    "crowdPlaylistTags": [
+      "晴天",
+      "阳光",
+      "清新",
+      "轻快"
+    ],
+    "crowdPlaylistSources": [
+      "晴天阳光轻快"
+    ],
+    "aiMetadataSource": "crowd_playlist"
   },
   {
     "id": "pool_f39e8bc2-9548-424e-9c1c-e0fe102e803c",
@@ -47992,9 +48012,16 @@
     ],
     "aiEnergy": "low",
     "aiTagReason": "不加修饰的真挚民谣情歌，纯粹的甜美与浪漫，适合情歌告白。",
-    "crowdPlaylistTags": [],
-    "crowdPlaylistSources": [],
-    "aiMetadataSource": "llm_only"
+    "crowdPlaylistTags": [
+      "晴天",
+      "阳光",
+      "清新",
+      "轻快"
+    ],
+    "crowdPlaylistSources": [
+      "晴天阳光轻快"
+    ],
+    "aiMetadataSource": "crowd_playlist"
   },
   {
     "id": "pool_d0efba73-c183-4b20-86c2-6181355795b9",
@@ -48653,9 +48680,12 @@
       "广播剧",
       "故事感",
       "深夜",
-      "陪伴"
+      "陪伴",
+      "剧情"
     ],
-    "crowdPlaylistSources": [],
-    "aiMetadataSource": "crowd_playlist_plus_llm"
+    "crowdPlaylistSources": [
+      "广播剧故事感"
+    ],
+    "aiMetadataSource": "crowd_playlist"
   }
 ]
