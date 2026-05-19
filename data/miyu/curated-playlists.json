@@ -1,0 +1,40 @@
+[
+  {
+    "title": "深夜华语陪伴",
+    "source": "manual",
+    "tags": ["深夜", "陪伴", "晚安"],
+    "songs": [
+      { "name": "晚安喵", "artist": "艾索" }
+    ]
+  },
+  {
+    "title": "晴天阳光轻快",
+    "source": "manual",
+    "tags": ["晴天", "阳光", "清新", "轻快"],
+    "songs": [
+      { "name": "不是因为天气晴朗才爱你", "artist": "" },
+      { "name": "最美的太阳", "artist": "" },
+      { "name": "春雨里洗过的太阳", "artist": "" }
+    ]
+  },
+  {
+    "title": "广播剧故事感",
+    "source": "manual",
+    "tags": ["广播剧", "故事感", "剧情"],
+    "songs": [
+      { "name": "共你我", "artist": "陈星宇" }
+    ]
+  },
+  {
+    "title": "生日庆生祝福",
+    "source": "manual",
+    "tags": ["生日", "庆生", "祝福"],
+    "songs": []
+  },
+  {
+    "title": "炸场热血互动",
+    "source": "manual",
+    "tags": ["炸场", "热血", "互动"],
+    "songs": []
+  }
+]
