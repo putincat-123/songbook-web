@@ -48738,10 +48738,18 @@
     "note": "",
     "sharedName": "窗内窗外",
     "sharedArtist": "门尼",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "释怀",
+      "释然",
+      "治愈"
+    ],
+    "aiSceneTags": [
+      "深夜轻聊",
+      "安静陪伴",
+      "情感共鸣"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "舒缓低沉的旋律，适合深夜陪伴与情感疏导，氛围温暖释怀。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -48762,10 +48770,18 @@
     "note": "",
     "sharedName": "胡萝卜须",
     "sharedArtist": "许嵩",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "讽刺",
+      "怪诞",
+      "压抑"
+    ],
+    "aiSceneTags": [
+      "概念演绎",
+      "个性展示",
+      "曲风切换"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "异域怪诞曲风透出批判与压抑感，适合展现独特品味的互动。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -48786,10 +48802,18 @@
     "note": "",
     "sharedName": "奇妙能力歌",
     "sharedArtist": "陈粒",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "空灵",
+      "清澈",
+      "纯粹"
+    ],
+    "aiSceneTags": [
+      "不插电",
+      "午后闲聊",
+      "温和收尾"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "简单吉他伴奏搭配空灵声线，适合营造安静纯粹的倾听氛围。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -48810,10 +48834,18 @@
     "note": "",
     "sharedName": "背叛",
     "sharedArtist": "曹格",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "揪心",
+      "悲壮",
+      "痛彻"
+    ],
+    "aiSceneTags": [
+      "高潮爆发",
+      "情感宣泄",
+      "唱功炸裂"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "经典大歌，副歌撕裂感强，适合作为直播间的高潮实力演绎。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -48834,10 +48866,18 @@
     "note": "",
     "sharedName": "沈园外",
     "sharedArtist": "阿YueYue",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "凄美",
+      "古风",
+      "遗憾"
+    ],
+    "aiSceneTags": [
+      "国风唯美",
+      "深情翻唱",
+      "沉浸互动"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "华丽的国风悲剧色彩，旋律层层推进，富有古风离别遗憾感。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -48858,10 +48898,50 @@
     "note": "",
     "sharedName": "石楠小札",
     "sharedArtist": "蔡翊昇（贰婶）",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "凄绝",
+      "厚重",
+      "决绝"
+    ],
+    "aiSceneTags": [
+      "国风现场",
+      "故事倾诉",
+      "高燃副歌"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "充满故事张力的古风歌，副歌爆发力强，适合剧情向沉浸演绎。",
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_d864d527-bf6a-484b-b2a5-2132c9ebc410",
+    "poolSongId": "d864d527-bf6a-484b-b2a5-2132c9ebc410",
+    "songId": "62b059fe-4d11-46c4-8a8f-0928354f691e",
+    "seq": 1507,
+    "name": "雨天",
+    "songName": "雨天",
+    "artist": "孙燕姿",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "remarks": "",
+    "note": "",
+    "sharedName": "雨天",
+    "sharedArtist": "孙燕姿",
+    "aiMoodTags": [
+      "伤感",
+      "遗憾",
+      "思念"
+    ],
+    "aiSceneTags": [
+      "深夜陪伴",
+      "情感共鸣",
+      "收尾沉浸"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "抒情慢歌，情感细腻略带遗憾，适合深夜安静陪伴与走心互动",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
