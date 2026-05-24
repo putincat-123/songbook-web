@@ -799,17 +799,10 @@
     return { items, unparsed };
   }
 
-  const MOOD_KEYWORDS = {
-  伤感: ['難過', '难过', '失戀', '失恋', 'emo', '哭', '低落', '傷心', '伤心'],
-  治愈: ['療癒', '疗愈', '治愈', '放鬆', '放松', '溫柔', '温柔', '舒服', '雨天', '下雨'],
-  抒情: ['安靜', '安静', '夜晚', '深夜', '慢歌', '雨天', '下雨'],
-  燃炸: ['熱血', '热血', '燃', '炸', '嗨'],
-  轻快: ['開心', '开心', '快樂', '快乐', '甜', '輕鬆', '轻松'],
-  清新: ['晴天', '陽光', '阳光', '清新', '白天', '夏天', '舒服', '輕快', '轻快'],
-  明亮: ['晴天', '陽光', '阳光', '元氣', '元气', '明亮', '開朗', '开朗'],
-  古风: ['古風', '古风', '武俠', '武侠', '國風', '国风'],
-  民谣: ['民謠', '民谣', '故事感']
-};
+/* ========================================
+ * AI Recommendation
+ * AI 情緒推薦
+ * ====================================== */
 
 function normalizeSearchText(text) {
   return String(text || '')
@@ -833,187 +826,50 @@ function normalizeSearchText(text) {
     .replace(/陽/g, '阳')
     .replace(/靜/g, '静')
     .trim();
-}
-
-function expandMoodTags(mood, moodTags) {
-  const query = normalizeSearchText(mood);
-  const base = Array.isArray(moodTags) ? moodTags : [];
-  const extra = [];
-
-  if (query.includes('雨')) {
-    extra.push('雨天', '下雨', '安静', '伤感', 'emo', '夜晚', '氛围', '低能量');
-  }
-
-  if (query.includes('emo') || query.includes('伤') || query.includes('难过')) {
-    extra.push('伤感', '失恋', '安静', '夜晚', '孤单', '低能量');
-  }
-
-  if (query.includes('开嗓')) {
-    extra.push('开嗓', '清晨', '温柔', '轻松', '低能量');
-  }
-
-  if (query.includes('炸') || query.includes('嗨') || query.includes('燃')) {
-    extra.push('炸场', '欢快', '高能量', '互动');
-  }
-
-  return [
-    ...new Set(
-      [...base, ...extra]
-        .map(normalizeSearchText)
-        .filter(Boolean)
-    )
-  ];
-}
-
-const SEMANTIC_TAG_MAP = {
-  晴天: ['阳光', '清新', '轻快', '元气', '舒服', '明亮'],
-  阳光: ['晴天', '清新', '轻快', '元气', '明亮'],
-  夏天: ['阳光', '清新', '轻快', '元气', '舒服'],
-  白天: ['阳光', '清新', '轻快', '舒服'],
-  兜风: ['开车', '轻快', '清新', '自由'],
-  开车: ['兜风', '轻快', '舒服', '节奏感'],
-
-  深夜: ['晚安', '睡前', '陪伴', '安静', 'emo'],
-  晚安: ['深夜', '睡前', '安静', '陪伴'],
-  睡前: ['晚安', '深夜', '安静', '放松'],
-  emo: ['伤感', '遗憾', '失恋', '深夜'],
-  失恋: ['伤感', '遗憾', 'emo', '难过'],
-
-  广播剧: ['故事感', '剧情', '陪伴', '深情'],
-  故事感: ['广播剧', '剧情', '叙事', '深情'],
-
-  生日: ['庆生', '祝福', '快乐', '甜'],
-  庆生: ['生日', '祝福', '快乐'],
-
-  开嗓: ['轻快', '舒服', '暖场', '清晨'],
-  暖场: ['开嗓', '轻快', '舒服'],
-
-  炸场: ['燃', '热血', '高能量', '互动'],
-  燃: ['炸场', '热血', '高能量'],
-  热血: ['燃', '炸场', '高能量'],
-
-  治愈: ['温柔', '舒服', '陪伴', '放松'],
-  温柔: ['治愈', '舒服', '陪伴', '安静'],
-  甜: ['恋爱', '心动', '快乐', '温馨'],
-  恋爱: ['甜', '心动', '温馨']
 };
 
-const GENERIC_TAGS = [
-  '陪伴',
-  '故事感',
-  '温柔',
-  '安静',
-  '舒服',
-  '放松',
-  '氛围',
-  '情绪共鸣'
-];
-
-function expandSemanticTags(tags){
-
-  const result = [];
-
-  const source = Array.isArray(tags)
-    ? tags
-    : [];
-
-  source.forEach(tag => {
-
-    const key = normalizeSearchText(tag);
-
-    if (!key) return;
-
-    result.push(key);
-
-    Object.entries(SEMANTIC_TAG_MAP).forEach(([baseTag, relatedTags]) => {
-
-      const normalizedBase = normalizeSearchText(baseTag);
-
-      if (
-        key.includes(normalizedBase) ||
-        normalizedBase.includes(key)
-      ) {
-        relatedTags.forEach(relatedTag => {
-          result.push(normalizeSearchText(relatedTag));
-        });
-      }
-
-    });
-
-  });
-
-  return [...new Set(result.filter(Boolean))];
-
-}
-
-
-function detectMoodTags(input){
-
-  const text = String(input || '').toLowerCase();
-
-  const tags = [];
-
-  Object.entries(MOOD_KEYWORDS).forEach(([tag, keywords]) => {
-
-    if (
-      keywords.some(keyword =>
-        text.includes(String(keyword).toLowerCase())
-      )
-    ) {
-      tags.push(tag);
+function getRecommendIntent(query){
+  const intentMap = {
+    birthday: {
+      label: '生日 / 慶生',
+      keywords: ['生日', '生辰', '慶生', '庆生', '祝福', '生日快樂', '生日快乐', '生日歌', '儀式感', '仪式感'],
+      moodBoost: ['甜', '溫暖', '温暖', '快樂', '快乐', '治癒', '治愈', '陪伴'],
+      sceneBoost: ['生日', '祝福', '慶生', '庆生', '節日', '节日', '儀式感', '派對', '派对']
+    },
+    anniversary: {
+      label: '周年 / 紀念',
+      keywords: ['周年', '週年', '紀念', '纪念', '百天', '滿月', '满月'],
+      moodBoost: ['陪伴', '感動', '感动', '溫柔', '温柔', '回憶', '回忆'],
+      sceneBoost: ['周年', '紀念', '纪念', '祝福', '故事感', '儀式感']
+    },
+    happy: {
+      label: '開心 / 熱鬧 / 炸場',
+      keywords: ['開心', '开心', '快樂', '快乐', '熱鬧', '热闹', '嗨', '炸場', '炸场', 'high'],
+      moodBoost: ['快樂', '快乐', '元氣', '元气', '熱血', '热血', '燃', '高燃', '高能量', '兴奋'],
+      sceneBoost: ['互動', '互动', '派對', '派对', '熱場', '热场', '炸場', '炸场', '摇滚', '搖滾', 'live', 'band', '节奏感']
+    },
+    sad: {
+      label: '傷感 / 情緒',
+      keywords: ['難過', '难过', '傷感', '伤感', '失戀', '失恋', 'emo', '想哭'],
+      moodBoost: ['傷感', '伤感', '孤獨', '孤独', '遺憾', '遗憾', '深情'],
+      sceneBoost: ['情緒共鳴', '情绪共鸣', '故事感', '深夜']
     }
-
-  });
-
-  // 場景詞強化
-  const sceneKeywordMap = {
-
-    '晴天': ['晴天', '阳光', '清新', '舒服', '轻快', '明亮'],
-
-    '阳光': ['阳光', '清新', '轻快', '明亮'],
-
-    '夏天': ['夏天', '清新', '轻快', '元气'],
-
-    '白天': ['白天', '舒服', '轻松', '清新'],
-
-    '兜风': ['兜风', '开车', '轻快', '清新'],
-
-    '生日': ['生日', '庆生', '快乐'],
-
-    '深夜': ['深夜', '晚安', '陪伴', 'emo'],
-
-    '广播剧': ['广播剧', '故事感', '剧情'],
-
-    '开嗓': ['开嗓', '轻快', '暖场'],
-
-    '晚场': ['晚场', '氛围', '陪伴'],
-
-    '早场': ['早场', '清晨', '舒服'],
-
-    'emo': ['emo', '伤感', '遗憾'],
-
-    '失恋': ['失恋', '遗憾', '伤感'],
-
-    '炸场': ['炸场', '燃', '热血'],
-
-    '治愈': ['治愈', '温柔', '陪伴'],
-
-    '甜': ['甜', '恋爱', '心动']
-
   };
 
-  Object.entries(sceneKeywordMap).forEach(([key, sceneTags]) => {
+  for (const intent of Object.values(intentMap)) {
+    const hit = intent.keywords.some(k =>
+      query.includes(normalizeSearchText(k))
+    );
+    if (hit) return intent;
+  }
 
-    if (text.includes(key.toLowerCase())) {
-      tags.push(...sceneTags);
-    }
-
-  });
-
-  return [...new Set(tags)];
-
+  return {
+    label: query,
+    keywords: [query],
+    moodBoost: [query],
+    sceneBoost: [query]
+  };
 }
-
 
 function buildAiRecommendReason(song){
   const aiMood = Array.isArray(song.aiMoodTags) ? song.aiMoodTags.join('、') : '';
@@ -1037,80 +893,35 @@ function buildAiRecommendReason(song){
   return '這首歌來自主播曲庫。';
 }
 
-function detectIntentProfile(text) {
-  const query = normalizeSearchText(text || '');
+function shuffleArray(array) {
 
-  const profiles = {
-    quiet: [
-      '睡不着', '失眠', '放松', '放空',
-      '安静', '舒服', '陪伴', '深夜',
-      '疗愈', '治愈', '发呆'
-    ],
+  const arr = [...array];
 
-    happy: [
-      '开心', '快乐', '甜', '轻松',
-      '愉快', '元气', '可爱'
-    ],
+  for (let i = arr.length - 1; i > 0; i--) {
 
-    emo: [
-      '难过', 'emo', '孤单',
-      '失恋', '心碎', '想哭'
-    ],
+    const j = Math.floor(Math.random() * (i + 1));
 
-    energetic: [
-      '炸', '炸场', 'high',
-      '热血', '燃', '嗨',
-      '带气氛'
-    ],
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
 
-    study: [
-      '读书', '工作', '专心',
-      '写报告', '学习'
-    ]
-  };
-
-  const matched = [];
-
-  Object.entries(profiles).forEach(([key, words]) => {
-    if (
-      words.some(word =>
-        query.includes(normalizeSearchText(word))
-      )
-    ) {
-      matched.push(key);
-    }
-  });
-
-  return matched;
-}
-
-function detectNegativeRules(text) {
-  const query = normalizeSearchText(text || '');
-
-  return {
-    avoidSad:
-      query.includes('不要太悲') ||
-      query.includes('不要太伤感'),
-
-    avoidLoud:
-      query.includes('不要太吵') ||
-      query.includes('不要太炸'),
-
-    avoidSlow:
-      query.includes('不要太慢') ||
-      query.includes('不要太安静'),
-
-    avoidLoveSong:
-      query.includes('不要情歌')
-  };
+  return arr;
 }
 
 async function mockAiRecommendApi(mood){
   await new Promise(resolve => setTimeout(resolve, 300));
 
   const query = normalizeSearchText(mood || '');
-
+  
+  console.log('AI query:', query);
+  
   if (!query) return [];
+
+  const intent = getRecommendIntent(query);
+  const allKeywords = [
+    ...intent.keywords,
+    ...intent.moodBoost,
+    ...intent.sceneBoost
+  ].map(normalizeSearchText);
 
   const source =
     window.githubSongPool && window.githubSongPool.length
@@ -1118,78 +929,102 @@ async function mockAiRecommendApi(mood){
       : readPool();
 
   const scored = source.map(song => {
+  const crowdPlaylistTags = Array.isArray(song.crowdPlaylistTags) ? song.crowdPlaylistTags : [];
+  const crowdPlaylistSources = Array.isArray(song.crowdPlaylistSources) ? song.crowdPlaylistSources : [];
+  const aiSceneTags = Array.isArray(song.aiSceneTags) ? song.aiSceneTags : [];
+  const aiMoodTags = Array.isArray(song.aiMoodTags) ? song.aiMoodTags : [];
 
-    const crowdPlaylistTags = Array.isArray(song.crowdPlaylistTags)
-      ? song.crowdPlaylistTags
-      : [];
+  const name = normalizeSearchText(song.songName || song.name || '');
+  const artist = normalizeSearchText(song.artist || '');
+  const style = normalizeSearchText(song.style || '');
+  const rawStyle = normalizeSearchText(song.rawStyle || '');
+  const rawTags = normalizeSearchText(song.rawTags || '');
+  const remarks = normalizeSearchText(song.remarks || '');
 
-    const crowdPlaylistSources = Array.isArray(song.crowdPlaylistSources)
-      ? song.crowdPlaylistSources
-      : [];
-
-    const aiSceneTags = Array.isArray(song.aiSceneTags)
-      ? song.aiSceneTags
-      : [];
-
-    const aiMoodTags = Array.isArray(song.aiMoodTags)
-      ? song.aiMoodTags
-      : [];
-
-    const name = normalizeSearchText(song.songName || song.name || '');
-    const artist = normalizeSearchText(song.artist || '');
-    const style = normalizeSearchText(song.style || '');
-    const rawStyle = normalizeSearchText(song.rawStyle || '');
-    const rawTags = normalizeSearchText(song.rawTags || '');
-    const remarks = normalizeSearchText(song.remarks || '');
-
-    const crowdTagText = normalizeSearchText(crowdPlaylistTags.join(' '));
-    const crowdSourceText = normalizeSearchText(crowdPlaylistSources.join(' '));
-    const aiSceneText = normalizeSearchText(aiSceneTags.join(' '));
-    const aiMoodText = normalizeSearchText(aiMoodTags.join(' '));
+  const crowdTagText = normalizeSearchText(crowdPlaylistTags.join(' '));
+  const crowdSourceText = normalizeSearchText(crowdPlaylistSources.join(' '));
+  const aiSceneText = normalizeSearchText(aiSceneTags.join(' '));
+  const aiMoodText = normalizeSearchText(aiMoodTags.join(' '));
 
     let score = 0;
+    let hitReasons = [];
 
-    // 1. 歌名直接命中：最高
-    if (name.includes(query)) score += 20;
+  const hitAny = text => allKeywords.some(k => k && text.includes(k));
 
-    // 2. 真實群眾歌單標籤
-    if (crowdTagText.includes(query)) score += 12;
+    // 歌名直接搜尋仍保留，但只適合精準找歌
+    if (name.includes(query)) {
+      score += 20;
+      hitReasons.push('歌名命中');
+    }
 
-    // 3. 真實歌單來源名稱
-    if (crowdSourceText.includes(query)) score += 8;
+    // 群眾歌單標籤：最高推薦依據
+    if (hitAny(crowdTagText)) {
+      score += 16;
+      hitReasons.push('歌單標籤符合');
+    }
 
-    // 4. AI 場景標籤
-    if (aiSceneText.includes(query)) score += 6;
+    // 歌單來源名稱
+    if (hitAny(crowdSourceText)) {
+      score += 10;
+      hitReasons.push('歌單來源符合');
+    }
 
-    // 5. AI 情緒標籤
-    if (aiMoodText.includes(query)) score += 4;
+    // AI 場景標籤
+    if (hitAny(aiSceneText)) {
+      score += 9;
+      hitReasons.push('場景符合');
+    }
 
-    // 6. 主播個人標籤 / 曲風
-    if (rawTags.includes(query)) score += 4;
-    if (rawStyle.includes(query)) score += 3;
-    if (style.includes(query)) score += 2;
+    // AI 情緒標籤
+    if (hitAny(aiMoodText)) {
+      score += 6;
+      hitReasons.push('情緒符合');
+    }
 
-    // 7. 備註 / 歌手
-    if (remarks.includes(query)) score += 2;
+    // 主播個人標籤
+    if (hitAny(rawTags)) {
+      score += 6;
+      hitReasons.push('主播標籤符合');
+    }
+
+    if (hitAny(rawStyle)) score += 8;
+    if (hitAny(style)) score += 4;
+    if (hitAny(remarks)) score += 2;
     if (artist.includes(query)) score += 1;
 
     return {
       ...song,
-      score
+      score,
+      recommendIntent: intent.label,
+      hitReasons
     };
-
   });
 
   const candidates = scored.filter(song => song.score > 0);
 
-  const result = candidates.length
-    ? candidates
-    : scored.filter(song =>
-        Array.isArray(song.aiMoodTags) && song.aiMoodTags.length > 0
-      );
+  console.log(
+    candidates
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10)
+      .map(song => ({
+        name: song.songName || song.name,
+        score: song.score,
+        rawTags: song.rawTags,
+        rawStyle: song.rawStyle,
+        aiMoodTags: song.aiMoodTags,
+        aiSceneTags: song.aiSceneTags,
+        crowdPlaylistTags: song.crowdPlaylistTags
+      }))
+  );
 
-  return result
+  // 沒有命中時，不再亂推所有有 AI tag 的歌
+  if (!candidates.length) return [];
+
+  const topPool = candidates
     .sort((a, b) => b.score - a.score)
+    .slice(0, 20);
+
+  return shuffleArray(topPool)
     .slice(0, 8)
     .map(song => ({
       ...song,
@@ -1933,55 +1768,55 @@ async function renderDataSummary() {
     $('clearImportBtn').addEventListener('click', () => $('rawText').value = '');
     
     $('aiRecommendBtn').addEventListener('click', async () => {
-    
-      const btn = $('aiRecommendBtn');
-    
-      const mood = $('aiMoodInput').value.trim();
-    
-      if(!mood){
 
-        $('aiRecommendResult').innerHTML = `
-          <div class="empty">
-            請先輸入今天想唱的情緒或氛圍
-          </div>
-        `;
-      
-        return;
-      }
-    
-      btn.disabled = true;
-      btn.textContent = 'AI 思考中...';
-    
-      $('aiRecommendResult').innerHTML = `
-        <div class="empty">
-          AI 正在思考中...
-        </div>
-      `;
-    
-      try{
-    
-        const result = await mockAiRecommendApi(mood);
-    
-        renderAiRecommendResult(mood, result);
-    
-      }catch(err){
-    
-        console.error(err);
-    
-        $('aiRecommendResult').innerHTML = `
-          <div class="empty">
-            AI 推薦失敗
-          </div>
-        `;
-    
-      }finally{
-    
-        btn.disabled = false;
-        btn.textContent = '✨ AI 推薦歌曲';
-    
-      }
-    
-    });
+  const btn = $('aiRecommendBtn');
+
+  const mood = $('aiMoodInput').value.trim();
+
+  if(!mood){
+
+    $('aiRecommendResult').innerHTML = `
+      <div class="empty">
+        請先輸入今天想唱的情緒或氛圍
+      </div>
+    `;
+
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'AI 思考中...';
+
+  $('aiRecommendResult').innerHTML = `
+    <div class="empty">
+      AI 正在思考中...
+    </div>
+  `;
+
+  try{
+
+    const result = await mockAiRecommendApi(mood);
+
+    renderAiRecommendResult(mood, result);
+
+  }catch(err){
+
+    console.error(err);
+
+    $('aiRecommendResult').innerHTML = `
+      <div class="empty">
+        AI 推薦失敗
+      </div>
+    `;
+
+  }finally{
+
+    btn.disabled = false;
+    btn.textContent = '✨ AI 推薦歌曲';
+
+  }
+
+});
     
     $('resetPreviewBtn').addEventListener('click', () => { currentParsedItems = []; renderPreview(); renderUnparsed([]); });
 
