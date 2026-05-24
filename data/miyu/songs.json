@@ -48674,10 +48674,50 @@
     "note": "",
     "sharedName": "春",
     "sharedArtist": "陈文非",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "万物复苏",
+      "温柔治愈",
+      "诗意唯美"
+    ],
+    "aiSceneTags": [
+      "开播暖场",
+      "走心倾诉",
+      "深夜陪伴"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "编曲层层递进，既有春日的温柔，又有副歌的情绪绽放。",
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_7ce828a9-7c22-47a3-853d-aeb97c4e8819",
+    "poolSongId": "7ce828a9-7c22-47a3-853d-aeb97c4e8819",
+    "songId": "8c1f518c-b558-46e5-8eb6-0db6ffcc7302",
+    "seq": 1500,
+    "name": "当谢幕来临时",
+    "songName": "当谢幕来临时",
+    "artist": "林智乐",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "remarks": "",
+    "note": "",
+    "sharedName": "当谢幕来临时",
+    "sharedArtist": "林智乐",
+    "aiMoodTags": [
+      "戏剧张力",
+      "惆怅怅惘",
+      "华丽落寞"
+    ],
+    "aiSceneTags": [
+      "直播收尾",
+      "沉浸叙事",
+      "情感高潮"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "港乐宏大编曲，具有强烈谢幕感与情绪爆发力，适合收尾。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
