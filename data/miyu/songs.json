@@ -48945,5 +48945,37 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_20168412-294c-41e5-9260-abdd5cca95c2",
+    "poolSongId": "20168412-294c-41e5-9260-abdd5cca95c2",
+    "songId": "0b9e04ee-cf0f-4514-af4d-8e8eef160699",
+    "seq": 1508,
+    "name": "我记得",
+    "songName": "我记得",
+    "artist": "赵雷",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "remarks": "",
+    "note": "",
+    "sharedName": "我记得",
+    "sharedArtist": "赵雷",
+    "aiMoodTags": [
+      "释怀叙事",
+      "宿命感",
+      "温情落寞"
+    ],
+    "aiSceneTags": [
+      "深夜谈心",
+      "情感电台",
+      "收尾沉浸"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "民谣编曲细腻，歌词具轮回宿命感，适合深夜静心聆听。",
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
