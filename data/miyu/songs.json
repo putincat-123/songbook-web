@@ -138,7 +138,7 @@
     "style": "流行",
     "rawStyle": "流行",
     "rawMood": "",
-    "rawTags": "",
+    "rawTags": "开嗓",
     "remarks": "",
     "note": "",
     "sharedName": "椿",
@@ -4394,7 +4394,7 @@
     "style": "经典",
     "rawStyle": "经典",
     "rawMood": "",
-    "rawTags": "",
+    "rawTags": "开嗓",
     "remarks": "",
     "note": "",
     "sharedName": "红豆",
@@ -8522,7 +8522,7 @@
     "style": "流行",
     "rawStyle": "流行",
     "rawMood": "",
-    "rawTags": "",
+    "rawTags": "开嗓",
     "remarks": "",
     "note": "",
     "sharedName": "瘦子",
@@ -11818,7 +11818,7 @@
     "style": "流行",
     "rawStyle": "流行",
     "rawMood": "",
-    "rawTags": "",
+    "rawTags": "开嗓",
     "remarks": "",
     "note": "",
     "sharedName": "阴天",
@@ -13386,7 +13386,7 @@
     "style": "流行",
     "rawStyle": "流行",
     "rawMood": "",
-    "rawTags": "",
+    "rawTags": "开嗓",
     "remarks": "轻快",
     "note": "",
     "sharedName": "白日猫",
@@ -18606,15 +18606,9 @@
     ],
     "aiEnergy": "low",
     "aiTagReason": "旋律輕柔溫暖，歌詞充滿治癒感，適合睡前放鬆。",
-    "crowdPlaylistTags": [
-      "深夜",
-      "陪伴",
-      "晚安"
-    ],
-    "crowdPlaylistSources": [
-      "深夜华语陪伴"
-    ],
-    "aiMetadataSource": "crowd_playlist"
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   },
   {
     "id": "pool_a1e87d18-ec96-49ed-a0db-e2616d41795c",
@@ -31970,7 +31964,7 @@
     "style": "",
     "rawStyle": "",
     "rawMood": "",
-    "rawTags": "",
+    "rawTags": "开嗓",
     "remarks": "",
     "note": "",
     "sharedName": "在我之外",
@@ -39098,16 +39092,9 @@
     ],
     "aiEnergy": "high",
     "aiTagReason": "激昂大气的流行摇滚，歌词充满梦想与阳光的力量，适合调动气氛。",
-    "crowdPlaylistTags": [
-      "晴天",
-      "阳光",
-      "清新",
-      "轻快"
-    ],
-    "crowdPlaylistSources": [
-      "晴天阳光轻快"
-    ],
-    "aiMetadataSource": "crowd_playlist"
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   },
   {
     "id": "pool_9d0a0cf6-8caf-46ec-9f20-6b9a15a8f146",
@@ -45637,16 +45624,9 @@
     ],
     "aiEnergy": "high",
     "aiTagReason": "带有民谣雷鬼元素的流行快歌，展现雨过天晴的开朗与快乐",
-    "crowdPlaylistTags": [
-      "晴天",
-      "阳光",
-      "清新",
-      "轻快"
-    ],
-    "crowdPlaylistSources": [
-      "晴天阳光轻快"
-    ],
-    "aiMetadataSource": "crowd_playlist"
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   },
   {
     "id": "pool_f39e8bc2-9548-424e-9c1c-e0fe102e803c",
@@ -48012,16 +47992,9 @@
     ],
     "aiEnergy": "low",
     "aiTagReason": "不加修饰的真挚民谣情歌，纯粹的甜美与浪漫，适合情歌告白。",
-    "crowdPlaylistTags": [
-      "晴天",
-      "阳光",
-      "清新",
-      "轻快"
-    ],
-    "crowdPlaylistSources": [
-      "晴天阳光轻快"
-    ],
-    "aiMetadataSource": "crowd_playlist"
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   },
   {
     "id": "pool_d0efba73-c183-4b20-86c2-6181355795b9",
@@ -48680,12 +48653,33 @@
       "广播剧",
       "故事感",
       "深夜",
-      "陪伴",
-      "剧情"
+      "陪伴"
     ],
-    "crowdPlaylistSources": [
-      "广播剧故事感"
-    ],
-    "aiMetadataSource": "crowd_playlist"
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "crowd_playlist_plus_llm"
+  },
+  {
+    "id": "pool_19567f32-def6-4e78-90ad-ff759717fc4b",
+    "poolSongId": "19567f32-def6-4e78-90ad-ff759717fc4b",
+    "songId": "f29d1ef4-67a2-4b02-a2e2-26e733e400cb",
+    "seq": 1499,
+    "name": "春",
+    "songName": "春",
+    "artist": "陈文非",
+    "style": "流行",
+    "rawStyle": "流行",
+    "rawMood": "",
+    "rawTags": "",
+    "remarks": "",
+    "note": "",
+    "sharedName": "春",
+    "sharedArtist": "陈文非",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
