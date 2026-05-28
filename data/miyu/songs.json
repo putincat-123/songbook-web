@@ -48977,5 +48977,29 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_9bf62a26-d714-4cdc-95b9-0485e086cd50",
+    "poolSongId": "9bf62a26-d714-4cdc-95b9-0485e086cd50",
+    "songId": "6614c3f4-a123-44c4-8637-15e77b3a1668",
+    "seq": 1509,
+    "name": "听说你",
+    "songName": "听说你",
+    "artist": "于冬然",
+    "style": "流行",
+    "rawStyle": "流行",
+    "rawMood": "",
+    "rawTags": "",
+    "remarks": "",
+    "note": "",
+    "sharedName": "听说你",
+    "sharedArtist": "",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
