@@ -43529,38 +43529,6 @@
     "aiMetadataSource": "llm_only"
   },
   {
-    "id": "pool_ecfddace-c7de-4811-94a1-06b1e16f2923",
-    "poolSongId": "ecfddace-c7de-4811-94a1-06b1e16f2923",
-    "songId": "8fd20730-8eb4-4c60-b80f-76f725cd8284",
-    "seq": 1340,
-    "name": "今天是你的生日",
-    "songName": "今天是你的生日",
-    "artist": "可以删",
-    "style": "",
-    "rawStyle": "",
-    "rawMood": "",
-    "rawTags": "",
-    "remarks": "",
-    "note": "",
-    "sharedName": "今天是你的生日",
-    "sharedArtist": "可以删",
-    "aiMoodTags": [
-      "温馨",
-      "感动",
-      "喜悦"
-    ],
-    "aiSceneTags": [
-      "适合节日",
-      "适合周年",
-      "氛围"
-    ],
-    "aiEnergy": "medium",
-    "aiTagReason": "经典生日祝福歌曲，旋律温馨，适合庆生及节日氛围",
-    "crowdPlaylistTags": [],
-    "crowdPlaylistSources": [],
-    "aiMetadataSource": "llm_only"
-  },
-  {
     "id": "pool_e00dffed-4f09-433a-87db-7291ebe1165f",
     "poolSongId": "e00dffed-4f09-433a-87db-7291ebe1165f",
     "songId": "a55bda26-749c-4bc0-a6d4-dffa7628f79c",
