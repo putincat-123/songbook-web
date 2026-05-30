@@ -48962,10 +48962,18 @@
     "note": "",
     "sharedName": "听说你",
     "sharedArtist": "",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "伤感遗憾",
+      "释怀无奈",
+      "催泪"
+    ],
+    "aiSceneTags": [
+      "情感共鸣",
+      "深夜谈心",
+      "点歌翻唱"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "歌曲充满对前任的遗憾与释怀，适合深夜情感互动与翻唱。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -48986,10 +48994,18 @@
     "note": "",
     "sharedName": "小孩",
     "sharedArtist": "罗森涛",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "温柔治愈",
+      "深情独白",
+      "卑微"
+    ],
+    "aiSceneTags": [
+      "安静陪伴",
+      "睡前情歌",
+      "走心倾听"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "词曲如内心独白般温柔而略带卑微，适合安静陪伴与睡前互动。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
