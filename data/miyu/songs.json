@@ -49001,5 +49001,29 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_9b5a1579-1e67-403c-9304-d65056880f30",
+    "poolSongId": "9b5a1579-1e67-403c-9304-d65056880f30",
+    "songId": "c605d793-0271-409f-8b8c-f4a5dc7ecf1c",
+    "seq": 1510,
+    "name": "小孩",
+    "songName": "小孩",
+    "artist": "罗森涛",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "remarks": "",
+    "note": "",
+    "sharedName": "小孩",
+    "sharedArtist": "罗森涛",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
