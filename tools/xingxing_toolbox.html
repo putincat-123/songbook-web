@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>xingxing工具箱</title>
+<style>
+  :root{
+    --bg:#f6f8fb;--card:#fff;--text:#1f2937;--muted:#6b7280;
+    --line:#e5e7eb;--brand:#2563eb;--chip:#eff6ff;--danger:#dc2626;
+    --shadow:0 6px 20px rgba(15,23,42,.08);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text)}
+  .app{max-width:1080px;margin:0 auto;padding:18px}
+  .title{font-size:28px;font-weight:900;margin:0 0 8px}
+  .subtitle{color:var(--muted);font-size:14px;margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:14px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+  .col-8{grid-column:span 8}.col-4{grid-column:span 4}.col-12{grid-column:span 12}
+  @media(max-width:720px){.col-8,.col-4,.col-12{grid-column:span 12}}
+  label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:6px}
+  input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:15px}
+  button{border:none;border-radius:12px;padding:10px 13px;font-size:14px;font-weight:800;cursor:pointer}
+  button:disabled{opacity:.55;cursor:not-allowed}
+  .primary{background:var(--brand);color:#fff}
+  .ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
+  .summary,.tag-row{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{background:var(--chip);color:#1e3a8a;border-radius:999px;padding:8px 10px;font-size:13px;font-weight:800}
+  .empty{padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);text-align:center;background:#fff}
+  .song-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px;margin-bottom:10px}
+  .song-title{font-size:16px;font-weight:900;margin-bottom:4px}
+  .song-meta{font-size:13px;color:var(--muted);line-height:1.5}
+  .tag-btn{background:#f8fafc;color:#334155;border:1px solid #cbd5e1;padding:7px 10px;border-radius:999px;font-size:13px}
+  .tag-btn.active{background:#fff7ed;color:#c2410c;border-color:#fdba74}
+  .tag-pill{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;padding:7px 10px;border-radius:999px;font-size:13px;font-weight:800}
+  .filter-btn{background:#fff;color:#334155;border:1px solid #cbd5e1;padding:7px 10px;border-radius:999px;font-size:13px;font-weight:800}
+  .filter-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .dirty{color:var(--danger);font-size:12px;font-weight:800;margin-top:6px}
+  .small{font-size:12px;color:var(--muted)}
+  .pager{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin:12px 0}
+</style>
+</head>
+
+<body>
+<div class="app">
+  <div class="title">xingxing工具箱</div>
+  <div class="subtitle">主播自訂標籤池｜歌曲 customTags 標注｜批次儲存 Supabase</div>
+
+  <div class="card">
+    <div class="summary" id="poolSummary">
+      <span class="chip">曲庫載入中...</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>主播自訂標籤池</h3>
+    <div id="tagPoolWrap" class="tag-row">
+      <div class="empty">尚未建立標籤池</div>
+    </div>
+
+    <div class="grid" style="margin-top:12px">
+      <div class="col-8">
+        <label>新增標籤到標籤池</label>
+        <input id="newTagInput" placeholder="例如：熱歌、拿手、甜歌、開嗓" />
+      </div>
+      <div class="col-4">
+        <label>&nbsp;</label>
+        <button class="ghost" id="addTagBtn" style="width:100%">新增標籤</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="grid">
+      <div class="col-8">
+        <label>搜尋歌名 / 歌手 / 標籤</label>
+        <input id="searchInput" placeholder="例如：周杰倫 / 甜歌 / 開嗓" />
+      </div>
+      <div class="col-4">
+        <label>&nbsp;</label>
+        <button class="ghost" id="reloadBtn" style="width:100%">重新載入曲庫</button>
+      </div>
+      <div class="col-12">
+        <button class="primary" id="saveBtn" style="width:100%">儲存變更到 Supabase</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>歌曲分類</h3>
+    <div id="categoryFilterWrap" class="tag-row">
+      <button class="filter-btn active" data-action="filter-category" data-tag="__ALL__">All 全部歌曲</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="pager" id="topPager">
+      <button class="ghost" id="prevPageBtn">上一頁</button>
+      <span class="chip" id="pageInfo">第 1 / 1 頁</span>
+      <button class="ghost" id="nextPageBtn">下一頁</button>
+    </div>
+
+    <div id="songList">
+      <div class="empty">曲庫載入中...</div>
+    </div>
+
+    <div class="pager" id="bottomPager">
+      <button class="ghost" id="prevPageBtnBottom">上一頁</button>
+      <span class="chip" id="pageInfoBottom">第 1 / 1 頁</span>
+      <button class="ghost" id="nextPageBtnBottom">下一頁</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const API_BASE_URL = "https://streamer-songbook.vercel.app";
+const STREAMER = new URLSearchParams(location.search).get("streamer") || "xingxing";
+
+let songPool = [];
+let tagPool = [];
+let activeCategoryTag = "__ALL__";
+let currentPage = 1;
+const PAGE_SIZE = 100;
+const dirtySongIds = new Set();
+
+const $ = id => document.getElementById(id);
+
+function esc(str = "") {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function normalizeSong(s, index) {
+  return {
+    id: s.id || "",
+    seq: s.seq ?? index + 1,
+    songName: s.songName || s.name || s.displayName || s.display_name || s.sharedName || "",
+    artist: s.artist || s.displayArtist || s.display_artist || s.sharedArtist || "",
+    customTags: Array.isArray(s.customTags)
+      ? s.customTags
+      : Array.isArray(s.custom_tags)
+        ? s.custom_tags
+        : []
+  };
+}
+
+async function loadSongs() {
+  dirtySongIds.clear();
+  currentPage = 1;
+
+  $("poolSummary").innerHTML = `<span class="chip">曲庫載入中...</span>`;
+  $("songList").innerHTML = `<div class="empty">曲庫載入中...</div>`;
+
+  const paths = [
+    `../data/${STREAMER}/songs.json?v=${Date.now()}`,
+    `./data/${STREAMER}/songs.json?v=${Date.now()}`
+  ];
+
+  for (const path of paths) {
+    try {
+      console.log("start load song pool", path);
+
+      const res = await fetch(path);
+      if (!res.ok) continue;
+
+      const data = await res.json();
+      if (!Array.isArray(data)) continue;
+
+      songPool = data
+        .map(normalizeSong)
+        .filter(song => song.id && song.songName);
+
+      tagPool = Array.from(
+        new Set(songPool.flatMap(song => song.customTags || []))
+      ).sort((a, b) => a.localeCompare(b, 'zh-Hant'));
+
+      renderAll();
+      console.log(`✅ 已載入 ${path}，共 ${songPool.length} 首`);
+      return;
+    } catch (err) {
+      console.warn("load failed", path, err);
+    }
+  }
+
+  $("poolSummary").innerHTML = `<span class="chip">曲庫載入失敗</span>`;
+  $("songList").innerHTML = `<div class="empty">無法載入 data/${STREAMER}/songs.json，請確認檔案存在</div>`;
+}
+
+function renderAll() {
+  renderSummary();
+  renderTagPool();
+  renderCategoryFilter();
+  renderSongList();
+}
+
+function renderSummary() {
+  const artists = new Set(songPool.map(song => song.artist).filter(Boolean));
+  const tagged = songPool.filter(song => song.customTags.length).length;
+
+  $("poolSummary").innerHTML = `
+    <span class="chip">Streamer：${esc(STREAMER)}</span>
+    <span class="chip">曲庫 ${songPool.length} 首</span>
+    <span class="chip">歌手 ${artists.size} 位</span>
+    <span class="chip">已標籤 ${tagged} 首</span>
+    <span class="chip">待儲存 ${dirtySongIds.size} 首</span>
+  `;
+}
+
+function renderTagPool() {
+  if (!tagPool.length) {
+    $("tagPoolWrap").innerHTML = `<div class="empty">尚未建立標籤池，請先新增標籤</div>`;
+    return;
+  }
+
+  $("tagPoolWrap").innerHTML = tagPool
+    .map(tag => `
+      <button
+        class="tag-pill"
+        data-action="delete-pool-tag"
+        data-tag="${esc(tag)}"
+        title="點擊刪除標籤池標籤"
+      >
+        ${esc(tag)} ×
+      </button>
+    `)
+    .join("");
+}
+
+function renderCategoryFilter() {
+  const wrap = $("categoryFilterWrap");
+  if (!wrap) return;
+
+  const allActive = activeCategoryTag === "__ALL__";
+
+  wrap.innerHTML = `
+  <button
+    class="filter-btn ${activeCategoryTag === "__ALL__" ? "active" : ""}"
+    data-action="filter-category"
+    data-tag="__ALL__"
+  >
+    All 全部歌曲
+  </button>
+
+  ${tagPool.map(tag => `
+    <button
+      class="filter-btn ${activeCategoryTag === tag ? "active" : ""}"
+      data-action="filter-category"
+      data-tag="${esc(tag)}"
+    >
+      ${esc(tag)}
+    </button>
+  `).join("")}
+
+  <button
+    class="filter-btn ${activeCategoryTag === "__UNTAGGED__" ? "active" : ""}"
+    data-action="filter-category"
+    data-tag="__UNTAGGED__"
+  >
+    未標籤歌曲
+  </button>
+`;
+}
+
+function getFilteredSongs() {
+  const keyword = $("searchInput").value.trim().toLowerCase();
+
+  return songPool.filter(song => {
+    const customTags = Array.isArray(song.customTags) ? song.customTags : [];
+
+    const categoryMatched =
+      activeCategoryTag === "__ALL__" || customTags.includes(activeCategoryTag);
+
+    if (!categoryMatched) return false;
+
+    if (!keyword) return true;
+
+    const text = [
+      song.songName,
+      song.artist,
+      ...customTags
+    ].join(" ").toLowerCase();
+
+    return text.includes(keyword);
+  });
+}
+
+function getPagedSongs(filteredSongs) {
+  const totalPages = Math.max(1, Math.ceil(filteredSongs.length / PAGE_SIZE));
+
+  if (currentPage > totalPages) currentPage = totalPages;
+  if (currentPage < 1) currentPage = 1;
+
+  const start = (currentPage - 1) * PAGE_SIZE;
+  return {
+    totalPages,
+    start,
+    songs: filteredSongs.slice(start, start + PAGE_SIZE)
+  };
+}
+
+function renderPager(totalItems, totalPages) {
+  const text = `第 ${currentPage} / ${totalPages} 頁｜共 ${totalItems} 首｜每頁 ${PAGE_SIZE} 首`;
+
+  $("pageInfo").textContent = text;
+  $("pageInfoBottom").textContent = text;
+
+  const isFirst = currentPage <= 1;
+  const isLast = currentPage >= totalPages;
+
+  $("prevPageBtn").disabled = isFirst;
+  $("prevPageBtnBottom").disabled = isFirst;
+  $("nextPageBtn").disabled = isLast;
+  $("nextPageBtnBottom").disabled = isLast;
+}
+
+function renderSongList() {
+  const filtered = getFilteredSongs();
+  const { songs: list, totalPages, start } = getPagedSongs(filtered);
+  const categoryLabel = activeCategoryTag === "__ALL__" ? "All 全部歌曲" : activeCategoryTag;
+
+  renderPager(filtered.length, totalPages);
+
+  if (!filtered.length) {
+    $("songList").innerHTML = `<div class="empty">「${esc(categoryLabel)}」查無符合歌曲</div>`;
+    return;
+  }
+
+  $("songList").innerHTML = `
+    <div class="small" style="margin-bottom:10px;">
+      目前分類：${esc(categoryLabel)}｜第 ${start + 1} - ${start + list.length} 首 / 共 ${filtered.length} 首
+    </div>
+  ` + list.map(song => {
+    const customTags = Array.isArray(song.customTags) ? song.customTags : [];
+    const dirty = dirtySongIds.has(song.id);
+
+    return `
+      <div class="song-card">
+        <div class="song-title">${esc(song.seq)}. ${esc(song.songName)}</div>
+        <div class="song-meta">歌手：${esc(song.artist || "未知歌手")}</div>
+        ${dirty ? `<div class="dirty">● 尚未儲存</div>` : ""}
+
+        <div class="tag-row" style="margin-top:10px">
+          ${tagPool.length
+            ? tagPool.map(tag => {
+                const active = customTags.includes(tag);
+                return `
+                  <button
+                    class="tag-btn ${active ? "active" : ""}"
+                    data-action="toggle-tag"
+                    data-id="${esc(song.id)}"
+                    data-tag="${esc(tag)}"
+                  >
+                    ${active ? "✓ " : "+ "}${esc(tag)}
+                  </button>
+                `;
+              }).join("")
+            : `<span class="small">請先建立標籤池</span>`
+          }
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function addTagToPool() {
+  const input = $("newTagInput");
+  const tag = input.value.trim();
+
+  if (!tag) {
+    alert("請先輸入標籤");
+    return;
+  }
+
+  if (!tagPool.includes(tag)) {
+    tagPool.push(tag);
+    tagPool.sort((a, b) => a.localeCompare(b, 'zh-Hant'));
+  }
+
+  input.value = "";
+  renderAll();
+}
+
+function deleteTagFromPool(tag) {
+  const usedCount = songPool.filter(song =>
+    Array.isArray(song.customTags) && song.customTags.includes(tag)
+  ).length;
+
+  const message = usedCount
+    ? `「${tag}」目前已標註在 ${usedCount} 首歌上。\n刪除後會從這些歌曲的 customTags 一併移除，是否繼續？`
+    : `確定刪除標籤「${tag}」？`;
+
+  if (!confirm(message)) return;
+
+  tagPool = tagPool.filter(item => item !== tag);
+
+  if (activeCategoryTag === tag) {
+    activeCategoryTag = "__ALL__";
+  }
+
+  songPool.forEach(song => {
+    if (!Array.isArray(song.customTags)) return;
+    if (!song.customTags.includes(tag)) return;
+
+    song.customTags = song.customTags.filter(item => item !== tag);
+    dirtySongIds.add(song.id);
+  });
+
+  renderAll();
+}
+
+function toggleSongTag(poolSongId, tag) {
+  const song = songPool.find(song => song.id === poolSongId);
+  if (!song) return;
+
+  const current = Array.isArray(song.customTags) ? song.customTags : [];
+  song.customTags = current.includes(tag)
+    ? current.filter(item => item !== tag)
+    : [...current, tag];
+
+  dirtySongIds.add(poolSongId);
+  renderAll();
+}
+
+async function patchCustomTags(poolSongId, customTags) {
+  const res = await fetch(`${API_BASE_URL}/api/admin/pool-songs/${poolSongId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ custom_tags: customTags })
+  });
+
+  const json = await res.json().catch(() => ({}));
+
+  if (!res.ok) {
+    throw new Error(json.error || `PATCH failed ${res.status}`);
+  }
+
+  return json;
+}
+
+async function saveAllChanges() {
+  if (dirtySongIds.size === 0) {
+    alert("沒有需要儲存的變更");
+    return;
+  }
+
+  const saveBtn = $("saveBtn");
+  const ids = [...dirtySongIds];
+
+  saveBtn.disabled = true;
+  saveBtn.textContent = "儲存中...";
+
+  try {
+    for (const id of ids) {
+      const song = songPool.find(song => song.id === id);
+      if (!song) continue;
+
+      await patchCustomTags(id, song.customTags || []);
+    }
+
+    dirtySongIds.clear();
+    renderAll();
+
+    alert(`已儲存 ${ids.length} 首歌曲`);
+  } catch (err) {
+    console.error(err);
+    alert(`儲存失敗：${err.message}`);
+  } finally {
+    saveBtn.disabled = false;
+    saveBtn.textContent = "儲存變更到 Supabase";
+  }
+}
+
+document.addEventListener("click", e => {
+  const filterBtn = e.target.closest('button[data-action="filter-category"]');
+  if (filterBtn) {
+    activeCategoryTag = filterBtn.dataset.tag || "__ALL__";
+    currentPage = 1;
+    renderAll();
+    return;
+  }
+
+  const deleteBtn = e.target.closest('button[data-action="delete-pool-tag"]');
+  if (deleteBtn) {
+    deleteTagFromPool(deleteBtn.dataset.tag);
+    return;
+  }
+
+  const btn = e.target.closest('button[data-action="toggle-tag"]');
+  if (!btn) return;
+
+  toggleSongTag(btn.dataset.id, btn.dataset.tag);
+});
+
+$("searchInput").addEventListener("input", () => {
+  currentPage = 1;
+  renderSongList();
+});
+$("reloadBtn").addEventListener("click", loadSongs);
+$("saveBtn").addEventListener("click", saveAllChanges);
+$("addTagBtn").addEventListener("click", addTagToPool);
+$("newTagInput").addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    addTagToPool();
+  }
+});
+
+function goToPage(delta) {
+  currentPage += delta;
+  renderSongList();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+$("prevPageBtn").addEventListener("click", () => goToPage(-1));
+$("prevPageBtnBottom").addEventListener("click", () => goToPage(-1));
+$("nextPageBtn").addEventListener("click", () => goToPage(1));
+$("nextPageBtnBottom").addEventListener("click", () => goToPage(1));
+
+loadSongs();
+</script>
+</body>
+</html>
