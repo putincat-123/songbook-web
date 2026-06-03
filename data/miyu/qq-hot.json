@@ -1,0 +1,846 @@
+{
+  "provider": "qq_music",
+  "updatedAt": "2026-06-03T13:20:23.110Z",
+  "songs": [
+    {
+      "name": "3am牵着你",
+      "artist": "李佳薇",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 7
+        },
+        {
+          "source": "rise",
+          "rank": 12
+        },
+        {
+          "source": "popular",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 7
+    },
+    {
+      "name": "阴天",
+      "artist": "莫文蔚",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 1
+        },
+        {
+          "source": "popular",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
+      "name": "玻璃",
+      "artist": "Gareth.T",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 12
+        },
+        {
+          "source": "new",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
+      "name": "ENJOY THE SHOW",
+      "artist": "HENRY刘宪华",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
+      "name": "一天",
+      "artist": "队长/鹿晗",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 6
+        },
+        {
+          "source": "popular",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
+    },
+    {
+      "name": "Stop Missing You",
+      "artist": "卓沅",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 3
+        },
+        {
+          "source": "popular",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 3
+    },
+    {
+      "name": "宇宙游乐场",
+      "artist": "梓渝",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 5
+        },
+        {
+          "source": "popular",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 3
+    },
+    {
+      "name": "Only One",
+      "artist": "Alex Band",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 20
+        },
+        {
+          "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 4
+    },
+    {
+      "name": "走走",
+      "artist": "李荣浩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 7
+        },
+        {
+          "source": "popular",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 7
+    },
+    {
+      "name": "Radio (Dum-Dum)",
+      "artist": "宋雨琦 (YUQI) (우기)",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 13
+        },
+        {
+          "source": "popular",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 8
+    },
+    {
+      "name": "Never Lose",
+      "artist": "鹭卓",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 8
+        },
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 8
+    },
+    {
+      "name": "Alive",
+      "artist": "王嘉尔/五月天 阿信",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 12
+        },
+        {
+          "source": "popular",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 12
+    },
+    {
+      "name": "无风带",
+      "artist": "陈卓璇/艾热AIR",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        },
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 14
+    },
+    {
+      "name": "岁月如笔写春秋",
+      "artist": "郭少杰",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        },
+        {
+          "source": "popular",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 16
+    },
+    {
+      "name": "海底",
+      "artist": "凤凰传奇",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 1
+    },
+    {
+      "name": "半壶纱",
+      "artist": "刘珂矣",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 2
+    },
+    {
+      "name": "幽光",
+      "artist": "刘宇宁",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 2
+    },
+    {
+      "name": "恋人",
+      "artist": "李荣浩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
+      "name": "偿还",
+      "artist": "王菲",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
+      "name": "雨爱",
+      "artist": "杨丞琳",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 4
+    },
+    {
+      "name": "主角",
+      "artist": "王菲",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 4
+    },
+    {
+      "name": "与你",
+      "artist": "ZIYU Official Fan Club",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 4
+    },
+    {
+      "name": "雨过后的风景",
+      "artist": "Dizzy Dizzo (蔡诗芸)",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "最佳损友",
+      "artist": "陈奕迅",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "电台情歌 (Live)",
+      "artist": "窦靖童",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "爱错",
+      "artist": "王力宏",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "你有没有真的爱过我",
+      "artist": "阿图表妹",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "只若初见",
+      "artist": "落日微醺",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "我怀念的",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 8
+    },
+    {
+      "name": "岁月如歌",
+      "artist": "陈奕迅",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 8
+    },
+    {
+      "name": "枪火 (相对那就针锋相对)",
+      "artist": "宝石Gem",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "갑자기 (Suddenly)",
+      "artist": "I.O.I (아이오아이)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "兄妹",
+      "artist": "陈奕迅",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "胆小鬼 (Live)",
+      "artist": "宋亚轩",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "唯一",
+      "artist": "G.E.M. 邓紫棋",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "춤 (CHOOM)",
+      "artist": "BABYMONSTER (베이비몬스터)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "小兵出海",
+      "artist": "辛敏琦/曾彭飚",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "忘记时间 (空灵女声版)",
+      "artist": "远山雪满头",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "出现又离开 (Live)",
+      "artist": "梁博",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "阿嬷的情书",
+      "artist": "九日NineNine/程嘻嘻/宣哲",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "少管我",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "无憾 (港风女声版)",
+      "artist": "林栖",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "Don't Break My Heart (Live)",
+      "artist": "窦靖童",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "hate that i made you love me",
+      "artist": "Ariana Grande",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "没关系",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "Kiss Believer",
+      "artist": "MIKS",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "演员",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "只若初见",
+      "artist": "张德伊玲",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "人生路漫漫",
+      "artist": "白小白",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "LEMONADE",
+      "artist": "aespa (에스파)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "空壳",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "你要的全拿走",
+      "artist": "胡彦斌",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "警报",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "春娇与志明",
+      "artist": "街道办GDC/欧阳耀莹",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "It's Raining (feat. Lilly Choi)",
+      "artist": "Dept (뎁트)/Lilly Choi",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "LEMONADE (Zedd Remix)",
+      "artist": "aespa (에스파)/Zedd",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "其实",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "雾岛的猫",
+      "artist": "张巍",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "虚构",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "特别的人",
+      "artist": "方大同",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "Last Train (feat. Oh Yun)",
+      "artist": "Dept (뎁트)/Oh Yun",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "Just Glow(慢慢发光)",
+      "artist": "玉芬",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "不将就",
+      "artist": "李荣浩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 20
+    },
+    {
+      "name": "西厢寻他 (饮下我一干二净的牵挂)",
+      "artist": "唐伯虎Annie/伯爵Johnny",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 20
+    },
+    {
+      "name": "不分手的恋爱",
+      "artist": "汪苏泷",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 20
+    }
+  ]
+}
