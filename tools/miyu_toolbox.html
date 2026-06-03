@@ -1629,10 +1629,10 @@ async function renderDataSummary() {
  * ====================================== */
   
   async function loadHotRecommendations() {
-    console.log('start loadHotRecommendations');
-  
-    const resultWrap = document.getElementById("hotRecommendResult");
-    const summaryWrap = document.getElementById("hotRecommendSummary");
+  console.log('start loadHotRecommendations');
+
+  const resultWrap = document.getElementById("hotRecommendResult");
+  const summaryWrap = document.getElementById("hotRecommendSummary");
 
   resultWrap.innerHTML = `
     <div class="empty">
@@ -1641,29 +1641,22 @@ async function renderDataSummary() {
   `;
 
   try {
-    const url =
-      `${HOT_API_BASE}?streamerSlug=miyu` +
-      `&onlyMissing=false`;
-
-    const res = await fetch(url);
+    const res = await fetch(`../data/miyu/qq-hot.json?v=${Date.now()}`);
 
     if (!res.ok) {
-      throw new Error(`API ${res.status}`);
+      throw new Error(`JSON ${res.status}`);
     }
 
     const data = await res.json();
-
-    const recommendations = data.recommendations || [];
-    const summary = data.summary || {};
+    const songs = data.songs || [];
 
     summaryWrap.innerHTML = `
-      <div class="chip">總歌曲 ${summary.total || 0}</div>
-      <div class="chip">已收錄 ${summary.collected || 0}</div>
-      <div class="chip">未收錄 ${summary.missing || 0}</div>
-      <div class="chip">目前顯示 ${summary.returned || 0}</div>
+      <div class="chip">來源 QQ音樂</div>
+      <div class="chip">總歌曲 ${songs.length}</div>
+      <div class="chip">更新時間 ${data.updatedAt ? new Date(data.updatedAt).toLocaleString() : "-"}</div>
     `;
 
-    if (!recommendations.length) {
+    if (!songs.length) {
       resultWrap.innerHTML = `
         <div class="empty">
           沒有推薦歌曲
@@ -1672,17 +1665,20 @@ async function renderDataSummary() {
       return;
     }
 
-    resultWrap.innerHTML = recommendations
+    resultWrap.innerHTML = songs
       .slice(0, 30)
       .map((song) => {
+        const charts = (song.sources || [])
+          .map(item => `${item.source} #${item.rank}`)
+          .join("｜");
+
         return `
-        <div class="hot-card">
-          <div class="hot-title">${song.name}</div>
-          <div class="hot-artist">${song.artist}</div>
-          <div class="hot-meta">出現榜數：${song.appearCount} ｜ Score：${song.score}</div>
-          <div class="hot-charts">${song.charts.join("｜")}</div>
-          <div class="hot-status">${song.isCollected ? "✅ 已收錄" : "🔥 未收錄"}</div>
-        </div>
+          <div class="hot-card">
+            <div class="hot-title">${song.name}</div>
+            <div class="hot-artist">${song.artist}</div>
+            <div class="hot-meta">出現榜數：${song.sourceCount || 0} ｜ 最佳排名：${song.bestRank || "-"}</div>
+            <div class="hot-charts">${charts}</div>
+          </div>
         `;
       })
       .join("");
