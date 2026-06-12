@@ -1,14 +1,18 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-06-11T23:12:41.393Z",
+  "updatedAt": "2026-06-12T23:05:19.989Z",
   "songs": [
     {
-      "name": "为爱痴狂 (想要问问你敢不敢)",
-      "artist": "金志文",
+      "name": "不说再见",
+      "artist": "十个勤天",
       "sources": [
         {
           "source": "hot",
-          "rank": 5
+          "rank": 10
+        },
+        {
+          "source": "new",
+          "rank": 8
         },
         {
           "source": "rise",
@@ -16,15 +20,15 @@
         },
         {
           "source": "popular",
-          "rank": 5
+          "rank": 16
         }
       ],
-      "sourceCount": 3,
+      "sourceCount": 4,
       "bestRank": 1
     },
     {
-      "name": "我不哭",
-      "artist": "王栎鑫",
+      "name": "淬火 (IGNITE)",
+      "artist": "李佳薇/DNFU地下城与勇士",
       "sources": [
         {
           "source": "new",
@@ -32,95 +36,55 @@
         },
         {
           "source": "rise",
-          "rank": 2
+          "rank": 3
         },
         {
           "source": "popular",
-          "rank": 3
+          "rank": 5
         }
       ],
       "sourceCount": 3,
       "bestRank": 2
     },
     {
-      "name": "我想",
-      "artist": "刘宇宁",
+      "name": "你是不是也疲惫",
+      "artist": "高卿尘Nine",
       "sources": [
         {
-          "source": "hot",
-          "rank": 3
-        },
-        {
           "source": "new",
-          "rank": 4
+          "rank": 3
         },
         {
           "source": "rise",
-          "rank": 3
+          "rank": 4
+        },
+        {
+          "source": "popular",
+          "rank": 6
         }
       ],
       "sourceCount": 3,
       "bestRank": 3
     },
     {
-      "name": "为爱痴狂2026 (想要问问你敢不敢)",
-      "artist": "金志文",
+      "name": "一吻天荒",
+      "artist": "刘宇",
       "sources": [
         {
           "source": "new",
-          "rank": 15
+          "rank": 4
         },
         {
           "source": "rise",
-          "rank": 7
+          "rank": 19
         },
         {
           "source": "popular",
-          "rank": 16
+          "rank": 4
         }
       ],
       "sourceCount": 3,
-      "bestRank": 7
-    },
-    {
-      "name": "琵琶行",
-      "artist": "奇然/沈谧仁",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 9
-        },
-        {
-          "source": "rise",
-          "rank": 12
-        },
-        {
-          "source": "popular",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 9
-    },
-    {
-      "name": "叹我",
-      "artist": "阿麦姑娘",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 16
-        },
-        {
-          "source": "rise",
-          "rank": 17
-        },
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 13
+      "bestRank": 4
     },
     {
       "name": "NIGHT DANCER",
@@ -139,19 +103,191 @@
       "bestRank": 1
     },
     {
-      "name": "玻璃",
-      "artist": "Gareth.T",
+      "name": "那天下雨了",
+      "artist": "周杰伦",
       "sources": [
         {
           "source": "hot",
           "rank": 19
         },
         {
+          "source": "rise",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
+    },
+    {
+      "name": "为爱痴狂 (想要问问你敢不敢)",
+      "artist": "金志文",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 3
+        },
+        {
+          "source": "popular",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 3
+    },
+    {
+      "name": "我不哭",
+      "artist": "王栎鑫",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 5
+        },
+        {
+          "source": "popular",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 3
+    },
+    {
+      "name": "SUGAR HONEY ICE TEA",
+      "artist": "BABYMONSTER (베이비몬스터)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 6
+        },
+        {
+          "source": "popular",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 6
+    },
+    {
+      "name": "为爱痴狂2026 (想要问问你敢不敢)",
+      "artist": "金志文",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 7
+        },
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 7
+    },
+    {
+      "name": "推开世界的门",
+      "artist": "赵十三",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
+        },
+        {
+          "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 9
+    },
+    {
+      "name": "满心愧疚 ",
+      "artist": "金润吉",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 10
+        },
+        {
+          "source": "rise",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 10
+    },
+    {
+      "name": "我想",
+      "artist": "刘宇宁",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        },
+        {
+          "source": "popular",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 10
+    },
+    {
+      "name": "别世知己",
+      "artist": "李昊",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 11
+        },
+        {
+          "source": "popular",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 11
+    },
+    {
+      "name": "渡",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        },
+        {
+          "source": "popular",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 11
+    },
+    {
+      "name": "琵琶行",
+      "artist": "奇然/沈谧仁",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 20
+        },
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 15
+    },
+    {
+      "name": "玻璃",
+      "artist": "Gareth.T",
+      "sources": [
+        {
           "source": "new",
           "rank": 1
         }
       ],
-      "sourceCount": 2,
+      "sourceCount": 1,
       "bestRank": 1
     },
     {
@@ -161,94 +297,10 @@
         {
           "source": "hot",
           "rank": 2
-        },
-        {
-          "source": "popular",
-          "rank": 17
         }
       ],
-      "sourceCount": 2,
+      "sourceCount": 1,
       "bestRank": 2
-    },
-    {
-      "name": "SUGAR HONEY ICE TEA",
-      "artist": "BABYMONSTER (베이비몬스터)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 3
-        },
-        {
-          "source": "popular",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "渡",
-      "artist": "周深",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 7
-        },
-        {
-          "source": "popular",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 4
-    },
-    {
-      "name": "别世知己",
-      "artist": "李昊",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 5
-        },
-        {
-          "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 5
-    },
-    {
-      "name": "一吻天荒",
-      "artist": "刘宇",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 9
-        },
-        {
-          "source": "popular",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 6
-    },
-    {
-      "name": "神啊 救救我",
-      "artist": "半吨兄弟",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 12
-        },
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 12
     },
     {
       "name": "迷人的危险 (Live)",
@@ -275,20 +327,20 @@
       "bestRank": 4
     },
     {
-      "name": "좋은 날 (好日子)",
-      "artist": "IU (아이유)",
+      "name": "雨过后的风景",
+      "artist": "Dizzy Dizzo (蔡诗芸)",
       "sources": [
         {
-          "source": "rise",
-          "rank": 4
+          "source": "hot",
+          "rank": 5
         }
       ],
       "sourceCount": 1,
-      "bestRank": 4
+      "bestRank": 5
     },
     {
-      "name": "香烟与吻痕 (微醺女声版)",
-      "artist": "半夜微醺",
+      "name": "我是你好朋友",
+      "artist": "何炅/黄子弘凡",
       "sources": [
         {
           "source": "rise",
@@ -299,8 +351,8 @@
       "bestRank": 5
     },
     {
-      "name": "雨过后的风景",
-      "artist": "Dizzy Dizzo (蔡诗芸)",
+      "name": "主角",
+      "artist": "王菲",
       "sources": [
         {
           "source": "hot",
@@ -311,20 +363,8 @@
       "bestRank": 6
     },
     {
-      "name": "宇宙游乐场",
-      "artist": "梓渝",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "雨悸",
-      "artist": "陈卓璇",
+      "name": "Heavy Serenade",
+      "artist": "NMIXX (엔믹스)",
       "sources": [
         {
           "source": "rise",
@@ -347,11 +387,11 @@
       "bestRank": 7
     },
     {
-      "name": "问劫 (对唱版)",
-      "artist": "木尘/仓央措",
+      "name": "借过一下 (Live|典藏)",
+      "artist": "胡彦斌/Jony J",
       "sources": [
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 7
         }
       ],
@@ -359,8 +399,8 @@
       "bestRank": 7
     },
     {
-      "name": "主角",
-      "artist": "王菲",
+      "name": "我怀念的",
+      "artist": "孙燕姿",
       "sources": [
         {
           "source": "hot",
@@ -371,20 +411,8 @@
       "bestRank": 8
     },
     {
-      "name": "满心愧疚 ",
-      "artist": "金润吉",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "废品",
-      "artist": "费宇涛",
+      "name": "见幸福",
+      "artist": "郁可唯",
       "sources": [
         {
           "source": "rise",
@@ -395,8 +423,20 @@
       "bestRank": 8
     },
     {
-      "name": "干杯",
-      "artist": "五月天",
+      "name": "爱错",
+      "artist": "王力宏",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "Dream With Us",
+      "artist": "TWS (투어스)",
       "sources": [
         {
           "source": "rise",
@@ -419,56 +459,8 @@
       "bestRank": 9
     },
     {
-      "name": "我怀念的",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "阿嬷的情书",
-      "artist": "九日NineNine/程嘻嘻/宣哲",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "TICKING AWAY (VCT ANTHEM 2023)(流光似箭)",
-      "artist": "Grabbitz/无畏契约/bbno$",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "My Bed (Explicit)",
-      "artist": "Leah Kate",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "爱错",
-      "artist": "王力宏",
+      "name": "唯一",
+      "artist": "G.E.M. 邓紫棋",
       "sources": [
         {
           "source": "hot",
@@ -479,20 +471,8 @@
       "bestRank": 11
     },
     {
-      "name": "Just Glow(慢慢发光)",
-      "artist": "七元",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "Sinos De Natal",
-      "artist": "MGD/MXZHPHXNK",
+      "name": "梦底 (Live|典藏)",
+      "artist": "张碧晨/海来阿木",
       "sources": [
         {
           "source": "rise",
@@ -515,11 +495,11 @@
       "bestRank": 12
     },
     {
-      "name": "你敢发誓说你从来没爱过我吗",
-      "artist": "北赫诗",
+      "name": "宇宙游乐场",
+      "artist": "梓渝",
       "sources": [
         {
-          "source": "popular",
+          "source": "new",
           "rank": 12
         }
       ],
@@ -527,88 +507,16 @@
       "bestRank": 12
     },
     {
-      "name": "唯一",
-      "artist": "G.E.M. 邓紫棋",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "阴天(回想那一天 喧闹的喜宴)",
-      "artist": "Joysaaaa",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "博弈",
-      "artist": "陈卓璇",
+      "name": "좋은 날 (好日子)",
+      "artist": "IU (아이유)",
       "sources": [
         {
           "source": "rise",
-          "rank": 13
+          "rank": 12
         }
       ],
       "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "半壶纱",
-      "artist": "刘珂矣",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "갑자기 (Suddenly)",
-      "artist": "I.O.I (아이오아이)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "金香囊 (Golden Sachet)",
-      "artist": "须弥乐团",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "借过一下 (Live)",
-      "artist": "胡彦斌/Jony J",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
+      "bestRank": 12
     },
     {
       "name": "演员",
@@ -616,131 +524,71 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 15
+          "rank": 13
         }
       ],
       "sourceCount": 1,
-      "bestRank": 15
+      "bestRank": 13
     },
     {
-      "name": "故乡的云 (Live)",
-      "artist": "那英/孙楠/庾澄庆/苏有朋",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "特别的人",
-      "artist": "方大同",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "误梦",
-      "artist": "余又",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "失眠",
-      "artist": "Suki刘舒妤",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
-    },
-    {
-      "name": "心似烟火",
-      "artist": "陈壹千",
+      "name": "阿嬷的情书",
+      "artist": "九日NineNine/程嘻嘻/宣哲",
       "sources": [
         {
           "source": "new",
-          "rank": 17
+          "rank": 13
         }
       ],
       "sourceCount": 1,
-      "bestRank": 17
+      "bestRank": 13
     },
     {
-      "name": "颜色",
-      "artist": "Gareth.T",
+      "name": "DNA (More Than A Game)",
+      "artist": "Andrea Bocelli/David Guetta/EJAE (김은재)/Megan Thee Stallion",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "My Bed (Explicit)",
+      "artist": "Leah Kate",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "ANGEL (天使)",
+      "artist": "尹美莱 (윤미래)/Tiger JK/Bizzy (비지)",
       "sources": [
         {
           "source": "hot",
-          "rank": 18
+          "rank": 14
         }
       ],
       "sourceCount": 1,
-      "bestRank": 18
+      "bestRank": 14
     },
     {
-      "name": "Last Train (feat. Oh Yun)",
-      "artist": "Dept (뎁트)/Oh Yun",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "起风了 (旧版)",
-      "artist": "买辣椒也用券",
+      "name": "Dai Dai",
+      "artist": "Shakira/Burna Boy",
       "sources": [
         {
           "source": "rise",
-          "rank": 18
+          "rank": 14
         }
       ],
       "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "I Knew It, I Knew You",
-      "artist": "Taylor Swift",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "Round We Go (慢慢向前)",
-      "artist": "玉芬",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
+      "bestRank": 14
     },
     {
       "name": "借过一下 (Live)",
@@ -748,11 +596,71 @@
       "sources": [
         {
           "source": "popular",
-          "rank": 19
+          "rank": 14
         }
       ],
       "sourceCount": 1,
-      "bestRank": 19
+      "bestRank": 14
+    },
+    {
+      "name": "特别的人",
+      "artist": "方大同",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "麦穗",
+      "artist": "张颜齐",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "半壶纱",
+      "artist": "刘珂矣",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "갑자기 (Suddenly)",
+      "artist": "I.O.I (아이오아이)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "如果声音不记得",
+      "artist": "吴青峰",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
     },
     {
       "name": "春娇与志明",
@@ -760,15 +668,99 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 20
+          "rank": 17
         }
       ],
       "sourceCount": 1,
-      "bestRank": 20
+      "bestRank": 17
     },
     {
-      "name": "hate that i made you love me",
-      "artist": "Ariana Grande",
+      "name": "给未来的自己",
+      "artist": "半吨兄弟",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "Easy On Me",
+      "artist": "Adele",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "叹我",
+      "artist": "阿麦姑娘",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "Always Online",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "阴天(回想那一天 喧闹的喜宴)",
+      "artist": "Joysaaaa",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "两杯茶",
+      "artist": "刘美君",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "心似烟火",
+      "artist": "陈壹千",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "神啊 救救我",
+      "artist": "半吨兄弟",
       "sources": [
         {
           "source": "new",
@@ -779,8 +771,8 @@
       "bestRank": 20
     },
     {
-      "name": "烟火人间",
-      "artist": "添儿呗",
+      "name": "完美人生",
+      "artist": "张颜齐/姚晓棠",
       "sources": [
         {
           "source": "rise",
@@ -791,8 +783,8 @@
       "bestRank": 20
     },
     {
-      "name": "唱别久悲不成悲",
-      "artist": "臻尚头",
+      "name": "为爱痴狂 (想要问问你敢不敢)",
+      "artist": "半吨兄弟",
       "sources": [
         {
           "source": "popular",
