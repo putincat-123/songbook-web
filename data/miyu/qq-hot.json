@@ -1,42 +1,18 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-07-01T22:59:17.227Z",
+  "updatedAt": "2026-07-02T22:53:36.445Z",
   "songs": [
     {
-      "name": "一见如故",
-      "artist": "许嵩",
+      "name": "1 AM (Explicit)",
+      "artist": "THOME",
       "sources": [
         {
           "source": "hot",
-          "rank": 7
-        },
-        {
-          "source": "new",
-          "rank": 7
+          "rank": 5
         },
         {
           "source": "rise",
-          "rank": 1
-        },
-        {
-          "source": "popular",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 4,
-      "bestRank": 1
-    },
-    {
-      "name": "相思锁",
-      "artist": "张真源",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 17
-        },
-        {
-          "source": "new",
-          "rank": 1
+          "rank": 2
         },
         {
           "source": "popular",
@@ -47,52 +23,12 @@
       "bestRank": 1
     },
     {
-      "name": "怎么能",
-      "artist": "侯明昊",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 2
-        },
-        {
-          "source": "new",
-          "rank": 2
-        },
-        {
-          "source": "popular",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 2
-    },
-    {
-      "name": "出雨林记",
-      "artist": "许嵩",
+      "name": "逃不掉",
+      "artist": "魏宏宇",
       "sources": [
         {
           "source": "new",
-          "rank": 15
-        },
-        {
-          "source": "rise",
-          "rank": 2
-        },
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 2
-    },
-    {
-      "name": "忽略不计",
-      "artist": "许嵩",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
+          "rank": 1
         },
         {
           "source": "rise",
@@ -100,43 +36,23 @@
         },
         {
           "source": "popular",
-          "rank": 17
+          "rank": 8
         }
       ],
       "sourceCount": 3,
-      "bestRank": 3
+      "bestRank": 1
     },
     {
-      "name": "亲爱的你啊",
-      "artist": "任素汐",
+      "name": "不点头",
+      "artist": "ADD男团",
       "sources": [
         {
-          "source": "hot",
-          "rank": 16
+          "source": "new",
+          "rank": 4
         },
         {
           "source": "rise",
           "rank": 4
-        },
-        {
-          "source": "popular",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 4
-    },
-    {
-      "name": "消逝在八月盛夏",
-      "artist": "TF_ING张子墨",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 13
-        },
-        {
-          "source": "rise",
-          "rank": 7
         },
         {
           "source": "popular",
@@ -144,15 +60,71 @@
         }
       ],
       "sourceCount": 3,
-      "bestRank": 7
+      "bestRank": 4
     },
     {
-      "name": "Steal The Moon",
-      "artist": "王俊凯",
+      "name": "亲爱的你啊",
+      "artist": "任素汐",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 17
+        },
+        {
+          "source": "rise",
+          "rank": 5
+        },
+        {
+          "source": "popular",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 5
+    },
+    {
+      "name": "时差 (On call)",
+      "artist": "鹿晗",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 18
+        },
+        {
+          "source": "rise",
+          "rank": 12
+        },
+        {
+          "source": "popular",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 6
+    },
+    {
+      "name": "爱，请问怎么走",
+      "artist": "A-Lin",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 8
+        },
+        {
+          "source": "rise",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
+      "name": "相思锁",
+      "artist": "张真源",
       "sources": [
         {
           "source": "new",
-          "rank": 4
+          "rank": 3
         },
         {
           "source": "popular",
@@ -163,40 +135,56 @@
       "bestRank": 2
     },
     {
-      "name": "Call My Name",
-      "artist": "张艺兴",
+      "name": "怎么能",
+      "artist": "侯明昊",
       "sources": [
         {
           "source": "new",
-          "rank": 10
+          "rank": 6
         },
         {
           "source": "popular",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 3
+    },
+    {
+      "name": "一见如故",
+      "artist": "许嵩",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 8
+        },
+        {
+          "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 4
+    },
+    {
+      "name": "无人之岛",
+      "artist": "任然",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 7
+        },
+        {
+          "source": "rise",
+          "rank": 15
         }
       ],
       "sourceCount": 2,
       "bestRank": 7
     },
     {
-      "name": "发光",
-      "artist": "展轩",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        },
-        {
-          "source": "popular",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "天才在左疯子不知道",
-      "artist": "王赫野",
+      "name": "Call My Name",
+      "artist": "张艺兴",
       "sources": [
         {
           "source": "new",
@@ -204,22 +192,22 @@
         },
         {
           "source": "popular",
-          "rank": 8
+          "rank": 9
         }
       ],
       "sourceCount": 2,
-      "bestRank": 8
+      "bestRank": 9
     },
     {
-      "name": "定玄",
-      "artist": "鸣潮先约电台/黄霄雲/杨秉音",
+      "name": "讨厌",
+      "artist": "芮恩",
       "sources": [
         {
-          "source": "new",
-          "rank": 18
+          "source": "hot",
+          "rank": 16
         },
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 10
         }
       ],
@@ -227,20 +215,52 @@
       "bestRank": 10
     },
     {
-      "name": "最好的伴",
-      "artist": "宝石Gem",
+      "name": "天才在左疯子不知道",
+      "artist": "王赫野",
       "sources": [
         {
           "source": "new",
-          "rank": 20
+          "rank": 11
         },
         {
           "source": "popular",
-          "rank": 11
+          "rank": 13
         }
       ],
       "sourceCount": 2,
       "bestRank": 11
+    },
+    {
+      "name": "消逝在八月盛夏",
+      "artist": "TF_ING张子墨",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        },
+        {
+          "source": "popular",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 14
+    },
+    {
+      "name": "梦哑",
+      "artist": "任然",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        },
+        {
+          "source": "rise",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 15
     },
     {
       "name": "ANGEL (天使)",
@@ -260,11 +280,11 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 3
+          "rank": 2
         }
       ],
       "sourceCount": 1,
-      "bestRank": 3
+      "bestRank": 2
     },
     {
       "name": "写故事的人",
@@ -272,11 +292,11 @@
       "sources": [
         {
           "source": "new",
-          "rank": 3
+          "rank": 2
         }
       ],
       "sourceCount": 1,
-      "bestRank": 3
+      "bestRank": 2
     },
     {
       "name": "恋人",
@@ -284,23 +304,11 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 4
+          "rank": 3
         }
       ],
       "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
-      "name": "遐想 (Remix)",
-      "artist": "Elowen",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
+      "bestRank": 3
     },
     {
       "name": "雨过后的风景",
@@ -308,11 +316,11 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 5
+          "rank": 4
         }
       ],
       "sourceCount": 1,
-      "bestRank": 5
+      "bestRank": 4
     },
     {
       "name": "让你知道",
@@ -327,20 +335,8 @@
       "bestRank": 5
     },
     {
-      "name": "枕着光的她",
-      "artist": "任素汐",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 5
-    },
-    {
-      "name": "时差 (On call)",
-      "artist": "鹿晗",
+      "name": "遐想 (Remix)",
+      "artist": "Elowen",
       "sources": [
         {
           "source": "popular",
@@ -363,18 +359,6 @@
       "bestRank": 6
     },
     {
-      "name": "爱人啊！",
-      "artist": "庾澄庆",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
       "name": "胡广生",
       "artist": "任素汐",
       "sources": [
@@ -387,20 +371,44 @@
       "bestRank": 6
     },
     {
-      "name": "抽离",
-      "artist": "徐良/刘丹萌",
+      "name": "Steal The Moon",
+      "artist": "王俊凯",
       "sources": [
         {
-          "source": "hot",
-          "rank": 8
+          "source": "new",
+          "rank": 7
         }
       ],
       "sourceCount": 1,
-      "bestRank": 8
+      "bestRank": 7
     },
     {
-      "name": "在左心房爱你的第一百次",
-      "artist": "TF_ING张子墨",
+      "name": "枕着光的她",
+      "artist": "任素汐",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "Power By Love (Bass House)",
+      "artist": "Now O Beat",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "我要你",
+      "artist": "任素汐",
       "sources": [
         {
           "source": "rise",
@@ -423,8 +431,8 @@
       "bestRank": 9
     },
     {
-      "name": "王招君 (你看你拉住我的模样)",
-      "artist": "任素汐",
+      "name": "七月上",
+      "artist": "Jam",
       "sources": [
         {
           "source": "rise",
@@ -447,11 +455,11 @@
       "bestRank": 10
     },
     {
-      "name": "如何形容我们的以后 (intro)",
-      "artist": "TF_ING张子墨",
+      "name": "ICONIC BY MISTAKE",
+      "artist": "LE SSERAFIM (르세라핌)/ILLIT (아일릿)/KATSEYE",
       "sources": [
         {
-          "source": "rise",
+          "source": "new",
           "rank": 10
         }
       ],
@@ -459,40 +467,16 @@
       "bestRank": 10
     },
     {
-      "name": "失眠",
-      "artist": "Suki刘舒妤",
+      "name": "我愿",
+      "artist": "丽桑的丽",
       "sources": [
         {
-          "source": "hot",
-          "rank": 11
+          "source": "popular",
+          "rank": 10
         }
       ],
       "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "逍遥仙",
-      "artist": "筷子兄弟",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "我想，那不能算作是爱情",
-      "artist": "TF_ING张子墨",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
+      "bestRank": 10
     },
     {
       "name": "爱错",
@@ -500,35 +484,23 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 12
+          "rank": 11
         }
       ],
       "sourceCount": 1,
-      "bestRank": 12
+      "bestRank": 11
     },
     {
-      "name": "ICONIC BY MISTAKE",
-      "artist": "LE SSERAFIM (르세라핌)/ILLIT (아일릿)/KATSEYE",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "我要你",
+      "name": "王招君 (你看你拉住我的模样)",
       "artist": "任素汐",
       "sources": [
         {
           "source": "rise",
-          "rank": 12
+          "rank": 11
         }
       ],
       "sourceCount": 1,
-      "bestRank": 12
+      "bestRank": 11
     },
     {
       "name": "我怀念的",
@@ -536,6 +508,30 @@
       "sources": [
         {
           "source": "hot",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "逍遥仙",
+      "artist": "筷子兄弟",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "失眠",
+      "artist": "Suki刘舒妤",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 13
         }
       ],
@@ -543,8 +539,20 @@
       "bestRank": 13
     },
     {
-      "name": "奈若何！ (霸王别姬)",
-      "artist": "TF_ING张子墨",
+      "name": "宇宙游乐场",
+      "artist": "梓渝",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "张仙语三",
+      "artist": "任素汐",
       "sources": [
         {
           "source": "rise",
@@ -555,20 +563,8 @@
       "bestRank": 13
     },
     {
-      "name": "西乌旗99号公路",
-      "artist": "LunaLiu刘不语/张川海",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "唯一",
-      "artist": "G.E.M. 邓紫棋",
+      "name": "抽离",
+      "artist": "徐良/刘丹萌",
       "sources": [
         {
           "source": "hot",
@@ -577,174 +573,6 @@
       ],
       "sourceCount": 1,
       "bestRank": 14
-    },
-    {
-      "name": "桂花落",
-      "artist": "TF_ING张子墨",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "坠落 (Live)",
-      "artist": "孙楠/黄子弘凡",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "无人之岛",
-      "artist": "任然",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "要怎样才能把你忘记",
-      "artist": "TF_ING张子墨",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "归零 (Live)",
-      "artist": "侯明昊",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "心安之地",
-      "artist": "许嵩",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "粗糙",
-      "artist": "许嵩",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "梦哑",
-      "artist": "任然",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
-    },
-    {
-      "name": "25号底片",
-      "artist": "TF_ING张子墨",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
-    },
-    {
-      "name": "演员",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "忘记你，忘记谁 (outro)",
-      "artist": "TF_ING张子墨",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "从前",
-      "artist": "王俊凯",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "特别的人",
-      "artist": "方大同",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "十秒 (对唱版)",
-      "artist": "向思思/刘书云",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
     },
     {
       "name": "大梦 (Live)",
@@ -752,6 +580,150 @@
       "sources": [
         {
           "source": "rise",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "唯一",
+      "artist": "G.E.M. 邓紫棋",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "有我呢 (Live)",
+      "artist": "陈楚生/姚晓棠",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "玻璃 demo",
+      "artist": "Gareth.T",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "后来的我们",
+      "artist": "五月天",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "西乌旗99号公路",
+      "artist": "LunaLiu刘不语/张川海",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "Floating Light",
+      "artist": "MIKS",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "别来无恙",
+      "artist": "任素汐",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "忽略不计",
+      "artist": "许嵩",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "心安之地",
+      "artist": "许嵩",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "歌曲：别来无恙",
+      "artist": "任素汐/毛不易",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "出雨林记",
+      "artist": "许嵩",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "演员",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 19
         }
       ],
@@ -759,8 +731,32 @@
       "bestRank": 19
     },
     {
-      "name": "Always Online",
-      "artist": "林俊杰",
+      "name": "Ride or Die",
+      "artist": "EVAN",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "想见你想见你想见你 (Live)",
+      "artist": "郁可唯/TF_ING穆祉丞",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "特别的人",
+      "artist": "方大同",
       "sources": [
         {
           "source": "hot",
@@ -771,7 +767,19 @@
       "bestRank": 20
     },
     {
-      "name": "张仙语三",
+      "name": "街角的晚风1997",
+      "artist": "曾舜晞",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 20
+    },
+    {
+      "name": "莫怕莫怕",
       "artist": "任素汐",
       "sources": [
         {
@@ -783,8 +791,8 @@
       "bestRank": 20
     },
     {
-      "name": "有我呢 (Live)",
-      "artist": "陈楚生/姚晓棠",
+      "name": "最好的伴",
+      "artist": "宝石Gem",
       "sources": [
         {
           "source": "popular",
