@@ -50768,5 +50768,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_b3973cff-bc5e-4204-a744-059cb73c7335",
+    "poolSongId": "b3973cff-bc5e-4204-a744-059cb73c7335",
+    "songId": "e26fc9b9-90e9-486b-8521-533f605da6f9",
+    "seq": 1521,
+    "name": "温和表面",
+    "songName": "温和表面",
+    "artist": "赵登凯",
+    "style": "流行",
+    "rawStyle": "流行",
+    "rawMood": "",
+    "rawTags": "大电大混",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "温和表面",
+    "sharedArtist": "赵登凯",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
