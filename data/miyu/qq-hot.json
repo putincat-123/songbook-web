@@ -1,18 +1,18 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-07-17T22:35:57.229Z",
+  "updatedAt": "2026-07-18T22:35:06.672Z",
   "songs": [
     {
-      "name": "北京的雨",
-      "artist": "张艺兴",
+      "name": "媚人",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "hot",
-          "rank": 2
+          "rank": 1
         },
         {
           "source": "new",
-          "rank": 9
+          "rank": 1
         },
         {
           "source": "rise",
@@ -20,11 +20,35 @@
         },
         {
           "source": "popular",
-          "rank": 18
+          "rank": 1
         }
       ],
       "sourceCount": 4,
       "bestRank": 1
+    },
+    {
+      "name": "下一站 Beyond This Station",
+      "artist": "小林未郁 (こばやし みか)/HOYO-MiX",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 2
+        },
+        {
+          "source": "new",
+          "rank": 2
+        },
+        {
+          "source": "rise",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 4,
+      "bestRank": 2
     },
     {
       "name": "甲乙丙丁 (你我怎么两清)",
@@ -36,7 +60,7 @@
         },
         {
           "source": "new",
-          "rank": 1
+          "rank": 3
         },
         {
           "source": "rise",
@@ -44,31 +68,11 @@
         },
         {
           "source": "popular",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 4,
-      "bestRank": 1
-    },
-    {
-      "name": "Floating",
-      "artist": "闫桉",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 2
-        },
-        {
-          "source": "rise",
-          "rank": 5
-        },
-        {
-          "source": "popular",
           "rank": 3
         }
       ],
-      "sourceCount": 3,
-      "bestRank": 2
+      "sourceCount": 4,
+      "bestRank": 3
     },
     {
       "name": "周旋",
@@ -76,39 +80,99 @@
       "sources": [
         {
           "source": "new",
+          "rank": 4
+        },
+        {
+          "source": "rise",
+          "rank": 5
+        },
+        {
+          "source": "popular",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 2
+    },
+    {
+      "name": "ZESTY",
+      "artist": "袁一琦",
+      "sources": [
+        {
+          "source": "new",
           "rank": 5
         },
         {
           "source": "rise",
-          "rank": 4
+          "rank": 3
         },
         {
           "source": "popular",
-          "rank": 9
+          "rank": 14
         }
       ],
       "sourceCount": 3,
-      "bestRank": 4
+      "bestRank": 3
     },
     {
-      "name": "Midnight Mirror",
-      "artist": "沈梦瑶",
+      "name": "吹吹山顶的风",
+      "artist": "巴扎黑",
       "sources": [
         {
           "source": "new",
-          "rank": 6
+          "rank": 7
         },
         {
           "source": "rise",
-          "rank": 10
+          "rank": 6
         },
         {
           "source": "popular",
-          "rank": 17
+          "rank": 18
         }
       ],
       "sourceCount": 3,
       "bestRank": 6
+    },
+    {
+      "name": "过海",
+      "artist": "王赫野/黄龄",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 12
+        },
+        {
+          "source": "rise",
+          "rank": 16
+        },
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 12
+    },
+    {
+      "name": "心跳赫兹 (Love Got Me Ooh)",
+      "artist": "A2O MAY",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        },
+        {
+          "source": "rise",
+          "rank": 18
+        },
+        {
+          "source": "popular",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 14
     },
     {
       "name": "樱花草",
@@ -116,15 +180,47 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 1
+          "rank": 3
         },
         {
           "source": "popular",
-          "rank": 2
+          "rank": 9
         }
       ],
       "sourceCount": 2,
-      "bestRank": 1
+      "bestRank": 3
+    },
+    {
+      "name": "无人之岛",
+      "artist": "任然",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 6
+        },
+        {
+          "source": "popular",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 5
+    },
+    {
+      "name": "北京的雨",
+      "artist": "张艺兴",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 8
+        },
+        {
+          "source": "popular",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 6
     },
     {
       "name": "Bad Boy",
@@ -132,23 +228,7 @@
       "sources": [
         {
           "source": "new",
-          "rank": 4
-        },
-        {
-          "source": "popular",
-          "rank": 1
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 1
-    },
-    {
-      "name": "我只要我开心",
-      "artist": "时代少年团",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
+          "rank": 11
         },
         {
           "source": "popular",
@@ -159,132 +239,36 @@
       "bestRank": 7
     },
     {
-      "name": "吹吹山顶的风",
-      "artist": "巴扎黑",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        },
-        {
-          "source": "popular",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "岁月如笔写春秋",
-      "artist": "巴昱凯",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 19
-        },
-        {
-          "source": "popular",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 11
-    },
-    {
-      "name": "踏马寻花向自由",
-      "artist": "半吨兄弟",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 13
-        },
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 13
-    },
-    {
-      "name": "想说",
-      "artist": "颜人中",
+      "name": "为中国喝彩",
+      "artist": "徐杰亮",
       "sources": [
         {
           "source": "new",
           "rank": 17
         },
         {
-          "source": "popular",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 14
-    },
-    {
-      "name": "Lau suna suna (尼泊尔无声的回响)",
-      "artist": "林砚秋",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 15
-        },
-        {
-          "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 15
-    },
-    {
-      "name": "下一站 Beyond This Station",
-      "artist": "小林未郁 (こばやし みか)/HOYO-MiX",
-      "sources": [
-        {
           "source": "rise",
-          "rank": 2
+          "rank": 8
         }
       ],
-      "sourceCount": 1,
-      "bestRank": 2
+      "sourceCount": 2,
+      "bestRank": 8
     },
     {
-      "name": "ANGEL (天使)",
-      "artist": "尹美莱 (윤미래)/Tiger JK/Bizzy (비지)",
+      "name": "演员",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "hot",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 3
-    },
-    {
-      "name": "写故事的人",
-      "artist": "汪苏泷",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 3
-    },
-    {
-      "name": "以父之名",
-      "artist": "周杰伦",
-      "sources": [
+          "rank": 19
+        },
         {
           "source": "rise",
-          "rank": 3
+          "rank": 20
         }
       ],
-      "sourceCount": 1,
-      "bestRank": 3
+      "sourceCount": 2,
+      "bestRank": 19
     },
     {
       "name": "讨厌",
@@ -299,11 +283,11 @@
       "bestRank": 4
     },
     {
-      "name": "Fever Pitch",
-      "artist": "Richz",
+      "name": "别怕变老",
+      "artist": "王以太/艾热AIR",
       "sources": [
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 4
         }
       ],
@@ -311,8 +295,8 @@
       "bestRank": 4
     },
     {
-      "name": "无人之岛",
-      "artist": "任然",
+      "name": "ANGEL (天使)",
+      "artist": "尹美莱 (윤미래)/Tiger JK/Bizzy (비지)",
       "sources": [
         {
           "source": "hot",
@@ -323,76 +307,16 @@
       "bestRank": 5
     },
     {
-      "name": "别回头 别停留 往前走",
-      "artist": "Roling7",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 5
-    },
-    {
-      "name": "恋人",
-      "artist": "李荣浩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "陪你走到世界尽头",
-      "artist": "云旗/郝熠然",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "阴天",
-      "artist": "莫文蔚",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 7
-    },
-    {
-      "name": "你的眼神(像一阵细雨洒落我心底)",
-      "artist": "晚月moon/Big Cole",
+      "name": "写故事的人",
+      "artist": "汪苏泷",
       "sources": [
         {
           "source": "new",
-          "rank": 7
+          "rank": 6
         }
       ],
       "sourceCount": 1,
-      "bestRank": 7
-    },
-    {
-      "name": "All For You",
-      "artist": "Eric周兴哲",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 7
+      "bestRank": 6
     },
     {
       "name": "失眠",
@@ -400,18 +324,30 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 8
+          "rank": 7
         }
       ],
       "sourceCount": 1,
-      "bestRank": 8
+      "bestRank": 7
     },
     {
-      "name": "奇迹再现",
-      "artist": "毛华锋",
+      "name": "봄, 여름, 가을, 겨울",
+      "artist": "圆佑 (원우)",
       "sources": [
         {
           "source": "rise",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "恋人",
+      "artist": "李荣浩",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 8
         }
       ],
@@ -419,8 +355,8 @@
       "bestRank": 8
     },
     {
-      "name": "연애의 조건 (LOVE OPTIONS) (恋爱的条件)",
-      "artist": "BESTie (베스티)",
+      "name": "Fever Pitch",
+      "artist": "Richz",
       "sources": [
         {
           "source": "popular",
@@ -431,8 +367,8 @@
       "bestRank": 8
     },
     {
-      "name": "街道",
-      "artist": "林俊杰",
+      "name": "阴天",
+      "artist": "莫文蔚",
       "sources": [
         {
           "source": "hot",
@@ -443,8 +379,20 @@
       "bestRank": 9
     },
     {
-      "name": "拜托拜托",
-      "artist": "TF家族/TF家族-吕政熙/TF家族-杨云皓/TF家族-侯王子",
+      "name": "街角的晚风1997",
+      "artist": "曾舜晞",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "The Other Side Of Paradise (Explicit)",
+      "artist": "Glass Animals",
       "sources": [
         {
           "source": "rise",
@@ -467,8 +415,8 @@
       "bestRank": 10
     },
     {
-      "name": "街角的晚风1997",
-      "artist": "曾舜晞",
+      "name": "你的眼神(像一阵细雨洒落我心底)",
+      "artist": "晚月moon/Big Cole",
       "sources": [
         {
           "source": "new",
@@ -479,8 +427,20 @@
       "bestRank": 10
     },
     {
-      "name": "西厢寻他 (Live)",
-      "artist": "黄霄雲/刘宇",
+      "name": "空心",
+      "artist": "光泽",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "海屿你",
+      "artist": "沈辞",
       "sources": [
         {
           "source": "popular",
@@ -491,11 +451,11 @@
       "bestRank": 10
     },
     {
-      "name": "英雄出处",
-      "artist": "高冷",
+      "name": "剥离之茧",
+      "artist": "添儿呗",
       "sources": [
         {
-          "source": "new",
+          "source": "rise",
           "rank": 11
         }
       ],
@@ -503,11 +463,11 @@
       "bestRank": 11
     },
     {
-      "name": "心似烟火",
-      "artist": "陈壹千",
+      "name": "我只要我开心",
+      "artist": "时代少年团",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 11
         }
       ],
@@ -527,11 +487,11 @@
       "bestRank": 12
     },
     {
-      "name": "一直下",
-      "artist": "陈宇祥",
+      "name": "岁月如笔写春秋",
+      "artist": "巴昱凯",
       "sources": [
         {
-          "source": "new",
+          "source": "popular",
           "rank": 12
         }
       ],
@@ -539,8 +499,8 @@
       "bestRank": 12
     },
     {
-      "name": "爱错",
-      "artist": "王力宏",
+      "name": "街道",
+      "artist": "林俊杰",
       "sources": [
         {
           "source": "hot",
@@ -551,8 +511,20 @@
       "bestRank": 13
     },
     {
-      "name": "Young And Beautiful",
-      "artist": "Lana Del Rey",
+      "name": "英雄出处",
+      "artist": "高冷",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "凌绝顶",
+      "artist": "梓渝",
       "sources": [
         {
           "source": "rise",
@@ -563,8 +535,20 @@
       "bestRank": 13
     },
     {
-      "name": "特别的人",
-      "artist": "方大同",
+      "name": "연애의 조건 (LOVE OPTIONS) (恋爱的条件)",
+      "artist": "BESTie (베스티)",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "爱错",
+      "artist": "王力宏",
       "sources": [
         {
           "source": "hot",
@@ -575,8 +559,8 @@
       "bestRank": 14
     },
     {
-      "name": "心跳赫兹 (Love Got Me Ooh)",
-      "artist": "A2O MAY",
+      "name": "宇宙游乐场",
+      "artist": "梓渝",
       "sources": [
         {
           "source": "rise",
@@ -599,8 +583,20 @@
       "bestRank": 15
     },
     {
-      "name": "Call My Name",
-      "artist": "张艺兴",
+      "name": "踏马寻花向自由",
+      "artist": "半吨兄弟",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "红尘客栈",
+      "artist": "周杰伦",
       "sources": [
         {
           "source": "rise",
@@ -623,8 +619,8 @@
       "bestRank": 16
     },
     {
-      "name": "让你知道",
-      "artist": "汪苏泷/G.E.M. 邓紫棋",
+      "name": "一直下",
+      "artist": "陈宇祥",
       "sources": [
         {
           "source": "new",
@@ -635,20 +631,8 @@
       "bestRank": 16
     },
     {
-      "name": "过海",
-      "artist": "王赫野/黄龄",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "只要有你(最怕有一天你离我远去)",
-      "artist": "烟嗓船长",
+      "name": "别回头 别停留 往前走",
+      "artist": "Roling7",
       "sources": [
         {
           "source": "popular",
@@ -659,8 +643,8 @@
       "bestRank": 16
     },
     {
-      "name": "情歌",
-      "artist": "梁静茹",
+      "name": "特别的人",
+      "artist": "方大同",
       "sources": [
         {
           "source": "hot",
@@ -671,8 +655,8 @@
       "bestRank": 17
     },
     {
-      "name": "有你在就是爱",
-      "artist": "许光汉",
+      "name": "离开我的依赖",
+      "artist": "王艳薇",
       "sources": [
         {
           "source": "rise",
@@ -683,8 +667,20 @@
       "bestRank": 17
     },
     {
-      "name": "演员",
-      "artist": "薛之谦",
+      "name": "心似烟火",
+      "artist": "陈壹千",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "情歌",
+      "artist": "梁静茹",
       "sources": [
         {
           "source": "hot",
@@ -695,8 +691,8 @@
       "bestRank": 18
     },
     {
-      "name": "香烟与吻痕 (我在月光下许过情真)",
-      "artist": "黄龄",
+      "name": "让你知道",
+      "artist": "汪苏泷/G.E.M. 邓紫棋",
       "sources": [
         {
           "source": "new",
@@ -707,23 +703,23 @@
       "bestRank": 18
     },
     {
-      "name": "斗战胜佛",
-      "artist": "张艺兴",
+      "name": "若不是因为你",
+      "artist": "赵乃吉",
       "sources": [
         {
-          "source": "rise",
-          "rank": 18
+          "source": "new",
+          "rank": 19
         }
       ],
       "sourceCount": 1,
-      "bestRank": 18
+      "bestRank": 19
     },
     {
-      "name": "Always Online",
-      "artist": "林俊杰",
+      "name": "我不难过",
+      "artist": "孙燕姿",
       "sources": [
         {
-          "source": "hot",
+          "source": "rise",
           "rank": 19
         }
       ],
@@ -735,18 +731,6 @@
       "artist": "郝熠然",
       "sources": [
         {
-          "source": "rise",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "如今一个人听歌回寂寞",
-      "artist": "金苏萍",
-      "sources": [
-        {
           "source": "popular",
           "rank": 19
         }
@@ -755,8 +739,8 @@
       "bestRank": 19
     },
     {
-      "name": "春娇与志明",
-      "artist": "街道办GDC/欧阳耀莹",
+      "name": "Always Online",
+      "artist": "林俊杰",
       "sources": [
         {
           "source": "hot",
@@ -767,35 +751,11 @@
       "bestRank": 20
     },
     {
-      "name": "若不是因为你",
-      "artist": "赵乃吉",
+      "name": "香烟与吻痕 (我在月光下许过情真)",
+      "artist": "黄龄",
       "sources": [
         {
           "source": "new",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 20
-    },
-    {
-      "name": "INTRO",
-      "artist": "张艺兴",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 20
-    },
-    {
-      "name": "北方的后海没有海",
-      "artist": "于黑蛋",
-      "sources": [
-        {
-          "source": "popular",
           "rank": 20
         }
       ],
