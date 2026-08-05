@@ -50536,10 +50536,18 @@
     "note": "",
     "sharedName": "瞧我这眼神",
     "sharedArtist": "金久哲",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "豪爽",
+      "诙谐",
+      "接地气"
+    ],
+    "aiSceneTags": [
+      "暖场互动",
+      "热闹喊麦",
+      "搞笑聊天"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "东北接地气曲风，节奏明快轻快，适合拉近距离、带动聊天氛围。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50561,10 +50569,18 @@
     "note": "",
     "sharedName": "俯首称臣",
     "sharedArtist": "小力同学",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "卑微",
+      "执念",
+      "伤感"
+    ],
+    "aiSceneTags": [
+      "情感倾诉",
+      "深夜歌会",
+      "沉浸演唱"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "情感充沛的情歌，歌词表达爱里的妥协与执着，适合情感主唱。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50586,10 +50602,18 @@
     "note": "",
     "sharedName": "末日之恋",
     "sharedArtist": "张智成",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "深情",
+      "绝望",
+      "经典怀旧"
+    ],
+    "aiSceneTags": [
+      "回忆杀",
+      "高潮爆点",
+      "深度共鸣"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "经典R&B抒情爆款，副歌张力极强，适合主播做高潮唱功展示。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50611,10 +50635,18 @@
     "note": "",
     "sharedName": "别管它",
     "sharedArtist": "刘凤瑶",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "洒脱",
+      "复古",
+      "随性"
+    ],
+    "aiSceneTags": [
+      "轻松律动",
+      "日常随唱",
+      "解压电台"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "爵士复古流行韵味，节奏轻盈随性，适合轻松不沉重的直播时段。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50636,10 +50668,18 @@
     "note": "",
     "sharedName": "致你",
     "sharedArtist": "王赫野",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "温柔",
+      "坚定",
+      "治愈"
+    ],
+    "aiSceneTags": [
+      "告白互动",
+      "晚安陪伴",
+      "深情献唱"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "旋律暖心且带有力量，适合主播表达对粉丝的感谢与陪伴感。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50661,10 +50701,18 @@
     "note": "",
     "sharedName": "挚友",
     "sharedArtist": "周兴哲",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "酸楚",
+      "克制",
+      "遗憾"
+    ],
+    "aiSceneTags": [
+      "情感电台",
+      "深夜心事",
+      "伤感拉满"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "典型的周氏抒情，叙述友人以上恋人未满的无奈，极为走心。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50686,10 +50734,18 @@
     "note": "",
     "sharedName": "渡尘寰",
     "sharedArtist": "胡夏",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "古风",
+      "清雅",
+      "宿命感"
+    ],
+    "aiSceneTags": [
+      "古风主题",
+      "沉静背景",
+      "国风歌会"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "胡夏清亮清澈的声线搭配古风曲调，氛围唯美且带有沧桑韵味。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50711,10 +50767,18 @@
     "note": "",
     "sharedName": "湖光水色调",
     "sharedArtist": "戴荃",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "国潮",
+      "江南韵味",
+      "惬意"
+    ],
+    "aiSceneTags": [
+      "惬意背景",
+      "特色翻唱",
+      "古典氛围"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "充满江南水乡画面感的中国风作品，曲调优美，意境悠远。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50736,10 +50800,18 @@
     "note": "",
     "sharedName": "32度的晚风",
     "sharedArtist": "陸傑awr",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "惬意",
+      "夏日",
+      "松弛"
+    ],
+    "aiSceneTags": [
+      "轻松挂机",
+      "夏夜聊天",
+      "背景音乐"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "轻快松弛的都市R&B/Pop氛围，如同夏夜晚风，非常适合做背景音乐。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50761,10 +50833,18 @@
     "note": "",
     "sharedName": "颜色",
     "sharedArtist": "Gareth.T",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "摩登",
+      "细腻",
+      "R&B潮流"
+    ],
+    "aiSceneTags": [
+      "个人秀",
+      "潮流歌单",
+      "夜晚微醺"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "具当代感与潮流性的R&B曲风，律动感强，彰显主播音乐品味。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50786,10 +50866,84 @@
     "note": "",
     "sharedName": "温和表面",
     "sharedArtist": "赵登凯",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "迷幻",
+      "内敛",
+      "电音抒情"
+    ],
+    "aiSceneTags": [
+      "深夜沉浸",
+      "氛围听歌",
+      "情绪缓冲"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "带有电子混响与空间感，氛围感强，适合深夜安静或情绪过渡时播放。",
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_c3e13835-0fd5-4ab5-a616-ebbcf796a747",
+    "poolSongId": "c3e13835-0fd5-4ab5-a616-ebbcf796a747",
+    "songId": "278fa689-3c55-4854-b4a8-c40a5ff61849",
+    "seq": 1522,
+    "name": "大小孩",
+    "songName": "大小孩",
+    "artist": "张韶涵",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "大小孩",
+    "sharedArtist": "张韶涵",
+    "aiMoodTags": [
+      "纯真",
+      "倔强",
+      "励志"
+    ],
+    "aiSceneTags": [
+      "治愈鼓励",
+      "情感共鸣",
+      "高音演绎"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "保持童心与倔强的治愈歌曲，后半段爆发力强，能给听众带来力量。",
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_2252df60-da8c-4fb4-8cc5-cbd978ba48b1",
+    "poolSongId": "2252df60-da8c-4fb4-8cc5-cbd978ba48b1",
+    "songId": "e1ae5321-c5e6-423b-ba2d-15fa7a880016",
+    "seq": 1523,
+    "name": "暑夏",
+    "songName": "暑夏",
+    "artist": "焦迈奇",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "暑夏",
+    "sharedArtist": "焦迈奇",
+    "aiMoodTags": [
+      "少年感",
+      "清爽",
+      "明朗"
+    ],
+    "aiSceneTags": [
+      "活力开场",
+      "轻松互动",
+      "阳光日常"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "充满了少年气与夏日清爽感，旋律轻快自然，能快速提升直播间活力。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
