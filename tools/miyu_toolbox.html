@@ -503,7 +503,7 @@
   const esc = (s='') => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
   const HOT_API_BASE =
-  "https://streamer-songbook.vercel.app/api/recommendations/qq-hot";
+  "/api/recommendations/qq-hot";
   
   function formatNowTime() {
     const now = new Date();
