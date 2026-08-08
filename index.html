@@ -514,7 +514,8 @@
         title: "谜屿歌单查询",
         eyebrow: "MIYU SONGBOOK",
         desc: "当前歌单：谜屿 · 输入歌名或歌手即可查询",
-        liveUrl: "https://fm.missevan.com/live/868878322"
+        liveUrl: "https://fm.missevan.com/live/868878322",
+        appUrl: "missevan://live/868878322?from=web.0.0.0&event_id_from=web.0.0.0"
       },
       xingxing: {
         title: "星谣歌单查询",
@@ -635,6 +636,31 @@
       }
     }
 
+function isMobileDevice() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
+    (navigator.maxTouchPoints > 1 && window.innerWidth <= 1024);
+}
+
+async function handleSongRequest(text) {
+  const config = STREAMER_CONFIG[streamer] || {};
+
+  // 桌機：維持原本單純複製
+  if (!isMobileDevice() || !config.appUrl) {
+    await copyText(text);
+    return;
+  }
+
+  // 手機：先複製
+  await copyText(text);
+
+  showToast("✅ 已复制，正在回直播间…");
+
+  // 稍微停一下讓使用者看到提示
+  setTimeout(() => {
+    window.location.href = config.appUrl;
+  }, 500);
+}
+    
     function highlight(text, keyword) {
       const safe = escapeHtml(text || "");
       const raw = String(keyword || "").trim();
@@ -700,13 +726,19 @@
       const liveLink = $("liveLink");
 
       if (config.liveUrl) {
-        liveLink.href = config.liveUrl;
-        liveLink.target = "_blank";
-        liveLink.rel = "noopener";
+        const useApp = isMobileDevice() && config.appUrl;
+      
+        liveLink.href = useApp ? config.appUrl : config.liveUrl;
+      
+        if (useApp) {
+          liveLink.removeAttribute("target");
+          liveLink.removeAttribute("rel");
+        } else {
+          liveLink.target = "_blank";
+          liveLink.rel = "noopener";
+        }
+      
         liveLink.style.display = "inline-flex";
-      } else {
-        liveLink.href = "#";
-        liveLink.style.display = "none";
       }
     }
 
@@ -936,10 +968,10 @@
       )).join("");
 
       list.querySelectorAll(".copy-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          copyText(btn.dataset.copy || "");
-        });
-      });
+  btn.addEventListener("click", () => {
+    handleSongRequest(btn.dataset.copy || "");
+  });
+});
     }
 
     function drawRandomSong() {
@@ -973,7 +1005,7 @@
 
       randomResult.querySelectorAll(".copy-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
-          copyText(btn.dataset.copy || "");
+          handleSongRequest(btn.dataset.copy || "");
         });
       });
     }
