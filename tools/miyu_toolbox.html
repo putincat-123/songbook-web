@@ -1079,6 +1079,9 @@ function renderAiRecommendResult(mood, songs){
         <div class="hot-meta" style="margin-top:6px">
           ${escapeHtml(song.reason)}
         </div>
+        <div class="btn-row">
+          <button class="ghost" data-action="copy-song" data-song="${esc(song.songName || song.name || '')}">複製</button>
+        </div>
 
       </div>
     `).join('')}
@@ -1465,6 +1468,33 @@ function getSongArtist(item) {
   function findSessionIndex(date, period){
     const sessions = readSessions();
     return sessions.findIndex(s => s.date === date && s.period === period);
+  }
+
+  async function copySongRequest(songName, button) {
+    const text = `点歌 ${songName}`;
+
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (error) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+
+    if (button) {
+      const originalText = button.textContent;
+      button.textContent = '已複製 ✓';
+      button.disabled = true;
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+      }, 1200);
+    }
   }
 
   function copySessionSummary(sessionId){
@@ -1959,7 +1989,7 @@ try {
       if(!r) return;
       $('randomSong').textContent = r.songName;
       $('randomArtist').textContent = r.artist || '未知歌手';
-      $('drawMultiResult').innerHTML = '';
+      $('drawMultiResult').innerHTML = `<div class="btn-row"><button class="ghost" data-action="copy-song" data-song="${esc(r.songName)}">複製</button></div>`;
     });
 
     $('draw3Btn').addEventListener('click', () => {
@@ -1968,7 +1998,15 @@ try {
       if(!results.length) return;
       $('randomSong').textContent = results[0].songName;
       $('randomArtist').textContent = results[0].artist || '未知歌手';
-      $('drawMultiResult').innerHTML = `<div class="scroll"><table><thead><tr><th>#</th><th>歌名</th><th>歌手</th></tr></thead><tbody>${results.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.songName)}</td><td>${esc(r.artist || '')}</td></tr>`).join('')}</tbody></table></div>`;
+      $('drawMultiResult').innerHTML = `<div class="scroll"><table><thead><tr><th>#</th><th>歌名</th><th>歌手</th><th>操作</th></tr></thead><tbody>${results.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.songName)}</td><td>${esc(r.artist || '')}</td><td><button class="ghost" data-action="copy-song" data-song="${esc(r.songName)}">複製</button></td></tr>`).join('')}</tbody></table></div>`;
+    });
+
+    ['aiRecommendResult', 'drawMultiResult'].forEach(containerId => {
+      $(containerId).addEventListener('click', e => {
+        const btn = e.target.closest('button[data-action="copy-song"]');
+        if (!btn) return;
+        copySongRequest(btn.dataset.song || '', btn);
+      });
     });
 
     $('resetDrawPoolBtn').addEventListener('click', () => { resetRandomBag(); alert('已重置本輪抽籤池'); });
