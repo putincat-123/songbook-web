@@ -1239,7 +1239,10 @@ function renderAiRecommendResult(mood, songs){
   async function loadDashboardFromSupabase() {
   const streamerSlug = getStreamerSlug();
 
-  const url = new URL(`${API_BASE_URL}/api/request-sessions`);
+  const url = new URL(
+    `${API_BASE_URL}/api/request-sessions`,
+    window.location.origin
+  );
   url.searchParams.set('streamerSlug', streamerSlug);
 
   const res = await fetch(url.toString());
@@ -1530,7 +1533,10 @@ async function renderDataSummary() {
   `;
 
   try {
-    const url = new URL(`${API_BASE_URL}/api/request-sessions`);
+    const url = new URL(
+      `${API_BASE_URL}/api/request-sessions`,
+      window.location.origin
+    );
     url.searchParams.set('streamerSlug', getStreamerSlug());
 
     const res = await fetch(url.toString());
