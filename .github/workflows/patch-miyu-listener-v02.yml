@@ -1,0 +1,195 @@
+name: Patch Miyu listener v0.2
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/patch-miyu-listener-v02.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch Miyu AI listener v0.2
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tools/miyu_ai_listener.html')
+          s = p.read_text(encoding='utf-8')
+
+          if '整場錄音與事後分析' in s:
+              print('v0.2 already patched')
+              raise SystemExit(0)
+
+          # 1) Extra CSS
+          css_needle = ".candidate{border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}.candidate-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.tag{display:inline-block;background:#eff6ff;color:#1e40af;border-radius:999px;padding:5px 8px;font-size:12px;font-weight:800}.candidate-meta{font-size:13px;color:var(--muted);line-height:1.5;margin-top:6px}.feedback{display:flex;gap:6px}.feedback button{padding:7px 10px;background:#fff;border:1px solid var(--line)}.empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--muted);text-align:center}.mini{font-size:12px;color:var(--muted)}"
+          css_add = css_needle + "\n.fullrec{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.rec-dot{width:10px;height:10px;border-radius:50%;background:#94a3b8}.rec-dot.on{background:#dc2626;box-shadow:0 0 0 5px rgba(220,38,38,.10)}.analysis-note{border-left:3px solid #93c5fd;padding:9px 11px;background:#f8fbff;border-radius:8px;font-size:13px;color:#475569;line-height:1.6}"
+          if css_needle not in s:
+              raise SystemExit('CSS target not found')
+          s = s.replace(css_needle, css_add, 1)
+
+          # 2) Insert whole-session recording card before AI focus card
+          card_needle = """  <div class=\"card\">\n    <h3>AI 關注點</h3>"""
+          card_add = """  <div class=\"card\">\n    <h3>整場錄音與事後分析</h3>\n    <div class=\"fullrec\"><span id=\"fullRecDot\" class=\"rec-dot\"></span><strong id=\"fullRecStatus\">整場錄音：待機</strong></div>\n    <div class=\"grid\" style=\"margin-top:12px\">\n      <div class=\"c6\"><label>整場錄音</label><select id=\"fullRecordEnabled\"><option value=\"1\" selected>開啟（建議）</option><option value=\"0\">關閉，只保留回溯 Buffer</option></select></div>\n      <div class=\"c6\"><label>錄音格式</label><input value=\"WebM / Opus（適合長時間錄音）\" disabled></div>\n    </div>\n    <div class=\"btns\">\n      <button id=\"pickFullFileBtn\" class=\"ghost\">📁 選擇整場錄音保存位置</button>\n      <button id=\"downloadFullBtn\" class=\"ghost\" disabled>⬇ 下載整場錄音</button>\n      <button id=\"analysisPackBtn\" class=\"ghost\" disabled>🧠 匯出事後分析包</button>\n    </div>\n    <div id=\"fullRecHint\" class=\"hint\">長場直播建議先選擇保存位置，錄音資料會邊錄邊寫到本機檔案，不需要把 3–5 小時音訊全部留在瀏覽器記憶體。若不選位置，會暫存在瀏覽器記憶體，停止後可下載。</div>\n    <div class=\"analysis-note\" style=\"margin-top:10px\">事後分析包會記錄本場時間、AI 關注點、高光候選與 👍／👎 回饋；整場音訊仍保持本機，後續接 AI 轉錄／高光分析時可直接使用。</div>\n  </div>\n\n  <div class=\"card\">\n    <h3>AI 關注點</h3>"""
+          if card_needle not in s:
+              raise SystemExit('card target not found')
+          s = s.replace(card_needle, card_add, 1)
+
+          # 3) State
+          state_needle = """  let displayStream = null, audioCtx = null, sourceNode = null, processor = null, analyser = null, silentGain = null;\n  let chunks = [], totalSamples = 0, startedAt = 0, timer = null, meterTimer = null, candidateSeq = 0;"""
+          state_add = """  let displayStream = null, audioCtx = null, sourceNode = null, processor = null, analyser = null, silentGain = null;\n  let chunks = [], totalSamples = 0, startedAt = 0, timer = null, meterTimer = null, candidateSeq = 0;\n  let fullRecorder = null, fullParts = [], fullBlob = null, fullFileHandle = null, fullWritable = null, fullStartedAt = 0, fullMime = '';"""
+          if state_needle not in s:
+              raise SystemExit('state target not found')
+          s = s.replace(state_needle, state_add, 1)
+
+          # 4) Insert full-rec helper functions before start()
+          start_needle = """  async function start(){\n    if(!navigator.mediaDevices?.getDisplayMedia)"""
+          helpers = r'''  function setFullRecStatus(on, text){
+    $('fullRecDot').classList.toggle('on', !!on);
+    $('fullRecStatus').textContent = text;
+  }
+
+  function chooseRecorderMime(){
+    const opts=['audio/webm;codecs=opus','audio/webm'];
+    return opts.find(x=>window.MediaRecorder?.isTypeSupported?.(x)) || '';
+  }
+
+  async function pickFullFile(){
+    if(!window.showSaveFilePicker){
+      alert('目前瀏覽器不支援直接寫入檔案。仍可正常整場錄音，停止後再按「下載整場錄音」。');
+      return;
+    }
+    try{
+      fullFileHandle = await window.showSaveFilePicker({
+        suggestedName:`miyu_full_${stamp()}.webm`,
+        types:[{description:'WebM 音訊',accept:{'audio/webm':['.webm']}}]
+      });
+      $('fullRecHint').textContent='已選擇保存位置。開始旁聽後，整場錄音會每 10 秒寫入本機檔案，適合長時間直播。';
+    }catch(err){ if(err?.name!=='AbortError') alert('選擇檔案失敗：'+(err.message||err)); }
+  }
+  $('pickFullFileBtn').onclick=pickFullFile;
+
+  async function startFullRecording(){
+    if($('fullRecordEnabled').value!=='1'){
+      setFullRecStatus(false,'整場錄音：已關閉');
+      return;
+    }
+    if(!window.MediaRecorder){
+      setFullRecStatus(false,'整場錄音：瀏覽器不支援');
+      return;
+    }
+    fullParts=[]; fullBlob=null; fullStartedAt=Date.now(); fullMime=chooseRecorderMime();
+    $('downloadFullBtn').disabled=true; $('analysisPackBtn').disabled=true;
+    if(fullFileHandle){
+      try{ fullWritable = await fullFileHandle.createWritable(); }
+      catch(err){ fullWritable=null; alert('無法寫入所選檔案，將改為暫存在瀏覽器記憶體。'); }
+    }
+    const audioOnly = new MediaStream(displayStream.getAudioTracks());
+    fullRecorder = fullMime ? new MediaRecorder(audioOnly,{mimeType:fullMime,audioBitsPerSecond:96000}) : new MediaRecorder(audioOnly);
+    fullRecorder.ondataavailable = async e => {
+      if(!e.data || !e.data.size) return;
+      if(fullWritable){
+        try{ await fullWritable.write(e.data); }
+        catch(err){ console.error('full recording write failed',err); fullParts.push(e.data); }
+      }else fullParts.push(e.data);
+    };
+    fullRecorder.onerror = e => console.error('MediaRecorder error',e.error||e);
+    fullRecorder.start(10000);
+    setFullRecStatus(true,'整場錄音：錄製中');
+  }
+
+  async function stopFullRecording(){
+    if(!fullRecorder || fullRecorder.state==='inactive'){
+      if(fullWritable){ try{await fullWritable.close();}catch{} fullWritable=null; }
+      return;
+    }
+    await new Promise(resolve=>{
+      fullRecorder.addEventListener('stop',resolve,{once:true});
+      try{fullRecorder.stop();}catch{resolve();}
+    });
+    if(fullWritable){
+      try{ await fullWritable.close(); }catch{}
+      fullWritable=null;
+      setFullRecStatus(false,'整場錄音：已保存至本機');
+      $('downloadFullBtn').disabled=true;
+    }else if(fullParts.length){
+      fullBlob = new Blob(fullParts,{type:fullMime||'audio/webm'});
+      setFullRecStatus(false,`整場錄音：已完成（${Math.round(fullBlob.size/1024/1024)} MB）`);
+      $('downloadFullBtn').disabled=false;
+    }else setFullRecStatus(false,'整場錄音：沒有可保存資料');
+    $('analysisPackBtn').disabled=false;
+    fullRecorder=null;
+  }
+
+  $('downloadFullBtn').onclick=()=>{
+    if(!fullBlob)return;
+    downloadBlob(fullBlob,`miyu_full_${stamp()}.webm`);
+  };
+
+  function analysisPayload(){
+    const end=Date.now();
+    return {
+      version:'miyu-listener-v0.2',
+      streamer:'miyu',
+      session:{
+        startedAt: fullStartedAt ? new Date(fullStartedAt).toISOString() : null,
+        endedAt: new Date(end).toISOString(),
+        durationSec: fullStartedAt ? Math.round((end-fullStartedAt)/1000) : 0,
+        fullRecording: $('fullRecordEnabled').value==='1',
+        recordingFileSelected: !!fullFileHandle,
+        mimeType: fullMime || 'audio/webm'
+      },
+      focuses: focuses.map(x=>({...x})),
+      candidates: candidates.map(c=>({
+        id:c.id,time:c.time.toISOString(),durationSec:Math.round(c.duration),tag:c.tag,filename:c.filename,feedback:c.feedback
+      })),
+      aiInstructions:{
+        goal:'從整場直播中找出值得剪輯與對外曝光的高光，不需平均分配類型；沒有好素材可以不選。',
+        priority:'優先參考 enabled=true 的關注點及 weight；同時探索新的高光類型。',
+        feedback:'feedback=1 代表值得發，-1 代表不值得發，0 代表未評分。'
+      }
+    };
+  }
+  $('analysisPackBtn').onclick=()=>{
+    const blob=new Blob([JSON.stringify(analysisPayload(),null,2)],{type:'application/json'});
+    downloadBlob(blob,`miyu_analysis_${stamp()}.json`);
+  };
+
+  async function start(){
+    if(!navigator.mediaDevices?.getDisplayMedia)'''
+          if start_needle not in s:
+              raise SystemExit('start target not found')
+          s = s.replace(start_needle, helpers, 1)
+
+          # 5) Start full recording after system audio setup
+          start_hook = """      chunks=[]; totalSamples=0; startedAt=Date.now(); setLive(true,'正在旁聽');\n      timer=setInterval(updateClock,500); meterTimer=setInterval(updateMeter,100);"""
+          start_hook_add = """      chunks=[]; totalSamples=0; startedAt=Date.now(); setLive(true,'正在旁聽');\n      await startFullRecording();\n      timer=setInterval(updateClock,500); meterTimer=setInterval(updateMeter,100);"""
+          if start_hook not in s:
+              raise SystemExit('start hook not found')
+          s = s.replace(start_hook, start_hook_add, 1)
+
+          # 6) Stop full recording before tearing stream down
+          stop_needle = """  async function stop(){\n    setLive(false,'已停止'); clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null; $('meterBar').style.width='0%';\n    try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close();}catch{}"""
+          stop_add = """  async function stop(){\n    setLive(false,'已停止'); clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null; $('meterBar').style.width='0%';\n    await stopFullRecording();\n    try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close();}catch{}"""
+          if stop_needle not in s:
+              raise SystemExit('stop target not found')
+          s = s.replace(stop_needle, stop_add, 1)
+
+          # 7) Prevent changing full recording while live
+          live_needle = """  function setLive(live,msg){ $('liveDot').classList.toggle('live',live); $('statusText').textContent=msg; $('startBtn').disabled=live; $('stopBtn').disabled=!live; $('saveBtn').disabled=!live; }"""
+          live_add = """  function setLive(live,msg){ $('liveDot').classList.toggle('live',live); $('statusText').textContent=msg; $('startBtn').disabled=live; $('stopBtn').disabled=!live; $('saveBtn').disabled=!live; $('fullRecordEnabled').disabled=live; $('pickFullFileBtn').disabled=live; }"""
+          if live_needle not in s:
+              raise SystemExit('setLive target not found')
+          s = s.replace(live_needle, live_add, 1)
+
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit patch
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "418982378+github-actions[bot]@users.noreply.github.com"
+          git add tools/miyu_ai_listener.html
+          git commit -m "add full-session recording and analysis pack to Miyu listener"
+          git push
