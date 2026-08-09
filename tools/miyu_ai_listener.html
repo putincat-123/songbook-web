@@ -9,11 +9,12 @@
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text)}
 .app{max-width:920px;margin:0 auto;padding:16px 16px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.title{font-size:28px;font-weight:800}.back{border:1px solid var(--line);background:#fff;color:var(--text);padding:10px 13px;border-radius:12px;font-weight:800;cursor:pointer}.sub,.hint,.mini{color:var(--muted);line-height:1.6}.sub{font-size:14px;margin-bottom:14px}.hint{font-size:13px;margin-top:10px}.mini{font-size:12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:14px}.card h3{font-size:18px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.c12{grid-column:span 12}.c8{grid-column:span 8}.c6{grid-column:span 6}.c4{grid-column:span 4}
-.status,.fullrec{display:flex;align-items:center;gap:8px;font-weight:800}.dot,.rec-dot{width:10px;height:10px;border-radius:50%;background:#94a3b8}.dot.live{background:var(--ok);box-shadow:0 0 0 5px rgba(22,163,74,.12)}.rec-dot.on{background:var(--danger);box-shadow:0 0 0 5px rgba(220,38,38,.10)}
+.status,.fullrec,.chat-status{display:flex;align-items:center;gap:8px;font-weight:800}.dot,.rec-dot,.chat-dot{width:10px;height:10px;border-radius:50%;background:#94a3b8}.dot.live,.chat-dot.live{background:var(--ok);box-shadow:0 0 0 5px rgba(22,163,74,.12)}.chat-dot.warn{background:#f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.12)}.rec-dot.on{background:var(--danger);box-shadow:0 0 0 5px rgba(220,38,38,.10)}
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.metric{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fafafa}.metric small{display:block;color:var(--muted);margin-bottom:6px}.metric strong{font-size:22px}.meter{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:10px}.meter>div{height:100%;width:0;background:linear-gradient(90deg,#60a5fa,#22c55e);transition:width .08s linear}
 .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{border:none;border-radius:12px;padding:11px 14px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--brand);color:#fff}.primary:hover{background:var(--brand2)}.ghost{background:#fff;border:1px solid var(--line);color:var(--text)}.danger{background:#fef2f2;color:var(--danger);border:1px solid #fecaca}.save{background:#eef2ff;color:#3730a3}button:disabled{opacity:.45;cursor:not-allowed}
 label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:6px}input,select{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:15px;background:#fff;color:var(--text)}.notice{background:#fffbeb;color:#92400e;border:1px solid #fde68a;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}.okbox{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}.analysis-note{border-left:3px solid #93c5fd;padding:9px 11px;background:#f8fbff;border-radius:8px;font-size:13px;color:#475569;line-height:1.6}
 .focus-list{display:flex;gap:8px;flex-wrap:wrap}.focus{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:8px 10px;background:#fff}.focus.off{opacity:.45}.focus input{width:auto}.stars{font-size:12px;color:#f59e0b;letter-spacing:-1px}.focus button{padding:0 3px;background:transparent;color:#9ca3af;font-size:14px}.add-row{display:grid;grid-template-columns:1fr 130px auto;gap:8px;margin-top:12px}
+.chat-box{margin-top:12px;border:1px solid var(--line);border-radius:14px;background:#fafafa;max-height:260px;overflow:auto;padding:8px}.chat-row{padding:8px 6px;border-bottom:1px solid #eef2f7;font-size:13px;line-height:1.45}.chat-row:last-child{border-bottom:none}.chat-time{color:#94a3b8;margin-right:7px}.chat-user{font-weight:800;color:#334155;margin-right:6px}.chat-msg{color:#0f172a}.chat-empty{padding:18px;text-align:center;color:var(--muted);font-size:13px}
 .candidate{border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}.candidate-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.tag{display:inline-block;background:#eff6ff;color:#1e40af;border-radius:999px;padding:5px 8px;font-size:12px;font-weight:800}.candidate-meta{font-size:13px;color:var(--muted);line-height:1.5;margin-top:6px}.feedback{display:flex;gap:6px}.feedback button{padding:7px 10px;background:#fff;border:1px solid var(--line)}.empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--muted);text-align:center}
 @media(max-width:720px){.app{padding:12px 10px 72px}.title{font-size:23px}.grid{grid-template-columns:1fr}.c12,.c8,.c6,.c4{grid-column:1/-1}.metrics{grid-template-columns:1fr 1fr}.metrics .metric:last-child{grid-column:1/-1}.btns{flex-direction:column}.btns button{width:100%;min-height:48px}.add-row{grid-template-columns:1fr}.candidate-head{flex-direction:column}.feedback{width:100%}.feedback button{flex:1}input,select{font-size:16px}}
 </style>
@@ -21,7 +22,7 @@ label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bot
 <body>
 <div class="app">
   <div class="top"><div class="title">🎧 AI 直播旁聽</div><button class="back" onclick="location.href='./miyu_toolbox.html'">← 回工具箱</button></div>
-  <div class="sub">V0.2：保留回溯高光，同時可錄下整場直播。整場錄音與高光都只留在主播本機；下播後可匯出分析包，供後續 AI 轉錄與高光分析。</div>
+  <div class="sub">V0.3：直播音訊、5 分鐘回溯、整場錄音，再加上猫耳公屏時間軸。公屏與音訊可在事後分析時對齊，讓 AI 更容易找到真正有互動、有故事的高光。</div>
 
   <div class="card">
     <h3>直播旁聽</h3>
@@ -32,7 +33,7 @@ label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bot
       <div class="metric"><small>高光候選</small><strong id="candidateCount">0</strong></div>
     </div>
     <div class="meter" title="音訊輸入音量"><div id="meterBar"></div></div>
-    <div id="captureHint" class="notice" style="margin-top:12px">開始時 Chrome 會要求選擇分享來源。Windows 建議選「整個螢幕」並開啟「分享系統音訊」。</div>
+    <div id="captureHint" class="notice" style="margin-top:12px">開始時 Edge / Chrome 會要求選擇分享來源。Windows 建議選「整個螢幕」並開啟「分享系統音訊」。</div>
     <div class="btns"><button id="startBtn" class="primary">▶ 開始旁聽</button><button id="stopBtn" class="danger" disabled>■ 停止旁聽</button><button id="saveBtn" class="save" disabled>⭐ 保存剛才 2 分鐘</button></div>
   </div>
 
@@ -54,7 +55,19 @@ label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bot
     </div>
     <div class="btns"><button id="pickFullFileBtn" class="ghost">📁 選擇整場錄音保存位置</button><button id="downloadFullBtn" class="ghost" disabled>⬇ 下載整場錄音</button><button id="analysisPackBtn" class="ghost" disabled>🧠 匯出事後分析包</button></div>
     <div id="fullRecHint" class="hint">長場直播建議先選擇保存位置，錄音會邊錄邊寫入本機檔案；若不選位置，會暫存在瀏覽器記憶體，停止後再下載。</div>
-    <div class="analysis-note" style="margin-top:10px">分析包會包含本場時間、AI 關注點、高光候選與 👍／👎 回饋。下一版接上轉錄／AI 後，可用整場錄音做事後掃描，補抓直播中漏掉的高光。</div>
+    <div class="analysis-note" style="margin-top:10px">分析包會包含本場時間、AI 關注點、高光候選、👍／👎 回饋，以及本場猫耳公屏時間軸。</div>
+  </div>
+
+  <div class="card">
+    <h3>💬 猫耳公屏時間軸</h3>
+    <div class="chat-status"><span id="chatDot" class="chat-dot"></span><span id="chatStatus">公屏：未連接</span></div>
+    <div class="grid" style="margin-top:12px">
+      <div class="c8"><label>猫耳房間號</label><input id="chatRoomId" value="868878322" inputmode="numeric"></div>
+      <div class="c4"><label>已收到</label><input id="chatCount" value="0 條公屏" disabled></div>
+    </div>
+    <div class="btns"><button id="chatConnectBtn" class="ghost">🔗 連接公屏</button><button id="chatDisconnectBtn" class="ghost" disabled>中斷公屏</button><button id="chatExportBtn" class="ghost" disabled>⬇ 匯出公屏 JSON</button><button id="chatClearBtn" class="ghost">清空本場公屏</button></div>
+    <div id="chatHint" class="hint">開始旁聽時會自動嘗試連接。只保存「時間、暱稱、user_id、文字、msg_id」；錄音與公屏都留在本機。</div>
+    <div id="chatBox" class="chat-box"><div class="chat-empty">連接成功後，最近的公屏會顯示在這裡。</div></div>
   </div>
 
   <div class="card">
@@ -70,7 +83,7 @@ label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bot
     <div id="candidates"><div class="empty">開始旁聽後，按「保存剛才」就會出現在這裡。</div></div>
   </div>
 
-  <div class="okbox">🔒 隱私：目前所有錄音都在瀏覽器本機完成，不會自動傳到 GitHub、Vercel 或 AI API。</div>
+  <div class="okbox">🔒 隱私：目前錄音與公屏都只在瀏覽器本機處理，不會自動傳到 GitHub、Vercel 或 AI API。</div>
 </div>
 <script>
 (() => {
@@ -78,6 +91,7 @@ const TARGET_RATE=16000,$=id=>document.getElementById(id);
 let displayStream=null,audioCtx=null,sourceNode=null,processor=null,analyser=null,silentGain=null;
 let chunks=[],totalSamples=0,startedAt=0,timer=null,meterTimer=null,candidateSeq=0,candidates=[];
 let fullRecorder=null,fullParts=[],fullBlob=null,fullFileHandle=null,fullWritable=null,fullStartedAt=0,fullMime='';
+let chatSocket=null,chatMessages=[],chatConnectedAt=0,chatManualClose=false;
 const focusKey='miyu_listener_focus_v1';
 const defaults=[{name:'🎧 故事感',weight:5,enabled:true},{name:'🧠 研究腦',weight:4,enabled:true},{name:'🌱 成長',weight:3,enabled:true},{name:'😐 冷幽默',weight:4,enabled:true}];
 let focuses=loadFocuses();
@@ -106,8 +120,46 @@ $('pickFullFileBtn').onclick=async()=>{if(!window.showSaveFilePicker){alert('這
 async function startFull(){if($('fullRecordEnabled').value!=='1'){setFull(false,'整場錄音：已關閉');return}if(!window.MediaRecorder){setFull(false,'整場錄音：瀏覽器不支援');return}fullParts=[];fullBlob=null;fullStartedAt=Date.now();fullMime=recorderMime();$('downloadFullBtn').disabled=true;$('analysisPackBtn').disabled=true;if(fullFileHandle){try{fullWritable=await fullFileHandle.createWritable()}catch{fullWritable=null;alert('無法寫入所選檔案，改為暫存在瀏覽器記憶體。')}}const audioOnly=new MediaStream(displayStream.getAudioTracks());fullRecorder=fullMime?new MediaRecorder(audioOnly,{mimeType:fullMime,audioBitsPerSecond:96000}):new MediaRecorder(audioOnly);fullRecorder.ondataavailable=async e=>{if(!e.data?.size)return;if(fullWritable){try{await fullWritable.write(e.data)}catch(err){console.error(err);fullParts.push(e.data)}}else fullParts.push(e.data)};fullRecorder.start(10000);setFull(true,'整場錄音：錄製中')}
 async function stopFull(){if(!fullRecorder||fullRecorder.state==='inactive'){if(fullWritable){try{await fullWritable.close()}catch{}fullWritable=null}return}await new Promise(r=>{fullRecorder.addEventListener('stop',r,{once:true});try{fullRecorder.stop()}catch{r()}});if(fullWritable){try{await fullWritable.close()}catch{}fullWritable=null;setFull(false,'整場錄音：已保存至本機')}else if(fullParts.length){fullBlob=new Blob(fullParts,{type:fullMime||'audio/webm'});setFull(false,`整場錄音：已完成（${Math.round(fullBlob.size/1024/1024)} MB）`);$('downloadFullBtn').disabled=false}else setFull(false,'整場錄音：沒有資料');$('analysisPackBtn').disabled=false;fullRecorder=null}
 $('downloadFullBtn').onclick=()=>fullBlob&&downloadBlob(fullBlob,`miyu_full_${stamp()}.webm`);
-async function start(){if(!navigator.mediaDevices?.getDisplayMedia){alert('請使用最新版 Chrome / Edge。');return}try{displayStream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:1,max:2}},audio:true});if(!displayStream.getAudioTracks().length){displayStream.getTracks().forEach(t=>t.stop());displayStream=null;alert('沒有取得音訊，請確認「分享系統音訊」已開啟。');return}audioCtx=new (window.AudioContext||window.webkitAudioContext)();await audioCtx.resume();sourceNode=audioCtx.createMediaStreamSource(new MediaStream(displayStream.getAudioTracks()));analyser=audioCtx.createAnalyser();analyser.fftSize=512;processor=audioCtx.createScriptProcessor(4096,Math.max(1,sourceNode.channelCount||1),1);silentGain=audioCtx.createGain();silentGain.gain.value=0;sourceNode.connect(analyser);sourceNode.connect(processor);processor.connect(silentGain);silentGain.connect(audioCtx.destination);processor.onaudioprocess=e=>pushAudio(e.inputBuffer);chunks=[];totalSamples=0;startedAt=Date.now();setLive(true,'正在旁聽');await startFull();timer=setInterval(updateClock,500);meterTimer=setInterval(updateMeter,100);displayStream.getTracks().forEach(t=>t.addEventListener('ended',()=>{if(displayStream)stop()},{once:true}));$('captureHint').className='okbox';$('captureHint').textContent='已取得系統音訊。頁面可放在背景，回溯與整場錄音會繼續運作。'}catch(err){if(err?.name!=='NotAllowedError')alert('啟動失敗：'+(err.message||err))}}
-async function stop(){setLive(false,'已停止');clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null;$('meterBar').style.width='0%';await stopFull();try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close()}catch{}displayStream=audioCtx=sourceNode=processor=analyser=silentGain=null;startedAt=0;updateClock()}
+
+function setChatState(state,text){$('chatDot').classList.toggle('live',state==='live');$('chatDot').classList.toggle('warn',state==='warn');$('chatStatus').textContent=text;$('chatConnectBtn').disabled=state==='live'||state==='warn';$('chatDisconnectBtn').disabled=state==='off'}
+function renderChat(){
+ $('chatCount').value=`${chatMessages.length} 條公屏`;$('chatExportBtn').disabled=!chatMessages.length;
+ const recent=chatMessages.slice(-30);
+ $('chatBox').innerHTML=recent.length?recent.map(m=>`<div class="chat-row"><span class="chat-time">${esc(new Date(m.receivedAt).toLocaleTimeString())}</span><span class="chat-user">${esc(m.username||'未知')}</span><span class="chat-msg">${esc(m.message||'')}</span></div>`).join(''):'<div class="chat-empty">連接成功後，最近的公屏會顯示在這裡。</div>';
+ $('chatBox').scrollTop=$('chatBox').scrollHeight;
+}
+async function brotliText(bytes){
+ if(!window.DecompressionStream)throw new Error('瀏覽器不支援 DecompressionStream');
+ let ds;try{ds=new DecompressionStream('brotli')}catch{throw new Error('目前瀏覽器不支援 Brotli 解壓，請更新 Edge / Chrome')}
+ const stream=new Blob([bytes]).stream().pipeThrough(ds);return await new Response(stream).text();
+}
+async function decodeChatPacket(data){
+ let buf;if(data instanceof ArrayBuffer)buf=data;else if(data instanceof Blob)buf=await data.arrayBuffer();else return null;
+ const u8=new Uint8Array(buf);if(u8.length<=4)return null;
+ try{return JSON.parse(await brotliText(u8.slice(4)))}catch(e){console.debug('忽略非公屏/非 Brotli 封包',e);return null}
+}
+function acceptChat(obj){
+ if(!obj||obj.type!=='message'||obj.event!=='new'||typeof obj.message!=='string')return;
+ const m={receivedAt:new Date().toISOString(),room_id:obj.room_id||+$('chatRoomId').value,user_id:obj.user?.user_id??null,username:obj.user?.username||'',message:obj.message,msg_id:obj.msg_id||''};
+ if(m.msg_id&&chatMessages.some(x=>x.msg_id===m.msg_id))return;chatMessages.push(m);renderChat();
+}
+function connectChat(){
+ const room=String($('chatRoomId').value||'').trim();if(!/^\d+$/.test(room)){setChatState('off','公屏：房間號不正確');return}
+ if(chatSocket&&chatSocket.readyState<2)return;chatManualClose=false;setChatState('warn','公屏：連接中…');
+ try{const ws=new WebSocket(`wss://im.missevan.com/ws?room_id=${encodeURIComponent(room)}`);chatSocket=ws;ws.binaryType='arraybuffer';
+ ws.onopen=()=>{if(chatSocket!==ws)return;chatConnectedAt=Date.now();setChatState('live','公屏：已連接');$('chatHint').textContent='已連接猫耳公屏。新公屏會自動記錄時間並加入事後分析包。'};
+ ws.onmessage=async e=>{try{acceptChat(await decodeChatPacket(e.data))}catch(err){console.error('公屏解析失敗',err)}};
+ ws.onerror=()=>{if(chatSocket===ws)setChatState('warn','公屏：連接異常')};
+ ws.onclose=()=>{if(chatSocket!==ws)return;chatSocket=null;setChatState('off',chatManualClose?'公屏：已中斷':'公屏：連接已斷開');if(!chatManualClose&&displayStream)setTimeout(()=>{if(displayStream&&!chatSocket)connectChat()},3000)};
+ }catch(e){setChatState('off','公屏：無法連接');$('chatHint').textContent='連接失敗：'+(e.message||e)}
+}
+function disconnectChat(){chatManualClose=true;try{chatSocket?.close()}catch{}chatSocket=null;setChatState('off','公屏：已中斷')}
+$('chatConnectBtn').onclick=connectChat;$('chatDisconnectBtn').onclick=disconnectChat;
+$('chatExportBtn').onclick=()=>downloadBlob(new Blob([JSON.stringify({version:'miyu-chat-v0.3',room_id:+$('chatRoomId').value,exportedAt:new Date().toISOString(),messages:chatMessages},null,2)],{type:'application/json'}),`miyu_chat_${stamp()}.json`);
+$('chatClearBtn').onclick=()=>{if(chatMessages.length&&!confirm('清空本場已記錄的公屏？'))return;chatMessages=[];renderChat()};
+
+async function start(){if(!navigator.mediaDevices?.getDisplayMedia){alert('請使用最新版 Edge / Chrome。');return}try{displayStream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:1,max:2}},audio:true});if(!displayStream.getAudioTracks().length){displayStream.getTracks().forEach(t=>t.stop());displayStream=null;alert('沒有取得音訊，請確認「分享系統音訊」已開啟。');return}audioCtx=new (window.AudioContext||window.webkitAudioContext)();await audioCtx.resume();sourceNode=audioCtx.createMediaStreamSource(new MediaStream(displayStream.getAudioTracks()));analyser=audioCtx.createAnalyser();analyser.fftSize=512;processor=audioCtx.createScriptProcessor(4096,Math.max(1,sourceNode.channelCount||1),1);silentGain=audioCtx.createGain();silentGain.gain.value=0;sourceNode.connect(analyser);sourceNode.connect(processor);processor.connect(silentGain);silentGain.connect(audioCtx.destination);processor.onaudioprocess=e=>pushAudio(e.inputBuffer);chunks=[];totalSamples=0;startedAt=Date.now();setLive(true,'正在旁聽');connectChat();await startFull();timer=setInterval(updateClock,500);meterTimer=setInterval(updateMeter,100);displayStream.getTracks().forEach(t=>t.addEventListener('ended',()=>{if(displayStream)stop()},{once:true}));$('captureHint').className='okbox';$('captureHint').textContent='已取得系統音訊。頁面可放在背景，回溯、整場錄音與公屏記錄會繼續運作。'}catch(err){if(err?.name!=='NotAllowedError')alert('啟動失敗：'+(err.message||err))}}
+async function stop(){setLive(false,'已停止');clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null;$('meterBar').style.width='0%';disconnectChat();await stopFull();try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close()}catch{}displayStream=audioCtx=sourceNode=processor=analyser=silentGain=null;startedAt=0;updateClock()}
 $('startBtn').onclick=start;$('stopBtn').onclick=stop;
 function updateMeter(){if(!analyser)return;const a=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(a);let sum=0;for(const v of a){const x=(v-128)/128;sum+=x*x}const rms=Math.sqrt(sum/a.length),pct=Math.min(100,Math.round(rms*350));$('meterBar').style.width=pct+'%'}
 function getLastSamples(sec){const need=Math.min(totalSamples,Math.floor(sec*TARGET_RATE)),out=new Float32Array(need);let pos=need;for(let i=chunks.length-1;i>=0&&pos>0;i--){const c=chunks[i],take=Math.min(pos,c.length);pos-=take;out.set(c.subarray(c.length-take),pos)}return out}
@@ -115,9 +167,9 @@ function wavBlob(samples){const b=new ArrayBuffer(44+samples.length*2),v=new Dat
 $('saveBtn').onclick=()=>{if(totalSamples<TARGET_RATE*2){alert('Buffer 太短，請再等幾秒。');return}const requested=+$('saveSeconds').value,samples=getLastSamples(requested),actual=samples.length/TARGET_RATE,blob=wavBlob(samples),tag=$('saveTag').value||'未分類',filename=`miyu_highlight_${stamp()}_${Math.round(actual)}s.wav`;downloadBlob(blob,filename);candidates.unshift({id:++candidateSeq,time:new Date(),duration:actual,tag,blob,filename,feedback:0});renderCandidates()};
 function renderCandidates(){$('candidateCount').textContent=candidates.length;if(!candidates.length){$('candidates').innerHTML='<div class="empty">開始旁聽後，按「保存剛才」就會出現在這裡。</div>';return}$('candidates').innerHTML=candidates.map(c=>`<div class="candidate"><div class="candidate-head"><div><span class="tag">${esc(c.tag)}</span><div class="candidate-meta">${c.time.toLocaleTimeString()} · ${Math.round(c.duration)} 秒 · ${esc(c.filename)}</div></div><div class="feedback"><button data-like="${c.id}">${c.feedback===1?'✅':'👍'}</button><button data-dislike="${c.id}">${c.feedback===-1?'❌':'👎'}</button><button data-dl="${c.id}">下載</button></div></div></div>`).join('');document.querySelectorAll('[data-like]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.like);c.feedback=c.feedback===1?0:1;renderCandidates()});document.querySelectorAll('[data-dislike]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.dislike);c.feedback=c.feedback===-1?0:-1;renderCandidates()});document.querySelectorAll('[data-dl]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.dl);downloadBlob(c.blob,c.filename)})}
 $('clearCandidatesBtn').onclick=()=>{if(candidates.length&&confirm('清空本次高光候選？已下載的 WAV 不受影響。')){candidates=[];renderCandidates()}};
-$('analysisPackBtn').onclick=()=>{const end=Date.now(),payload={version:'miyu-listener-v0.2',streamer:'miyu',session:{startedAt:fullStartedAt?new Date(fullStartedAt).toISOString():null,endedAt:new Date(end).toISOString(),durationSec:fullStartedAt?Math.round((end-fullStartedAt)/1000):0,mimeType:fullMime||'audio/webm'},focuses:focuses.map(x=>({...x})),candidates:candidates.map(c=>({id:c.id,time:c.time.toISOString(),durationSec:Math.round(c.duration),tag:c.tag,filename:c.filename,feedback:c.feedback})),aiInstructions:{goal:'從整場直播找出值得剪輯與對外曝光的高光；不需要平均分配類型，沒有好素材可不選。',priority:'依 enabled 與 weight 優先判斷，同時探索新類型。',feedback:'1=值得發，-1=不值得發，0=未評分。'}};downloadBlob(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),`miyu_analysis_${stamp()}.json`)};
-window.addEventListener('beforeunload',e=>{if(displayStream){e.preventDefault();e.returnValue=''}});
-renderFocuses();renderCandidates();updateClock();
+$('analysisPackBtn').onclick=()=>{const end=Date.now(),payload={version:'miyu-listener-v0.3',streamer:'miyu',session:{startedAt:fullStartedAt?new Date(fullStartedAt).toISOString():null,endedAt:new Date(end).toISOString(),durationSec:fullStartedAt?Math.round((end-fullStartedAt)/1000):0,mimeType:fullMime||'audio/webm'},focuses:focuses.map(x=>({...x})),chat:{room_id:+$('chatRoomId').value,connectedAt:chatConnectedAt?new Date(chatConnectedAt).toISOString():null,messageCount:chatMessages.length,messages:chatMessages},candidates:candidates.map(c=>({id:c.id,time:c.time.toISOString(),durationSec:Math.round(c.duration),tag:c.tag,filename:c.filename,feedback:c.feedback})),aiInstructions:{goal:'從整場直播與公屏上下文找出陌生人會停下來、看完會想認識主播的高光；不需要平均分配類型，沒有好素材可不選。',priority:'優先看公屏提問→主播回應→後續公屏反應、人格反差、故事感、研究腦、成長與冷幽默；依 enabled 與 weight 加權，同時探索新類型。',feedback:'1=值得發，-1=不值得發，0=未評分。'}};downloadBlob(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),`miyu_analysis_${stamp()}.json`)};
+window.addEventListener('beforeunload',e=>{if(displayStream||chatSocket){e.preventDefault();e.returnValue=''}});
+renderFocuses();renderCandidates();renderChat();updateClock();setChatState('off','公屏：未連接');
 })();
 </script>
 </body>
