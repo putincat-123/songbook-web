@@ -130,6 +130,14 @@
     $('status').textContent = `已生成 ${currentSongs.length} 首大鱼歌单。`;
   }
 
+  const params = new URLSearchParams(location.search);
+  const requestedStreamer = params.get('streamer');
+  const locked = params.get('lock') === '1';
+  if (requestedStreamer && config[requestedStreamer]) $('streamer').value = requestedStreamer;
+  if (locked) {
+    $('streamer').disabled = true;
+    $('streamer').title = '已鎖定目前主播，避免匯出到其他主播歌單';
+  }
   $('streamer').addEventListener('change', loadSongs);
   $('reloadBtn').addEventListener('click', loadSongs);
   $('downloadBtn').addEventListener('click', download);
