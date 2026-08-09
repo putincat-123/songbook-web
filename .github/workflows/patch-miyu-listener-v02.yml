@@ -11,53 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Patch Miyu AI listener v0.2
+      - name: Patch file
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('tools/miyu_ai_listener.html')
-          s = p.read_text(encoding='utf-8')
-
-          if '整場錄音與事後分析' in s:
-              print('v0.2 already patched')
-              raise SystemExit(0)
-
-          # 1) Extra CSS
-          css_needle = ".candidate{border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}.candidate-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.tag{display:inline-block;background:#eff6ff;color:#1e40af;border-radius:999px;padding:5px 8px;font-size:12px;font-weight:800}.candidate-meta{font-size:13px;color:var(--muted);line-height:1.5;margin-top:6px}.feedback{display:flex;gap:6px}.feedback button{padding:7px 10px;background:#fff;border:1px solid var(--line)}.empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--muted);text-align:center}.mini{font-size:12px;color:var(--muted)}"
-          css_add = css_needle + "\n.fullrec{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.rec-dot{width:10px;height:10px;border-radius:50%;background:#94a3b8}.rec-dot.on{background:#dc2626;box-shadow:0 0 0 5px rgba(220,38,38,.10)}.analysis-note{border-left:3px solid #93c5fd;padding:9px 11px;background:#f8fbff;border-radius:8px;font-size:13px;color:#475569;line-height:1.6}"
-          if css_needle not in s:
-              raise SystemExit('CSS target not found')
-          s = s.replace(css_needle, css_add, 1)
-
-          # 2) Insert whole-session recording card before AI focus card
-          card_needle = """  <div class=\"card\">\n    <h3>AI 關注點</h3>"""
-          card_add = """  <div class=\"card\">\n    <h3>整場錄音與事後分析</h3>\n    <div class=\"fullrec\"><span id=\"fullRecDot\" class=\"rec-dot\"></span><strong id=\"fullRecStatus\">整場錄音：待機</strong></div>\n    <div class=\"grid\" style=\"margin-top:12px\">\n      <div class=\"c6\"><label>整場錄音</label><select id=\"fullRecordEnabled\"><option value=\"1\" selected>開啟（建議）</option><option value=\"0\">關閉，只保留回溯 Buffer</option></select></div>\n      <div class=\"c6\"><label>錄音格式</label><input value=\"WebM / Opus（適合長時間錄音）\" disabled></div>\n    </div>\n    <div class=\"btns\">\n      <button id=\"pickFullFileBtn\" class=\"ghost\">📁 選擇整場錄音保存位置</button>\n      <button id=\"downloadFullBtn\" class=\"ghost\" disabled>⬇ 下載整場錄音</button>\n      <button id=\"analysisPackBtn\" class=\"ghost\" disabled>🧠 匯出事後分析包</button>\n    </div>\n    <div id=\"fullRecHint\" class=\"hint\">長場直播建議先選擇保存位置，錄音資料會邊錄邊寫到本機檔案，不需要把 3–5 小時音訊全部留在瀏覽器記憶體。若不選位置，會暫存在瀏覽器記憶體，停止後可下載。</div>\n    <div class=\"analysis-note\" style=\"margin-top:10px\">事後分析包會記錄本場時間、AI 關注點、高光候選與 👍／👎 回饋；整場音訊仍保持本機，後續接 AI 轉錄／高光分析時可直接使用。</div>\n  </div>\n\n  <div class=\"card\">\n    <h3>AI 關注點</h3>"""
-          if card_needle not in s:
-              raise SystemExit('card target not found')
-          s = s.replace(card_needle, card_add, 1)
-
-          # 3) State
-          state_needle = """  let displayStream = null, audioCtx = null, sourceNode = null, processor = null, analyser = null, silentGain = null;\n  let chunks = [], totalSamples = 0, startedAt = 0, timer = null, meterTimer = null, candidateSeq = 0;"""
-          state_add = """  let displayStream = null, audioCtx = null, sourceNode = null, processor = null, analyser = null, silentGain = null;\n  let chunks = [], totalSamples = 0, startedAt = 0, timer = null, meterTimer = null, candidateSeq = 0;\n  let fullRecorder = null, fullParts = [], fullBlob = null, fullFileHandle = null, fullWritable = null, fullStartedAt = 0, fullMime = '';"""
-          if state_needle not in s:
-              raise SystemExit('state target not found')
-          s = s.replace(state_needle, state_add, 1)
-
-          # 4) Insert full-rec helper functions before start()
-          start_needle = """  async function start(){\n    if(!navigator.mediaDevices?.getDisplayMedia)"""
-          helpers = r'''  function setFullRecStatus(on, text){
-    $('fullRecDot').classList.toggle('on', !!on);
-    $('fullRecStatus').textContent = text;
-  }
-
-  function chooseRecorderMime(){
-    const opts=['audio/webm;codecs=opus','audio/webm'];
-    return opts.find(x=>window.MediaRecorder?.isTypeSupported?.(x)) || '';
-  }
-
-  async function pickFullFile(){
-    if(!window.showSaveFilePicker){
-      alert('目前瀏覽器不支援直接寫入檔案。仍可正常整場錄音，停止後再按「下載整場錄音」。');
+          echo 'CkZST00gUGF0aGxpYiBpbXBvcnQgUGF0aApwID0gUGF0aCgndG9vbHMvbWl5dV9haV9saXN0ZW5lci5odG1sJykKcyA9IHAucmVhZF90ZXh0KGVuY29kaW5nPSd1dGYtOCcpCgppZiAn5pW05aC05b2E6Z+z6IiH5LqL5b6M5YiG5p6QJyBpbiBzOgogICAgcHJpbnQoJ3YwLjIgYWxyZWFkeSBwYXRjaGVkJykKICAgIHJhaXNlIFN5c3RlbUV4aXQoMCkKCmNzc19uZWVkbGUgPSAiLmNhbmRpZGF0ZXtib3JkZXI6MXB4IHNvbGlkIHZhcigtLWxpbmUpO2JvcmRlci1yYWRpdXM6MTRweDtwYWRkaW5nOjEycHg7bWFyZ2luLXRvcDoxMHB4fS5jYW5kaWRhdGUtaGVhZHtkaXNwbGF5OmZsZXg7anVzdGlmeS1jb250ZW50OnNwYWNlLWJldHdlZW47Z2FwOjEwcHg7YWxpZ24taXRlbXM6ZmxleC1zdGFydH0udGFne2Rpc3BsYXk6aW5saW5lLWJsb2NrO2JhY2tncm91bmQ6I2VmZjZmZjthIGNvbG9yOiMxZTQwYWY7Ym9yZGVyLXJhZGl1czo5OTlweDtwYWRkaW5nOjVweCA4cHg7Zm9udC1zaXplOjEycHg7Zm9udC13ZWlnaHQ6ODAwfS5jYW5kaWRhdGUtbWV0YXtmb250LXNpemU6MTNweDtjb2xvcjp2YXIoLS1tdXRlZCk7bGluZS1oZWlnaHQ6MS41O21hcmdpbi10b3A6NnB4fS5mZWVkYmFja3tkaXNwbGF5OmZsZXg7Z2FwOjZweH0uZmVlZGJhY2sgYnV0dG9ue3BhZGRpbmc6N3B4IDEwcHg7YmFja2dyb3VuZDojZmZmO2JvcmRlcjoxcHggc29saWQgdmFyKC0tbGluZSl9LmVtcHR5e2JvcmRlcjoxcHggZGFzaGVkIHZhcigtLWxpbmUpO2JvcmRlci1yYWRpdXM6MTRweDtwYWRkaW5nOjE4cHg7Y29sb3I6dmFyKC0tbXV0ZWQpO3RleHQtYWxpZ246Y2VudGVyfS5taW5pe2ZvbnQtc2l6ZToxMnB4O2NvbG9yOnZhcigtLW11dGVkKX0iCmNzc19hZGQgPSBjc3NfbmVlZGxlICsgIlxuLmZ1bGxyZWN7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6OHB4O2ZsZXgtd3JhcDp3cmFwfS5yZWMtZG90e3dpZHRoOjEwcHg7aGVpZ2h0OjEwcHg7Ym9yZGVyLXJhZGl1czo1MCU7YmFja2dyb3VuZDojOTRhM2I4fS5yZWMtZG90Lm9ue2JhY2tncm91bmQ6I2RjMjYyNjtib3gtc2hhZG93OjAgMCAwIDVweCByZ2JhKDIyMCw1Niw1NiwuMTApfS5hbmFseXNpcy1ub3Rle2JvcmRlci1sZWZ0OjNweCBzb2xpZCAjOTNjNWZkO3BhZGRpbmc6OXB4IDExcHg7YmFja2dyb3VuZDojZjhmYmZmO2JvcmRlci1yYWRpdXM6OHB4O2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM0NzU1Njk7bGluZS1oZWlnaHQ6MS42fSIKYXNzZXJ0IGNzc19uZWVkbGUgaW4gcywgJ0NTUyB0YXJnZXQgbm90IGZvdW5kJwpzID0gcy5yZXBsYWNlKGNzc19uZWVkbGUsIGNzc19hZGQsIDEpCgpjYXJkX25lZWRsZSA9ICcnJyAgPGRpdiBjbGFzcz0iY2FyZCI+CiAgICA8aDM+QUkg6Zec5rOo6buePC9oMz4nJycKY2FyZF9hZGQgPSAnJycgIDxkaXYgY2xhc3M9ImNhcmQiPgogICAgPGgzPuaVtOWgtOW9j+iIsOS6i+W+jOWIhuaekDwvaDM+CiAgICA8ZGl2IGNsYXNzPSJmdWxscmVjIj48c3BhbiBpZD0iZnVsbFJlY0RvdCIgY2xhc3M9InJlYy1kb3QiPjwvc3Bhbj48c3Ryb25nIGlkPSJmdWxsUmVjU3RhdHVzIj7mlbTloLTpjITpn7PvvJrlvIXmq5k8L3N0cm9uZz48L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImdyaWQiIHN0eWxlPSJtYXJnaW4tdG9wOjEycHgiPgogICAgICA8ZGl2IGNsYXNzPSJjNiI+PGxhYmVsPuaVtOWgtOW9j+iJsDwvbGFiZWw+PHNlbGVjdCBpZD0iZnVsbFJlY29yZEVuYWJsZWQiPjxvcHRpb24gdmFsdWU9IjEiIHNlbGVjdGVkPu+mjumWi++8iOW7uuiurgk8L29wdGlvbj48b3B0aW9uIHZhbHVlPSIwIj7pl5zplojvvIzlj6rkv53nlZnlm57muq8gQnVmZmVyPC9vcHRpb24+PC9zZWxlY3Q+PC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImM2Ij48bGFiZWw+6YyE6Z+z5qC85byPPC9sYWJlbD48aW5wdXQgdmFsdWU9IldlYk0gLyBPcHVz77yI6YGp5ZCI6ZW35pmC6ZW36ZaT6YyE6Z+z77yJIiBkaXNhYmxlZD48L2Rpdj4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0iYnRucyI+CiAgICAgIDxidXR0b24gaWQ9InBpY2tGdWxsRmlsZUJ0biIgY2xhc3M9Imdob3N0Ij7wn5OxIOmBuOaTvuWVhuWgtOW9j+iLs+WtmOWtmOS9jee9rjw vYnV0dG9uPgogICAgICA8YnV0dG9uIGlkPSJkb3dubG9hZEZ1bGxCdG4iIGNsYXNzPSJnaG9zdCIgZGlzYWJsZWQ+4oaTIOS4i+i8ieaVtOWgtOW9j+iLsTw vYnV0dG9uPgogICAgICA8YnV0dG9uIGlkPSJhbmFseXNpc1BhY2tCdG4iIGNsYXNzPSJnaG9zdCIgZGlzYWJsZWQ+8J+ngiDlj6/lj4vkuovlvozliIbmnpDljIU8L2J1dHRvbj4KICAgIDwvZGl2PgogICAgPGRpdiBpZD0iZnVsbFJlY0hpbnQiIGNsYXNzPSJoaW50Ij7plbfloLTnm7Tmkq3lu7rorrDlhojlhYjooYzpgLrvvIzpjITpn7PmlbjmlprmnIPovrnpjITovrnliqDlr6vliLDmnKzlnLDmqppmoYjvvIzkuI3pnIDopoHmkIrlgIvkuIDmlbTloLUgM+KAkzUg5bCP5pmC6Z+z6KiK5YWo6YOo55WZ5Zyo54Gj6Ka95Zmo6KiY5oq25L2U44CC6Iul5LiN6YG45L2N572u77yM5pyD5pqu5a2Y5Zyo54Gj6Ka95Zmo6KiY5oq277yM5YGc5q2i5b6M5Y+v5LiL6LyJ44CCPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJhbmFseXNpcy1ub3RlIiBzdHlsZT0ibWFyZ2luLXRvcDoxMHB4Ij7kuovlvozliIbmnpDljIXmnIPoqJjpjITmnKzloLTmmYLplpPjgIFBSSDpoYznrqHpvisjpgIHlpInku7bjgIHpq5jlhYnlgJnpgaXoiIfgkoEvkoJHlm57pppbvvJvmlbTloLTooYzpn7Pku43kv53mjIHmnKzlnLDvvIzlvoznuqzlrprmiqAgQUkg6Lui6YyE77yP6auY5YWJ5YiG5p6Q5pmC5Y+v55u05o6l5L2/55So44CCPC9kaXY+CiAgPC9kaXY+CgogIDxkaXYgY2xhc3M9ImNhcmQiPgogICAgPGgzPkFJIOmXnOazqOm7njwvaDM+JycnCmFzc2VydCBjYXJkX25lZWRsZSBpbiBzLCAnY2FyZCB0YXJnZXQgbm90IGZvdW5kJwpzID0gcy5yZXBsYWNlKGNhcmRfbmVlZGxlLCBjYXJkX2FkZCwgMSkKCnN0YXRlX25lZWRsZSA9ICcnJyAgbGV0IGRpc3BsYXlTdHJlYW0gPSBudWxsLCBhdWRpb0N0eCA9IG51bGwsIHNvdXJjZU5vZGUgPSBudWxsLCBwcm9jZXNzb3IgPSBudWxsLCBhbmFseXNlciA9IG51bGwsIHNpbGVudEdhaW4gPSBudWxsOwogIGxldCBjaHVua3MgPSBbXSwgdG90YWxTYW1wbGVzID0gMCwgc3RhcnRlZEF0ID0gMCwgdGltZXIgPSBudWxsLCBtZXRlclRpbWVyID0gbnVsbCwgY2FuZGlkYXRlU2VxID0gMDsnJycKc3RhdGVfYWRkID0gJycnICBsZXQgZGlzcGxheVN0cmVhbSA9IG51bGwsIGF1ZGlvQ3R4ID0gbnVsbCwgc291cmNlTm9kZSA9IG51bGwsIHByb2Nlc3NvciA9IG51bGwsIGFuYWx5c2VyID0gbnVsbCwgc2lsZW50R2FpbiA9IG51bGw7CiAgbGV0IGNodW5rcyA9IFtdLCB0b3RhbFNhbXBsZXMgPSAwLCBzdGFydGVkQXQgPSAwLCB0aW1lciA9IG51bGwsIG1ldGVyVGltZXIgPSBudWxsLCBjYW5kaWRhdGVTZXEgPSAwOwogIGxldCBmdWxsUmVjb3JkZXIgPSBudWxsLCBmdWxsUGFydHMgPSBbXSwgZnVsbEJsb2IgPSBudWxsLCBmdWxsRmlsZUhhbmRsZSA9IG51bGwsIGZ1bGxXcml0YWJsZSA9IG51bGwsIGZ1bGxTdGFydGVkQXQgPSAwLCBmdWxsTWltZSA9ICcnOycnJwphc3NlcnQgc3RhdGVfbmVlZGxlIGluIHMsICdzdGF0ZSB0YXJnZXQgbm90IGZvdW5kJwpzID0gcy5yZXBsYWNlKHN0YXRlX25lZWRsZSwgc3RhdGVfYWRkLCAxKQoKc3RhcnRfbmVlZGxlID0gJycnICBhc3luYyBmdW5jdGlvbiBzdGFydCgpewogICAgaWYoIW5hdmlnYXRvci5tZWRpYURldmljZXM/LmdldERpc3BsYXlNZWRpYSknJycKaGVscGVycyA9IHInJycgIGZ1bmN0aW9uIHNldEZ1bGxSZWNTdGF0dXMob24sIHRleHQpewogICAgJCgnZnVsbFJlY0RvdCcpLmNsYXNzTGlzdC50b2dnbGUoJ29uJywgISFvbik7CiAgICAkKCdmdWxsUmVjU3RhdHVzJykudGV4dENvbnRlbnQgPSB0ZXh0OwogIH0KCiAgZnVuY3Rpb24gY2hvb3NlUmVjb3JkZXJNaW1lKCl7CiAgICBjb25zdCBvcHRzPVsnYXVkaW8vd2VibTtjb2RlY3M9b3B1cycsJ2F1ZGlvL3dlYm0nXTsKICAgIHJldHVybiBvcHRzLmZpbmQoeD0+d2luZG93Lk1lZGlhUmVjb3JkZXI/LmlzVHlwZVN1cHBvcnRlZD8uKHgpKSB8fCAnJzsKICB9CgogIGFzeW5jIGZ1bmN0aW9uIHBpY2tGdWxsRmlsZSgpewogICAgaWYoIXdpbmRvdy5zaG93U2F2ZUZpbGVQaWNrZXIpewogICAgICBhbGVydCgn55uu5YmN54Gj6Ka95Zmo5LiN5pSv5o+05o6l5YaZ5YWl5qqU5qGI44CC5LuN5Y+v5q2j5bi46整場錄音...')
       return;
     }
     try{
@@ -158,38 +114,41 @@ jobs:
 
   async function start(){
     if(!navigator.mediaDevices?.getDisplayMedia)'''
-          if start_needle not in s:
-              raise SystemExit('start target not found')
-          s = s.replace(start_needle, helpers, 1)
+assert start_needle in s, 'start target not found'
+s = s.replace(start_needle, helpers, 1)
 
-          # 5) Start full recording after system audio setup
-          start_hook = """      chunks=[]; totalSamples=0; startedAt=Date.now(); setLive(true,'正在旁聽');\n      timer=setInterval(updateClock,500); meterTimer=setInterval(updateMeter,100);"""
-          start_hook_add = """      chunks=[]; totalSamples=0; startedAt=Date.now(); setLive(true,'正在旁聽');\n      await startFullRecording();\n      timer=setInterval(updateClock,500); meterTimer=setInterval(updateMeter,100);"""
-          if start_hook not in s:
-              raise SystemExit('start hook not found')
-          s = s.replace(start_hook, start_hook_add, 1)
+start_hook = '''      chunks=[]; totalSamples=0; startedAt=Date.now(); setLive(true,'正在旁聽');
+      timer=setInterval(updateClock,500); meterTimer=setInterval(updateMeter,100);'''
+start_hook_add = '''      chunks=[]; totalSamples=0; startedAt=Date.now(); setLive(true,'正在旁聽');
+      await startFullRecording();
+      timer=setInterval(updateClock,500); meterTimer=setInterval(updateMeter,100);'''
+assert start_hook in s, 'start hook not found'
+s = s.replace(start_hook, start_hook_add, 1)
 
-          # 6) Stop full recording before tearing stream down
-          stop_needle = """  async function stop(){\n    setLive(false,'已停止'); clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null; $('meterBar').style.width='0%';\n    try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close();}catch{}"""
-          stop_add = """  async function stop(){\n    setLive(false,'已停止'); clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null; $('meterBar').style.width='0%';\n    await stopFullRecording();\n    try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close();}catch{}"""
-          if stop_needle not in s:
-              raise SystemExit('stop target not found')
-          s = s.replace(stop_needle, stop_add, 1)
+stop_needle = '''  async function stop(){
+    setLive(false,'已停止'); clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null; $('meterBar').style.width='0%';
+    try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close();}catch{}'''
+stop_add = '''  async function stop(){
+    setLive(false,'已停止'); clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null; $('meterBar').style.width='0%';
+    await stopFullRecording();
+    try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close();}catch{}'''
+assert stop_needle in s, 'stop target not found'
+s = s.replace(stop_needle, stop_add, 1)
 
-          # 7) Prevent changing full recording while live
-          live_needle = """  function setLive(live,msg){ $('liveDot').classList.toggle('live',live); $('statusText').textContent=msg; $('startBtn').disabled=live; $('stopBtn').disabled=!live; $('saveBtn').disabled=!live; }"""
-          live_add = """  function setLive(live,msg){ $('liveDot').classList.toggle('live',live); $('statusText').textContent=msg; $('startBtn').disabled=live; $('stopBtn').disabled=!live; $('saveBtn').disabled=!live; $('fullRecordEnabled').disabled=live; $('pickFullFileBtn').disabled=live; }"""
-          if live_needle not in s:
-              raise SystemExit('setLive target not found')
-          s = s.replace(live_needle, live_add, 1)
+live_needle = '''  function setLive(live,msg){ $('liveDot').classList.toggle('live',live); $('statusText').textContent=msg; $('startBtn').disabled=live; $('stopBtn').disabled=!live; $('saveBtn').disabled=!live; }'''
+live_add = '''  function setLive(live,msg){ $('liveDot').classList.toggle('live',live); $('statusText').textContent=msg; $('startBtn').disabled=live; $('stopBtn').disabled=!live; $('saveBtn').disabled=!live; $('fullRecordEnabled').disabled=live; $('pickFullFileBtn').disabled=live; }'''
+assert live_needle in s, 'setLive target not found'
+s = s.replace(live_needle, live_add, 1)
 
-          p.write_text(s, encoding='utf-8')
-          PY
+p.write_text(s, encoding='utf-8')
+print('patched', p)
+' | base64 -d > /tmp/patch.py
+          python /tmp/patch.py
       - name: Commit patch
         run: |
           if git diff --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
-          git config user.email "418982378+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add tools/miyu_ai_listener.html
           git commit -m "add full-session recording and analysis pack to Miyu listener"
           git push
