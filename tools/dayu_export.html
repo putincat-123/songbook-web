@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>大鱼歌单导出</title>
+<style>
+  :root{--bg:#f6f8fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--brand:#2563eb;--brand2:#1d4ed8;--ok:#16a34a;--danger:#dc2626;--shadow:0 6px 20px rgba(15,23,42,.08)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+  .app{max-width:720px;margin:0 auto;padding:18px 14px 40px}
+  h1{font-size:26px;margin:4px 0 6px}.sub{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:16px;margin-bottom:14px}
+  label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:6px}
+  select{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:16px;background:#fff;color:var(--text)}
+  .summary{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{background:#eff6ff;color:#1e3a8a;border-radius:999px;padding:8px 10px;font-size:13px;font-weight:700}
+  .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}button{border:0;border-radius:12px;padding:12px 14px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--brand);color:#fff}.primary:hover{background:var(--brand2)}.ghost{background:#fff;border:1px solid var(--line);color:var(--text)}
+  .preview{margin-top:12px;border:1px solid var(--line);border-radius:12px;background:#fafafa;padding:12px;white-space:pre-wrap;word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.65;max-height:320px;overflow:auto}
+  .hint{color:var(--muted);font-size:13px;line-height:1.6}.status{margin-top:10px;font-size:13px;font-weight:700}.ok{color:var(--ok)}.err{color:var(--danger)}
+  @media(max-width:600px){.app{padding:12px 10px 32px}.btns{flex-direction:column}.btns button{width:100%;min-height:48px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <h1>🐟 大鱼歌单导出</h1>
+  <div class="sub">从主播线上曲库生成大鱼直播助手可上传的 TXT。每行格式：<strong>歌名 歌手</strong>。</div>
+
+  <div class="card">
+    <label for="streamer">主播</label>
+    <select id="streamer">
+      <option value="miyu">谜屿</option>
+      <option value="xingxing">星星</option>
+    </select>
+    <div class="summary" id="summary"><span class="chip">尚未载入</span></div>
+    <div class="btns">
+      <button class="primary" id="downloadBtn" disabled>下载大鱼歌单 TXT</button>
+      <button class="ghost" id="reloadBtn">重新载入曲库</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:800;margin-bottom:8px">格式预览</div>
+    <div class="preview" id="preview">载入后显示前 20 首...</div>
+  </div>
+
+  <div class="card">
+    <div class="hint">导出规则：每首歌一行；优先使用 songName，没有时使用 name；歌手为空时只输出歌名；自动去除换行、Tab 与多余空格。TXT 使用 UTF-8 编码，适合直接上传到大鱼直播助手的「主播歌单」。</div>
+  </div>
+</div>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  let currentSongs = [];
+
+  const config = {
+    miyu: { name: '谜屿', url: '../data/miyu/songs.json', filename: 'miyu-dayu-songlist.txt' },
+    xingxing: { name: '星星', url: '../data/xingxing/songs.json', filename: 'xingxing-dayu-songlist.txt' }
+  };
+
+  function clean(value){
+    return String(value ?? '')
+      .replace(/[\r\n\t]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function normalizeRows(raw){
+    const list = Array.isArray(raw) ? raw : (raw?.songs || raw?.data || raw?.items || []);
+    return list.map(song => {
+      const title = clean(song.songName || song.name || song.title || '');
+      const artist = clean(song.artist || song.singer || song.artistName || '');
+      return { title, artist };
+    }).filter(song => song.title);
+  }
+
+  function toDayuText(songs){
+    return songs.map(song => song.artist ? `${song.title} ${song.artist}` : song.title).join('\r\n');
+  }
+
+  function render(){
+    const withArtist = currentSongs.filter(s => s.artist).length;
+    $('summary').innerHTML = `
+      <span class="chip">歌曲 ${currentSongs.length} 首</span>
+      <span class="chip">有歌手 ${withArtist} 首</span>
+      <span class="chip">无歌手 ${currentSongs.length - withArtist} 首</span>`;
+    $('preview').textContent = currentSongs.length ? toDayuText(currentSongs.slice(0,20)) : '没有可导出的歌曲';
+    $('downloadBtn').disabled = !currentSongs.length;
+  }
+
+  async function loadSongs(){
+    const key = $('streamer').value;
+    const cfg = config[key];
+    currentSongs = [];
+    $('downloadBtn').disabled = true;
+    $('summary').innerHTML = '<span class="chip">载入中...</span>';
+    $('preview').textContent = '载入中...';
+    $('status').className = 'status';
+    $('status').textContent = '';
+    try{
+      const res = await fetch(`${cfg.url}?t=${Date.now()}`, { cache: 'no-store' });
+      if(!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      currentSongs = normalizeRows(json);
+      render();
+      $('status').className = 'status ok';
+      $('status').textContent = `已载入 ${cfg.name} 曲库。`;
+    }catch(err){
+      $('summary').innerHTML = '<span class="chip">载入失败</span>';
+      $('preview').textContent = '曲库载入失败，请稍后重试。';
+      $('status').className = 'status err';
+      $('status').textContent = `载入失败：${err.message}`;
+    }
+  }
+
+  function download(){
+    if(!currentSongs.length) return;
+    const key = $('streamer').value;
+    const text = toDayuText(currentSongs);
+    const blob = new Blob(['\ufeff', text], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = config[key].filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    $('status').className = 'status ok';
+    $('status').textContent = `已生成 ${currentSongs.length} 首大鱼歌单。`;
+  }
+
+  $('streamer').addEventListener('change', loadSongs);
+  $('reloadBtn').addEventListener('click', loadSongs);
+  $('downloadBtn').addEventListener('click', download);
+  loadSongs();
+})();
+</script>
+</body>
+</html>
