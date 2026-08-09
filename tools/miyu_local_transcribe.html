@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Miyu 本机转录</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--brand:#2563eb;--ok:#16a34a;--warn:#d97706;--danger:#dc2626;--shadow:0 6px 20px rgba(15,23,42,.08);--radius:16px}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+.app{max-width:920px;margin:0 auto;padding:16px 16px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.title{font-size:28px;font-weight:800}.sub,.hint{color:var(--muted);line-height:1.6}.sub{font-size:14px;margin:8px 0 14px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:14px}.card h3{font-size:18px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.c12{grid-column:span 12}.c6{grid-column:span 6}.c4{grid-column:span 4}.c8{grid-column:span 8}label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:15px;background:#fff;color:var(--text)}textarea{min-height:280px;resize:vertical;line-height:1.55}.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{border:none;border-radius:12px;padding:11px 14px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--brand);color:#fff}.ghost{background:#fff;border:1px solid var(--line)}button:disabled{opacity:.45;cursor:not-allowed}.status{display:flex;align-items:center;gap:8px;font-weight:800}.dot{width:10px;height:10px;border-radius:50%;background:#94a3b8}.dot.live{background:var(--ok);box-shadow:0 0 0 5px rgba(22,163,74,.12)}.dot.warn{background:#f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.12)}.progress{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:12px}.progress>div{height:100%;width:0;background:var(--brand);transition:width .2s}.notice{background:#fffbeb;color:#92400e;border:1px solid #fde68a;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}.okbox{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}.back{border:1px solid var(--line);background:#fff;padding:10px 13px;border-radius:12px;font-weight:800;cursor:pointer}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.metric{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fafafa}.metric small{display:block;color:var(--muted);margin-bottom:6px}.metric strong{font-size:20px}@media(max-width:720px){.app{padding:12px 10px 72px}.title{font-size:23px}.grid{grid-template-columns:1fr}.c12,.c6,.c4,.c8{grid-column:1/-1}.metrics{grid-template-columns:1fr}.btns{flex-direction:column}.btns button{width:100%;min-height:48px}input,select,textarea{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="title">📝 本机 Whisper 转录</div><button class="back" onclick="location.href='./miyu_ai_listener.html'">← 回 AI 旁听</button></div>
+  <div class="sub">免费在浏览器本机转录录音，不上传到我们的服务器。第一次会从 Hugging Face 下载 Whisper 模型，之后浏览器会缓存。</div>
+
+  <div class="card">
+    <h3>1. 选择录音</h3>
+    <div class="grid">
+      <div class="c8"><label>音频文件</label><input id="audioFile" type="file" accept="audio/*,.webm,.mp3,.wav,.m4a,.ogg"></div>
+      <div class="c4"><label>模型</label><select id="model"><option value="onnx-community/whisper-tiny">Tiny｜最快，先测试</option><option value="onnx-community/whisper-base" selected>Base｜建议</option><option value="onnx-community/whisper-small">Small｜更准但很大</option></select></div>
+      <div class="c6"><label>语言</label><select id="language"><option value="zh" selected>中文</option><option value="en">英文</option><option value="ja">日文</option><option value="ko">韩文</option></select></div>
+      <div class="c6"><label>运算方式</label><select id="device"><option value="auto" selected>自动（优先 WebGPU）</option><option value="webgpu">WebGPU</option><option value="wasm">CPU / WASM</option></select></div>
+    </div>
+    <div class="btns"><button id="startBtn" class="primary">▶ 开始转录</button><button id="stopBtn" class="ghost" disabled>停止</button></div>
+    <div id="notice" class="notice" style="margin-top:12px">建议先用 Base。长直播可能需要较长时间；转录时尽量不要关闭页面。</div>
+  </div>
+
+  <div class="card">
+    <h3>2. 转录状态</h3>
+    <div class="status"><span id="dot" class="dot"></span><span id="status">待机</span></div>
+    <div class="progress"><div id="bar"></div></div>
+    <div class="metrics"><div class="metric"><small>音频长度</small><strong id="duration">--:--</strong></div><div class="metric"><small>已识别段落</small><strong id="segments">0</strong></div><div class="metric"><small>运行设备</small><strong id="deviceText">-</strong></div></div>
+  </div>
+
+  <div class="card">
+    <h3>3. 结果</h3>
+    <textarea id="result" placeholder="转录完成后会显示带时间码的内容"></textarea>
+    <div class="btns"><button id="srtBtn" class="ghost" disabled>⬇ 下载 SRT</button><button id="txtBtn" class="ghost" disabled>⬇ 下载 TXT</button><button id="copyBtn" class="ghost" disabled>复制全文</button></div>
+    <div class="hint">给 AI 找高光时，优先使用 SRT，因为每一段都有时间码。</div>
+  </div>
+
+  <div class="okbox">🔒 音频在你的浏览器里解码并运行 Whisper。模型文件来自 Hugging Face；录音本身不会上传到本站服务器。</div>
+</div>
+<script type="module">
+const $=id=>document.getElementById(id);let abort=false,asr=null,lastSrt='',lastTxt='';
+function fmt(s){s=Math.max(0,Number(s)||0);const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=Math.floor(s%60),ms=Math.round((s-Math.floor(s))*1000);return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')},${String(ms).padStart(3,'0')}`}
+function fmtShort(s){s=Math.floor(s||0);return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`}
+function save(text,name,type='text/plain'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),10000)}
+function setStatus(text,state=''){ $('status').textContent=text;$('dot').className='dot'+(state?' '+state:'') }
+function monoDownsample(buffer,target=16000){const ch=buffer.numberOfChannels,len=buffer.length,mono=new Float32Array(len);for(let c=0;c<ch;c++){const d=buffer.getChannelData(c);for(let i=0;i<len;i++)mono[i]+=d[i]/ch}if(buffer.sampleRate===target)return mono;const ratio=buffer.sampleRate/target,out=new Float32Array(Math.round(mono.length/ratio));for(let i=0;i<out.length;i++){const a=Math.floor(i*ratio),b=Math.min(mono.length,Math.floor((i+1)*ratio));let sum=0,n=0;for(let j=a;j<b;j++){sum+=mono[j];n++}out[i]=n?sum/n:mono[Math.min(a,mono.length-1)]||0}return out}
+async function decode(file){const ctx=new (window.AudioContext||window.webkitAudioContext)({sampleRate:48000});const arr=await file.arrayBuffer();const buf=await ctx.decodeAudioData(arr.slice(0));await ctx.close();$('duration').textContent=fmtShort(buf.duration);return {wave:monoDownsample(buf),duration:buf.duration}}
+function buildSrt(chunks){return chunks.map((c,i)=>{const t=c.timestamp||[0,0],end=t[1]??t[0];return `${i+1}\n${fmt(t[0])} --> ${fmt(end)}\n${String(c.text||'').trim()}\n`}).join('\n')}
+async function loadASR(){const mod=await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1/+esm');const deviceSel=$('device').value;let device=deviceSel;if(deviceSel==='auto')device=('gpu' in navigator)?'webgpu':'wasm';$('deviceText').textContent=device==='webgpu'?'WebGPU':'CPU';setStatus('正在下载/加载模型…','warn');$('bar').style.width='8%';asr=await mod.pipeline('automatic-speech-recognition',$('model').value,{device,dtype:device==='webgpu'?'fp16':'q8',progress_callback:p=>{if(p?.progress!=null){const pct=Math.min(45,8+Math.round(p.progress*.35));$('bar').style.width=pct+'%'}}});return device}
+$('startBtn').onclick=async()=>{const file=$('audioFile').files?.[0];if(!file)return alert('请先选择录音文件。');abort=false;$('startBtn').disabled=true;$('stopBtn').disabled=false;$('srtBtn').disabled=$('txtBtn').disabled=$('copyBtn').disabled=true;$('result').value='';lastSrt=lastTxt='';try{setStatus('正在解码音频…','warn');$('bar').style.width='3%';const {wave,duration}=await decode(file);if(abort)throw new Error('已停止');await loadASR();if(abort)throw new Error('已停止');setStatus('Whisper 正在转录…','live');$('bar').style.width='50%';const out=await asr(wave,{language:$('language').value,task:'transcribe',return_timestamps:true,chunk_length_s:30,stride_length_s:5});if(abort)throw new Error('已停止');const chunks=Array.isArray(out.chunks)?out.chunks:[];$('segments').textContent=chunks.length;lastTxt=String(out.text||'').trim();lastSrt=chunks.length?buildSrt(chunks):`1\n00:00:00,000 --> ${fmt(duration)}\n${lastTxt}\n`;$('result').value=chunks.length?chunks.map(c=>`[${fmtShort(c.timestamp?.[0]||0)}] ${String(c.text||'').trim()}`).join('\n'):lastTxt;$('bar').style.width='100%';setStatus('转录完成 ✓','live');$('srtBtn').disabled=$('txtBtn').disabled=$('copyBtn').disabled=false}catch(e){console.error(e);setStatus(e.message==='已停止'?'已停止':'转录失败','');$('notice').className='notice';$('notice').textContent='失败：'+(e.message||e)+'。如果 WebGPU 不兼容，可把运算方式改成 CPU / WASM 再试。'}finally{$('startBtn').disabled=false;$('stopBtn').disabled=true}}
+$('stopBtn').onclick=()=>{abort=true;setStatus('等待当前步骤停止…','warn')};$('srtBtn').onclick=()=>save(lastSrt,`miyu_transcript_${Date.now()}.srt`,'application/x-subrip');$('txtBtn').onclick=()=>save(lastTxt,`miyu_transcript_${Date.now()}.txt`);$('copyBtn').onclick=async()=>{await navigator.clipboard.writeText($('result').value);$('copyBtn').textContent='已复制 ✓';setTimeout(()=>$('copyBtn').textContent='复制全文',1200)};
+</script>
+</body>
+</html>
