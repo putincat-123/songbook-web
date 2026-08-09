@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Miyu AI 直播旁聽</title>
 <style>
-:root{--bg:#f6f8fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--brand:#2563eb;--brand2:#1d4ed8;--ok:#16a34a;--danger:#dc2626;--warn:#d97706;--shadow:0 6px 20px rgba(15,23,42,.08);--radius:16px}
+:root{--bg:#f6f8fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--brand:#2563eb;--brand2:#1d4ed8;--ok:#16a34a;--danger:#dc2626;--shadow:0 6px 20px rgba(15,23,42,.08);--radius:16px}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text)}
-.app{max-width:920px;margin:0 auto;padding:16px 16px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.title{font-size:28px;font-weight:800}.back{border:1px solid var(--line);background:#fff;color:var(--text);padding:10px 13px;border-radius:12px;font-weight:800;cursor:pointer}.sub{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.app{max-width:920px;margin:0 auto;padding:16px 16px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.title{font-size:28px;font-weight:800}.back{border:1px solid var(--line);background:#fff;color:var(--text);padding:10px 13px;border-radius:12px;font-weight:800;cursor:pointer}.sub,.hint,.mini{color:var(--muted);line-height:1.6}.sub{font-size:14px;margin-bottom:14px}.hint{font-size:13px;margin-top:10px}.mini{font-size:12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:14px}.card h3{font-size:18px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.c12{grid-column:span 12}.c8{grid-column:span 8}.c6{grid-column:span 6}.c4{grid-column:span 4}
-.status{display:flex;align-items:center;gap:8px;font-weight:800}.dot{width:10px;height:10px;border-radius:50%;background:#94a3b8}.dot.live{background:var(--ok);box-shadow:0 0 0 5px rgba(22,163,74,.12)}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.metric{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fafafa}.metric small{display:block;color:var(--muted);margin-bottom:6px}.metric strong{font-size:22px}
-.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{border:none;border-radius:12px;padding:11px 14px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--brand);color:white}.primary:hover{background:var(--brand2)}.ghost{background:#fff;border:1px solid var(--line);color:var(--text)}.danger{background:#fef2f2;color:var(--danger);border:1px solid #fecaca}.save{background:#eef2ff;color:#3730a3}.save:disabled,.primary:disabled,.ghost:disabled{opacity:.45;cursor:not-allowed}
-label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:6px}input,select{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:15px;background:#fff;color:var(--text)}.hint{font-size:13px;color:var(--muted);line-height:1.6;margin-top:10px}.notice{background:#fffbeb;color:#92400e;border:1px solid #fde68a;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}.okbox{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}
-.meter{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:10px}.meter>div{height:100%;width:0;background:linear-gradient(90deg,#60a5fa,#22c55e);transition:width .08s linear}.focus-list{display:flex;gap:8px;flex-wrap:wrap}.focus{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:8px 10px;background:#fff}.focus.off{opacity:.45}.focus input{width:auto}.stars{font-size:12px;color:#f59e0b;letter-spacing:-1px}.focus button{padding:0 3px;background:transparent;color:#9ca3af;font-size:14px}.add-row{display:grid;grid-template-columns:1fr 130px auto;gap:8px;margin-top:12px}
-.candidate{border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}.candidate-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.tag{display:inline-block;background:#eff6ff;color:#1e40af;border-radius:999px;padding:5px 8px;font-size:12px;font-weight:800}.candidate-meta{font-size:13px;color:var(--muted);line-height:1.5;margin-top:6px}.feedback{display:flex;gap:6px}.feedback button{padding:7px 10px;background:#fff;border:1px solid var(--line)}.empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--muted);text-align:center}.mini{font-size:12px;color:var(--muted)}
+.status,.fullrec{display:flex;align-items:center;gap:8px;font-weight:800}.dot,.rec-dot{width:10px;height:10px;border-radius:50%;background:#94a3b8}.dot.live{background:var(--ok);box-shadow:0 0 0 5px rgba(22,163,74,.12)}.rec-dot.on{background:var(--danger);box-shadow:0 0 0 5px rgba(220,38,38,.10)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.metric{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fafafa}.metric small{display:block;color:var(--muted);margin-bottom:6px}.metric strong{font-size:22px}.meter{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:10px}.meter>div{height:100%;width:0;background:linear-gradient(90deg,#60a5fa,#22c55e);transition:width .08s linear}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{border:none;border-radius:12px;padding:11px 14px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--brand);color:#fff}.primary:hover{background:var(--brand2)}.ghost{background:#fff;border:1px solid var(--line);color:var(--text)}.danger{background:#fef2f2;color:var(--danger);border:1px solid #fecaca}.save{background:#eef2ff;color:#3730a3}button:disabled{opacity:.45;cursor:not-allowed}
+label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:6px}input,select{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:15px;background:#fff;color:var(--text)}.notice{background:#fffbeb;color:#92400e;border:1px solid #fde68a;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}.okbox{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}.analysis-note{border-left:3px solid #93c5fd;padding:9px 11px;background:#f8fbff;border-radius:8px;font-size:13px;color:#475569;line-height:1.6}
+.focus-list{display:flex;gap:8px;flex-wrap:wrap}.focus{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:8px 10px;background:#fff}.focus.off{opacity:.45}.focus input{width:auto}.stars{font-size:12px;color:#f59e0b;letter-spacing:-1px}.focus button{padding:0 3px;background:transparent;color:#9ca3af;font-size:14px}.add-row{display:grid;grid-template-columns:1fr 130px auto;gap:8px;margin-top:12px}
+.candidate{border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}.candidate-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.tag{display:inline-block;background:#eff6ff;color:#1e40af;border-radius:999px;padding:5px 8px;font-size:12px;font-weight:800}.candidate-meta{font-size:13px;color:var(--muted);line-height:1.5;margin-top:6px}.feedback{display:flex;gap:6px}.feedback button{padding:7px 10px;background:#fff;border:1px solid var(--line)}.empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--muted);text-align:center}
 @media(max-width:720px){.app{padding:12px 10px 72px}.title{font-size:23px}.grid{grid-template-columns:1fr}.c12,.c8,.c6,.c4{grid-column:1/-1}.metrics{grid-template-columns:1fr 1fr}.metrics .metric:last-child{grid-column:1/-1}.btns{flex-direction:column}.btns button{width:100%;min-height:48px}.add-row{grid-template-columns:1fr}.candidate-head{flex-direction:column}.feedback{width:100%}.feedback button{flex:1}input,select{font-size:16px}}
 </style>
 </head>
 <body>
 <div class="app">
   <div class="top"><div class="title">🎧 AI 直播旁聽</div><button class="back" onclick="location.href='./miyu_toolbox.html'">← 回工具箱</button></div>
-  <div class="sub">MVP：在瀏覽器本機保留最近 5 分鐘音訊，需要時可往回保存。錄音不會自動上傳；關閉頁面後暫存音訊會消失。</div>
+  <div class="sub">V0.2：保留回溯高光，同時可錄下整場直播。整場錄音與高光都只留在主播本機；下播後可匯出分析包，供後續 AI 轉錄與高光分析。</div>
 
   <div class="card">
     <h3>直播旁聽</h3>
@@ -28,15 +29,11 @@ label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bot
     <div class="metrics">
       <div class="metric"><small>旁聽時間</small><strong id="elapsed">00:00:00</strong></div>
       <div class="metric"><small>回溯 Buffer</small><strong id="bufferTime">00:00 / 05:00</strong></div>
-      <div class="metric"><small>今日候選</small><strong id="candidateCount">0</strong></div>
+      <div class="metric"><small>高光候選</small><strong id="candidateCount">0</strong></div>
     </div>
     <div class="meter" title="音訊輸入音量"><div id="meterBar"></div></div>
-    <div id="captureHint" class="notice" style="margin-top:12px">開始時 Chrome 會要求選擇分享來源。Windows 建議選「整個螢幕」並開啟「分享系統音訊」；若抓不到音訊，工具會立即提示。</div>
-    <div class="btns">
-      <button id="startBtn" class="primary">▶ 開始旁聽</button>
-      <button id="stopBtn" class="danger" disabled>■ 停止旁聽</button>
-      <button id="saveBtn" class="save" disabled>⭐ 保存剛才 2 分鐘</button>
-    </div>
+    <div id="captureHint" class="notice" style="margin-top:12px">開始時 Chrome 會要求選擇分享來源。Windows 建議選「整個螢幕」並開啟「分享系統音訊」。</div>
+    <div class="btns"><button id="startBtn" class="primary">▶ 開始旁聽</button><button id="stopBtn" class="danger" disabled>■ 停止旁聽</button><button id="saveBtn" class="save" disabled>⭐ 保存剛才 2 分鐘</button></div>
   </div>
 
   <div class="card">
@@ -45,142 +42,82 @@ label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bot
       <div class="c6"><label>保留最近</label><select id="bufferMinutes"><option value="3">3 分鐘</option><option value="5" selected>5 分鐘</option><option value="8">8 分鐘</option><option value="10">10 分鐘</option></select></div>
       <div class="c6"><label>按下保存時，往回取</label><select id="saveSeconds"><option value="30">30 秒</option><option value="60">1 分鐘</option><option value="90">1 分 30 秒</option><option value="120" selected>2 分鐘</option><option value="180">3 分鐘</option></select></div>
     </div>
-    <div class="hint">保存格式：16 kHz / Mono / WAV，適合後續轉錄與 AI 分析。Buffer 只留在本機記憶體，不會累積成整場 5 小時的大檔案。</div>
+    <div class="hint">回溯片段使用 16 kHz / Mono / WAV，方便後續語音轉文字與 AI 分析。</div>
+  </div>
+
+  <div class="card">
+    <h3>整場錄音與事後分析</h3>
+    <div class="fullrec"><span id="fullRecDot" class="rec-dot"></span><span id="fullRecStatus">整場錄音：待機</span></div>
+    <div class="grid" style="margin-top:12px">
+      <div class="c6"><label>整場錄音</label><select id="fullRecordEnabled"><option value="1" selected>開啟（建議）</option><option value="0">關閉，只保留回溯 Buffer</option></select></div>
+      <div class="c6"><label>錄音格式</label><input value="WebM / Opus（適合長時間錄音）" disabled></div>
+    </div>
+    <div class="btns"><button id="pickFullFileBtn" class="ghost">📁 選擇整場錄音保存位置</button><button id="downloadFullBtn" class="ghost" disabled>⬇ 下載整場錄音</button><button id="analysisPackBtn" class="ghost" disabled>🧠 匯出事後分析包</button></div>
+    <div id="fullRecHint" class="hint">長場直播建議先選擇保存位置，錄音會邊錄邊寫入本機檔案；若不選位置，會暫存在瀏覽器記憶體，停止後再下載。</div>
+    <div class="analysis-note" style="margin-top:10px">分析包會包含本場時間、AI 關注點、高光候選與 👍／👎 回饋。下一版接上轉錄／AI 後，可用整場錄音做事後掃描，補抓直播中漏掉的高光。</div>
   </div>
 
   <div class="card">
     <h3>AI 關注點</h3>
-    <div class="hint" style="margin:0 0 10px">第一版先作為高光標記規則，可自由增減與調整權重。自動判斷會在錄音 MVP 穩定後接入。</div>
+    <div class="hint" style="margin:0 0 10px">關注點可自由增減與調整權重，不要求每種類型都一定要抓。</div>
     <div id="focusList" class="focus-list"></div>
-    <div class="add-row">
-      <input id="newFocusName" placeholder="新增關注點，例如：快速學歌" />
-      <select id="newFocusWeight"><option value="5">★★★★★</option><option value="4" selected>★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select>
-      <button id="addFocusBtn" class="ghost">＋ 新增</button>
-    </div>
+    <div class="add-row"><input id="newFocusName" placeholder="新增關注點，例如：快速學歌" /><select id="newFocusWeight"><option value="5">★★★★★</option><option value="4" selected>★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select><button id="addFocusBtn" class="ghost">＋ 新增</button></div>
   </div>
 
   <div class="card">
     <h3>高光候選</h3>
-    <div class="grid">
-      <div class="c8"><label>保存時標記</label><select id="saveTag"></select></div>
-      <div class="c4"><label>&nbsp;</label><button id="clearCandidatesBtn" class="ghost" style="width:100%">清空本次候選</button></div>
-    </div>
+    <div class="grid"><div class="c8"><label>保存時標記</label><select id="saveTag"></select></div><div class="c4"><label>&nbsp;</label><button id="clearCandidatesBtn" class="ghost" style="width:100%">清空本次候選</button></div></div>
     <div id="candidates"><div class="empty">開始旁聽後，按「保存剛才」就會出現在這裡。</div></div>
   </div>
 
-  <div class="okbox">🔒 隱私：本頁的錄音處理都在瀏覽器本機完成。只有你主動下載的 WAV 檔會留下；目前版本不會把直播音訊傳到 GitHub、Vercel 或任何 AI API。</div>
+  <div class="okbox">🔒 隱私：目前所有錄音都在瀏覽器本機完成，不會自動傳到 GitHub、Vercel 或 AI API。</div>
 </div>
 <script>
 (() => {
-  const TARGET_RATE = 16000;
-  const $ = id => document.getElementById(id);
-  let displayStream = null, audioCtx = null, sourceNode = null, processor = null, analyser = null, silentGain = null;
-  let chunks = [], totalSamples = 0, startedAt = 0, timer = null, meterTimer = null, candidateSeq = 0;
-  let candidates = [];
-  const focusKey = 'miyu_listener_focus_v1';
-  const defaultFocus = [
-    {name:'🎧 故事感', weight:5, enabled:true},
-    {name:'🧠 研究腦', weight:4, enabled:true},
-    {name:'🌱 成長', weight:3, enabled:true},
-    {name:'😐 冷幽默', weight:4, enabled:true}
-  ];
-  let focuses = loadFocuses();
-
-  function loadFocuses(){ try{ const x=JSON.parse(localStorage.getItem(focusKey)); return Array.isArray(x)&&x.length?x:structuredClone(defaultFocus); }catch{return structuredClone(defaultFocus);} }
-  function saveFocuses(){ localStorage.setItem(focusKey, JSON.stringify(focuses)); renderFocuses(); }
-  function esc(s){ return String(s).replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c])); }
-  function stars(n){ return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,5-n); }
-
-  function renderFocuses(){
-    $('focusList').innerHTML = focuses.map((f,i)=>`<div class="focus ${f.enabled?'':'off'}"><input type="checkbox" ${f.enabled?'checked':''} data-i="${i}" class="focus-toggle"><span>${esc(f.name)}</span><span class="stars">${stars(f.weight)}</span><button title="刪除" data-del="${i}">×</button></div>`).join('');
-    document.querySelectorAll('.focus-toggle').forEach(el=>el.onchange=()=>{ focuses[+el.dataset.i].enabled=el.checked; saveFocuses(); });
-    document.querySelectorAll('[data-del]').forEach(el=>el.onclick=()=>{ focuses.splice(+el.dataset.del,1); saveFocuses(); });
-    const enabled = focuses.filter(f=>f.enabled);
-    $('saveTag').innerHTML = '<option value="未分類">未分類</option>'+enabled.map(f=>`<option value="${esc(f.name)}">${esc(f.name)}</option>`).join('');
-  }
-  $('addFocusBtn').onclick=()=>{ const name=$('newFocusName').value.trim(); if(!name)return; focuses.push({name,weight:+$('newFocusWeight').value,enabled:true}); $('newFocusName').value=''; saveFocuses(); };
-
-  function downsampleMono(input, inRate, outRate){
-    if(inRate===outRate) return new Float32Array(input);
-    const ratio=inRate/outRate, outLen=Math.max(1,Math.round(input.length/ratio)), out=new Float32Array(outLen);
-    for(let i=0;i<outLen;i++){
-      const start=Math.floor(i*ratio), end=Math.min(input.length,Math.floor((i+1)*ratio)); let sum=0,c=0;
-      for(let j=start;j<end;j++){sum+=input[j];c++;} out[i]=c?sum/c:input[Math.min(start,input.length-1)]||0;
-    }
-    return out;
-  }
-
-  function pushAudio(buffer){
-    const channels=buffer.numberOfChannels, len=buffer.length, mono=new Float32Array(len);
-    for(let ch=0;ch<channels;ch++){ const d=buffer.getChannelData(ch); for(let i=0;i<len;i++) mono[i]+=d[i]/channels; }
-    const ds=downsampleMono(mono,audioCtx.sampleRate,TARGET_RATE); chunks.push(ds); totalSamples+=ds.length; trimBuffer();
-  }
-  function trimBuffer(){
-    const maxSamples=+$('bufferMinutes').value*60*TARGET_RATE;
-    while(totalSamples>maxSamples && chunks.length){ const over=totalSamples-maxSamples, first=chunks[0]; if(first.length<=over){chunks.shift();totalSamples-=first.length;}else{chunks[0]=first.slice(over);totalSamples-=over;} }
-  }
-  $('bufferMinutes').onchange=trimBuffer;
-
-  function fmtSec(s){s=Math.max(0,Math.floor(s));const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;return h?`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`:`${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`}
-  function updateClock(){ const e=startedAt?(Date.now()-startedAt)/1000:0; $('elapsed').textContent=fmtSec(e); $('bufferTime').textContent=`${fmtSec(totalSamples/TARGET_RATE)} / ${String($('bufferMinutes').value).padStart(2,'0')}:00`; }
-  function setLive(live,msg){ $('liveDot').classList.toggle('live',live); $('statusText').textContent=msg; $('startBtn').disabled=live; $('stopBtn').disabled=!live; $('saveBtn').disabled=!live; }
-
-  async function start(){
-    if(!navigator.mediaDevices?.getDisplayMedia){ alert('這個瀏覽器不支援系統音訊擷取，請使用最新版 Chrome / Edge。'); return; }
-    try{
-      displayStream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:1,max:2}},audio:true});
-      if(!displayStream.getAudioTracks().length){ displayStream.getTracks().forEach(t=>t.stop()); displayStream=null; alert('沒有取得音訊。請重新開始，選擇分享來源時確認「分享系統音訊」已開啟。'); return; }
-      audioCtx=new (window.AudioContext||window.webkitAudioContext)(); await audioCtx.resume();
-      sourceNode=audioCtx.createMediaStreamSource(new MediaStream(displayStream.getAudioTracks()));
-      analyser=audioCtx.createAnalyser(); analyser.fftSize=512;
-      processor=audioCtx.createScriptProcessor(4096,Math.max(1,sourceNode.channelCount||1),1);
-      silentGain=audioCtx.createGain(); silentGain.gain.value=0;
-      sourceNode.connect(analyser); sourceNode.connect(processor); processor.connect(silentGain); silentGain.connect(audioCtx.destination);
-      processor.onaudioprocess=e=>pushAudio(e.inputBuffer);
-      chunks=[]; totalSamples=0; startedAt=Date.now(); setLive(true,'正在旁聽');
-      timer=setInterval(updateClock,500); meterTimer=setInterval(updateMeter,100);
-      displayStream.getTracks().forEach(t=>t.addEventListener('ended',()=>{if(displayStream)stop();},{once:true}));
-      $('captureHint').className='okbox'; $('captureHint').textContent='已取得系統音訊。你可以把這個頁面放在背景，工具只保留最近的回溯 Buffer。';
-    }catch(err){ if(err?.name!=='NotAllowedError') alert('啟動失敗：'+(err.message||err)); }
-  }
-  async function stop(){
-    setLive(false,'已停止'); clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null; $('meterBar').style.width='0%';
-    try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close();}catch{}
-    displayStream=audioCtx=sourceNode=processor=analyser=silentGain=null; startedAt=0; updateClock();
-  }
-  $('startBtn').onclick=start; $('stopBtn').onclick=stop;
-
-  function updateMeter(){ if(!analyser)return; const a=new Uint8Array(analyser.fftSize); analyser.getByteTimeDomainData(a);let sum=0;for(const v of a){const x=(v-128)/128;sum+=x*x;}const rms=Math.sqrt(sum/a.length),pct=Math.min(100,Math.round(rms*350));$('meterBar').style.width=pct+'%'; }
-
-  function getLastSamples(sec){
-    const need=Math.min(totalSamples,Math.floor(sec*TARGET_RATE)); const out=new Float32Array(need); let pos=need;
-    for(let i=chunks.length-1;i>=0&&pos>0;i--){const c=chunks[i],take=Math.min(pos,c.length);pos-=take;out.set(c.subarray(c.length-take),pos);} return out;
-  }
-  function wavBlob(samples){
-    const b=new ArrayBuffer(44+samples.length*2),v=new DataView(b); let p=0; const str=s=>{for(let i=0;i<s.length;i++)v.setUint8(p++,s.charCodeAt(i));};
-    str('RIFF');v.setUint32(p,36+samples.length*2,true);p+=4;str('WAVE');str('fmt ');v.setUint32(p,16,true);p+=4;v.setUint16(p,1,true);p+=2;v.setUint16(p,1,true);p+=2;v.setUint32(p,TARGET_RATE,true);p+=4;v.setUint32(p,TARGET_RATE*2,true);p+=4;v.setUint16(p,2,true);p+=2;v.setUint16(p,16,true);p+=2;str('data');v.setUint32(p,samples.length*2,true);p+=4;
-    for(let i=0;i<samples.length;i++,p+=2){const s=Math.max(-1,Math.min(1,samples[i]));v.setInt16(p,s<0?s*0x8000:s*0x7fff,true);} return new Blob([b],{type:'audio/wav'});
-  }
-  function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),30000);}
-  function stamp(){const d=new Date(),pad=n=>String(n).padStart(2,'0');return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;}
-
-  $('saveBtn').onclick=()=>{
-    if(totalSamples<TARGET_RATE*2){alert('目前 Buffer 太短，請再等幾秒。');return;}
-    const requested=+$('saveSeconds').value, samples=getLastSamples(requested), actual=samples.length/TARGET_RATE, blob=wavBlob(samples), tag=$('saveTag').value||'未分類';
-    const filename=`miyu_highlight_${stamp()}_${Math.round(actual)}s.wav`; downloadBlob(blob,filename);
-    candidates.unshift({id:++candidateSeq,time:new Date(),duration:actual,tag,blob,filename,feedback:0}); renderCandidates();
-  };
-  function renderCandidates(){
-    $('candidateCount').textContent=candidates.length;
-    if(!candidates.length){$('candidates').innerHTML='<div class="empty">開始旁聽後，按「保存剛才」就會出現在這裡。</div>';return;}
-    $('candidates').innerHTML=candidates.map(c=>`<div class="candidate"><div class="candidate-head"><div><span class="tag">${esc(c.tag)}</span><div class="candidate-meta">${c.time.toLocaleTimeString()} · ${Math.round(c.duration)} 秒 · ${esc(c.filename)}</div></div><div class="feedback"><button data-like="${c.id}" title="值得發">${c.feedback===1?'✅':'👍'}</button><button data-dislike="${c.id}" title="不值得發">${c.feedback===-1?'❌':'👎'}</button><button data-dl="${c.id}">下載</button></div></div></div>`).join('');
-    document.querySelectorAll('[data-like]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.like);c.feedback=c.feedback===1?0:1;renderCandidates();});
-    document.querySelectorAll('[data-dislike]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.dislike);c.feedback=c.feedback===-1?0:-1;renderCandidates();});
-    document.querySelectorAll('[data-dl]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.dl);downloadBlob(c.blob,c.filename);});
-  }
-  $('clearCandidatesBtn').onclick=()=>{if(candidates.length&&confirm('清空本次高光候選？已下載的 WAV 不會受到影響。')){candidates=[];renderCandidates();}};
-  window.addEventListener('beforeunload',e=>{if(displayStream){e.preventDefault();e.returnValue='';}});
-  renderFocuses();renderCandidates();updateClock();
+const TARGET_RATE=16000,$=id=>document.getElementById(id);
+let displayStream=null,audioCtx=null,sourceNode=null,processor=null,analyser=null,silentGain=null;
+let chunks=[],totalSamples=0,startedAt=0,timer=null,meterTimer=null,candidateSeq=0,candidates=[];
+let fullRecorder=null,fullParts=[],fullBlob=null,fullFileHandle=null,fullWritable=null,fullStartedAt=0,fullMime='';
+const focusKey='miyu_listener_focus_v1';
+const defaults=[{name:'🎧 故事感',weight:5,enabled:true},{name:'🧠 研究腦',weight:4,enabled:true},{name:'🌱 成長',weight:3,enabled:true},{name:'😐 冷幽默',weight:4,enabled:true}];
+let focuses=loadFocuses();
+function loadFocuses(){try{const x=JSON.parse(localStorage.getItem(focusKey));return Array.isArray(x)&&x.length?x:structuredClone(defaults)}catch{return structuredClone(defaults)}}
+function saveFocuses(){localStorage.setItem(focusKey,JSON.stringify(focuses));renderFocuses()}
+function esc(s){return String(s).replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]))}
+function stars(n){return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,5-n)}
+function renderFocuses(){
+ $('focusList').innerHTML=focuses.map((f,i)=>`<div class="focus ${f.enabled?'':'off'}"><input type="checkbox" ${f.enabled?'checked':''} data-i="${i}" class="focus-toggle"><span>${esc(f.name)}</span><span class="stars">${stars(f.weight)}</span><button data-del="${i}">×</button></div>`).join('');
+ document.querySelectorAll('.focus-toggle').forEach(el=>el.onchange=()=>{focuses[+el.dataset.i].enabled=el.checked;saveFocuses()});
+ document.querySelectorAll('[data-del]').forEach(el=>el.onclick=()=>{focuses.splice(+el.dataset.del,1);saveFocuses()});
+ const enabled=focuses.filter(f=>f.enabled);$('saveTag').innerHTML='<option value="未分類">未分類</option>'+enabled.map(f=>`<option value="${esc(f.name)}">${esc(f.name)}</option>`).join('')}
+$('addFocusBtn').onclick=()=>{const name=$('newFocusName').value.trim();if(!name)return;focuses.push({name,weight:+$('newFocusWeight').value,enabled:true});$('newFocusName').value='';saveFocuses()};
+function downsampleMono(input,inRate,outRate){if(inRate===outRate)return new Float32Array(input);const ratio=inRate/outRate,outLen=Math.max(1,Math.round(input.length/ratio)),out=new Float32Array(outLen);for(let i=0;i<outLen;i++){const start=Math.floor(i*ratio),end=Math.min(input.length,Math.floor((i+1)*ratio));let sum=0,c=0;for(let j=start;j<end;j++){sum+=input[j];c++}out[i]=c?sum/c:input[Math.min(start,input.length-1)]||0}return out}
+function pushAudio(buffer){const channels=buffer.numberOfChannels,len=buffer.length,mono=new Float32Array(len);for(let ch=0;ch<channels;ch++){const d=buffer.getChannelData(ch);for(let i=0;i<len;i++)mono[i]+=d[i]/channels}const ds=downsampleMono(mono,audioCtx.sampleRate,TARGET_RATE);chunks.push(ds);totalSamples+=ds.length;trimBuffer()}
+function trimBuffer(){const maxSamples=+$('bufferMinutes').value*60*TARGET_RATE;while(totalSamples>maxSamples&&chunks.length){const over=totalSamples-maxSamples,first=chunks[0];if(first.length<=over){chunks.shift();totalSamples-=first.length}else{chunks[0]=first.slice(over);totalSamples-=over}}}
+$('bufferMinutes').onchange=trimBuffer;
+function fmtSec(s){s=Math.max(0,Math.floor(s));const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;return h?`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`:`${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`}
+function updateClock(){const e=startedAt?(Date.now()-startedAt)/1000:0;$('elapsed').textContent=fmtSec(e);$('bufferTime').textContent=`${fmtSec(totalSamples/TARGET_RATE)} / ${String($('bufferMinutes').value).padStart(2,'0')}:00`}
+function setLive(live,msg){$('liveDot').classList.toggle('live',live);$('statusText').textContent=msg;$('startBtn').disabled=live;$('stopBtn').disabled=!live;$('saveBtn').disabled=!live;$('fullRecordEnabled').disabled=live;$('pickFullFileBtn').disabled=live}
+function setFull(on,text){$('fullRecDot').classList.toggle('on',!!on);$('fullRecStatus').textContent=text}
+function stamp(){const d=new Date(),p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`}
+function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),30000)}
+function recorderMime(){return ['audio/webm;codecs=opus','audio/webm'].find(x=>window.MediaRecorder?.isTypeSupported?.(x))||''}
+$('pickFullFileBtn').onclick=async()=>{if(!window.showSaveFilePicker){alert('這個瀏覽器不支援直接寫入檔案，停止後仍可下載整場錄音。');return}try{fullFileHandle=await showSaveFilePicker({suggestedName:`miyu_full_${stamp()}.webm`,types:[{description:'WebM 音訊',accept:{'audio/webm':['.webm']}}]});$('fullRecHint').textContent='已選擇保存位置。整場錄音會每 10 秒寫入本機，適合長時間直播。'}catch(e){if(e.name!=='AbortError')alert(e.message)}};
+async function startFull(){if($('fullRecordEnabled').value!=='1'){setFull(false,'整場錄音：已關閉');return}if(!window.MediaRecorder){setFull(false,'整場錄音：瀏覽器不支援');return}fullParts=[];fullBlob=null;fullStartedAt=Date.now();fullMime=recorderMime();$('downloadFullBtn').disabled=true;$('analysisPackBtn').disabled=true;if(fullFileHandle){try{fullWritable=await fullFileHandle.createWritable()}catch{fullWritable=null;alert('無法寫入所選檔案，改為暫存在瀏覽器記憶體。')}}const audioOnly=new MediaStream(displayStream.getAudioTracks());fullRecorder=fullMime?new MediaRecorder(audioOnly,{mimeType:fullMime,audioBitsPerSecond:96000}):new MediaRecorder(audioOnly);fullRecorder.ondataavailable=async e=>{if(!e.data?.size)return;if(fullWritable){try{await fullWritable.write(e.data)}catch(err){console.error(err);fullParts.push(e.data)}}else fullParts.push(e.data)};fullRecorder.start(10000);setFull(true,'整場錄音：錄製中')}
+async function stopFull(){if(!fullRecorder||fullRecorder.state==='inactive'){if(fullWritable){try{await fullWritable.close()}catch{}fullWritable=null}return}await new Promise(r=>{fullRecorder.addEventListener('stop',r,{once:true});try{fullRecorder.stop()}catch{r()}});if(fullWritable){try{await fullWritable.close()}catch{}fullWritable=null;setFull(false,'整場錄音：已保存至本機')}else if(fullParts.length){fullBlob=new Blob(fullParts,{type:fullMime||'audio/webm'});setFull(false,`整場錄音：已完成（${Math.round(fullBlob.size/1024/1024)} MB）`);$('downloadFullBtn').disabled=false}else setFull(false,'整場錄音：沒有資料');$('analysisPackBtn').disabled=false;fullRecorder=null}
+$('downloadFullBtn').onclick=()=>fullBlob&&downloadBlob(fullBlob,`miyu_full_${stamp()}.webm`);
+async function start(){if(!navigator.mediaDevices?.getDisplayMedia){alert('請使用最新版 Chrome / Edge。');return}try{displayStream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:1,max:2}},audio:true});if(!displayStream.getAudioTracks().length){displayStream.getTracks().forEach(t=>t.stop());displayStream=null;alert('沒有取得音訊，請確認「分享系統音訊」已開啟。');return}audioCtx=new (window.AudioContext||window.webkitAudioContext)();await audioCtx.resume();sourceNode=audioCtx.createMediaStreamSource(new MediaStream(displayStream.getAudioTracks()));analyser=audioCtx.createAnalyser();analyser.fftSize=512;processor=audioCtx.createScriptProcessor(4096,Math.max(1,sourceNode.channelCount||1),1);silentGain=audioCtx.createGain();silentGain.gain.value=0;sourceNode.connect(analyser);sourceNode.connect(processor);processor.connect(silentGain);silentGain.connect(audioCtx.destination);processor.onaudioprocess=e=>pushAudio(e.inputBuffer);chunks=[];totalSamples=0;startedAt=Date.now();setLive(true,'正在旁聽');await startFull();timer=setInterval(updateClock,500);meterTimer=setInterval(updateMeter,100);displayStream.getTracks().forEach(t=>t.addEventListener('ended',()=>{if(displayStream)stop()},{once:true}));$('captureHint').className='okbox';$('captureHint').textContent='已取得系統音訊。頁面可放在背景，回溯與整場錄音會繼續運作。'}catch(err){if(err?.name!=='NotAllowedError')alert('啟動失敗：'+(err.message||err))}}
+async function stop(){setLive(false,'已停止');clearInterval(timer);clearInterval(meterTimer);timer=meterTimer=null;$('meterBar').style.width='0%';await stopFull();try{processor&&(processor.onaudioprocess=null);processor?.disconnect();sourceNode?.disconnect();analyser?.disconnect();silentGain?.disconnect();displayStream?.getTracks().forEach(t=>t.stop());await audioCtx?.close()}catch{}displayStream=audioCtx=sourceNode=processor=analyser=silentGain=null;startedAt=0;updateClock()}
+$('startBtn').onclick=start;$('stopBtn').onclick=stop;
+function updateMeter(){if(!analyser)return;const a=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(a);let sum=0;for(const v of a){const x=(v-128)/128;sum+=x*x}const rms=Math.sqrt(sum/a.length),pct=Math.min(100,Math.round(rms*350));$('meterBar').style.width=pct+'%'}
+function getLastSamples(sec){const need=Math.min(totalSamples,Math.floor(sec*TARGET_RATE)),out=new Float32Array(need);let pos=need;for(let i=chunks.length-1;i>=0&&pos>0;i--){const c=chunks[i],take=Math.min(pos,c.length);pos-=take;out.set(c.subarray(c.length-take),pos)}return out}
+function wavBlob(samples){const b=new ArrayBuffer(44+samples.length*2),v=new DataView(b);let p=0;const str=s=>{for(let i=0;i<s.length;i++)v.setUint8(p++,s.charCodeAt(i))};str('RIFF');v.setUint32(p,36+samples.length*2,true);p+=4;str('WAVE');str('fmt ');v.setUint32(p,16,true);p+=4;v.setUint16(p,1,true);p+=2;v.setUint16(p,1,true);p+=2;v.setUint32(p,TARGET_RATE,true);p+=4;v.setUint32(p,TARGET_RATE*2,true);p+=4;v.setUint16(p,2,true);p+=2;v.setUint16(p,16,true);p+=2;str('data');v.setUint32(p,samples.length*2,true);p+=4;for(let i=0;i<samples.length;i++,p+=2){const s=Math.max(-1,Math.min(1,samples[i]));v.setInt16(p,s<0?s*0x8000:s*0x7fff,true)}return new Blob([b],{type:'audio/wav'})}
+$('saveBtn').onclick=()=>{if(totalSamples<TARGET_RATE*2){alert('Buffer 太短，請再等幾秒。');return}const requested=+$('saveSeconds').value,samples=getLastSamples(requested),actual=samples.length/TARGET_RATE,blob=wavBlob(samples),tag=$('saveTag').value||'未分類',filename=`miyu_highlight_${stamp()}_${Math.round(actual)}s.wav`;downloadBlob(blob,filename);candidates.unshift({id:++candidateSeq,time:new Date(),duration:actual,tag,blob,filename,feedback:0});renderCandidates()};
+function renderCandidates(){$('candidateCount').textContent=candidates.length;if(!candidates.length){$('candidates').innerHTML='<div class="empty">開始旁聽後，按「保存剛才」就會出現在這裡。</div>';return}$('candidates').innerHTML=candidates.map(c=>`<div class="candidate"><div class="candidate-head"><div><span class="tag">${esc(c.tag)}</span><div class="candidate-meta">${c.time.toLocaleTimeString()} · ${Math.round(c.duration)} 秒 · ${esc(c.filename)}</div></div><div class="feedback"><button data-like="${c.id}">${c.feedback===1?'✅':'👍'}</button><button data-dislike="${c.id}">${c.feedback===-1?'❌':'👎'}</button><button data-dl="${c.id}">下載</button></div></div></div>`).join('');document.querySelectorAll('[data-like]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.like);c.feedback=c.feedback===1?0:1;renderCandidates()});document.querySelectorAll('[data-dislike]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.dislike);c.feedback=c.feedback===-1?0:-1;renderCandidates()});document.querySelectorAll('[data-dl]').forEach(b=>b.onclick=()=>{const c=candidates.find(x=>x.id==b.dataset.dl);downloadBlob(c.blob,c.filename)})}
+$('clearCandidatesBtn').onclick=()=>{if(candidates.length&&confirm('清空本次高光候選？已下載的 WAV 不受影響。')){candidates=[];renderCandidates()}};
+$('analysisPackBtn').onclick=()=>{const end=Date.now(),payload={version:'miyu-listener-v0.2',streamer:'miyu',session:{startedAt:fullStartedAt?new Date(fullStartedAt).toISOString():null,endedAt:new Date(end).toISOString(),durationSec:fullStartedAt?Math.round((end-fullStartedAt)/1000):0,mimeType:fullMime||'audio/webm'},focuses:focuses.map(x=>({...x})),candidates:candidates.map(c=>({id:c.id,time:c.time.toISOString(),durationSec:Math.round(c.duration),tag:c.tag,filename:c.filename,feedback:c.feedback})),aiInstructions:{goal:'從整場直播找出值得剪輯與對外曝光的高光；不需要平均分配類型，沒有好素材可不選。',priority:'依 enabled 與 weight 優先判斷，同時探索新類型。',feedback:'1=值得發，-1=不值得發，0=未評分。'}};downloadBlob(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),`miyu_analysis_${stamp()}.json`)};
+window.addEventListener('beforeunload',e=>{if(displayStream){e.preventDefault();e.returnValue=''}});
+renderFocuses();renderCandidates();updateClock();
 })();
 </script>
 </body>
