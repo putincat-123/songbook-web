@@ -66,7 +66,7 @@ label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bot
       <div class="c4"><label>已收到</label><input id="chatCount" value="0 條公屏" disabled></div>
     </div>
     <div class="btns"><button id="chatConnectBtn" class="ghost">🔗 連接公屏</button><button id="chatDisconnectBtn" class="ghost" disabled>中斷公屏</button><button id="chatExportBtn" class="ghost" disabled>⬇ 匯出公屏 JSON</button><button id="chatClearBtn" class="ghost">清空本場公屏</button></div>
-    <div id="chatHint" class="hint">開始旁聽時會自動嘗試連接。只保存「時間、暱稱、user_id、文字、msg_id」；錄音與公屏都留在本機。</div>
+    <div id="chatHint" class="hint">狀態會分成「WebSocket 已連接 → 收到資料／解析中 → 公屏解析正常」，避免只連上卻誤以為已成功讀到公屏。</div>
     <div id="chatBox" class="chat-box"><div class="chat-empty">連接成功後，最近的公屏會顯示在這裡。</div></div>
   </div>
 
@@ -91,7 +91,7 @@ const TARGET_RATE=16000,$=id=>document.getElementById(id);
 let displayStream=null,audioCtx=null,sourceNode=null,processor=null,analyser=null,silentGain=null;
 let chunks=[],totalSamples=0,startedAt=0,timer=null,meterTimer=null,candidateSeq=0,candidates=[];
 let fullRecorder=null,fullParts=[],fullBlob=null,fullFileHandle=null,fullWritable=null,fullStartedAt=0,fullMime='';
-let chatSocket=null,chatMessages=[],chatConnectedAt=0,chatManualClose=false;
+let chatSocket=null,chatMessages=[],chatConnectedAt=0,chatManualClose=false,chatRawFrames=0,chatParsed=false,chatDecodeWarned=false;
 const focusKey='miyu_listener_focus_v1';
 const defaults=[{name:'🎧 故事感',weight:5,enabled:true},{name:'🧠 研究腦',weight:4,enabled:true},{name:'🌱 成長',weight:3,enabled:true},{name:'😐 冷幽默',weight:4,enabled:true}];
 let focuses=loadFocuses();
@@ -129,26 +129,26 @@ function renderChat(){
  $('chatBox').scrollTop=$('chatBox').scrollHeight;
 }
 async function brotliText(bytes){
- if(!window.DecompressionStream)throw new Error('瀏覽器不支援 DecompressionStream');
- let ds;try{ds=new DecompressionStream('brotli')}catch{throw new Error('目前瀏覽器不支援 Brotli 解壓，請更新 Edge / Chrome')}
+ if(!window.DecompressionStream)throw new Error('此瀏覽器沒有 DecompressionStream');
+ let ds;try{ds=new DecompressionStream('brotli')}catch{throw new Error('此瀏覽器不支援 Brotli 解壓')}
  const stream=new Blob([bytes]).stream().pipeThrough(ds);return await new Response(stream).text();
 }
 async function decodeChatPacket(data){
  let buf;if(data instanceof ArrayBuffer)buf=data;else if(data instanceof Blob)buf=await data.arrayBuffer();else return null;
  const u8=new Uint8Array(buf);if(u8.length<=4)return null;
- try{return JSON.parse(await brotliText(u8.slice(4)))}catch(e){console.debug('忽略非公屏/非 Brotli 封包',e);return null}
+ return JSON.parse(await brotliText(u8.slice(4)));
 }
 function acceptChat(obj){
- if(!obj||obj.type!=='message'||obj.event!=='new'||typeof obj.message!=='string')return;
+ if(!obj||obj.type!=='message'||obj.event!=='new'||typeof obj.message!=='string')return false;
  const m={receivedAt:new Date().toISOString(),room_id:obj.room_id||+$('chatRoomId').value,user_id:obj.user?.user_id??null,username:obj.user?.username||'',message:obj.message,msg_id:obj.msg_id||''};
- if(m.msg_id&&chatMessages.some(x=>x.msg_id===m.msg_id))return;chatMessages.push(m);renderChat();
+ if(m.msg_id&&chatMessages.some(x=>x.msg_id===m.msg_id))return false;chatMessages.push(m);chatParsed=true;setChatState('live','公屏：解析正常 ✓');$('chatHint').textContent='已成功讀到猫耳公屏。之後的新公屏會自動記錄時間並加入事後分析包。';renderChat();return true;
 }
 function connectChat(){
  const room=String($('chatRoomId').value||'').trim();if(!/^\d+$/.test(room)){setChatState('off','公屏：房間號不正確');return}
- if(chatSocket&&chatSocket.readyState<2)return;chatManualClose=false;setChatState('warn','公屏：連接中…');
+ if(chatSocket&&chatSocket.readyState<2)return;chatManualClose=false;chatRawFrames=0;chatParsed=false;chatDecodeWarned=false;setChatState('warn','公屏：連接中…');
  try{const ws=new WebSocket(`wss://im.missevan.com/ws?room_id=${encodeURIComponent(room)}`);chatSocket=ws;ws.binaryType='arraybuffer';
- ws.onopen=()=>{if(chatSocket!==ws)return;chatConnectedAt=Date.now();setChatState('live','公屏：已連接');$('chatHint').textContent='已連接猫耳公屏。新公屏會自動記錄時間並加入事後分析包。'};
- ws.onmessage=async e=>{try{acceptChat(await decodeChatPacket(e.data))}catch(err){console.error('公屏解析失敗',err)}};
+ ws.onopen=()=>{if(chatSocket!==ws)return;chatConnectedAt=Date.now();setChatState('warn','WebSocket 已連接 · 等待公屏');$('chatHint').textContent='第一關已通：WebSocket 已連接。請在猫耳公屏發一句測試文字，頁面會繼續確認是否收到並成功解析。'};
+ ws.onmessage=async e=>{if(chatSocket!==ws)return;chatRawFrames++;if(!chatParsed)setChatState('warn',`已收到資料 ${chatRawFrames} 筆 · 解析中…`);try{const obj=await decodeChatPacket(e.data);acceptChat(obj)}catch(err){console.debug('猫耳封包解析失敗',err);const msg=String(err?.message||err);if(!chatDecodeWarned&&(msg.includes('Brotli')||msg.includes('DecompressionStream'))){chatDecodeWarned=true;setChatState('warn','WebSocket 已連接 · 瀏覽器無法解析 Brotli');$('chatHint').textContent='已收到猫耳資料，但目前瀏覽器缺少 Brotli 解壓能力。請改用 Windows Edge / Chrome 再測；這不是房間號或 WebSocket 連接失敗。'}}};
  ws.onerror=()=>{if(chatSocket===ws)setChatState('warn','公屏：連接異常')};
  ws.onclose=()=>{if(chatSocket!==ws)return;chatSocket=null;setChatState('off',chatManualClose?'公屏：已中斷':'公屏：連接已斷開');if(!chatManualClose&&displayStream)setTimeout(()=>{if(displayStream&&!chatSocket)connectChat()},3000)};
  }catch(e){setChatState('off','公屏：無法連接');$('chatHint').textContent='連接失敗：'+(e.message||e)}
