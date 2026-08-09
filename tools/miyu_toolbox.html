@@ -1800,55 +1800,75 @@ async function renderDataSummary() {
     $('clearImportBtn').addEventListener('click', () => $('rawText').value = '');
     
     $('aiRecommendBtn').addEventListener('click', async () => {
-
-  const btn = $('aiRecommendBtn');
-
-  const mood = $('aiMoodInput').value.trim();
-
-  if(!mood){
-
-    $('aiRecommendResult').innerHTML = `
-      <div class="empty">
-        請先輸入今天想唱的情緒或氛圍
-      </div>
-    `;
-
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'AI 思考中...';
-
-  $('aiRecommendResult').innerHTML = `
-    <div class="empty">
-      AI 正在思考中...
-    </div>
-  `;
-
-  try{
-
-    const result = await mockAiRecommendApi(mood);
-
-    renderAiRecommendResult(mood, result);
-
-  }catch(err){
-
-    console.error(err);
-
-    $('aiRecommendResult').innerHTML = `
-      <div class="empty">
-        AI 推薦失敗
-      </div>
-    `;
-
-  }finally{
-
-    btn.disabled = false;
-    btn.textContent = '✨ AI 推薦歌曲';
-
-  }
-
-});
+    
+      const btn = $('aiRecommendBtn');
+      const mood = $('aiMoodInput').value.trim();
+    
+      if (!mood) {
+        $('aiRecommendResult').innerHTML = `
+          <div class="empty">
+            請先輸入今天想唱的情緒或氛圍
+          </div>
+        `;
+        return;
+      }
+    
+      btn.disabled = true;
+      btn.textContent = 'AI 思考中...';
+    
+      $('aiRecommendResult').innerHTML = `
+        <div class="empty">
+          AI 正在思考中...
+        </div>
+      `;
+    
+      try {
+    
+        const response = await fetch("/api/recommendations/semantic", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            mood,
+          }),
+        });
+    
+        if (!response.ok) {
+          throw new Error(`AI 推薦失敗：${response.status}`);
+        }
+    
+        const data = await response.json();
+        const songs = data.recommendations || [];
+    
+        renderAiRecommendResult(mood, songs);
+    
+      } catch (err) {
+    
+        console.error(err);
+    
+        // 正式 API 失敗時退回原本本地推薦
+        try {
+          const fallbackSongs = await mockAiRecommendApi(mood);
+          renderAiRecommendResult(mood, fallbackSongs);
+        } catch (fallbackErr) {
+          console.error(fallbackErr);
+    
+          $('aiRecommendResult').innerHTML = `
+            <div class="empty">
+              AI 推薦失敗，請稍後再試
+            </div>
+          `;
+        }
+    
+      } finally {
+    
+        btn.disabled = false;
+        btn.textContent = '✨ AI 推薦歌曲';
+    
+      }
+    
+    });
     
     $('resetPreviewBtn').addEventListener('click', () => { currentParsedItems = []; renderPreview(); renderUnparsed([]); });
 
