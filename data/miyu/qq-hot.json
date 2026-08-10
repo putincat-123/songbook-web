@@ -1,38 +1,38 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-08-09T22:16:05.446Z",
+  "updatedAt": "2026-08-10T22:23:00.214Z",
   "songs": [
     {
-      "name": "清风微微",
-      "artist": "曾舜晞",
+      "name": "Serenade (KARINA & WINTER)",
+      "artist": "aespa (에스파)",
       "sources": [
         {
+          "source": "hot",
+          "rank": 14
+        },
+        {
           "source": "new",
-          "rank": 2
+          "rank": 7
         },
         {
           "source": "rise",
-          "rank": 12
-        },
-        {
-          "source": "popular",
-          "rank": 4
+          "rank": 1
         }
       ],
       "sourceCount": 3,
-      "bestRank": 2
+      "bestRank": 1
     },
     {
-      "name": "痕迹",
-      "artist": "何浩楠",
+      "name": "月像",
+      "artist": "刘宇",
       "sources": [
         {
           "source": "new",
-          "rank": 4
+          "rank": 8
         },
         {
           "source": "rise",
-          "rank": 7
+          "rank": 2
         },
         {
           "source": "popular",
@@ -40,23 +40,27 @@
         }
       ],
       "sourceCount": 3,
-      "bestRank": 4
+      "bestRank": 2
     },
     {
-      "name": "我们的纪念 (Live)",
-      "artist": "杨丞琳/侯明昊",
+      "name": "最完美的存在",
+      "artist": "刘芯妤Roselyn",
       "sources": [
         {
-          "source": "hot",
-          "rank": 1
+          "source": "new",
+          "rank": 6
         },
         {
           "source": "rise",
-          "rank": 4
+          "rank": 10
+        },
+        {
+          "source": "popular",
+          "rank": 14
         }
       ],
-      "sourceCount": 2,
-      "bestRank": 1
+      "sourceCount": 3,
+      "bestRank": 6
     },
     {
       "name": "游向陆地的鱼",
@@ -75,12 +79,60 @@
       "bestRank": 1
     },
     {
+      "name": "碎碎念",
+      "artist": "队长",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
+    },
+    {
       "name": "STRANGE",
       "artist": "刘雨昕",
       "sources": [
         {
           "source": "new",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
+    },
+    {
+      "name": "清风微微",
+      "artist": "曾舜晞",
+      "sources": [
+        {
+          "source": "new",
           "rank": 3
+        },
+        {
+          "source": "popular",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 3
+    },
+    {
+      "name": "爱人啊",
+      "artist": "言承旭/五月天 阿信",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 8
         },
         {
           "source": "popular",
@@ -91,24 +143,24 @@
       "bestRank": 3
     },
     {
-      "name": "碎碎念",
-      "artist": "队长",
+      "name": "No More Tomorrow",
+      "artist": "严浩翔",
       "sources": [
         {
-          "source": "hot",
+          "source": "new",
           "rank": 4
         },
         {
           "source": "popular",
-          "rank": 9
+          "rank": 5
         }
       ],
       "sourceCount": 2,
       "bestRank": 4
     },
     {
-      "name": "No More Tomorrow",
-      "artist": "严浩翔",
+      "name": "痕迹",
+      "artist": "何浩楠",
       "sources": [
         {
           "source": "new",
@@ -116,75 +168,27 @@
         },
         {
           "source": "popular",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 5
+    },
+    {
+      "name": "我们的纪念 (Live)",
+      "artist": "杨丞琳/侯明昊",
+      "sources": [
+        {
+          "source": "rise",
           "rank": 6
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 5
-    },
-    {
-      "name": "遇见花",
-      "artist": "洋澜一",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 18
         },
         {
           "source": "popular",
-          "rank": 5
+          "rank": 10
         }
       ],
       "sourceCount": 2,
-      "bestRank": 5
-    },
-    {
-      "name": "金乌 Golden Bird",
-      "artist": "刘宇/Alan Walker/孙名川Chuanzi Suona",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 7
-        },
-        {
-          "source": "popular",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 7
-    },
-    {
-      "name": "无所求必满载而归 (Live)",
-      "artist": "张远",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 8
-        },
-        {
-          "source": "popular",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "每个人 (舒楠监制 官方正式版)",
-      "artist": "周深",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 13
-        },
-        {
-          "source": "popular",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 13
+      "bestRank": 6
     },
     {
       "name": "无名氏",
@@ -192,7 +196,23 @@
       "sources": [
         {
           "source": "new",
-          "rank": 18
+          "rank": 14
+        },
+        {
+          "source": "popular",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 9
+    },
+    {
+      "name": "Think About It",
+      "artist": "D.N.A/张艺兴/颜人中/GALI",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
         },
         {
           "source": "popular",
@@ -200,19 +220,23 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 17
+      "bestRank": 13
     },
     {
-      "name": "花田错 (Live)",
-      "artist": "万妮达Vinida Weng/吴碧霞",
+      "name": "金乌 Golden Bird",
+      "artist": "刘宇/Alan Walker/孙名川Chuanzi Suona",
       "sources": [
         {
-          "source": "rise",
-          "rank": 1
+          "source": "new",
+          "rank": 17
+        },
+        {
+          "source": "popular",
+          "rank": 15
         }
       ],
-      "sourceCount": 1,
-      "bestRank": 1
+      "sourceCount": 2,
+      "bestRank": 15
     },
     {
       "name": "恋人",
@@ -220,35 +244,11 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 2
+          "rank": 1
         }
       ],
       "sourceCount": 1,
-      "bestRank": 2
-    },
-    {
-      "name": "答案 (Live)",
-      "artist": "王铮亮/黄霄雲",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 2
-    },
-    {
-      "name": "顺其自然 (让花是花 让树是树)",
-      "artist": "国产阿发",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 2
+      "bestRank": 1
     },
     {
       "name": "甲乙丙丁 (你我怎么两清)",
@@ -263,8 +263,8 @@
       "bestRank": 3
     },
     {
-      "name": "再见 (Live)",
-      "artist": "万妮达Vinida Weng",
+      "name": "交个朋友 (Live)",
+      "artist": "弹壳",
       "sources": [
         {
           "source": "rise",
@@ -273,6 +273,42 @@
       ],
       "sourceCount": 1,
       "bestRank": 3
+    },
+    {
+      "name": "雨爱",
+      "artist": "杨丞琳",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 4
+    },
+    {
+      "name": "冻结",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 4
+    },
+    {
+      "name": "遇见花",
+      "artist": "洋澜一",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 4
     },
     {
       "name": "失眠",
@@ -287,8 +323,8 @@
       "bestRank": 5
     },
     {
-      "name": "相思 (Live)",
-      "artist": "齐豫/毛阿敏",
+      "name": "Lollipop (GISELLE & NINGNING)",
+      "artist": "aespa (에스파)",
       "sources": [
         {
           "source": "rise",
@@ -299,35 +335,11 @@
       "bestRank": 5
     },
     {
-      "name": "雨爱",
-      "artist": "杨丞琳",
+      "name": "盛夏的果实",
+      "artist": "莫文蔚",
       "sources": [
         {
           "source": "hot",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "过海",
-      "artist": "王赫野/黄龄",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "被驯服的象 (Live)",
-      "artist": "窦靖童/欧阳娜娜",
-      "sources": [
-        {
-          "source": "rise",
           "rank": 6
         }
       ],
@@ -347,76 +359,28 @@
       "bestRank": 7
     },
     {
-      "name": "盛夏的果实",
-      "artist": "莫文蔚",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "全世界的雨",
-      "artist": "周深/Ella陈嘉桦",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "你我怎么两清(甲乙丙丁)",
-      "artist": "半糖记",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "我不难过",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "周旋",
-      "artist": "王以太/艾热AIR",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "春泥 (Live)",
-      "artist": "TOP登陆少年-张泽禹/TOP登陆少年-张极",
+      "name": "娱乐天空 (Live)",
+      "artist": "宋亚轩",
       "sources": [
         {
           "source": "rise",
-          "rank": 9
+          "rank": 7
         }
       ],
       "sourceCount": 1,
-      "bestRank": 9
+      "bestRank": 7
+    },
+    {
+      "name": "特别的人",
+      "artist": "方大同",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 8
     },
     {
       "name": "爱错",
@@ -424,30 +388,42 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 10
+          "rank": 9
         }
       ],
       "sourceCount": 1,
-      "bestRank": 10
+      "bestRank": 9
     },
     {
-      "name": "最完美的存在",
-      "artist": "刘芯妤Roselyn",
+      "name": "过海",
+      "artist": "王赫野/黄龄",
       "sources": [
         {
           "source": "new",
-          "rank": 10
+          "rank": 9
         }
       ],
       "sourceCount": 1,
-      "bestRank": 10
+      "bestRank": 9
     },
     {
-      "name": "Somewhere Only We Know (Live)",
-      "artist": "Elliot James Reay/黄子弘凡",
+      "name": "亲爱的你啊",
+      "artist": "任素汐",
       "sources": [
         {
           "source": "rise",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "我不难过",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 10
         }
       ],
@@ -455,11 +431,11 @@
       "bestRank": 10
     },
     {
-      "name": "去自由的远方 (雷鬼版)",
-      "artist": "沙哑大叔",
+      "name": "全世界的雨",
+      "artist": "周深/Ella陈嘉桦",
       "sources": [
         {
-          "source": "popular",
+          "source": "new",
           "rank": 10
         }
       ],
@@ -479,8 +455,8 @@
       "bestRank": 11
     },
     {
-      "name": "山风山风等等我",
-      "artist": "万海东",
+      "name": "周旋",
+      "artist": "王以太/艾热AIR",
       "sources": [
         {
           "source": "new",
@@ -491,8 +467,8 @@
       "bestRank": 11
     },
     {
-      "name": "娱乐天空 (Live)",
-      "artist": "宋亚轩",
+      "name": "Come Back To Me",
+      "artist": "Utada (宇多田光)",
       "sources": [
         {
           "source": "rise",
@@ -501,30 +477,6 @@
       ],
       "sourceCount": 1,
       "bestRank": 11
-    },
-    {
-      "name": "Always Online",
-      "artist": "林俊杰",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "汹涌",
-      "artist": "吴莫愁",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
     },
     {
       "name": "情歌",
@@ -532,6 +484,54 @@
       "sources": [
         {
           "source": "hot",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "山风山风等等我",
+      "artist": "万海东",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "ICONIC HEART",
+      "artist": "Hearts2Hearts",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "反乌托邦",
+      "artist": "沈泠月",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "Always Online",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 13
         }
       ],
@@ -539,8 +539,8 @@
       "bestRank": 13
     },
     {
-      "name": "欢喜就好 (Live)",
-      "artist": "杨宗纬/岳云鹏",
+      "name": "离开以后",
+      "artist": "张学友",
       "sources": [
         {
           "source": "rise",
@@ -551,8 +551,8 @@
       "bestRank": 13
     },
     {
-      "name": "多远都要在一起",
-      "artist": "G.E.M. 邓紫棋",
+      "name": "去自由的远方 (雷鬼版)",
+      "artist": "沙哑大叔",
       "sources": [
         {
           "source": "popular",
@@ -561,6 +561,18 @@
       ],
       "sourceCount": 1,
       "bestRank": 13
+    },
+    {
+      "name": "一场游戏一场梦",
+      "artist": "王杰",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
     },
     {
       "name": "ANGEL (天使)",
@@ -568,35 +580,35 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 14
+          "rank": 15
         }
       ],
       "sourceCount": 1,
-      "bestRank": 14
+      "bestRank": 15
     },
     {
-      "name": "KISS N TELL",
-      "artist": "aespa (에스파)",
+      "name": "汹涌",
+      "artist": "吴莫愁",
       "sources": [
         {
           "source": "new",
-          "rank": 14
+          "rank": 15
         }
       ],
       "sourceCount": 1,
-      "bestRank": 14
+      "bestRank": 15
     },
     {
-      "name": "相思",
-      "artist": "毛阿敏",
+      "name": "枕着光的她",
+      "artist": "任素汐",
       "sources": [
         {
           "source": "rise",
-          "rank": 14
+          "rank": 15
         }
       ],
       "sourceCount": 1,
-      "bestRank": 14
+      "bestRank": 15
     },
     {
       "name": "阴天",
@@ -604,54 +616,6 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "唯我论者的独白",
-      "artist": "马嘉祺",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "笼 (Live)",
-      "artist": "吉克隽逸/黄子弘凡",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "爱人啊",
-      "artist": "言承旭/五月天 阿信",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "特别的人",
-      "artist": "方大同",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 16
         }
       ],
@@ -659,8 +623,8 @@
       "bestRank": 16
     },
     {
-      "name": "DON'T STOP",
-      "artist": "刘耀文",
+      "name": "KISS N TELL",
+      "artist": "aespa (에스파)",
       "sources": [
         {
           "source": "new",
@@ -671,8 +635,8 @@
       "bestRank": 16
     },
     {
-      "name": "花田错",
-      "artist": "王力宏",
+      "name": "多情种",
+      "artist": "胡杨林",
       "sources": [
         {
           "source": "rise",
@@ -683,8 +647,8 @@
       "bestRank": 16
     },
     {
-      "name": "晨间新闻",
-      "artist": "蔡健雅",
+      "name": "你我怎么两清(甲乙丙丁)",
+      "artist": "半糖记",
       "sources": [
         {
           "source": "popular",
@@ -693,46 +657,34 @@
       ],
       "sourceCount": 1,
       "bestRank": 16
-    },
-    {
-      "name": "雨过后的风景",
-      "artist": "Dizzy Dizzo (蔡诗芸)",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
-    },
-    {
-      "name": "媚人",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
-    },
-    {
-      "name": "走四方 (Live)",
-      "artist": "胡彦斌/韩磊",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
     },
     {
       "name": "唯一",
       "artist": "G.E.M. 邓紫棋",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "胡广生",
+      "artist": "任素汐",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "雨过后的风景",
+      "artist": "Dizzy Dizzo (蔡诗芸)",
       "sources": [
         {
           "source": "hot",
@@ -743,8 +695,32 @@
       "bestRank": 18
     },
     {
-      "name": "西乌旗99号公路",
-      "artist": "LunaLiu刘不语/张川海",
+      "name": "媚人",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "因为了解",
+      "artist": "汪苏泷",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "顺其自然 (让花是花 让树是树)",
+      "artist": "国产阿发",
       "sources": [
         {
           "source": "popular",
@@ -767,8 +743,8 @@
       "bestRank": 19
     },
     {
-      "name": "FLIRTY",
-      "artist": "다영 (DAYOUNG) (任多荣)/朴宰范 (Jay Park)",
+      "name": "唯我论者的独白",
+      "artist": "马嘉祺",
       "sources": [
         {
           "source": "new",
@@ -779,8 +755,8 @@
       "bestRank": 19
     },
     {
-      "name": "空中飞人 (Live)",
-      "artist": "窦靖童",
+      "name": "暗恋航空",
+      "artist": "官恩娜",
       "sources": [
         {
           "source": "rise",
@@ -791,8 +767,8 @@
       "bestRank": 19
     },
     {
-      "name": "比石头还硬的心",
-      "artist": "高冷",
+      "name": "答案 (Live)",
+      "artist": "王铮亮/黄霄雲",
       "sources": [
         {
           "source": "popular",
@@ -815,8 +791,8 @@
       "bestRank": 20
     },
     {
-      "name": "你我他",
-      "artist": "en (王翊恩)",
+      "name": "DON'T STOP",
+      "artist": "刘耀文",
       "sources": [
         {
           "source": "new",
@@ -827,8 +803,8 @@
       "bestRank": 20
     },
     {
-      "name": "遗失的心跳 (Live)",
-      "artist": "周笔畅/喻言",
+      "name": "小rapper (Live)",
+      "artist": "Rapeter",
       "sources": [
         {
           "source": "rise",
@@ -839,8 +815,8 @@
       "bestRank": 20
     },
     {
-      "name": "空城",
-      "artist": "杨坤",
+      "name": "比石头还硬的心",
+      "artist": "高冷",
       "sources": [
         {
           "source": "popular",
