@@ -13,11 +13,11 @@
 <body>
 <div class="app">
   <div class="title">🎧 Miyu 回放音频下载</div>
-  <div class="sub">贴上猫耳播放器网址，自动解析 sound ID，并取得当前有效的音频地址。</div>
+  <div class="sub">贴上猫耳播放网址，自动解析 sound ID，并取得当前有效的音频地址。</div>
   <div class="card">
-    <input id="url" class="input" placeholder="例如：https://www.missevan.com/sound/player?id=13088386" />
+    <input id="url" class="input" placeholder="支持：https://www.missevan.com/sound/13478232 或 /sound/player?id=13088386" />
     <button id="resolve" class="btn primary">解析回放</button>
-    <div id="status" class="status muted">等待输入播放器网址。</div>
+    <div id="status" class="status muted">等待输入猫耳播放网址。</div>
     <div id="progress" class="progress"><div id="bar" class="bar"></div></div>
   </div>
   <div id="info" class="card info">
@@ -42,7 +42,19 @@
 const $=id=>document.getElementById(id);
 const API_BASE='https://streamer-songbook.vercel.app';
 let sound=null;
-function extractId(v){v=(v||'').trim();if(/^\d+$/.test(v))return v;try{const u=new URL(v);return u.searchParams.get('id')||u.searchParams.get('soundid')||u.searchParams.get('sound_id')}catch{}const m=v.match(/(?:id|soundid|sound_id)[=/](\d+)/i)||v.match(/[?&](?:id|soundid|sound_id)=(\d+)/i);return m?.[1]||null}
+function extractId(v){
+  v=(v||'').trim();
+  if(/^\d+$/.test(v)) return v;
+  try{
+    const u=new URL(v);
+    const q=u.searchParams.get('id')||u.searchParams.get('soundid')||u.searchParams.get('sound_id');
+    if(q&&/^\d+$/.test(q)) return q;
+    const pm=u.pathname.match(/^\/sound\/(\d+)(?:\/)?$/i);
+    if(pm) return pm[1];
+  }catch{}
+  const m=v.match(/\/sound\/(\d+)(?:[/?#]|$)/i)||v.match(/[?&](?:id|soundid|sound_id)=(\d+)/i);
+  return m?.[1]||null;
+}
 function fmtDur(sec){sec=Math.round(Number(sec)||0);const m=Math.floor(sec/60),s=sec%60;return `${m}:${String(s).padStart(2,'0')}`}
 function fmtSize(n){n=Number(n)||0;if(!n)return '-';return n>1048576?(n/1048576).toFixed(1)+' MB':(n/1024).toFixed(0)+' KB'}
 function safeName(s){return (s||'miyu_audio').replace(/[\\/:*?"<>|]/g,'_').trim().slice(0,80)||'miyu_audio'}
