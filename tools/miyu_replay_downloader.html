@@ -13,15 +13,13 @@
 <body>
 <div class="app">
   <div class="title">🎧 Miyu 回放音频下载</div>
-  <div class="sub">贴上猫耳播放器网址，自动解析 sound ID，并取得当前有效的音频地址。仅用于你有权访问的回放内容。</div>
-
+  <div class="sub">贴上猫耳播放器网址，自动解析 sound ID，并取得当前有效的音频地址。</div>
   <div class="card">
     <input id="url" class="input" placeholder="例如：https://www.missevan.com/sound/player?id=13088386" />
     <button id="resolve" class="btn primary">解析回放</button>
     <div id="status" class="status muted">等待输入播放器网址。</div>
     <div id="progress" class="progress"><div id="bar" class="bar"></div></div>
   </div>
-
   <div id="info" class="card info">
     <div class="kv"><strong>Sound ID</strong><span id="sid">-</span></div>
     <div class="kv"><strong>标题</strong><span id="title">-</span></div>
@@ -42,63 +40,16 @@
 </div>
 <script>
 const $=id=>document.getElementById(id);
+const API_BASE='https://streamer-songbook.vercel.app';
 let sound=null;
-function extractId(v){
-  v=(v||'').trim();
-  if(/^\d+$/.test(v)) return v;
-  try{const u=new URL(v);return u.searchParams.get('id')||u.searchParams.get('soundid')||u.searchParams.get('sound_id')}catch{}
-  const m=v.match(/(?:id|soundid|sound_id)[=/](\d+)/i)||v.match(/[?&](?:id|soundid|sound_id)=(\d+)/i);
-  return m?.[1]||null;
-}
+function extractId(v){v=(v||'').trim();if(/^\d+$/.test(v))return v;try{const u=new URL(v);return u.searchParams.get('id')||u.searchParams.get('soundid')||u.searchParams.get('sound_id')}catch{}const m=v.match(/(?:id|soundid|sound_id)[=/](\d+)/i)||v.match(/[?&](?:id|soundid|sound_id)=(\d+)/i);return m?.[1]||null}
 function fmtDur(sec){sec=Math.round(Number(sec)||0);const m=Math.floor(sec/60),s=sec%60;return `${m}:${String(s).padStart(2,'0')}`}
 function fmtSize(n){n=Number(n)||0;if(!n)return '-';return n>1048576?(n/1048576).toFixed(1)+' MB':(n/1024).toFixed(0)+' KB'}
 function safeName(s){return (s||'miyu_audio').replace(/[\\/:*?"<>|]/g,'_').trim().slice(0,80)||'miyu_audio'}
 function setStatus(t,cls='muted'){const e=$('status');e.className='status '+cls;e.textContent=t}
-async function resolveSound(){
-  const id=extractId($('url').value);if(!id){setStatus('找不到 sound ID，请确认网址格式。','err');return}
-  $('resolve').disabled=true;$('info').style.display='none';setStatus('正在读取猫耳音频信息…');
-  try{
-    const api=`https://www.missevan.com/sound/getsound?soundid=${encodeURIComponent(id)}`;
-    const r=await fetch(api,{credentials:'omit'});
-    if(!r.ok) throw new Error(`getsound HTTP ${r.status}`);
-    const j=await r.json();
-    if(!j?.success||!j?.info?.sound) throw new Error('猫耳未返回有效 sound 数据');
-    sound=j.info.sound;
-    const a128=sound.dash?.audio?.find(x=>Number(x.id)===128)||sound.dash?.audio?.[0];
-    const a64=sound.dash?.audio?.find(x=>Number(x.id)===64)||sound.dash?.audio?.[1];
-    sound._a128=a128;sound._a64=a64;
-    $('sid').textContent=sound.id;$('title').textContent=sound.soundstr||'-';$('user').textContent=sound.username||'-';$('duration').textContent=fmtDur(sound.dash?.duration||sound.duration/1000);
-    $('size128').textContent=a128?`${fmtSize(a128.size)} · ${Math.round((a128.bandwidth||0)/1000)} kbps`:'-';
-    $('size64').textContent=a64?`${fmtSize(a64.size)} · ${Math.round((a64.bandwidth||0)/1000)} kbps`:'-';
-    $('direct').textContent=`API: ${api}\n128k HLS: ${sound.soundurl_128||'-'}`;
-    $('info').style.display='block';setStatus('解析成功。播放地址带时效签名，下载时会使用当前取得的有效地址。','ok');
-  }catch(e){setStatus('解析失败：'+e.message+'。如果浏览器提示 CORS，请在猫耳网页同源环境测试，或再加一个轻量代理。','err')}
-  finally{$('resolve').disabled=false}
-}
-async function downloadDash(which){
-  if(!sound)return;const a=which==='128'?sound._a128:sound._a64;if(!a?.base_url){setStatus('找不到该音质的 DASH 音频地址。','err');return}
-  const btn=which==='128'?$('download128'):$('downloadOriginal');btn.disabled=true;$('progress').style.display='block';$('bar').style.width='8%';
-  setStatus(`正在下载 ${which==='128'?'128k':'原始音质'}…`);
-  try{
-    const r=await fetch(a.base_url);
-    if(!r.ok) throw new Error(`音频 HTTP ${r.status}`);
-    const total=Number(r.headers.get('content-length'))||a.size||0;
-    let blob;
-    if(r.body&&total){
-      const reader=r.body.getReader();let got=0;const chunks=[];
-      while(true){const {done,value}=await reader.read();if(done)break;chunks.push(value);got+=value.length;$('bar').style.width=Math.min(98,Math.round(got/total*100))+'%'}
-      blob=new Blob(chunks,{type:a.mime_type||'audio/mp4'});
-    }else blob=await r.blob();
-    $('bar').style.width='100%';
-    const u=URL.createObjectURL(blob),link=document.createElement('a');link.href=u;link.download=`${safeName(sound.soundstr)}_${which==='128'?'128k':'original'}.m4a`;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(u),10000);
-    setStatus('下载已开始。文件封装为 MP4/AAC，扩展名保存为 .m4a。','ok');
-  }catch(e){
-    setStatus('浏览器直接下载失败：'+e.message+'。已尝试打开原始媒体地址，可在新页另存。','warn');window.open(a.base_url,'_blank');
-  }finally{btn.disabled=false;setTimeout(()=>{$('progress').style.display='none';$('bar').style.width='0'},1200)}
-}
-$('resolve').onclick=resolveSound;$('download128').onclick=()=>downloadDash('128');$('downloadOriginal').onclick=()=>downloadDash('64');
-$('openHls').onclick=()=>{if(sound?.soundurl_128)window.open(sound.soundurl_128,'_blank')};
-$('copyApi').onclick=async()=>{if(!sound)return;const api=`https://www.missevan.com/sound/getsound?soundid=${sound.id}`;await navigator.clipboard.writeText(api);setStatus('getsound API 已复制。','ok')};
+async function resolveSound(){const id=extractId($('url').value);if(!id){setStatus('找不到 sound ID，请确认网址格式。','err');return}$('resolve').disabled=true;$('info').style.display='none';setStatus('正在读取猫耳音频信息…');try{const proxy=`${API_BASE}/api/missevan-replay?sound_id=${encodeURIComponent(id)}`;const r=await fetch(proxy);if(!r.ok){let msg='';try{msg=(await r.json()).error||''}catch{}throw new Error(msg||`API HTTP ${r.status}`)}const j=await r.json();if(!j?.success||!j?.info?.sound)throw new Error('猫耳未返回有效 sound 数据');sound=j.info.sound;const a128=sound.dash?.audio?.find(x=>Number(x.id)===128)||sound.dash?.audio?.[0];const a64=sound.dash?.audio?.find(x=>Number(x.id)===64)||sound.dash?.audio?.[1];sound._a128=a128;sound._a64=a64;$('sid').textContent=sound.id;$('title').textContent=sound.soundstr||'-';$('user').textContent=sound.username||'-';$('duration').textContent=fmtDur(sound.dash?.duration||sound.duration/1000);$('size128').textContent=a128?`${fmtSize(a128.size)} · ${Math.round((a128.bandwidth||0)/1000)} kbps`:'-';$('size64').textContent=a64?`${fmtSize(a64.size)} · ${Math.round((a64.bandwidth||0)/1000)} kbps`:'-';$('direct').textContent=`Sound ID: ${sound.id}\n128k HLS: ${sound.soundurl_128||'-'}`;$('info').style.display='block';setStatus('解析成功。','ok')}catch(e){setStatus('解析失败：'+e.message,'err')}finally{$('resolve').disabled=false}}
+async function downloadDash(which){if(!sound)return;const a=which==='128'?sound._a128:sound._a64;if(!a?.base_url){setStatus('找不到该音质的音频地址。','err');return}const btn=which==='128'?$('download128'):$('downloadOriginal');btn.disabled=true;$('progress').style.display='block';$('bar').style.width='8%';setStatus(`正在下载 ${which==='128'?'128k':'原始音质'}…`);try{const r=await fetch(a.base_url);if(!r.ok)throw new Error(`音频 HTTP ${r.status}`);const blob=await r.blob();$('bar').style.width='100%';const u=URL.createObjectURL(blob),link=document.createElement('a');link.href=u;link.download=`${safeName(sound.soundstr)}_${which==='128'?'128k':'original'}.m4a`;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(u),10000);setStatus('下载已开始。','ok')}catch(e){setStatus('浏览器直接下载被音频 CDN 限制，已打开播放地址，可尝试另存。','warn');window.open(a.base_url,'_blank')}finally{btn.disabled=false;setTimeout(()=>{$('progress').style.display='none';$('bar').style.width='0'},1200)}}
+$('resolve').onclick=resolveSound;$('download128').onclick=()=>downloadDash('128');$('downloadOriginal').onclick=()=>downloadDash('64');$('openHls').onclick=()=>{if(sound?.soundurl_128)window.open(sound.soundurl_128,'_blank')};$('copyApi').onclick=async()=>{if(!sound)return;const api=`https://www.missevan.com/sound/getsound?soundid=${sound.id}`;await navigator.clipboard.writeText(api);setStatus('getsound API 已复制。','ok')};
 </script>
 </body>
 </html>
