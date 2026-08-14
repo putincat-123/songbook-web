@@ -50947,5 +50947,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_ebebfa92-7ca8-4e63-b93b-e65414f8bef9",
+    "poolSongId": "ebebfa92-7ca8-4e63-b93b-e65414f8bef9",
+    "songId": "57848169-fcba-4cc8-b154-13fa16008577",
+    "seq": 1524,
+    "name": "你喜欢海却不喜欢山",
+    "songName": "你喜欢海却不喜欢山",
+    "artist": "鹿先森乐队",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "你喜欢海却不喜欢山",
+    "sharedArtist": "鹿先森乐队",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
