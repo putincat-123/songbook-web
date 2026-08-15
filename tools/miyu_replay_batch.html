@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Miyu 批量回放工具</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--blue:#2563eb;--green:#059669;--shadow:0 10px 30px rgba(15,23,42,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 48px}.title{font-size:32px;font-weight:900;margin-bottom:8px}.sub{color:var(--muted);line-height:1.7}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:20px;margin-top:18px}.bookmark{display:block;text-decoration:none;text-align:center;background:var(--blue);color:#fff;padding:16px 18px;border-radius:14px;font-size:18px;font-weight:900;margin:14px 0}.btn{width:100%;border:0;border-radius:14px;padding:14px 16px;font-weight:800;font-size:16px;cursor:pointer}.copy{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}.steps{line-height:1.9;padding-left:20px}.note{font-size:13px;color:var(--muted);line-height:1.7}.status{margin-top:10px;font-size:14px;color:var(--green)}code{background:#f3f4f6;padding:2px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">🎧 Miyu 批量回放工具</div>
+  <div class="sub">这个工具必须在<strong>已登录猫耳主播账号</strong>的 missevan.com 页面里运行，才会自动沿用现有登录状态读取直播回放。不会保存账号密码。</div>
+  <div class="card">
+    <strong>推荐：做成浏览器书签</strong>
+    <a id="bookmark" class="bookmark" href="#">拖我到书签栏：Miyu 批量回放</a>
+    <button id="copy" class="btn copy">复制工具代码</button>
+    <div id="status" class="status"></div>
+  </div>
+  <div class="card">
+    <strong>使用方法</strong>
+    <ol class="steps">
+      <li>先在电脑浏览器登录猫耳主播账号。</li>
+      <li>打开主播主页的“声音”页面。</li>
+      <li>点击书签栏里的 <code>Miyu 批量回放</code>。</li>
+      <li>工具会读取全部声音分页，自动分成“直播回放 / 主頁音频 / 疑似处理中”。</li>
+      <li>直播回放可勾选后逐个取得当前有效的 128k 音频地址并下载。</li>
+    </ol>
+    <div class="note">第一版默认主播 user_id 为 24313174（谜屿）。工具只读取猫耳页面本身可访问的数据；回放地址带时效签名，下载时会重新取得。</div>
+  </div>
+</div>
+<script>
+const TOOL = String.raw`(()=>{
+  if(location.hostname!=="www.missevan.com"){alert("请先打开并登录 www.missevan.com 的主播声音页面，再运行工具。\n\n当前页面："+location.hostname);return;}
+  const OLD=document.getElementById("miyu-batch-replay-root");if(OLD){OLD.remove();return;}
+  const USER_ID="24313174";
+  const css=`
+  #miyu-batch-replay-root{position:fixed;inset:0;z-index:2147483647;background:rgba(15,23,42,.48);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;color:#1f2937}
+  #miyu-batch-replay-root *{box-sizing:border-box}
+  #miyu-br-panel{position:absolute;right:0;top:0;height:100%;width:min(760px,96vw);background:#f7f8fb;box-shadow:-12px 0 36px rgba(0,0,0,.18);display:flex;flex-direction:column}
+  #miyu-br-head{padding:16px 18px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;gap:10px}
+  #miyu-br-head b{font-size:20px}#miyu-br-close{margin-left:auto;border:0;background:#f3f4f6;border-radius:10px;padding:8px 12px;cursor:pointer}
+  #miyu-br-toolbar{padding:12px 16px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;gap:8px;flex-wrap:wrap}
+  .mbr-btn{border:0;border-radius:10px;padding:9px 12px;font-weight:700;cursor:pointer}.mbr-primary{background:#2563eb;color:white}.mbr-soft{background:#eef2ff;color:#3730a3}.mbr-green{background:#ecfdf5;color:#047857}.mbr-danger{background:#fee2e2;color:#991b1b}.mbr-btn:disabled{opacity:.45;cursor:not-allowed}
+  #miyu-br-status{padding:9px 16px;font-size:13px;color:#6b7280;background:#fff;border-bottom:1px solid #e5e7eb}
+  #miyu-br-tabs{display:flex;gap:8px;padding:10px 16px}.mbr-tab{border:1px solid #e5e7eb;background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:700}.mbr-tab.active{background:#111827;color:white}
+  #miyu-br-list{overflow:auto;padding:0 12px 24px;flex:1}.mbr-row{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px;margin:8px 0;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start}.mbr-title{font-weight:800}.mbr-meta{font-size:12px;color:#6b7280;margin-top:5px;line-height:1.6}.mbr-tag{font-size:11px;border-radius:999px;padding:3px 7px;background:#eef2ff;color:#3730a3;display:inline-block;margin-left:6px}.mbr-dup{background:#fff7ed;color:#c2410c}.mbr-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.mbr-link{border:0;border-radius:8px;padding:7px 9px;cursor:pointer;font-size:12px;font-weight:700;background:#f3f4f6}.mbr-ok{background:#ecfdf5;color:#047857}.mbr-warn{background:#fff7ed;color:#c2410c}
+  @media(max-width:620px){.mbr-row{grid-template-columns:auto 1fr}.mbr-actions{grid-column:2;justify-content:flex-start}}
+  `;
+  const root=document.createElement('div');root.id='miyu-batch-replay-root';root.innerHTML=`<style>${css}</style><div id="miyu-br-panel"><div id="miyu-br-head"><b>🎧 Miyu 批量回放</b><span style="font-size:12px;color:#6b7280">主播ID ${USER_ID}</span><button id="miyu-br-close">关闭</button></div><div id="miyu-br-toolbar"><button id="miyu-br-load" class="mbr-btn mbr-primary">读取全部声音</button><button id="miyu-br-select" class="mbr-btn mbr-soft" disabled>全选当前回放</button><button id="miyu-br-download" class="mbr-btn mbr-green" disabled>下载已选 128k</button><button id="miyu-br-clear" class="mbr-btn mbr-danger" disabled>取消选择</button></div><div id="miyu-br-status">等待读取。</div><div id="miyu-br-tabs"><button class="mbr-tab active" data-tab="replay">直播回放 (0)</button><button class="mbr-tab" data-tab="main">主頁音频 (0)</button><button class="mbr-tab" data-tab="pending">疑似处理中 (0)</button></div><div id="miyu-br-list"></div></div>`;
+  document.body.appendChild(root);
+  const $=s=>root.querySelector(s);const $$=s=>[...root.querySelectorAll(s)];
+  let all=[],tab='replay',selected=new Set(),loading=false;
+  const fmtDur=ms=>{let s=Math.max(0,Math.round((Number(ms)||0)/1000));const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;return h?`${h}:${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`:`${m}:${String(ss).padStart(2,'0')}`};
+  const fmtDate=ts=>new Date(Number(ts)*1000).toLocaleString('zh-CN',{hour12:false});
+  const setStatus=t=>$('#miyu-br-status').textContent=t;
+  function classify(x){if(!x.duration||Number(x.duration)<60000)return 'pending';if((x.soundstr||'').includes('【回放】'))return 'replay';return 'main';}
+  function dedupeFlags(items){const m=new Map();items.forEach(x=>{const k=[x.soundstr,x.create_time,x.duration].join('|');if(!m.has(k))m.set(k,[]);m.get(k).push(x.id)});const d=new Set();for(const ids of m.values())if(ids.length>1)ids.forEach(id=>d.add(id));return d;}
+  function render(){const groups={replay:[],main:[],pending:[]};all.forEach(x=>groups[x._type].push(x));const dup=dedupeFlags(groups.replay);$$('.mbr-tab').forEach(b=>{const k=b.dataset.tab;b.textContent=(k==='replay'?'直播回放':k==='main'?'主頁音频':'疑似处理中')+` (${groups[k].length})`;b.classList.toggle('active',k===tab)});const list=$('#miyu-br-list');list.innerHTML='';for(const x of groups[tab]){const row=document.createElement('div');row.className='mbr-row';const ck=document.createElement('input');ck.type='checkbox';ck.checked=selected.has(x.id);ck.onchange=()=>{ck.checked?selected.add(x.id):selected.delete(x.id);updateButtons()};const body=document.createElement('div');body.innerHTML=`<div class="mbr-title">${escapeHtml(x.soundstr||'(无标题)')}${dup.has(x.id)?'<span class="mbr-tag mbr-dup">疑似重复</span>':''}</div><div class="mbr-meta">${fmtDate(x.create_time)} · ${fmtDur(x.duration)} · ID ${x.id}</div>`;const acts=document.createElement('div');acts.className='mbr-actions';const open=document.createElement('button');open.className='mbr-link';open.textContent='打开';open.onclick=()=>window.open(`/sound/player?id=${x.id}`,'_blank');acts.append(open);if(tab==='replay'){const one=document.createElement('button');one.className='mbr-link mbr-ok';one.textContent='下载128k';one.onclick=()=>downloadOne(x,one);acts.append(one)}row.append(ck,body,acts);list.append(row)}updateButtons();}
+  const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function updateButtons(){const replays=all.filter(x=>x._type==='replay');$('#miyu-br-select').disabled=!replays.length;$('#miyu-br-clear').disabled=!selected.size;$('#miyu-br-download').disabled=!selected.size;}
+  async function loadAll(){if(loading)return;loading=true;$('#miyu-br-load').disabled=true;all=[];selected.clear();try{setStatus('读取第 1 页…');let p=1,max=1;do{const r=await fetch(`/person/getusersound?p=${p}&s=&order=0&user_id=${USER_ID}&page_size=10`,{credentials:'include'});const j=await r.json();if(!j?.success)throw new Error('列表 API 返回失败');const rows=j.info?.Datas||[];rows.forEach(x=>{x._type=classify(x);all.push(x)});max=j.info?.pagination?.maxpage||p;setStatus(`已读取 ${p}/${max} 页，共 ${all.length} 条…`);p++;await new Promise(r=>setTimeout(r,80));}while(p<=max);setStatus(`完成：共 ${all.length} 条声音。直播回放 ${all.filter(x=>x._type==='replay').length} 条。`);render()}catch(e){setStatus('读取失败：'+e.message)}finally{loading=false;$('#miyu-br-load').disabled=false}}
+  async function getSound(id){const r=await fetch(`/sound/getsound?soundid=${id}`,{credentials:'include'});const j=await r.json();if(!j?.success||!j?.info?.sound)throw new Error(j?.info?.message||'getsound 无可播放数据');return j.info.sound;}
+  async function downloadOne(x,btn){const old=btn?.textContent;if(btn){btn.disabled=true;btn.textContent='解析中…'}try{const s=await getSound(x.id);const isLive=Number(s.catalog_id)===80||String(s.breadcrumb||'').includes('直播');if(!isLive&&!String(s.soundstr||'').includes('【回放】'))throw new Error('不是直播回放');const a=s.dash?.audio?.find(a=>Number(a.id)===128)||s.dash?.audio?.[0];if(!a?.base_url)throw new Error('没有128k音频地址');if(btn)btn.textContent='下载中…';const r=await fetch(a.base_url);if(!r.ok)throw new Error('音频 HTTP '+r.status);const blob=await r.blob();const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=`${new Date(x.create_time*1000).toISOString().slice(0,10)}_${String(x.soundstr||'回放').replace(/[\\/:*?"<>|]/g,'_')}_${x.id}_128k.m4a`;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),15000);if(btn){btn.textContent='完成';setTimeout(()=>{btn.textContent=old;btn.disabled=false},1200)}return true}catch(e){alert(`ID ${x.id} 下载失败：${e.message}`);if(btn){btn.textContent=old;btn.disabled=false}return false}}
+  async function batchDownload(){const ids=[...selected];if(!ids.length)return;const items=ids.map(id=>all.find(x=>x.id===id)).filter(x=>x&&x._type==='replay');if(!items.length){alert('当前选择里没有直播回放。');return}if(!confirm(`将逐个下载 ${items.length} 条回放（128k）。\n浏览器可能会询问是否允许多个下载，请选择允许。`))return;$('#miyu-br-download').disabled=true;for(let i=0;i<items.length;i++){setStatus(`批量下载 ${i+1}/${items.length}：${items[i].soundstr} · ${fmtDate(items[i].create_time)}`);await downloadOne(items[i]);await new Promise(r=>setTimeout(r,900));}setStatus(`批量下载完成：尝试 ${items.length} 条。`);$('#miyu-br-download').disabled=false}
+  $('#miyu-br-close').onclick=()=>root.remove();$('#miyu-br-load').onclick=loadAll;$('#miyu-br-select').onclick=()=>{all.filter(x=>x._type==='replay').forEach(x=>selected.add(x.id));render()};$('#miyu-br-clear').onclick=()=>{selected.clear();render()};$('#miyu-br-download').onclick=batchDownload;$$('.mbr-tab').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
+})();`;
+const bookmark='javascript:'+encodeURIComponent(TOOL);
+document.getElementById('bookmark').href=bookmark;
+document.getElementById('copy').onclick=async()=>{await navigator.clipboard.writeText(bookmark);document.getElementById('status').textContent='已复制。也可以新建书签，把这段代码贴到网址栏。';};
+</script>
+</body>
+</html>
