@@ -50972,5 +50972,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_4faac73b-8058-45b6-a7e7-980296cec1fd",
+    "poolSongId": "4faac73b-8058-45b6-a7e7-980296cec1fd",
+    "songId": "2aac06de-a01b-459e-9fd7-ecb163cfc9ce",
+    "seq": 1525,
+    "name": "山丘",
+    "songName": "山丘",
+    "artist": "李宗盛",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "山丘",
+    "sharedArtist": "李宗盛",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
