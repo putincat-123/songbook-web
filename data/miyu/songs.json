@@ -50997,5 +50997,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_f742a354-e95f-4394-acdd-3acce07948fb",
+    "poolSongId": "f742a354-e95f-4394-acdd-3acce07948fb",
+    "songId": "390cfd0f-e5dd-4e5b-aaf3-fd89022c11af",
+    "seq": 1526,
+    "name": "Dear D",
+    "songName": "Dear D",
+    "artist": "项睿娴",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "Dear D",
+    "sharedArtist": "项睿娴",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
