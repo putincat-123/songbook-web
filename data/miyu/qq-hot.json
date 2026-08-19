@@ -1,70 +1,26 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-08-18T22:09:07.955Z",
+  "updatedAt": "2026-08-19T22:11:17.585Z",
   "songs": [
     {
-      "name": "RUN IT",
-      "artist": "梓渝",
+      "name": "天之外",
+      "artist": "薛凯琪",
       "sources": [
-        {
-          "source": "hot",
-          "rank": 1
-        },
         {
           "source": "new",
-          "rank": 1
-        },
-        {
-          "source": "rise",
-          "rank": 1
-        },
-        {
-          "source": "popular",
           "rank": 3
-        }
-      ],
-      "sourceCount": 4,
-      "bestRank": 1
-    },
-    {
-      "name": "闭目入神",
-      "artist": "郑中基",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 2
         },
         {
           "source": "rise",
-          "rank": 2
-        },
-        {
-          "source": "popular",
           "rank": 4
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 2
-    },
-    {
-      "name": "我好想你 (苏打绿版)",
-      "artist": "苏打绿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 16
-        },
-        {
-          "source": "rise",
-          "rank": 12
         },
         {
           "source": "popular",
-          "rank": 15
+          "rank": 17
         }
       ],
       "sourceCount": 3,
-      "bestRank": 12
+      "bestRank": 3
     },
     {
       "name": "冻结",
@@ -72,7 +28,7 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 3
+          "rank": 1
         },
         {
           "source": "popular",
@@ -88,10 +44,26 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 15
+          "rank": 14
         },
         {
           "source": "new",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
+      "name": "闭目入神",
+      "artist": "郑中基",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 2
+        },
+        {
+          "source": "popular",
           "rank": 2
         }
       ],
@@ -99,20 +71,20 @@
       "bestRank": 2
     },
     {
-      "name": "Setsuna Hanabi",
-      "artist": "TOMORROW X TOGETHER (투모로우바이투게더)",
+      "name": "RUN IT",
+      "artist": "梓渝",
       "sources": [
         {
           "source": "new",
-          "rank": 19
+          "rank": 2
         },
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 4
         }
       ],
       "sourceCount": 2,
-      "bestRank": 4
+      "bestRank": 2
     },
     {
       "name": "明天过后",
@@ -120,7 +92,7 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 5
+          "rank": 4
         },
         {
           "source": "popular",
@@ -128,47 +100,15 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 5
+      "bestRank": 4
     },
     {
-      "name": "Crossfire",
-      "artist": "张艺兴",
+      "name": "云中鸟",
+      "artist": "小阿七",
       "sources": [
         {
           "source": "new",
-          "rank": 5
-        },
-        {
-          "source": "popular",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 5
-    },
-    {
-      "name": "等下完这场雨 (合唱版)",
-      "artist": "杨友友/田园",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        },
-        {
-          "source": "popular",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "游向陆地的鱼",
-      "artist": "梓渝",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 10
+          "rank": 4
         },
         {
           "source": "rise",
@@ -176,15 +116,47 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 10
+      "bestRank": 4
     },
     {
-      "name": "神山GUOFENG",
-      "artist": "FOX胡天渝",
+      "name": "MOTION (feat. Juicy J)",
+      "artist": "CORTIS/Juicy J",
       "sources": [
         {
           "source": "new",
-          "rank": 14
+          "rank": 7
+        },
+        {
+          "source": "rise",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 5
+    },
+    {
+      "name": "无情的情书",
+      "artist": "半吨兄弟",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 8
+        },
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 8
+    },
+    {
+      "name": "静音恋人 (两颗缠绕的心)",
+      "artist": "邹沛沛",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
         },
         {
           "source": "popular",
@@ -192,30 +164,74 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 14
+      "bestRank": 9
     },
     {
-      "name": "取愿",
-      "artist": "李星星",
+      "name": "神山GUOFENG",
+      "artist": "FOX胡天渝",
       "sources": [
         {
           "source": "new",
-          "rank": 17
+          "rank": 10
         },
         {
           "source": "popular",
-          "rank": 17
+          "rank": 16
         }
       ],
       "sourceCount": 2,
-      "bestRank": 17
+      "bestRank": 10
     },
     {
-      "name": "给我一个理由忘记 (Live)",
-      "artist": "丁当/侯明昊",
+      "name": "我好想你 (苏打绿版)",
+      "artist": "苏打绿",
       "sources": [
         {
+          "source": "hot",
+          "rank": 15
+        },
+        {
           "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 12
+    },
+    {
+      "name": "不想失去你",
+      "artist": "毛不易",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        },
+        {
+          "source": "popular",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 14
+    },
+    {
+      "name": "REDRED",
+      "artist": "CORTIS",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 1
+    },
+    {
+      "name": "GO!",
+      "artist": "CORTIS",
+      "sources": [
+        {
+          "source": "rise",
           "rank": 2
         }
       ],
@@ -223,148 +239,28 @@
       "bestRank": 2
     },
     {
-      "name": "贰拾肆",
-      "artist": "梓渝",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 3
-    },
-    {
-      "name": "周旋",
-      "artist": "王以太/艾热AIR",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 3
-    },
-    {
       "name": "我不难过",
       "artist": "孙燕姿",
       "sources": [
         {
           "source": "hot",
-          "rank": 4
+          "rank": 3
         }
       ],
       "sourceCount": 1,
-      "bestRank": 4
+      "bestRank": 3
     },
     {
-      "name": "Pop Off Pop Off",
-      "artist": "KiiiKiii",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
-      "name": "跃",
-      "artist": "薛之谦",
+      "name": "Take Me Hand",
+      "artist": "DAISHI DANCE (ダイシ・ダンス)/Cécile Corbel",
       "sources": [
         {
           "source": "rise",
-          "rank": 5
+          "rank": 3
         }
       ],
       "sourceCount": 1,
-      "bestRank": 5
-    },
-    {
-      "name": "因为了解",
-      "artist": "汪苏泷",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 5
-    },
-    {
-      "name": "恋人",
-      "artist": "李荣浩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "全世界的雨",
-      "artist": "周深/Ella陈嘉桦",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "Silence",
-      "artist": "TOMORROW X TOGETHER (투모로우바이투게더)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "甲乙丙丁 (你我怎么两清)",
-      "artist": "李佳薇",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 7
-    },
-    {
-      "name": "Serenade (KARINA & WINTER)",
-      "artist": "aespa (에스파)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 7
-    },
-    {
-      "name": "天使",
-      "artist": "刘思鉴",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 7
+      "bestRank": 3
     },
     {
       "name": "我在你身后",
@@ -372,6 +268,90 @@
       "sources": [
         {
           "source": "popular",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
+      "name": "恋人",
+      "artist": "李荣浩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "Pop Off Pop Off",
+      "artist": "KiiiKiii",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "给我一个理由忘记 (Live)",
+      "artist": "丁当/侯明昊",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "甲乙丙丁 (你我怎么两清)",
+      "artist": "李佳薇",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "贰拾肆",
+      "artist": "梓渝",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "TNT",
+      "artist": "CORTIS",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "雨爱",
+      "artist": "杨丞琳",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 7
         }
       ],
@@ -379,8 +359,32 @@
       "bestRank": 7
     },
     {
-      "name": "雨爱",
-      "artist": "杨丞琳",
+      "name": "What You Want",
+      "artist": "CORTIS",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "最好的我",
+      "artist": "龚芝怡/房祖名",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "情歌",
+      "artist": "梁静茹",
       "sources": [
         {
           "source": "hot",
@@ -391,8 +395,8 @@
       "bestRank": 8
     },
     {
-      "name": "一城山水",
-      "artist": "Lunhui轮回",
+      "name": "ACAI",
+      "artist": "CORTIS",
       "sources": [
         {
           "source": "rise",
@@ -403,8 +407,8 @@
       "bestRank": 8
     },
     {
-      "name": "喜欢你 (Live)",
-      "artist": "周深",
+      "name": "因为了解",
+      "artist": "汪苏泷",
       "sources": [
         {
           "source": "popular",
@@ -427,11 +431,11 @@
       "bestRank": 9
     },
     {
-      "name": "我们总是喜欢在夏天讨论永远",
-      "artist": "时代少年团",
+      "name": "看着我的眼睛说",
+      "artist": "张远",
       "sources": [
         {
-          "source": "new",
+          "source": "rise",
           "rank": 9
         }
       ],
@@ -439,11 +443,11 @@
       "bestRank": 9
     },
     {
-      "name": "Take Me Hand",
-      "artist": "DAISHI DANCE (ダイシ・ダンス)/Cécile Corbel",
+      "name": "先承诺的人先忘了",
+      "artist": "田园",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 9
         }
       ],
@@ -463,8 +467,8 @@
       "bestRank": 10
     },
     {
-      "name": "算了",
-      "artist": "万妮达Vinida Weng",
+      "name": "一半一半 (Live)",
+      "artist": "宋亚轩",
       "sources": [
         {
           "source": "popular",
@@ -487,8 +491,8 @@
       "bestRank": 11
     },
     {
-      "name": "汹涌",
-      "artist": "吴莫愁",
+      "name": "Crossfire",
+      "artist": "张艺兴",
       "sources": [
         {
           "source": "new",
@@ -499,8 +503,8 @@
       "bestRank": 11
     },
     {
-      "name": "感官先生 (Live)",
-      "artist": "张彬彬",
+      "name": "Blue Lips ​",
+      "artist": "CORTIS",
       "sources": [
         {
           "source": "rise",
@@ -511,8 +515,8 @@
       "bestRank": 11
     },
     {
-      "name": "一半一半 (Live)",
-      "artist": "宋亚轩",
+      "name": "算了",
+      "artist": "万妮达Vinida Weng",
       "sources": [
         {
           "source": "popular",
@@ -523,8 +527,8 @@
       "bestRank": 11
     },
     {
-      "name": "情歌",
-      "artist": "梁静茹",
+      "name": "特别的人",
+      "artist": "方大同",
       "sources": [
         {
           "source": "hot",
@@ -535,8 +539,8 @@
       "bestRank": 12
     },
     {
-      "name": "无情的情书",
-      "artist": "半吨兄弟",
+      "name": "如果还会遇见",
+      "artist": "何遇Hayu/Crybird",
       "sources": [
         {
           "source": "new",
@@ -547,11 +551,11 @@
       "bestRank": 12
     },
     {
-      "name": "呼吸决定 (Live)",
-      "artist": "姚晓棠/张星特",
+      "name": "JoyRide",
+      "artist": "CORTIS",
       "sources": [
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 12
         }
       ],
@@ -571,71 +575,71 @@
       "bestRank": 13
     },
     {
+      "name": "Serenade (KARINA & WINTER)",
+      "artist": "aespa (에스파)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "FaSHioN",
+      "artist": "CORTIS",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "吹来又吹走的风",
+      "artist": "毛潇曼",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "YOUNGCREATORCREW",
+      "artist": "CORTIS",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "喜欢你 (Live)",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
       "name": "爱久见人心",
       "artist": "赵乃吉",
       "sources": [
         {
           "source": "new",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "周旋 (Live)",
-      "artist": "艾热AIR",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "差一步",
-      "artist": "大壮",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "特别的人",
-      "artist": "方大同",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "Love Me More",
-      "artist": "Apink (에이핑크)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "不想失去你",
-      "artist": "毛不易",
-      "sources": [
-        {
-          "source": "new",
           "rank": 15
         }
       ],
@@ -643,8 +647,8 @@
       "bestRank": 15
     },
     {
-      "name": "想到我们",
-      "artist": "汪苏泷",
+      "name": "Wassup",
+      "artist": "CORTIS",
       "sources": [
         {
           "source": "rise",
@@ -653,42 +657,6 @@
       ],
       "sourceCount": 1,
       "bestRank": 15
-    },
-    {
-      "name": "KISS N TELL",
-      "artist": "aespa (에스파)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "像晴天像雨天",
-      "artist": "汪苏泷",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "梦哑 (Live)",
-      "artist": "杨丞琳/黄子弘凡",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
     },
     {
       "name": "唯一",
@@ -696,23 +664,35 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 17
+          "rank": 16
         }
       ],
       "sourceCount": 1,
-      "bestRank": 17
+      "bestRank": 16
     },
     {
-      "name": "爱要怎么说出口",
-      "artist": "赵传",
+      "name": "汹涌",
+      "artist": "吴莫愁",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "天龙八部之宿敌",
+      "artist": "许嵩",
       "sources": [
         {
           "source": "rise",
-          "rank": 17
+          "rank": 16
         }
       ],
       "sourceCount": 1,
-      "bestRank": 17
+      "bestRank": 16
     },
     {
       "name": "雨过后的风景",
@@ -720,47 +700,35 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 18
+          "rank": 17
         }
       ],
       "sourceCount": 1,
-      "bestRank": 18
+      "bestRank": 17
     },
     {
-      "name": "云中鸟",
-      "artist": "小阿七",
+      "name": "KISS N TELL",
+      "artist": "aespa (에스파)",
       "sources": [
         {
           "source": "new",
-          "rank": 18
+          "rank": 17
         }
       ],
       "sourceCount": 1,
-      "bestRank": 18
+      "bestRank": 17
     },
     {
-      "name": "Come Back To Me",
-      "artist": "Utada (宇多田光)",
+      "name": "分手快乐",
+      "artist": "梁静茹",
       "sources": [
         {
           "source": "rise",
-          "rank": 18
+          "rank": 17
         }
       ],
       "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "他到底有多好",
-      "artist": "马师傅/蒋坤炜",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
+      "bestRank": 17
     },
     {
       "name": "红色高跟鞋",
@@ -768,6 +736,54 @@
       "sources": [
         {
           "source": "hot",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "我们总是喜欢在夏天讨论永远",
+      "artist": "时代少年团",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "Boom Boom Boom",
+      "artist": "BOYNEXTDOOR (보이넥스트도어)",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "聊得来的朋友",
+      "artist": "廖不起",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "演员",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 19
         }
       ],
@@ -775,8 +791,20 @@
       "bestRank": 19
     },
     {
-      "name": "瞬间的瞬间",
-      "artist": "林俊杰",
+      "name": "等下完这场雨 (合唱版)",
+      "artist": "杨友友/田园",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "Front Row Baby",
+      "artist": "Ely Oaks/Lavinia",
       "sources": [
         {
           "source": "rise",
@@ -787,20 +815,8 @@
       "bestRank": 19
     },
     {
-      "name": "愿你眼里总有光芒",
-      "artist": "王佳音",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "演员",
-      "artist": "薛之谦",
+      "name": "开始懂了",
+      "artist": "孙燕姿",
       "sources": [
         {
           "source": "hot",
@@ -811,8 +827,8 @@
       "bestRank": 20
     },
     {
-      "name": "最完美的存在",
-      "artist": "刘芯妤Roselyn",
+      "name": "nowhere, nobody",
+      "artist": "Ariana Grande",
       "sources": [
         {
           "source": "new",
@@ -823,8 +839,8 @@
       "bestRank": 20
     },
     {
-      "name": "Chevrolet’78 (Live)",
-      "artist": "王赫野",
+      "name": "一城山水",
+      "artist": "Lunhui轮回",
       "sources": [
         {
           "source": "rise",
