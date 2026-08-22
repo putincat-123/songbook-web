@@ -1,0 +1,38 @@
+name: Update Miyu daily copy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-miyu-daily-copy.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update title and remove flow note
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tools/miyu_toolbox.html')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace('🎧 今日直播歌单', '🎧 今日推荐歌单', 1)
+          note = '<div class="flow-note">建议顺着唱：前 3 首先让直播间轻松进场，中间 4 首留给抒情与故事感，最后 3 首把情绪或能量往上带。</div>\n'
+          if note not in text:
+              raise SystemExit('Flow note not found')
+          text = text.replace(note, '', 1)
+          p.write_text(text, encoding='utf-8')
+          PY
+          git diff --check
+          git diff -- tools/miyu_toolbox.html
+      - name: Commit change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/miyu_toolbox.html
+          git commit -m 'Refine Miyu daily recommendation copy'
+          git push
