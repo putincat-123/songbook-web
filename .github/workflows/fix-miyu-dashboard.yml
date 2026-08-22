@@ -1,0 +1,39 @@
+name: Fix Miyu dashboard API
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-miyu-dashboard.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch API base URL only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tools/miyu_toolbox_legacy.html')
+          text = p.read_text(encoding='utf-8')
+          old = 'const API_BASE_URL = "";'
+          new = 'const API_BASE_URL = "https://streamer-songbook.vercel.app";'
+          if old not in text:
+              raise SystemExit('Expected API_BASE_URL line not found; refusing to change file')
+          if text.count(old) != 1:
+              raise SystemExit(f'Expected exactly one match, found {text.count(old)}')
+          p.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+          git diff --check
+          git diff -- tools/miyu_toolbox_legacy.html
+      - name: Commit precise fix
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/miyu_toolbox_legacy.html
+          git commit -m 'Fix Miyu dashboard API endpoint'
+          git push
