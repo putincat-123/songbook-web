@@ -84,7 +84,10 @@
 
   function showLegacyPanel(frame,panelId,{hidePoolSearch=false}={}){
     try{
-      const doc=frame.contentDocument;baseClean(doc);
+      const doc=frame.contentDocument;
+      const targetBtn=doc.querySelector('.tab-btn[data-tab="'+panelId+'"]');
+      if(targetBtn) targetBtn.click();
+      baseClean(doc);
       doc.querySelectorAll('.panel').forEach(p=>{p.classList.remove('active');p.style.display='none'});
       const panel=doc.getElementById(panelId);if(panel){panel.classList.add('active');panel.style.display='block'}
       if(hidePoolSearch && panel){
