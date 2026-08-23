@@ -1,0 +1,65 @@
+name: Add Traditional Chinese search support
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-traditional-search.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate offline Traditional-to-Simplified map
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install opencc-js@1 >/dev/null 2>&1
+          node <<'NODE'
+          const fs=require('fs');
+          const OpenCC=require('opencc-js');
+          const convert=OpenCC.Converter({from:'tw',to:'cn'});
+          const map={};
+          const ranges=[[0x3400,0x4dbf],[0x4e00,0x9fff],[0xf900,0xfaff]];
+          for(const [a,b] of ranges){
+            for(let cp=a;cp<=b;cp++){
+              const ch=String.fromCodePoint(cp);
+              const out=convert(ch);
+              if(out!==ch && [...out].length===1) map[ch]=out;
+            }
+          }
+          fs.mkdirSync('tools',{recursive:true});
+          fs.writeFileSync('tools/zh_t2s_map.js','window.ZH_T2S_MAP='+JSON.stringify(map)+';\n','utf8');
+          console.log('Generated mappings:',Object.keys(map).length);
+          NODE
+      - name: Patch songbook search normalization
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          text=p.read_text(encoding='utf-8')
+          old='<div id="toast" class="toast"></div>\n<script>'
+          new='<div id="toast" class="toast"></div>\n<script src="./tools/zh_t2s_map.js"></script>\n<script>'
+          if text.count(old)!=1:
+              raise SystemExit(f'script anchor mismatch: {text.count(old)}')
+          text=text.replace(old,new,1)
+          old_fn='function normalizeText(v){return String(v==null?"":v).toLowerCase().normalize("NFKC").replace(/[\\s\\u3000]+/g,"").trim()}\nfunction searchKey(v){return normalizeText(v)}'
+          new_fn='function toSimplified(v){const map=window.ZH_T2S_MAP||{};return Array.from(String(v==null?"":v),ch=>map[ch]||ch).join("")}\nfunction normalizeText(v){return toSimplified(String(v==null?"":v).toLowerCase().normalize("NFKC")).replace(/[\\s\\u3000]+/g,"").trim()}\nfunction searchKey(v){return normalizeText(v)}'
+          if text.count(old_fn)!=1:
+              raise SystemExit(f'normalize anchor mismatch: {text.count(old_fn)}')
+          text=text.replace(old_fn,new_fn,1)
+          p.write_text(text,encoding='utf-8')
+          PY
+          git diff --check
+          git diff --stat
+          grep -n 'zh_t2s_map\|toSimplified' index.html
+      - name: Commit support
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html tools/zh_t2s_map.js
+          git commit -m 'Support Traditional Chinese song search'
+          git push
