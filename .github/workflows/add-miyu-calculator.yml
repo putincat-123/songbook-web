@@ -14,67 +14,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Add calculator tab
+      - name: Load calculator module
         run: |
           python - <<'PY'
           from pathlib import Path
           p=Path('tools/miyu_toolbox.html')
           text=p.read_text(encoding='utf-8')
-
-          old_css='.artist-box{background:linear-gradient(135deg,#f5f3ff,#fff 62%);border-color:#ddd6fe}'
-          new_css='''.calc-wrap{max-width:430px;margin:18px auto}.calc-card{background:linear-gradient(135deg,#f8fafc,#fff 60%);border:1px solid #dbeafe;border-radius:22px;box-shadow:var(--shadow);padding:16px}.calc-display{background:#0f172a;color:#fff;border-radius:18px;padding:15px 16px;margin-bottom:12px;text-align:right;min-height:94px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}.calc-expression{min-height:22px;color:#94a3b8;font-size:14px;word-break:break-all}.calc-result{font-size:34px;font-weight:950;line-height:1.2;word-break:break-all}.calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.calc-key{border:1px solid #e2e8f0;border-radius:16px;background:#fff;min-height:58px;font-size:20px;font-weight:900;cursor:pointer;box-shadow:0 2px 6px rgba(15,23,42,.04)}.calc-key:active{transform:scale(.98)}.calc-key.op{background:#eff6ff;color:#2563eb;border-color:#bfdbfe}.calc-key.action{background:#f8fafc;color:#475569}.calc-key.equal{background:#2563eb;color:#fff;border-color:#2563eb}.calc-note{margin-top:10px;text-align:center;color:var(--muted);font-size:12px}.artist-box{background:linear-gradient(135deg,#f5f3ff,#fff 62%);border-color:#ddd6fe}'''
-          if text.count(old_css)!=1: raise SystemExit('CSS anchor mismatch')
-          text=text.replace(old_css,new_css,1)
-
-          old_nav='<button class="tab-btn" data-tab="hot">热门推荐</button><button class="tab-btn" data-tab="data">资料工具</button>'
-          new_nav='<button class="tab-btn" data-tab="hot">热门推荐</button><button class="tab-btn" data-tab="calculator">计算机</button><button class="tab-btn" data-tab="data">资料工具</button>'
-          if text.count(old_nav)!=1: raise SystemExit('nav anchor mismatch')
-          text=text.replace(old_nav,new_nav,1)
-
-          old_html='  <section id="data" class="panel"><div class="frame-wrap"><iframe id="dataFrame" src="./miyu_toolbox_legacy.html?embed=1#dataPanel" title="资料工具"></iframe></div></section>'
-          new_html='''  <section id="calculator" class="panel">
-    <div class="calc-wrap">
-      <div class="calc-card">
-        <div class="card-head"><div><h2>🧮 计算机</h2><div class="hint">直播临时算金额、比例、数量时直接用。</div></div></div>
-        <div class="calc-display"><div id="calcExpression" class="calc-expression"></div><div id="calcResult" class="calc-result">0</div></div>
-        <div class="calc-grid" id="calcGrid">
-          <button class="calc-key action" data-calc="clear">C</button><button class="calc-key action" data-calc="back">⌫</button><button class="calc-key action" data-calc="percent">%</button><button class="calc-key op" data-value="÷">÷</button>
-          <button class="calc-key" data-value="7">7</button><button class="calc-key" data-value="8">8</button><button class="calc-key" data-value="9">9</button><button class="calc-key op" data-value="×">×</button>
-          <button class="calc-key" data-value="4">4</button><button class="calc-key" data-value="5">5</button><button class="calc-key" data-value="6">6</button><button class="calc-key op" data-value="-">−</button>
-          <button class="calc-key" data-value="1">1</button><button class="calc-key" data-value="2">2</button><button class="calc-key" data-value="3">3</button><button class="calc-key op" data-value="+">+</button>
-          <button class="calc-key action" data-calc="sign">±</button><button class="calc-key" data-value="0">0</button><button class="calc-key" data-value=".">.</button><button class="calc-key equal" data-calc="equals">=</button>
-        </div>
-        <div class="calc-note">也可用电脑键盘输入数字与 + − × ÷</div>
-      </div>
-    </div>
-  </section>
-  <section id="data" class="panel"><div class="frame-wrap"><iframe id="dataFrame" src="./miyu_toolbox_legacy.html?embed=1#dataPanel" title="资料工具"></iframe></div></section>'''
-          if text.count(old_html)!=1: raise SystemExit('HTML anchor mismatch')
-          text=text.replace(old_html,new_html,1)
-
-          old_js="  loadSongPool();loadDailyTopics();const initial=qs.get('tool');if(initial&&document.getElementById(initial))showMain(initial);else showMain('daily');"
-          new_js="""  let calcExpr='';
-  function calcFormat(n){if(!Number.isFinite(n))return '错误';const rounded=Math.round((n+Number.EPSILON)*1e10)/1e10;return String(rounded)}
-  function calcEvaluate(expr){const clean=String(expr||'').replaceAll('×','*').replaceAll('÷','/');if(!clean||!/^[0-9+\\-*/.()\\s]+$/.test(clean))return null;try{const value=Function('\\"use strict\\";return ('+clean+')')();return Number.isFinite(value)?value:null}catch(e){return null}}
-  function calcRender(preview=true){$('calcExpression').textContent=calcExpr;const v=preview?calcEvaluate(calcExpr):null;if(v!==null)$('calcResult').textContent=calcFormat(v);else if(!calcExpr)$('calcResult').textContent='0'}
-  function calcAppend(v){if(/[+×÷]/.test(v)&&(!calcExpr||/[+\\-×÷]$/.test(calcExpr)))calcExpr=calcExpr.replace(/[+\\-×÷]+$/,v);else calcExpr+=v;calcRender()}
-  function calcPercent(){const m=calcExpr.match(/(-?\\d*\\.?\\d+)$/);if(!m)return;const val=Number(m[1])/100;calcExpr=calcExpr.slice(0,-m[1].length)+calcFormat(val);calcRender()}
-  function calcSign(){const m=calcExpr.match(/(-?\\d*\\.?\\d+)$/);if(!m)return;const raw=m[1],next=raw.startsWith('-')?raw.slice(1):'-'+raw;calcExpr=calcExpr.slice(0,-raw.length)+next;calcRender()}
-  function calcEquals(){const v=calcEvaluate(calcExpr);if(v===null){$('calcResult').textContent='错误';return}const shown=calcFormat(v);$('calcExpression').textContent=calcExpr+' =';$('calcResult').textContent=shown;calcExpr=shown}
-  $('calcGrid').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.value!=null)calcAppend(b.dataset.value);else if(b.dataset.calc==='clear'){calcExpr='';calcRender()}else if(b.dataset.calc==='back'){calcExpr=calcExpr.slice(0,-1);calcRender()}else if(b.dataset.calc==='percent')calcPercent();else if(b.dataset.calc==='sign')calcSign();else if(b.dataset.calc==='equals')calcEquals()});
-  window.addEventListener('keydown',e=>{if(!document.getElementById('calculator').classList.contains('active'))return;const k=e.key;if(/^[0-9.]$/.test(k))calcAppend(k);else if(k==='+')calcAppend('+');else if(k==='-')calcAppend('-');else if(k==='*')calcAppend('×');else if(k==='/'){e.preventDefault();calcAppend('÷')}else if(k==='Enter'||k==='='){e.preventDefault();calcEquals()}else if(k==='Backspace'){e.preventDefault();calcExpr=calcExpr.slice(0,-1);calcRender()}else if(k==='Escape'){calcExpr='';calcRender()}});
-  loadSongPool();loadDailyTopics();const initial=qs.get('tool');if(initial&&document.getElementById(initial))showMain(initial);else showMain('daily');"""
-          if text.count(old_js)!=1: raise SystemExit('JS anchor mismatch')
-          text=text.replace(old_js,new_js,1)
-
-          p.write_text(text,encoding='utf-8')
+          tag='<script src="./miyu_calculator.js"></script>'
+          if tag in text:
+              raise SystemExit('calculator module already loaded')
+          if text.count('</body>') != 1:
+              raise SystemExit('body anchor mismatch')
+          p.write_text(text.replace('</body>', tag+'\n</body>', 1), encoding='utf-8')
           PY
           git diff --check
           git diff -- tools/miyu_toolbox.html
-      - name: Commit calculator
+      - name: Commit loader
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add tools/miyu_toolbox.html
-          git commit -m 'Add calculator to Miyu toolbox'
+          git commit -m 'Load calculator in Miyu toolbox'
           git push
