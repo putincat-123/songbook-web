@@ -70,6 +70,14 @@
     const u = new URL(location.href); u.searchParams.set('streamer', new URLSearchParams(location.search).get('streamer') || 'miyu'); u.searchParams.set('tool','calculator'); history.replaceState({},'',u);
   });
 
+  nav.addEventListener('click', e => {
+    const target = e.target.closest('.tab-btn');
+    if (target && target !== btn) {
+      btn.classList.remove('active');
+      panel.classList.remove('active');
+    }
+  });
+
   window.addEventListener('keydown', e => {
     if (!panel.classList.contains('active')) return;
     if (/^[0-9.]$/.test(e.key)) append(e.key);
