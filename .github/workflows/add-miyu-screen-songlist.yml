@@ -1,0 +1,64 @@
+name: Add Miyu screen songlist
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-miyu-screen-songlist.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add public-screen songlist generator
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tools/miyu_toolbox.html')
+          text=p.read_text(encoding='utf-8')
+
+          old_css=".topic-section{margin-top:22px}"
+          new_css=""".screenlist-card{margin-top:18px;background:linear-gradient(135deg,#f0fdf4,#fff 62%);border-color:#bbf7d0}.screenlist-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.screenlist-actions{display:flex;gap:8px;flex-wrap:wrap}.screenlist-text{width:100%;min-height:360px;margin-top:12px;border:1px solid #d1fae5;border-radius:14px;padding:13px 14px;background:#fff;color:#1f2937;font:600 14px/1.7 -apple-system,BlinkMacSystemFont,\"Segoe UI\",\"PingFang SC\",\"Microsoft YaHei\",sans-serif;resize:vertical;outline:none}.screenlist-text:focus{border-color:#86efac;box-shadow:0 0 0 3px rgba(134,239,172,.2)}.screenlist-meta{margin-top:8px;font-size:11px;color:#64748b}.topic-section{margin-top:22px}"""
+          if text.count(old_css)!=1: raise SystemExit('CSS anchor mismatch')
+          text=text.replace(old_css,new_css,1)
+
+          old_html='''    <div class="topic-section">\n      <div class="topic-section-head">'''
+          new_html='''    <div class="card screenlist-card">\n      <div class="screenlist-head">\n        <div><h2>📋 公屏歌单</h2><div class="hint">自动生成标准版，可直接复制发送；内容仍可手动微调。</div></div>\n        <div class="screenlist-actions"><button class="tool-btn soft" id="regenScreenListBtn">🔄 重新生成</button><button class="tool-btn primary" id="copyScreenListBtn">📋 复制公屏歌单</button></div>\n      </div>\n      <textarea id="screenListText" class="screenlist-text" spellcheck="false" placeholder="曲库载入后自动生成…"></textarea>\n      <div id="screenListMeta" class="screenlist-meta">准备中…</div>\n    </div>\n    <div class="topic-section">\n      <div class="topic-section-head">'''
+          if text.count(old_html)!=1: raise SystemExit('HTML anchor mismatch')
+          text=text.replace(old_html,new_html,1)
+
+          old_norm="function normSong(s,i){const name=String(s.name||s.songName||s.title||'').trim(),artist=String(s.artist||s.singer||s.artistName||'').trim(),style=String(s.style||'').trim(),moods=[s.ai_mood_tags,s.ai_scene_tags,s.crowd_playlist_tags].flat().filter(Boolean).join(' '),energy=String(s.ai_energy||'').trim();return name?{id:String(s.id||i),name,artist,style,moods,energy}:null}"
+          new_norm="function normSong(s,i){const name=String(s.name||s.songName||s.title||'').trim(),artist=String(s.artist||s.singer||s.artistName||'').trim(),style=String(s.style||'').trim(),moods=[s.ai_mood_tags,s.ai_scene_tags,s.crowd_playlist_tags].flat().filter(Boolean).join(' '),energy=String(s.ai_energy||'').trim(),sourceDate=String(s.source_date||s.sourceDate||'').trim(),createdAt=String(s.created_at||s.createdAt||'').trim(),seq=Number(s.seq||0)||0;return name?{id:String(s.id||i),name,artist,style,moods,energy,sourceDate,createdAt,seq}:null}"
+          if text.count(old_norm)!=1: raise SystemExit('normSong anchor mismatch')
+          text=text.replace(old_norm,new_norm,1)
+
+          old_js="  function buildArtists(){artistMap=new Map();"
+          new_js="""  let screenListNonce=0;\n  function compactLines(names,maxChars=34){const lines=[];let line='';for(const raw of names){const name=String(raw||'').trim();if(!name)continue;const next=line?line+'｜'+name:name;if(line&&next.length>maxChars){lines.push(line);line=name}else line=next}if(line)lines.push(line);return lines}\n  function getNewestSongs(count=5){return [...songPool].sort((a,b)=>{const ad=a.sourceDate||a.createdAt||'',bd=b.sourceDate||b.createdAt||'';if(ad!==bd)return bd.localeCompare(ad);return (b.seq||0)-(a.seq||0)}).slice(0,count)}\n  function getScreenArtists(count=5){return [...artistMap.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0],'zh-Hans-CN')).slice(0,count).map(([name])=>name)}\n  function getScreenRecommendations(count=32){const newest=new Set(getNewestSongs(6).map(s=>s.id)),dailyIds=new Set(dailySongs.map(s=>s.id));const base=songPool.filter(s=>!newest.has(s.id));const daily=seededShuffle(base.filter(s=>dailyIds.has(s.id)),seedFrom(streamer+'|screen-daily|'+localDateKey()+'|'+screenListNonce));const rest=seededShuffle(base.filter(s=>!dailyIds.has(s.id)),seedFrom(streamer+'|screen-rest|'+localDateKey()+'|'+screenListNonce));const result=[],artistCounts=new Map();for(const s of [...daily,...rest]){const key=s.artist||'__';const used=artistCounts.get(key)||0;if(key!=='__'&&used>=3)continue;result.push(s);artistCounts.set(key,used+1);if(result.length>=count)break}return result}\n  function buildScreenList(){if(!songPool.length||!artistMap.size){$('screenListText').value='';$('screenListMeta').textContent='曲库尚未载入';return}const newest=getNewestSongs(5),artists=getScreenArtists(5),recommended=getScreenRecommendations(32);const parts=[];parts.push('🎲盲盒点歌');parts.push('数字 1-'+songPool.length+'｜歌手：'+artists.join('｜'));parts.push('');parts.push('❥新学');parts.push(...compactLines(newest.map(s=>s.name),32));parts.push('');parts.push('❥推荐');parts.push(...compactLines(recommended.map(s=>s.name),34));$('screenListText').value=parts.join('\\n');$('screenListMeta').textContent='标准版｜新学 '+newest.length+' 首｜推荐 '+recommended.length+' 首｜歌手盲盒 '+artists.length+' 位｜可直接编辑'}\n  async function copyScreenList(){const text=$('screenListText').value.trim();if(!text)return;try{await navigator.clipboard.writeText(text)}catch(e){$('screenListText').focus();$('screenListText').select();document.execCommand('copy')}toast('✅ 公屏歌单已复制')}\n  function buildArtists(){artistMap=new Map();"""
+          if text.count(old_js)!=1: raise SystemExit('JS function anchor mismatch')
+          text=text.replace(old_js,new_js,1)
+
+          old_build="buildArtists();buildDaily()}catch(e)"
+          new_build="buildArtists();buildDaily();buildScreenList()}catch(e)"
+          if text.count(old_build)!=1: raise SystemExit('loadSongPool build anchor mismatch')
+          text=text.replace(old_build,new_build,1)
+
+          old_listener="  $('artistOpenBtn').addEventListener('click',drawArtistSong);"
+          new_listener="  $('regenScreenListBtn').addEventListener('click',()=>{screenListNonce++;buildScreenList();toast('🔄 已换一版公屏歌单')});$('copyScreenListBtn').addEventListener('click',copyScreenList);\n  $('artistOpenBtn').addEventListener('click',drawArtistSong);"
+          if text.count(old_listener)!=1: raise SystemExit('listener anchor mismatch')
+          text=text.replace(old_listener,new_listener,1)
+
+          p.write_text(text,encoding='utf-8')
+          PY
+          git diff --check
+          git diff -- tools/miyu_toolbox.html
+      - name: Commit feature
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/miyu_toolbox.html
+          git commit -m 'Add Miyu public-screen songlist generator'
+          git push
