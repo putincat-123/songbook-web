@@ -56,6 +56,7 @@
   <div id="pagination" class="pagination"></div><section id="list" class="list"><div class="loading">正在载入歌单...</div></section><div class="footer">Made for songbook · 数据来自 JSON</div>
 </main>
 <div id="toast" class="toast"></div>
+<script src="./tools/zh_t2s_map.js"></script>
 <script>
 const STREAMER_CONFIG={
   miyu:{title:"谜屿歌单查询",eyebrow:"MIYU SONGBOOK",desc:"当前歌单：谜屿 · 输入歌名或歌手即可查询",liveUrl:"https://fm.missevan.com/live/868878322",appUrl:"missevan://live/868878322?from=web.0.0.0&event_id_from=web.0.0.0"},
@@ -65,7 +66,8 @@ const params=new URLSearchParams(location.search),streamer=(params.get("streamer
 const PAGE_SIZE=100,MAX_SEARCH=300,RECENT_LIMIT=30,RECENT_FILTER="近期新增";
 const $=id=>document.getElementById(id),searchInput=$("searchInput"),list=$("list"),totalCount=$("totalCount"),resultCount=$("resultCount"),artistCount=$("artistCount"),resultText=$("resultText"),keywordText=$("keywordText"),pagination=$("pagination"),randomResult=$("randomResult"),viewToggle=$("viewToggle");
 let songs=[],recentSongs=[],recentIds=new Set(),currentPage=1,selectedStyle=params.get("style")||"全部",viewMode=params.get("view")==="all"?"all":"paged",isLoaded=false,isLoading=false;
-function normalizeText(v){return String(v==null?"":v).toLowerCase().normalize("NFKC").replace(/[\s\u3000]+/g,"").trim()}
+function toSimplified(v){const map=window.ZH_T2S_MAP||{};return Array.from(String(v==null?"":v),ch=>map[ch]||ch).join("")}
+function normalizeText(v){return toSimplified(String(v==null?"":v).toLowerCase().normalize("NFKC")).replace(/[\s\u3000]+/g,"").trim()}
 function searchKey(v){return normalizeText(v)}
 function escapeHtml(v){return String(v==null?"":v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
 function escapeAttr(v){return escapeHtml(v).replaceAll("\n"," ")}
