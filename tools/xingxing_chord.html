@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>星星 AI 吉他扒譜</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--brand:#2563eb;--chip:#eff6ff;--ok:#047857;--warn:#b45309;--shadow:0 6px 20px rgba(15,23,42,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text)}
+.app{max-width:980px;margin:0 auto;padding:18px}.title{font-size:28px;font-weight:900;margin:0 0 6px}.subtitle{color:var(--muted);font-size:14px;margin-bottom:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:14px;margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.col-12{grid-column:span 12}.col-8{grid-column:span 8}.col-6{grid-column:span 6}.col-4{grid-column:span 4}.col-3{grid-column:span 3}@media(max-width:720px){.col-12,.col-8,.col-6,.col-4,.col-3{grid-column:span 12}}
+label{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:6px}input,textarea,select{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:16px;background:#fff;color:var(--text)}textarea{min-height:130px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.6}button,a.btn{border:none;border-radius:12px;padding:11px 13px;font-size:14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--brand);color:#fff}.ghost{background:#fff;color:var(--text);border:1px solid var(--line)}.muted-btn{background:#f8fafc;color:#475569;border:1px solid var(--line)}button:disabled{opacity:.55;cursor:not-allowed}.row{display:flex;gap:8px;flex-wrap:wrap}.chip{background:var(--chip);color:#1e3a8a;border-radius:999px;padding:8px 10px;font-size:13px;font-weight:800}.small{font-size:12px;color:var(--muted);line-height:1.6}.notice{padding:12px;border-radius:12px;background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;font-size:13px;line-height:1.6}.success{padding:12px;border-radius:12px;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;font-size:13px}.audio-wrap audio{width:100%;margin-top:8px}.section{border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px;background:#fff}.section-head{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:8px}.section-title{font-weight:900}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.hidden{display:none}.top-actions{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top-actions">
+    <a class="btn ghost" href="./xingxing_toolbox.html?streamer=xingxing">← 回星星工具箱</a>
+    <span class="chip">v0.1 前端 MVP</span>
+  </div>
+  <div class="title">🎸 星星 AI 吉他扒譜</div>
+  <div class="subtitle">中國友善設計｜不依賴 Google / YouTube SDK / 外部 CDN｜本機音訊可直接播放與編輯</div>
+
+  <div class="card">
+    <h3>1. 歌曲來源</h3>
+    <div class="grid">
+      <div class="col-8">
+        <label for="sourceUrl">播放網址</label>
+        <input id="sourceUrl" type="url" placeholder="貼上歌曲播放網址（網址解析 API 下一版接入）" />
+      </div>
+      <div class="col-4">
+        <label>&nbsp;</label>
+        <button id="urlAnalyzeBtn" class="primary" style="width:100%">開始分析網址</button>
+      </div>
+      <div class="col-12">
+        <div class="small">目前網址入口已保留，但不在瀏覽器端直接抓取第三方平台音訊，避免跨域、平台限制與中國網路環境造成失敗。</div>
+      </div>
+      <div class="col-12">
+        <label for="audioFile">或上傳音訊檔</label>
+        <input id="audioFile" type="file" accept="audio/*,.mp3,.m4a,.wav,.aac,.flac,.ogg" />
+      </div>
+    </div>
+    <div id="sourceStatus" class="notice" style="margin-top:12px">建議第一版先使用 MP3 / M4A / WAV。音訊只在目前瀏覽器分頁播放，不會自動上傳。</div>
+  </div>
+
+  <div class="card audio-wrap">
+    <h3>2. 播放器</h3>
+    <div id="audioEmpty" class="small">尚未選擇音訊檔。</div>
+    <audio id="audioPlayer" class="hidden" controls preload="metadata"></audio>
+    <div class="row" style="margin-top:10px">
+      <span class="chip" id="fileNameChip">檔案：—</span>
+      <span class="chip" id="durationChip">長度：—</span>
+      <span class="chip" id="currentTimeChip">目前：00:00</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>3. 歌曲資訊</h3>
+    <div class="grid">
+      <div class="col-6"><label for="songTitle">歌名</label><input id="songTitle" placeholder="例如：晴天" /></div>
+      <div class="col-6"><label for="artist">歌手</label><input id="artist" placeholder="例如：周杰倫" /></div>
+      <div class="col-4"><label for="keySelect">Key</label><select id="keySelect"></select></div>
+      <div class="col-4"><label for="bpmInput">BPM</label><input id="bpmInput" type="number" min="30" max="260" step="1" placeholder="例如 78" /></div>
+      <div class="col-4"><label for="capoInput">Capo</label><input id="capoInput" type="number" min="0" max="12" step="1" value="0" /></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-head">
+      <h3 style="margin:0">4. 和弦段落</h3>
+      <button id="addSectionBtn" class="ghost">＋ 新增段落</button>
+    </div>
+    <div class="small">每行可輸入一小節或一句，例如：<b>G  D  Em  C</b>。下一版接 AI 後，分析結果會直接填入這裡供人工修正。</div>
+    <div id="sections"></div>
+  </div>
+
+  <div class="card">
+    <h3>5. 匯出</h3>
+    <div class="toolbar">
+      <button id="copyTextBtn" class="primary">複製文字和弦譜</button>
+      <button id="downloadJsonBtn" class="ghost">下載 JSON</button>
+      <button id="clearBtn" class="muted-btn">清空</button>
+    </div>
+    <div id="exportStatus" class="small" style="margin-top:10px">結果只保存在目前頁面，尚未寫入 Supabase。</div>
+  </div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const KEYS = ['','C','C#','Db','D','D#','Eb','E','F','F#','Gb','G','G#','Ab','A','A#','Bb','B','Cm','C#m','Dm','D#m','Em','Fm','F#m','Gm','G#m','Am','A#m','Bm'];
+let objectUrl = '';
+let sectionSeq = 0;
+
+function fmt(sec){
+  if(!Number.isFinite(sec)) return '—';
+  const s=Math.max(0,Math.floor(sec));
+  return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+}
+
+function initKeys(){
+  $('keySelect').innerHTML = KEYS.map(k=>`<option value="${k}">${k || '未設定'}</option>`).join('');
+}
+
+function addSection(name='Verse', chords=''){
+  sectionSeq += 1;
+  const wrap=document.createElement('div');
+  wrap.className='section';
+  wrap.dataset.sectionId=String(sectionSeq);
+  wrap.innerHTML=`
+    <div class="grid">
+      <div class="col-4"><label>段落名稱</label><input class="section-name" value="${name.replaceAll('&','&amp;').replaceAll('"','&quot;')}" placeholder="Intro / Verse / Chorus" /></div>
+      <div class="col-8"><label>時間標記（可選）</label><input class="section-time" placeholder="例如 00:42" /></div>
+      <div class="col-12"><label>和弦</label><textarea class="section-chords" placeholder="G  D  Em  C\nG  D  C  C">${chords}</textarea></div>
+      <div class="col-12"><button class="muted-btn remove-section" type="button">刪除此段</button></div>
+    </div>`;
+  $('sections').appendChild(wrap);
+  wrap.querySelector('.remove-section').addEventListener('click',()=>wrap.remove());
+}
+
+function collectData(){
+  return {
+    version:'0.1',
+    streamer:'xingxing',
+    source_url:$('sourceUrl').value.trim(),
+    title:$('songTitle').value.trim(),
+    artist:$('artist').value.trim(),
+    key:$('keySelect').value,
+    bpm:$('bpmInput').value ? Number($('bpmInput').value) : null,
+    capo:$('capoInput').value ? Number($('capoInput').value) : 0,
+    audio_file_name:$('audioFile').files[0]?.name || '',
+    sections:[...document.querySelectorAll('.section')].map(node=>({
+      name:node.querySelector('.section-name').value.trim(),
+      time:node.querySelector('.section-time').value.trim(),
+      chords:node.querySelector('.section-chords').value.trim()
+    })).filter(x=>x.name||x.chords)
+  };
+}
+
+function toChordText(data){
+  const head=[data.title||'未命名歌曲',data.artist?`歌手：${data.artist}`:'',data.key?`Key：${data.key}`:'',data.bpm?`BPM：${data.bpm}`:'',`Capo：${data.capo ?? 0}`].filter(Boolean).join('｜');
+  const body=data.sections.map(s=>`\n[${s.name || 'Section'}${s.time?` ${s.time}`:''}]\n${s.chords || '—'}`).join('\n');
+  return `${head}\n${body}`.trim();
+}
+
+$('audioFile').addEventListener('change',()=>{
+  const file=$('audioFile').files[0];
+  if(!file) return;
+  if(objectUrl) URL.revokeObjectURL(objectUrl);
+  objectUrl=URL.createObjectURL(file);
+  $('audioPlayer').src=objectUrl;
+  $('audioPlayer').classList.remove('hidden');
+  $('audioEmpty').classList.add('hidden');
+  $('fileNameChip').textContent=`檔案：${file.name}`;
+  $('sourceStatus').className='success';
+  $('sourceStatus').textContent='音訊已載入，可直接播放並開始人工整理和弦。AI 自動辨識 API 會在下一版接入。';
+  if(!$('songTitle').value.trim()) $('songTitle').value=file.name.replace(/\.[^.]+$/,'');
+});
+
+$('audioPlayer').addEventListener('loadedmetadata',()=>{$('durationChip').textContent=`長度：${fmt($('audioPlayer').duration)}`;});
+$('audioPlayer').addEventListener('timeupdate',()=>{$('currentTimeChip').textContent=`目前：${fmt($('audioPlayer').currentTime)}`;});
+
+$('urlAnalyzeBtn').addEventListener('click',()=>{
+  const url=$('sourceUrl').value.trim();
+  if(!url){ alert('請先貼上播放網址'); return; }
+  $('sourceStatus').className='notice';
+  $('sourceStatus').textContent='網址入口已收到。v0.1 尚未連接後端音訊解析服務；請先使用「上傳音訊檔」。這樣可避免第三方平台跨域或中國網路環境造成整頁失效。';
+});
+
+$('addSectionBtn').addEventListener('click',()=>addSection('新段落',''));
+$('copyTextBtn').addEventListener('click',async()=>{
+  const text=toChordText(collectData());
+  try{
+    await navigator.clipboard.writeText(text);
+    $('exportStatus').textContent='已複製文字和弦譜。';
+  }catch{
+    const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+    $('exportStatus').textContent='已複製文字和弦譜。';
+  }
+});
+
+$('downloadJsonBtn').addEventListener('click',()=>{
+  const data=collectData();
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a');
+  a.href=url; a.download=`${data.title||'xingxing-chord'}.json`; a.click(); URL.revokeObjectURL(url);
+  $('exportStatus').textContent='JSON 已下載。';
+});
+
+$('clearBtn').addEventListener('click',()=>{
+  if(!confirm('確定清空目前扒譜內容？')) return;
+  $('sourceUrl').value=''; $('audioFile').value=''; $('songTitle').value=''; $('artist').value=''; $('keySelect').value=''; $('bpmInput').value=''; $('capoInput').value='0';
+  if(objectUrl){URL.revokeObjectURL(objectUrl);objectUrl='';}
+  $('audioPlayer').removeAttribute('src'); $('audioPlayer').load(); $('audioPlayer').classList.add('hidden'); $('audioEmpty').classList.remove('hidden');
+  $('fileNameChip').textContent='檔案：—'; $('durationChip').textContent='長度：—'; $('currentTimeChip').textContent='目前：00:00';
+  $('sections').innerHTML=''; sectionSeq=0; addSection('Intro',''); addSection('Verse',''); addSection('Chorus','');
+  $('exportStatus').textContent='已清空。';
+});
+
+initKeys();
+addSection('Intro','');
+addSection('Verse','');
+addSection('Chorus','');
+</script>
+</body>
+</html>
