@@ -1,17 +1,31 @@
 (()=>{
 const SK='miyu_pet_sound',MK='miyu_pet_sound_migrated_v9';
 try{if(localStorage.getItem(MK)!=='1'){localStorage.setItem(SK,'1');localStorage.setItem(MK,'1')}}catch{}
-let c,woodBuffer=null,woodLoading=false,unlocked=false;
+let c,woodBuffer=null,woodLoading=false;
 const enabled=()=>{try{return localStorage.getItem(SK)!=='0'}catch{return true}};
 const ac=()=>{try{c??=new(window.AudioContext||window.webkitAudioContext)();return c}catch{return null}};
-async function unlock(){if(unlocked)return;const x=ac();if(!x)return;try{if(x.state==='suspended')await x.resume();unlocked=x.state==='running';if(unlocked)loadWood()}catch{}}
-['pointerdown','touchstart','click','keydown'].forEach(ev=>document.addEventListener(ev,unlock,{capture:true,once:false,passive:true}));
+async function unlock(){
+  if(!enabled())return null;
+  const x=ac();if(!x)return null;
+  try{
+    if(x.state==='suspended')await x.resume();
+    if(x.state==='running'){
+      const o=x.createOscillator(),g=x.createGain();
+      g.gain.value=.00001;o.connect(g);g.connect(x.destination);o.start();o.stop(x.currentTime+.01);
+      loadWood();
+      return x;
+    }
+  }catch{}
+  return null;
+}
 function tone(f,d,g,type='sine',delay=0){if(!enabled())return;const x=ac();if(!x||x.state!=='running')return;const o=x.createOscillator(),v=x.createGain(),t=x.currentTime+delay;o.type=type;o.frequency.value=f;v.gain.setValueAtTime(.0001,t);v.gain.exponentialRampToValueAtTime(g,t+.004);v.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(v);v.connect(x.destination);o.start(t);o.stop(t+d+.04)}
 function noise(d=.04,g=.03,f=1800,q=1.2,delay=0){if(!enabled())return;const x=ac();if(!x||x.state!=='running')return;const n=Math.max(1,Math.floor(x.sampleRate*d)),buf=x.createBuffer(1,n,x.sampleRate),a=buf.getChannelData(0);for(let i=0;i<n;i++)a[i]=(Math.random()*2-1)*Math.pow(1-i/n,2.4);const s=x.createBufferSource(),bp=x.createBiquadFilter(),v=x.createGain(),t=x.currentTime+delay;s.buffer=buf;bp.type='bandpass';bp.frequency.value=f;bp.Q.value=q;v.gain.setValueAtTime(g,t);v.gain.exponentialRampToValueAtTime(.0001,t+d);s.connect(bp);bp.connect(v);v.connect(x.destination);s.start(t)}
-async function loadWood(){if(woodBuffer||woodLoading||!enabled())return;const x=ac();if(!x||x.state!=='running')return;woodLoading=true;try{const txt=await fetch('./miyu_pet_pixel_v3.js?v=woodsample').then(r=>r.text()),m=txt.match(/const WOOD_B64='([^']+)'/);if(!m)throw new Error('wood sample missing');const bin=atob(m[1]),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);woodBuffer=await x.decodeAudioData(u.buffer.slice(0))}catch(e){console.warn('[miyu-pet] wood sample load failed',e)}finally{woodLoading=false}}
-function wood(){if(!enabled())return;const x=ac();if(!x||x.state!=='running')return;if(woodBuffer){const s=x.createBufferSource(),v=x.createGain();s.buffer=woodBuffer;v.gain.value=.92;s.connect(v);v.connect(x.destination);s.start();return}loadWood();noise(.018,.025,780,.8);tone(165,.09,.025,'triangle')}
-function bell(){if(!enabled())return;noise(.025,.012,4200,1.8);[[530,2.25,.07],[1012,1.8,.04],[1572,1.35,.028],[2088,.9,.014]].forEach(([f,d,g],i)=>tone(f,d,g,'sine',i*.006))}
-function beads(){if(!enabled())return;for(let i=0;i<3;i++){const d=i*.05;noise(.028,.026-i*.004,4200+i*180,1.8,d);tone(4300-i*170,.045,.014,'triangle',d)}}
-let last='';function hook(){const b=document.getElementById('pxBubble');if(!b||b.dataset.audioHook)return false;b.dataset.audioHook='1';new MutationObserver(()=>{const t=b.textContent||'';if(t===last)return;last=t;if(t.includes('功德 +1'))wood();else if(t.includes('上香完成'))bell();else if(t.includes('佛珠完成'))beads()}).observe(b,{childList:true,subtree:true,characterData:true});return true}
-new MutationObserver(()=>hook()).observe(document.body,{childList:true,subtree:true});hook();
+async function loadWood(){if(woodBuffer||woodLoading||!enabled())return;const x=ac();if(!x||x.state!=='running')return;woodLoading=true;try{const txt=await fetch('./miyu_pet_pixel_v3.js?v=woodsample2',{cache:'force-cache'}).then(r=>r.text()),m=txt.match(/const WOOD_B64='([^']+)'/);if(!m)throw new Error('wood sample missing');const bin=atob(m[1]),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);woodBuffer=await x.decodeAudioData(u.buffer.slice(0))}catch(e){console.warn('[miyu-pet] wood sample load failed',e)}finally{woodLoading=false}}
+function wood(){if(!enabled())return;const x=ac();if(!x||x.state!=='running')return;if(woodBuffer){const s=x.createBufferSource(),v=x.createGain();s.buffer=woodBuffer;v.gain.value=.92;s.connect(v);v.connect(x.destination);s.start();return}noise(.035,.055,720,.8);tone(155,.13,.06,'triangle');tone(92,.16,.035,'sine',.01)}
+function bell(){if(!enabled())return;noise(.025,.014,4200,1.8);[[530,2.25,.07],[1012,1.8,.04],[1572,1.35,.028],[2088,.9,.014]].forEach(([f,d,g],i)=>tone(f,d,g,'sine',i*.006))}
+function beads(){if(!enabled())return;for(let i=0;i<3;i++){const d=i*.055;noise(.03,.03-i*.004,4200+i*180,1.8,d);tone(4300-i*170,.05,.016,'triangle',d)}}
+async function playRitual(kind){const x=await unlock();if(!x)return;if(kind==='wood')wood();else if(kind==='incense')bell();else if(kind==='beads')beads()}
+document.addEventListener('click',e=>{const b=e.target.closest?.('[data-r]');if(!b)return;playRitual(b.dataset.r)},{capture:true});
+document.addEventListener('pointerdown',()=>{unlock()},{capture:true,passive:true});
+document.addEventListener('touchstart',()=>{unlock()},{capture:true,passive:true});
 })();
