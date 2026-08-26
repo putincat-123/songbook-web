@@ -1,5 +1,5 @@
 (()=>{
-const SRC='./miyu_pet_pixel_v8.js?v=20260827-v16src2';
+const SRC='./miyu_pet_pixel_v8.js?v=20260827-v16src3';
 const style=document.createElement('style');
 style.textContent=`
 /* V16: pet-side speech bubble, no fixed banner */
@@ -18,6 +18,12 @@ function patch(src){
   const newExtract="function extractTitles(data){const out=[],seen=new Set();const add=v=>{const s=(v??'').toString().trim();if(s&&!seen.has(s)){seen.add(s);out.push(s)}};const visit=(v,depth=0)=>{if(v==null||depth>8)return;if(typeof v==='string'){add(v);return}if(Array.isArray(v)){v.forEach(x=>visit(x,depth+1));return}if(typeof v!=='object')return;const named=v.title??v.name??v.song??v.song_name??v.songName;if(named!=null)add(named);for(const [k,x] of Object.entries(v)){if(k==='title'||k==='name'||k==='song'||k==='song_name'||k==='songName')continue;if(Array.isArray(x))visit(x,depth+1);else if(x&&typeof x==='object')visit(x,depth+1)}};visit(data);console.info('[miyu-pet] blind box songs:',out.length);return out}";
   if(!out.includes(oldExtract))console.warn('[miyu-pet] extractTitles signature changed; parser patch not applied');
   out=out.replace(oldExtract,newExtract);
+  const blindStart="async function blindBox(){if(busy)return;busy=true;buttons(false);cancelReturn();";
+  const blindEnd="}catch{bubble('🎁 盲盒暂时没连上曲库，稍后再试～')}w.pose='idle';busy=false;buttons(true);scheduleReturn()}";
+  if(out.includes(blindStart)&&out.includes(blindEnd)){
+    out=out.replace(blindStart,blindStart+"try{");
+    out=out.replace(blindEnd,"}catch{bubble('🎁 盲盒暂时没连上曲库，稍后再试～')}}finally{w.pose='idle';busy=false;buttons(true);scheduleReturn()}}" );
+  }else console.warn('[miyu-pet] blindBox signature changed; unlock patch not applied');
   return out;
 }
 
