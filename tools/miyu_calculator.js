@@ -104,4 +104,10 @@
     petScript.dataset.miyuPet = '1';
     document.head.appendChild(petScript);
   }
+  if (!document.querySelector('script[data-miyu-pet-merit]')) {
+    const meritScript = document.createElement('script');
+    meritScript.src = './miyu_pet_merit.js';
+    meritScript.dataset.miyuPetMerit = '1';
+    document.head.appendChild(meritScript);
+  }
 })();
