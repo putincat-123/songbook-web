@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>谜屿宠物小屋 V2 · 场景层</title>
+<style>
+:root{
+  --ink:#5b4537;
+  --wall:#f6eadb;
+  --wall-shadow:#ead7c3;
+  --wood:#a8754e;
+  --wood-dark:#6f4b35;
+  --wood-light:#c8966b;
+  --cream:#fff6e8;
+  --sage:#9eb7a0;
+  --sage-dark:#6f8f76;
+  --rose:#d9a09a;
+  --gold:#dfb66b;
+  --floor-a:#d8b48c;
+  --floor-b:#cba47b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#efe7dc;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+body{display:flex;justify-content:center;align-items:flex-start;padding:0}
+.scene-shell{width:100%;max-width:430px;min-height:100svh;background:#efe7dc;overflow:hidden}
+.room{position:relative;width:100%;aspect-ratio:375/667;min-height:100svh;overflow:hidden;background:var(--wall);isolation:isolate}
+.layer{position:absolute;inset:0;pointer-events:none}
+.layer-back{z-index:1}.layer-mid{z-index:2}.layer-floor{z-index:3}.layer-front{z-index:4}
+
+/* BACKGROUND ARCHITECTURE */
+.wall{position:absolute;inset:0 0 39%;background:linear-gradient(180deg,#fbf3e8 0%,var(--wall) 68%,var(--wall-shadow) 100%)}
+.wall:after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--wood-dark);box-shadow:0 4px 0 rgba(86,57,40,.16)}
+.ceiling-glow{position:absolute;left:16%;right:16%;top:-4%;height:24%;background:radial-gradient(ellipse at center,rgba(255,239,193,.72),rgba(255,239,193,0) 72%)}
+.floor{position:absolute;left:-8%;right:-8%;bottom:-4%;height:47%;background:
+  linear-gradient(90deg,transparent 0 7%,rgba(111,75,53,.08) 7% 7.5%,transparent 7.5% 14.5%,rgba(111,75,53,.08) 14.5% 15%,transparent 15% 22%),
+  linear-gradient(180deg,var(--floor-a),var(--floor-b));
+  transform:perspective(430px) rotateX(4deg);transform-origin:top center}
+.floor:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 34px,rgba(111,75,53,.10) 34px 36px)}
+.center-rug{position:absolute;left:25%;right:24%;bottom:12%;height:19%;border-radius:50%;background:radial-gradient(ellipse at center,#f7e6c9 0 55%,#e6c9a4 56% 70%,rgba(255,255,255,0) 71%);opacity:.72}
+
+/* WINDOW */
+.window{position:absolute;left:7%;top:8%;width:31%;height:18%;border:7px solid var(--wood-dark);border-radius:10px;background:linear-gradient(#b9dbe4 0 54%,#dfe9ca 55% 100%);box-shadow:inset 0 0 0 4px #fff1dd,0 5px 0 rgba(88,60,43,.10)}
+.window:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;background:#fff3e5;transform:translateX(-50%)}
+.window:after{content:"";position:absolute;left:0;right:0;top:50%;height:4px;background:#fff3e5;transform:translateY(-50%)}
+.curtain{position:absolute;top:7%;width:8%;height:22%;background:repeating-linear-gradient(90deg,#d89e97 0 9px,#e9b5ad 9px 18px);border:3px solid #96685a;box-shadow:0 4px 0 rgba(85,56,42,.12)}
+.curtain.left{left:3%;border-radius:5px 12px 18px 5px;transform:rotate(2deg)}
+.curtain.right{left:34%;border-radius:12px 5px 5px 18px;transform:rotate(-2deg)}
+.curtain:after{content:"";position:absolute;left:8%;right:8%;top:56%;height:7px;background:var(--gold);border:2px solid #9a7443;border-radius:5px}
+.rod{position:absolute;left:2%;top:5.6%;width:43%;height:6px;background:var(--wood-dark);border-radius:6px;box-shadow:-5px 0 0 #8f6547,5px 0 0 #8f6547}
+
+/* WALL DETAILS */
+.lamp{position:absolute;left:47%;top:3%;width:14%;height:11%}
+.lamp:before{content:"";position:absolute;left:50%;top:-12%;width:3px;height:46%;background:var(--wood-dark);transform:translateX(-50%)}
+.lamp:after{content:"";position:absolute;left:10%;right:10%;bottom:3%;height:58%;background:radial-gradient(circle at 50% 45%,#fff0ae 0 28%,#e7b563 29% 66%,#8c633f 67%);clip-path:polygon(24% 0,76% 0,100% 100%,0 100%);filter:drop-shadow(0 7px 10px rgba(230,177,86,.25))}
+.frame{position:absolute;left:48%;top:15%;width:12%;aspect-ratio:1/1.15;background:var(--wood-dark);padding:4px;border-radius:3px;box-shadow:0 4px 0 rgba(89,59,41,.13)}
+.frame:before{content:"🐾";display:grid;place-items:center;width:100%;height:100%;background:#f7dfc5;font-size:24px}
+.shelf{position:absolute;right:6%;top:8%;width:29%;height:7px;background:var(--wood-dark);border-radius:3px;box-shadow:0 5px 0 rgba(80,50,33,.15)}
+.shelf:before{content:"";position:absolute;left:8%;bottom:6px;width:14px;height:31px;background:#b86e58;box-shadow:18px 5px 0 #d3a05a,36px -1px 0 #75917a;border-radius:2px}
+.shelf:after{content:"🌿";position:absolute;right:4%;bottom:3px;font-size:26px;filter:drop-shadow(0 2px 0 rgba(70,50,35,.15))}
+
+/* LEFT LIFE AREA — furniture, no labels */
+.sofa{position:absolute;left:4%;bottom:23%;width:34%;height:18%}
+.sofa-back{position:absolute;left:3%;right:3%;top:0;height:63%;background:var(--sage);border:4px solid var(--wood-dark);border-radius:16px 16px 7px 7px;box-shadow:inset 0 -7px 0 rgba(74,111,83,.10)}
+.sofa-seat{position:absolute;left:0;right:0;bottom:0;height:47%;background:#abc1a9;border:4px solid var(--wood-dark);border-radius:8px 8px 13px 13px;box-shadow:0 8px 0 rgba(85,59,43,.12)}
+.sofa-seat:before,.sofa-seat:after{content:"";position:absolute;bottom:-10%;width:10%;height:20%;background:var(--wood-dark);border-radius:0 0 4px 4px}.sofa-seat:before{left:15%}.sofa-seat:after{right:15%}
+.cushion{position:absolute;left:12%;top:18%;width:26%;height:29%;background:#f4d2c3;border:3px solid #9e7368;border-radius:7px;transform:rotate(-5deg)}
+.side-table{position:absolute;left:6%;bottom:14%;width:17%;height:9%;background:var(--wood-light);border:4px solid var(--wood-dark);border-radius:8px 8px 5px 5px;box-shadow:0 5px 0 rgba(90,58,39,.12)}
+.side-table:before{content:"";position:absolute;left:12%;right:12%;top:21%;height:3px;background:rgba(94,59,39,.25)}
+.side-table:after{content:"☕";position:absolute;left:50%;top:-24px;transform:translateX(-50%);font-size:22px}
+.plant{position:absolute;left:31%;bottom:34%;font-size:34px;filter:drop-shadow(0 3px 0 rgba(70,50,35,.16))}
+.basket{position:absolute;left:3%;bottom:4%;width:20%;height:8%;background:repeating-linear-gradient(90deg,#a97950 0 8px,#bc8b61 8px 16px);border:4px solid var(--wood-dark);border-radius:8px 8px 14px 14px;box-shadow:inset 0 7px 0 #d4a676}
+.basket:before{content:"🧶";position:absolute;left:13%;top:-19px;font-size:21px}
+
+/* RIGHT PRAYER AREA */
+.prayer-cabinet{position:absolute;right:4%;bottom:23%;width:27%;height:21%;background:linear-gradient(90deg,var(--wood) 0 49%,#9d6b48 50% 100%);border:4px solid var(--wood-dark);border-radius:5px;box-shadow:0 8px 0 rgba(86,57,40,.14)}
+.prayer-cabinet:before{content:"";position:absolute;left:50%;top:7%;bottom:7%;width:3px;background:var(--wood-dark);transform:translateX(-50%)}
+.prayer-cabinet:after{content:"••";position:absolute;left:0;right:0;top:42%;text-align:center;letter-spacing:25px;padding-left:24px;color:#f0c575;font-weight:900}
+.altar{position:absolute;right:3%;bottom:43%;width:29%;height:6%;background:#8d6042;border:4px solid var(--wood-dark);border-radius:5px;box-shadow:0 5px 0 rgba(86,57,40,.13)}
+.altar:before{content:"";position:absolute;left:15%;bottom:100%;width:22%;height:52px;background:#d8b66e;border:3px solid var(--wood-dark);border-radius:50% 50% 12px 12px;box-shadow:55px 11px 0 -12px #bd704d}
+.incense-pot{position:absolute;right:10%;bottom:49%;width:9%;height:4%;background:#c18a60;border:3px solid var(--wood-dark);border-radius:3px 3px 9px 9px}
+.incense-pot:before{content:"";position:absolute;left:34%;bottom:100%;width:3px;height:35px;background:#bd5f56;box-shadow:9px 3px 0 #bd5f56}
+.scroll{position:absolute;right:9%;top:21%;width:16%;height:17%;background:#e9d3a5;border-left:5px solid var(--wood-dark);border-right:5px solid var(--wood-dark);box-shadow:0 4px 0 rgba(87,58,40,.12)}
+.scroll:before{content:"福";position:absolute;inset:0;display:grid;place-items:center;color:#8a5438;font-family:serif;font-size:27px;font-weight:900}
+.scroll:after{content:"";position:absolute;left:-9px;right:-9px;top:-6px;height:7px;background:var(--wood-dark);border-radius:5px;box-shadow:0 116px 0 var(--wood-dark)}
+
+/* BLIND BOX MACHINE — scenery only */
+.blindbox{position:absolute;right:28%;bottom:11%;width:20%;height:22%;filter:drop-shadow(0 7px 0 rgba(83,54,36,.13))}
+.blindbox-top{position:absolute;left:3%;right:3%;top:0;height:62%;background:#f2c46f;border:4px solid var(--wood-dark);border-radius:12px 12px 6px 6px;overflow:hidden}
+.blindbox-top:before{content:"";position:absolute;left:12%;right:12%;top:13%;height:43%;border:3px solid #966346;border-radius:8px;background:radial-gradient(circle at 25% 30%,#e9857b 0 8%,transparent 9%),radial-gradient(circle at 70% 28%,#91b7a2 0 9%,transparent 10%),radial-gradient(circle at 47% 72%,#e7aa59 0 9%,transparent 10%),#fff1d8}
+.blindbox-top:after{content:"★";position:absolute;left:0;right:0;bottom:4%;text-align:center;color:#a96347;font-size:16px}
+.blindbox-body{position:absolute;left:0;right:0;bottom:0;height:43%;background:#dfa45f;border:4px solid var(--wood-dark);border-radius:5px 5px 10px 10px}
+.blindbox-body:before{content:"";position:absolute;left:10%;top:18%;width:24%;aspect-ratio:1;border-radius:50%;background:#f8e6bb;border:3px solid var(--wood-dark)}
+.blindbox-body:after{content:"";position:absolute;right:10%;bottom:13%;width:35%;height:20%;background:#7f5a43;border-radius:4px;box-shadow:inset 0 3px 0 #5e402f}
+
+/* FOREGROUND DEPTH */
+.front-shadow-left,.front-shadow-right{position:absolute;bottom:-2%;width:27%;height:12%;border-radius:50%;background:radial-gradient(ellipse,rgba(91,62,43,.12),rgba(91,62,43,0) 70%)}
+.front-shadow-left{left:-3%}.front-shadow-right{right:-3%}
+.vignette{position:absolute;inset:0;box-shadow:inset 0 0 45px rgba(91,62,43,.08)}
+
+@media (min-width:431px){
+  body{padding:18px 0}.room{min-height:auto;border-radius:24px;box-shadow:0 18px 48px rgba(70,48,35,.18)}
+}
+@media (max-height:700px) and (max-width:430px){.room{min-height:100svh;aspect-ratio:auto}}
+</style>
+</head>
+<body>
+<main class="scene-shell" aria-label="谜屿宠物小屋 V2 场景背景层">
+  <section class="room" id="petRoomV2">
+    <div class="layer layer-back" aria-hidden="true">
+      <div class="wall"></div>
+      <div class="ceiling-glow"></div>
+      <div class="window"></div>
+      <div class="rod"></div>
+      <div class="curtain left"></div>
+      <div class="curtain right"></div>
+      <div class="lamp"></div>
+      <div class="frame"></div>
+      <div class="shelf"></div>
+      <div class="scroll"></div>
+    </div>
+
+    <div class="layer layer-mid" aria-hidden="true">
+      <div class="sofa"><div class="sofa-back"></div><div class="sofa-seat"></div><div class="cushion"></div></div>
+      <div class="side-table"></div>
+      <div class="plant">🪴</div>
+      <div class="prayer-cabinet"></div>
+      <div class="altar"></div>
+      <div class="incense-pot"></div>
+    </div>
+
+    <div class="layer layer-floor" aria-hidden="true">
+      <div class="floor"></div>
+      <div class="center-rug"></div>
+      <div class="basket"></div>
+      <div class="blindbox"><div class="blindbox-top"></div><div class="blindbox-body"></div></div>
+    </div>
+
+    <div class="layer layer-front" aria-hidden="true">
+      <div class="front-shadow-left"></div>
+      <div class="front-shadow-right"></div>
+      <div class="vignette"></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
