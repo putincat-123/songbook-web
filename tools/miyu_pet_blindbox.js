@@ -108,10 +108,10 @@
     try{
       const titles=await loadSongs();
       const title=randomTitle(titles);
-      const ok=await copyText(title);
+      const ok=await copyText(`点歌 ${title}`);
       playPop();
       popFeedback();
-      setBubble(ok?'🎁 已抽到一首神秘歌曲，歌名已复制！去公屏贴上点歌吧～':'🎁 已抽到一首神秘歌曲，但浏览器没有允许自动复制，请再点一次试试。');
+      setBubble(ok?'🎁 已抽到一首神秘歌曲，点歌内容已复制！去公屏直接贴上吧～':'🎁 已抽到一首神秘歌曲，但浏览器没有允许自动复制，请再点一次试试。');
     }catch(e){
       setBubble('🎁 盲盒暂时没连上曲库，稍后再试～');
     }finally{
@@ -125,7 +125,7 @@
     const btn=document.createElement('button');
     btn.type='button';
     btn.className='px-blindbox';
-    btn.setAttribute('aria-label','盲盒点歌，随机抽歌并复制歌名');
+    btn.setAttribute('aria-label','盲盒点歌，随机抽歌并复制点歌内容');
     btn.innerHTML='<span class="box">🎁</span><span class="label">盲盒点歌</span>';
     btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();drawSong(btn)});
     room.appendChild(btn);
