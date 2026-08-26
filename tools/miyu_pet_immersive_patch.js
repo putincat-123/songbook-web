@@ -13,14 +13,18 @@ function decor(g){
  // tiny shelf + potted plant
  px(g,236,101,54,5,'#765845');px(g,252,89,20,12,'#9b744f');px(g,258,76,4,14,'#567b4d');px(g,250,80,8,6,'#6f955c');px(g,262,78,9,7,'#6f955c');
 }
-function draw(g,t,f){const s=f.step||0;if(f.kind==='eat'){if(s>=1){px(g,138,305,3,28,'#6f472f');px(g,144,303,3,30,'#8b5a35')}if(s>=2)for(let i=0;i<9;i++){const a=i*.75+t*3,r=((t*28+i*7)%34);px(g,151+Math.cos(a)*r,292-Math.abs(Math.sin(a))*r*.7,3,3,'#fff4c9')}if(s===3)px(g,121,286,16,5,'#fff4c9')}
+function draw(g,t,f){const s=f.step||0;
+// Eating props: V7 already draws the ONLY pair of chopsticks. This layer only adds rice/crumb effects.
+if(f.kind==='eat'){if(s>=2)for(let i=0;i<9;i++){const a=i*.75+t*3,r=((t*28+i*7)%34);px(g,151+Math.cos(a)*r,292-Math.abs(Math.sin(a))*r*.7,3,3,'#fff4c9')}if(s===3)px(g,121,286,16,5,'#fff4c9')}
 if(f.kind==='pet'){const yy=272+Math.abs(Math.sin(t*5))*12;px(g,151,yy,19,10,'#f0c4a3');px(g,164,yy+7,12,5,'#f0c4a3');if(s>=2){heart(g,132,270-Math.abs(Math.sin(t*3))*16);heart(g,181,281-Math.abs(Math.cos(t*3))*13)}}
 if(f.kind==='play'){const x=s<2?160+(t%1)*95:s===2?255-(t%1)*120:170+(t%1)*25,y=302-Math.abs(Math.sin(t*5))*32;px(g,x,y,10,10,'#efbd45');px(g,x+3,y+3,4,4,'#6aa4d8')}
 // wood: impact only; hammer stays exclusively on the pet renderer, avoiding a second hammer.
 if(f.kind==='wood'&&s===2){px(g,58,217,8,3,'#f0c85a');px(g,107,212,8,3,'#f0c85a');px(g,54,207,3,8,'#f0c85a');px(g,115,204,3,8,'#f0c85a')}
 if(f.kind==='incense'){if(s>=3)for(let i=0;i<4;i++){const yy=130-i*10-((t*12)%10);px(g,247+Math.sin(t*2+i)*6,yy,3,6,'rgba(180,180,180,.65)')}}
 if(f.kind==='beads'){for(let i=0;i<12;i++){const a=i/12*Math.PI*2+t*(s>=1?1.6:.3);px(g,250+Math.cos(a)*17,288+Math.sin(a)*13,5,5,'#855537')}}}
-function canvasFx(){cancelAnimationFrame(raf);const c=q('#pxRoom');if(!c)return;let o=q('#immersiveFx');if(!o){o=document.createElement('canvas');o.id='immersiveFx';o.width=320;o.height=430;Object.assign(o.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',imageRendering:'pixelated'});c.parentElement.appendChild(o)}const g=o.getContext('2d');const loop=t=>{g.clearRect(0,0,320,430);decor(g);if(fx)draw(g,t/1000,fx);raf=requestAnimationFrame(loop)};raf=requestAnimationFrame(loop)}
+function canvasFx(){cancelAnimationFrame(raf);const c=q('#pxRoom');if(!c)return;let o=q('#immersiveFx');if(!o){o=document.createElement('canvas');o.id='immersiveFx';o.width=320;o.height=430;Object.assign(o.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',imageRendering:'pixelated',zIndex:'2'});c.parentElement.appendChild(o)}
+ const b=q('#pxBubble');if(b){b.style.zIndex='5';b.style.position='absolute'}
+ const g=o.getContext('2d');const loop=t=>{g.clearRect(0,0,320,430);decor(g);if(fx)draw(g,t/1000,fx);raf=requestAnimationFrame(loop)};raf=requestAnimationFrame(loop)}
 async function beat(kind,step,text,ms){fx={kind,step};bubble(text);await wait(ms)}
 const scenes={
  feed:async()=>{await wait(650);await beat('eat',0,'🍚 到饭桌啦，先坐好。',500);await beat('eat',1,'🥢 拿起筷子，第一口！',700);await beat('eat',2,'啊呜！饭粒噗噗飞出来！',900);await beat('eat',1,'嚼嚼嚼……再扒第二口。',750);await beat('eat',2,'又喷出来了 😂',850);await beat('eat',3,'赶快把掉出来的饭捡一捡。',650)},
