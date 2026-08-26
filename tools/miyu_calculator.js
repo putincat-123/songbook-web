@@ -90,3 +90,11 @@
 
   if (new URLSearchParams(location.search).get('tool') === 'calculator') btn.click();
 })();
+
+(() => {
+  if (document.querySelector('script[data-miyu-screenlist-patch]')) return;
+  const script = document.createElement('script');
+  script.src = './miyu_screenlist_patch.js';
+  script.dataset.miyuScreenlistPatch = '1';
+  document.head.appendChild(script);
+})();
