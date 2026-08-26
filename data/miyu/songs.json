@@ -51022,5 +51022,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_cea0737c-5dd8-440a-b86d-905d604de187",
+    "poolSongId": "cea0737c-5dd8-440a-b86d-905d604de187",
+    "songId": "617337e0-c4f5-406a-a5db-e7de294b5374",
+    "seq": 1527,
+    "name": "太聪明",
+    "songName": "太聪明",
+    "artist": "陈绮贞",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "太聪明",
+    "sharedArtist": "陈绮贞",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
