@@ -1,25 +1,25 @@
 (()=>{
-const wait=ms=>new Promise(r=>setTimeout(r,ms));let seq=0,returnTimer=null,fx=null,raf=0;
+// Visual companion layer only. V7 remains the movement/action authority so pets still walk to targets.
+const wait=ms=>new Promise(r=>setTimeout(r,ms));let fx=null,raf=0;
 const q=s=>document.querySelector(s),bubble=t=>{const b=q('#pxBubble');if(b)b.textContent=t};
-function cancelReturn(){if(returnTimer){clearTimeout(returnTimer);returnTimer=null}}
-function afterScene(){cancelReturn();const mine=++seq;returnTimer=setTimeout(()=>{if(mine!==seq)return;fx=null;bubble('五秒没人叫我，我自己回去啦～')},5000)}
-function canvasFx(){cancelAnimationFrame(raf);const c=q('#pxRoom');if(!c)return;let o=q('#immersiveFx');if(!o){o=document.createElement('canvas');o.id='immersiveFx';o.width=320;o.height=430;Object.assign(o.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',imageRendering:'pixelated'});c.parentElement.appendChild(o)}const g=o.getContext('2d');const loop=t=>{g.clearRect(0,0,320,430);if(fx)draw(g,t/1000,fx);raf=requestAnimationFrame(loop)};raf=requestAnimationFrame(loop)}
-function px(g,x,y,w,h,c){g.fillStyle=c;g.fillRect(Math.round(x),Math.round(y),w,h)}
-function heart(g,x,y){px(g,x,y,4,4,'#e77f91');px(g,x+6,y,4,4,'#e77f91');px(g,x-2,y+4,14,5,'#e77f91');px(g,x+1,y+9,8,4,'#e77f91')}
-function draw(g,t,f){const s=f.step||0;if(f.kind==='eat'){if(s>=1){px(g,138,305,3,28,'#6f472f');px(g,144,303,3,30,'#8b5a35')}if(s>=2){for(let i=0;i<9;i++){const a=i*.75+t*3,r=((t*28+i*7)%34);px(g,151+Math.cos(a)*r,292-Math.abs(Math.sin(a))*r*.7,3,3,'#fff4c9')}}if(s===3){px(g,121,286,16,5,'#fff4c9')}}
+function px(g,x,y,w,h,c){g.fillStyle=c;g.fillRect(Math.round(x),Math.round(y),w,h)}function heart(g,x,y){px(g,x,y,4,4,'#e77f91');px(g,x+6,y,4,4,'#e77f91');px(g,x-2,y+4,14,5,'#e77f91');px(g,x+1,y+9,8,4,'#e77f91')}
+function draw(g,t,f){const s=f.step||0;if(f.kind==='eat'){if(s>=1){px(g,138,305,3,28,'#6f472f');px(g,144,303,3,30,'#8b5a35')}if(s>=2)for(let i=0;i<9;i++){const a=i*.75+t*3,r=((t*28+i*7)%34);px(g,151+Math.cos(a)*r,292-Math.abs(Math.sin(a))*r*.7,3,3,'#fff4c9')}if(s===3)px(g,121,286,16,5,'#fff4c9')}
 if(f.kind==='pet'){const yy=272+Math.abs(Math.sin(t*5))*12;px(g,151,yy,19,10,'#f0c4a3');px(g,164,yy+7,12,5,'#f0c4a3');if(s>=2){heart(g,132,270-Math.abs(Math.sin(t*3))*16);heart(g,181,281-Math.abs(Math.cos(t*3))*13)}}
-if(f.kind==='play'){const x=s<2?160+(t%1)*95:s===2?255-(t%1)*120:170+(t%1)*25,y=302-Math.abs(Math.sin(t*5))*32;px(g,x,y,10,10,'#efbd45');px(g,x+3,y+3,4,4,'#6aa4d8');if(s>=1){px(g,x-14,y+6,6,3,'#fff');px(g,x-22,y+9,5,3,'#fff')}}
-if(f.kind==='wood'){px(g,74,236,28,19,'#8d5635');px(g,80,231,16,7,'#b77a4e');const hit=s%2===0?-.7:.35;g.save();g.translate(105,227);g.rotate(hit);px(g,0,0,4,29,'#6c422c');px(g,-3,-5,10,8,'#b98259');g.restore();if(s>=2){px(g,54,213,7,3,'#f0c85a');px(g,107,207,7,3,'#f0c85a')}}
-if(f.kind==='incense'){px(g,246,133,3,26,'#b84a46');px(g,254,135,3,24,'#b84a46');if(s>=3)for(let i=0;i<4;i++){const yy=130-i*10-((t*12)%10);px(g,247+Math.sin(t*2+i)*6,yy,3,6,'rgba(180,180,180,.65)')}if(s===1||s===2){px(g,235,201,36,4,'#7c6251')}}
-if(f.kind==='beads'){for(let i=0;i<12;i++){const a=i/12*Math.PI*2+t*(s>=1?1.6:.3);px(g,250+Math.cos(a)*17,288+Math.sin(a)*13,5,5,'#855537')}if(s>=3)heart(g,266,267)} }
+if(f.kind==='play'){const x=s<2?160+(t%1)*95:s===2?255-(t%1)*120:170+(t%1)*25,y=302-Math.abs(Math.sin(t*5))*32;px(g,x,y,10,10,'#efbd45');px(g,x+3,y+3,4,4,'#6aa4d8')}
+if(f.kind==='wood'){const hit=s%2===0?-.7:.35;g.save();g.translate(105,227);g.rotate(hit);px(g,0,0,4,29,'#6c422c');px(g,-3,-5,10,8,'#b98259');g.restore()}
+if(f.kind==='incense'){if(s>=3)for(let i=0;i<4;i++){const yy=130-i*10-((t*12)%10);px(g,247+Math.sin(t*2+i)*6,yy,3,6,'rgba(180,180,180,.65)')}}
+if(f.kind==='beads'){for(let i=0;i<12;i++){const a=i/12*Math.PI*2+t*(s>=1?1.6:.3);px(g,250+Math.cos(a)*17,288+Math.sin(a)*13,5,5,'#855537')}}}
+function canvasFx(){cancelAnimationFrame(raf);const c=q('#pxRoom');if(!c)return;let o=q('#immersiveFx');if(!o){o=document.createElement('canvas');o.id='immersiveFx';o.width=320;o.height=430;Object.assign(o.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',imageRendering:'pixelated'});c.parentElement.appendChild(o)}const g=o.getContext('2d');const loop=t=>{g.clearRect(0,0,320,430);if(fx)draw(g,t/1000,fx);raf=requestAnimationFrame(loop)};raf=requestAnimationFrame(loop)}
 async function beat(kind,step,text,ms){fx={kind,step};bubble(text);await wait(ms)}
-function bind(sel,kind,scene){const b=q(sel);if(!b)return;b.addEventListener('click',async e=>{if(b.dataset.immersiveBusy==='1')return;e.stopImmediatePropagation();cancelReturn();seq++;b.dataset.immersiveBusy='1';try{await scene()}finally{b.dataset.immersiveBusy='0';fx=null;afterScene()}},true)}
-function boot(){canvasFx();
-bind('[data-a="feed"]','eat',async()=>{await beat('eat',0,'🍚 跑去饭桌，先坐好。',700);await beat('eat',1,'🥢 两只小手拿起筷子，夹第一口！',800);await beat('eat',2,'啊呜！扒得太用力，饭粒噗噗往外飞！',950);await beat('eat',1,'嚼嚼嚼……再低头扒第二口。',850);await beat('eat',2,'又喷出来了！这次飞得更远 😂',950);await beat('eat',3,'发现掉饭了，赶快低头捡一捡。',750);await beat('eat',1,'最后一口，筷子放好。肚子圆圆～',850)});
-bind('[data-a="pet"]','pet',async()=>{await beat('pet',0,'看到你的手，自己把脑袋凑过来。',750);await beat('pet',1,'🤚 手掌一下、一下摸过头顶。',900);await beat('pet',2,'眼睛眯起来，耳朵放松，开始冒爱心 💗',1000);await beat('pet',3,'还主动蹭你的手，不想你停。',950)});
-bind('[data-a="play"]','play',async()=>{await beat('play',0,'🎾 盯住球……准备！',650);await beat('play',1,'球飞出去！马上冲过去追！',900);await beat('play',2,'扑空一次，急转弯再追！',850);await beat('play',3,'抓到了！叼着球往你这边跑。',950);await beat('play',4,'把球放回你面前，尾巴还在等下一次。',850)});
-bind('[data-r="wood"]','wood',async()=>{await beat('wood',0,'走到木鱼前坐好，双手握住木槌。',750);await beat('wood',1,'举槌……',550);await beat('wood',2,'🪵 咚！身体也跟着敲下去。 功德 +1',950);await beat('wood',1,'听一下余音，再把木槌举起来。',700);await beat('wood',2,'🪵 咚！再认真敲一下。',950);await beat('wood',3,'把木槌放好，合掌一下。',750)});
-bind('[data-r="incense"]','incense',async()=>{await beat('incense',0,'走到香案前，把香双手捧起来。',750);await beat('incense',1,'香举到胸前——一拜。',850);await beat('incense',2,'站直，再认真拜一次。',850);await beat('incense',3,'把香轻轻插进香炉。',800);await beat('incense',4,'不急着走，看香烟慢慢飘起来……',1200)});
-bind('[data-r="beads"]','beads',async()=>{await beat('beads',0,'走过去坐下，把佛珠捧进手里。',750);await beat('beads',1,'📿 拇指拨过第一颗。',650);await beat('beads',2,'第二颗、第三颗……珠子真的在手里转。',950);await beat('beads',3,'慢下来，最后一颗拨完。',800);await beat('beads',4,'把佛珠放好，安静合掌。',900)})}
-const obs=new MutationObserver(()=>{const f=q('[data-a="feed"]');if(f&&!f.dataset.immersiveReady){['[data-a="feed"]','[data-a="pet"]','[data-a="play"]','[data-r="wood"]','[data-r="incense"]','[data-r="beads"]'].forEach(s=>{const x=q(s);if(x)x.dataset.immersiveReady='1'});boot()}});obs.observe(document.documentElement,{childList:true,subtree:true});
+const scenes={
+ feed:async()=>{await wait(650);await beat('eat',0,'🍚 到饭桌啦，先坐好。',500);await beat('eat',1,'🥢 拿起筷子，第一口！',700);await beat('eat',2,'啊呜！饭粒噗噗飞出来！',900);await beat('eat',1,'嚼嚼嚼……再扒第二口。',750);await beat('eat',2,'又喷出来了 😂',850);await beat('eat',3,'赶快把掉出来的饭捡一捡。',650)},
+ pet:async()=>{await wait(450);await beat('pet',1,'🤚 自己把脑袋凑到你的手下面。',750);await beat('pet',2,'摸摸头，眼睛慢慢眯起来 💗',950);await beat('pet',3,'还会主动蹭你的手。',850)},
+ play:async()=>{await wait(650);await beat('play',0,'🎾 盯住球……',500);await beat('play',1,'球飞出去，冲呀！',800);await beat('play',2,'扑空，急转弯再追！',750);await beat('play',3,'抓到了，带回来！',850)},
+ wood:async()=>{await wait(900);await beat('wood',1,'坐好，举起木槌……',500);await beat('wood',2,'🪵 咚！身体一起敲下去。',800);await beat('wood',1,'听余音，再举槌。',600);await beat('wood',2,'🪵 咚！再敲一下。',800)},
+ incense:async()=>{await wait(1000);await beat('incense',1,'双手捧香，一拜。',750);await beat('incense',2,'站直，再拜一次。',750);await beat('incense',3,'把香插好，烟慢慢升起来。',1000)},
+ beads:async()=>{await wait(900);await beat('beads',1,'📿 坐好，拨第一颗。',650);await beat('beads',2,'第二颗、第三颗……',800);await beat('beads',3,'慢慢拨完，再合掌。',850)}
+};
+function bind(sel,key){const b=q(sel);if(!b||b.dataset.immersiveReady)return;b.dataset.immersiveReady='1';b.addEventListener('click',()=>{fx=null;scenes[key]().finally(()=>{fx=null})},false)}
+function boot(){canvasFx();bind('[data-a="feed"]','feed');bind('[data-a="pet"]','pet');bind('[data-a="play"]','play');bind('[data-r="wood"]','wood');bind('[data-r="incense"]','incense');bind('[data-r="beads"]','beads')}
+const obs=new MutationObserver(()=>{if(q('[data-a="feed"]'))boot()});obs.observe(document.documentElement,{childList:true,subtree:true});if(q('[data-a="feed"]'))boot();
 })();
