@@ -92,9 +92,16 @@
 })();
 
 (() => {
-  if (document.querySelector('script[data-miyu-screenlist-patch]')) return;
-  const script = document.createElement('script');
-  script.src = './miyu_screenlist_patch.js';
-  script.dataset.miyuScreenlistPatch = '1';
-  document.head.appendChild(script);
+  if (!document.querySelector('script[data-miyu-screenlist-patch]')) {
+    const script = document.createElement('script');
+    script.src = './miyu_screenlist_patch.js';
+    script.dataset.miyuScreenlistPatch = '1';
+    document.head.appendChild(script);
+  }
+  if (!document.querySelector('script[data-miyu-pet]')) {
+    const petScript = document.createElement('script');
+    petScript.src = './miyu_pet.js';
+    petScript.dataset.miyuPet = '1';
+    document.head.appendChild(petScript);
+  }
 })();
