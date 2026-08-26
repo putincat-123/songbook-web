@@ -100,7 +100,7 @@
   }
   if (!document.querySelector('script[data-miyu-pet]')) {
     const petScript = document.createElement('script');
-    petScript.src = './miyu_pet.js';
+    petScript.src = './miyu_pet_pixel.js';
     petScript.dataset.miyuPet = '1';
     document.head.appendChild(petScript);
   }
