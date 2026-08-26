@@ -1,6 +1,7 @@
 (()=>{
 const COPY_RE=/^🎁 抽到《(.+?)》，但浏览器没有允许自动复制/;
 let currentCmd='';
+let inspecting=false;
 function legacyCopy(text){
   try{
     const ta=document.createElement('textarea');
@@ -27,9 +28,15 @@ async function copyNow(text){
   }catch{}
   return legacyCopy(text);
 }
+function setText(el,text){
+  if(el&&el.textContent!==text)el.textContent=text;
+}
+function setDisplay(el,value){
+  if(el&&el.style.display!==value)el.style.display=value;
+}
 function ensureButton(){
   const bubble=document.getElementById('pxBubble');
-  if(!bubble)return;
+  if(!bubble)return null;
   let btn=document.getElementById('pxBlindCopyBtn');
   if(!btn){
     btn=document.createElement('button');
@@ -43,31 +50,37 @@ function ensureButton(){
       const ok=await copyNow(currentCmd);
       const b=document.getElementById('pxBubble');
       if(ok){
-        if(b)b.textContent=`✅ 已复制：${currentCmd}`;
-        btn.style.display='none';
+        setText(b,`✅ 已复制：${currentCmd}`);
+        setDisplay(btn,'none');
       }else{
-        if(b)b.textContent=`📋 请长按复制：${currentCmd}`;
-        btn.textContent='再试一次复制';
+        setText(b,`📋 请长按复制：${currentCmd}`);
+        setText(btn,'再试一次复制');
       }
     };
   }
+  return btn;
 }
 function inspect(){
-  const bubble=document.getElementById('pxBubble');
-  if(!bubble)return;
-  ensureButton();
-  const btn=document.getElementById('pxBlindCopyBtn');
-  if(!btn)return;
-  const text=bubble.textContent||'';
-  const m=text.match(COPY_RE);
-  if(m){
-    currentCmd=`点歌 ${m[1]}`;
-    btn.textContent='📋 复制点歌指令';
-    btn.style.display='block';
-  }else if(text.startsWith('🎁 抽到《')&&text.includes('已复制')){
-    btn.style.display='none';
-  }else if(!text.startsWith('📋 请长按复制：')){
-    btn.style.display='none';
+  if(inspecting)return;
+  inspecting=true;
+  try{
+    const bubble=document.getElementById('pxBubble');
+    if(!bubble)return;
+    const btn=ensureButton();
+    if(!btn)return;
+    const text=bubble.textContent||'';
+    const m=text.match(COPY_RE);
+    if(m){
+      currentCmd=`点歌 ${m[1]}`;
+      setText(btn,'📋 复制点歌指令');
+      setDisplay(btn,'block');
+    }else if(text.startsWith('🎁 抽到《')&&text.includes('已复制')){
+      setDisplay(btn,'none');
+    }else if(!text.startsWith('📋 请长按复制：')){
+      setDisplay(btn,'none');
+    }
+  }finally{
+    inspecting=false;
   }
 }
 const mo=new MutationObserver(()=>inspect());
