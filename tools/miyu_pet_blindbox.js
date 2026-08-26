@@ -1,3 +1,4 @@
+// deploy-trigger: 2026-08-26T20:43+08:00
 (() => {
   if (window.__MIYU_PET_BLINDBOX__) return;
   window.__MIYU_PET_BLINDBOX__ = true;
