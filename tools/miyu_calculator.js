@@ -92,22 +92,25 @@
 })();
 
 (() => {
+  const nav = document.querySelector('.tabs');
+  if (!nav) return;
+
   if (!document.querySelector('script[data-miyu-screenlist-patch]')) {
     const script = document.createElement('script');
     script.src = './miyu_screenlist_patch.js';
     script.dataset.miyuScreenlistPatch = '1';
     document.head.appendChild(script);
   }
-  if (!document.querySelector('script[data-miyu-pet]')) {
-    const petScript = document.createElement('script');
-    petScript.src = './miyu_pet_pixel.js';
-    petScript.dataset.miyuPet = '1';
-    document.head.appendChild(petScript);
-  }
-  if (!document.querySelector('script[data-miyu-pet-merit]')) {
-    const meritScript = document.createElement('script');
-    meritScript.src = './miyu_pet_merit.js';
-    meritScript.dataset.miyuPetMerit = '1';
-    document.head.appendChild(meritScript);
+
+  if (!nav.querySelector('[data-tab="petRoom"]')) {
+    const petBtn = document.createElement('button');
+    petBtn.className = 'tab-btn';
+    petBtn.dataset.tab = 'petRoom';
+    petBtn.textContent = '🐾 宠物';
+    const calcBtn = nav.querySelector('[data-tab="calculator"]');
+    if (calcBtn) nav.insertBefore(petBtn, calcBtn); else nav.appendChild(petBtn);
+    petBtn.addEventListener('click', () => {
+      window.location.href = './miyu_pet_room.html';
+    });
   }
 })();
