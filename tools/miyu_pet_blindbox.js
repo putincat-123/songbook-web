@@ -8,10 +8,12 @@
 
   const style = document.createElement('style');
   style.textContent = `
-    .px-blindbox{position:absolute;left:47%;top:28%;z-index:4;width:82px;min-height:62px;transform:translateX(-50%);border:3px solid #4c342b;background:#e9b764;color:#4b3023;box-shadow:0 4px 0 #4c342b,inset 0 0 0 2px #ffe6a8;border-radius:4px;padding:5px 4px;font:900 11px/1.2 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;cursor:pointer;touch-action:manipulation}
-    .px-blindbox:active{transform:translate(-50%,2px);box-shadow:0 2px 0 #4c342b,inset 0 0 0 2px #ffe6a8}
-    .px-blindbox .box{display:block;font-size:25px;line-height:27px;filter:saturate(.9)}
-    .px-blindbox .label{display:block;margin-top:2px;white-space:nowrap}
+    .px-blindbox{position:absolute;left:45%;top:27.2%;z-index:4;width:74px;min-height:76px;transform:translateX(-50%);border:3px solid #4c342b;background:linear-gradient(#d69a46 0 18%,#efc16e 18% 72%,#b97535 72% 100%);color:#4b3023;box-shadow:0 5px 0 #4c342b,inset 0 0 0 2px #ffe2a0;border-radius:3px;padding:8px 5px 6px;font:900 10px/1.15 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;cursor:pointer;touch-action:manipulation}
+    .px-blindbox:before{content:"";position:absolute;left:13px;right:13px;top:25px;height:22px;background:#7f5035;border:2px solid #4c342b;box-shadow:inset 0 0 0 3px #f7d88e}
+    .px-blindbox:after{content:"";position:absolute;right:8px;top:52px;width:9px;height:9px;background:#d95743;border:2px solid #4c342b;border-radius:50%}
+    .px-blindbox:active{transform:translate(-50%,2px);box-shadow:0 3px 0 #4c342b,inset 0 0 0 2px #ffe2a0}
+    .px-blindbox .box{display:block;position:relative;z-index:1;font-size:20px;line-height:20px;margin-top:4px;filter:saturate(.85)}
+    .px-blindbox .label{display:block;position:absolute;left:5px;right:5px;bottom:5px;z-index:1;background:#f7dfaa;border:1px solid #795039;padding:2px 1px;white-space:nowrap}
     .px-blindbox-burst{position:absolute;z-index:7;pointer-events:none;color:#8c4f20;font:900 12px/1 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;text-shadow:0 1px 0 #fff0c7;animation:pxBlindBurst .75s ease-out forwards;white-space:nowrap}
     @keyframes pxBlindBurst{0%{opacity:0;transform:translate(-50%,5px) scale(.9)}15%{opacity:1}100%{opacity:0;transform:translate(-50%,-30px) scale(1.05)}}
   `;
@@ -27,9 +29,9 @@
     if(!room)return;
     const el=document.createElement('div');
     el.className='px-blindbox-burst';
-    el.textContent='神秘歌曲已复制 ✨';
-    el.style.left=(47+(Math.random()-.5)*8)+'%';
-    el.style.top='39%';
+    el.textContent='🎁 已复制点歌指令 ✨';
+    el.style.left=(45+(Math.random()-.5)*8)+'%';
+    el.style.top='38%';
     room.appendChild(el);
     setTimeout(()=>el.remove(),820);
   }
