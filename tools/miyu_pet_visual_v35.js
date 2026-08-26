@@ -12,14 +12,18 @@
     #petGame .px-small{font-size:11px;padding:6px 9px;opacity:.92}
     #petGame .px-room{overflow:hidden}
 
-    /* Fully cover the original canvas wood-fish drawing, then redraw it cleanly. */
-    #petGame .v35-wood{position:absolute;left:15.5%;top:47.7%;width:28.5%;height:19%;z-index:3;pointer-events:none;image-rendering:pixelated;overflow:visible}
-    #petGame .v35-wood .cover{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,#b88962 0 21px,#9f7455 21px 23px,#c4976d 23px 44px,#9f7455 44px 46px);border-radius:2px}
-    #petGame .v35-wood .fish{position:absolute;left:13%;bottom:14%;width:52%;height:33%;background:#8a5336;border:3px solid #4b2f20;border-radius:52% 48% 45% 49% / 58% 57% 43% 42%;box-shadow:inset -6px -4px 0 #70432f,inset 5px 4px 0 #a76a43}
+    /* A single deliberate mat hides the original wood-fish pixels cleanly. */
+    #petGame .v35-wood{position:absolute;left:14.2%;top:48.5%;width:31%;height:17.5%;z-index:3;pointer-events:none;image-rendering:pixelated}
+    #petGame .v35-wood .cover{position:absolute;inset:0;background:#a97955;border:3px solid #80583f;box-shadow:inset 0 0 0 3px #bd9068,3px 3px 0 rgba(75,47,32,.16);border-radius:4px}
+    #petGame .v35-wood .cover:before{content:"";position:absolute;left:8%;right:8%;top:16%;height:3px;background:#c89b72;box-shadow:0 18px 0 #936647,0 36px 0 #c89b72}
+
+    #petGame .v35-wood .fish{position:absolute;left:13%;bottom:15%;width:52%;height:38%;background:#8a5336;border:3px solid #4b2f20;border-radius:52% 48% 45% 49% / 58% 57% 43% 42%;box-shadow:inset -6px -4px 0 #70432f,inset 5px 4px 0 #a76a43;z-index:2}
     #petGame .v35-wood .fish:before{content:"";position:absolute;left:-8%;top:43%;width:16%;height:18%;background:#8a5336;border-left:3px solid #4b2f20;border-bottom:3px solid #4b2f20;transform:skewY(-18deg)}
     #petGame .v35-wood .fish:after{content:"";position:absolute;left:30%;top:25%;width:45%;height:13%;background:#3f281d;border-radius:70% 10% 70% 20%;transform:rotate(-15deg)}
-    #petGame .v35-wood .mallet{position:absolute;left:61%;top:27%;width:38%;height:6%;background:#6e472f;border:2px solid #3f281d;border-radius:4px;transform:rotate(-31deg);transform-origin:left center}
-    #petGame .v35-wood .mallet:before{content:"";position:absolute;left:-19%;top:-118%;width:23%;height:310%;background:#9a6842;border:2px solid #3f281d;border-radius:50%;box-shadow:inset -2px -2px 0 #7b4c31}
+
+    /* Head is on the left, immediately facing the wood fish; handle extends up-right. */
+    #petGame .v35-wood .mallet{position:absolute;left:55%;top:31%;width:38%;height:7%;background:#6e472f;border:2px solid #3f281d;border-radius:5px;transform:rotate(-31deg);transform-origin:left center;z-index:3}
+    #petGame .v35-wood .mallet:before{content:"";position:absolute;left:-20%;top:-110%;width:25%;height:300%;background:#9a6842;border:2px solid #3f281d;border-radius:50%;box-shadow:inset -2px -2px 0 #7b4c31}
 
     #petGame .v35-bowl{position:absolute;left:40%;top:76.3%;width:10%;height:4.8%;z-index:2;pointer-events:none;background:#d9aa5f;border:3px solid #70452d;border-radius:0 0 45% 45%;box-shadow:inset 0 4px 0 #f2cf85}
     #petGame .v35-ball{position:absolute;left:28%;top:82%;width:18px;height:18px;border-radius:50%;z-index:2;pointer-events:none;background:linear-gradient(90deg,#d35d4c 0 35%,#f3d26c 35% 65%,#5f9fbd 65%);border:2px solid #5a3b2c;box-shadow:2px 2px 0 rgba(75,47,32,.22)}
