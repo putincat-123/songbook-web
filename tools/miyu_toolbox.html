@@ -23,13 +23,13 @@ button{font:inherit}.tab-btn,.sub-btn,.tool-btn,.artist-chip{border:1px solid va
   <div class="title">miyu工具箱</div>
   <div class="subtitle">点歌与直播辅助工具</div>
   <nav class="tabs" aria-label="工具分类">
-    <button class="tab-btn active" data-tab="overview">点歌概况</button><button class="tab-btn" data-tab="daily">每日推荐</button><button class="tab-btn" data-tab="songSearch">曲库查询</button><button class="tab-btn" data-tab="blind">盲盒点歌</button><button class="tab-btn" data-tab="hot">热门推荐</button><button class="tab-btn" data-tab="data">资料工具</button>
+    <button class="tab-btn active" data-tab="daily">每日推荐</button><button class="tab-btn" data-tab="songSearch">曲库查询</button><button class="tab-btn" data-tab="blind">盲盒点歌</button><button class="tab-btn" data-tab="hot">热门推荐</button><button class="tab-btn" data-tab="data">资料工具</button>
   </nav>
-  <section id="overview" class="panel active">
+  <section id="overview" class="panel" aria-hidden="true">
     <div class="card"><div class="card-head"><div><h2>点歌概况</h2><div class="hint">把日常歌单维护与点歌统计收在一起，需要时再展开。</div></div></div><div class="subtabs"><button class="sub-btn active" data-overview="importPanel">歌单汇入</button><button class="sub-btn" data-overview="dashboardPanel">Dashboard</button></div></div>
     <div class="frame-wrap"><iframe id="overviewFrame" data-src="./miyu_toolbox_legacy.html?embed=1" title="点歌概况"></iframe></div>
   </section>
-  <section id="daily" class="panel">
+  <section id="daily" class="panel active">
     <div class="card daily-hero">
       <div class="card-head"><div><div class="daily-date" id="dailyDate">TODAY</div><h2>🎧 今日推荐歌单</h2><div class="hint">每天自动排一组约 10 首，不只看曲风，也按直播节奏分成暖场 → 情绪铺陈 → 收尾拉升。同一天固定，隔天自动换一组。</div></div></div>
       <div class="hint daily-summary" id="dailySummary">点开本页后载入今日推荐…</div>
@@ -67,7 +67,7 @@ button{font:inherit}.tab-btn,.sub-btn,.tool-btn,.artist-chip{border:1px solid va
     else if(id==='hot') loadFrame($('hotFrame'));
     else if(id==='data') loadFrame($('dataFrame'));
   }
-  function showMain(id){tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));panels.forEach(p=>p.classList.toggle('active',p.id===id));ensureTabLoaded(id);const u=new URL(location.href);u.searchParams.set('streamer',streamer);id==='overview'?u.searchParams.delete('tool'):u.searchParams.set('tool',id);history.replaceState({},'',u);const frame=document.querySelector('#'+id+' iframe');if(frame&&loadedFrames.has(frame.id))setTimeout(()=>resizeFrame(frame),80)}
+  function showMain(id){tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));panels.forEach(p=>p.classList.toggle('active',p.id===id));ensureTabLoaded(id);const u=new URL(location.href);u.searchParams.set('streamer',streamer);u.searchParams.set('tool',id);history.replaceState({},'',u);const frame=document.querySelector('#'+id+' iframe');if(frame&&loadedFrames.has(frame.id))setTimeout(()=>resizeFrame(frame),80)}
   tabs.forEach(b=>b.addEventListener('click',()=>showMain(b.dataset.tab)));
   function baseClean(doc){const app=doc.querySelector('.app');if(app){app.style.maxWidth='none';app.style.padding='12px'}const title=doc.querySelector('.title');if(title)title.style.display='none';const subtitle=doc.querySelector('.subtitle');if(subtitle)subtitle.style.display='none';const t=doc.querySelector('.tabs');if(t)t.style.display='none';doc.body.style.background='#fff'}
   function frameCopyButton(doc,titleEl){if(!titleEl||!titleEl.textContent.trim())return;let btn=titleEl.parentElement&&titleEl.parentElement.querySelector(':scope > .toolbox-copy-name');if(!btn){btn=doc.createElement('button');btn.type='button';btn.className='toolbox-copy-name';btn.textContent='复制歌名';btn.style.cssText='margin-left:8px;border:1px solid #bae6fd;background:#f0f9ff;color:#0284c7;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:800;cursor:pointer;vertical-align:middle';titleEl.insertAdjacentElement('afterend',btn);btn.addEventListener('click',()=>copyName(btn.dataset.song||''))}btn.dataset.song=titleEl.textContent.trim().replace(/^点歌\s*/,'')}
@@ -114,7 +114,7 @@ button{font:inherit}.tab-btn,.sub-btn,.tool-btn,.artist-chip{border:1px solid va
   function loadSongPoolOnce(){if(!songPoolPromise)songPoolPromise=loadSongPool().catch(e=>{songPoolPromise=null;throw e});return songPoolPromise}
   $('regenScreenListBtn').addEventListener('click',()=>{loadSongPoolOnce().then(()=>{screenListNonce++;buildScreenList();toast('🔄 已换一版公屏歌单')})});$('copyScreenListBtn').addEventListener('click',copyScreenList);
   $('artistOpenBtn').addEventListener('click',drawArtistSong);$('artistAgainBtn').addEventListener('click',drawArtistSong);$('artistCopyBtn').addEventListener('click',()=>currentSong&&copyName(currentSong.name));$('artistChangeBtn').addEventListener('click',()=>{$('artistBoxInput').value='';$('artistBoxInput').focus();$('artistBoxResult').classList.remove('show');activeArtists=[];activeKey='';$('artistBoxStatus').textContent='请选择或输入一个歌手'});$('randomArtistBtn').addEventListener('click',()=>{loadSongPoolOnce().then(()=>{const candidates=[...artistMap.entries()].filter(([,arr])=>arr.length>=3);if(!candidates.length)return;const [name]=candidates[Math.floor(Math.random()*candidates.length)];$('artistBoxInput').value=name;prepareArtist(name);drawArtistSong()})});$('artistBoxInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();drawArtistSong()}});
-  const initial=qs.get('tool');if(initial&&document.getElementById(initial))showMain(initial);else showMain('overview');
+  const initial=qs.get('tool');if(initial&&document.getElementById(initial)&&initial!=='overview')showMain(initial);else showMain('daily');
 })();
 </script>
 <script src="./miyu_calculator.js"></script>
