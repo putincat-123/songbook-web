@@ -27,54 +27,47 @@ button{font:inherit}.tab-btn,.sub-btn,.tool-btn,.artist-chip{border:1px solid va
   </nav>
   <section id="overview" class="panel active">
     <div class="card"><div class="card-head"><div><h2>点歌概况</h2><div class="hint">把日常歌单维护与点歌统计收在一起，需要时再展开。</div></div></div><div class="subtabs"><button class="sub-btn active" data-overview="importPanel">歌单汇入</button><button class="sub-btn" data-overview="dashboardPanel">Dashboard</button></div></div>
-    <div class="frame-wrap"><iframe id="overviewFrame" src="./miyu_toolbox_legacy.html?embed=1" title="点歌概况"></iframe></div>
+    <div class="frame-wrap"><iframe id="overviewFrame" data-src="./miyu_toolbox_legacy.html?embed=1" title="点歌概况"></iframe></div>
   </section>
   <section id="daily" class="panel">
     <div class="card daily-hero">
       <div class="card-head"><div><div class="daily-date" id="dailyDate">TODAY</div><h2>🎧 今日推荐歌单</h2><div class="hint">每天自动排一组约 10 首，不只看曲风，也按直播节奏分成暖场 → 情绪铺陈 → 收尾拉升。同一天固定，隔天自动换一组。</div></div></div>
-      <div class="hint daily-summary" id="dailySummary">正在载入今日推荐…</div>
-          </div>
-    <div id="dailyGroups" class="daily-flow"><div class="daily-empty">正在从曲库准备今日直播歌单…</div></div>
+      <div class="hint daily-summary" id="dailySummary">点开本页后载入今日推荐…</div>
+    </div>
+    <div id="dailyGroups" class="daily-flow"><div class="daily-empty">点开本页后从曲库准备今日直播歌单…</div></div>
     <div class="card screenlist-card">
-      <div class="screenlist-head">
-        <div><h2>📋 公屏歌单</h2><div class="hint">自动生成标准版，可直接复制发送；内容仍可手动微调。</div></div>
-        <div class="screenlist-actions"><button class="tool-btn soft" id="regenScreenListBtn">🔄 重新生成</button><button class="tool-btn primary" id="copyScreenListBtn">📋 复制公屏歌单</button></div>
-      </div>
-      <textarea id="screenListText" class="screenlist-text" spellcheck="false" placeholder="曲库载入后自动生成…"></textarea>
-      <div id="screenListMeta" class="screenlist-meta">准备中…</div>
+      <div class="screenlist-head"><div><h2>📋 公屏歌单</h2><div class="hint">自动生成标准版，可直接复制发送；内容仍可手动微调。</div></div><div class="screenlist-actions"><button class="tool-btn soft" id="regenScreenListBtn">🔄 重新生成</button><button class="tool-btn primary" id="copyScreenListBtn">📋 复制公屏歌单</button></div></div>
+      <textarea id="screenListText" class="screenlist-text" spellcheck="false" placeholder="曲库载入后自动生成…"></textarea><div id="screenListMeta" class="screenlist-meta">尚未载入</div>
     </div>
-    <div class="topic-section">
-      <div class="topic-section-head"><div><div class="topic-title">💬 今日话题卡</div><div class="topic-sub">从抖音 / 小红书 / B站挑近期最容易开聊的话题，不只看热度，更看公屏能不能接话。</div></div><div class="topic-date" id="topicDate">载入中…</div></div>
-      <div id="dailyTopics" class="topic-grid"><div class="topic-empty">正在准备今天的话题卡…</div></div>
-    </div>
+    <div class="topic-section"><div class="topic-section-head"><div><div class="topic-title">💬 今日话题卡</div><div class="topic-sub">从抖音 / 小红书 / B站挑近期最容易开聊的话题，不只看热度，更看公屏能不能接话。</div></div><div class="topic-date" id="topicDate">尚未载入</div></div><div id="dailyTopics" class="topic-grid"><div class="topic-empty">点开本页后载入今天的话题卡…</div></div></div>
   </section>
-  <section id="songSearch" class="panel">
-    <div class="card"><div class="card-head"><div><h2>曲库查询</h2><div class="hint">与小耳朵使用的歌曲查询共用同一套歌单与筛选方式；工具箱内的复制只复制歌名，方便直接贴到播放器。</div></div></div></div>
-    <div class="frame-wrap"><iframe id="searchFrame" class="search-frame" src="../?streamer=miyu&toolbox=1" title="曲库查询"></iframe></div>
-  </section>
+  <section id="songSearch" class="panel"><div class="card"><div class="card-head"><div><h2>曲库查询</h2><div class="hint">与小耳朵使用的歌曲查询共用同一套歌单与筛选方式；工具箱内的复制只复制歌名，方便直接贴到播放器。</div></div></div></div><div class="frame-wrap"><iframe id="searchFrame" class="search-frame" data-src="../?streamer=miyu&toolbox=1" title="曲库查询"></iframe></div></section>
   <section id="blind" class="panel">
-    <div class="card artist-box">
-      <div class="card-head"><div><h2>🎤 歌手盲盒</h2><div class="hint">选一个歌手开盒；同一轮不会重复，抽完才重新洗牌。也可以让系统先随机歌手，再开歌曲盒。</div></div></div>
-      <div class="artist-chips" id="artistChips"><span class="hint">正在载入常用歌手…</span></div>
-      <div class="artist-form"><input id="artistBoxInput" list="artistOptions" placeholder="输入歌手，例如：周杰伦" autocomplete="off"><datalist id="artistOptions"></datalist><button class="tool-btn primary" id="artistOpenBtn">🎁 开盒</button><button class="tool-btn soft" id="randomArtistBtn">✨ 随机歌手</button></div>
-      <div class="artist-status" id="artistBoxStatus">曲库载入中…</div>
-      <div class="artist-result" id="artistBoxResult"><div class="song" id="artistBoxSong">—</div><div class="singer" id="artistBoxSinger"></div><div class="round" id="artistBoxRound"></div><div class="blind-actions"><button class="tool-btn primary" id="artistAgainBtn">🎲 再抽一首</button><button class="tool-btn soft" id="artistCopyBtn">复制歌名</button><button class="tool-btn" id="artistChangeBtn">换歌手</button></div><div class="copy-note">复制内容仅包含歌名，不附加「点歌」或歌手。</div></div>
-    </div>
-    <div class="frame-wrap"><iframe id="blindFrame" src="./miyu_toolbox_legacy.html?embed=1#blindPanel" title="盲盒点歌"></iframe></div>
+    <div class="card artist-box"><div class="card-head"><div><h2>🎤 歌手盲盒</h2><div class="hint">选一个歌手开盒；同一轮不会重复，抽完才重新洗牌。也可以让系统先随机歌手，再开歌曲盒。</div></div></div><div class="artist-chips" id="artistChips"><span class="hint">进入本页后载入常用歌手…</span></div><div class="artist-form"><input id="artistBoxInput" list="artistOptions" placeholder="输入歌手，例如：周杰伦" autocomplete="off"><datalist id="artistOptions"></datalist><button class="tool-btn primary" id="artistOpenBtn">🎁 开盒</button><button class="tool-btn soft" id="randomArtistBtn">✨ 随机歌手</button></div><div class="artist-status" id="artistBoxStatus">尚未载入曲库</div><div class="artist-result" id="artistBoxResult"><div class="song" id="artistBoxSong">—</div><div class="singer" id="artistBoxSinger"></div><div class="round" id="artistBoxRound"></div><div class="blind-actions"><button class="tool-btn primary" id="artistAgainBtn">🎲 再抽一首</button><button class="tool-btn soft" id="artistCopyBtn">复制歌名</button><button class="tool-btn" id="artistChangeBtn">换歌手</button></div><div class="copy-note">复制内容仅包含歌名，不附加「点歌」或歌手。</div></div></div>
+    <div class="frame-wrap"><iframe id="blindFrame" data-src="./miyu_toolbox_legacy.html?embed=1#blindPanel" title="盲盒点歌"></iframe></div>
   </section>
-  <section id="hot" class="panel"><div class="frame-wrap"><iframe id="hotFrame" src="./miyu_toolbox_legacy.html?embed=1#hotRecommendPanel" title="热门推荐"></iframe></div></section>
-  <section id="data" class="panel"><div class="frame-wrap"><iframe id="dataFrame" src="./miyu_toolbox_legacy.html?embed=1#dataPanel" title="资料工具"></iframe></div></section>
-</div>
-<div id="toast" class="toast"></div>
+  <section id="hot" class="panel"><div class="frame-wrap"><iframe id="hotFrame" data-src="./miyu_toolbox_legacy.html?embed=1#hotRecommendPanel" title="热门推荐"></iframe></div></section>
+  <section id="data" class="panel"><div class="frame-wrap"><iframe id="dataFrame" data-src="./miyu_toolbox_legacy.html?embed=1#dataPanel" title="资料工具"></iframe></div></section>
+</div><div id="toast" class="toast"></div>
 <script>
 (() => {
   const qs=new URLSearchParams(location.search),streamer=qs.get('streamer')||'miyu';
   const tabs=[...document.querySelectorAll('.tab-btn')],panels=[...document.querySelectorAll('.panel')];
   const legacyMap={blindFrame:'blindPanel',hotFrame:'hotRecommendPanel',dataFrame:'dataPanel'};
   const $=id=>document.getElementById(id);
+  const loadedFrames=new Set(); let songPoolPromise=null,topicsPromise=null;
   function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>el.classList.remove('show'),1400)}
   async function copyName(name){name=String(name||'').replace(/^点歌\s*/,'').trim();if(!name)return;try{await navigator.clipboard.writeText(name)}catch(e){const ta=document.createElement('textarea');ta.value=name;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}toast('✅ 已复制：'+name)}
-  function showMain(id){tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));panels.forEach(p=>p.classList.toggle('active',p.id===id));const u=new URL(location.href);u.searchParams.set('streamer',streamer);id==='overview'?u.searchParams.delete('tool'):u.searchParams.set('tool',id);history.replaceState({},'',u);const frame=document.querySelector('#'+id+' iframe');if(frame)setTimeout(()=>resizeFrame(frame),80)}
+  function loadFrame(frame){if(!frame||loadedFrames.has(frame.id))return;const src=frame.dataset.src;if(src){loadedFrames.add(frame.id);frame.src=src}}
+  function ensureTabLoaded(id){
+    if(id==='overview') loadFrame($('overviewFrame'));
+    else if(id==='songSearch') loadFrame($('searchFrame'));
+    else if(id==='blind'){loadSongPoolOnce();loadFrame($('blindFrame'))}
+    else if(id==='daily'){loadSongPoolOnce();loadDailyTopicsOnce()}
+    else if(id==='hot') loadFrame($('hotFrame'));
+    else if(id==='data') loadFrame($('dataFrame'));
+  }
+  function showMain(id){tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));panels.forEach(p=>p.classList.toggle('active',p.id===id));ensureTabLoaded(id);const u=new URL(location.href);u.searchParams.set('streamer',streamer);id==='overview'?u.searchParams.delete('tool'):u.searchParams.set('tool',id);history.replaceState({},'',u);const frame=document.querySelector('#'+id+' iframe');if(frame&&loadedFrames.has(frame.id))setTimeout(()=>resizeFrame(frame),80)}
   tabs.forEach(b=>b.addEventListener('click',()=>showMain(b.dataset.tab)));
   function baseClean(doc){const app=doc.querySelector('.app');if(app){app.style.maxWidth='none';app.style.padding='12px'}const title=doc.querySelector('.title');if(title)title.style.display='none';const subtitle=doc.querySelector('.subtitle');if(subtitle)subtitle.style.display='none';const t=doc.querySelector('.tabs');if(t)t.style.display='none';doc.body.style.background='#fff'}
   function frameCopyButton(doc,titleEl){if(!titleEl||!titleEl.textContent.trim())return;let btn=titleEl.parentElement&&titleEl.parentElement.querySelector(':scope > .toolbox-copy-name');if(!btn){btn=doc.createElement('button');btn.type='button';btn.className='toolbox-copy-name';btn.textContent='复制歌名';btn.style.cssText='margin-left:8px;border:1px solid #bae6fd;background:#f0f9ff;color:#0284c7;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:800;cursor:pointer;vertical-align:middle';titleEl.insertAdjacentElement('afterend',btn);btn.addEventListener('click',()=>copyName(btn.dataset.song||''))}btn.dataset.song=titleEl.textContent.trim().replace(/^点歌\s*/,'')}
@@ -83,9 +76,9 @@ button{font:inherit}.tab-btn,.sub-btn,.tool-btn,.artist-chip{border:1px solid va
   function cleanSearchFrame(frame){try{const doc=frame.contentDocument,app=doc.querySelector('.app');if(app){app.style.maxWidth='none';app.style.padding='12px'}const hero=doc.querySelector('.hero');if(hero){const link=doc.getElementById('liveLink');if(link)link.style.display='none'}const footer=doc.querySelector('.footer');if(footer)footer.style.display='none';doc.body.style.background='#fff';decorateFrame(frame);resizeFrame(frame);observeFrame(frame)}catch(e){console.warn('search embed failed',e)}}
   function resizeFrame(frame){try{const h=Math.max(720,frame.contentDocument.documentElement.scrollHeight,frame.contentDocument.body.scrollHeight);frame.style.height=(h+12)+'px'}catch(e){}}
   function observeFrame(frame){try{if(frame._observer)return;let busy=false;const obs=new MutationObserver(()=>{if(busy)return;busy=true;requestAnimationFrame(()=>{decorateFrame(frame);resizeFrame(frame);busy=false})});obs.observe(frame.contentDocument.body,{subtree:true,childList:true,characterData:true});frame._observer=obs;frame.contentWindow.addEventListener('resize',()=>resizeFrame(frame))}catch(e){}}
-  const overviewFrame=$('overviewFrame');let overviewPanel='importPanel';overviewFrame.addEventListener('load',()=>showLegacyPanel(overviewFrame,overviewPanel));document.querySelectorAll('.sub-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.sub-btn').forEach(x=>x.classList.toggle('active',x===btn));overviewPanel=btn.dataset.overview;showLegacyPanel(overviewFrame,overviewPanel)}));
+  const overviewFrame=$('overviewFrame');let overviewPanel='importPanel';overviewFrame.addEventListener('load',()=>showLegacyPanel(overviewFrame,overviewPanel));document.querySelectorAll('.sub-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.sub-btn').forEach(x=>x.classList.toggle('active',x===btn));overviewPanel=btn.dataset.overview;loadFrame(overviewFrame);showLegacyPanel(overviewFrame,overviewPanel)}));
   Object.entries(legacyMap).forEach(([frameId,panelId])=>{const frame=$(frameId);frame.addEventListener('load',()=>showLegacyPanel(frame,panelId,{hideBlindExtras:panelId==='blindPanel'}))});
-  const searchFrame=$('searchFrame');searchFrame.src='../?streamer='+encodeURIComponent(streamer)+'&toolbox=1';searchFrame.addEventListener('load',()=>cleanSearchFrame(searchFrame));
+  const searchFrame=$('searchFrame');searchFrame.dataset.src='../?streamer='+encodeURIComponent(streamer)+'&toolbox=1';searchFrame.addEventListener('load',()=>cleanSearchFrame(searchFrame));
 
   let songPool=[],artistMap=new Map(),artistBags=new Map(),activeArtists=[],activeKey='',currentSong=null,dailySongs=[];
   function unwrap(raw){return Array.isArray(raw)?raw:(raw&&Array.isArray(raw.songs)?raw.songs:(raw&&Array.isArray(raw.data)?raw.data:[]))}
@@ -95,11 +88,7 @@ button{font:inherit}.tab-btn,.sub-btn,.tool-btn,.artist-chip{border:1px solid va
   function seededShuffle(arr,seed){arr=[...arr];let x=seed>>>0;const rnd=()=>{x+=0x6D2B79F5;let t=x;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296};for(let i=arr.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
   function localDateKey(){const d=new Date(),y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return y+'-'+m+'-'+day}
   function songText(s){return (s.style+' '+s.moods+' '+s.energy).toLowerCase()}
-  const DAILY_PHASES=[
-    {key:'open',title:'① 暖场进场',desc:'先让小耳朵容易听进去，旋律与节奏偏轻松。',target:3,words:['轻快','欢快','清新','甜','流行','律动','节奏','活泼','轻松','元气','city pop','funk','dance','快乐']},
-    {key:'mid',title:'② 情绪铺陈',desc:'把谜屿擅长的故事感拉出来，适合抒情、民谣与慢歌。',target:4,words:['抒情','民谣','情歌','治愈','温柔','慢','故事','深情','伤感','emo','叙事','r&b','古风','安静']},
-    {key:'end',title:'③ 收尾拉升',desc:'最后把存在感往上带，选情绪更强或更有能量的歌。',target:3,words:['摇滚','燃','热血','爆发','高音','乐队','强烈','激情','说唱','rap','力量','情绪','炸','高能','激昂']}
-  ];
+  const DAILY_PHASES=[{key:'open',title:'① 暖场进场',desc:'先让小耳朵容易听进去，旋律与节奏偏轻松。',target:3,words:['轻快','欢快','清新','甜','流行','律动','节奏','活泼','轻松','元气','city pop','funk','dance','快乐']},{key:'mid',title:'② 情绪铺陈',desc:'把谜屿擅长的故事感拉出来，适合抒情、民谣与慢歌。',target:4,words:['抒情','民谣','情歌','治愈','温柔','慢','故事','深情','伤感','emo','叙事','r&b','古风','安静']},{key:'end',title:'③ 收尾拉升',desc:'最后把存在感往上带，选情绪更强或更有能量的歌。',target:3,words:['摇滚','燃','热血','爆发','高音','乐队','强烈','激情','说唱','rap','力量','情绪','炸','高能','激昂']}];
   function phaseScore(s,phase){const text=songText(s);let score=0;phase.words.forEach(w=>{if(text.includes(w.toLowerCase()))score+=2});if(phase.key==='open'&&/高|high|4|5/.test(s.energy))score-=1;if(phase.key==='end'&&/高|high|4|5/.test(s.energy))score+=2;if(phase.key==='mid'&&/低|中|low|mid|2|3/.test(s.energy))score+=1;return score}
   function displayStyle(s){const v=String(s.style||'').split(/[，,、/|]+/).map(x=>x.trim()).filter(Boolean);return v[0]||'其他'}
   function pickPhaseSongs(phase,used,dateKey){const ranked=seededShuffle(songPool,seedFrom(streamer+'|'+dateKey+'|'+phase.key)).filter(s=>!used.has(s.id)).map(s=>({s,score:phaseScore(s,phase)})).sort((a,b)=>b.score-a.score);const positive=ranked.filter(x=>x.score>0),source=positive.length>=phase.target?positive:ranked,picks=[];for(const x of source){if(used.has(x.s.id))continue;picks.push(x.s);used.add(x.s.id);if(picks.length>=phase.target)break}return picks}
@@ -108,6 +97,7 @@ button{font:inherit}.tab-btn,.sub-btn,.tool-btn,.artist-chip{border:1px solid va
   function escapeAttr(v){return escapeHtml(v).replaceAll('\n',' ')}
   function renderTopics(data){const topics=Array.isArray(data&&data.topics)?data.topics:[];$('topicDate').textContent=(data&&data.date?String(data.date).replaceAll('-',' / '):'今日')+' · '+topics.length+' 个话题';if(!topics.length){$('dailyTopics').innerHTML='<div class="topic-empty">今天的话题卡还没有更新。</div>';return}$('dailyTopics').innerHTML=topics.map((t,i)=>{const score=Math.max(1,Math.min(5,Number(t.talkability)||4)),sources=Array.isArray(t.sources)?t.sources:[],recommended=t.recommended||i===0;return '<article class="topic-card '+(recommended?'recommended':'')+'"><div class="topic-top"><span class="topic-rank">#'+(i+1)+'</span>'+(recommended?'<span class="topic-hot">🔥 今日最推荐</span>':'')+(t.tag?'<span class="topic-tag">'+escapeHtml(t.tag)+'</span>':'')+'</div><h3>'+escapeHtml(t.title||'今日话题')+'</h3><div class="topic-background">'+escapeHtml(t.background||'')+'</div><div class="topic-block topic-open"><div class="topic-label">主播怎么开口</div><div class="topic-copy">'+escapeHtml(t.opening||'')+'</div></div><div class="topic-block topic-question"><div class="topic-label">丢给公屏</div><div class="topic-copy">'+escapeHtml(t.question||'')+'</div></div><div class="topic-footer"><div class="topic-sources">'+sources.map(s=>'<span class="source-chip">'+escapeHtml(s)+'</span>').join('')+'</div><div class="talkability">好聊度 '+('★'.repeat(score))+'</div></div></article>'}).join('')}
   async function loadDailyTopics(){try{const res=await fetch('../data/'+encodeURIComponent(streamer)+'/daily_topics.json?t='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);renderTopics(await res.json())}catch(e){console.error('daily topics failed',e);$('topicDate').textContent='更新失败';$('dailyTopics').innerHTML='<div class="topic-empty">今日话题载入失败，请稍后刷新。</div>'}}
+  function loadDailyTopicsOnce(){if(!topicsPromise)topicsPromise=loadDailyTopics();return topicsPromise}
   let screenListNonce=0;
   function compactLines(names,maxChars=34){const lines=[];let line='';for(const raw of names){const name=String(raw||'').trim();if(!name)continue;const next=line?line+'｜'+name:name;if(line&&next.length>maxChars){lines.push(line);line=name}else line=next}if(line)lines.push(line);return lines}
   function getNewestSongs(count=5){return [...songPool].sort((a,b)=>{const ad=a.sourceDate||a.createdAt||'',bd=b.sourceDate||b.createdAt||'';if(ad!==bd)return bd.localeCompare(ad);return (b.seq||0)-(a.seq||0)}).slice(0,count)}
@@ -119,11 +109,12 @@ button{font:inherit}.tab-btn,.sub-btn,.tool-btn,.artist-chip{border:1px solid va
   function resolveArtists(term){term=String(term||'').trim();if(!term)return[];if(artistMap.has(term))return[term];const low=term.toLowerCase();return[...artistMap.keys()].filter(a=>a.toLowerCase().includes(low)).slice(0,8)}
   function prepareArtist(term){const names=resolveArtists(term);if(!names.length){activeArtists=[];activeKey='';$('artistBoxStatus').textContent='找不到这个歌手，可以换个关键词试试';return false}activeArtists=names;activeKey=names.sort().join('|');const total=[...new Map(names.flatMap(a=>artistMap.get(a)||[]).map(s=>[s.id,s])).values()].length;const bag=artistBags.get(activeKey);$('artistBoxStatus').textContent=(names.length===1?names[0]:names.join(' / '))+' · 曲库 '+total+' 首 · 本轮剩 '+(bag?bag.length:total)+' 首';return true}
   function artistSongs(){return[...new Map(activeArtists.flatMap(a=>artistMap.get(a)||[]).map(s=>[s.id,s])).values()]}
-  function drawArtistSong(){if(!prepareArtist($('artistBoxInput').value))return;const pool=artistSongs();if(!pool.length)return;let bag=artistBags.get(activeKey);if(!bag||!bag.length)bag=shuffle(pool.map((_,i)=>i));const idx=bag.pop();artistBags.set(activeKey,bag);currentSong=pool[idx];$('artistBoxSong').textContent=currentSong.name;$('artistBoxSinger').textContent=currentSong.artist||activeArtists.join(' / ');$('artistBoxRound').textContent='本轮剩余 '+bag.length+' / '+pool.length+' 首';$('artistBoxResult').classList.add('show');$('artistBoxStatus').textContent=(activeArtists.length===1?activeArtists[0]:activeArtists.join(' / '))+' · 曲库 '+pool.length+' 首 · 本轮剩 '+bag.length+' 首'}
-  async function loadSongPool(){try{const res=await fetch('../data/'+encodeURIComponent(streamer)+'/songs.json?t='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);songPool=unwrap(await res.json()).map(normSong).filter(Boolean);buildArtists();buildDaily();buildScreenList()}catch(e){console.error(e);$('artistBoxStatus').textContent='曲库载入失败，请稍后刷新重试';$('artistChips').innerHTML='<span class="hint">曲库载入失败</span>';$('dailySummary').textContent='曲库载入失败';$('dailyGroups').innerHTML='<div class="daily-empty">曲库载入失败，请稍后刷新重试。</div>'}}
-  $('regenScreenListBtn').addEventListener('click',()=>{screenListNonce++;buildScreenList();toast('🔄 已换一版公屏歌单')});$('copyScreenListBtn').addEventListener('click',copyScreenList);
-  $('artistOpenBtn').addEventListener('click',drawArtistSong);$('artistAgainBtn').addEventListener('click',drawArtistSong);$('artistCopyBtn').addEventListener('click',()=>currentSong&&copyName(currentSong.name));$('artistChangeBtn').addEventListener('click',()=>{$('artistBoxInput').value='';$('artistBoxInput').focus();$('artistBoxResult').classList.remove('show');activeArtists=[];activeKey='';$('artistBoxStatus').textContent='请选择或输入一个歌手'});$('randomArtistBtn').addEventListener('click',()=>{const candidates=[...artistMap.entries()].filter(([,arr])=>arr.length>=3);if(!candidates.length)return;const [name]=candidates[Math.floor(Math.random()*candidates.length)];$('artistBoxInput').value=name;prepareArtist(name);drawArtistSong()});$('artistBoxInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();drawArtistSong()}});
-  loadSongPool();loadDailyTopics();const initial=qs.get('tool');if(initial&&document.getElementById(initial))showMain(initial);else showMain('daily');
+  function drawArtistSong(){if(!songPool.length){loadSongPoolOnce().then(drawArtistSong);return}if(!prepareArtist($('artistBoxInput').value))return;const pool=artistSongs();if(!pool.length)return;let bag=artistBags.get(activeKey);if(!bag||!bag.length)bag=shuffle(pool.map((_,i)=>i));const idx=bag.pop();artistBags.set(activeKey,bag);currentSong=pool[idx];$('artistBoxSong').textContent=currentSong.name;$('artistBoxSinger').textContent=currentSong.artist||activeArtists.join(' / ');$('artistBoxRound').textContent='本轮剩余 '+bag.length+' / '+pool.length+' 首';$('artistBoxResult').classList.add('show');$('artistBoxStatus').textContent=(activeArtists.length===1?activeArtists[0]:activeArtists.join(' / '))+' · 曲库 '+pool.length+' 首 · 本轮剩 '+bag.length+' 首'}
+  async function loadSongPool(){try{const res=await fetch('../data/'+encodeURIComponent(streamer)+'/songs.json?t='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);songPool=unwrap(await res.json()).map(normSong).filter(Boolean);buildArtists();buildDaily();buildScreenList()}catch(e){console.error(e);$('artistBoxStatus').textContent='曲库载入失败，请稍后刷新重试';$('artistChips').innerHTML='<span class="hint">曲库载入失败</span>';$('dailySummary').textContent='曲库载入失败';$('dailyGroups').innerHTML='<div class="daily-empty">曲库载入失败，请稍后刷新重试。</div>';throw e}}
+  function loadSongPoolOnce(){if(!songPoolPromise)songPoolPromise=loadSongPool().catch(e=>{songPoolPromise=null;throw e});return songPoolPromise}
+  $('regenScreenListBtn').addEventListener('click',()=>{loadSongPoolOnce().then(()=>{screenListNonce++;buildScreenList();toast('🔄 已换一版公屏歌单')})});$('copyScreenListBtn').addEventListener('click',copyScreenList);
+  $('artistOpenBtn').addEventListener('click',drawArtistSong);$('artistAgainBtn').addEventListener('click',drawArtistSong);$('artistCopyBtn').addEventListener('click',()=>currentSong&&copyName(currentSong.name));$('artistChangeBtn').addEventListener('click',()=>{$('artistBoxInput').value='';$('artistBoxInput').focus();$('artistBoxResult').classList.remove('show');activeArtists=[];activeKey='';$('artistBoxStatus').textContent='请选择或输入一个歌手'});$('randomArtistBtn').addEventListener('click',()=>{loadSongPoolOnce().then(()=>{const candidates=[...artistMap.entries()].filter(([,arr])=>arr.length>=3);if(!candidates.length)return;const [name]=candidates[Math.floor(Math.random()*candidates.length)];$('artistBoxInput').value=name;prepareArtist(name);drawArtistSong()})});$('artistBoxInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();drawArtistSong()}});
+  const initial=qs.get('tool');if(initial&&document.getElementById(initial))showMain(initial);else showMain('overview');
 })();
 </script>
 <script src="./miyu_calculator.js"></script>
