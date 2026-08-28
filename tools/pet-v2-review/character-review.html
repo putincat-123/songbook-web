@@ -55,7 +55,7 @@
     <div class="error" id="error">角色载入失败，请重新整理页面。</div>
   </main>
   <script type="module">
-    import { STAGES, loadStageFace } from './stage-sprites.js';
+    import { STAGES, loadStageFace } from './stage-sprites.js?rev=11';
     async function init(){try{for(const stage of STAGES){const [front,back]=await Promise.all([loadStageFace(stage,'front'),loadStageFace(stage,'back')]);document.getElementById(`${stage}-front`).replaceChildren(front);document.getElementById(`${stage}-back`).replaceChildren(back)}}catch(error){console.error(error);document.getElementById('error').style.display='block'}}
     init();
   </script>
