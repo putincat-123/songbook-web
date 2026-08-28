@@ -41,6 +41,8 @@ export function createMovementController({
     const dt = Math.min(0.04, (now - lastTime) / 1000);
     lastTime = now;
 
+    const beforeX = x;
+    const beforeY = y;
     const wanted = clampToWalkBounds(x + vx * dt, y + vy * dt, WALK_BOUNDS);
     const resolved = resolveAxisMovement({ x, y, nextX: wanted.x, nextY: wanted.y });
     x = resolved.x;
@@ -52,8 +54,11 @@ export function createMovementController({
       (x >= WALK_BOUNDS.maxX && vx > 0) ||
       (y <= WALK_BOUNDS.minY && vy < 0) ||
       (y >= WALK_BOUNDS.maxY && vy > 0);
+    const blockedInTravelDirection =
+      (vx !== 0 && x === beforeX && wanted.x !== beforeX) ||
+      (vy !== 0 && y === beforeY && wanted.y !== beforeY);
 
-    if (atBoundary) stop();
+    if (atBoundary || blockedInTravelDirection) stop();
     else if (state === 'walk') rafId = requestAnimationFrame(tick);
   };
 
