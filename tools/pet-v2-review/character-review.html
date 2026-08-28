@@ -19,6 +19,14 @@
     .face { min-height: 210px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 12px 8px 9px; border-radius: 14px; background: linear-gradient(#f8f5fa, #eee5f1); border: 1px solid #ece4ef; }
     .sprite { width: 118px; height: 154px; display: flex; align-items: flex-end; justify-content: center; }
     .sprite svg { width: 100%; height: 100%; display: block; shape-rendering: crispEdges; filter: drop-shadow(0 4px 1px rgba(70,48,62,.16)); }
+    .sprite svg #pixel-arms path[fill="#fff0d2"],
+    .sprite svg #back-arms path[fill="#fff0d2"] {
+      stroke: #67483d;
+      stroke-width: 2;
+      stroke-linejoin: miter;
+      stroke-linecap: square;
+      paint-order: stroke fill;
+    }
     .stage[data-stage="teen"] .sprite { width: 124px; height: 162px; }
     .stage[data-stage="adult"] .sprite { width: 132px; height: 170px; }
     .label { margin-top: 5px; font-size: 12px; font-weight: 800; }
