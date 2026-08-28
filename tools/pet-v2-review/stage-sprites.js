@@ -132,8 +132,9 @@ function commonBack(stage) {
 
   return `<g transform="translate(${48 - 48 * scale} ${yOffset}) scale(${scale})">
     <g id="back-tail">
-      <path d="M61 72h8v3h6v3h5v6h2v7h-3v5h-5v4h-8v3h-7v-8h6v-3h5v-4h4v-5h-3v-3h-5v3h-5z" fill="#67483d"/>
-      <path d="M64 75h5v3h5v3h3v5h1v4h-3v4h-5v3h-6v3h-2v-5h5v-4h4v-4h3v-4h-3v-2h-4v2h-3z" fill="#d98c53"/>
+      <path d="M58 82h8v3h6v4h4v6h-3v5h-5v4h-8v3h-7v-7h6v-3h5v-4h3v-4h-3v-2h-6z" fill="#67483d"/>
+      <path d="M60 85h5v3h5v3h2v3h-3v4h-5v3h-6v3h-2v-4h5v-4h4v-3h2v-2h-3v-2h-4z" fill="#d98c53"/>
+      <rect x="63" y="88" width="5" height="3" fill="#f0b36f"/>
     </g>
     <g id="back-legs">
       <circle cx="38" cy="99" r="7" fill="#67483d"/><circle cx="38" cy="99" r="4.5" fill="#fff0d2"/>
