@@ -127,9 +127,9 @@ function sharedBackArms() {
 
 function backTail() {
   return `<g id="back-tail">
-    <path d="M58 82h8v3h6v4h4v6h-3v5h-5v4h-8v3h-7v-7h6v-3h5v-4h3v-4h-3v-2h-6z" fill="#67483d"/>
-    <path d="M60 85h5v3h5v3h2v3h-3v4h-5v3h-6v3h-2v-4h5v-4h4v-3h2v-2h-3v-2h-4z" fill="#d98c53"/>
-    <rect x="63" y="88" width="5" height="3" fill="#f0b36f"/>
+    <path d="M45 84h7v2h7v2h7v3h5v5h-3v5h-5v4h-8v3h-7v-7h6v-3h5v-4h3v-2h-6v-2h-6v-2h-5z" fill="#67483d"/>
+    <path d="M48 87h5v2h6v2h6v2h2v3h-3v4h-5v3h-6v3h-2v-4h5v-4h4v-3h2v-1h-5v-2h-5v-2h-4z" fill="#d98c53"/>
+    <rect x="58" y="92" width="5" height="3" fill="#f0b36f"/>
   </g>`;
 }
 
