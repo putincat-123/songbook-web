@@ -6,8 +6,7 @@
   const list = $('songSearchListV2');
   const meta = $('songSearchMetaV2');
   const clearBtn = $('songSearchClearV2');
-  const randomBtn = $('songSearchRandomV2');
-  if (!input || !list || !meta || !clearBtn || !randomBtn) return;
+  if (!input || !list || !meta || !clearBtn) return;
 
   let songs = [];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({
@@ -71,12 +70,6 @@
     render();
     input.focus();
   });
-  randomBtn.addEventListener('click', () => {
-    if (!songs.length) return;
-    const song = songs[Math.floor(Math.random() * songs.length)];
-    input.value = song.name;
-    render();
-  });
 
   async function init() {
     try {
@@ -87,7 +80,6 @@
       songs = arr.map(normalize).filter(Boolean);
       input.disabled = false;
       clearBtn.disabled = false;
-      randomBtn.disabled = false;
       render();
     } catch (e) {
       console.error('native song search failed', e);
