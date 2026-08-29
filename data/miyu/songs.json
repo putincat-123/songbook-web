@@ -51047,5 +51047,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_5329b45a-edd9-48cd-b0fe-1ac1110fa0a2",
+    "poolSongId": "5329b45a-edd9-48cd-b0fe-1ac1110fa0a2",
+    "songId": "4164eb08-81a7-4c1c-933d-9b8ff0441b42",
+    "seq": 1528,
+    "name": "如果写不出好的和弦就该在洒满阳光的钢琴前一起吃布丁",
+    "songName": "如果写不出好的和弦就该在洒满阳光的钢琴前一起吃布丁",
+    "artist": "谢春花",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "如果写不出好的和弦就该在洒满阳光的钢琴前一起吃布丁",
+    "sharedArtist": "谢春花",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
