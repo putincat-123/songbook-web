@@ -5,24 +5,21 @@
   const drawBtn = $('randomBlindDrawBtn');
   const draw3Btn = $('randomBlindDraw3Btn');
   const resetBtn = $('randomBlindResetBtn');
-  const copyBtn = $('randomBlindCopyBtn');
-  const result = $('randomBlindResult');
   const songEl = $('randomBlindSong');
   const artistEl = $('randomBlindArtist');
   const statusEl = $('randomBlindStatus');
   const multiEl = $('randomBlindMulti');
-  if (!drawBtn || !draw3Btn || !resetBtn || !result) return;
+  if (!drawBtn || !draw3Btn || !resetBtn || !songEl || !artistEl || !statusEl || !multiEl) return;
 
   let songs = [];
   let bag = [];
-  let current = null;
 
   const normalize = (s, i) => {
-    const name = String(s?.name || s?.songName || s?.title || '').trim();
-    if (!name) return null;
+    const songName = String(s?.name || s?.songName || s?.title || '').trim();
+    if (!songName) return null;
     return {
       id: String(s?.id || i),
-      name,
+      songName,
       artist: String(s?.artist || s?.singer || s?.artistName || '').trim()
     };
   };
@@ -38,33 +35,26 @@
 
   function refill() {
     bag = shuffle(songs.map((_, i) => i));
-    statusEl.textContent = `本轮剩余 ${bag.length} / ${songs.length} 首`;
+    updateStatus();
   }
 
-  function ensureBag() {
-    if (!bag.length && songs.length) refill();
+  function updateStatus() {
+    statusEl.textContent = songs.length ? `本輪剩餘 ${bag.length} / ${songs.length} 首` : '曲庫載入中…';
   }
 
-  function drawOne(render = true) {
+  function drawRandomOne() {
     if (!songs.length) return null;
-    ensureBag();
+    if (!bag.length) refill();
     const index = bag.pop();
-    const song = songs[index];
-    current = song;
-    statusEl.textContent = `本轮剩余 ${bag.length} / ${songs.length} 首`;
-    if (render) {
-      songEl.textContent = song.name;
-      artistEl.textContent = song.artist || '—';
-      result.classList.add('show');
-      multiEl.innerHTML = '';
-    }
-    return song;
+    updateStatus();
+    return songs[index];
   }
 
-  async function copy(text) {
+  async function copySong(text, btn) {
     if (!text) return;
-    try { await navigator.clipboard.writeText(text); }
-    catch {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
       const ta = document.createElement('textarea');
       ta.value = text;
       document.body.appendChild(ta);
@@ -72,35 +62,55 @@
       document.execCommand('copy');
       ta.remove();
     }
+    if (btn) {
+      const old = btn.textContent;
+      btn.textContent = '已複製';
+      setTimeout(() => btn.textContent = old, 900);
+    }
   }
 
-  drawBtn.addEventListener('click', () => drawOne(true));
-  draw3Btn.addEventListener('click', () => {
-    if (!songs.length) return;
-    const picks = [];
-    for (let i = 0; i < 3; i++) {
-      const song = drawOne(false);
-      if (song) picks.push(song);
-    }
-    if (!picks.length) return;
-    current = picks[0];
-    result.classList.add('show');
-    songEl.textContent = picks[0].name;
-    artistEl.textContent = picks[0].artist || '—';
-    multiEl.innerHTML = picks.map((s, i) => `<div class="random-blind-pick"><b>${i + 1}.</b> ${escapeHtml(s.name)}${s.artist ? ` <span>· ${escapeHtml(s.artist)}</span>` : ''}</div>`).join('');
+  function renderOne(r) {
+    songEl.textContent = r.songName;
+    artistEl.textContent = r.artist || '未知歌手';
+    multiEl.innerHTML = `<div class="blind-actions"><button class="tool-btn" data-action="copy-song" data-song="${escapeAttr(r.songName)}">複製</button></div>`;
+  }
+
+  drawBtn.addEventListener('click', () => {
+    const r = drawRandomOne();
+    if (r) renderOne(r);
   });
+
+  draw3Btn.addEventListener('click', () => {
+    const results = [];
+    for (let i = 0; i < 3; i++) {
+      const r = drawRandomOne();
+      if (r) results.push(r);
+    }
+    if (!results.length) return;
+    songEl.textContent = results[0].songName;
+    artistEl.textContent = results[0].artist || '未知歌手';
+    multiEl.innerHTML = results.map((r, i) => `<div class="random-blind-pick"><div><b>${i + 1}. ${escapeHtml(r.songName)}</b>${r.artist ? `<span> · ${escapeHtml(r.artist)}</span>` : ''}</div><button class="tool-btn" data-action="copy-song" data-song="${escapeAttr(r.songName)}">複製</button></div>`).join('');
+  });
+
   resetBtn.addEventListener('click', () => {
     refill();
-    current = null;
-    result.classList.remove('show');
-    multiEl.innerHTML = '';
     songEl.textContent = '尚未抽歌';
-    artistEl.textContent = '请点击开盲盒';
+    artistEl.textContent = '請先確認已載入曲庫';
+    multiEl.innerHTML = '';
   });
-  copyBtn.addEventListener('click', () => current && copy(current.name));
+
+  multiEl.addEventListener('click', e => {
+    const btn = e.target.closest('[data-action="copy-song"]');
+    if (!btn) return;
+    copySong(btn.dataset.song || '', btn);
+  });
 
   function escapeHtml(v) {
     return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function escapeAttr(v) {
+    return escapeHtml(v);
   }
 
   fetch(`../data/${encodeURIComponent(streamer)}/songs.json?t=${Date.now()}`, { cache: 'no-store' })
@@ -109,10 +119,10 @@
       const list = Array.isArray(raw) ? raw : (raw?.songs || raw?.data || []);
       songs = list.map(normalize).filter(Boolean);
       refill();
-      artistEl.textContent = `曲库共 ${songs.length} 首`;
+      artistEl.textContent = `曲庫共 ${songs.length} 首`;
     })
     .catch(err => {
       console.error('random blind box failed', err);
-      statusEl.textContent = '曲库载入失败，请稍后刷新重试';
+      statusEl.textContent = '曲庫載入失敗，請稍後刷新重試';
     });
 })();
