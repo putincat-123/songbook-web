@@ -82,9 +82,15 @@
 
   draw3Btn.addEventListener('click', () => {
     const results = [];
-    for (let i = 0; i < 3; i++) {
+    const seen = new Set();
+    const target = Math.min(3, songs.length);
+    let attempts = 0;
+    while (results.length < target && attempts < Math.max(12, songs.length * 2)) {
+      attempts++;
       const r = drawRandomOne();
-      if (r) results.push(r);
+      if (!r || seen.has(r.id)) continue;
+      seen.add(r.id);
+      results.push(r);
     }
     if (!results.length) return;
     songEl.textContent = results[0].songName;
@@ -95,7 +101,7 @@
   resetBtn.addEventListener('click', () => {
     refill();
     songEl.textContent = '尚未抽歌';
-    artistEl.textContent = '請先確認已載入曲庫';
+    artistEl.textContent = songs.length ? `曲庫共 ${songs.length} 首` : '請先確認已載入曲庫';
     multiEl.innerHTML = '';
   });
 
