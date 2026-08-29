@@ -97,7 +97,7 @@
 
   if (!document.querySelector('script[data-miyu-screenlist-patch]')) {
     const script = document.createElement('script');
-    script.src = './miyu_screenlist_patch.js';
+    script.src = './miyu_screenlist_patch.js?v=20260829-1';
     script.dataset.miyuScreenlistPatch = '1';
     document.head.appendChild(script);
   }
