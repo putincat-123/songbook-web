@@ -64,13 +64,13 @@
     $('hotRecommendResult').querySelectorAll('[data-hot-copy]').forEach(btn => btn.addEventListener('click',()=>copyName(btn.dataset.hotCopy)));
   }
 
-  async function load(){
-    if (loaded) return;
+  async function load(force = false){
+    if (loaded && !force) return;
     const btn = $('loadHotRecommendBtn');
     const result = $('hotRecommendResult');
     if (!btn || !result) return;
     btn.disabled = true;
-    btn.textContent = '载入中…';
+    btn.textContent = force ? '重新载入中…' : '载入中…';
     result.innerHTML = '<div class="daily-empty">正在读取 QQ 音乐四榜 Top20…</div>';
     try {
       const [hotRes,libRes] = await Promise.all([
@@ -93,9 +93,9 @@
   }
 
   document.addEventListener('click', e => {
-    if (e.target?.id === 'loadHotRecommendBtn') load();
-    if (e.target?.matches?.('.tab-btn[data-tab="hot"]')) setTimeout(load,0);
+    if (e.target?.id === 'loadHotRecommendBtn') load(true);
+    if (e.target?.matches?.('.tab-btn[data-tab="hot"]')) setTimeout(()=>load(false),0);
   });
 
-  if (qs.get('tool') === 'hot') setTimeout(load,0);
+  if (qs.get('tool') === 'hot') setTimeout(()=>load(false),0);
 })();
