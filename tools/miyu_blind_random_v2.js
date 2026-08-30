@@ -27,14 +27,60 @@
   const normalize = (s, i) => {
     const songName = String(s?.name || s?.songName || s?.title || '').trim();
     if (!songName) return null;
-    const seqValue = Number(s?.seq);
     return {
       id: String(s?.id || i),
-      seq: Number.isFinite(seqValue) && seqValue > 0 ? seqValue : i + 1,
       songName,
       artist: String(s?.artist || s?.singer || s?.artistName || '').trim()
     };
   };
+
+  const nowMonthKey = () => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+  };
+  const weekdayNumber = () => {
+    const n = new Date().getDay();
+    return n === 0 ? 7 : n;
+  };
+  const weekdayLabel = n => ['', '週一', '週二', '週三', '週四', '週五', '週六', '週日'][n] || '';
+
+  function hashString(str) {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+
+  function seededRandom(seed) {
+    let t = seed >>> 0;
+    return function () {
+      t += 0x6D2B79F5;
+      let r = Math.imul(t ^ (t >>> 15), 1 | t);
+      r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
+      return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function shuffleBySeed(list, seedText) {
+    const arr = [...list];
+    const random = seededRandom(hashString(seedText));
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function getNumberMappedSong(n) {
+    if (!songs.length) return null;
+    const num = Number(n);
+    if (!Number.isInteger(num) || num < 1 || num > songs.length) return null;
+    const seed = `${nowMonthKey()}|${weekdayNumber()}|${songs.length}`;
+    const shuffledPool = shuffleBySeed(songs, seed);
+    return shuffledPool[num - 1] || null;
+  }
 
   function shuffle(arr) {
     const out = [...arr];
@@ -95,20 +141,20 @@
       numberResult?.classList.remove('show');
       return;
     }
-    const found = songs.find(song => song.seq === value);
-    if (!found) {
-      if (numberHint) numberHint.textContent = `找不到编号 ${value}，请确认数字范围`;
+    if (value > songs.length) {
+      if (numberHint) numberHint.textContent = `数字不能超过曲库数量（目前 ${songs.length} 首）`;
       numberResult?.classList.remove('show');
       currentNumberSong = null;
       return;
     }
+    const found = getNumberMappedSong(value);
+    if (!found) return;
     currentNumberSong = found;
     if (numberSong) numberSong.textContent = found.songName;
     if (numberArtist) numberArtist.textContent = found.artist || '未知歌手';
-    if (numberSeq) numberSeq.textContent = `数字 ${found.seq}`;
+    if (numberSeq) numberSeq.textContent = `${weekdayLabel(weekdayNumber())} · ${nowMonthKey()} · 数字 ${value}`;
     numberResult?.classList.add('show');
-    const maxSeq = songs.reduce((max, song) => Math.max(max, song.seq), 0);
-    if (numberHint) numberHint.textContent = `小耳朵扣 1–${maxSeq}，输入数字即可开盒`;
+    if (numberHint) numberHint.textContent = `小耳朵扣 1–${songs.length}；同月同星期的数字对应固定`;
   }
 
   drawBtn.addEventListener('click', () => {
@@ -173,13 +219,12 @@
       songs = list.map(normalize).filter(Boolean);
       refill();
       artistEl.textContent = `曲庫共 ${songs.length} 首`;
-      const maxSeq = songs.reduce((max, song) => Math.max(max, song.seq), 0);
       if (numberInput) {
-        numberInput.max = String(maxSeq);
+        numberInput.max = String(songs.length);
         numberInput.disabled = false;
       }
       if (numberBtn) numberBtn.disabled = false;
-      if (numberHint) numberHint.textContent = `小耳朵扣 1–${maxSeq}，输入数字即可开盒`;
+      if (numberHint) numberHint.textContent = `小耳朵扣 1–${songs.length}；${nowMonthKey()} · ${weekdayLabel(weekdayNumber())}`;
     })
     .catch(err => {
       console.error('random blind box failed', err);
