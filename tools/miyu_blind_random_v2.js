@@ -11,14 +11,26 @@
   const multiEl = $('randomBlindMulti');
   if (!drawBtn || !draw3Btn || !resetBtn || !songEl || !artistEl || !statusEl || !multiEl) return;
 
+  const numberInput = $('numberBlindInput');
+  const numberBtn = $('numberBlindOpenBtn');
+  const numberHint = $('numberBlindHint');
+  const numberResult = $('numberBlindResult');
+  const numberSong = $('numberBlindSong');
+  const numberArtist = $('numberBlindArtist');
+  const numberSeq = $('numberBlindSeq');
+  const numberCopy = $('numberBlindCopyBtn');
+
   let songs = [];
   let bag = [];
+  let currentNumberSong = null;
 
   const normalize = (s, i) => {
     const songName = String(s?.name || s?.songName || s?.title || '').trim();
     if (!songName) return null;
+    const seqValue = Number(s?.seq);
     return {
       id: String(s?.id || i),
+      seq: Number.isFinite(seqValue) && seqValue > 0 ? seqValue : i + 1,
       songName,
       artist: String(s?.artist || s?.singer || s?.artistName || '').trim()
     };
@@ -75,6 +87,30 @@
     multiEl.innerHTML = `<div class="blind-actions"><button class="tool-btn" data-action="copy-song" data-song="${escapeAttr(r.songName)}">複製</button></div>`;
   }
 
+  function openNumberBlind() {
+    if (!numberInput || !songs.length) return;
+    const value = Number(numberInput.value);
+    if (!Number.isInteger(value) || value < 1) {
+      if (numberHint) numberHint.textContent = '请输入有效数字';
+      numberResult?.classList.remove('show');
+      return;
+    }
+    const found = songs.find(song => song.seq === value);
+    if (!found) {
+      if (numberHint) numberHint.textContent = `找不到编号 ${value}，请确认数字范围`;
+      numberResult?.classList.remove('show');
+      currentNumberSong = null;
+      return;
+    }
+    currentNumberSong = found;
+    if (numberSong) numberSong.textContent = found.songName;
+    if (numberArtist) numberArtist.textContent = found.artist || '未知歌手';
+    if (numberSeq) numberSeq.textContent = `数字 ${found.seq}`;
+    numberResult?.classList.add('show');
+    const maxSeq = songs.reduce((max, song) => Math.max(max, song.seq), 0);
+    if (numberHint) numberHint.textContent = `小耳朵扣 1–${maxSeq}，输入数字即可开盒`;
+  }
+
   drawBtn.addEventListener('click', () => {
     const r = drawRandomOne();
     if (r) renderOne(r);
@@ -111,6 +147,17 @@
     copySong(btn.dataset.song || '', btn);
   });
 
+  numberBtn?.addEventListener('click', openNumberBlind);
+  numberInput?.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      openNumberBlind();
+    }
+  });
+  numberCopy?.addEventListener('click', () => {
+    if (currentNumberSong) copySong(currentNumberSong.songName, numberCopy);
+  });
+
   function escapeHtml(v) {
     return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
@@ -126,9 +173,17 @@
       songs = list.map(normalize).filter(Boolean);
       refill();
       artistEl.textContent = `曲庫共 ${songs.length} 首`;
+      const maxSeq = songs.reduce((max, song) => Math.max(max, song.seq), 0);
+      if (numberInput) {
+        numberInput.max = String(maxSeq);
+        numberInput.disabled = false;
+      }
+      if (numberBtn) numberBtn.disabled = false;
+      if (numberHint) numberHint.textContent = `小耳朵扣 1–${maxSeq}，输入数字即可开盒`;
     })
     .catch(err => {
       console.error('random blind box failed', err);
       statusEl.textContent = '曲庫載入失敗，請稍後刷新重試';
+      if (numberHint) numberHint.textContent = '数字盲盒曲库载入失败';
     });
 })();
