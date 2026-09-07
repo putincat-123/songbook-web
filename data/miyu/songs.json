@@ -51072,5 +51072,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_596da99a-7946-4e41-b2c8-68c75d4e4e89",
+    "poolSongId": "596da99a-7946-4e41-b2c8-68c75d4e4e89",
+    "songId": "1ca8db58-7960-469c-8309-4cb3dd5ef9ed",
+    "seq": 1529,
+    "name": "郭源潮",
+    "songName": "郭源潮",
+    "artist": "宋冬野",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "郭源潮",
+    "sharedArtist": "宋冬野",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
