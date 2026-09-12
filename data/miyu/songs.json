@@ -51097,5 +51097,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_60210eac-e7cc-4a63-b632-44b420cc5044",
+    "poolSongId": "60210eac-e7cc-4a63-b632-44b420cc5044",
+    "songId": "12b86fb5-fdb3-4543-9dd1-d929ffc8cbf6",
+    "seq": 1530,
+    "name": "秋天不回来",
+    "songName": "秋天不回来",
+    "artist": "王强",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "秋天不回来",
+    "sharedArtist": "王强",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
