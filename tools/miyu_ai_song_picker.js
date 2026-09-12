@@ -4,8 +4,8 @@
   if (streamer !== 'miyu') return;
 
   const isToolbox = !!document.getElementById('songSearch');
-  const host = isToolbox ? document.getElementById('songSearch') : document.querySelector('.toolbar');
-  if (!host || document.getElementById('miyuAiPicker')) return;
+  const root = isToolbox ? document.getElementById('songSearch') : document.querySelector('.app');
+  if (!root || document.getElementById('miyuAiPicker')) return;
 
   const DATA_PATH = isToolbox ? '../data/miyu/songs.json' : './data/miyu/songs.json';
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -45,14 +45,12 @@
     const q = norm(query);
     let score = 0;
     const reasons = [];
-
     if (song.text.includes(q) && q.length > 1) score += 10;
     const tokens = q.split(/[\s，,。！？!？、/]+/).filter(x => x.length > 1);
     tokens.forEach(t => {
       if (song.text.includes(t)) score += 3;
       if (norm(song.artist).includes(t)) score += 5;
     });
-
     INTENTS.forEach(intent => {
       if (!intent.words.some(w => q.includes(w))) return;
       let hit = 0;
@@ -62,18 +60,15 @@
         reasons.push(intent.reason);
       }
     });
-
     NEGATIONS.forEach(rule => {
       if (!rule.patterns.some(p => q.includes(p))) return;
       rule.bad.forEach(tag => { if (song.text.includes(norm(tag))) score -= 5; });
     });
-
     const artistAsk = q.match(/(?:想听|听|来点|来首|类似)([^，,。！？!？]{2,12})(?:的歌|类型|风格)?/);
     if (artistAsk) {
       const term = artistAsk[1].replace(/一点|一些|几首|一首|点/g,'').trim();
       if (term && norm(song.artist).includes(norm(term))) score += 8;
     }
-
     return {score, reason: reasons[0] || (score > 2 ? '和你描述的关键词比较接近' : '从谜屿完整曲库里换个方向给你试试')};
   }
 
@@ -106,14 +101,22 @@
 
   const style = document.createElement('style');
   style.textContent = `
-    .miyu-ai-picker{margin:${isToolbox?'14px 0 0':'14px 0 2px'};padding:16px;border:1px solid #dbeafe;border-radius:20px;background:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 55%,#fff 100%)}
+    .miyu-song-mode{display:flex;gap:8px;margin:12px 0 14px;padding:4px;background:#eef2ff;border-radius:16px;width:max-content;max-width:100%}
+    .miyu-song-mode-btn{border:0;border-radius:12px;padding:9px 14px;background:transparent;color:#64748b;font-size:13px;font-weight:900;cursor:pointer}
+    .miyu-song-mode-btn.active{background:#fff;color:#4338ca;box-shadow:0 2px 8px rgba(15,23,42,.08)}
+    .miyu-ai-picker{display:none;margin:0 0 14px;padding:16px;border:1px solid #dbeafe;border-radius:20px;background:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 55%,#fff 100%)}
+    .miyu-ai-picker.active{display:block}
     .miyu-ai-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}.miyu-ai-title{font-size:16px;font-weight:900}.miyu-ai-hint{font-size:12px;line-height:1.6;color:#64748b;margin-top:3px}
     .miyu-ai-form{display:flex;gap:8px}.miyu-ai-input{flex:1;min-width:0;border:1px solid #c7d2fe!important;border-radius:14px!important;padding:12px 13px!important;background:#fff!important}.miyu-ai-btn{border:0;border-radius:14px;padding:11px 14px;font-weight:900;background:#4f46e5;color:#fff;cursor:pointer;white-space:nowrap}
     .miyu-ai-examples{display:flex;gap:6px;overflow-x:auto;padding-top:9px}.miyu-ai-chip{border:1px solid #ddd6fe;background:#fff;color:#5b21b6;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800;white-space:nowrap;cursor:pointer}
     .miyu-ai-results{display:grid;gap:8px;margin-top:12px}.miyu-ai-song{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:15px;padding:11px 12px}.miyu-ai-name{font-weight:900;font-size:15px}.miyu-ai-artist{font-size:12px;color:#64748b;margin-top:2px}.miyu-ai-reason{font-size:11px;color:#7c3aed;margin-top:5px}.miyu-ai-copy{border:1px solid #c4b5fd;background:#f5f3ff;color:#6d28d9;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:900;cursor:pointer}
-    @media(max-width:560px){.miyu-ai-form{display:grid;grid-template-columns:1fr auto}.miyu-ai-picker{padding:13px}.miyu-ai-song{grid-template-columns:1fr auto}}
+    @media(max-width:560px){.miyu-ai-form{display:grid;grid-template-columns:1fr auto}.miyu-ai-picker{padding:13px}.miyu-ai-song{grid-template-columns:1fr auto}.miyu-song-mode{width:100%}.miyu-song-mode-btn{flex:1}}
   `;
   document.head.appendChild(style);
+
+  const mode = document.createElement('div');
+  mode.className = 'miyu-song-mode';
+  mode.innerHTML = '<button class="miyu-song-mode-btn active" type="button" data-miyu-mode="search">🔎 关键字选歌</button><button class="miyu-song-mode-btn" type="button" data-miyu-mode="ai">✨ AI 帮我选</button>';
 
   const box = document.createElement('section');
   box.id = 'miyuAiPicker';
@@ -124,12 +127,32 @@
     <div class="miyu-ai-examples"><button class="miyu-ai-chip" type="button">下班路上舒服一点</button><button class="miyu-ai-chip" type="button">失恋但不要太虐</button><button class="miyu-ai-chip" type="button">来点燃一点的</button><button class="miyu-ai-chip" type="button">适合深夜听的</button></div>
     <div id="miyuAiResults" class="miyu-ai-results"></div>`;
 
+  let searchSections = [];
   if (isToolbox) {
-    const toolbar = host.querySelector('.search-toolbar-v2');
-    if (toolbar) toolbar.insertAdjacentElement('afterend', box); else host.appendChild(box);
+    const intro = root.querySelector('.card');
+    const toolbar = root.querySelector('.search-toolbar-v2');
+    const songList = document.getElementById('songSearchListV2');
+    if (intro) intro.insertAdjacentElement('afterend', mode); else root.prepend(mode);
+    mode.insertAdjacentElement('afterend', box);
+    searchSections = [toolbar, songList].filter(Boolean);
   } else {
-    host.appendChild(box);
+    const toolbar = root.querySelector('.toolbar');
+    const resultHead = root.querySelector('.result-head');
+    const pagination = document.getElementById('pagination');
+    const list = document.getElementById('list');
+    if (toolbar) toolbar.insertAdjacentElement('beforebegin', mode); else root.appendChild(mode);
+    mode.insertAdjacentElement('afterend', box);
+    searchSections = [toolbar, resultHead, pagination, list].filter(Boolean);
   }
+
+  function setMode(next) {
+    const ai = next === 'ai';
+    mode.querySelectorAll('[data-miyu-mode]').forEach(b => b.classList.toggle('active', b.dataset.miyuMode === next));
+    box.classList.toggle('active', ai);
+    searchSections.forEach(el => { el.style.display = ai ? 'none' : ''; });
+    if (ai) setTimeout(() => document.getElementById('miyuAiInput')?.focus(), 50);
+  }
+  mode.querySelectorAll('[data-miyu-mode]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.miyuMode)));
 
   const input = document.getElementById('miyuAiInput');
   const btn = document.getElementById('miyuAiBtn');
@@ -165,4 +188,5 @@
   btn.addEventListener('click', run);
   input.addEventListener('keydown', e => { if (e.key === 'Enter') run(); });
   box.querySelectorAll('.miyu-ai-chip').forEach(chip => chip.addEventListener('click', () => { input.value=chip.textContent.trim(); run(); }));
+  setMode('search');
 })();
