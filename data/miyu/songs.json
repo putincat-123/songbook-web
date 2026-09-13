@@ -50965,10 +50965,18 @@
     "note": "",
     "sharedName": "你喜欢海却不喜欢山",
     "sharedArtist": "鹿先森乐队",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "文艺释怀",
+      "诗意温柔",
+      "轻微酸楚"
+    ],
+    "aiSceneTags": [
+      "深夜谈心",
+      "情感电台",
+      "安静伴播"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "民谣旋律渐进舒缓，传达出对情感落差的坦然与淡淡伤感。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -50990,10 +50998,18 @@
     "note": "",
     "sharedName": "山丘",
     "sharedArtist": "李宗盛",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "沧桑感悟",
+      "岁月沉淀",
+      "无奈释怀"
+    ],
+    "aiSceneTags": [
+      "故事分享",
+      "压轴沉浸",
+      "情感共鸣"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "主歌沉稳娓娓道来，副歌张力十足，展现中年人对岁月的叹息。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -51015,10 +51031,18 @@
     "note": "",
     "sharedName": "Dear D",
     "sharedArtist": "项睿娴",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "独白倾诉",
+      "细腻忧伤",
+      "安静沉思"
+    ],
+    "aiSceneTags": [
+      "深夜治愈",
+      "情绪流淌",
+      "背景衬底"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "人声轻柔如喃喃自语，整体编曲简约，适合深夜沉浸式听感。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -51040,10 +51064,18 @@
     "note": "",
     "sharedName": "太聪明",
     "sharedArtist": "陈绮贞",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "少女心思",
+      "微酸拉扯",
+      "清新试探"
+    ],
+    "aiSceneTags": [
+      "日常陪伴",
+      "情感互动",
+      "吉他弹唱"
+    ],
+    "aiEnergy": "low",
+    "aiTagReason": "吉他伴奏轻快流畅，歌词精准刻画爱情中谨慎小心机与犹豫。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -51065,10 +51097,18 @@
     "note": "",
     "sharedName": "如果写不出好的和弦就该在洒满阳光的钢琴前一起吃布丁",
     "sharedArtist": "谢春花",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "惬意惬适",
+      "日光暖意",
+      "俏皮放松"
+    ],
+    "aiSceneTags": [
+      "开播迎客",
+      "下午茶氛围",
+      "轻松聊天"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "琴音明亮律动轻快，充斥着生活小确幸与慵懒暖阳感。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -51090,10 +51130,18 @@
     "note": "",
     "sharedName": "郭源潮",
     "sharedArtist": "宋冬野",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "低沉质感",
+      "高潮爆发",
+      "荒诞宿命"
+    ],
+    "aiSceneTags": [
+      "情绪高潮",
+      "深度互动",
+      "演唱展示"
+    ],
+    "aiEnergy": "high",
+    "aiTagReason": "低语起步后层层递进，中后段摇滚配器爆发，张力极强。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
@@ -51115,10 +51163,18 @@
     "note": "",
     "sharedName": "秋天不回来",
     "sharedArtist": "王强",
-    "aiMoodTags": [],
-    "aiSceneTags": [],
-    "aiEnergy": null,
-    "aiTagReason": null,
+    "aiMoodTags": [
+      "苦情挽留",
+      "悲伤怀旧",
+      "执念怅惘"
+    ],
+    "aiSceneTags": [
+      "老歌点唱",
+      "伤感共情",
+      "副歌合唱"
+    ],
+    "aiEnergy": "medium",
+    "aiTagReason": "典型经典伤情歌，副歌情绪宣泄感强，唤醒年代回忆。",
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
