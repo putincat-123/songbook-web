@@ -1,14 +1,14 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-09-15T23:46:39.508Z",
+  "updatedAt": "2026-09-16T23:55:45.963Z",
   "songs": [
     {
-      "name": "I Love You But I Gotta Let You Go (NINGNING Solo)",
-      "artist": "aespa (에스파)",
+      "name": "雨终曲",
+      "artist": "宋雨琦 (YUQI) (우기)",
       "sources": [
         {
           "source": "hot",
-          "rank": 4
+          "rank": 5
         },
         {
           "source": "new",
@@ -27,23 +27,27 @@
       "bestRank": 1
     },
     {
-      "name": "她",
-      "artist": "刘宇宁",
+      "name": "After Everything",
+      "artist": "曾沛慈",
       "sources": [
+        {
+          "source": "hot",
+          "rank": 6
+        },
         {
           "source": "new",
           "rank": 1
         },
         {
           "source": "rise",
-          "rank": 17
+          "rank": 2
         },
         {
           "source": "popular",
-          "rank": 9
+          "rank": 2
         }
       ],
-      "sourceCount": 3,
+      "sourceCount": 4,
       "bestRank": 1
     },
     {
@@ -52,31 +56,31 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 5
+          "rank": 4
         },
         {
           "source": "rise",
-          "rank": 5
+          "rank": 3
         },
         {
           "source": "popular",
-          "rank": 2
+          "rank": 1
         }
       ],
       "sourceCount": 3,
-      "bestRank": 2
+      "bestRank": 1
     },
     {
-      "name": "我记得",
-      "artist": "赵雷",
+      "name": "I Love You But I Gotta Let You Go (NINGNING Solo)",
+      "artist": "aespa (에스파)",
       "sources": [
         {
           "source": "hot",
-          "rank": 6
+          "rank": 7
         },
         {
-          "source": "rise",
-          "rank": 2
+          "source": "new",
+          "rank": 4
         },
         {
           "source": "popular",
@@ -84,15 +88,55 @@
         }
       ],
       "sourceCount": 3,
-      "bestRank": 2
+      "bestRank": 4
     },
     {
-      "name": "信",
-      "artist": "张月",
+      "name": "爱人如养花",
+      "artist": "云旗",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 18
+        },
+        {
+          "source": "new",
+          "rank": 20
+        },
+        {
+          "source": "rise",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 5
+    },
+    {
+      "name": "时间漫步",
+      "artist": "梓渝",
       "sources": [
         {
           "source": "new",
-          "rank": 6
+          "rank": 5
+        },
+        {
+          "source": "rise",
+          "rank": 16
+        },
+        {
+          "source": "popular",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 5
+    },
+    {
+      "name": "我记得",
+      "artist": "赵雷",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 8
         },
         {
           "source": "rise",
@@ -107,32 +151,16 @@
       "bestRank": 6
     },
     {
-      "name": "思念若是一首诗",
-      "artist": "万妮达Vinida Weng",
+      "name": "她",
+      "artist": "刘宇宁",
       "sources": [
         {
           "source": "new",
-          "rank": 4
-        },
-        {
-          "source": "popular",
-          "rank": 1
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 1
-    },
-    {
-      "name": "泪海",
-      "artist": "许茹芸",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 2
         },
         {
           "source": "popular",
-          "rank": 20
+          "rank": 19
         }
       ],
       "sourceCount": 2,
@@ -144,71 +172,7 @@
       "sources": [
         {
           "source": "new",
-          "rank": 7
-        },
-        {
-          "source": "popular",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "16 Bit (KARINA Solo)",
-      "artist": "aespa (에스파)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 15
-        },
-        {
-          "source": "rise",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "Saddle Up (WINTER Solo)",
-      "artist": "aespa (에스파)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 17
-        },
-        {
-          "source": "rise",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 4
-    },
-    {
-      "name": "此间是少年",
-      "artist": "梓渝",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 5
-        },
-        {
-          "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 5
-    },
-    {
-      "name": "世界如此",
-      "artist": "田栩宁",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 19
+          "rank": 14
         },
         {
           "source": "popular",
@@ -219,12 +183,28 @@
       "bestRank": 7
     },
     {
-      "name": "破局者",
-      "artist": "张杰",
+      "name": "信",
+      "artist": "张月",
       "sources": [
         {
           "source": "new",
-          "rank": 16
+          "rank": 8
+        },
+        {
+          "source": "popular",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 8
+    },
+    {
+      "name": "해줘 (就骗我一次) (KOR Ver.)",
+      "artist": "沈佳润Nina",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
         },
         {
           "source": "popular",
@@ -233,6 +213,38 @@
       ],
       "sourceCount": 2,
       "bestRank": 8
+    },
+    {
+      "name": "牡丹亭",
+      "artist": "浅影阿",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 8
+        },
+        {
+          "source": "popular",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 8
+    },
+    {
+      "name": "思念若是一首诗",
+      "artist": "万妮达Vinida Weng",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
+        },
+        {
+          "source": "rise",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 9
     },
     {
       "name": "鼓楼",
@@ -244,43 +256,11 @@
         },
         {
           "source": "popular",
-          "rank": 17
+          "rank": 12
         }
       ],
       "sourceCount": 2,
       "bestRank": 9
-    },
-    {
-      "name": "程艾影",
-      "artist": "赵雷",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 10
-        },
-        {
-          "source": "popular",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 10
-    },
-    {
-      "name": "해줘 (就骗我一次) (KOR Ver.)",
-      "artist": "沈佳润Nina",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
-        },
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 14
     },
     {
       "name": "我不难过",
@@ -295,11 +275,11 @@
       "bestRank": 1
     },
     {
-      "name": "失忆",
-      "artist": "李佳薇",
+      "name": "泪海",
+      "artist": "许茹芸",
       "sources": [
         {
-          "source": "new",
+          "source": "hot",
           "rank": 2
         }
       ],
@@ -319,124 +299,40 @@
       "bestRank": 3
     },
     {
-      "name": "情歌",
-      "artist": "梁静茹",
+      "name": "最长的电影&说再见太难",
+      "artist": "Andyzx",
       "sources": [
         {
-          "source": "hot",
-          "rank": 7
+          "source": "popular",
+          "rank": 3
         }
       ],
       "sourceCount": 1,
-      "bestRank": 7
+      "bestRank": 3
     },
     {
-      "name": "等我回家",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 7
-    },
-    {
-      "name": "恋人",
-      "artist": "李荣浩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "此刻",
-      "artist": "袁娅维TIA RAY",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "BYEB4HELLO (GISELLE Solo)",
-      "artist": "aespa (에스파)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "我怀念的",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "再一次见面",
+      "name": "一瓯春",
       "artist": "周深",
       "sources": [
         {
-          "source": "new",
-          "rank": 9
+          "source": "rise",
+          "rank": 4
         }
       ],
       "sourceCount": 1,
-      "bestRank": 9
+      "bestRank": 4
     },
     {
-      "name": "开始懂了",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "路过晴朗",
-      "artist": "汪苏泷",
+      "name": "失忆",
+      "artist": "李佳薇",
       "sources": [
         {
           "source": "new",
-          "rank": 10
+          "rank": 6
         }
       ],
       "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "雨爱",
-      "artist": "杨丞琳",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
+      "bestRank": 6
     },
     {
       "name": "说文解字",
@@ -444,6 +340,90 @@
       "sources": [
         {
           "source": "new",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "HE",
+      "artist": "何浩楠",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "情歌",
+      "artist": "梁静茹",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "恋人",
+      "artist": "李荣浩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "没有你是漫长雨季",
+      "artist": "梓渝",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "成都",
+      "artist": "赵雷",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "程艾影",
+      "artist": "赵雷",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "我怀念的",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 11
         }
       ],
@@ -451,8 +431,20 @@
       "bestRank": 11
     },
     {
-      "name": "理想",
-      "artist": "赵雷",
+      "name": "此刻",
+      "artist": "袁娅维TIA RAY",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "落了白",
+      "artist": "蒋雪儿Snow.J",
       "sources": [
         {
           "source": "rise",
@@ -475,8 +467,8 @@
       "bestRank": 11
     },
     {
-      "name": "爱错",
-      "artist": "王力宏",
+      "name": "开始懂了",
+      "artist": "孙燕姿",
       "sources": [
         {
           "source": "hot",
@@ -487,8 +479,8 @@
       "bestRank": 12
     },
     {
-      "name": "SUN KISS",
-      "artist": "TUIDE",
+      "name": "我不难过",
+      "artist": "en (王翊恩)",
       "sources": [
         {
           "source": "new",
@@ -499,8 +491,8 @@
       "bestRank": 12
     },
     {
-      "name": "Nonchalant",
-      "artist": "张月",
+      "name": "我听见了，你的痛苦成立",
+      "artist": "供销社乐队",
       "sources": [
         {
           "source": "rise",
@@ -511,20 +503,8 @@
       "bestRank": 12
     },
     {
-      "name": "你说忘了就好 (轻快版)",
-      "artist": "王麟",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "特别的人",
-      "artist": "方大同",
+      "name": "雨爱",
+      "artist": "杨丞琳",
       "sources": [
         {
           "source": "hot",
@@ -535,20 +515,8 @@
       "bestRank": 13
     },
     {
-      "name": "冰箱没有鸡蛋",
-      "artist": "马嘉祺",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "她",
-      "artist": "张月",
+      "name": "爱你但说不出口",
+      "artist": "Karencici",
       "sources": [
         {
           "source": "rise",
@@ -557,42 +525,6 @@
       ],
       "sourceCount": 1,
       "bestRank": 13
-    },
-    {
-      "name": "孤独的总和",
-      "artist": "吴汶芳",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "Always Online",
-      "artist": "林俊杰",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "TIMELESS",
-      "artist": "张力尹/XIA (준수) (俊秀)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
     },
     {
       "name": "偏向",
@@ -600,6 +532,18 @@
       "sources": [
         {
           "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "爱错",
+      "artist": "王力宏",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 14
         }
       ],
@@ -607,8 +551,32 @@
       "bestRank": 14
     },
     {
-      "name": "唯一",
-      "artist": "G.E.M.邓紫棋",
+      "name": "船长",
+      "artist": "赵雷",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "你说忘了就好 (轻快版)",
+      "artist": "王麟",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "特别的人",
+      "artist": "方大同",
       "sources": [
         {
           "source": "hot",
@@ -619,44 +587,68 @@
       "bestRank": 15
     },
     {
-      "name": "我们的时光",
-      "artist": "赵雷",
+      "name": "路过晴朗",
+      "artist": "汪苏泷",
       "sources": [
         {
-          "source": "rise",
+          "source": "new",
           "rank": 15
         }
       ],
       "sourceCount": 1,
       "bestRank": 15
+    },
+    {
+      "name": "侧脸",
+      "artist": "黄霄雲",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "Always Online",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "落空 ​",
+      "artist": "羊羊",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "琵琶曲",
+      "artist": "刘宇",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
     },
     {
       "name": "失眠",
       "artist": "Suki刘舒妤",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "成都",
-      "artist": "赵雷",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "演员",
-      "artist": "薛之谦",
       "sources": [
         {
           "source": "hot",
@@ -667,83 +659,71 @@
       "bestRank": 17
     },
     {
-      "name": "琵琶曲",
-      "artist": "郑浩/冰洁",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "甲乙丙丁 (粤语版)",
-      "artist": "李佳薇",
+      "name": "SUN KISS",
+      "artist": "TUIDE",
       "sources": [
         {
           "source": "new",
-          "rank": 18
+          "rank": 17
         }
       ],
       "sourceCount": 1,
-      "bestRank": 18
+      "bestRank": 17
     },
     {
-      "name": "落了白",
-      "artist": "蒋雪儿Snow.J",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "拆穿",
-      "artist": "小霞",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "遇见",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "朵",
+      "name": "理想",
       "artist": "赵雷",
       "sources": [
         {
           "source": "rise",
-          "rank": 19
+          "rank": 17
         }
       ],
       "sourceCount": 1,
-      "bestRank": 19
+      "bestRank": 17
     },
     {
-      "name": "琵琶曲",
-      "artist": "刘宇",
+      "name": "再一次见面",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "不是对手",
+      "artist": "李圣杰",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "破局者",
+      "artist": "张杰",
       "sources": [
         {
           "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "唯一",
+      "artist": "G.E.M.邓紫棋",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 19
         }
       ],
@@ -751,8 +731,32 @@
       "bestRank": 19
     },
     {
-      "name": "红色高跟鞋",
-      "artist": "蔡健雅",
+      "name": "16 Bit (KARINA Solo)",
+      "artist": "aespa (에스파)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "最佳损友",
+      "artist": "陈奕迅",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "演员",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "hot",
@@ -763,20 +767,8 @@
       "bestRank": 20
     },
     {
-      "name": "删了一百遍",
-      "artist": "A-Lin",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 20
-    },
-    {
-      "name": "琴弦呀，琴弦 O Strings, My Strings",
-      "artist": "HOYO-MiX",
+      "name": "野孩子",
+      "artist": "杨千嬅",
       "sources": [
         {
           "source": "rise",
