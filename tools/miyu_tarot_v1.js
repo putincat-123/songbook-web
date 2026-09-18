@@ -74,37 +74,87 @@
     }; return tails[suit];
   }
 
-  let topic='today', current=null;
+  let topic='today', current=null, shuffledDeck=null;
+
+  function shuffleCards(){
+    const allowReverse=$('tarotUseReverse').checked;
+    const arr=deck.map(card=>({card,reversed:allowReverse && Math.random()<.5}));
+    for(let i=arr.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [arr[i],arr[j]]=[arr[j],arr[i]];
+    }
+    shuffledDeck=arr;
+    current=null;
+    $('tarotCardVisual').classList.remove('revealed');
+    $('tarotDeck').classList.add('shuffling');
+    $('tarotShuffleStatus').textContent='正在洗牌…';
+    $('tarotShuffleStatus').className='tarot-shuffle-status shuffling';
+    $('tarotNumberInput').disabled=true;
+    $('tarotRevealBtn').disabled=true;
+    $('tarotRandomBtn').disabled=true;
+    $('tarotCopyBtn').disabled=true;
+    $('tarotResultName').textContent='等待抽牌';
+    $('tarotResultSep').hidden=true;
+    $('tarotResultPos').textContent='';
+    $('tarotKeywords').innerHTML='';
+    $('tarotReading').textContent='牌正在重新排列…';
+    $('tarotClosing').textContent='';
+    $('tarotPickedNumber').textContent='';
+    setTimeout(()=>{
+      $('tarotDeck').classList.remove('shuffling');
+      $('tarotShuffleStatus').textContent='牌已洗好，请小耳朵报一个 1～78 的数字';
+      $('tarotShuffleStatus').className='tarot-shuffle-status ready';
+      $('tarotNumberInput').disabled=false;
+      $('tarotRevealBtn').disabled=false;
+      $('tarotRandomBtn').disabled=false;
+      $('tarotReading').textContent='凭直觉报一个数字，看看这次会翻到哪张牌。';
+      $('tarotNumberInput').value='';
+      $('tarotNumberInput').focus();
+    },650);
+  }
+
   document.querySelectorAll('.tarot-topic').forEach(btn=>btn.addEventListener('click',()=>{
     document.querySelectorAll('.tarot-topic').forEach(x=>x.classList.toggle('active',x===btn));
     topic=btn.dataset.topic;
-    if($('tarotResultTopic')) $('tarotResultTopic').textContent='FOR '+TOPICS[topic].label;
-    if(!current && $('tarotClosing')) $('tarotClosing').textContent=closing(null,false,topic);
+    $('tarotResultTopic').textContent='FOR '+TOPICS[topic].label;
   }));
 
-  function draw(){
-    const card=deck[Math.floor(Math.random()*deck.length)];
-    const reversed=$('tarotUseReverse').checked && Math.random()<.5;
-    current={card,reversed,topic};
-    $('tarotCard').classList.remove('revealed');
-    $('tarotDrawBtn').disabled=true;
+  function revealByNumber(number){
+    if(!shuffledDeck){ shuffleCards(); return; }
+    const n=Number(number);
+    if(!Number.isInteger(n)||n<1||n>78){
+      $('tarotShuffleStatus').textContent='请输入 1～78 的数字';
+      $('tarotShuffleStatus').className='tarot-shuffle-status';
+      return;
+    }
+    const picked=shuffledDeck[n-1];
+    const {card,reversed}=picked;
+    current={card,reversed,topic,number:n};
+
+    $('tarotCardVisual').classList.remove('revealed');
+    $('tarotRevealBtn').disabled=true;
     setTimeout(()=>{
-      $('tarotSymbol').textContent=card.symbol;
-      $('tarotName').textContent=card.name;
-      $('tarotPosition').textContent=reversed?'逆位':'正位';
-      $('tarotPosition').className='tarot-position'+(reversed?' reverse':'');
+      $('tarotFaceMark').textContent=card.symbol;
       $('tarotResultTopic').textContent='FOR '+TOPICS[topic].label;
-      if($('tarotResultName')) $('tarotResultName').textContent=card.name;
-      if($('tarotResultPos')) $('tarotResultPos').textContent=reversed?'逆位':'正位';
+      $('tarotResultName').textContent=card.name;
+      $('tarotResultSep').hidden=false;
+      $('tarotResultPos').textContent=reversed?'逆位':'正位';
       const keys=(reversed?card.revKeys:card.upKeys).split('|');
       $('tarotKeywords').innerHTML=keys.map(k=>'<span>'+k+'</span>').join('');
       $('tarotReading').textContent=TOPICS[topic].intro+' '+(reversed?card.rev:card.up);
       $('tarotClosing').textContent=closing(card,reversed,topic);
-      $('tarotCard').classList.add('revealed');
+      $('tarotPickedNumber').textContent='第 '+n+' 张';
+      $('tarotCardVisual').classList.add('revealed');
       $('tarotCopyBtn').disabled=false;
-      $('tarotAgainBtn').disabled=false;
-      $('tarotDrawBtn').disabled=false;
-    },180);
+      $('tarotRevealBtn').disabled=false;
+    },120);
+  }
+
+  function randomDraw(){
+    if(!shuffledDeck){ shuffleCards(); return; }
+    const n=Math.floor(Math.random()*78)+1;
+    $('tarotNumberInput').value=n;
+    revealByNumber(n);
   }
 
   function closing(card,reversed,topic){
@@ -117,17 +167,24 @@
     return lines[topic];
   }
 
-  function copyResult(){
+  async function copyResult(){
     if(!current)return;
-    const {card,reversed,topic}=current;
-    const text='🔮 '+TOPICS[topic].label+'｜'+card.name+'（'+(reversed?'逆位':'正位')+'）\n'+
+    const {card,reversed,topic,number}=current;
+    const text='🔮 '+TOPICS[topic].label+'｜第 '+number+' 张｜'+card.name+'（'+(reversed?'逆位':'正位')+'）\n'+
+      (reversed?card.revKeys:card.upKeys).split('|').join(' / ')+'\n'+
       TOPICS[topic].intro+' '+(reversed?card.rev:card.up)+'\n'+closing(card,reversed,topic);
-    navigator.clipboard?.writeText(text).then(()=>{
-      const t=$('toast'); if(t){t.textContent='✅ 塔罗结果已复制';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1300);}
-    }).catch(()=>{});
+    try{
+      await navigator.clipboard.writeText(text);
+    }catch{
+      const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
+    }
+    const t=$('toast');if(t){t.textContent='✅ 塔罗结果已复制';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1300);}
   }
 
-  $('tarotDrawBtn').addEventListener('click',draw);
-  $('tarotAgainBtn').addEventListener('click',draw);
+  $('tarotShuffleBtn').addEventListener('click',shuffleCards);
+  $('tarotNewShuffleBtn').addEventListener('click',shuffleCards);
+  $('tarotRevealBtn').addEventListener('click',()=>revealByNumber($('tarotNumberInput').value));
+  $('tarotRandomBtn').addEventListener('click',randomDraw);
+  $('tarotNumberInput').addEventListener('keydown',e=>{if(e.key==='Enter')revealByNumber(e.currentTarget.value);});
   $('tarotCopyBtn').addEventListener('click',copyResult);
 })();
