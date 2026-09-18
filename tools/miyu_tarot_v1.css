@@ -1,0 +1,36 @@
+.tarot-hero{background:linear-gradient(135deg,#f5f3ff,#fff 65%);border-color:#ddd6fe}
+.tarot-eyebrow{font-size:12px;font-weight:950;letter-spacing:.12em;color:#7c3aed;margin-bottom:5px}
+.tarot-layout{display:grid;grid-template-columns:minmax(260px,.75fr) minmax(0,1.25fr);gap:14px}
+.tarot-control,.tarot-stage{min-height:100%}
+.tarot-label{font-size:14px;font-weight:950;margin-bottom:10px}
+.tarot-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tarot-topic{border:1px solid var(--line);background:#fff;border-radius:14px;padding:11px 12px;font-weight:900;cursor:pointer;text-align:left}
+.tarot-topic.active{border-color:#8b5cf6;background:#f5f3ff;color:#6d28d9;box-shadow:0 0 0 3px rgba(139,92,246,.08)}
+.tarot-toggle{display:flex;align-items:center;gap:8px;margin:14px 0 12px;font-size:13px;font-weight:800;color:#475569}
+.tarot-toggle input{width:18px;height:18px;accent-color:#7c3aed}
+.tarot-draw-btn{width:100%;border-radius:14px!important;padding:13px 16px!important}
+.tarot-note{margin-top:10px}
+.tarot-stage{display:grid;grid-template-columns:210px minmax(0,1fr);gap:18px;align-items:center;background:radial-gradient(circle at 30% 20%,rgba(139,92,246,.08),transparent 35%),#fff}
+.tarot-card-wrap{perspective:1000px;display:grid;place-items:center;min-height:320px}
+.tarot-card{position:relative;width:180px;height:300px;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.75,.2,1)}
+.tarot-card.revealed{transform:rotateY(180deg)}
+.tarot-card-back,.tarot-card-front{position:absolute;inset:0;border-radius:22px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 12px 30px rgba(76,29,149,.16)}
+.tarot-card-back{color:#fff;background:linear-gradient(160deg,#312e81,#6d28d9 55%,#4c1d95);border:1px solid rgba(255,255,255,.2)}
+.tarot-card-back:before,.tarot-card-back:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.25);border-radius:16px}
+.tarot-card-back:after{inset:22px;border-style:dashed;opacity:.55}
+.tarot-moon{font-size:50px;line-height:1;margin-bottom:18px}
+.tarot-back-title{font-size:22px;font-weight:950;letter-spacing:.08em}
+.tarot-back-sub{font-size:11px;opacity:.76;margin-top:7px}
+.tarot-card-front{transform:rotateY(180deg);background:linear-gradient(180deg,#fff,#faf5ff);border:1px solid #ddd6fe;padding:20px}
+.tarot-symbol{font-size:52px;margin-bottom:22px}
+.tarot-name{font-size:22px;font-weight:950;line-height:1.25}
+.tarot-position{margin-top:10px;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:900;background:#ede9fe;color:#6d28d9}
+.tarot-position.reverse{background:#fff1f2;color:#be123c}
+.tarot-result{min-width:0}
+.tarot-result-topic{font-size:12px;font-weight:950;color:#7c3aed;letter-spacing:.08em;margin-bottom:8px}
+.tarot-keywords{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tarot-keywords span{font-size:12px;font-weight:850;padding:5px 9px;border-radius:999px;background:#f1f5f9;color:#475569}
+.tarot-reading{font-size:17px;font-weight:800;line-height:1.8;color:#1e293b}
+.tarot-closing{margin-top:14px;padding:11px 12px;border-radius:14px;background:#f8fafc;color:#475569;font-size:13px;line-height:1.65;font-weight:700}
+.tarot-actions{margin-top:16px}
+@media(max-width:760px){.tarot-layout{grid-template-columns:1fr}.tarot-stage{grid-template-columns:1fr}.tarot-card-wrap{min-height:290px}.tarot-card{width:165px;height:275px}.tarot-topics{grid-template-columns:repeat(2,minmax(0,1fr))}}
