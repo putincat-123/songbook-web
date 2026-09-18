@@ -78,6 +78,8 @@
   document.querySelectorAll('.tarot-topic').forEach(btn=>btn.addEventListener('click',()=>{
     document.querySelectorAll('.tarot-topic').forEach(x=>x.classList.toggle('active',x===btn));
     topic=btn.dataset.topic;
+    if($('tarotResultTopic')) $('tarotResultTopic').textContent='FOR '+TOPICS[topic].label;
+    if(!current && $('tarotClosing')) $('tarotClosing').textContent=closing(null,false,topic);
   }));
 
   function draw(){
@@ -92,6 +94,8 @@
       $('tarotPosition').textContent=reversed?'逆位':'正位';
       $('tarotPosition').className='tarot-position'+(reversed?' reverse':'');
       $('tarotResultTopic').textContent='FOR '+TOPICS[topic].label;
+      if($('tarotResultName')) $('tarotResultName').textContent=card.name;
+      if($('tarotResultPos')) $('tarotResultPos').textContent=reversed?'逆位':'正位';
       const keys=(reversed?card.revKeys:card.upKeys).split('|');
       $('tarotKeywords').innerHTML=keys.map(k=>'<span>'+k+'</span>').join('');
       $('tarotReading').textContent=TOPICS[topic].intro+' '+(reversed?card.rev:card.up);
