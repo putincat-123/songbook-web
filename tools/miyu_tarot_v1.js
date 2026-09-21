@@ -1,6 +1,6 @@
 (() => {
   const $ = id => document.getElementById(id);
-  if (!$('tarotDrawBtn')) return;
+  if (!$('tarotShuffleBtn')) return;
 
   const TOPICS = {
     today:{label:'今日提醒', intro:'今天这张牌想提醒你：'},
