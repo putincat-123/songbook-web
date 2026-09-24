@@ -1,21 +1,65 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-09-22T23:53:04.001Z",
+  "updatedAt": "2026-09-24T00:02:55.966Z",
   "songs": [
+    {
+      "name": "自己就是自己的光",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 5
+        },
+        {
+          "source": "new",
+          "rank": 2
+        },
+        {
+          "source": "rise",
+          "rank": 1
+        },
+        {
+          "source": "popular",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 4,
+      "bestRank": 1
+    },
+    {
+      "name": "芥兰",
+      "artist": "杨丞琳",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 14
+        },
+        {
+          "source": "new",
+          "rank": 7
+        },
+        {
+          "source": "rise",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 4,
+      "bestRank": 2
+    },
     {
       "name": "那页夏天",
       "artist": "王俊凯",
       "sources": [
         {
           "source": "hot",
-          "rank": 1
+          "rank": 19
         },
         {
           "source": "new",
-          "rank": 1
-        },
-        {
-          "source": "rise",
           "rank": 1
         },
         {
@@ -23,52 +67,12 @@
           "rank": 2
         }
       ],
-      "sourceCount": 4,
+      "sourceCount": 3,
       "bestRank": 1
     },
     {
-      "name": "我所知道的修辞手法",
-      "artist": "张靓颖",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 5
-        },
-        {
-          "source": "rise",
-          "rank": 9
-        },
-        {
-          "source": "popular",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 5
-    },
-    {
-      "name": "过期食品",
-      "artist": "张靓颖",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 7
-        },
-        {
-          "source": "rise",
-          "rank": 7
-        },
-        {
-          "source": "popular",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 7
-    },
-    {
-      "name": "加码",
-      "artist": "张靓颖",
+      "name": "Baby Come Home",
+      "artist": "JOSHUA (조슈아)/韦礼安",
       "sources": [
         {
           "source": "new",
@@ -76,15 +80,15 @@
         },
         {
           "source": "rise",
-          "rank": 10
+          "rank": 3
         },
         {
           "source": "popular",
-          "rank": 12
+          "rank": 19
         }
       ],
       "sourceCount": 3,
-      "bestRank": 8
+      "bestRank": 3
     },
     {
       "name": "茶汤",
@@ -92,7 +96,7 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 2
+          "rank": 1
         },
         {
           "source": "popular",
@@ -108,42 +112,10 @@
       "sources": [
         {
           "source": "new",
-          "rank": 2
+          "rank": 4
         },
         {
           "source": "popular",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 2
-    },
-    {
-      "name": "hey! hey! (Chinese ver.)",
-      "artist": "TWS (투어스)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 10
-        },
-        {
-          "source": "rise",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 2
-    },
-    {
-      "name": "Thank You",
-      "artist": "王嘉尔",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 19
-        },
-        {
-          "source": "rise",
           "rank": 3
         }
       ],
@@ -151,12 +123,44 @@
       "bestRank": 3
     },
     {
+      "name": "六月的雨",
+      "artist": "胡歌",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 9
+        },
+        {
+          "source": "rise",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 4
+    },
+    {
+      "name": "风月吻眉梢",
+      "artist": "礼越",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 17
+        },
+        {
+          "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 4
+    },
+    {
       "name": "世界第一等",
       "artist": "卡宾先生",
       "sources": [
         {
           "source": "new",
-          "rank": 4
+          "rank": 5
         },
         {
           "source": "popular",
@@ -164,23 +168,7 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 4
-    },
-    {
-      "name": "雨终曲",
-      "artist": "宋雨琦 (YUQI) (우기)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        },
-        {
-          "source": "popular",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 4
+      "bestRank": 5
     },
     {
       "name": "你是我等不到的人",
@@ -188,35 +176,95 @@
       "sources": [
         {
           "source": "new",
-          "rank": 13
+          "rank": 12
         },
         {
           "source": "popular",
-          "rank": 13
+          "rank": 10
         }
       ],
       "sourceCount": 2,
-      "bestRank": 13
+      "bestRank": 10
     },
     {
-      "name": "Like That",
-      "artist": "王栎鑫",
+      "name": "我所知道的修辞手法",
+      "artist": "张靓颖",
       "sources": [
         {
           "source": "new",
-          "rank": 17
+          "rank": 16
         },
         {
           "source": "popular",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 11
+    },
+    {
+      "name": "过期食品",
+      "artist": "张靓颖",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        },
+        {
+          "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 12
+    },
+    {
+      "name": "大梦归",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        },
+        {
+          "source": "rise",
           "rank": 19
         }
       ],
       "sourceCount": 2,
-      "bestRank": 17
+      "bestRank": 14
+    },
+    {
+      "name": "加码",
+      "artist": "张靓颖",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        },
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 15
     },
     {
       "name": "我不难过",
       "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 2
+    },
+    {
+      "name": "泪海",
+      "artist": "许茹芸",
       "sources": [
         {
           "source": "hot",
@@ -239,59 +287,23 @@
       "bestRank": 3
     },
     {
-      "name": "泪海",
-      "artist": "许茹芸",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
-      "name": "六月的雨",
-      "artist": "胡歌",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
       "name": "甲乙丙丁 (你我怎么两清)",
       "artist": "李佳薇",
       "sources": [
         {
           "source": "hot",
-          "rank": 5
+          "rank": 4
         }
       ],
       "sourceCount": 1,
-      "bestRank": 5
+      "bestRank": 4
     },
     {
-      "name": "慢慢",
-      "artist": "张学友",
+      "name": "花非花",
+      "artist": "AZ啊之/李京泽/Crazy C",
       "sources": [
         {
           "source": "rise",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 5
-    },
-    {
-      "name": "风月吻眉梢",
-      "artist": "礼越",
-      "sources": [
-        {
-          "source": "popular",
           "rank": 5
         }
       ],
@@ -311,11 +323,11 @@
       "bestRank": 6
     },
     {
-      "name": "借过一下",
-      "artist": "周深",
+      "name": "雨终曲",
+      "artist": "宋雨琦 (YUQI) (우기)",
       "sources": [
         {
-          "source": "rise",
+          "source": "new",
           "rank": 6
         }
       ],
@@ -323,11 +335,11 @@
       "bestRank": 6
     },
     {
-      "name": "牡丹亭",
-      "artist": "浅影阿",
+      "name": "我願意",
+      "artist": "彭梓烨_Leo/亿轩_Kingston",
       "sources": [
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 6
         }
       ],
@@ -347,8 +359,20 @@
       "bestRank": 7
     },
     {
-      "name": "如果还会遇见",
-      "artist": "何遇Hayu/Crybird",
+      "name": "红尘误此生",
+      "artist": "宋晓峰",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "牡丹亭",
+      "artist": "浅影阿",
       "sources": [
         {
           "source": "popular",
@@ -371,8 +395,8 @@
       "bestRank": 8
     },
     {
-      "name": "阳光普照",
-      "artist": "容祖儿",
+      "name": "No photo of you left to survey (二十岁的某一天英文版)",
+      "artist": "冬妍DYan",
       "sources": [
         {
           "source": "rise",
@@ -383,16 +407,16 @@
       "bestRank": 8
     },
     {
-      "name": "雨爱",
-      "artist": "杨丞琳",
+      "name": "如果还会遇见",
+      "artist": "何遇Hayu/Crybird",
       "sources": [
         {
-          "source": "hot",
-          "rank": 9
+          "source": "popular",
+          "rank": 8
         }
       ],
       "sourceCount": 1,
-      "bestRank": 9
+      "bestRank": 8
     },
     {
       "name": "就骗我一次 (KOR Ver.)",
@@ -407,8 +431,20 @@
       "bestRank": 9
     },
     {
-      "name": "开始懂了",
-      "artist": "孙燕姿",
+      "name": "日落以后",
+      "artist": "AZ啊之/弹壳",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "雨爱",
+      "artist": "杨丞琳",
       "sources": [
         {
           "source": "hot",
@@ -419,8 +455,32 @@
       "bestRank": 10
     },
     {
-      "name": "素颜",
-      "artist": "许嵩/何曼婷",
+      "name": "此刻",
+      "artist": "袁娅维TIA RAY",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "假装快乐",
+      "artist": "呆呆破",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "开始懂了",
+      "artist": "孙燕姿",
       "sources": [
         {
           "source": "hot",
@@ -443,8 +503,8 @@
       "bestRank": 11
     },
     {
-      "name": "一个人想着一个人",
-      "artist": "曾沛慈",
+      "name": "逍遥叹",
+      "artist": "胡歌",
       "sources": [
         {
           "source": "rise",
@@ -455,16 +515,28 @@
       "bestRank": 11
     },
     {
-      "name": "默契过期",
-      "artist": "田栩宁",
+      "name": "素颜",
+      "artist": "许嵩/何曼婷",
       "sources": [
         {
-          "source": "popular",
-          "rank": 11
+          "source": "hot",
+          "rank": 12
         }
       ],
       "sourceCount": 1,
-      "bestRank": 11
+      "bestRank": 12
+    },
+    {
+      "name": "Intro",
+      "artist": "AZ啊之",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
     },
     {
       "name": "爱错",
@@ -472,71 +544,11 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "此刻",
-      "artist": "袁娅维TIA RAY",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "Steal The Moon",
-      "artist": "王俊凯",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "Always Online",
-      "artist": "林俊杰",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 13
         }
       ],
       "sourceCount": 1,
       "bestRank": 13
-    },
-    {
-      "name": "疑疑疑",
-      "artist": "王俊凯",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "特别的人",
-      "artist": "方大同",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
     },
     {
       "name": "SUN KISS",
@@ -544,15 +556,39 @@
       "sources": [
         {
           "source": "new",
-          "rank": 14
+          "rank": 13
         }
       ],
       "sourceCount": 1,
-      "bestRank": 14
+      "bestRank": 13
     },
     {
-      "name": "真爱",
-      "artist": "183club",
+      "name": "你不知道的事",
+      "artist": "王力宏",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "泪海 (你怎么舍得让我的泪流向海)",
+      "artist": "段俊",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "你还要我怎样",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "rise",
@@ -563,8 +599,8 @@
       "bestRank": 14
     },
     {
-      "name": "态度 (Attitude)",
-      "artist": "田栩宁",
+      "name": "多余的解释",
+      "artist": "许嵩",
       "sources": [
         {
           "source": "popular",
@@ -575,8 +611,8 @@
       "bestRank": 14
     },
     {
-      "name": "唯一",
-      "artist": "G.E.M.邓紫棋",
+      "name": "特别的人",
+      "artist": "方大同",
       "sources": [
         {
           "source": "hot",
@@ -587,20 +623,8 @@
       "bestRank": 15
     },
     {
-      "name": "sorry not sorry",
-      "artist": "庆怜",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "俗人",
-      "artist": "李启萌",
+      "name": "有钱了",
+      "artist": "AZ啊之/DP",
       "sources": [
         {
           "source": "rise",
@@ -609,6 +633,30 @@
       ],
       "sourceCount": 1,
       "bestRank": 15
+    },
+    {
+      "name": "Always Online",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "祝福祖国 (合唱版)",
+      "artist": "苏娜",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
     },
     {
       "name": "山风山风等等我",
@@ -616,18 +664,6 @@
       "sources": [
         {
           "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "红色高跟鞋",
-      "artist": "蔡健雅",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 16
         }
       ],
@@ -640,42 +676,6 @@
       "sources": [
         {
           "source": "new",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "千年泪",
-      "artist": "Tank",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "泪海 (你怎么舍得让我的泪流向海)",
-      "artist": "段俊",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "盛夏的果实",
-      "artist": "莫文蔚",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 17
         }
       ],
@@ -683,8 +683,8 @@
       "bestRank": 17
     },
     {
-      "name": "茶花开了，该回家了",
-      "artist": "王睿卓/加木",
+      "name": "我的一个道姑朋友(而你撑伞拥我入怀中)",
+      "artist": "晚月moon",
       "sources": [
         {
           "source": "rise",
@@ -695,8 +695,8 @@
       "bestRank": 17
     },
     {
-      "name": "After Everything",
-      "artist": "曾沛慈",
+      "name": "孤独Person (你对我的了解 无声的告别)",
+      "artist": "Herme4/WhyAce/Zy",
       "sources": [
         {
           "source": "popular",
@@ -707,8 +707,8 @@
       "bestRank": 17
     },
     {
-      "name": "演员",
-      "artist": "薛之谦",
+      "name": "唯一",
+      "artist": "G.E.M.邓紫棋",
       "sources": [
         {
           "source": "hot",
@@ -719,8 +719,8 @@
       "bestRank": 18
     },
     {
-      "name": "落空 ​",
-      "artist": "羊羊",
+      "name": "爱像尘埃石沉大海",
+      "artist": "Mogoo蘑菇",
       "sources": [
         {
           "source": "new",
@@ -731,8 +731,8 @@
       "bestRank": 18
     },
     {
-      "name": "无声潮汐",
-      "artist": "王俊凯",
+      "name": "静待清光",
+      "artist": "许明明",
       "sources": [
         {
           "source": "rise",
@@ -743,8 +743,8 @@
       "bestRank": 18
     },
     {
-      "name": "漫游",
-      "artist": "田栩宁",
+      "name": "多远都要在一起",
+      "artist": "G.E.M.邓紫棋",
       "sources": [
         {
           "source": "popular",
@@ -755,32 +755,8 @@
       "bestRank": 18
     },
     {
-      "name": "阴天",
-      "artist": "莫文蔚",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "真相",
-      "artist": "王俊凯",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "春娇与志明",
-      "artist": "街道办GDC/欧阳耀莹",
+      "name": "演员",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "hot",
@@ -803,8 +779,8 @@
       "bestRank": 20
     },
     {
-      "name": "湾",
-      "artist": "王菲",
+      "name": "茶花开了，该回家了",
+      "artist": "王睿卓/加木",
       "sources": [
         {
           "source": "rise",
@@ -815,8 +791,8 @@
       "bestRank": 20
     },
     {
-      "name": "如果累了就回故乡 (少年版)",
-      "artist": "酷酷里/面妹孔佳奇",
+      "name": "有何不可",
+      "artist": "许嵩",
       "sources": [
         {
           "source": "popular",
