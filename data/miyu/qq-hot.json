@@ -1,31 +1,7 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-09-26T23:57:41.380Z",
+  "updatedAt": "2026-09-28T00:03:10.875Z",
   "songs": [
-    {
-      "name": "忘飞的鸽",
-      "artist": "黄子弘凡",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 9
-        },
-        {
-          "source": "new",
-          "rank": 1
-        },
-        {
-          "source": "rise",
-          "rank": 2
-        },
-        {
-          "source": "popular",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 4,
-      "bestRank": 1
-    },
     {
       "name": "茶汤",
       "artist": "郁可唯",
@@ -35,35 +11,43 @@
           "rank": 1
         },
         {
-          "source": "rise",
-          "rank": 9
-        },
-        {
           "source": "popular",
-          "rank": 4
+          "rank": 10
         }
       ],
-      "sourceCount": 3,
+      "sourceCount": 2,
       "bestRank": 1
     },
     {
-      "name": "Patient Zero",
-      "artist": "Taylor Swift",
+      "name": "忘飞的鸽",
+      "artist": "黄子弘凡",
       "sources": [
         {
           "source": "new",
-          "rank": 7
+          "rank": 1
         },
+        {
+          "source": "popular",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
+      "name": "凤凰于飞",
+      "artist": "刘欢",
+      "sources": [
         {
           "source": "rise",
           "rank": 1
         },
         {
           "source": "popular",
-          "rank": 6
+          "rank": 8
         }
       ],
-      "sourceCount": 3,
+      "sourceCount": 2,
       "bestRank": 1
     },
     {
@@ -75,36 +59,12 @@
           "rank": 2
         },
         {
-          "source": "rise",
-          "rank": 8
-        },
-        {
           "source": "popular",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 2
-    },
-    {
-      "name": "Pink Clouding",
-      "artist": "Taylor Swift",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
-        },
-        {
-          "source": "rise",
           "rank": 4
-        },
-        {
-          "source": "popular",
-          "rank": 19
         }
       ],
-      "sourceCount": 3,
-      "bestRank": 4
+      "sourceCount": 2,
+      "bestRank": 2
     },
     {
       "name": "自己就是自己的光",
@@ -116,11 +76,27 @@
         },
         {
           "source": "popular",
-          "rank": 1
+          "rank": 2
         }
       ],
       "sourceCount": 2,
-      "bestRank": 1
+      "bestRank": 2
+    },
+    {
+      "name": "千万次的问",
+      "artist": "刘欢",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
     },
     {
       "name": "那页夏天",
@@ -139,60 +115,28 @@
       "bestRank": 3
     },
     {
-      "name": "Cleveland!",
+      "name": "Patient Zero",
       "artist": "Taylor Swift",
       "sources": [
         {
           "source": "new",
-          "rank": 17
-        },
-        {
-          "source": "rise",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "Lost In Time",
-      "artist": "李昊",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
+          "rank": 5
         },
         {
           "source": "popular",
-          "rank": 7
+          "rank": 9
         }
       ],
       "sourceCount": 2,
-      "bestRank": 6
+      "bestRank": 5
     },
     {
-      "name": "Babylon",
-      "artist": "Taylor Swift",
+      "name": "Baby Come Home",
+      "artist": "JOSHUA (조슈아)/韦礼安",
       "sources": [
         {
           "source": "new",
-          "rank": 18
-        },
-        {
-          "source": "rise",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 6
-    },
-    {
-      "name": "雨爱",
-      "artist": "杨丞琳",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 7
+          "rank": 9
         },
         {
           "source": "popular",
@@ -200,51 +144,35 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 7
+      "bestRank": 9
     },
     {
-      "name": "Thank You",
-      "artist": "王嘉尔",
+      "name": "红尘误此生",
+      "artist": "宋晓峰",
       "sources": [
         {
           "source": "new",
-          "rank": 10
+          "rank": 12
         },
         {
           "source": "popular",
-          "rank": 12
+          "rank": 11
         }
       ],
       "sourceCount": 2,
-      "bestRank": 10
+      "bestRank": 11
     },
     {
-      "name": "素颜",
-      "artist": "许嵩/何曼婷",
+      "name": "Lost In Time",
+      "artist": "李昊",
       "sources": [
         {
-          "source": "hot",
-          "rank": 13
+          "source": "new",
+          "rank": 14
         },
         {
           "source": "popular",
           "rank": 15
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 13
-    },
-    {
-      "name": "失眠",
-      "artist": "Suki刘舒妤",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        },
-        {
-          "source": "rise",
-          "rank": 14
         }
       ],
       "sourceCount": 2,
@@ -256,31 +184,15 @@
       "sources": [
         {
           "source": "new",
+          "rank": 17
+        },
+        {
+          "source": "popular",
           "rank": 19
-        },
-        {
-          "source": "popular",
-          "rank": 14
         }
       ],
       "sourceCount": 2,
-      "bestRank": 14
-    },
-    {
-      "name": "世界第一等",
-      "artist": "卡宾先生",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 16
-        },
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 16
+      "bestRank": 17
     },
     {
       "name": "我不难过",
@@ -307,11 +219,35 @@
       "bestRank": 3
     },
     {
+      "name": "弯弯的月亮",
+      "artist": "刘欢",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
       "name": "泪海",
       "artist": "许茹芸",
       "sources": [
         {
           "source": "hot",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 4
+    },
+    {
+      "name": "人间道",
+      "artist": "刘欢",
+      "sources": [
+        {
+          "source": "rise",
           "rank": 4
         }
       ],
@@ -331,11 +267,11 @@
       "bestRank": 5
     },
     {
-      "name": "爱像尘埃石沉大海",
-      "artist": "Mogoo蘑菇",
+      "name": "沧海一声笑 (Live)",
+      "artist": "那英/周杰伦/刘欢/陈奕迅",
       "sources": [
         {
-          "source": "new",
+          "source": "rise",
           "rank": 5
         }
       ],
@@ -343,11 +279,11 @@
       "bestRank": 5
     },
     {
-      "name": "但愿人长久",
-      "artist": "王菲",
+      "name": "山风不语",
+      "artist": "伍零五",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 5
         }
       ],
@@ -367,11 +303,83 @@
       "bestRank": 6
     },
     {
-      "name": "花好月圆夜",
-      "artist": "杨千嬅/任贤齐",
+      "name": "大梦归",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "少年壮志不言愁",
+      "artist": "刘欢",
       "sources": [
         {
           "source": "rise",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "六月的雨",
+      "artist": "胡歌",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "雨爱",
+      "artist": "杨丞琳",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "就骗我一次 (KOR Ver.)",
+      "artist": "沈佳润Nina",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "我和你",
+      "artist": "刘欢/Sarah Brightman",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "我以为",
+      "artist": "品冠",
+      "sources": [
+        {
+          "source": "popular",
           "rank": 7
         }
       ],
@@ -391,8 +399,8 @@
       "bestRank": 8
     },
     {
-      "name": "大梦归",
-      "artist": "周深",
+      "name": "爱像尘埃石沉大海",
+      "artist": "Mogoo蘑菇",
       "sources": [
         {
           "source": "new",
@@ -403,40 +411,16 @@
       "bestRank": 8
     },
     {
-      "name": "山风不语",
-      "artist": "伍零五",
+      "name": "家园",
+      "artist": "刘欢",
       "sources": [
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 8
         }
       ],
       "sourceCount": 1,
       "bestRank": 8
-    },
-    {
-      "name": "就骗我一次 (KOR Ver.)",
-      "artist": "沈佳润Nina",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "九月底",
-      "artist": "余佳运",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
     },
     {
       "name": "Always Online",
@@ -444,35 +428,23 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 10
+          "rank": 9
         }
       ],
       "sourceCount": 1,
-      "bestRank": 10
+      "bestRank": 9
     },
     {
-      "name": "天地志",
-      "artist": "谭维维/檀健次",
+      "name": "从头再来 (Live)",
+      "artist": "刘欢",
       "sources": [
         {
           "source": "rise",
-          "rank": 10
+          "rank": 9
         }
       ],
       "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "六月的雨",
-      "artist": "胡歌",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
+      "bestRank": 9
     },
     {
       "name": "特别的人",
@@ -480,6 +452,42 @@
       "sources": [
         {
           "source": "hot",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "雨终曲",
+      "artist": "宋雨琦 (YUQI) (우기)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "带着地球去流浪",
+      "artist": "刘欢/郑楚馨",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "素颜",
+      "artist": "许嵩/何曼婷",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 11
         }
       ],
@@ -487,8 +495,8 @@
       "bestRank": 11
     },
     {
-      "name": "雨终曲",
-      "artist": "宋雨琦 (YUQI) (우기)",
+      "name": "Thank You",
+      "artist": "王嘉尔",
       "sources": [
         {
           "source": "new",
@@ -499,8 +507,8 @@
       "bestRank": 11
     },
     {
-      "name": "The Fate of Ophelia",
-      "artist": "Taylor Swift",
+      "name": "菊花台 (Live)",
+      "artist": "陈奕迅/刘欢",
       "sources": [
         {
           "source": "rise",
@@ -511,20 +519,8 @@
       "bestRank": 11
     },
     {
-      "name": "风月吻眉梢",
-      "artist": "礼越",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "开始懂了",
-      "artist": "孙燕姿",
+      "name": "失眠",
+      "artist": "Suki刘舒妤",
       "sources": [
         {
           "source": "hot",
@@ -535,35 +531,35 @@
       "bestRank": 12
     },
     {
+      "name": "乱世舞",
+      "artist": "徐来/听潮阁",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "开始懂了",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
       "name": "你是我等不到的人",
       "artist": "正在进行石女士",
       "sources": [
         {
           "source": "new",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "月亮代表我的心",
-      "artist": "邓丽君",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "思念若是一首诗",
-      "artist": "万妮达Vinida Weng",
-      "sources": [
-        {
-          "source": "new",
           "rank": 13
         }
       ],
@@ -571,8 +567,8 @@
       "bestRank": 13
     },
     {
-      "name": "振乾坤",
-      "artist": "张杰",
+      "name": "情怨",
+      "artist": "刘欢",
       "sources": [
         {
           "source": "rise",
@@ -583,8 +579,8 @@
       "bestRank": 13
     },
     {
-      "name": "你的万水千山2026",
-      "artist": "海来阿木",
+      "name": "眼红",
+      "artist": "早安",
       "sources": [
         {
           "source": "popular",
@@ -593,6 +589,42 @@
       ],
       "sourceCount": 1,
       "bestRank": 13
+    },
+    {
+      "name": "演员",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "生不逢时",
+      "artist": "亿轩_Kingston",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "九月底",
+      "artist": "余佳运",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
     },
     {
       "name": "爱错",
@@ -607,8 +639,8 @@
       "bestRank": 15
     },
     {
-      "name": "此刻",
-      "artist": "袁娅维TIA RAY",
+      "name": "Pink Clouding",
+      "artist": "Taylor Swift",
       "sources": [
         {
           "source": "new",
@@ -619,8 +651,8 @@
       "bestRank": 15
     },
     {
-      "name": "琵琶行",
-      "artist": "奇然/沈谧仁",
+      "name": "离不开你",
+      "artist": "刘欢",
       "sources": [
         {
           "source": "rise",
@@ -643,8 +675,20 @@
       "bestRank": 16
     },
     {
-      "name": "Shall We Talk",
-      "artist": "陈奕迅",
+      "name": "思念若是一首诗",
+      "artist": "万妮达Vinida Weng",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "得民心者得天下",
+      "artist": "刘欢/柏菲音乐",
       "sources": [
         {
           "source": "rise",
@@ -655,8 +699,8 @@
       "bestRank": 16
     },
     {
-      "name": "演员",
-      "artist": "薛之谦",
+      "name": "江南",
+      "artist": "林俊杰",
       "sources": [
         {
           "source": "hot",
@@ -667,8 +711,8 @@
       "bestRank": 17
     },
     {
-      "name": "城里的月光",
-      "artist": "许美静",
+      "name": "恰逢其时",
+      "artist": "彭梓烨_Leo",
       "sources": [
         {
           "source": "rise",
@@ -679,8 +723,8 @@
       "bestRank": 17
     },
     {
-      "name": "I'm Waiting (Radio Edit)",
-      "artist": "Stage Rockers",
+      "name": "风月吻眉梢",
+      "artist": "礼越",
       "sources": [
         {
           "source": "popular",
@@ -703,8 +747,20 @@
       "bestRank": 18
     },
     {
-      "name": "借月",
-      "artist": "王天阳",
+      "name": "慢品人间烟火气 (落日微醺版)",
+      "artist": "涂一乐",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "睡前别想太多",
+      "artist": "李雨霏",
       "sources": [
         {
           "source": "rise",
@@ -715,7 +771,19 @@
       "bestRank": 18
     },
     {
-      "name": "江南",
+      "name": "偏爱",
+      "artist": "张芸京",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "美人鱼",
       "artist": "林俊杰",
       "sources": [
         {
@@ -727,8 +795,20 @@
       "bestRank": 19
     },
     {
-      "name": "晴天",
-      "artist": "周杰伦",
+      "name": "秋天的海",
+      "artist": "周传雄",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "等你的季节",
+      "artist": "刘诗诗",
       "sources": [
         {
           "source": "rise",
@@ -739,8 +819,8 @@
       "bestRank": 19
     },
     {
-      "name": "美人鱼",
-      "artist": "林俊杰",
+      "name": "我们俩",
+      "artist": "郭顶",
       "sources": [
         {
           "source": "hot",
@@ -751,8 +831,8 @@
       "bestRank": 20
     },
     {
-      "name": "失忆",
-      "artist": "李佳薇",
+      "name": "浅粉红 pale pink",
+      "artist": "Gareth.T",
       "sources": [
         {
           "source": "new",
@@ -763,8 +843,8 @@
       "bestRank": 20
     },
     {
-      "name": "Elizabeth Taylor",
-      "artist": "Taylor Swift",
+      "name": "心中的太阳",
+      "artist": "刘欢",
       "sources": [
         {
           "source": "rise",
@@ -775,8 +855,8 @@
       "bestRank": 20
     },
     {
-      "name": "失温拥抱",
-      "artist": "陈楚生",
+      "name": "你的万水千山2026",
+      "artist": "海来阿木",
       "sources": [
         {
           "source": "popular",
