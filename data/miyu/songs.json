@@ -51228,5 +51228,30 @@
     "crowdPlaylistTags": [],
     "crowdPlaylistSources": [],
     "aiMetadataSource": "llm_only"
+  },
+  {
+    "id": "pool_d977f7f3-7f7f-42ed-a9c3-0cf66a18119f",
+    "poolSongId": "d977f7f3-7f7f-42ed-a9c3-0cf66a18119f",
+    "songId": "af467f21-efd6-4b35-8773-6a13d54179d9",
+    "seq": 1533,
+    "name": "关于思念",
+    "songName": "关于思念",
+    "artist": "李玄",
+    "style": "",
+    "rawStyle": "",
+    "rawMood": "",
+    "rawTags": "",
+    "customTags": [],
+    "remarks": "",
+    "note": "",
+    "sharedName": "关于思念",
+    "sharedArtist": "李玄",
+    "aiMoodTags": [],
+    "aiSceneTags": [],
+    "aiEnergy": null,
+    "aiTagReason": null,
+    "crowdPlaylistTags": [],
+    "crowdPlaylistSources": [],
+    "aiMetadataSource": "llm_only"
   }
 ]
