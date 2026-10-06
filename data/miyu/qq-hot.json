@@ -1,58 +1,38 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-10-05T00:15:44.910Z",
+  "updatedAt": "2026-10-06T01:57:14.296Z",
   "songs": [
     {
-      "name": "好久不见",
-      "artist": "NAVE/黄婷婷",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 2
-        },
-        {
-          "source": "rise",
-          "rank": 3
-        },
-        {
-          "source": "popular",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 2
-    },
-    {
-      "name": "忘了怎么天晴",
-      "artist": "陈宇祥",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        },
-        {
-          "source": "rise",
-          "rank": 15
-        },
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 6
-    },
-    {
-      "name": "阿楚姑娘",
-      "artist": "袁娅维TIA RAY",
+      "name": "茶花开了，该回家了",
+      "artist": "王睿卓/加木",
       "sources": [
         {
           "source": "hot",
-          "rank": 17
+          "rank": 11
+        },
+        {
+          "source": "rise",
+          "rank": 6
         },
         {
           "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 4
+    },
+    {
+      "name": "我不难过",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 1
+        },
+        {
+          "source": "rise",
+          "rank": 4
         }
       ],
       "sourceCount": 2,
@@ -68,11 +48,27 @@
         },
         {
           "source": "popular",
-          "rank": 5
+          "rank": 8
         }
       ],
       "sourceCount": 2,
       "bestRank": 1
+    },
+    {
+      "name": "好久不见",
+      "artist": "NAVE/黄婷婷",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
     },
     {
       "name": "异想天开",
@@ -80,7 +76,7 @@
       "sources": [
         {
           "source": "new",
-          "rank": 5
+          "rank": 4
         },
         {
           "source": "popular",
@@ -91,8 +87,24 @@
       "bestRank": 2
     },
     {
-      "name": "甲乙丙丁 (合唱版)",
-      "artist": "李佳薇/张新成",
+      "name": "You Are All I Need",
+      "artist": "FLY COAST/二宮愛 (にのみや あい)",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
+    },
+    {
+      "name": "如诗一般的形容妳",
+      "artist": "曹杨",
       "sources": [
         {
           "source": "new",
@@ -107,44 +119,44 @@
       "bestRank": 3
     },
     {
-      "name": "如诗一般的形容妳",
-      "artist": "曹杨",
+      "name": "Dear You",
+      "artist": "宇宙人",
       "sources": [
         {
           "source": "new",
-          "rank": 4
+          "rank": 10
         },
-        {
-          "source": "popular",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 4
-    },
-    {
-      "name": "Whatever Happens",
-      "artist": "Michael Jackson/Carlos Santana",
-      "sources": [
         {
           "source": "rise",
-          "rank": 4
-        },
-        {
-          "source": "popular",
-          "rank": 20
+          "rank": 5
         }
       ],
       "sourceCount": 2,
-      "bestRank": 4
+      "bestRank": 5
     },
     {
-      "name": "茶花开了，该回家了",
-      "artist": "王睿卓/加木",
+      "name": "甲乙丙丁 (合唱版)",
+      "artist": "李佳薇/张新成",
       "sources": [
         {
-          "source": "hot",
-          "rank": 19
+          "source": "new",
+          "rank": 6
+        },
+        {
+          "source": "popular",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 6
+    },
+    {
+      "name": "Allez, aimez!",
+      "artist": "肖战",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
         },
         {
           "source": "popular",
@@ -164,43 +176,11 @@
         },
         {
           "source": "popular",
-          "rank": 8
+          "rank": 7
         }
       ],
       "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "我们在场",
-      "artist": "周深/王者荣耀",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 10
-        },
-        {
-          "source": "popular",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 10
-    },
-    {
-      "name": "Allez, aimez!",
-      "artist": "肖战",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 12
-        },
-        {
-          "source": "popular",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 10
+      "bestRank": 7
     },
     {
       "name": "遥远的不是爱",
@@ -208,7 +188,23 @@
       "sources": [
         {
           "source": "new",
-          "rank": 16
+          "rank": 13
+        },
+        {
+          "source": "popular",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 9
+    },
+    {
+      "name": "山河吟",
+      "artist": "海来阿木",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 20
         },
         {
           "source": "popular",
@@ -219,27 +215,43 @@
       "bestRank": 11
     },
     {
-      "name": "找名字的人",
-      "artist": "任素汐",
+      "name": "Dead Reflex (intro)",
+      "artist": "檀健次",
       "sources": [
         {
           "source": "new",
-          "rank": 14
+          "rank": 15
         },
         {
           "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 12
+    },
+    {
+      "name": "忘了怎么天晴",
+      "artist": "陈宇祥",
+      "sources": [
+        {
+          "source": "new",
           "rank": 16
+        },
+        {
+          "source": "popular",
+          "rank": 14
         }
       ],
       "sourceCount": 2,
       "bestRank": 14
     },
     {
-      "name": "我不难过",
-      "artist": "孙燕姿",
+      "name": "Sold Out",
+      "artist": "Hawk Nelson/Jonathan Steingard",
       "sources": [
         {
-          "source": "hot",
+          "source": "rise",
           "rank": 1
         }
       ],
@@ -247,11 +259,11 @@
       "bestRank": 1
     },
     {
-      "name": "Dear John (Live)",
-      "artist": "孙楠/满江/张彬彬/曾辉",
+      "name": "阿楚姑娘",
+      "artist": "袁娅维TIA RAY",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 1
         }
       ],
@@ -271,23 +283,23 @@
       "bestRank": 2
     },
     {
-      "name": "Sold Out",
-      "artist": "Hawk Nelson/Jonathan Steingard",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 2
-    },
-    {
       "name": "茶汤",
       "artist": "郁可唯",
       "sources": [
         {
           "source": "hot",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
+      "name": "她",
+      "artist": "刘宇宁",
+      "sources": [
+        {
+          "source": "rise",
           "rank": 3
         }
       ],
@@ -319,11 +331,11 @@
       "bestRank": 5
     },
     {
-      "name": "You Are All I Need",
-      "artist": "FLY COAST/二宮愛 (にのみや あい)",
+      "name": "Moonride",
+      "artist": "Hearts2Hearts",
       "sources": [
         {
-          "source": "rise",
+          "source": "new",
           "rank": 5
         }
       ],
@@ -343,18 +355,6 @@
       "bestRank": 6
     },
     {
-      "name": "男人歌 (feat.大壮)",
-      "artist": "宝石Gem/大壮",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
       "name": "我怀念的",
       "artist": "孙燕姿",
       "sources": [
@@ -367,8 +367,8 @@
       "bestRank": 7
     },
     {
-      "name": "Moonride",
-      "artist": "Hearts2Hearts",
+      "name": "CRASH",
+      "artist": "ALLDAY PROJECT",
       "sources": [
         {
           "source": "new",
@@ -379,8 +379,8 @@
       "bestRank": 7
     },
     {
-      "name": "你会遇见更好的人",
-      "artist": "郭聪明",
+      "name": "趁早",
+      "artist": "张惠妹",
       "sources": [
         {
           "source": "rise",
@@ -403,8 +403,8 @@
       "bestRank": 8
     },
     {
-      "name": "CRASH",
-      "artist": "ALLDAY PROJECT",
+      "name": "山风山风等等我",
+      "artist": "半吨兄弟",
       "sources": [
         {
           "source": "new",
@@ -415,8 +415,8 @@
       "bestRank": 8
     },
     {
-      "name": "你不知道的事",
-      "artist": "王力宏",
+      "name": "你不要那样看着我的眼睛",
+      "artist": "蔡琴",
       "sources": [
         {
           "source": "rise",
@@ -439,35 +439,11 @@
       "bestRank": 9
     },
     {
-      "name": "忘飞的鸽",
-      "artist": "黄子弘凡",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "TAKE ME",
-      "artist": "G-DRAGON (权志龙)",
+      "name": "勉为其难",
+      "artist": "王冕",
       "sources": [
         {
           "source": "rise",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "忧郁幻昼 (Abyss Mix)",
-      "artist": "凝视深渊·Abyss",
-      "sources": [
-        {
-          "source": "popular",
           "rank": 9
         }
       ],
@@ -487,8 +463,8 @@
       "bestRank": 10
     },
     {
-      "name": "BOW DOWN",
-      "artist": "ONER/HIGH5/BC221",
+      "name": "TAKE ME",
+      "artist": "G-DRAGON (权志龙)",
       "sources": [
         {
           "source": "rise",
@@ -499,20 +475,8 @@
       "bestRank": 10
     },
     {
-      "name": "开始懂了",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "我知道你都知道",
-      "artist": "薛之谦",
+      "name": "花田错",
+      "artist": "王力宏",
       "sources": [
         {
           "source": "rise",
@@ -521,6 +485,42 @@
       ],
       "sourceCount": 1,
       "bestRank": 11
+    },
+    {
+      "name": "开始懂了",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "你是我等不到的人",
+      "artist": "正在进行石女士",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "寻屿",
+      "artist": "阿YueYue",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
     },
     {
       "name": "爱错",
@@ -528,30 +528,6 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "我以为",
-      "artist": "品冠",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "演员",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 13
         }
       ],
@@ -559,20 +535,8 @@
       "bestRank": 13
     },
     {
-      "name": "山风山风等等我",
-      "artist": "半吨兄弟",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "红线",
-      "artist": "邹沛沛/Pank",
+      "name": "会吗",
+      "artist": "王靖雯",
       "sources": [
         {
           "source": "rise",
@@ -581,30 +545,6 @@
       ],
       "sourceCount": 1,
       "bestRank": 13
-    },
-    {
-      "name": "失眠",
-      "artist": "Suki刘舒妤",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "生生",
-      "artist": "林俊杰",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
     },
     {
       "name": "回到你身边 (让你知道)",
@@ -612,6 +552,42 @@
       "sources": [
         {
           "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "演员",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "红尘误此生",
+      "artist": "宋晓峰",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "情怨",
+      "artist": "刘欢",
+      "sources": [
+        {
+          "source": "rise",
           "rank": 14
         }
       ],
@@ -631,11 +607,11 @@
       "bestRank": 15
     },
     {
-      "name": "雨终曲",
-      "artist": "宋雨琦 (YUQI) (우기)",
+      "name": "我以为",
+      "artist": "品冠",
       "sources": [
         {
-          "source": "new",
+          "source": "rise",
           "rank": 15
         }
       ],
@@ -643,20 +619,8 @@
       "bestRank": 15
     },
     {
-      "name": "山河吟",
-      "artist": "海来阿木",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "素颜",
-      "artist": "许嵩/何曼婷",
+      "name": "失眠",
+      "artist": "Suki刘舒妤",
       "sources": [
         {
           "source": "hot",
@@ -667,8 +631,8 @@
       "bestRank": 16
     },
     {
-      "name": "鱼仔",
-      "artist": "卢广仲",
+      "name": "男人歌 (feat.大壮)",
+      "artist": "宝石Gem/大壮",
       "sources": [
         {
           "source": "rise",
@@ -679,8 +643,32 @@
       "bestRank": 16
     },
     {
-      "name": "你是我等不到的人",
-      "artist": "正在进行石女士",
+      "name": "我爱你中国 (Live)",
+      "artist": "孙楠/韩红/黄绮珊/古巨基",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "素颜",
+      "artist": "许嵩/何曼婷",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "一曲微茫",
+      "artist": "郁可唯",
       "sources": [
         {
           "source": "new",
@@ -691,8 +679,8 @@
       "bestRank": 17
     },
     {
-      "name": "无情画",
-      "artist": "王唯旖",
+      "name": "等你的季节",
+      "artist": "刘诗诗",
       "sources": [
         {
           "source": "rise",
@@ -703,8 +691,8 @@
       "bestRank": 17
     },
     {
-      "name": "出现又离开 (Live)",
-      "artist": "梁博",
+      "name": "Whatever Happens",
+      "artist": "Michael Jackson/Carlos Santana",
       "sources": [
         {
           "source": "popular",
@@ -727,8 +715,8 @@
       "bestRank": 18
     },
     {
-      "name": "红尘误此生",
-      "artist": "宋晓峰",
+      "name": "雨终曲",
+      "artist": "宋雨琦 (YUQI) (우기)",
       "sources": [
         {
           "source": "new",
@@ -739,8 +727,8 @@
       "bestRank": 18
     },
     {
-      "name": "听见下雨的声音",
-      "artist": "周杰伦",
+      "name": "潮",
+      "artist": "任嘉伦/欧豪/王栎鑫/曾舜晞",
       "sources": [
         {
           "source": "rise",
@@ -751,8 +739,8 @@
       "bestRank": 18
     },
     {
-      "name": "我爱你中国 (Live)",
-      "artist": "孙楠/韩红/黄绮珊/古巨基",
+      "name": "找名字的人",
+      "artist": "任素汐",
       "sources": [
         {
           "source": "popular",
@@ -761,6 +749,18 @@
       ],
       "sourceCount": 1,
       "bestRank": 18
+    },
+    {
+      "name": "春娇与志明",
+      "artist": "街道办GDC/欧阳耀莹",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
     },
     {
       "name": "Patient Zero",
@@ -775,8 +775,8 @@
       "bestRank": 19
     },
     {
-      "name": "Solace Feat. Emily Vaughn",
-      "artist": "Vicetone/Emily Vaughn",
+      "name": "你过得好吗",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "rise",
@@ -787,8 +787,8 @@
       "bestRank": 19
     },
     {
-      "name": "水蓝色情人",
-      "artist": "刘宇",
+      "name": "一念江山",
+      "artist": "孙楠/徐子尧",
       "sources": [
         {
           "source": "popular",
@@ -811,11 +811,11 @@
       "bestRank": 20
     },
     {
-      "name": "一曲微茫",
-      "artist": "郁可唯",
+      "name": "恶作剧",
+      "artist": "王蓝茵",
       "sources": [
         {
-          "source": "new",
+          "source": "rise",
           "rank": 20
         }
       ],
@@ -823,11 +823,11 @@
       "bestRank": 20
     },
     {
-      "name": "温柔",
-      "artist": "五月天",
+      "name": "每一次当爱在靠近",
+      "artist": "烟嗓船长",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 20
         }
       ],
