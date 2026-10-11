@@ -1,26 +1,26 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-10-10T01:20:22.510Z",
+  "updatedAt": "2026-10-11T00:33:23.322Z",
   "songs": [
     {
-      "name": "大梦归",
-      "artist": "周深",
+      "name": "奇迹",
+      "artist": "贺峻霖",
       "sources": [
         {
           "source": "hot",
-          "rank": 7
+          "rank": 3
         },
         {
           "source": "new",
-          "rank": 2
+          "rank": 3
         },
         {
           "source": "rise",
-          "rank": 11
+          "rank": 2
         },
         {
           "source": "popular",
-          "rank": 6
+          "rank": 10
         }
       ],
       "sourceCount": 4,
@@ -32,7 +32,7 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 3
+          "rank": 6
         },
         {
           "source": "new",
@@ -44,6 +44,62 @@
         }
       ],
       "sourceCount": 3,
+      "bestRank": 1
+    },
+    {
+      "name": "大梦归",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 10
+        },
+        {
+          "source": "new",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 2
+    },
+    {
+      "name": "莫忙",
+      "artist": "吴莫愁",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 5
+        },
+        {
+          "source": "rise",
+          "rank": 8
+        },
+        {
+          "source": "popular",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 5
+    },
+    {
+      "name": "One Of The Girls",
+      "artist": "The Weeknd/JENNIE (제니)/Lily-Rose Depp",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 1
+        },
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 2,
       "bestRank": 1
     },
     {
@@ -52,115 +108,23 @@
       "sources": [
         {
           "source": "new",
-          "rank": 3
-        },
-        {
-          "source": "rise",
-          "rank": 1
+          "rank": 6
         },
         {
           "source": "popular",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 1
-    },
-    {
-      "name": "深深的我们",
-      "artist": "刘惜君",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 12
-        },
-        {
-          "source": "rise",
-          "rank": 18
-        },
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 12
-    },
-    {
-      "name": "花开满篱院",
-      "artist": "谭松韵",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 16
-        },
-        {
-          "source": "rise",
-          "rank": 13
-        },
-        {
-          "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 13
-    },
-    {
-      "name": "你不要那样看着我的眼睛",
-      "artist": "蔡琴",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 19
-        },
-        {
-          "source": "popular",
-          "rank": 5
+          "rank": 4
         }
       ],
       "sourceCount": 2,
-      "bestRank": 5
+      "bestRank": 4
     },
     {
-      "name": "一曲微茫",
-      "artist": "郁可唯",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        },
-        {
-          "source": "rise",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "世界第一等",
-      "artist": "卡宾先生",
+      "name": "趁早",
+      "artist": "张惠妹",
       "sources": [
         {
           "source": "rise",
-          "rank": 12
-        },
-        {
-          "source": "popular",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "开始懂了",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 12
+          "rank": 6
         },
         {
           "source": "popular",
@@ -168,23 +132,71 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 12
+      "bestRank": 6
     },
     {
-      "name": "同道",
-      "artist": "李佳薇",
+      "name": "你不要那样看着我的眼睛",
+      "artist": "蔡琴",
       "sources": [
         {
-          "source": "new",
-          "rank": 15
+          "source": "rise",
+          "rank": 12
         },
         {
-          "source": "rise",
-          "rank": 16
+          "source": "popular",
+          "rank": 9
         }
       ],
       "sourceCount": 2,
-      "bestRank": 15
+      "bestRank": 9
+    },
+    {
+      "name": "风月吻眉梢",
+      "artist": "礼越",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 20
+        },
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 13
+    },
+    {
+      "name": "Take Me Back",
+      "artist": "Tamboss",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
+        },
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 13
+    },
+    {
+      "name": "无奈的思绪",
+      "artist": "嘉慧",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 14
+        },
+        {
+          "source": "popular",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 14
     },
     {
       "name": "我不难过",
@@ -211,18 +223,6 @@
       "bestRank": 2
     },
     {
-      "name": "快乐",
-      "artist": "宋雨琦 (YUQI) (우기)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 2
-    },
-    {
       "name": "You Are All I Need",
       "artist": "FLY COAST/二宮愛 (にのみや あい)",
       "sources": [
@@ -235,11 +235,23 @@
       "bestRank": 2
     },
     {
-      "name": "银河之舞",
-      "artist": "宋雨琦 (YUQI) (우기)",
+      "name": "Know My Name (以我之名)",
+      "artist": "True Damage/英雄联盟/Sofia Reyes/Vic Mensa",
       "sources": [
         {
           "source": "rise",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
+      "name": "隔岸",
+      "artist": "姚六一",
+      "sources": [
+        {
+          "source": "popular",
           "rank": 3
         }
       ],
@@ -271,23 +283,11 @@
       "bestRank": 4
     },
     {
-      "name": "I Like You",
-      "artist": "宋雨琦 (YUQI) (우기)",
+      "name": "月亮桥",
+      "artist": "周深",
       "sources": [
         {
           "source": "rise",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
-      "name": "隔岸",
-      "artist": "姚六一",
-      "sources": [
-        {
-          "source": "popular",
           "rank": 4
         }
       ],
@@ -307,20 +307,8 @@
       "bestRank": 5
     },
     {
-      "name": "异想天开",
-      "artist": "肖战",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 5
-    },
-    {
-      "name": "Chamomile Tea",
-      "artist": "宋雨琦 (YUQI) (우기)",
+      "name": "最难得",
+      "artist": "单依纯",
       "sources": [
         {
           "source": "rise",
@@ -331,44 +319,44 @@
       "bestRank": 5
     },
     {
-      "name": "茶汤",
-      "artist": "郁可唯",
+      "name": "我听见了，你的痛苦成立",
+      "artist": "供销社乐队",
       "sources": [
         {
-          "source": "hot",
+          "source": "popular",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "世界第一等",
+      "artist": "卡宾先生",
+      "sources": [
+        {
+          "source": "popular",
           "rank": 6
         }
       ],
       "sourceCount": 1,
       "bestRank": 6
+    },
+    {
+      "name": "恋人",
+      "artist": "李荣浩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
     },
     {
       "name": "Moonride",
       "artist": "Hearts2Hearts",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "Stay",
-      "artist": "宋雨琦 (YUQI) (우기)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "CRASH",
-      "artist": "ALLDAY PROJECT",
       "sources": [
         {
           "source": "new",
@@ -379,8 +367,8 @@
       "bestRank": 7
     },
     {
-      "name": "Feels Right",
-      "artist": "宋雨琦 (YUQI) (우기)",
+      "name": "After Hours",
+      "artist": "The Weeknd",
       "sources": [
         {
           "source": "rise",
@@ -403,136 +391,40 @@
       "bestRank": 7
     },
     {
-      "name": "恋人",
-      "artist": "李荣浩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "One Of The Girls",
-      "artist": "The Weeknd/JENNIE (제니)/Lily-Rose Depp",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
       "name": "泪海",
       "artist": "许茹芸",
       "sources": [
         {
           "source": "hot",
-          "rank": 9
+          "rank": 8
         }
       ],
       "sourceCount": 1,
-      "bestRank": 9
+      "bestRank": 8
     },
     {
-      "name": "山风山风等等我",
-      "artist": "半吨兄弟",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "未深入但了解",
-      "artist": "MC 张天赋",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "TAKE ME",
-      "artist": "G-DRAGON (权志龙)",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "雨爱",
-      "artist": "杨丞琳",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "Allez, aimez!",
+      "name": "异想天开",
       "artist": "肖战",
       "sources": [
         {
           "source": "new",
-          "rank": 10
+          "rank": 8
         }
       ],
       "sourceCount": 1,
-      "bestRank": 10
+      "bestRank": 8
     },
     {
-      "name": "落了白",
-      "artist": "蒋雪儿Snow.J",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "做恋人不可能 (合唱版)",
-      "artist": "杨友友/烟嗓船长",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "我怀念的",
-      "artist": "孙燕姿",
+      "name": "茶汤",
+      "artist": "郁可唯",
       "sources": [
         {
           "source": "hot",
-          "rank": 11
+          "rank": 9
         }
       ],
       "sourceCount": 1,
-      "bestRank": 11
+      "bestRank": 9
     },
     {
       "name": "忘飞的鸽",
@@ -540,83 +432,23 @@
       "sources": [
         {
           "source": "new",
-          "rank": 11
+          "rank": 9
         }
       ],
       "sourceCount": 1,
-      "bestRank": 11
+      "bestRank": 9
     },
     {
-      "name": "醒时歌",
-      "artist": "周传雄/希林娜依高",
+      "name": "落了白",
+      "artist": "蒋雪儿Snow.J",
       "sources": [
         {
-          "source": "popular",
-          "rank": 11
+          "source": "rise",
+          "rank": 9
         }
       ],
       "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "好久不见",
-      "artist": "NAVE/黄婷婷",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "爱错",
-      "artist": "王力宏",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "红尘误此生",
-      "artist": "宋晓峰",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "浪漫樱花（Psy Bounce） (猛Remix)",
-      "artist": "猛弟/邹子寒",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "Always Online",
-      "artist": "林俊杰",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
+      "bestRank": 9
     },
     {
       "name": "忘了怎么天晴",
@@ -624,6 +456,126 @@
       "sources": [
         {
           "source": "new",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "Starboy (Explicit)",
+      "artist": "The Weeknd/Daft Punk",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
+    },
+    {
+      "name": "雨爱",
+      "artist": "杨丞琳",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "红尘误此生",
+      "artist": "宋晓峰",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "Die For You",
+      "artist": "The Weeknd",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "等你的季节",
+      "artist": "刘诗诗",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "我怀念的",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "CRASH",
+      "artist": "ALLDAY PROJECT",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "开始懂了",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "不是对手",
+      "artist": "李圣杰",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "一曲微茫",
+      "artist": "郁可唯",
+      "sources": [
+        {
+          "source": "new",
           "rank": 14
         }
       ],
@@ -631,8 +583,8 @@
       "bestRank": 14
     },
     {
-      "name": "那些女孩教我的事",
-      "artist": "品冠",
+      "name": "吹梦到西洲",
+      "artist": "昭爻tsuki/千世",
       "sources": [
         {
           "source": "rise",
@@ -643,8 +595,8 @@
       "bestRank": 14
     },
     {
-      "name": "等你的季节",
-      "artist": "刘诗诗",
+      "name": "做恋人不可能 (合唱版)",
+      "artist": "杨友友/烟嗓船长",
       "sources": [
         {
           "source": "popular",
@@ -655,8 +607,8 @@
       "bestRank": 14
     },
     {
-      "name": "唯一",
-      "artist": "G.E.M.邓紫棋",
+      "name": "爱错",
+      "artist": "王力宏",
       "sources": [
         {
           "source": "hot",
@@ -667,8 +619,20 @@
       "bestRank": 15
     },
     {
-      "name": "破云端",
-      "artist": "卓沅",
+      "name": "山风山风等等我",
+      "artist": "半吨兄弟",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "Canada Dry",
+      "artist": "Troye Sivan",
       "sources": [
         {
           "source": "rise",
@@ -679,8 +643,8 @@
       "bestRank": 15
     },
     {
-      "name": "特别的人",
-      "artist": "方大同",
+      "name": "幻听",
+      "artist": "许嵩",
       "sources": [
         {
           "source": "hot",
@@ -691,8 +655,44 @@
       "bestRank": 16
     },
     {
-      "name": "红色高跟鞋",
-      "artist": "蔡健雅",
+      "name": "静待清光",
+      "artist": "许明明",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "天龙八部之宿敌",
+      "artist": "许嵩",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "浪漫樱花（Psy Bounce） (猛Remix)",
+      "artist": "猛弟/邹子寒",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "出现又离开 (Live)",
+      "artist": "梁博",
       "sources": [
         {
           "source": "hot",
@@ -703,8 +703,8 @@
       "bestRank": 17
     },
     {
-      "name": "雨终曲",
-      "artist": "宋雨琦 (YUQI) (우기)",
+      "name": "睡前别想太多",
+      "artist": "李雨霏",
       "sources": [
         {
           "source": "new",
@@ -715,8 +715,8 @@
       "bestRank": 17
     },
     {
-      "name": "我来书写我的名",
-      "artist": "王铮亮",
+      "name": "Is There Someone Else?",
+      "artist": "The Weeknd",
       "sources": [
         {
           "source": "rise",
@@ -727,8 +727,8 @@
       "bestRank": 17
     },
     {
-      "name": "春娇与志明",
-      "artist": "街道办GDC/欧阳耀莹",
+      "name": "唯一",
+      "artist": "G.E.M.邓紫棋",
       "sources": [
         {
           "source": "hot",
@@ -739,8 +739,8 @@
       "bestRank": 18
     },
     {
-      "name": "甲乙丙丁 (合唱版)",
-      "artist": "李佳薇/张新成",
+      "name": "花开满篱院",
+      "artist": "谭松韵",
       "sources": [
         {
           "source": "new",
@@ -751,22 +751,22 @@
       "bestRank": 18
     },
     {
-      "name": "想要把你忘记真的好难 (合唱版)",
-      "artist": "杨友友/田园",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "出现又离开 (Live)",
+      "name": "表态 (Live)",
       "artist": "梁博",
       "sources": [
         {
+          "source": "rise",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "Always Online",
+      "artist": "林俊杰",
+      "sources": [
+        {
           "source": "hot",
           "rank": 19
         }
@@ -775,8 +775,8 @@
       "bestRank": 19
     },
     {
-      "name": "思念若是一首诗",
-      "artist": "万妮达Vinida Weng",
+      "name": "同道",
+      "artist": "李佳薇",
       "sources": [
         {
           "source": "new",
@@ -787,8 +787,20 @@
       "bestRank": 19
     },
     {
-      "name": "孤独的总和",
-      "artist": "吴汶芳",
+      "name": "FF (Explicit)",
+      "artist": "Troye Sivan",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "护你一世安好 (万人演唱会live版)",
+      "artist": "沧桑小杰office",
       "sources": [
         {
           "source": "popular",
@@ -799,20 +811,8 @@
       "bestRank": 19
     },
     {
-      "name": "演员",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 20
-    },
-    {
-      "name": "静待清光",
-      "artist": "许明明",
+      "name": "Allez, aimez!",
+      "artist": "肖战",
       "sources": [
         {
           "source": "new",
@@ -823,11 +823,11 @@
       "bestRank": 20
     },
     {
-      "name": "趁早",
-      "artist": "张惠妹",
+      "name": "The Hills (Explicit)",
+      "artist": "The Weeknd",
       "sources": [
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 20
         }
       ],
