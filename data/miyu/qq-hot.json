@@ -1,7 +1,31 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-10-22T00:16:43.088Z",
+  "updatedAt": "2026-10-23T00:13:07.376Z",
   "songs": [
+    {
+      "name": "轻轻",
+      "artist": "肖战",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 4
+        },
+        {
+          "source": "new",
+          "rank": 5
+        },
+        {
+          "source": "rise",
+          "rank": 1
+        },
+        {
+          "source": "popular",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 4,
+      "bestRank": 1
+    },
     {
       "name": "NEON",
       "artist": "A2O LITE/A2O",
@@ -16,26 +40,6 @@
         },
         {
           "source": "popular",
-          "rank": 1
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 1
-    },
-    {
-      "name": "FIRESTARTER",
-      "artist": "K/DA/英雄联盟/i-dle (아이들)/Mimi Webb",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 11
-        },
-        {
-          "source": "rise",
-          "rank": 1
-        },
-        {
-          "source": "popular",
           "rank": 13
         }
       ],
@@ -43,19 +47,19 @@
       "bestRank": 1
     },
     {
-      "name": "万里长风",
-      "artist": "周深",
+      "name": "SUPERSTAR",
+      "artist": "A2O SOUL/A2O",
       "sources": [
         {
           "source": "hot",
-          "rank": 16
+          "rank": 11
         },
         {
           "source": "new",
-          "rank": 16
+          "rank": 3
         },
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 2
         }
       ],
@@ -63,60 +67,24 @@
       "bestRank": 2
     },
     {
-      "name": "SUPERSTAR",
-      "artist": "A2O SOUL/A2O",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 9
-        },
-        {
-          "source": "new",
-          "rank": 3
-        },
-        {
-          "source": "popular",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 3
-    },
-    {
-      "name": "无法复刻",
-      "artist": "TF_ING童禹坤",
+      "name": "戒断 (BAD HABITS TONITE)",
+      "artist": "A2O MAY/A2O",
       "sources": [
         {
           "source": "new",
-          "rank": 12
-        },
-        {
-          "source": "rise",
           "rank": 4
         },
         {
-          "source": "popular",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 4
-    },
-    {
-      "name": "天龙八部之宿敌",
-      "artist": "许嵩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 2
+          "source": "rise",
+          "rank": 7
         },
         {
           "source": "popular",
           "rank": 11
         }
       ],
-      "sourceCount": 2,
-      "bestRank": 2
+      "sourceCount": 3,
+      "bestRank": 4
     },
     {
       "name": "Baby's Horizon",
@@ -128,51 +96,19 @@
         },
         {
           "source": "popular",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
+      "name": "天龙八部之宿敌",
+      "artist": "许嵩",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 2
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 2
-    },
-    {
-      "name": "火种",
-      "artist": "成毅",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 4
-        },
-        {
-          "source": "popular",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 4
-    },
-    {
-      "name": "光·影",
-      "artist": "云旗/郝熠然",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        },
-        {
-          "source": "popular",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 4
-    },
-    {
-      "name": "Devilish (昼夜狂想)",
-      "artist": "无限王者团/王者荣耀",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 5
         },
         {
           "source": "popular",
@@ -180,43 +116,27 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 5
+      "bestRank": 2
     },
     {
-      "name": "新·与天齐",
-      "artist": "指尖笑",
+      "name": "年少",
+      "artist": "康子奇",
       "sources": [
         {
           "source": "rise",
-          "rank": 15
+          "rank": 3
         },
         {
           "source": "popular",
-          "rank": 5
+          "rank": 3
         }
       ],
       "sourceCount": 2,
-      "bestRank": 5
+      "bestRank": 3
     },
     {
-      "name": "大漠长明",
-      "artist": "指南针",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 9
-        },
-        {
-          "source": "popular",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 6
-    },
-    {
-      "name": "早上坏",
-      "artist": "黄灿灿",
+      "name": "无法复刻",
+      "artist": "TF_ING童禹坤",
       "sources": [
         {
           "source": "new",
@@ -224,54 +144,22 @@
         },
         {
           "source": "popular",
-          "rank": 17
+          "rank": 12
         }
       ],
       "sourceCount": 2,
       "bestRank": 7
     },
     {
-      "name": "自己的灯自己点",
-      "artist": "尤映冬",
+      "name": "光·影",
+      "artist": "云旗/郝熠然",
       "sources": [
         {
           "source": "new",
-          "rank": 17
+          "rank": 14
         },
         {
           "source": "popular",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "没退路 (Live)",
-      "artist": "陆虎/犬傲天/李奕瀚",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 8
-        },
-        {
-          "source": "popular",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 8
-    },
-    {
-      "name": "异想天开",
-      "artist": "肖战",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 20
-        },
-        {
-          "source": "rise",
           "rank": 9
         }
       ],
@@ -279,24 +167,24 @@
       "bestRank": 9
     },
     {
-      "name": "睡前别想太多",
-      "artist": "李雨霏",
+      "name": "早上坏",
+      "artist": "黄灿灿",
       "sources": [
         {
           "source": "new",
-          "rank": 15
+          "rank": 10
         },
         {
-          "source": "rise",
-          "rank": 10
+          "source": "popular",
+          "rank": 18
         }
       ],
       "sourceCount": 2,
       "bestRank": 10
     },
     {
-      "name": "RTTT",
-      "artist": "鹭卓",
+      "name": "大漠长明",
+      "artist": "指南针",
       "sources": [
         {
           "source": "new",
@@ -304,59 +192,55 @@
         },
         {
           "source": "popular",
-          "rank": 16
+          "rank": 15
         }
       ],
       "sourceCount": 2,
       "bestRank": 11
     },
     {
-      "name": "我爱你",
-      "artist": "王菲",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 12
-        },
-        {
-          "source": "popular",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 12
-    },
-    {
-      "name": "同往",
-      "artist": "章昊 (AND2BLE)",
+      "name": "Galaxy Far Far Away",
+      "artist": "侯明昊",
       "sources": [
         {
           "source": "new",
-          "rank": 13
+          "rank": 16
         },
         {
           "source": "popular",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 16
+    },
+    {
+      "name": "仲夏夜的海鸥颂",
+      "artist": "赵磊",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 17
+        },
+        {
+          "source": "rise",
           "rank": 18
         }
       ],
       "sourceCount": 2,
-      "bestRank": 13
+      "bestRank": 17
     },
     {
-      "name": "Run Away (远走高飞)",
-      "artist": "王奕",
+      "name": "前路有光",
+      "artist": "张杰",
       "sources": [
         {
-          "source": "new",
-          "rank": 18
-        },
-        {
           "source": "rise",
-          "rank": 13
+          "rank": 2
         }
       ],
-      "sourceCount": 2,
-      "bestRank": 13
+      "sourceCount": 1,
+      "bestRank": 2
     },
     {
       "name": "我不难过",
@@ -371,23 +255,11 @@
       "bestRank": 3
     },
     {
-      "name": "旅行的天赋",
-      "artist": "告五人",
+      "name": "远征",
+      "artist": "那英",
       "sources": [
         {
           "source": "rise",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 3
-    },
-    {
-      "name": "甲乙丙丁 (你我怎么两清)",
-      "artist": "李佳薇",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 4
         }
       ],
@@ -395,8 +267,20 @@
       "bestRank": 4
     },
     {
-      "name": "恋人",
-      "artist": "李荣浩",
+      "name": "新·与天齐",
+      "artist": "指尖笑",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 4
+    },
+    {
+      "name": "甲乙丙丁 (你我怎么两清)",
+      "artist": "李佳薇",
       "sources": [
         {
           "source": "hot",
@@ -407,8 +291,8 @@
       "bestRank": 5
     },
     {
-      "name": "过渡期",
-      "artist": "小宇-宋念宇",
+      "name": "Trojan Horse (Prod By THE HUB)",
+      "artist": "伯贤 (백현)",
       "sources": [
         {
           "source": "rise",
@@ -417,6 +301,66 @@
       ],
       "sourceCount": 1,
       "bestRank": 5
+    },
+    {
+      "name": "秋风轻轻对我说",
+      "artist": "L（桃籽）",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "恋人",
+      "artist": "李荣浩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "火种",
+      "artist": "成毅",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "我只在乎你",
+      "artist": "邓丽君",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "我又不是取经人",
+      "artist": "阿哑",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
     },
     {
       "name": "雨爱",
@@ -424,30 +368,6 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "Call your name (Gv)",
-      "artist": "澤野弘之 (さわの ひろゆき)/R!N/Gemie",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 6
-    },
-    {
-      "name": "我怀念的",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 7
         }
       ],
@@ -455,20 +375,8 @@
       "bestRank": 7
     },
     {
-      "name": "Just Give Me a Reason",
-      "artist": "P!NK/Nate Ruess",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 7
-    },
-    {
-      "name": "我又不是取经人",
-      "artist": "阿哑",
+      "name": "FIRESTARTER",
+      "artist": "K/DA/英雄联盟/i-dle (아이들)/Mimi Webb",
       "sources": [
         {
           "source": "popular",
@@ -479,8 +387,8 @@
       "bestRank": 7
     },
     {
-      "name": "情歌",
-      "artist": "梁静茹",
+      "name": "我怀念的",
+      "artist": "孙燕姿",
       "sources": [
         {
           "source": "hot",
@@ -503,6 +411,54 @@
       "bestRank": 8
     },
     {
+      "name": "翦玉令·燕辞归 Tune: \"Sheared Jade\" - Return of the Swallow",
+      "artist": "HOYO-MiX",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 8
+    },
+    {
+      "name": "情歌",
+      "artist": "梁静茹",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "忘飞的鸽",
+      "artist": "黄子弘凡",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
+      "name": "1% Battery Girl 低电量女孩",
+      "artist": "ChiliChill乐团/三Z-STUDIO/HOYO-MiX",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 9
+    },
+    {
       "name": "开始懂了",
       "artist": "孙燕姿",
       "sources": [
@@ -515,11 +471,11 @@
       "bestRank": 10
     },
     {
-      "name": "如诗一般的形容妳",
-      "artist": "曹杨",
+      "name": "삐그덕 (Feat. 아이유) (seesaw)",
+      "artist": "Crush (크러쉬)/IU (아이유)",
       "sources": [
         {
-          "source": "new",
+          "source": "rise",
           "rank": 10
         }
       ],
@@ -539,8 +495,8 @@
       "bestRank": 10
     },
     {
-      "name": "蔷薇青竹",
-      "artist": "张远/黄霄雲",
+      "name": "无与伦比的美丽 (苏打绿版)",
+      "artist": "苏打绿",
       "sources": [
         {
           "source": "rise",
@@ -551,8 +507,8 @@
       "bestRank": 11
     },
     {
-      "name": "你不要那样看着我的眼睛",
-      "artist": "蔡琴",
+      "name": "爱错",
+      "artist": "王力宏",
       "sources": [
         {
           "source": "hot",
@@ -563,8 +519,32 @@
       "bestRank": 12
     },
     {
-      "name": "爱错",
+      "name": "如诗一般的形容妳",
+      "artist": "曹杨",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "你不知道的事",
       "artist": "王力宏",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "你不要那样看着我的眼睛",
+      "artist": "蔡琴",
       "sources": [
         {
           "source": "hot",
@@ -575,8 +555,32 @@
       "bestRank": 13
     },
     {
-      "name": "大梦归",
-      "artist": "周深",
+      "name": "睡前别想太多",
+      "artist": "李雨霏",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "过渡期",
+      "artist": "小宇-宋念宇",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "特别的人",
+      "artist": "方大同",
       "sources": [
         {
           "source": "hot",
@@ -587,20 +591,8 @@
       "bestRank": 14
     },
     {
-      "name": "静待清光",
-      "artist": "许明明",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "Cry For Me (feat. Ami) (为我哭泣)",
-      "artist": "Michita (ミチタ)",
+      "name": "爱你没错",
+      "artist": "张信哲",
       "sources": [
         {
           "source": "rise",
@@ -623,8 +615,44 @@
       "bestRank": 15
     },
     {
-      "name": "1% Battery Girl 低电量女孩",
-      "artist": "ChiliChill乐团/三Z-STUDIO/HOYO-MiX",
+      "name": "静待清光",
+      "artist": "许明明",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "我还在树下等一个人",
+      "artist": "陆虎",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "Always Online",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "隔岸 (女版)",
+      "artist": "可楼",
       "sources": [
         {
           "source": "rise",
@@ -635,8 +663,8 @@
       "bestRank": 16
     },
     {
-      "name": "特别的人",
-      "artist": "方大同",
+      "name": "春娇与志明",
+      "artist": "街道办GDC/欧阳耀莹",
       "sources": [
         {
           "source": "hot",
@@ -647,8 +675,8 @@
       "bestRank": 17
     },
     {
-      "name": "他不准我哭",
-      "artist": "邓丽欣",
+      "name": "일주일 (一周)",
+      "artist": "SISTAR (씨스타)",
       "sources": [
         {
           "source": "rise",
@@ -659,8 +687,20 @@
       "bestRank": 17
     },
     {
-      "name": "Always Online",
-      "artist": "林俊杰",
+      "name": "自诩周全 (Live)",
+      "artist": "刘宇宁",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "大梦归",
+      "artist": "周深",
       "sources": [
         {
           "source": "hot",
@@ -671,11 +711,11 @@
       "bestRank": 18
     },
     {
-      "name": "你就不要想起我",
-      "artist": "田馥甄",
+      "name": "思念像一场重感冒",
+      "artist": "余佳运",
       "sources": [
         {
-          "source": "rise",
+          "source": "new",
           "rank": 18
         }
       ],
@@ -683,8 +723,8 @@
       "bestRank": 18
     },
     {
-      "name": "素颜",
-      "artist": "许嵩/何曼婷",
+      "name": "唯一",
+      "artist": "G.E.M.邓紫棋",
       "sources": [
         {
           "source": "hot",
@@ -707,8 +747,8 @@
       "bestRank": 19
     },
     {
-      "name": "Allez, aimez!",
-      "artist": "肖战",
+      "name": "你在看孤独的风景",
+      "artist": "本兮/单小源",
       "sources": [
         {
           "source": "rise",
@@ -719,8 +759,8 @@
       "bestRank": 19
     },
     {
-      "name": "Galaxy Far Far Away",
-      "artist": "侯明昊",
+      "name": "我爱你",
+      "artist": "王菲",
       "sources": [
         {
           "source": "popular",
@@ -731,8 +771,8 @@
       "bestRank": 19
     },
     {
-      "name": "春娇与志明",
-      "artist": "街道办GDC/欧阳耀莹",
+      "name": "演员",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "hot",
@@ -743,11 +783,35 @@
       "bestRank": 20
     },
     {
-      "name": "无奈的思绪",
-      "artist": "嘉慧",
+      "name": "甲乙丙丁 (合唱版)",
+      "artist": "李佳薇/张新成",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 20
+    },
+    {
+      "name": "天空之外",
+      "artist": "弦子",
       "sources": [
         {
           "source": "rise",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 20
+    },
+    {
+      "name": "万里长风",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "popular",
           "rank": 20
         }
       ],
