@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>謎嶼小屋｜萬聖節抽籤</title><link rel="stylesheet" href="./miyu_halloween.css?v=20261026"></head>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>謎嶼小屋｜萬聖節抽籤</title><link rel="stylesheet" href="./miyu_halloween.css?v=2026102602"></head>
 <body><main>
 <header><a class="back" href="./miyu_toolbox.html?tool=midAutumn">← 謎嶼工具箱</a><div class="eyebrow">MIYU · HALLOWEEN NIGHT</div><h1>不給糖，就來抽個驚喜。</h1><p>六件神秘道具，一份只屬於你的小禮物。</p><div class="pills"><span>🎵 主題歌曲</span><span>🎙 專屬頭像音</span><span>✉ 粉絲群頭銜</span></div></header>
-<div class="playbar"><label for="fan">今晚輪到的小耳朵</label><div class="entry"><input id="fan" maxlength="40" autocomplete="off" placeholder="輸入小耳朵的名字" aria-describedby="rule"><button id="stage">舞台模式</button></div><p id="rule">每人每場一次 · 每件道具 5 首歌＋3 段頭像音＋2 個群頭銜 · 免費參與</p></div>
+<div class="playbar"><div class="entry"><button id="stage">舞台模式</button></div><p id="rule">直接點選道具抽籤 · 每件道具 5 首歌＋3 段頭像音＋2 個群頭銜 · 免費參與</p></div>
 <div id="notice" role="status" aria-live="polite"></div>
 <section id="props" class="props" aria-label="選擇萬聖節道具"></section>
-<section id="reveal" class="reveal" aria-live="polite"><div id="resultIcon" class="result-icon">✦</div><div id="resultMeta" class="eyebrow">PICK A LITTLE MAGIC</div><h2 id="resultTitle">選一件道具，揭曉今晚的驚喜</h2><p id="resultBody">先輸入名字，再點選喜歡的道具。抽過的卡片，本場不會再出現。</p><p id="resultHint" class="muted"></p><div class="actions" id="resultActions" hidden><button id="copy">複製結果</button><button id="finish">標記已完成</button></div></section>
+<section id="reveal" class="reveal" aria-live="polite"><div id="resultIcon" class="result-icon">✦</div><div id="resultMeta" class="eyebrow">PICK A LITTLE MAGIC</div><h2 id="resultTitle">選一件道具，揭曉今晚的驚喜</h2><p id="resultBody">直接點選喜歡的道具，就能抽籤。抽過的卡片，本場不會再出現。</p><p id="resultHint" class="muted"></p><div class="actions" id="resultActions" hidden><button id="copy">複製結果</button><button id="finish">標記已完成</button></div></section>
 <div class="stage-exit"><button id="exitStage">退出舞台模式</button></div>
 <section class="management"><div class="section-head"><div><div class="eyebrow">TONIGHT'S MEMORIES</div><h2>今晚的驚喜紀錄 <span id="count">0 / 60</span></h2></div><button id="csv">匯出領取清單</button></div><p class="muted">歌曲現場清唱；頭像音直播後錄送；群頭銜由主播命名。紀錄只保存在此瀏覽器，換裝置不會同步。</p><div id="history" class="history"></div><div class="actions"><button id="undo">撤回上一抽</button><button id="backup">備份本場</button><button id="import">載入備份</button><input type="file" id="importFile" accept="application/json,.json" hidden><button id="reset" class="danger">開始新一場</button></div>
 <details id="editor"><summary>⚙ 主播設定・查看／修改60張卡片</summary><p class="muted">只修改尚未抽出的卡片。已抽結果會保留原文。群頭銜可先留白，抽中後再命名。</p><div id="editorFields"></div><div class="actions"><button id="saveCards" class="primary">儲存卡片</button><button id="defaultCards">還原預設卡片</button></div></details>
 </section><footer>謎嶼小屋 · 今晚，開心就好。</footer>
-</main><script src="./miyu_halloween_data.js?v=20261026"></script><script src="./miyu_halloween.js?v=20261026"></script></body></html>
+</main><script src="./miyu_halloween_data.js?v=2026102602"></script><script src="./miyu_halloween.js?v=2026102602"></script></body></html>
