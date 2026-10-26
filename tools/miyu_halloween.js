@@ -36,7 +36,7 @@ function result(r){
  $('resultIcon').textContent=d.icon;$('resultMeta').textContent=`${d.name} · ${recordLabel(r)} · ${TYPES[r.type]}`;
  $('resultTitle').textContent=r.type==='song'?`《${r.title}》`:r.title;
  $('resultBody').textContent=r.detail;
- $('resultHint').textContent=r.type==='voice'?'直播後錄送 · 錄製時將【名字】換成小耳朵的暱稱':r.type==='song'?'現場清唱一小段，約20～30秒':'由主播命名 · 可在下方紀錄填入頭銜';
+ $('resultHint').textContent=r.type==='voice'?'直播後錄送 · 錄製時將【名字】換成小耳朵的暱稱':r.type==='song'?'':'由主播命名 · 可在下方紀錄填入頭銜';
  $('resultActions').hidden=false;$('finish').textContent=r.done?'已完成 ✓':'標記已完成';$('finish').disabled=r.done;
 }
 function renderHistory(){
