@@ -1,6 +1,6 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-10-28T00:47:06.133Z",
+  "updatedAt": "2026-10-29T01:19:22.004Z",
   "songs": [
     {
       "name": "我好像在哪见过你",
@@ -16,7 +16,7 @@
         },
         {
           "source": "popular",
-          "rank": 9
+          "rank": 2
         }
       ],
       "sourceCount": 3,
@@ -32,7 +32,7 @@
         },
         {
           "source": "rise",
-          "rank": 2
+          "rank": 3
         },
         {
           "source": "popular",
@@ -48,7 +48,7 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 8
+          "rank": 12
         },
         {
           "source": "new",
@@ -56,27 +56,67 @@
         },
         {
           "source": "popular",
-          "rank": 2
+          "rank": 3
         }
       ],
       "sourceCount": 3,
       "bestRank": 1
     },
     {
-      "name": "Insomnia",
-      "artist": "RIIZE (라이즈)",
+      "name": "I Don't Car!",
+      "artist": "蒋敦豪",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 4
+        },
+        {
+          "source": "rise",
+          "rank": 5
+        },
+        {
+          "source": "popular",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 4
+    },
+    {
+      "name": "Gotcha",
+      "artist": "鹭卓",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
+        },
+        {
+          "source": "rise",
+          "rank": 4
+        },
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 4
+    },
+    {
+      "name": "过渡期",
+      "artist": "小宇-宋念宇",
       "sources": [
         {
           "source": "hot",
-          "rank": 7
-        },
-        {
-          "source": "new",
-          "rank": 12
+          "rank": 13
         },
         {
           "source": "rise",
           "rank": 7
+        },
+        {
+          "source": "popular",
+          "rank": 10
         }
       ],
       "sourceCount": 3,
@@ -88,7 +128,7 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 5
+          "rank": 7
         },
         {
           "source": "new",
@@ -99,48 +139,16 @@
       "bestRank": 2
     },
     {
-      "name": "今夜让我带你高飞远走",
-      "artist": "五月天 阿信/言承旭/吴建豪/周渝民",
+      "name": "天龙八部之宿敌",
+      "artist": "许嵩",
       "sources": [
         {
-          "source": "new",
+          "source": "hot",
           "rank": 3
         },
         {
           "source": "popular",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "时过境迁",
-      "artist": "苏艺馨Chency",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        },
-        {
-          "source": "popular",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "You're Under Arrest",
-      "artist": "ILLIT (아일릿)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 19
-        },
-        {
-          "source": "rise",
-          "rank": 3
+          "rank": 20
         }
       ],
       "sourceCount": 2,
@@ -152,7 +160,7 @@
       "sources": [
         {
           "source": "new",
-          "rank": 4
+          "rank": 3
         },
         {
           "source": "popular",
@@ -160,31 +168,31 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 4
+      "bestRank": 3
     },
     {
-      "name": "和你的每一件小事",
-      "artist": "TF_ING邓佳鑫",
+      "name": "爱练",
+      "artist": "曾舜晞",
       "sources": [
         {
-          "source": "new",
+          "source": "hot",
           "rank": 5
         },
         {
-          "source": "popular",
-          "rank": 4
+          "source": "new",
+          "rank": 5
         }
       ],
       "sourceCount": 2,
-      "bestRank": 4
+      "bestRank": 5
     },
     {
-      "name": "不知道说什么",
-      "artist": "张靓颖",
+      "name": "隔岸 (女版)",
+      "artist": "可楼",
       "sources": [
         {
           "source": "new",
-          "rank": 9
+          "rank": 8
         },
         {
           "source": "popular",
@@ -195,12 +203,12 @@
       "bestRank": 5
     },
     {
-      "name": "当世界年纪小",
-      "artist": "任素汐",
+      "name": "和你的每一件小事",
+      "artist": "TF_ING邓佳鑫",
       "sources": [
         {
           "source": "new",
-          "rank": 11
+          "rank": 7
         },
         {
           "source": "popular",
@@ -208,11 +216,11 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 8
+      "bestRank": 7
     },
     {
-      "name": "隔岸 (女版)",
-      "artist": "可楼",
+      "name": "当世界年纪小",
+      "artist": "任素汐",
       "sources": [
         {
           "source": "new",
@@ -220,39 +228,135 @@
         },
         {
           "source": "popular",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 7
+    },
+    {
+      "name": "演员",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 8
+        },
+        {
+          "source": "rise",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 8
+    },
+    {
+      "name": "天外来物",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 20
+        },
+        {
+          "source": "rise",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 8
+    },
+    {
+      "name": "不知道说什么",
+      "artist": "张靓颖",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        },
+        {
+          "source": "popular",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 9
+    },
+    {
+      "name": "热烈之后",
+      "artist": "希林娜依高",
+      "sources": [
+        {
+          "source": "new",
           "rank": 10
+        },
+        {
+          "source": "popular",
+          "rank": 17
         }
       ],
       "sourceCount": 2,
       "bestRank": 10
     },
     {
-      "name": "轻轻",
-      "artist": "肖战",
+      "name": "过了",
+      "artist": "郁可唯",
       "sources": [
         {
           "source": "new",
-          "rank": 17
+          "rank": 11
         },
         {
           "source": "popular",
-          "rank": 13
+          "rank": 14
         }
       ],
       "sourceCount": 2,
-      "bestRank": 13
+      "bestRank": 11
     },
     {
-      "name": "天龙八部之宿敌",
-      "artist": "许嵩",
+      "name": "今夜让我带你高飞远走",
+      "artist": "五月天 阿信/言承旭/吴建豪/周渝民",
       "sources": [
         {
-          "source": "hot",
-          "rank": 3
+          "source": "new",
+          "rank": 19
+        },
+        {
+          "source": "popular",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 12
+    },
+    {
+      "name": "游梦",
+      "artist": "邹沛沛",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        },
+        {
+          "source": "popular",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 15
+    },
+    {
+      "name": "多久没有谈天光",
+      "artist": "杨千嬅",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 2
         }
       ],
       "sourceCount": 1,
-      "bestRank": 3
+      "bestRank": 2
     },
     {
       "name": "我不难过",
@@ -267,28 +371,16 @@
       "bestRank": 4
     },
     {
-      "name": "茉莉雨",
-      "artist": "林俊杰",
+      "name": "时过境迁",
+      "artist": "苏艺馨Chency",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 4
         }
       ],
       "sourceCount": 1,
       "bestRank": 4
-    },
-    {
-      "name": "Pop",
-      "artist": "ILLIT (아일릿)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 5
     },
     {
       "name": "甲乙丙丁 (你我怎么两清)",
@@ -303,8 +395,20 @@
       "bestRank": 6
     },
     {
-      "name": "刚刚好",
-      "artist": "薛之谦",
+      "name": "SUPERSTAR",
+      "artist": "A2O SOUL/A2O",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "昨天．今天．下雨天",
+      "artist": "彭家丽",
       "sources": [
         {
           "source": "rise",
@@ -315,40 +419,16 @@
       "bestRank": 6
     },
     {
-      "name": "SUPERSTAR",
-      "artist": "A2O SOUL/A2O",
+      "name": "恋人",
+      "artist": "李荣浩",
       "sources": [
         {
-          "source": "new",
-          "rank": 7
+          "source": "hot",
+          "rank": 9
         }
       ],
       "sourceCount": 1,
-      "bestRank": 7
-    },
-    {
-      "name": "Baby's Horizon",
-      "artist": "TF家族-张函瑞",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "Super in Love",
-      "artist": "ILLIT (아일릿)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
+      "bestRank": 9
     },
     {
       "name": "雨爱",
@@ -356,51 +436,15 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 9
+          "rank": 10
         }
       ],
       "sourceCount": 1,
-      "bestRank": 9
+      "bestRank": 10
     },
     {
-      "name": "像风一样",
+      "name": "刚刚好",
       "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
-      "name": "恋人",
-      "artist": "李荣浩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "思念像一场重感冒",
-      "artist": "余佳运",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "Hey, Somebody",
-      "artist": "肖俊",
       "sources": [
         {
           "source": "rise",
@@ -423,8 +467,8 @@
       "bestRank": 11
     },
     {
-      "name": "裹着心的光",
-      "artist": "林俊杰",
+      "name": "意外",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "rise",
@@ -435,23 +479,11 @@
       "bestRank": 11
     },
     {
-      "name": "匿名的好友",
-      "artist": "陈佩贤 Jesslyn",
+      "name": "思念像一场重感冒",
+      "artist": "余佳运",
       "sources": [
         {
-          "source": "popular",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "演员",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "hot",
+          "source": "new",
           "rank": 12
         }
       ],
@@ -459,7 +491,7 @@
       "bestRank": 12
     },
     {
-      "name": "暧昧",
+      "name": "认真的雪",
       "artist": "薛之谦",
       "sources": [
         {
@@ -471,16 +503,16 @@
       "bestRank": 12
     },
     {
-      "name": "过渡期",
-      "artist": "小宇-宋念宇",
+      "name": "愿世界和平",
+      "artist": "常石磊/王力宏/周深/单依纯",
       "sources": [
         {
-          "source": "popular",
-          "rank": 12
+          "source": "rise",
+          "rank": 13
         }
       ],
       "sourceCount": 1,
-      "bestRank": 12
+      "bestRank": 13
     },
     {
       "name": "情歌",
@@ -488,23 +520,23 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 13
+          "rank": 14
         }
       ],
       "sourceCount": 1,
-      "bestRank": 13
+      "bestRank": 14
     },
     {
-      "name": "More",
-      "artist": "ILLIT (아일릿)",
+      "name": "像风一样",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "rise",
-          "rank": 13
+          "rank": 14
         }
       ],
       "sourceCount": 1,
-      "bestRank": 13
+      "bestRank": 14
     },
     {
       "name": "开始懂了",
@@ -512,54 +544,6 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "睡前别想太多",
-      "artist": "李雨霏",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "天外来物",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "新·与天齐",
-      "artist": "指尖笑",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "特别的人",
-      "artist": "方大同",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 15
         }
       ],
@@ -567,19 +551,7 @@
       "bestRank": 15
     },
     {
-      "name": "Dear my crazy soulmate",
-      "artist": "IU (아이유)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "意外",
+      "name": "你还要我怎样",
       "artist": "薛之谦",
       "sources": [
         {
@@ -591,8 +563,8 @@
       "bestRank": 15
     },
     {
-      "name": "在我身边",
-      "artist": "陈佩贤 Jesslyn",
+      "name": "我听人说思念像风一样 (纯享版)",
+      "artist": "雪山阿木",
       "sources": [
         {
           "source": "popular",
@@ -615,8 +587,8 @@
       "bestRank": 16
     },
     {
-      "name": "如诗一般的形容妳",
-      "artist": "曹杨",
+      "name": "初见时",
+      "artist": "易文卉",
       "sources": [
         {
           "source": "new",
@@ -625,42 +597,6 @@
       ],
       "sourceCount": 1,
       "bestRank": 16
-    },
-    {
-      "name": "绅士",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "FIRESTARTER",
-      "artist": "K/DA/英雄联盟/i-dle (아이들)/Mimi Webb",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
-      "name": "Always Online",
-      "artist": "林俊杰",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
     },
     {
       "name": "动物世界",
@@ -668,6 +604,30 @@
       "sources": [
         {
           "source": "rise",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "轻轻",
+      "artist": "肖战",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "特别的人",
+      "artist": "方大同",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 17
         }
       ],
@@ -675,16 +635,76 @@
       "bestRank": 17
     },
     {
-      "name": "你是我的所有",
-      "artist": "陈佩贤 Jesslyn",
+      "name": "You're Under Arrest",
+      "artist": "ILLIT (아일릿)",
       "sources": [
         {
-          "source": "popular",
+          "source": "new",
           "rank": 17
         }
       ],
       "sourceCount": 1,
       "bestRank": 17
+    },
+    {
+      "name": "Hong Kong(香港限定曲)",
+      "artist": "DJYZK",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "Always Online",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "Dear my crazy soulmate",
+      "artist": "IU (아이유)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "假如天国可以收到信",
+      "artist": "蒋敦豪",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
+    },
+    {
+      "name": "致亲爱的自己",
+      "artist": "梓渝",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 18
     },
     {
       "name": "幻听",
@@ -692,54 +712,6 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "大漠长明",
-      "artist": "指南针",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "你还要我怎样",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "Call your name (Gv)",
-      "artist": "澤野弘之 (さわの ひろゆき)/R!N/Gemie",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "春娇与志明",
-      "artist": "街道办GDC/欧阳耀莹",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 19
         }
       ],
@@ -747,7 +719,7 @@
       "bestRank": 19
     },
     {
-      "name": "陪你去流浪",
+      "name": "其实",
       "artist": "薛之谦",
       "sources": [
         {
@@ -759,32 +731,8 @@
       "bestRank": 19
     },
     {
-      "name": "我听人说思念像风一样 (纯享版)",
-      "artist": "雪山阿木",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "You Are All I Need",
-      "artist": "FLY COAST/二宮愛 (にのみや あい)",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 20
-    },
-    {
-      "name": "戒断 (BAD HABITS TONITE)",
-      "artist": "A2O MAY/A2O",
+      "name": "闰月",
+      "artist": "姚琛",
       "sources": [
         {
           "source": "new",
@@ -795,23 +743,11 @@
       "bestRank": 20
     },
     {
-      "name": "聊表心意",
-      "artist": "薛之谦/刘惜君",
+      "name": "绅士",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "rise",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 20
-    },
-    {
-      "name": "爱情讯息 (Live)",
-      "artist": "郭静",
-      "sources": [
-        {
-          "source": "popular",
           "rank": 20
         }
       ],
