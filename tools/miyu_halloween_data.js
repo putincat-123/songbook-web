@@ -66,7 +66,7 @@ const HALLOWEEN_DEFAULTS = [
         "id": "candy-9",
         "type": "song",
         "title": "心愿便利贴",
-        "detail": "元若藍+吳忠明",
+        "detail": "元若蓝+吴忠明",
         "poolSongId": "3e6e285b-7a91-40ed-9433-ad4d4358a2ee"
       }
     ]
@@ -74,7 +74,7 @@ const HALLOWEEN_DEFAULTS = [
   {
     "id": "pumpkin",
     "icon": "🎃",
-    "name": "南瓜燈",
+    "name": "南瓜灯",
     "mood": "夜色・月光",
     "color": "#f4b06c",
     "cards": [
@@ -218,7 +218,7 @@ const HALLOWEEN_DEFAULTS = [
   {
     "id": "broom",
     "icon": "🧹",
-    "name": "女巫掃帚",
+    "name": "女巫扫帚",
     "mood": "捣蛋・俏皮",
     "color": "#b4c69b",
     "cards": [
@@ -290,7 +290,7 @@ const HALLOWEEN_DEFAULTS = [
   {
     "id": "ghost",
     "icon": "👻",
-    "name": "小幽靈",
+    "name": "小幽灵",
     "mood": "狐仙・东方奇幻",
     "color": "#aacbdf",
     "cards": [
