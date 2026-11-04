@@ -1,6 +1,6 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-11-03T03:06:34.546Z",
+  "updatedAt": "2026-11-04T01:44:07.831Z",
   "songs": [
     {
       "name": "Hong Kong (feat. 王菲季候风)",
@@ -12,7 +12,7 @@
         },
         {
           "source": "new",
-          "rank": 1
+          "rank": 2
         },
         {
           "source": "popular",
@@ -43,6 +43,26 @@
       "bestRank": 1
     },
     {
+      "name": "自由的你",
+      "artist": "G.E.M.邓紫棋",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 8
+        },
+        {
+          "source": "new",
+          "rank": 3
+        },
+        {
+          "source": "popular",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 3
+    },
+    {
       "name": "过渡期",
       "artist": "小宇-宋念宇",
       "sources": [
@@ -63,6 +83,22 @@
       "bestRank": 8
     },
     {
+      "name": "NEON",
+      "artist": "A2O LITE/A2O",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 10
+        },
+        {
+          "source": "new",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
       "name": "我好像在哪见过你",
       "artist": "薛之谦",
       "sources": [
@@ -79,15 +115,15 @@
       "bestRank": 2
     },
     {
-      "name": "NEON",
-      "artist": "A2O LITE/A2O",
+      "name": "내 이름을 불러줘 (Call My Name)",
+      "artist": "TWS (투어스)",
       "sources": [
         {
-          "source": "hot",
-          "rank": 10
+          "source": "new",
+          "rank": 7
         },
         {
-          "source": "new",
+          "source": "rise",
           "rank": 2
         }
       ],
@@ -95,15 +131,15 @@
       "bestRank": 2
     },
     {
-      "name": "自由的你",
-      "artist": "G.E.M.邓紫棋",
+      "name": "WE UP",
+      "artist": "TWS (투어스)",
       "sources": [
         {
-          "source": "hot",
-          "rank": 8
+          "source": "new",
+          "rank": 11
         },
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 3
         }
       ],
@@ -116,7 +152,7 @@
       "sources": [
         {
           "source": "new",
-          "rank": 3
+          "rank": 4
         },
         {
           "source": "popular",
@@ -124,7 +160,23 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 3
+      "bestRank": 4
+    },
+    {
+      "name": "heavy",
+      "artist": "TWS (투어스)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        },
+        {
+          "source": "rise",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 4
     },
     {
       "name": "Wish You Well",
@@ -159,28 +211,12 @@
       "bestRank": 6
     },
     {
-      "name": "月下签",
-      "artist": "蒲熠星",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 10
-        },
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 10
-    },
-    {
       "name": "小城",
       "artist": "任素汐",
       "sources": [
         {
           "source": "new",
-          "rank": 14
+          "rank": 9
         },
         {
           "source": "rise",
@@ -188,7 +224,7 @@
         }
       ],
       "sourceCount": 2,
-      "bestRank": 12
+      "bestRank": 9
     },
     {
       "name": "发如雪",
@@ -205,6 +241,22 @@
       ],
       "sourceCount": 2,
       "bestRank": 14
+    },
+    {
+      "name": "月下签",
+      "artist": "蒲熠星",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        },
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 18
     },
     {
       "name": "Until You",
@@ -235,30 +287,6 @@
       "bestRank": 2
     },
     {
-      "name": "내 이름을 불러줘 (Call My Name)",
-      "artist": "TWS (투어스)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 2
-    },
-    {
-      "name": "WE UP",
-      "artist": "TWS (투어스)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 3
-    },
-    {
       "name": "我不难过",
       "artist": "孙燕姿",
       "sources": [
@@ -273,30 +301,6 @@
     {
       "name": "SUPERSTAR",
       "artist": "A2O SOUL/A2O",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
-      "name": "heavy",
-      "artist": "TWS (투어스)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
-      "name": "今夜让我带你高飞远走",
-      "artist": "五月天 阿信/言承旭/吴建豪/周渝民",
       "sources": [
         {
           "source": "new",
@@ -319,8 +323,8 @@
       "bestRank": 5
     },
     {
-      "name": "当世界年纪小",
-      "artist": "任素汐",
+      "name": "今夜让我带你高飞远走",
+      "artist": "五月天 阿信/言承旭/吴建豪/周渝民",
       "sources": [
         {
           "source": "new",
@@ -360,18 +364,6 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 7
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 7
-    },
-    {
-      "name": "世纪传说",
-      "artist": "苏醒AllenSu",
-      "sources": [
-        {
-          "source": "new",
           "rank": 7
         }
       ],
@@ -427,18 +419,6 @@
       "bestRank": 9
     },
     {
-      "name": "You're Under Arrest",
-      "artist": "ILLIT (아일릿)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 9
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 9
-    },
-    {
       "name": "父亲写的散文诗",
       "artist": "许飞",
       "sources": [
@@ -461,6 +441,18 @@
       ],
       "sourceCount": 1,
       "bestRank": 9
+    },
+    {
+      "name": "You're Under Arrest",
+      "artist": "ILLIT (아일릿)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 10
     },
     {
       "name": "折月亮",
@@ -499,18 +491,6 @@
       "bestRank": 11
     },
     {
-      "name": "其实雨也没多大",
-      "artist": "正在进行石女士",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
       "name": "泪海",
       "artist": "许茹芸",
       "sources": [
@@ -523,8 +503,8 @@
       "bestRank": 12
     },
     {
-      "name": "牵挂",
-      "artist": "曾沛慈",
+      "name": "时间会回答",
+      "artist": "七元",
       "sources": [
         {
           "source": "new",
@@ -559,8 +539,8 @@
       "bestRank": 13
     },
     {
-      "name": "Bad Boy Club",
-      "artist": "刘宇",
+      "name": "后来的我和你",
+      "artist": "高冷",
       "sources": [
         {
           "source": "new",
@@ -600,6 +580,18 @@
       "sources": [
         {
           "source": "hot",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "其实雨也没多大",
+      "artist": "正在进行石女士",
+      "sources": [
+        {
+          "source": "new",
           "rank": 14
         }
       ],
@@ -667,18 +659,6 @@
       "bestRank": 15
     },
     {
-      "name": "Insomnia",
-      "artist": "RIIZE (라이즈)",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 16
-    },
-    {
       "name": "想自由",
       "artist": "王安宇",
       "sources": [
@@ -703,8 +683,8 @@
       "bestRank": 17
     },
     {
-      "name": "山海不说话 (我路过山 山不说话)",
-      "artist": "陳鴨梨Charlie",
+      "name": "牵挂",
+      "artist": "曾沛慈",
       "sources": [
         {
           "source": "new",
@@ -751,8 +731,8 @@
       "bestRank": 18
     },
     {
-      "name": "那女孩对我说",
-      "artist": "赵乃吉",
+      "name": "山海不说话 (我路过山 山不说话)",
+      "artist": "陳鴨梨Charlie",
       "sources": [
         {
           "source": "new",
@@ -787,18 +767,6 @@
       "bestRank": 19
     },
     {
-      "name": "无字句尾",
-      "artist": "鹭卓",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
       "name": "我想这样和你一起生活",
       "artist": "许飞",
       "sources": [
@@ -811,8 +779,8 @@
       "bestRank": 19
     },
     {
-      "name": "时间会回答",
-      "artist": "七元",
+      "name": "Insomnia",
+      "artist": "RIIZE (라이즈)",
       "sources": [
         {
           "source": "new",
