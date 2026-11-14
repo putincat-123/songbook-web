@@ -1,134 +1,30 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-11-13T02:11:28.357Z",
+  "updatedAt": "2026-11-14T01:52:39.952Z",
   "songs": [
     {
-      "name": "Reno My Color",
-      "artist": "宋雨琦 (YUQI) (우기)",
+      "name": "无中生有 Ex Nihilo",
+      "artist": "HOYO-MiX/當山みれい (当山真玲)",
       "sources": [
         {
-          "source": "new",
+          "source": "hot",
           "rank": 1
         },
         {
+          "source": "new",
+          "rank": 3
+        },
+        {
           "source": "rise",
-          "rank": 4
+          "rank": 1
         },
         {
           "source": "popular",
-          "rank": 2
+          "rank": 5
         }
       ],
-      "sourceCount": 3,
+      "sourceCount": 4,
       "bestRank": 1
-    },
-    {
-      "name": "Mr.Right",
-      "artist": "鹭卓",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 8
-        },
-        {
-          "source": "rise",
-          "rank": 2
-        },
-        {
-          "source": "popular",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 2
-    },
-    {
-      "name": "Dancing in the Dark",
-      "artist": "A2O SOUL/A2O",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 12
-        },
-        {
-          "source": "new",
-          "rank": 4
-        },
-        {
-          "source": "popular",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 4
-    },
-    {
-      "name": "The Moment You Saw Me（当我，在你的目光里）",
-      "artist": "米卡",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 5
-        },
-        {
-          "source": "rise",
-          "rank": 5
-        },
-        {
-          "source": "popular",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 5
-    },
-    {
-      "name": "연애의 조건 (LOVE OPTIONS) (恋爱的条件)",
-      "artist": "BESTie (베스티)",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 3
-        },
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "Hong Kong (feat. 王菲季候风)",
-      "artist": "The Weeknd",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 6
-        },
-        {
-          "source": "new",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "管他的公路尽头",
-      "artist": "王源",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 9
-        },
-        {
-          "source": "popular",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
     },
     {
       "name": "想你就写信",
@@ -136,6 +32,74 @@
       "sources": [
         {
           "source": "new",
+          "rank": 4
+        },
+        {
+          "source": "rise",
+          "rank": 4
+        },
+        {
+          "source": "popular",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 1
+    },
+    {
+      "name": "Hong Kong (feat. 王菲季候风)",
+      "artist": "The Weeknd",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 10
+        },
+        {
+          "source": "new",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
+    },
+    {
+      "name": "Reno My Color",
+      "artist": "宋雨琦 (YUQI) (우기)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 5
+        },
+        {
+          "source": "popular",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
+    },
+    {
+      "name": "管他的公路尽头",
+      "artist": "王源",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 8
+        },
+        {
+          "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 4
+    },
+    {
+      "name": "Dancing in the Dark",
+      "artist": "A2O SOUL/A2O",
+      "sources": [
+        {
+          "source": "new",
           "rank": 6
         },
         {
@@ -147,31 +111,31 @@
       "bestRank": 6
     },
     {
-      "name": "后会友期",
-      "artist": "许飞",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 11
-        },
-        {
-          "source": "popular",
-          "rank": 6
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 6
-    },
-    {
-      "name": "DEPENDS",
-      "artist": "XG",
+      "name": "Why & Be wild (何谓肆意)",
+      "artist": "杨冰怡",
       "sources": [
         {
           "source": "new",
           "rank": 10
         },
         {
-          "source": "popular",
+          "source": "rise",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 8
+    },
+    {
+      "name": "情歌",
+      "artist": "梁静茹",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 12
+        },
+        {
+          "source": "rise",
           "rank": 9
         }
       ],
@@ -179,12 +143,28 @@
       "bestRank": 9
     },
     {
-      "name": "渝人码头",
-      "artist": "梓渝",
+      "name": "DEPENDS",
+      "artist": "XG",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 9
+        },
+        {
+          "source": "popular",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 9
+    },
+    {
+      "name": "情话Butterflies",
+      "artist": "荣涉",
       "sources": [
         {
           "source": "rise",
-          "rank": 11
+          "rank": 13
         },
         {
           "source": "popular",
@@ -200,31 +180,31 @@
       "sources": [
         {
           "source": "new",
-          "rank": 13
+          "rank": 12
         },
         {
           "source": "popular",
-          "rank": 12
+          "rank": 18
         }
       ],
       "sourceCount": 2,
       "bestRank": 12
     },
     {
-      "name": "致年少的自己",
-      "artist": "马嘉祺",
+      "name": "卦卦皆无你和我 (我算姻缘 问因果)",
+      "artist": "陶云疏",
       "sources": [
         {
-          "source": "new",
-          "rank": 18
+          "source": "rise",
+          "rank": 14
         },
         {
           "source": "popular",
-          "rank": 18
+          "rank": 14
         }
       ],
       "sourceCount": 2,
-      "bestRank": 18
+      "bestRank": 14
     },
     {
       "name": "烂奇迹 (不小心惹了上帝)",
@@ -232,63 +212,15 @@
       "sources": [
         {
           "source": "rise",
-          "rank": 20
+          "rank": 18
         },
         {
           "source": "popular",
-          "rank": 19
+          "rank": 16
         }
       ],
       "sourceCount": 2,
-      "bestRank": 19
-    },
-    {
-      "name": "我不难过",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 1
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 1
-    },
-    {
-      "name": "忘不了就别忘了",
-      "artist": "水木年华/许飞",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 1
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 1
-    },
-    {
-      "name": "人生一晃又一秋 (难解宿命版)",
-      "artist": "雪山阿木/自游诗",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 1
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 1
-    },
-    {
-      "name": "天龙八部之宿敌",
-      "artist": "许嵩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 2
+      "bestRank": 16
     },
     {
       "name": "NEON",
@@ -296,6 +228,18 @@
       "sources": [
         {
           "source": "new",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 1
+    },
+    {
+      "name": "我不难过",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 2
         }
       ],
@@ -303,8 +247,32 @@
       "bestRank": 2
     },
     {
-      "name": "牡丹亭",
-      "artist": "张远",
+      "name": "去远方",
+      "artist": "滄浪天蝎",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 2
+    },
+    {
+      "name": "天龙八部之宿敌",
+      "artist": "许嵩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
+      "name": "你来自哪颗星",
+      "artist": "陈柏宇",
       "sources": [
         {
           "source": "rise",
@@ -315,8 +283,20 @@
       "bestRank": 3
     },
     {
-      "name": "我好像在哪见过你",
-      "artist": "薛之谦",
+      "name": "燃 (Live)",
+      "artist": "容祖儿",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
+      "name": "연애의 조건 (LOVE OPTIONS) (恋爱的条件)",
+      "artist": "BESTie (베스티)",
       "sources": [
         {
           "source": "hot",
@@ -327,20 +307,8 @@
       "bestRank": 4
     },
     {
-      "name": "燃 (Live)",
-      "artist": "容祖儿",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
-      "name": "甲乙丙丁 (你我怎么两清)",
-      "artist": "李佳薇",
+      "name": "我好像在哪见过你",
+      "artist": "薛之谦",
       "sources": [
         {
           "source": "hot",
@@ -351,11 +319,47 @@
       "bestRank": 5
     },
     {
-      "name": "Darling",
-      "artist": "D.O. (都暻秀)",
+      "name": "小跳蛙",
+      "artist": "青蛙乐队",
       "sources": [
         {
           "source": "rise",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 5
+    },
+    {
+      "name": "甲乙丙丁 (你我怎么两清)",
+      "artist": "李佳薇",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "窗外的泪光 (窗外照着我的月亮)",
+      "artist": "浅浅微醺",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "人生一晃又一秋 (难解宿命版)",
+      "artist": "雪山阿木/自游诗",
+      "sources": [
+        {
+          "source": "popular",
           "rank": 6
         }
       ],
@@ -387,8 +391,8 @@
       "bestRank": 7
     },
     {
-      "name": "趁早",
-      "artist": "张惠妹",
+      "name": "TAKE ME",
+      "artist": "G-DRAGON (权志龙)",
       "sources": [
         {
           "source": "rise",
@@ -399,8 +403,8 @@
       "bestRank": 7
     },
     {
-      "name": "爱而不得 (Live)",
-      "artist": "薛之谦/黄子弘凡",
+      "name": "渝人码头",
+      "artist": "梓渝",
       "sources": [
         {
           "source": "popular",
@@ -423,18 +427,6 @@
       "bestRank": 8
     },
     {
-      "name": "Aerotherapy",
-      "artist": "oftheblue",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
       "name": "雨爱",
       "artist": "杨丞琳",
       "sources": [
@@ -447,11 +439,11 @@
       "bestRank": 9
     },
     {
-      "name": "Side By Side",
-      "artist": "王铮亮",
+      "name": "爱而不得 (Live)",
+      "artist": "薛之谦/黄子弘凡",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 9
         }
       ],
@@ -459,20 +451,8 @@
       "bestRank": 9
     },
     {
-      "name": "恋人",
-      "artist": "李荣浩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "Light the night（点亮夜晚）",
-      "artist": "小恐龙",
+      "name": "5th（今天是太阳雨）",
+      "artist": "MAX VP",
       "sources": [
         {
           "source": "rise",
@@ -483,8 +463,8 @@
       "bestRank": 10
     },
     {
-      "name": "季候风",
-      "artist": "王菲",
+      "name": "恋人",
+      "artist": "李荣浩",
       "sources": [
         {
           "source": "hot",
@@ -495,136 +475,40 @@
       "bestRank": 11
     },
     {
-      "name": "慢倍速",
-      "artist": "方了个木",
+      "name": "后会友期",
+      "artist": "许飞",
       "sources": [
         {
           "source": "new",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "时间线",
+      "artist": "于冬然",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "自由的你",
+      "artist": "G.E.M.邓紫棋",
+      "sources": [
+        {
+          "source": "rise",
           "rank": 12
         }
       ],
       "sourceCount": 1,
       "bestRank": 12
-    },
-    {
-      "name": "TAKE ME",
-      "artist": "G-DRAGON (权志龙)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "情歌",
-      "artist": "梁静茹",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "飞驰",
-      "artist": "苏醒AllenSu",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "云是天空写的信 (Live)",
-      "artist": "周深",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "泪海",
-      "artist": "许茹芸",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "小城",
-      "artist": "任素汐",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "When You Love Somebody",
-      "artist": "苏醒AllenSu",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "爱错",
-      "artist": "王力宏",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "风吹过",
-      "artist": "张玮",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "情歌而已",
-      "artist": "苏醒AllenSu",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
     },
     {
       "name": "你怎么舍得让我的泪流向海",
@@ -632,11 +516,47 @@
       "sources": [
         {
           "source": "popular",
-          "rank": 15
+          "rank": 12
         }
       ],
       "sourceCount": 1,
-      "bestRank": 15
+      "bestRank": 12
+    },
+    {
+      "name": "爱错",
+      "artist": "王力宏",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "慢倍速",
+      "artist": "方了个木",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
+    },
+    {
+      "name": "如果累了就回故乡 (少年版)",
+      "artist": "酷酷里/面妹孔佳奇",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 13
     },
     {
       "name": "开始懂了",
@@ -644,6 +564,78 @@
       "sources": [
         {
           "source": "hot",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "While We're Young",
+      "artist": "A2O SOUL/A2O",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "Always Online",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "秋风一吹又老一岁",
+      "artist": "洋澜一",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "信仰",
+      "artist": "张信哲",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "云是天空写的信 (Live)",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 15
+    },
+    {
+      "name": "泪海",
+      "artist": "许茹芸",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 16
         }
       ],
@@ -651,8 +643,8 @@
       "bestRank": 16
     },
     {
-      "name": "While We're Young",
-      "artist": "A2O SOUL/A2O",
+      "name": "风吹过",
+      "artist": "张玮",
       "sources": [
         {
           "source": "new",
@@ -663,8 +655,8 @@
       "bestRank": 16
     },
     {
-      "name": "What Do You Know Me From",
-      "artist": "苏醒AllenSu",
+      "name": "伤过痛过千万别错过",
+      "artist": "达达",
       "sources": [
         {
           "source": "rise",
@@ -675,8 +667,8 @@
       "bestRank": 16
     },
     {
-      "name": "Always Online",
-      "artist": "林俊杰",
+      "name": "季候风",
+      "artist": "王菲",
       "sources": [
         {
           "source": "hot",
@@ -687,8 +679,8 @@
       "bestRank": 17
     },
     {
-      "name": "不知道说什么",
-      "artist": "张靓颖",
+      "name": "雪化作泪滴",
+      "artist": "Cheeze/Lil Trazzy/雾明",
       "sources": [
         {
           "source": "new",
@@ -699,8 +691,8 @@
       "bestRank": 17
     },
     {
-      "name": "如果累了就回故乡 (少年版)",
-      "artist": "酷酷里/面妹孔佳奇",
+      "name": "淋一场雨",
+      "artist": "LBI利比（时柏尘）",
       "sources": [
         {
           "source": "rise",
@@ -711,8 +703,8 @@
       "bestRank": 17
     },
     {
-      "name": "万般苦 人生路",
-      "artist": "陶玄清",
+      "name": "老子我偏要挺直脊梁",
+      "artist": "石敢当",
       "sources": [
         {
           "source": "popular",
@@ -735,11 +727,11 @@
       "bestRank": 18
     },
     {
-      "name": "底牌",
-      "artist": "苏醒AllenSu",
+      "name": "小城",
+      "artist": "任素汐",
       "sources": [
         {
-          "source": "rise",
+          "source": "new",
           "rank": 18
         }
       ],
@@ -759,8 +751,8 @@
       "bestRank": 19
     },
     {
-      "name": "Very First Love (初恋)",
-      "artist": "A2O SOUL/A2O",
+      "name": "You're Under Arrest",
+      "artist": "ILLIT (아일릿)",
       "sources": [
         {
           "source": "new",
@@ -771,11 +763,23 @@
       "bestRank": 19
     },
     {
-      "name": "将错就错",
-      "artist": "苏醒AllenSu",
+      "name": "一眼万年",
+      "artist": "林俊杰",
       "sources": [
         {
           "source": "rise",
+          "rank": 19
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 19
+    },
+    {
+      "name": "痴情冢",
+      "artist": "苏晓酥",
+      "sources": [
+        {
+          "source": "popular",
           "rank": 19
         }
       ],
@@ -795,8 +799,8 @@
       "bestRank": 20
     },
     {
-      "name": "You're Under Arrest",
-      "artist": "ILLIT (아일릿)",
+      "name": "也会有人代替你",
+      "artist": "供销社乐队",
       "sources": [
         {
           "source": "new",
@@ -807,8 +811,20 @@
       "bestRank": 20
     },
     {
-      "name": "父亲写的散文诗",
-      "artist": "许飞",
+      "name": "圣诞星 (feat. 杨瑞代)",
+      "artist": "周杰伦",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 20
+    },
+    {
+      "name": "说好一辈子",
+      "artist": "张云雷",
       "sources": [
         {
           "source": "popular",
