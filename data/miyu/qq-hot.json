@@ -1,66 +1,42 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-11-24T05:37:29.752Z",
+  "updatedAt": "2026-11-25T04:38:31.609Z",
   "songs": [
     {
-      "name": "宿命之外",
-      "artist": "时代少年团",
+      "name": "你的名字",
+      "artist": "鹭卓",
       "sources": [
         {
-          "source": "hot",
-          "rank": 1
-        },
-        {
           "source": "new",
-          "rank": 1
+          "rank": 5
         },
         {
           "source": "rise",
-          "rank": 1
-        },
-        {
-          "source": "popular",
-          "rank": 1
-        }
-      ],
-      "sourceCount": 4,
-      "bestRank": 1
-    },
-    {
-      "name": "慌啥子嘛 (赵本山版)",
-      "artist": "赵本山",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 2
-        },
-        {
-          "source": "new",
           "rank": 2
         },
         {
           "source": "popular",
-          "rank": 12
+          "rank": 19
         }
       ],
       "sourceCount": 3,
       "bestRank": 2
     },
     {
-      "name": "主角",
-      "artist": "马里奥",
+      "name": "宿命之外",
+      "artist": "时代少年团",
       "sources": [
         {
           "source": "hot",
-          "rank": 6
+          "rank": 15
         },
         {
-          "source": "rise",
-          "rank": 3
+          "source": "new",
+          "rank": 4
         },
         {
           "source": "popular",
-          "rank": 11
+          "rank": 3
         }
       ],
       "sourceCount": 3,
@@ -72,7 +48,27 @@
       "sources": [
         {
           "source": "new",
-          "rank": 5
+          "rank": 3
+        },
+        {
+          "source": "rise",
+          "rank": 13
+        },
+        {
+          "source": "popular",
+          "rank": 9
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 3
+    },
+    {
+      "name": "기억을 걷는 시간 (聚集记忆的时间)",
+      "artist": "Nell (넬)",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 7
         },
         {
           "source": "rise",
@@ -80,7 +76,7 @@
         },
         {
           "source": "popular",
-          "rank": 15
+          "rank": 11
         }
       ],
       "sourceCount": 3,
@@ -92,71 +88,51 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 8
-        },
-        {
-          "source": "new",
-          "rank": 7
-        },
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 7
-    },
-    {
-      "name": "기억을 걷는 시간 (聚集记忆的时间)",
-      "artist": "Nell (넬)",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 14
-        },
-        {
-          "source": "rise",
-          "rank": 13
-        },
-        {
-          "source": "popular",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 13
-    },
-    {
-      "name": "污点证人 (Live)",
-      "artist": "薛之谦",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 12
         },
         {
-          "source": "popular",
-          "rank": 2
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 2
-    },
-    {
-      "name": "Love Love Love (Live)",
-      "artist": "刘耀文",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 2
+          "source": "new",
+          "rank": 9
         },
         {
           "source": "popular",
-          "rank": 3
+          "rank": 18
+        }
+      ],
+      "sourceCount": 3,
+      "bestRank": 9
+    },
+    {
+      "name": "慌啥子嘛 (赵本山版)",
+      "artist": "赵本山",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 1
+        },
+        {
+          "source": "new",
+          "rank": 1
         }
       ],
       "sourceCount": 2,
-      "bestRank": 2
+      "bestRank": 1
+    },
+    {
+      "name": "主角",
+      "artist": "马里奥",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 5
+        },
+        {
+          "source": "popular",
+          "rank": 4
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 4
     },
     {
       "name": "任天堂",
@@ -164,47 +140,15 @@
       "sources": [
         {
           "source": "new",
-          "rank": 4
+          "rank": 14
         },
         {
           "source": "popular",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 4
-    },
-    {
-      "name": "time machine (feat. aren park)",
-      "artist": "mj apanay/aren park",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 7
-        },
-        {
-          "source": "popular",
-          "rank": 5
         }
       ],
       "sourceCount": 2,
-      "bestRank": 5
-    },
-    {
-      "name": "亲密有间",
-      "artist": "张靓颖",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 6
-        },
-        {
-          "source": "popular",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 6
+      "bestRank": 7
     },
     {
       "name": "Go Easy",
@@ -212,15 +156,47 @@
       "sources": [
         {
           "source": "new",
-          "rank": 9
+          "rank": 10
         },
         {
           "source": "popular",
-          "rank": 9
+          "rank": 8
         }
       ],
       "sourceCount": 2,
-      "bestRank": 9
+      "bestRank": 8
+    },
+    {
+      "name": "亲密有间",
+      "artist": "张靓颖",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 15
+        },
+        {
+          "source": "popular",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 10
+    },
+    {
+      "name": "Galaxy Far Far Away",
+      "artist": "侯明昊",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 11
+        },
+        {
+          "source": "popular",
+          "rank": 13
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 11
     },
     {
       "name": "愿与缘",
@@ -228,19 +204,127 @@
       "sources": [
         {
           "source": "new",
-          "rank": 16
+          "rank": 18
         },
         {
           "source": "popular",
-          "rank": 17
+          "rank": 12
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 12
+    },
+    {
+      "name": "早上坏",
+      "artist": "黄灿灿",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 15
+        },
+        {
+          "source": "popular",
+          "rank": 15
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 15
+    },
+    {
+      "name": "北京没有你",
+      "artist": "z阿康",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 19
+        },
+        {
+          "source": "popular",
+          "rank": 16
         }
       ],
       "sourceCount": 2,
       "bestRank": 16
     },
     {
+      "name": "你猜",
+      "artist": "刘回",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 19
+        },
+        {
+          "source": "popular",
+          "rank": 20
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 19
+    },
+    {
+      "name": "无人知晓的我",
+      "artist": "Eric周兴哲",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 1
+    },
+    {
+      "name": "Love Love Love (Live)",
+      "artist": "刘耀文",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 1
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 1
+    },
+    {
       "name": "연애의 조건 (LOVE OPTIONS) (恋爱的条件)",
       "artist": "BESTie (베스티)",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 2
+    },
+    {
+      "name": "Hong Kong (feat. 王菲季候风)",
+      "artist": "The Weeknd",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 2
+    },
+    {
+      "name": "污点证人 (Live)",
+      "artist": "薛之谦",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 2
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 2
+    },
+    {
+      "name": "我不难过",
+      "artist": "孙燕姿",
       "sources": [
         {
           "source": "hot",
@@ -251,11 +335,11 @@
       "bestRank": 3
     },
     {
-      "name": "Hong Kong (feat. 王菲季候风)",
-      "artist": "The Weeknd",
+      "name": "Like You",
+      "artist": "Yim Siwan",
       "sources": [
         {
-          "source": "new",
+          "source": "rise",
           "rank": 3
         }
       ],
@@ -263,8 +347,8 @@
       "bestRank": 3
     },
     {
-      "name": "我不难过",
-      "artist": "孙燕姿",
+      "name": "天龙八部之宿敌",
+      "artist": "许嵩",
       "sources": [
         {
           "source": "hot",
@@ -275,8 +359,8 @@
       "bestRank": 4
     },
     {
-      "name": "冬日来信 (Winter Love Letter)",
-      "artist": "时代少年团",
+      "name": "传奇",
+      "artist": "李健",
       "sources": [
         {
           "source": "rise",
@@ -287,11 +371,11 @@
       "bestRank": 4
     },
     {
-      "name": "天龙八部之宿敌",
-      "artist": "许嵩",
+      "name": "回声 (Live)",
+      "artist": "曾沛慈",
       "sources": [
         {
-          "source": "hot",
+          "source": "popular",
           "rank": 5
         }
       ],
@@ -299,8 +383,32 @@
       "bestRank": 5
     },
     {
-      "name": "Before Sunrise",
-      "artist": "WENDY (웬디)",
+      "name": "time machine (feat. aren park)",
+      "artist": "mj apanay/aren park",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "活该孤单",
+      "artist": "张新成",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
+    },
+    {
+      "name": "Hope to Remain",
+      "artist": "严浩翔",
       "sources": [
         {
           "source": "rise",
@@ -323,8 +431,20 @@
       "bestRank": 6
     },
     {
-      "name": "这一程",
-      "artist": "时代少年团",
+      "name": "冬天又来临",
+      "artist": "罗言RollFlash",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 7
+    },
+    {
+      "name": "白日梦醒",
+      "artist": "周太初",
       "sources": [
         {
           "source": "rise",
@@ -335,20 +455,20 @@
       "bestRank": 7
     },
     {
-      "name": "谢谢一辈子",
-      "artist": "成龙",
+      "name": "我好像在哪见过你",
+      "artist": "薛之谦",
       "sources": [
         {
-          "source": "popular",
-          "rank": 7
+          "source": "hot",
+          "rank": 8
         }
       ],
       "sourceCount": 1,
-      "bestRank": 7
+      "bestRank": 8
     },
     {
-      "name": "冬天又来临",
-      "artist": "罗言RollFlash",
+      "name": "慢倍速",
+      "artist": "方了个木",
       "sources": [
         {
           "source": "new",
@@ -359,8 +479,8 @@
       "bestRank": 8
     },
     {
-      "name": "有你",
-      "artist": "时代少年团",
+      "name": "不回头的人",
+      "artist": "梓渝",
       "sources": [
         {
           "source": "rise",
@@ -371,20 +491,8 @@
       "bestRank": 8
     },
     {
-      "name": "回声 (Live)",
-      "artist": "曾沛慈",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 8
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 8
-    },
-    {
-      "name": "我好像在哪见过你",
-      "artist": "薛之谦",
+      "name": "愿与愁",
+      "artist": "林俊杰",
       "sources": [
         {
           "source": "hot",
@@ -395,8 +503,8 @@
       "bestRank": 9
     },
     {
-      "name": "回声",
-      "artist": "那英",
+      "name": "该怎么写我",
+      "artist": "沈才华",
       "sources": [
         {
           "source": "rise",
@@ -419,20 +527,8 @@
       "bestRank": 10
     },
     {
-      "name": "慢倍速",
-      "artist": "方了个木",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 10
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 10
-    },
-    {
-      "name": "Special Dust",
-      "artist": "WENDY (웬디)",
+      "name": "九张机",
+      "artist": "叶炫清",
       "sources": [
         {
           "source": "rise",
@@ -443,11 +539,23 @@
       "bestRank": 10
     },
     {
-      "name": "愿与愁",
-      "artist": "林俊杰",
+      "name": "甲乙丙丁 (你我怎么两清)",
+      "artist": "李佳薇",
       "sources": [
         {
           "source": "hot",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
+    },
+    {
+      "name": "DEPENDS",
+      "artist": "XG",
+      "sources": [
+        {
+          "source": "new",
           "rank": 11
         }
       ],
@@ -460,30 +568,6 @@
       "sources": [
         {
           "source": "new",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "不得不爱",
-      "artist": "潘玮柏/弦子",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "The Moment You Saw Me（当我，在你的目光里）",
-      "artist": "米卡",
-      "sources": [
-        {
-          "source": "new",
           "rank": 12
         }
       ],
@@ -491,8 +575,8 @@
       "bestRank": 12
     },
     {
-      "name": "Timeline",
-      "artist": "WENDY (웬디)",
+      "name": "张桂珍 (窗外的桂花开)",
+      "artist": "Sus.",
       "sources": [
         {
           "source": "rise",
@@ -501,66 +585,6 @@
       ],
       "sourceCount": 1,
       "bestRank": 12
-    },
-    {
-      "name": "甲乙丙丁 (你我怎么两清)",
-      "artist": "李佳薇",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "那是一瞬间的喜欢",
-      "artist": "厉娜",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "抓紧你的手走过我的朝朝暮暮 (氛围版)",
-      "artist": "秦澤旭啊",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 13
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 13
-    },
-    {
-      "name": "卡农to me(最重要的是自己开心)",
-      "artist": "雾安Misty/撒安德萨",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
-    },
-    {
-      "name": "该怎么写我",
-      "artist": "沈才华",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 14
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 14
     },
     {
       "name": "恋人",
@@ -568,35 +592,23 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 15
+          "rank": 13
         }
       ],
       "sourceCount": 1,
-      "bestRank": 15
+      "bestRank": 13
     },
     {
-      "name": "DEPENDS",
-      "artist": "XG",
+      "name": "The Moment You Saw Me（当我，在你的目光里）",
+      "artist": "米卡",
       "sources": [
         {
           "source": "new",
-          "rank": 15
+          "rank": 13
         }
       ],
       "sourceCount": 1,
-      "bestRank": 15
-    },
-    {
-      "name": "WORST",
-      "artist": "WENDY (웬디)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 15
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 15
+      "bestRank": 13
     },
     {
       "name": "雨爱",
@@ -604,6 +616,42 @@
       "sources": [
         {
           "source": "hot",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "在雨中",
+      "artist": "刘家昌/尤雅",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "如果我拥有一座花园 (Live)",
+      "artist": "刘宇宁",
+      "sources": [
+        {
+          "source": "popular",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "爱错",
+      "artist": "王力宏",
+      "sources": [
+        {
+          "source": "hot",
           "rank": 16
         }
       ],
@@ -611,8 +659,20 @@
       "bestRank": 16
     },
     {
-      "name": "我们总是喜欢在夏天讨论永远",
-      "artist": "时代少年团",
+      "name": "You're Under Arrest",
+      "artist": "ILLIT (아일릿)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 16
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 16
+    },
+    {
+      "name": "趁早",
+      "artist": "张惠妹",
       "sources": [
         {
           "source": "rise",
@@ -623,8 +683,8 @@
       "bestRank": 16
     },
     {
-      "name": "爱错",
-      "artist": "王力宏",
+      "name": "Always Online",
+      "artist": "林俊杰",
       "sources": [
         {
           "source": "hot",
@@ -635,8 +695,8 @@
       "bestRank": 17
     },
     {
-      "name": "You're Under Arrest",
-      "artist": "ILLIT (아일릿)",
+      "name": "卡农to me(最重要的是自己开心)",
+      "artist": "雾安Misty/撒安德萨",
       "sources": [
         {
           "source": "new",
@@ -647,11 +707,23 @@
       "bestRank": 17
     },
     {
-      "name": "Shadows",
-      "artist": "WENDY (웬디)",
+      "name": "Sins Of The Father",
+      "artist": "Daniel Caesar/Bon Iver",
       "sources": [
         {
           "source": "rise",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "人生如白驹过隙",
+      "artist": "小倦",
+      "sources": [
+        {
+          "source": "popular",
           "rank": 17
         }
       ],
@@ -671,35 +743,11 @@
       "bestRank": 18
     },
     {
-      "name": "世间",
-      "artist": "陈卓璇",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "Golden Hour",
-      "artist": "WENDY (웬디)",
+      "name": "当我们一起走过 (苏打绿版)",
+      "artist": "苏打绿",
       "sources": [
         {
           "source": "rise",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "老牛 (Live)",
-      "artist": "周深",
-      "sources": [
-        {
-          "source": "popular",
           "rank": 18
         }
       ],
@@ -719,44 +767,8 @@
       "bestRank": 19
     },
     {
-      "name": "你猜",
-      "artist": "刘回",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "我只要我开心",
-      "artist": "时代少年团",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "如果我拥有一座花园 (Live)",
-      "artist": "黄子弘凡",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "情歌",
-      "artist": "梁静茹",
+      "name": "春娇与志明",
+      "artist": "街道办GDC/欧阳耀莹",
       "sources": [
         {
           "source": "hot",
@@ -767,8 +779,8 @@
       "bestRank": 20
     },
     {
-      "name": "雪化作泪滴",
-      "artist": "Cheeze/Lil Trazzy/雾明",
+      "name": "那是一瞬间的喜欢",
+      "artist": "厉娜",
       "sources": [
         {
           "source": "new",
@@ -779,23 +791,11 @@
       "bestRank": 20
     },
     {
-      "name": "卧室巨星",
-      "artist": "时代少年团",
+      "name": "刻在我心底的名字",
+      "artist": "卢广仲",
       "sources": [
         {
           "source": "rise",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 20
-    },
-    {
-      "name": "江湖情难了 (Remix)",
-      "artist": "神明灵",
-      "sources": [
-        {
-          "source": "popular",
           "rank": 20
         }
       ],
