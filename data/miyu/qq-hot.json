@@ -1,46 +1,26 @@
 {
   "provider": "qq_music",
-  "updatedAt": "2026-11-27T03:50:03.488Z",
+  "updatedAt": "2026-11-28T03:35:27.851Z",
   "songs": [
     {
-      "name": "我的",
-      "artist": "黄星",
+      "name": "心动一半",
+      "artist": "Gareth.T",
       "sources": [
         {
-          "source": "new",
-          "rank": 2
+          "source": "hot",
+          "rank": 11
         },
         {
           "source": "rise",
-          "rank": 10
+          "rank": 2
         },
         {
           "source": "popular",
-          "rank": 3
+          "rank": 12
         }
       ],
       "sourceCount": 3,
       "bestRank": 2
-    },
-    {
-      "name": "恋爱脑中",
-      "artist": "阿肆/TizzyT",
-      "sources": [
-        {
-          "source": "new",
-          "rank": 5
-        },
-        {
-          "source": "rise",
-          "rank": 6
-        },
-        {
-          "source": "popular",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 3,
-      "bestRank": 5
     },
     {
       "name": "慌啥子嘛 (赵本山版)",
@@ -48,7 +28,7 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 2
+          "rank": 3
         },
         {
           "source": "new",
@@ -59,20 +39,20 @@
       "bestRank": 1
     },
     {
-      "name": "主角",
-      "artist": "马里奥",
+      "name": "25°C",
+      "artist": "万妮达Vinida Weng",
       "sources": [
         {
-          "source": "hot",
-          "rank": 10
+          "source": "rise",
+          "rank": 1
         },
         {
           "source": "popular",
-          "rank": 2
+          "rank": 19
         }
       ],
       "sourceCount": 2,
-      "bestRank": 2
+      "bestRank": 1
     },
     {
       "name": "请勿打扰",
@@ -80,15 +60,79 @@
       "sources": [
         {
           "source": "rise",
-          "rank": 2
+          "rank": 16
         },
         {
           "source": "popular",
-          "rank": 6
+          "rank": 1
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 1
+    },
+    {
+      "name": "我不难过",
+      "artist": "孙燕姿",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 2
+        },
+        {
+          "source": "rise",
+          "rank": 9
         }
       ],
       "sourceCount": 2,
       "bestRank": 2
+    },
+    {
+      "name": "我的",
+      "artist": "黄星",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 2
+        },
+        {
+          "source": "popular",
+          "rank": 7
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 2
+    },
+    {
+      "name": "沙痕",
+      "artist": "刘宇",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 3
+        },
+        {
+          "source": "popular",
+          "rank": 8
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 3
+    },
+    {
+      "name": "天龙八部之宿敌",
+      "artist": "许嵩",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 4
+        },
+        {
+          "source": "rise",
+          "rank": 10
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 4
     },
     {
       "name": "趁早",
@@ -96,31 +140,31 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 7
+          "rank": 5
         },
         {
           "source": "rise",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 3
-    },
-    {
-      "name": "Hot Shot",
-      "artist": "喻言",
-      "sources": [
-        {
-          "source": "new",
           "rank": 4
-        },
-        {
-          "source": "popular",
-          "rank": 7
         }
       ],
       "sourceCount": 2,
       "bestRank": 4
+    },
+    {
+      "name": "一眼万年",
+      "artist": "林俊杰",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 8
+        },
+        {
+          "source": "rise",
+          "rank": 5
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 5
     },
     {
       "name": "宿命之外",
@@ -132,23 +176,7 @@
         },
         {
           "source": "popular",
-          "rank": 5
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 5
-    },
-    {
-      "name": "기억을 걷는 시간 (聚集记忆的时间)",
-      "artist": "Nell (넬)",
-      "sources": [
-        {
-          "source": "hot",
           "rank": 6
-        },
-        {
-          "source": "popular",
-          "rank": 10
         }
       ],
       "sourceCount": 2,
@@ -164,7 +192,23 @@
         },
         {
           "source": "popular",
-          "rank": 8
+          "rank": 11
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 7
+    },
+    {
+      "name": "传奇",
+      "artist": "李健",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 7
+        },
+        {
+          "source": "popular",
+          "rank": 13
         }
       ],
       "sourceCount": 2,
@@ -196,43 +240,59 @@
         },
         {
           "source": "popular",
-          "rank": 13
+          "rank": 20
         }
       ],
       "sourceCount": 2,
       "bestRank": 11
     },
     {
-      "name": "GiiiRIP",
-      "artist": "BIGBANG (빅뱅)",
+      "name": "发如雪",
+      "artist": "周杰伦",
       "sources": [
         {
-          "source": "new",
-          "rank": 14
-        },
-        {
-          "source": "popular",
-          "rank": 16
-        }
-      ],
-      "sourceCount": 2,
-      "bestRank": 14
-    },
-    {
-      "name": "你猜",
-      "artist": "刘回",
-      "sources": [
-        {
-          "source": "new",
+          "source": "hot",
           "rank": 17
         },
         {
-          "source": "popular",
+          "source": "rise",
           "rank": 19
         }
       ],
       "sourceCount": 2,
       "bestRank": 17
+    },
+    {
+      "name": "无人知晓的我",
+      "artist": "Eric周兴哲",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 18
+        },
+        {
+          "source": "popular",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 17
+    },
+    {
+      "name": "기억을 걷는 시간 (聚集记忆的时间)",
+      "artist": "Nell (넬)",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 18
+        },
+        {
+          "source": "popular",
+          "rank": 18
+        }
+      ],
+      "sourceCount": 2,
+      "bestRank": 18
     },
     {
       "name": "연애의 조건 (LOVE OPTIONS) (恋爱的条件)",
@@ -247,40 +307,16 @@
       "bestRank": 1
     },
     {
-      "name": "传奇",
-      "artist": "李健",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 1
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 1
-    },
-    {
-      "name": "Love Love Love (Live)",
-      "artist": "刘耀文",
+      "name": "主角",
+      "artist": "马里奥",
       "sources": [
         {
           "source": "popular",
-          "rank": 1
+          "rank": 2
         }
       ],
       "sourceCount": 1,
-      "bestRank": 1
-    },
-    {
-      "name": "我不难过",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 3
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 3
+      "bestRank": 2
     },
     {
       "name": "Hong Kong (feat. 王菲季候风)",
@@ -295,11 +331,23 @@
       "bestRank": 3
     },
     {
-      "name": "天龙八部之宿敌",
-      "artist": "许嵩",
+      "name": "Love Love Love (Live)",
+      "artist": "刘耀文",
       "sources": [
         {
-          "source": "hot",
+          "source": "popular",
+          "rank": 3
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 3
+    },
+    {
+      "name": "Hot Shot",
+      "artist": "喻言",
+      "sources": [
+        {
+          "source": "new",
           "rank": 4
         }
       ],
@@ -307,20 +355,8 @@
       "bestRank": 4
     },
     {
-      "name": "白日梦醒",
-      "artist": "周太初",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 4
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 4
-    },
-    {
-      "name": "污点证人 (Live)",
-      "artist": "薛之谦",
+      "name": "天下有情人 (合唱版)",
+      "artist": "澜雨临汀",
       "sources": [
         {
           "source": "popular",
@@ -331,11 +367,11 @@
       "bestRank": 4
     },
     {
-      "name": "time machine (feat. aren park)",
-      "artist": "mj apanay/aren park",
+      "name": "恋爱脑中",
+      "artist": "阿肆/TizzyT",
       "sources": [
         {
-          "source": "hot",
+          "source": "new",
           "rank": 5
         }
       ],
@@ -343,16 +379,28 @@
       "bestRank": 5
     },
     {
-      "name": "别轻易爱上我",
-      "artist": "黄子弘凡",
+      "name": "Like You",
+      "artist": "Yim Siwan",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 5
         }
       ],
       "sourceCount": 1,
       "bestRank": 5
+    },
+    {
+      "name": "time machine (feat. aren park)",
+      "artist": "mj apanay/aren park",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 6
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 6
     },
     {
       "name": "阴天也会有烦恼吗",
@@ -367,16 +415,16 @@
       "bestRank": 6
     },
     {
-      "name": "一眼万年",
-      "artist": "林俊杰",
+      "name": "我的妈妈还很年轻 (Live)",
+      "artist": "蒋敦豪/王一珩OneSD",
       "sources": [
         {
           "source": "rise",
-          "rank": 7
+          "rank": 6
         }
       ],
       "sourceCount": 1,
-      "bestRank": 7
+      "bestRank": 6
     },
     {
       "name": "愿与愁",
@@ -384,15 +432,15 @@
       "sources": [
         {
           "source": "hot",
-          "rank": 8
+          "rank": 7
         }
       ],
       "sourceCount": 1,
-      "bestRank": 8
+      "bestRank": 7
     },
     {
-      "name": "Crazy Saxobeat",
-      "artist": "Crazy Frog",
+      "name": "祝你一路顺风 (Live)",
+      "artist": "任贤齐/陈楚生",
       "sources": [
         {
           "source": "rise",
@@ -427,16 +475,16 @@
       "bestRank": 9
     },
     {
-      "name": "失忆",
-      "artist": "梁静茹",
+      "name": "我好像在哪见过你",
+      "artist": "薛之谦",
       "sources": [
         {
-          "source": "rise",
-          "rank": 9
+          "source": "hot",
+          "rank": 10
         }
       ],
       "sourceCount": 1,
-      "bestRank": 9
+      "bestRank": 10
     },
     {
       "name": "冬天又来临",
@@ -451,68 +499,56 @@
       "bestRank": 10
     },
     {
-      "name": "我好像在哪见过你",
+      "name": "污点证人 (Live)",
       "artist": "薛之谦",
       "sources": [
         {
-          "source": "hot",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "天黑黑",
-      "artist": "孙燕姿",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 11
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 11
-    },
-    {
-      "name": "恋人",
-      "artist": "李荣浩",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "时差",
-      "artist": "钱锟 (KUN)",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 12
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 12
-    },
-    {
-      "name": "想你的风吹到了冬",
-      "artist": "烟嗓超哥",
-      "sources": [
-        {
           "source": "popular",
-          "rank": 12
+          "rank": 10
         }
       ],
       "sourceCount": 1,
-      "bestRank": 12
+      "bestRank": 10
+    },
+    {
+      "name": "白日梦醒",
+      "artist": "周太初",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 11
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 11
     },
     {
       "name": "雨爱",
       "artist": "杨丞琳",
+      "sources": [
+        {
+          "source": "hot",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "梦游记 (Live)",
+      "artist": "周深",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 12
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 12
+    },
+    {
+      "name": "恋人",
+      "artist": "李荣浩",
       "sources": [
         {
           "source": "hot",
@@ -535,8 +571,8 @@
       "bestRank": 13
     },
     {
-      "name": "该怎么写我",
-      "artist": "白小白",
+      "name": "不情之请",
+      "artist": "张惠妹",
       "sources": [
         {
           "source": "rise",
@@ -559,8 +595,20 @@
       "bestRank": 14
     },
     {
-      "name": "Broken Melody",
-      "artist": "李京泽/王以太/饺子",
+      "name": "GiiiRIP",
+      "artist": "BIGBANG (빅뱅)",
+      "sources": [
+        {
+          "source": "new",
+          "rank": 14
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 14
+    },
+    {
+      "name": "我还想她",
+      "artist": "林俊杰",
       "sources": [
         {
           "source": "rise",
@@ -571,8 +619,8 @@
       "bestRank": 14
     },
     {
-      "name": "如果我拥有一座花园 (Live)",
-      "artist": "刘宇宁",
+      "name": "Underneath The Stars (氛围律动版)",
+      "artist": "汽修二班 誓言",
       "sources": [
         {
           "source": "popular",
@@ -607,8 +655,8 @@
       "bestRank": 15
     },
     {
-      "name": "BRE@TH//LESS",
-      "artist": "澤野弘之 (さわの ひろゆき)",
+      "name": "失忆",
+      "artist": "梁静茹",
       "sources": [
         {
           "source": "rise",
@@ -619,8 +667,8 @@
       "bestRank": 15
     },
     {
-      "name": "回声 (Live)",
-      "artist": "曾沛慈",
+      "name": "想你的风吹到了冬",
+      "artist": "烟嗓超哥",
       "sources": [
         {
           "source": "popular",
@@ -631,8 +679,8 @@
       "bestRank": 15
     },
     {
-      "name": "情歌",
-      "artist": "梁静茹",
+      "name": "Always Online",
+      "artist": "林俊杰",
       "sources": [
         {
           "source": "hot",
@@ -655,11 +703,11 @@
       "bestRank": 16
     },
     {
-      "name": "爱，请问怎么走",
-      "artist": "A-Lin",
+      "name": "人都走了就别再挽留 (成全自己演唱会live释怀对唱版)",
+      "artist": "7pastes/艾利office",
       "sources": [
         {
-          "source": "rise",
+          "source": "popular",
           "rank": 16
         }
       ],
@@ -667,68 +715,32 @@
       "bestRank": 16
     },
     {
-      "name": "Always Online",
-      "artist": "林俊杰",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
-    },
-    {
-      "name": "棠棣赋 (黎明曙光版)",
-      "artist": "五月天 阿信",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
-    },
-    {
-      "name": "抓紧你的手走过我的朝朝暮暮 (氛围版)",
-      "artist": "秦澤旭啊",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 17
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 17
-    },
-    {
-      "name": "春娇与志明",
-      "artist": "街道办GDC/欧阳耀莹",
-      "sources": [
-        {
-          "source": "hot",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "无人知晓的我",
-      "artist": "Eric周兴哲",
+      "name": "你猜",
+      "artist": "刘回",
       "sources": [
         {
           "source": "new",
-          "rank": 18
+          "rank": 17
         }
       ],
       "sourceCount": 1,
-      "bestRank": 18
+      "bestRank": 17
     },
     {
-      "name": "我还想她",
-      "artist": "林俊杰",
+      "name": "开口前 (Live)",
+      "artist": "容祖儿/薛之谦/周深/刘宇宁",
+      "sources": [
+        {
+          "source": "rise",
+          "rank": 17
+        }
+      ],
+      "sourceCount": 1,
+      "bestRank": 17
+    },
+    {
+      "name": "花香 (Live)",
+      "artist": "Tank吕建忠/曾沛慈",
       "sources": [
         {
           "source": "rise",
@@ -739,20 +751,8 @@
       "bestRank": 18
     },
     {
-      "name": "任天堂",
-      "artist": "G.E.M.邓紫棋",
-      "sources": [
-        {
-          "source": "popular",
-          "rank": 18
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 18
-    },
-    {
-      "name": "发如雪",
-      "artist": "周杰伦",
+      "name": "情歌",
+      "artist": "梁静茹",
       "sources": [
         {
           "source": "hot",
@@ -775,20 +775,8 @@
       "bestRank": 19
     },
     {
-      "name": "西西亚，登上舞台！ (Cicia, Take The Stage!)",
-      "artist": "Grace Kinstler/无限暖暖/FoldEcho",
-      "sources": [
-        {
-          "source": "rise",
-          "rank": 19
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 19
-    },
-    {
-      "name": "开始懂了",
-      "artist": "孙燕姿",
+      "name": "春娇与志明",
+      "artist": "街道办GDC/欧阳耀莹",
       "sources": [
         {
           "source": "hot",
@@ -811,23 +799,11 @@
       "bestRank": 20
     },
     {
-      "name": "北京没有你",
-      "artist": "z阿康",
+      "name": "天黑黑",
+      "artist": "孙燕姿",
       "sources": [
         {
           "source": "rise",
-          "rank": 20
-        }
-      ],
-      "sourceCount": 1,
-      "bestRank": 20
-    },
-    {
-      "name": "5th (今天是太阳雨) (氛围极致感)",
-      "artist": "La Mer/Pao7oO",
-      "sources": [
-        {
-          "source": "popular",
           "rank": 20
         }
       ],
